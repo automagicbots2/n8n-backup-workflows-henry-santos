@@ -1,0 +1,474 @@
+{
+  "active": true,
+  "connections": {
+    "Onboarding": {
+      "main": [
+        [
+          {
+            "node": "dados_validados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados_validados": {
+      "main": [
+        [
+          {
+            "node": "EnviaMsg",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-08-08T14:42:37.682Z",
+  "id": "rYVthcVCTN4tOU6n",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚ [HENRY_SANTOS] - Onboarding Alunos Mentoria",
+  "nodes": [
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $json[\"body\"][\"contact[first_name]\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $json[\"body\"][\"contact[email]\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato BC",
+              "value": "=+{{ $json[\"body\"][\"contact[phone]\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $json[\"body\"][\"contact[phone]\"] }}"
+            },
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dc0860fb-8b86-4c02-9945-d4c4e16b883a",
+      "name": "dados_validados",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        740,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "onboarding-msa-bc",
+        "options": {}
+      },
+      "id": "7a654751-b6ad-488f-9e9d-50839b3ce61f",
+      "name": "Onboarding",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        540,
+        1020
+      ],
+      "webhookId": "ca0c0d67-b335-4d4a-9bb2-47844ea97d8d"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"dados_validados\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"dados_validados\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"dados_validados\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"dados_validados\"].json[\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Olá, {{ $node[\"dados_validados\"].json[\"Nome do Cliente\"].split (' ')[0] }}.\n\nParabéns! Você acaba de entrar para a Mentoria Salão Autoadministrável!\n\nProvavelmente você já conhece tudo que a Mentoria Salão Autoadministrável irá trazer para você nos próximos dias. Mas essa mensagem é bem importante para alinharmos todas as expectativas e informações a respeito do nosso Programa de Desenvolvimento e Aceleração de Salões de Beleza.\n\nA partir de agora, nós seremos o seu suporte para a Estruturação e Desenvolvimento do seu Salão de Beleza!!\n\nVamos falar sobre nossos próximos passos juntos?\n\n*01 - Reunião de onboarding* \n\nVamos agendar nossa primeira reunião para alinhamento, é importante que sua recepcionista esteja junto nesta etapa!\n\nA reunião de onboarding será realizada de segunda a quinta às 13h, através deste link: https://meet.google.com/gnf-cggd-nng\n\nMe responde aqui qual dia você irá poder participar, pra eu confirmar sua presença?\n\n*02 – Suas dúvidas*\n\nTemos 2 grupos dentro da Mentoria Salão Autoadministrável:\n\n1.0: Para quem está iniciando na gestão e quer organizar para crescer e atingir os 50 mil de faturamento\n\n2.0: Para quem quer aprofundar os conhecimentos em gestão e atingir níveis maiores de faturamento e ter uma gestão autoadministrável\n\nLembrando, que para estar no 2.0 precisa a gestão estar organizada antes 😉\n\nPara saber em qual grupo vamos te adicionar, por favor responda a pesquisa de nivelamento de um gestor de salão autoadministrável: \n\nhttps://forms.gle/2mLhpc68qZw6YHca7\n\nSe possível, já vá para o onboarding com ela preenchida, para um onboarding mais personalizado!"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "daf100ef-696e-4657-9ef0-28aafff784e0",
+      "name": "EnviaMsg",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        940,
+        1020
+      ],
+      "typeVersion": 4
+    }
+  ],
+  "pinData": {
+    "Onboarding": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "GuzzleHttp/6.5.5 curl/8.3.0 PHP/8.1.23",
+            "content-length": "12557",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "54.225.1.90",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "54.225.1.90",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "contact[id]": "18006",
+            "contact[email]": "mateusdiniz@automagicbots.com.br",
+            "contact[first_name]": "Mateus",
+            "contact[last_name]": "Diniz",
+            "contact[phone]": "5562981196678",
+            "contact[orgname]": "",
+            "contact[customer_acct_name]": "",
+            "contact[tags]": "",
+            "contact[ip4]": "0.0.0.0",
+            "contact[fields][eng_emails_enviados]": "",
+            "contact[fields][eng_emails_abertos]": "",
+            "contact[fields][eng_emails_clicados]": "",
+            "contact[fields][eng_emails_respondidos]": "",
+            "contact[fields][eng_no_abertos]": "",
+            "contact[fields][eng_no_clicados]": "",
+            "contact[fields][eng_ltima_interao]": "",
+            "contact[fields][eng_ltimo_envio]": "",
+            "contact[fields][eng_ltima_abertura]": "",
+            "contact[fields][eng_ltimo_click]": "",
+            "contact[fields][eng_ltima_resposta]": "",
+            "contact[fields][l01_captao_utm_source]": "",
+            "contact[fields][l01_captao_utm_campaign]": "",
+            "contact[fields][l01_captao_utm_medium]": "",
+            "contact[fields][l01_captao_utm_content]": "",
+            "contact[fields][l01_captao_utm_term]": "",
+            "contact[fields][l01_pgina_de_inscrio]": "",
+            "contact[fields][l01_status_da_inscrio]": "",
+            "contact[fields][l01_data_da_inscrio]": "",
+            "contact[fields][l01_data_da_confirmao]": "",
+            "contact[fields][l01_faltam_3_dias]": "",
+            "contact[fields][l01_amanh]": "",
+            "contact[fields][l01_cpl1]": "",
+            "contact[fields][l01_cpl2]": "",
+            "contact[fields][l01_cpl3]": "",
+            "contact[fields][l01_abertura_do_carrinho]": "",
+            "contact[fields][l01_fechamento_do_carrinho]": "",
+            "contact[fields][l01_flash_opening]": "",
+            "contact[fields][msa_venda_utm_source]": "",
+            "contact[fields][msa_venda_utm_campaign]": "",
+            "contact[fields][msa_venda_utm_medium]": "",
+            "contact[fields][msa_venda_utm_content]": "",
+            "contact[fields][msa_venda_utm_term]": "",
+            "contact[fields][msa_nome_do_produto]": "",
+            "contact[fields][msa_cdigo_do_produto]": "",
+            "contact[fields][msa_valor_do_produto]": "",
+            "contact[fields][msa_plano_de_pagamento]": "",
+            "contact[fields][msa_status_da_compra]": "",
+            "contact[fields][msa_data_da_compra]": "",
+            "contact[fields][msa_data_do_reembolso]": "",
+            "contact[fields][msa_link_do_boleto]": "",
+            "contact[fields][msa_link_do_pix]": "",
+            "contact[fields][msa_transao]": "",
+            "contact[fields][msa_status_da_recuperao]": "",
+            "contact[fields][msa_data_da_recuperao]": "",
+            "contact[fields][nome_do_evento]": "",
+            "contact[fields][id_do_evento]": "",
+            "contact[fields][tipo_do_evento]": "",
+            "contact[fields][atribuido]": "",
+            "contact[fields][apelido]": "",
+            "contact[fields][eng_no_respondidos]": "",
+            "contact[fields][tp_utm_campaign]": "",
+            "contact[fields][tp_utm_medium]": "",
+            "contact[fields][30_instagram]": "",
+            "contact[fields][30_recepcionista]": "",
+            "contact[fields][30_profissionais]": "",
+            "contact[fields][30_faturamento]": "",
+            "contact[fields][30_objetivo]": "",
+            "contact[fields][30_problemas]": "",
+            "contact[fields][30_ideal_para_voc]": "",
+            "contact[fields][30_por_que_voc]": "",
+            "contact[fields][30_conhece_o_msa]": "",
+            "contact[fields][30_parceiro_de_negcios]": "",
+            "contact[fields][30_situao_atual]": "",
+            "contact[fields][30_qual_prefere]": "",
+            "contact[fields][30_comear]": "",
+            "contact[fields][30_capacidade_de_investimento]": "",
+            "contact[fields][30_no_seu_momento]": "",
+            "contact[fields][30_url]": "",
+            "contact[fields][30_calendly]": "",
+            "contact[fields][5dg_venda_utm_source]": "",
+            "contact[fields][5dg_venda_utm_campaign]": "",
+            "contact[fields][5dg_venda_utm_medium]": "",
+            "contact[fields][5dg_venda_utm_content]": "",
+            "contact[fields][5dg_nome_do_produto]": "",
+            "contact[fields][5dg_cdigo_do_produto]": "",
+            "contact[fields][5dg_valor_do_produto]": "",
+            "contact[fields][5dg_plano_de_pagamento]": "",
+            "contact[fields][5dg_transao]": "",
+            "contact[fields][5dg_status_da_compra]": "",
+            "contact[fields][5dg_data_da_compra]": "",
+            "contact[fields][5dg_data_do_reembolso]": "",
+            "contact[fields][5dg_status_da_recuperao]": "",
+            "contact[fields][5dg_data_da_recuperao]": "",
+            "contact[fields][5dg_link_do_boleto]": "",
+            "contact[fields][5dg_link_do_pix]": "",
+            "contact[fields][5pl_venda_utm_source]": "",
+            "contact[fields][5pl_venda_utm_campaign]": "",
+            "contact[fields][5pl_venda_utm_medium]": "",
+            "contact[fields][5pl_venda_utm_content]": "",
+            "contact[fields][5pl_nome_do_produto]": "",
+            "contact[fields][5pl_cdigo_do_produto]": "",
+            "contact[fields][5pl_valor_do_produto]": "",
+            "contact[fields][5pl_plano_de_pagamento]": "",
+            "contact[fields][5pl_transao]": "",
+            "contact[fields][5pl_status_da_compra]": "",
+            "contact[fields][5pl_data_da_compra]": "",
+            "contact[fields][5pl_status_da_recuperao]": "",
+            "contact[fields][5pl_data_da_recuperao]": "",
+            "contact[fields][5pl_link_do_boleto]": "",
+            "contact[fields][5pl_link_do_pix]": "",
+            "contact[fields][status]": "",
+            "contact[fields][30_utm_source]": "",
+            "contact[fields][30_utm_campaign]": "",
+            "contact[fields][30_utm_medium]": "",
+            "contact[fields][30_utm_content]": "",
+            "contact[fields][30_utm_term]": "",
+            "contact[fields][wcm_cpl_1]": "",
+            "contact[fields][wcm_venda_utm_source]": "",
+            "contact[fields][wcm_venda_utm_campaign]": "",
+            "contact[fields][wcm_venda_utm_medium]": "",
+            "contact[fields][wcm_venda_utm_content]": "",
+            "contact[fields][wcm_venda_utm_term]": "",
+            "contact[fields][wcm_amanh]": "",
+            "contact[fields][wcm_faltam_3_dias]": "",
+            "contact[fields][wcm_fechamento_de_carrinho]": "",
+            "contact[fields][wcm_abertura_de_carrinho]": "",
+            "contact[fields][location]": "",
+            "contact[fields][data_do_agendamento]": "",
+            "contact[fields][wcm_data_da_inscrio]": "",
+            "contact[fields][sim_data_da_compra]": "",
+            "contact[fields][sim_data_de_vencimento_da_garantia]": "",
+            "contact[fields][manychat_id]": "",
+            "contact[fields][bot_conversa_id]": "",
+            "contact[fields][sim_id_da_transacao]": "",
+            "contact[fields][sim_oferta_da_compra]": "",
+            "contact[fields][sim_moeda_da_compra]": "",
+            "contact[fields][sim_codigo_da_inscricao]": "",
+            "contact[fields][sim_plano]": "",
+            "contact[fields][sim_forma_de_pagamento]": "",
+            "contact[fields][sim_status_da_compra]": "",
+            "contact[fields][sim_link_do_boleto]": "",
+            "contact[fields][sim_link_do_pix]": "",
+            "contact[fields][sim_linha_digitavel_do_boleto]": "",
+            "contact[fields][sim_linha_digitavel_do_pix]": "",
+            "contact[fields][ultima_atividade]": "",
+            "contact[fields][total_de_emails_enviados]": "",
+            "contact[fields][emails_consecutivos_nao_abertos]": "",
+            "contact[fields][total_de_aberturas]": "",
+            "contact[fields][emails_consecutivos_nao_clicados]": "",
+            "contact[fields][total_de_cliques]": "",
+            "contact[fields][emails_consecutivos_nao_respondidos]": "",
+            "contact[fields][total_de_respostas]": "",
+            "contact[fields][lead_scoring]": "",
+            "contact[fields][cpf_cnpj]": "",
+            "contact[fields][ddd]": "",
+            "contact[fields][sim_captacao_utm_source]": "",
+            "contact[fields][sim_captacao_utm_campaign]": "",
+            "contact[fields][sim_captacao_utm_term]": "",
+            "contact[fields][sim_captacao_utm_medium]": "",
+            "contact[fields][sim_captacao_utm_content]": "",
+            "contact[fields][sim_venda_utm_source]": "",
+            "contact[fields][sim_venda_utm_campaign]": "",
+            "contact[fields][sim_venda_utm_term]": "",
+            "contact[fields][sim_venda_utm_medium]": "",
+            "contact[fields][sim_venda_utm_content]": "",
+            "contact[fields][msg_data_da_compra]": "",
+            "contact[fields][msg_data_de_vencimento_da_garantia]": "",
+            "contact[fields][msg_id_da_transacao]": "",
+            "contact[fields][msg_oferta_da_compra]": "",
+            "contact[fields][msg_moeda_da_compra]": "",
+            "contact[fields][msg_codigo_da_inscricao]": "",
+            "contact[fields][msg_plano]": "",
+            "contact[fields][msg_forma_de_pagamento]": "",
+            "contact[fields][msg_status_da_compra]": "",
+            "contact[fields][msg_link_do_boleto]": "",
+            "contact[fields][msg_link_do_pix]": "",
+            "contact[fields][msg_linha_digitavel_do_boleto]": "",
+            "contact[fields][msg_linha_digitavel_do_pix]": "",
+            "contact[fields][msg_captacao_utm_source]": "",
+            "contact[fields][msg_captacao_utm_campaign]": "",
+            "contact[fields][msg_captacao_utm_term]": "",
+            "contact[fields][msg_captacao_utm_medium]": "",
+            "contact[fields][msg_captacao_utm_content]": "",
+            "contact[fields][msg_venda_utm_source]": "",
+            "contact[fields][msg_venda_utm_campaign]": "",
+            "contact[fields][msg_venda_utm_term]": "",
+            "contact[fields][msg_venda_utm_medium]": "",
+            "contact[fields][msg_venda_utm_content]": "",
+            "contact[fields][data_atual]": "",
+            "contact[fields][email_do_responsvel]": "",
+            "contact[fields][data_de_trmino]": "",
+            "contact[fields][data_e_hora_de_trmino]": "",
+            "contact[fields][data_e_hora_de_incio]": "",
+            "contact[fields][data_de_incio]": "",
+            "contact[fields][dia_da_semana_do_agendamento]": "",
+            "contact[fields][se_utmsource]": "",
+            "contact[fields][se_utmcampaign]": "",
+            "contact[fields][se_utmterm]": "",
+            "contact[fields][se_utmcontent]": "",
+            "contact[fields][id_do_cliente]": "",
+            "contact[fields][se_utmmedium]": "",
+            "contact[fields][se_link_de_cancelamento]": "",
+            "contact[fields][se_link_de_reagendamento]": "",
+            "contact[fields][se_quer_agendar]": "",
+            "contact[fields][se_dificuldade]": "",
+            "contact[fields][5pl_plano]": "",
+            "contact[fields][5pl_forma_de_pagamento]": "",
+            "contact[fields][5pl_data_de_vencimento_da_garantia]": "",
+            "contact[fields][5dg_oferta_da_compra]": "",
+            "contact[fields][5dg_moeda_da_compra]": "",
+            "contact[fields][5dg_cdigo_da_inscrio]": "",
+            "contact[fields][5dg_forma_de_pagamento]": "",
+            "contact[fields][5pl_oferta_da_compra]": "",
+            "contact[fields][5pl_moeda_da_compra]": "",
+            "contact[fields][5pl_cdigo_da_inscrio]": "",
+            "contact[fields][5dg_linha_digitvel_do_pix]": "",
+            "contact[fields][5dg_linha_digitvel_do_boleto]": "",
+            "contact[fields][5pl_linha_digitvel_do_pix]": "",
+            "contact[fields][5pl_linha_digitvel_do_boleto]": "",
+            "contact[fields][5dg_data_de_vencimento_da_garantia]": "",
+            "contact[fields][5pl_comisso_gateway]": "",
+            "contact[fields][5dg_comisso_gateway]": "",
+            "contact[fields][msa_venda_utm_var]": "",
+            "contact[fields][banco_de_dados_id]": "",
+            "contact[fields][se_alm_da_recepcionista]": "",
+            "contact[fields][se_alcanar_em_2023]": "",
+            "contact[fields][se_diferentes_formas_de_ajuda]": "",
+            "contact[fields][se_sobre_o_negcio]": "",
+            "contact[fields][se_problema_hoje]": "",
+            "contact[fields][se_utm_fun]": "",
+            "contact[fields][se_utm_var]": "",
+            "contact[fields][se_oportunidade_ideal]": "",
+            "contact[fields][se_tem_socio]": "",
+            "contact[fields][forms_utmsource]": "",
+            "contact[fields][forms_utmcampaign]": "",
+            "contact[fields][forms_utmterm]": "",
+            "contact[fields][forms_utmmedium]": "",
+            "contact[fields][forms_utmcontent]": "",
+            "contact[fields][forms_utmvar]": "",
+            "contact[fields][forms_utmfun]": "",
+            "contact[fields][contagem_email]": "",
+            "contact[fields][5pl_id_da_transacao]": "",
+            "contact[fields][5pl_valor_da_compra]": "",
+            "contact[fields][se_tipo_de_evento]": "",
+            "contact[fields][app_tipo_de_evento]": "",
+            "contact[fields][app_id_do_evento]": "",
+            "contact[fields][app_closer_responsavel]": "",
+            "contact[fields][app_email_do_responsavel]": "",
+            "contact[fields][app_data_de_inicio]": "",
+            "contact[fields][app_data_e_hora_de_incio]": "",
+            "contact[fields][app_data_de_termino]": "",
+            "contact[fields][app_data_e_hora_de_termino]": "",
+            "contact[fields][app_data_do_agendamento]": "",
+            "contact[fields][app_dia_da_semana_do_agendamento]": "",
+            "contact[fields][app_link_da_reuniao]": "",
+            "contact[fields][app_id_do_cliente]": "",
+            "contact[fields][app_link_de_cancelamento]": "",
+            "contact[fields][app_link_de_reagendamento]": "",
+            "contact[fields][app_status]": "",
+            "contact[fields][app_utm_source]": "",
+            "contact[fields][app_utm_campaign]": "",
+            "contact[fields][app_utm_term]": "",
+            "contact[fields][app_utm_medium]": "",
+            "contact[fields][app_utm_content]": "",
+            "contact[fields][app_utm_fun]": "",
+            "contact[fields][app_utm_var]": "",
+            "contact[fields][contagem_email_quinta]": "",
+            "contact[fields][fisa_utmsource]": "",
+            "contact[fields][fisa_utmcampaign]": "",
+            "contact[fields][fisa_utmmedium]": "",
+            "contact[fields][fisa_utmterm]": "",
+            "contact[fields][fisa_utmcontent]": "",
+            "contact[fields][fisa_utmvar]": "",
+            "contact[fields][fisa_utmfun]": "",
+            "contact[fields][se_etapa_do_salo]": "",
+            "contact[fields][se_objetivo_este_ano]": "",
+            "contact[fields][instagram]": "",
+            "contact[fields][se_momento_atual]": "",
+            "contact[fields][se_utmfun]": "",
+            "contact[fields][se_utmvar]": "",
+            "contact[fields][se_tipo_do_ebook]": "",
+            "seriesid": "266"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-08-08T15:06:37.166Z",
+  "versionId": "2dde7540-eb03-49ef-946d-eb9763443095"
+}
