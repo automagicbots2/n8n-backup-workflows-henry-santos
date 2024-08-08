@@ -1,0 +1,1003 @@
+{
+  "active": false,
+  "connections": {
+    "le_planilha3": {
+      "main": [
+        [
+          {
+            "node": "MSG1.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis3": {
+      "main": [
+        [
+          {
+            "node": "le_planilha3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "variaveis3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha4": {
+      "main": [
+        [
+          {
+            "node": "MSG2.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis4": {
+      "main": [
+        [
+          {
+            "node": "le_planilha4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "variaveis4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MSG2.1": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não Faça Nada4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MSG1.1": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não Faça Nada3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha5": {
+      "main": [
+        [
+          {
+            "node": "MSG3.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis5": {
+      "main": [
+        [
+          {
+            "node": "le_planilha5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF2": {
+      "main": [
+        [
+          {
+            "node": "variaveis5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MSG3.1": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não Faça Nada5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_18h": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_8h5m1": {
+      "main": [
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_9h": {
+      "main": [
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-07-24T15:56:20.671Z",
+  "id": "4iCe5Ul1XQ1go5Lo",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "📅[HENRY SANTOS][V2] - Aulas ao vivo - Live Semanal 25/07",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## GRUPO PARA DISPARO: 120363295424007193@g.us\n\n## GRUPO PARA TESTE: 120363256444706105@g.us",
+        "height": 189.04348618878646,
+        "width": 1346.2235630407117
+      },
+      "id": "917d2af4-906f-4ddb-b72b-b790d3349ad0",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## QUANDO FINALIZAR A CONFIGURAÇÃO DAS MENSAGENS SE SERTIFICAR QUE O ID DO GRUPO E AS DATAS DAS MENSAGENS ESTÃO CORRETAS",
+        "height": 207.79070928070064,
+        "width": 417.57528252338807
+      },
+      "id": "48067256-177c-49a0-ba6f-2ef973297cf7",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 843347888,
+          "mode": "list",
+          "cachedResultName": "Live semanal - AO VIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=843347888"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "DATA DISPARO",
+              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "930ec9ea-debf-446f-bbb7-08ca76103e00",
+      "name": "le_planilha3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        360,
+        580
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363295424007193@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "032203c6-744e-4171-a63c-ba556a5d22ec",
+      "name": "variaveis3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        180,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis3\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis3\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis3\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis3\"].json[\"id_grupo\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "64009d94-a9a2-46ca-b768-dad29239dc39",
+      "name": "EnviaMensagemTexto3",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        800,
+        480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "bc6c7596-3521-4c7e-878d-6e854b6d94ed",
+      "name": "Não Faça Nada3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        800,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "24/07/2024"
+            }
+          ]
+        }
+      },
+      "id": "f5ea5cdc-c745-4f45-adf4-53e842608859",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 843347888,
+          "mode": "list",
+          "cachedResultName": "Live semanal - AO VIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=843347888"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "DATA DISPARO",
+              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "5e39a86c-3c5a-4c22-ad95-2e27987c8655",
+      "name": "le_planilha4",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        360,
+        920
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363295424007193@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9ff73bef-2a4e-4f57-aa07-b7d0545b327b",
+      "name": "variaveis4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        180,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis4\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis4\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis4\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis4\"].json[\"id_grupo\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "658914c1-0dde-483b-9732-581ebf44b4bc",
+      "name": "EnviaMensagemTexto4",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        800,
+        820
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "f5ddc5e2-7911-441a-a65b-7429380d7c04",
+      "name": "Não Faça Nada4",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "25/07/2024"
+            }
+          ]
+        }
+      },
+      "id": "a20160ac-6ca2-4cd3-ba4e-5d04c2316813",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "0f8a5237-6bba-4c2c-b07e-2b371c21224b",
+              "leftValue": "={{ $json[\"TIPO LEMBRETE\"] }}",
+              "rightValue": "MSG2",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "9e727f75-3da6-4873-94ff-7804ab857f32",
+      "name": "MSG2.1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        540,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "0f8a5237-6bba-4c2c-b07e-2b371c21224b",
+              "leftValue": "={{ $json[\"TIPO LEMBRETE\"] }}",
+              "rightValue": "MSG1",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "516bf289-2a14-4c24-b534-76dfb5051aac",
+      "name": "MSG1.1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        540,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 843347888,
+          "mode": "list",
+          "cachedResultName": "Live semanal - AO VIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=843347888"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "DATA DISPARO",
+              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "a74604e9-52cb-48b8-ae25-4e5111b9a4fa",
+      "name": "le_planilha5",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        360,
+        1260
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363295424007193@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "51b40fb5-a4ee-4580-b4f4-934be8e7fb56",
+      "name": "variaveis5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        180,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis5\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis5\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis5\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis5\"].json[\"id_grupo\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "3ab41146-5db4-446c-ab9d-ee0cb5c73d2a",
+      "name": "EnviaMensagemTexto5",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        800,
+        1160
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "6012818a-a7b8-4a45-acb7-bba6a5241c58",
+      "name": "Não Faça Nada5",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1340
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "25/07/2024"
+            }
+          ]
+        }
+      },
+      "id": "156e2a02-0b9a-4b99-98c4-ac1fee4ff319",
+      "name": "IF2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "0f8a5237-6bba-4c2c-b07e-2b371c21224b",
+              "leftValue": "={{ $json[\"TIPO LEMBRETE\"] }}",
+              "rightValue": "MSG3",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "cadd55ff-e615-441e-80f3-ad306675bdf7",
+      "name": "MSG3.1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        540,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 18
+            }
+          ]
+        }
+      },
+      "id": "c53ba464-69d1-450a-81d5-588726d7b717",
+      "name": "dispara_18h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                4
+              ],
+              "triggerAtHour": 8,
+              "triggerAtMinute": 5
+            }
+          ]
+        }
+      },
+      "id": "2718e3e3-2d45-4d4a-a33a-b2b303190006",
+      "name": "dispara_8h5m1",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                4
+              ],
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "5b090c60-810b-47e3-9f10-a69fcd50ba9a",
+      "name": "dispara_9h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        1280
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": {
+    "node:todo_dia_7:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:1": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:05": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:5": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_19:00": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_18hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_18hs1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_7_manha": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8:05h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_19h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_19h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_18h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_9h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_19h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_7h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_7h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h5m": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h5m1": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2024-03-27T14:03:25.264Z",
+      "updatedAt": "2024-03-27T14:03:25.264Z",
+      "id": "Ju8yPHXMHj0pxd19",
+      "name": "[LEMBRETE]"
+    }
+  ],
+  "triggerCount": 3,
+  "updatedAt": "2024-07-25T19:12:09.792Z",
+  "versionId": "65e15ca7-6ac7-4a42-b389-81569cd9210b"
+}
