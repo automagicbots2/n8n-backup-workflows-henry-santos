@@ -1,0 +1,304 @@
+{
+  "active": false,
+  "connections": {
+    "variaveis9": {
+      "main": [
+        [
+          {
+            "node": "le_planilha9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "envia_tag_contato4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_tag_contato4": {
+      "main": [
+        [
+          {
+            "node": "30s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "30s": {
+      "main": [
+        [
+          {
+            "node": "le_planilha9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha9": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "variaveis9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-05-17T18:45:30.121Z",
+  "id": "83J5imkQXDLjaWk6",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "📅[HENRY SANTOS][BOT CONVERSA] - Coloca TAG via API",
+  "nodes": [
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "iujdsradymo0j5w4dppz8ob"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "HenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363166216060509@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "05146c30-4592-4e05-bcac-b8816f11e81e",
+      "name": "variaveis9",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -2180,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## DISPARO 7H - 1 DIA ANTES \n",
+        "width": 236.09850729159172
+      },
+      "id": "cf713dca-c386-4c66-95c6-3ec84d89aa58",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2660,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "0767bb96-0ad7-4a7d-b4a3-7bbd2c651943",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1780,
+        -120
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b4ebac98-3ebb-403f-ac34-bd431e3f91f1",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        -280
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $json[\"ID BOT CONVERSA\"] }}/tags/8740918/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2ff37901-e773-48b0-9d87-67591e4167db",
+      "name": "envia_tag_contato4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -1560,
+        -60
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "id": "a5978f1b-cc55-45a3-8b54-dc9481fce334",
+      "name": "30s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1360,
+        -60
+      ],
+      "webhookId": "75dd0c21-ac23-4858-b0f0-e8e440ec5d08"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1611415112,
+          "mode": "list",
+          "cachedResultName": "Página6",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=1611415112"
+        },
+        "options": {}
+      },
+      "id": "5286c313-22b4-434d-8d9d-29bfe794d4a6",
+      "name": "le_planilha9",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        -1960,
+        -120
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "ebcd19ff-4e07-4cc7-bbca-58d2f4155672",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2360,
+        -120
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:todo_dia_7:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:1": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:05": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:5": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_19:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_7:15": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:15": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_12:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:15_ao_vivo": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_19:15": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_7:00_": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:00_ao_vivo": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-06-05T12:08:03.234Z",
+  "versionId": "06167f6d-2b20-49cb-9c9f-9b164b5687ee"
+}
