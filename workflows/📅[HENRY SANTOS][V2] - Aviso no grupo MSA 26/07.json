@@ -1,0 +1,1209 @@
+{
+  "active": false,
+  "connections": {
+    "le_planilha3": {
+      "main": [
+        [
+          {
+            "node": "MSG1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis3": {
+      "main": [
+        [
+          {
+            "node": "le_planilha3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "variaveis3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_7h": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMsg_MSA2": {
+      "main": [
+        [
+          {
+            "node": "3s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3s": {
+      "main": [
+        [
+          {
+            "node": "EnviaMsg_MSA1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha": {
+      "main": [
+        [
+          {
+            "node": "MSG2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "le_planilha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3s1": {
+      "main": [
+        [
+          {
+            "node": "EnviaMsgMSA1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_12h": {
+      "main": [
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MSG2": {
+      "main": [
+        [
+          {
+            "node": "EnviaMsgMSA2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não Faça Nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MSG1": {
+      "main": [
+        [
+          {
+            "node": "EnviaMsg_MSA2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não Faça Nada3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMsgMSA2": {
+      "main": [
+        [
+          {
+            "node": "3s1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha1": {
+      "main": [
+        [
+          {
+            "node": "MSG3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis1": {
+      "main": [
+        [
+          {
+            "node": "le_planilha1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF2": {
+      "main": [
+        [
+          {
+            "node": "variaveis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_8h": {
+      "main": [
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MSG3": {
+      "main": [
+        [
+          {
+            "node": "EnviaMsgMSA2024",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não Faça Nada1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-07-25T19:12:17.846Z",
+  "id": "xNGTBSKfmROpRejL",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "📅[HENRY SANTOS][V2] - Aviso no grupo MSA 26/07",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## GRUPO MSA 2.0 PARA DISPARO: 120363297457001793@g.us\n\n## GRUPO MSA 1.0 PARA DISPARO: 120363314632556359@g.us\n\n## GRUPO PARA TESTE: 120363256444706105@g.us",
+        "height": 189.04348618878646,
+        "width": 1346.2235630407117
+      },
+      "id": "916e14c1-e8c5-4abf-b130-2781129d2e8f",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## QUANDO FINALIZAR A CONFIGURAÇÃO DAS MENSAGENS SE SERTIFICAR QUE O ID DO GRUPO E AS DATAS DAS MENSAGENS ESTÃO CORRETAS",
+        "height": 207.79070928070064,
+        "width": 417.57528252338807
+      },
+      "id": "ee31ef19-8145-4efc-b359-e2ed2db9cad7",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 843347888,
+          "mode": "list",
+          "cachedResultName": "Live semanal - AO VIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=843347888"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "DATA DISPARO",
+              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "13f26043-19f9-4636-a0e5-9753316e16ce",
+      "name": "le_planilha3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        -100,
+        600
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo_msa2",
+              "value": "120363297457001793@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            },
+            {
+              "name": "id_grupo_msa1",
+              "value": "120363314632556359@g.us"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "84f9562b-364c-41e5-afc9-1cdca794e9b1",
+      "name": "variaveis3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        600
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "f360d383-8917-4497-b88c-cbfa4cd4b937",
+      "name": "Não Faça Nada3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        340,
+        680
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "26/07/2024"
+            }
+          ]
+        }
+      },
+      "id": "11ccd4b3-817f-4aaa-9e44-9b53d5e687ce",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                5
+              ],
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "2d0fbc99-7c61-48e1-a0ab-7dd270318c2d",
+      "name": "dispara_7h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis3\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis3\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis3\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis3\"].json[\"id_grupo_msa2\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "aa201d2b-3675-4eab-a413-ff9fab7bfd8e",
+      "name": "EnviaMsg_MSA2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        340,
+        500
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "id": "134b6537-55d8-40bc-8346-f8ade6eb587c",
+      "name": "3s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        540,
+        500
+      ],
+      "webhookId": "6477697a-9172-4e88-b70c-38b9b02d38e9"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis3\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis3\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis3\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis3\"].json[\"id_grupo_msa1\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "7e95b5a7-e0d4-4d8a-ac0f-28c711d570b9",
+      "name": "EnviaMsg_MSA1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        720,
+        500
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 843347888,
+          "mode": "list",
+          "cachedResultName": "Live semanal - AO VIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=843347888"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "DATA DISPARO",
+              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "6096a1bf-2003-4882-9e87-7f63be028adc",
+      "name": "le_planilha",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        -100,
+        960
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo_msa2",
+              "value": "120363297457001793@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            },
+            {
+              "name": "id_grupo_msa1",
+              "value": "120363314632556359@g.us"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1553a217-6512-444f-9f21-94be88ec181b",
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        960
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "cf76cdfb-6c87-4f72-b58d-8068165376bc",
+      "name": "Não Faça Nada",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        340,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "26/07/2024"
+            }
+          ]
+        }
+      },
+      "id": "1239041c-a536-4f9f-b7b2-e97e82302746",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "id": "f001d65f-ed5e-4315-b11a-b5a187ae435f",
+      "name": "3s1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        540,
+        860
+      ],
+      "webhookId": "6477697a-9172-4e88-b70c-38b9b02d38e9"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                5
+              ],
+              "triggerAtHour": 12
+            }
+          ]
+        }
+      },
+      "id": "846ee7c9-351d-4d87-a5a1-20be7eb94c04",
+      "name": "dispara_12h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "0f8a5237-6bba-4c2c-b07e-2b371c21224b",
+              "leftValue": "={{ $json[\"TIPO LEMBRETE\"] }}",
+              "rightValue": "MSG2",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5d9d93c2-0110-4a9a-8064-4ad3b9f4b350",
+      "name": "MSG2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        80,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "0f8a5237-6bba-4c2c-b07e-2b371c21224b",
+              "leftValue": "={{ $json[\"TIPO LEMBRETE\"] }}",
+              "rightValue": "MSG1",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "21f9902f-3708-405d-b96b-4338539620d8",
+      "name": "MSG1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        80,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis\"].json[\"id_grupo_msa2\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "3cf1f2af-fa22-4f06-a504-59654f620a15",
+      "name": "EnviaMsgMSA2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        340,
+        860
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis\"].json[\"id_grupo_msa1\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"MSG2\"].json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "04fefdda-7189-4099-a721-48f036bfa286",
+      "name": "EnviaMsgMSA1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        720,
+        860
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 843347888,
+          "mode": "list",
+          "cachedResultName": "Live semanal - AO VIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=843347888"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "DATA DISPARO",
+              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "7f53d743-bf64-4d25-a4f0-2fde67fb0482",
+      "name": "le_planilha1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        -100,
+        1340
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo_msa2024",
+              "value": "120363166216060509@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            },
+            {
+              "name": "id_grupo_msa1",
+              "value": "120363314632556359@g.us"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "288b7c40-a6f2-492a-b048-0e8a1bb987f4",
+      "name": "variaveis1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        1340
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "02c64558-aa0c-418b-8b48-40a48b92e977",
+      "name": "Não Faça Nada1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        340,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "26/07/2024"
+            }
+          ]
+        }
+      },
+      "id": "c7368e80-ddc5-496a-9ee5-0b7b5081ae95",
+      "name": "IF2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        1360
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                5
+              ],
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "48509184-809b-4546-957f-f6850aa02c12",
+      "name": "dispara_8h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        1360
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis1\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis1\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis1\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis1\"].json[\"id_grupo_msa2024\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "05bdc1c3-642b-4d17-8908-795df15e6ce0",
+      "name": "EnviaMsgMSA2024",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        340,
+        1240
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "0f8a5237-6bba-4c2c-b07e-2b371c21224b",
+              "leftValue": "={{ $json[\"TIPO LEMBRETE\"] }}",
+              "rightValue": "MSG3",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "dbbebdf3-8a64-4ed0-bba4-797206a009f0",
+      "name": "MSG3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        80,
+        1340
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": {
+    "node:todo_dia_7:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:1": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:05": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:5": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_19:00": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_18hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_18hs1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_7_manha": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8:05h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_19h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_19h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_18h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_9h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_19h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_7h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_7h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h5m": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h5m1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_12h": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2024-03-27T14:03:25.264Z",
+      "updatedAt": "2024-03-27T14:03:25.264Z",
+      "id": "Ju8yPHXMHj0pxd19",
+      "name": "[LEMBRETE]"
+    }
+  ],
+  "triggerCount": 3,
+  "updatedAt": "2024-07-26T18:23:59.411Z",
+  "versionId": "0ababcf2-447d-4a2a-a6eb-85c4573080f0"
+}
