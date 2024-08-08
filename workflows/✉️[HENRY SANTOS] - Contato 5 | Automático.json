@@ -1,0 +1,244 @@
+{
+  "active": true,
+  "connections": {
+    "cadastrar_contato": {
+      "main": [
+        [
+          {
+            "node": "espera_2_dias",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "cadastrar_contato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "espera_2_dias": {
+      "main": [
+        [
+          {
+            "node": "envia_fluxo_de_nao_agendou_10_min",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-06-13T19:49:47.558Z",
+  "id": "5EIJDDJ0GLngHaJx",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "✉️[HENRY SANTOS] - Contato 5 | Automático",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $json[\"id\"] }}/send_flow/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "flow",
+              "value": "4442961"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a40521e8-6e02-4e62-8c46-e728053b660a",
+      "name": "envia_fluxo_de_nao_agendou_10_min",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1460,
+        300
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "phone",
+              "value": "=+{{ $node[\"Code\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"Code\"].json[\"Nome\"].slice(0,1).toUpperCase() }}{{ $node[\"Code\"].json[\"Nome\"].split(' ')[0].slice(1).toLowerCase() }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $node[\"Code\"].json[\"Nome\"].split(' ')[1] ? $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ').slice(1).join(\" \") : \".\"}}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            }
+          ]
+        }
+      },
+      "name": "cadastrar_contato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        1080,
+        300
+      ],
+      "id": "ef45585c-0e78-46ec-86fc-d39c125a8988",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Dados de entrada através das variáveis\nconst telefone = String($node[\"Webhook\"].json[\"body\"][\"contact[phone]\"]) || String($node[\"manychat_saude_se\"].json[\"body\"][\"whatsapp_phone\"]);\n\n//Formatar número Internacional\nfunction formatarTelefone(telefone) {\n  const telefoneLimpo = telefone.replace(/[^\\d]/g, '');\n\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else {\n    // Se o DDI for diferente de 55, manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\nconst nome = $node[\"Webhook\"].json[\"body\"][\"contact[first_name]\"];\nconst email = $node[\"Webhook\"].json[\"body\"][\"contact[email]\"]\n// Processamento dos dados\nconst output = {\n  telefone: formatarTelefone(telefone),\n  Email: email,\n  Nome: nome\n};\n\nreturn output;"
+      },
+      "id": "ebe73c3d-ea52-453c-8210-4ae07bc7aec5",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "contato-5-stage",
+        "options": {}
+      },
+      "id": "1033be2f-2715-4984-8c7e-4165e091a5fc",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [
+        660,
+        300
+      ],
+      "webhookId": "b8926157-9e32-4827-8fff-6d98b8d76777"
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "days"
+      },
+      "id": "1c659812-8f84-46f7-8795-017d96c1e315",
+      "name": "espera_2_dias",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1280,
+        300
+      ],
+      "webhookId": "04842317-78bf-470d-bf56-e4c013986471"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "GuzzleHttp/6.5.5 curl/8.3.0 PHP/8.1.23",
+            "content-length": "1779",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "52.2.43.221",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "52.2.43.221",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "contact[id]": "16726",
+            "contact[email]": "vanessagamalemos@gmail.com",
+            "contact[first_name]": "Vanessa",
+            "contact[last_name]": "gama",
+            "contact[phone]": "559183474305",
+            "contact[orgname]": "",
+            "contact[customer_acct_name]": "",
+            "contact[tags]": "[SE] - Aplicou, [SE] - Qualificado",
+            "contact[ip4]": "0.0.0.0",
+            "contact[fields][30_utm_source]": "meta_ads",
+            "contact[fields][30_utm_campaign]": "[D] [SE] [HM] [CADASTRO] [ABO] Teste de criativo",
+            "contact[fields][30_utm_content]": "AD11 - [FUNIL 30 MIN] VID11",
+            "contact[fields][30_utm_medium]": "01- Adm página de beleza",
+            "contact[fields][30_utm_term]": "120209281491670128",
+            "contact[fields][se_utm_fun]": "sessao estrategica",
+            "contact[fields][se_utm_var]": "v1",
+            "contact[fields][bot_conversa_id]": "466281019",
+            "contact[fields][ddd]": "91",
+            "contact[fields][banco_de_dados_id]": "3524",
+            "contact[fields][instagram]": "Salaowgama",
+            "contact[fields][30_recepcionista]": "SIM",
+            "contact[fields][30_profissionais]": "ENTRE 5 E 10",
+            "contact[fields][30_faturamento]": "Entre R$25.001 e R$40.000 mensal",
+            "contact[fields][se_etapa_do_salo]": "",
+            "contact[fields][se_objetivo_este_ano]": "Abrir novas unidades e aumentando o faturamento em todas",
+            "contact[fields][30_problemas]": "Preciso de profissionais que venda mais o que a cliente necessita nao somente o que deseja",
+            "contact[fields][30_por_que_voc]": "Acredito que estou no momento d expansão da minha marca gerando um otimo modelo pra vcs",
+            "contact[fields][30_capacidade_de_investimento]": "0 a R$300",
+            "contact[fields][30_no_seu_momento]": "",
+            "contact[fields][se_momento_atual]": "Estou conseguindo pagar as contas e não sobrando",
+            "contact[fields][se_tipo_do_ebook]": "",
+            "seriesid": "260"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-06-13T21:17:11.518Z",
+  "versionId": "b3347107-baca-470f-adf0-fa0100dbb676"
+}
