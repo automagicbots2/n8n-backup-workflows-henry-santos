@@ -1,0 +1,2083 @@
+{
+  "active": false,
+  "connections": {
+    "existe_email": {
+      "main": [
+        [
+          {
+            "node": "cria/atualiza_pelo_email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "busca_lead_pelo_telefone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_lead_pelo_email": {
+      "main": [
+        [
+          {
+            "node": "espera_30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_lead_pelo_telefone": {
+      "main": [
+        [
+          {
+            "node": "espera_30s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "telefone_existe": {
+      "main": [
+        [
+          {
+            "node": "cria/atualiza_pelo_telefone",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "cria/atualiza_pelo_email1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "espera_30s": {
+      "main": [
+        [
+          {
+            "node": "telefone_existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "espera_30": {
+      "main": [
+        [
+          {
+            "node": "existe_email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "desqualificado": {
+      "main": [
+        [
+          {
+            "node": "busca_lead_pelo_email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_email1": {
+      "main": [
+        [
+          {
+            "node": "cria/atualiza_pelo_email3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "busca_lead_pelo_telefone1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_lead_pelo_email1": {
+      "main": [
+        [
+          {
+            "node": "espera_1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_lead_pelo_telefone1": {
+      "main": [
+        [
+          {
+            "node": "espera_30s1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "telefone_existe1": {
+      "main": [
+        [
+          {
+            "node": "cria/atualiza_pelo_telefone1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "cria/atualiza_pelo_email2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "espera_30s1": {
+      "main": [
+        [
+          {
+            "node": "telefone_existe1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "espera_1": {
+      "main": [
+        [
+          {
+            "node": "existe_email1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "qualificado": {
+      "main": [
+        [
+          {
+            "node": "busca_lead_pelo_email1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "espera_5s": {
+      "main": [
+        [
+          {
+            "node": "existe_email2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "espera_5s1": {
+      "main": [
+        [
+          {
+            "node": "telefone_existe2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_email2": {
+      "main": [
+        [
+          {
+            "node": "cria/atualiza_pelo_email4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "busca_lead_pelo_telefone2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_lead_pelo_email2": {
+      "main": [
+        [
+          {
+            "node": "espera_5s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_lead_pelo_telefone2": {
+      "main": [
+        [
+          {
+            "node": "espera_5s1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "telefone_existe2": {
+      "main": [
+        [
+          {
+            "node": "cria/atualiza_pelo_email5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "cria/atualiza_pelo_email6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "não_aplicou": {
+      "main": [
+        [
+          {
+            "node": "busca_lead_pelo_email2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-04-04T14:34:57.793Z",
+  "id": "03sHGdW13OMMqYRN",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[BACKUP] - Configuração do Sheets - Preencheu Aplicação",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "columnToMatchOn": "EMAIL",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "DIA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2) }}"
+            },
+            {
+              "column": "MÊS",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "column": "ANO",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(6) }}"
+            },
+            {
+              "column": "DATA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "HORA",
+              "fieldValue": "={{ $now.toFormat('HH:mm') }}"
+            },
+            {
+              "column": "NOME",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "column": "TELEFONE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "INSTAGRAM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            },
+            {
+              "column": "ETAPA FUNIL",
+              "fieldValue": "PREENCHEU FORMULÁRIO"
+            },
+            {
+              "column": "QUALIFICAÇÃO",
+              "fieldValue": "DESQUALIFICADO"
+            },
+            {
+              "column": "TEM RECEPCIONISTA P0",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}"
+            },
+            {
+              "column": "TAMANHO DA EQUIPE P1",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}"
+            },
+            {
+              "column": "FATURAMENTO P2",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}"
+            },
+            {
+              "column": "ETAPA MONTAR SALÃO P3",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}"
+            },
+            {
+              "column": "OBJETIVO ESTE ANO P4",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}"
+            },
+            {
+              "column": "IMPEDE OBJETIVO P5",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}"
+            },
+            {
+              "column": "PORQUE VOCÊ P6",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}"
+            },
+            {
+              "column": "ACOMPANHAMENTO ÚNICO P7",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}"
+            },
+            {
+              "column": "NÃO É MOMENTO IDEAL P8",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta8\"] }}"
+            },
+            {
+              "column": "MOMENTO ATUAL P9",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}"
+            },
+            {
+              "column": "ID LEAD AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_activecampaign\"] }}"
+            },
+            {
+              "column": "ID DEAL AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_deal_activecampaign\"] }}"
+            },
+            {
+              "column": "ID BOT CONVERSA",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
+            },
+            {
+              "column": "UTM_SOURCE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "column": "UTM_CAMPAIGN",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "column": "UTM_TERM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "column": "UTM_MEDIUM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "column": "UTM_CONTENT",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "column": "TIPO DO EBOOK P10",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2cf1c481-f92e-4fd0-baff-ff10ed1332f2",
+      "name": "cria/atualiza_pelo_email",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        980,
+        760
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"busca_lead_pelo_email\"].json[\"EMAIL\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "84afd693-c4ad-43e5-956e-72908f56755c",
+      "name": "existe_email",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        720,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "EMAIL",
+              "lookupValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3a4cab98-83fe-4f09-ba68-cbbd699c3c81",
+      "name": "busca_lead_pelo_email",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        400,
+        920
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "TELEFONE",
+              "lookupValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ed9f02d8-fe26-418d-bbae-ff2150f7ed5c",
+      "name": "busca_lead_pelo_telefone",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        980,
+        920
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"busca_lead_pelo_telefone\"].json[\"TELEFONE\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "17d96ee6-9df0-4ffe-a3fd-d4eb0e7b602a",
+      "name": "telefone_existe",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "seconds"
+      },
+      "id": "a7f3da3b-dec7-4f70-a542-eb792ee04863",
+      "name": "espera_30s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        920
+      ],
+      "webhookId": "0d29cecb-350c-449b-b7f7-28fe71a30144"
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "seconds"
+      },
+      "id": "23dfc794-b86a-4a0f-8ab6-0eaaacff4ac8",
+      "name": "espera_30",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        560,
+        920
+      ],
+      "webhookId": "17364817-0fb8-431f-af7a-e4a3cd8c11f1"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "columnToMatchOn": "TELEFONE",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "DIA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2) }}"
+            },
+            {
+              "column": "MÊS",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "column": "ANO",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(6) }}"
+            },
+            {
+              "column": "DATA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "HORA",
+              "fieldValue": "={{ $now.toFormat('HH:mm') }}"
+            },
+            {
+              "column": "NOME",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "column": "EMAIL",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "column": "INSTAGRAM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            },
+            {
+              "column": "ETAPA FUNIL",
+              "fieldValue": "PREENCHEU FORMULÁRIO"
+            },
+            {
+              "column": "QUALIFICAÇÃO",
+              "fieldValue": "DESQUALIFICADO"
+            },
+            {
+              "column": "TEM RECEPCIONISTA P0",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}"
+            },
+            {
+              "column": "TAMANHO DA EQUIPE P1",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}"
+            },
+            {
+              "column": "FATURAMENTO P2",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}"
+            },
+            {
+              "column": "ETAPA MONTAR SALÃO P3",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}"
+            },
+            {
+              "column": "OBJETIVO ESTE ANO P4",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}"
+            },
+            {
+              "column": "IMPEDE OBJETIVO P5",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}"
+            },
+            {
+              "column": "PORQUE VOCÊ P6",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}"
+            },
+            {
+              "column": "ACOMPANHAMENTO ÚNICO P7",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}"
+            },
+            {
+              "column": "NÃO É MOMENTO IDEAL P8",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta8\"] }}"
+            },
+            {
+              "column": "MOMENTO ATUAL P9",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}"
+            },
+            {
+              "column": "ID LEAD AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_activecampaign\"] }}"
+            },
+            {
+              "column": "ID DEAL AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_deal_activecampaign\"] }}"
+            },
+            {
+              "column": "ID BOT CONVERSA",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
+            },
+            {
+              "column": "UTM_SOURCE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "column": "UTM_CAMPAIGN",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "column": "UTM_TERM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "column": "UTM_MEDIUM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "column": "UTM_CONTENT",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "column": "TIPO DO EBOOK P10",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "65c7aeff-df33-41f9-9378-27e0490412cf",
+      "name": "cria/atualiza_pelo_telefone",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1520,
+        740
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "columnToMatchOn": "EMAIL",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "DIA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2) }}"
+            },
+            {
+              "column": "MÊS",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "column": "ANO",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(6) }}"
+            },
+            {
+              "column": "DATA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "HORA",
+              "fieldValue": "={{ $now.toFormat('HH:mm') }}"
+            },
+            {
+              "column": "NOME",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "column": "TELEFONE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "INSTAGRAM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            },
+            {
+              "column": "ETAPA FUNIL",
+              "fieldValue": "PREENCHEU FORMULÁRIO"
+            },
+            {
+              "column": "QUALIFICAÇÃO",
+              "fieldValue": "DESQUALIFICADO"
+            },
+            {
+              "column": "TEM RECEPCIONISTA P0",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}"
+            },
+            {
+              "column": "TAMANHO DA EQUIPE P1",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}"
+            },
+            {
+              "column": "FATURAMENTO P2",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}"
+            },
+            {
+              "column": "ETAPA MONTAR SALÃO P3",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}"
+            },
+            {
+              "column": "OBJETIVO ESTE ANO P4",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}"
+            },
+            {
+              "column": "IMPEDE OBJETIVO P5",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}"
+            },
+            {
+              "column": "PORQUE VOCÊ P6",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}"
+            },
+            {
+              "column": "ACOMPANHAMENTO ÚNICO P7",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}"
+            },
+            {
+              "column": "NÃO É MOMENTO IDEAL P8",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta8\"] }}"
+            },
+            {
+              "column": "MOMENTO ATUAL P9",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}"
+            },
+            {
+              "column": "ID LEAD AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_activecampaign\"] }}"
+            },
+            {
+              "column": "ID DEAL AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_deal_activecampaign\"] }}"
+            },
+            {
+              "column": "ID BOT CONVERSA",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
+            },
+            {
+              "column": "UTM_SOURCE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "column": "UTM_CAMPAIGN",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "column": "UTM_TERM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "column": "UTM_MEDIUM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "column": "UTM_CONTENT",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "column": "TIPO DO EBOOK P10",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "033fb8aa-cd69-4b65-970c-07c5818d232d",
+      "name": "cria/atualiza_pelo_email1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1500,
+        940
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "seconds"
+      },
+      "id": "fb400ce0-9cc6-4a89-9005-d2c1e908bb98",
+      "name": "desqualificado",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        240,
+        820
+      ],
+      "webhookId": "17364817-0fb8-431f-af7a-e4a3cd8c11f1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"busca_lead_pelo_email1\"].json[\"EMAIL\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "10a54d15-815a-4c5e-8dc5-822e21c541e0",
+      "name": "existe_email1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        640,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "EMAIL",
+              "lookupValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "481161db-6da1-43c3-a0bc-4fc7d3fc576b",
+      "name": "busca_lead_pelo_email1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        320,
+        540
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "TELEFONE",
+              "lookupValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4c571b66-def4-42b9-82fb-1268ef583006",
+      "name": "busca_lead_pelo_telefone1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        900,
+        540
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"busca_lead_pelo_telefone1\"].json[\"TELEFONE\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "e561d65e-4e49-4fb2-8f0e-5363f067ac7b",
+      "name": "telefone_existe1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1220,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "seconds"
+      },
+      "id": "5c11ff13-7459-478b-afd0-e83234e93801",
+      "name": "espera_30s1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        540
+      ],
+      "webhookId": "0d29cecb-350c-449b-b7f7-28fe71a30144"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "columnToMatchOn": "TELEFONE",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "DIA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2) }}"
+            },
+            {
+              "column": "MÊS",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "column": "ANO",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(6) }}"
+            },
+            {
+              "column": "DATA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "HORA",
+              "fieldValue": "={{ $now.toFormat('HH:mm') }}"
+            },
+            {
+              "column": "NOME",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "column": "EMAIL",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "column": "INSTAGRAM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            },
+            {
+              "column": "ETAPA FUNIL",
+              "fieldValue": "PREENCHEU FORMULÁRIO"
+            },
+            {
+              "column": "QUALIFICAÇÃO",
+              "fieldValue": "QUALIFICADO"
+            },
+            {
+              "column": "TEM RECEPCIONISTA P0",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}"
+            },
+            {
+              "column": "TAMANHO DA EQUIPE P1",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}"
+            },
+            {
+              "column": "FATURAMENTO P2",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}"
+            },
+            {
+              "column": "ETAPA MONTAR SALÃO P3",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}"
+            },
+            {
+              "column": "OBJETIVO ESTE ANO P4",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}"
+            },
+            {
+              "column": "IMPEDE OBJETIVO P5",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}"
+            },
+            {
+              "column": "PORQUE VOCÊ P6",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}"
+            },
+            {
+              "column": "ACOMPANHAMENTO ÚNICO P7",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}"
+            },
+            {
+              "column": "NÃO É MOMENTO IDEAL P8",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta8\"] }}"
+            },
+            {
+              "column": "MOMENTO ATUAL P9",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}"
+            },
+            {
+              "column": "ID LEAD AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_activecampaign\"] }}"
+            },
+            {
+              "column": "ID DEAL AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_deal_activecampaign\"] }}"
+            },
+            {
+              "column": "ID BOT CONVERSA",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
+            },
+            {
+              "column": "UTM_SOURCE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "column": "UTM_CAMPAIGN",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "column": "UTM_TERM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "column": "UTM_MEDIUM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "column": "UTM_CONTENT",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "column": "TIPO DO EBOOK P10",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "def0a72a-6375-4f25-9767-fc3237e05f3a",
+      "name": "cria/atualiza_pelo_telefone1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1440,
+        360
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "columnToMatchOn": "EMAIL",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "DIA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2) }}"
+            },
+            {
+              "column": "MÊS",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "column": "ANO",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(6) }}"
+            },
+            {
+              "column": "DATA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "HORA",
+              "fieldValue": "={{ $now.toFormat('HH:mm') }}"
+            },
+            {
+              "column": "NOME",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "column": "TELEFONE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "INSTAGRAM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            },
+            {
+              "column": "ETAPA FUNIL",
+              "fieldValue": "PREENCHEU FORMULÁRIO"
+            },
+            {
+              "column": "QUALIFICAÇÃO",
+              "fieldValue": "QUALIFICADO"
+            },
+            {
+              "column": "TEM RECEPCIONISTA P0",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}"
+            },
+            {
+              "column": "TAMANHO DA EQUIPE P1",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}"
+            },
+            {
+              "column": "FATURAMENTO P2",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}"
+            },
+            {
+              "column": "ETAPA MONTAR SALÃO P3",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}"
+            },
+            {
+              "column": "OBJETIVO ESTE ANO P4",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}"
+            },
+            {
+              "column": "IMPEDE OBJETIVO P5",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}"
+            },
+            {
+              "column": "PORQUE VOCÊ P6",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}"
+            },
+            {
+              "column": "ACOMPANHAMENTO ÚNICO P7",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}"
+            },
+            {
+              "column": "NÃO É MOMENTO IDEAL P8",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta8\"] }}"
+            },
+            {
+              "column": "MOMENTO ATUAL P9",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}"
+            },
+            {
+              "column": "ID LEAD AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_activecampaign\"] }}"
+            },
+            {
+              "column": "ID DEAL AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_deal_activecampaign\"] }}"
+            },
+            {
+              "column": "ID BOT CONVERSA",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
+            },
+            {
+              "column": "UTM_SOURCE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "column": "UTM_CAMPAIGN",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "column": "UTM_TERM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "column": "UTM_MEDIUM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "column": "UTM_CONTENT",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "column": "TIPO DO EBOOK P10",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d5e36c3b-4d13-4a34-a03d-1246f21aedbe",
+      "name": "cria/atualiza_pelo_email2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1420,
+        560
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "columnToMatchOn": "EMAIL",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "DIA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(0,2) }}"
+            },
+            {
+              "column": "MÊS",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(3,5) }}"
+            },
+            {
+              "column": "ANO",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').slice(6) }}"
+            },
+            {
+              "column": "DATA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "HORA",
+              "fieldValue": "={{ $now.toFormat('HH:mm') }}"
+            },
+            {
+              "column": "NOME",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "column": "TELEFONE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "INSTAGRAM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            },
+            {
+              "column": "ETAPA FUNIL",
+              "fieldValue": "PREENCHEU FORMULÁRIO"
+            },
+            {
+              "column": "QUALIFICAÇÃO",
+              "fieldValue": "QUALIFICADO"
+            },
+            {
+              "column": "TEM RECEPCIONISTA P0",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}"
+            },
+            {
+              "column": "TAMANHO DA EQUIPE P1",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}"
+            },
+            {
+              "column": "FATURAMENTO P2",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}"
+            },
+            {
+              "column": "ETAPA MONTAR SALÃO P3",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}"
+            },
+            {
+              "column": "OBJETIVO ESTE ANO P4",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}"
+            },
+            {
+              "column": "IMPEDE OBJETIVO P5",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}"
+            },
+            {
+              "column": "PORQUE VOCÊ P6",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}"
+            },
+            {
+              "column": "ACOMPANHAMENTO ÚNICO P7",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}"
+            },
+            {
+              "column": "NÃO É MOMENTO IDEAL P8",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta8\"] }}"
+            },
+            {
+              "column": "MOMENTO ATUAL P9",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}"
+            },
+            {
+              "column": "ID LEAD AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_activecampaign\"] }}"
+            },
+            {
+              "column": "ID DEAL AC",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_deal_activecampaign\"] }}"
+            },
+            {
+              "column": "ID BOT CONVERSA",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
+            },
+            {
+              "column": "UTM_SOURCE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "column": "UTM_CAMPAIGN",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "column": "UTM_TERM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "column": "UTM_MEDIUM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "column": "UTM_CONTENT",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "column": "TIPO DO EBOOK P10",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "550b436b-d7eb-4f93-bdb0-ba3b39680480",
+      "name": "cria/atualiza_pelo_email3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        880,
+        360
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "seconds"
+      },
+      "id": "eb6c52c1-da85-4d38-9c03-b599005d2047",
+      "name": "espera_1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        480,
+        540
+      ],
+      "webhookId": "17364817-0fb8-431f-af7a-e4a3cd8c11f1"
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "seconds"
+      },
+      "id": "94daff8e-bae8-4dfe-b88a-56ec37f89209",
+      "name": "qualificado",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        100,
+        500
+      ],
+      "webhookId": "17364817-0fb8-431f-af7a-e4a3cd8c11f1"
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "seconds"
+      },
+      "id": "029a350e-6640-4da9-b21e-e68839354c55",
+      "name": "espera_5s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        440,
+        40
+      ],
+      "webhookId": "17364817-0fb8-431f-af7a-e4a3cd8c11f1"
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "seconds"
+      },
+      "id": "b9973e0d-8667-4cf5-97cf-44eeaa8c5076",
+      "name": "espera_5s1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        960,
+        40
+      ],
+      "webhookId": "0d29cecb-350c-449b-b7f7-28fe71a30144"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "columnToMatchOn": "EMAIL",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "DIA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').split('/')[0] }}"
+            },
+            {
+              "column": "MÊS",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').split('/')[1] }}"
+            },
+            {
+              "column": "ANO",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').split('/')[2] }}"
+            },
+            {
+              "column": "DATA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "HORA",
+              "fieldValue": "={{ $now.toFormat('HH:mm') }}"
+            },
+            {
+              "column": "NOME",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "column": "TELEFONE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "INSTAGRAM"
+            },
+            {
+              "column": "QUALIFICAÇÃO"
+            },
+            {
+              "column": "ETAPA FUNIL",
+              "fieldValue": "NÃO APLICOU"
+            },
+            {
+              "column": "ID LEAD AC",
+              "fieldValue": "={{ $node[\"cria_lead_active\"].json[\"id\"] }}"
+            },
+            {
+              "column": "ID DEAL AC",
+              "fieldValue": "={{ $node[\"busca_deal\"].runIndex >= 0 ? $node[\"busca_deal\"].json[\"deal\"][\"id\"] : ($node[\"cria_deal1\"].runIndex >= 0 ? $node[\"cria_deal1\"].json[\"deal\"][\"id\"] : ($node[\"cria_deal\"].runIndex >= 0 ? $node[\"cria_deal\"].json[\"deal\"][\"id\"] : \"\" )) }}"
+            },
+            {
+              "column": "ID BOT CONVERSA",
+              "fieldValue": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
+            },
+            {
+              "column": "UTM_SOURCE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "column": "UTM_CAMPAIGN",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "column": "UTM_TERM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "column": "UTM_MEDIUM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "column": "UTM_CONTENT",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2a7073f1-909c-42de-8a39-c8a9b2c9a072",
+      "name": "cria/atualiza_pelo_email4",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        800,
+        -140
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "columnToMatchOn": "TELEFONE",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "DIA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').split('/')[0] }}"
+            },
+            {
+              "column": "MÊS",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').split('/')[1] }}"
+            },
+            {
+              "column": "ANO",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').split('/')[2] }}"
+            },
+            {
+              "column": "DATA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "HORA",
+              "fieldValue": "={{ $now.toFormat('HH:mm') }}"
+            },
+            {
+              "column": "NOME",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "column": "EMAIL",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "column": "INSTAGRAM"
+            },
+            {
+              "column": "QUALIFICAÇÃO"
+            },
+            {
+              "column": "ETAPA FUNIL",
+              "fieldValue": "NÃO APLICOU"
+            },
+            {
+              "column": "ID LEAD AC",
+              "fieldValue": "={{ $node[\"cria_lead_active\"].json[\"id\"] }}"
+            },
+            {
+              "column": "ID DEAL AC",
+              "fieldValue": "={{ $node[\"busca_deal\"].runIndex >= 0 ? $node[\"busca_deal\"].json[\"deal\"][\"id\"] : ($node[\"cria_deal1\"].runIndex >= 0 ? $node[\"cria_deal1\"].json[\"deal\"][\"id\"] : ($node[\"cria_deal\"].runIndex >= 0 ? $node[\"cria_deal\"].json[\"deal\"][\"id\"] : \"\" )) }}"
+            },
+            {
+              "column": "ID BOT CONVERSA",
+              "fieldValue": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
+            },
+            {
+              "column": "UTM_SOURCE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "column": "UTM_CAMPAIGN",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "column": "UTM_TERM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "column": "UTM_MEDIUM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "column": "UTM_CONTENT",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a5a097bf-3be4-4655-8301-2907e7de7bca",
+      "name": "cria/atualiza_pelo_email5",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1320,
+        -140
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "columnToMatchOn": "EMAIL",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "DIA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').split('/')[0] }}"
+            },
+            {
+              "column": "MÊS",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').split('/')[1] }}"
+            },
+            {
+              "column": "ANO",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy').split('/')[2] }}"
+            },
+            {
+              "column": "DATA",
+              "fieldValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "HORA",
+              "fieldValue": "={{ $now.toFormat('HH:mm') }}"
+            },
+            {
+              "column": "NOME",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "column": "TELEFONE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "INSTAGRAM"
+            },
+            {
+              "column": "QUALIFICAÇÃO"
+            },
+            {
+              "column": "ETAPA FUNIL",
+              "fieldValue": "NÃO APLICOU"
+            },
+            {
+              "column": "ID LEAD AC",
+              "fieldValue": "={{ $node[\"cria_lead_active\"].json[\"id\"] }}"
+            },
+            {
+              "column": "ID DEAL AC",
+              "fieldValue": "={{ $node[\"busca_deal\"].runIndex >= 0 ? $node[\"busca_deal\"].json[\"deal\"][\"id\"] : ($node[\"cria_deal1\"].runIndex >= 0 ? $node[\"cria_deal1\"].json[\"deal\"][\"id\"] : ($node[\"cria_deal\"].runIndex >= 0 ? $node[\"cria_deal\"].json[\"deal\"][\"id\"] : \"\" )) }}"
+            },
+            {
+              "column": "ID BOT CONVERSA",
+              "fieldValue": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
+            },
+            {
+              "column": "UTM_SOURCE",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "column": "UTM_CAMPAIGN",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "column": "UTM_TERM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "column": "UTM_MEDIUM",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "column": "UTM_CONTENT",
+              "fieldValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "531bf05a-cb34-4a21-835e-07a6ec571c33",
+      "name": "cria/atualiza_pelo_email6",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1320,
+        40
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"busca_lead_pelo_email2\"].json[\"EMAIL\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "55da8b65-e515-46da-b6e3-01b9cb9c13cc",
+      "name": "existe_email2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        600,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "EMAIL",
+              "lookupValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "23502645-b364-405f-b1d2-3e2657e824e8",
+      "name": "busca_lead_pelo_email2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        260,
+        40
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 872154734,
+          "mode": "list",
+          "cachedResultName": "Aplicações 2.0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=872154734"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "TELEFONE",
+              "lookupValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ef498fa7-a87d-4739-9ee2-6c5846f7cf34",
+      "name": "busca_lead_pelo_telefone2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        800,
+        40
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"busca_lead_pelo_telefone2\"].json[\"TELEFONE\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "f2a8c883-18ad-4334-9507-5132aa87784a",
+      "name": "telefone_existe2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "seconds"
+      },
+      "id": "269a46eb-a2ce-46e5-9995-d6f6b6c491a6",
+      "name": "não_aplicou",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        80,
+        40
+      ],
+      "webhookId": "17364817-0fb8-431f-af7a-e4a3cd8c11f1"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-04-04T14:39:21.635Z",
+  "versionId": "f4485463-cb77-40a1-9060-3ed1a64d202d"
+}
