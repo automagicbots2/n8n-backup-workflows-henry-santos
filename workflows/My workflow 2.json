@@ -1,0 +1,276 @@
+{
+  "active": false,
+  "connections": {
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "atualiza_campos_deal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-04-17T13:09:35.506Z",
+  "id": "J4OJG7L8yvRyeBZB",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "queue": "Não Agendamentos - Sessão - Parte 2",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": "={{ true }}",
+          "parallelMessages": 3
+        }
+      },
+      "id": "73f37532-7a57-4d11-a509-7f6aa8eeffb7",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        540,
+        260
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://{{ $node[\"chega_da_fila\"].json[\"content\"][\"url_api_activecampaign_crm\"] }}.api-us1.com/api/3/deals/{{ $node[\"busca_deal\"].json[\"deal\"][\"id\"] }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_instagram_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['Instagram']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_id_bot_conversa_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['cadastrar_contato'].json['id']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta0_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta0']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta1_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta1']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta2_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta2']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta3_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta3']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta4_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta4']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta5_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta5']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta6_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta6']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta7_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta7']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta8_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta8']}}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_source_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_campaign_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_content_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_medium_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_term_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta9_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_fun_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta10_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_var_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n      }\n    ]\n  }\n}",
+        "options": {}
+      },
+      "id": "035d878f-b99c-4dc3-874e-75587a8c8691",
+      "name": "atualiza_campos_deal10",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4420,
+        800
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://{{ $node[\"chega_da_fila\"].json[\"content\"][\"url_api_activecampaign_crm\"] }}.api-us1.com/api/3/deals/{{ $node[\"busca_deal\"].json[\"deal\"][\"id\"] }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_instagram_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['Instagram']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_id_bot_conversa_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['cadastrar_contato'].json['id']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta0_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta0']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta1_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta1']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta2_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta2']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta3_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta3']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta4_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta4']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta5_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta5']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta6_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta6']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta7_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta7']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta8_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta8']}}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_source_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_campaign_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_content_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_medium_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_term_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta9_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_fun_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta10_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_var_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n      }\n    ]\n  }\n}",
+        "options": {}
+      },
+      "id": "c378f02c-b207-46ce-a668-4f4944ac40ec",
+      "name": "atualiza_campos_deal",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        860,
+        260
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "chega_da_fila": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-9XaPfpHFFPZeSR-K_vM-Hg",
+            "deliveryTag": 1,
+            "redelivered": false,
+            "exchange": "",
+            "routingKey": "Não Agendamentos - Sessão - Parte 2"
+          },
+          "properties": {
+            "headers": {
+              "x-delivery-count": 26366
+            }
+          },
+          "content": {
+            "id_fluxo2_nao_agendou_10_min_desqualificados": 2830145,
+            "Nome do Cliente": "Michelle",
+            "E-mail do Cliente": "michellecbatista@hotmail.com",
+            "Telefone do Cliente - Formato BC": "+553484435808",
+            "Telefone do Cliente - Formato Z-API": "553484435808",
+            "Instagram": "Michelle cabeleireiras",
+            "pergunta0": "SIM",
+            "pergunta1": "",
+            "pergunta2": "",
+            "pergunta3": "",
+            "pergunta4": "",
+            "pergunta5": "",
+            "pergunta6": "",
+            "pergunta7": "0 a R$300",
+            "pergunta8": "",
+            "pergunta9": "Não estou conseguindo pagar as contas e com dívidas maiores",
+            "utm_content": "Instagram_Feed",
+            "utm_source": "meta",
+            "utm_campaign": "meta-ads-f30-est43-hot",
+            "utm_medium": "01 - IG - [ENGAJOU] Envolvimento_60d",
+            "utm_term": "meta-ads-f30-est43-hot",
+            "data_resposta_type": "16/04/2024 21:15",
+            "data_ultima_quinzena": "2024-04-01",
+            "id_fluxo_nao_agendou_10_min": "2416169",
+            "id_fluxo_nao_agendou_10_min_desqualificados": "2829998",
+            "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
+            "id_campo_id_banco_de_dados_bot_conversa": "1351140",
+            "id_campo_utm_source_bot_conversa": "1123113",
+            "id_campo_utm_campaign_bot_conversa": "1123114",
+            "id_campo_utm_term_bot_conversa": "1123115",
+            "id_campo_utm_medium_bot_conversa": "1123116",
+            "id_campo_utm_content_bot_conversa": "1123117",
+            "id_campo_utm_fun_bot_conversa": "1353849",
+            "id_campo_utm_var_bot_conversa": "1353848",
+            "id_campo_instagram_bot_conversa": "1123096",
+            "id_campo_emailse_bot_conversa": "1115994",
+            "id_campo_data_resposta_type_bot_conversa": "",
+            "id_tag_desqualificado_bot_conversa": "4935232",
+            "id_tag_qualificado_bot_conversa": "4891828",
+            "id_campo_iddealac_bot_conversa": "1354465",
+            "id_campo_idleadac_bot_conversa": "1354600",
+            "id_campo_pergunta0_bot_conversa": "1123099",
+            "id_campo_pergunta1_bot_conversa": "1123101",
+            "id_campo_pergunta2_bot_conversa": "1123100",
+            "id_campo_pergunta3_bot_conversa": "1860276",
+            "id_campo_pergunta4_bot_conversa": "1123102",
+            "id_campo_pergunta5_bot_conversa": "1860278",
+            "id_campo_pergunta6_bot_conversa": "1359514",
+            "id_campo_pergunta7_bot_conversa": "1860280",
+            "id_campo_pergunta8_bot_conversa": "1860281",
+            "id_campo_pergunta9_bot_conversa": "2056601",
+            "id_campo_pergunta10_bot_conversa": "2193610",
+            "id_campo_pergunta11_bot_conversa": "",
+            "id_campo_pergunta12_bot_conversa": "",
+            "id_campo_pergunta13_bot_conversa": "",
+            "id_campo_pergunta14_bot_conversa": "",
+            "id_campo_pergunta15_bot_conversa": "",
+            "id_campo_pergunta16_bot_conversa": "",
+            "id_campo_pergunta17_bot_conversa": "",
+            "id_campo_pergunta18_bot_conversa": "",
+            "id_campo_pergunta19_bot_conversa": "",
+            "id_campo_pergunta20_bot_conversa": "",
+            "id_campo_data_da_aplicacao_bot_conversa": "",
+            "id_ending_typeform": "3768d569-5785-4af7-a771-f64b91a4c800",
+            "id_pipeline_downsell_produto_1_crm": "10",
+            "valor_produto_downsell_em_centavos_produto_1_crm": "49700",
+            "id_pipeline_downsell_produto_2_crm": "9",
+            "valor_produto_downsell_em_centavos_produto_2_crm": "99700",
+            "id_pipeline_crm": "3",
+            "valor_produto_principal_em_centavos_crm": "700000",
+            "url_api_activecampaign_crm": "gestaodesaloes67530",
+            "id_sdr_crm": "6",
+            "funil": "sessao estrategica",
+            "variacao_do_funil": "v1",
+            "id_stage_preencheu_aplicacao_crm": "18",
+            "id_stage_desqualificado_produto_1_crm": "56",
+            "id_stage_desqualificadoproduto_2_crm": "53",
+            "id_campo_id_banco_de_dados_crm": "257",
+            "id_campo_id_bot_conversa_crm": "163",
+            "Api-Token": "d0aa5c89796c6403850c539dbd5bcb58ffc0f8c7ff28b9fc6be0c3b54a540a15403f99b1",
+            "id_campo_instagram_crm": "314",
+            "id_campo_pergunta0_crm": "86",
+            "id_campo_pergunta1_crm": "87",
+            "id_campo_pergunta2_crm": "88",
+            "id_campo_pergunta3_crm": "311",
+            "id_campo_pergunta4_crm": "313",
+            "id_campo_pergunta5_crm": "90",
+            "id_campo_pergunta6_crm": "92",
+            "id_campo_pergunta7_crm": "98",
+            "id_campo_pergunta8_crm": "99",
+            "id_campo_pergunta9_crm": "315",
+            "id_campo_pergunta10_crm": "318",
+            "id_campo_pergunta11_crm": "",
+            "id_campo_pergunta12_crm": "",
+            "id_campo_pergunta13_crm": "",
+            "id_campo_pergunta14_crm": "",
+            "id_campo_pergunta15_crm": "",
+            "id_campo_pergunta16_crm": "",
+            "id_campo_pergunta17_crm": "",
+            "id_campo_pergunta18_crm": "",
+            "id_campo_pergunta19_crm": "",
+            "id_campo_pergunta20_crm": "",
+            "id_campo_utm_source_crm": "140",
+            "id_campo_utm_campaign_crm": "141",
+            "id_campo_utm_content_crm": "143",
+            "id_campo_utm_medium_crm": "142",
+            "id_campo_utm_term_crm": "144",
+            "id_campo_utm_fun_crm": "263",
+            "id_campo_utm_var_crm": "264",
+            "id_tag_desqualificado_crm": "159",
+            "id_tag_qualificado_crm": "158",
+            "id_tag_aplicou_crm": "99",
+            "id_campo_ddd_crm": "185",
+            "id_campo_id_banco_deal_crm": "42",
+            "id_campo_id_bot_conversa_deal_crm": "53",
+            "id_campo_instagram_deal_crm": "21",
+            "id_campo_pergunta0_deal_crm": "20",
+            "id_campo_pergunta1_deal_crm": "78",
+            "id_campo_pergunta2_deal_crm": "18",
+            "id_campo_pergunta3_deal_crm": "79",
+            "id_campo_pergunta4_deal_crm": "17",
+            "id_campo_pergunta5_deal_crm": "16",
+            "id_campo_pergunta6_deal_crm": "13",
+            "id_campo_pergunta7_deal_crm": "80",
+            "id_campo_pergunta8_deal_crm": "50",
+            "id_campo_utm_source_deal_crm": "6",
+            "id_campo_utm_campaign_deal_crm": "5",
+            "id_campo_utm_content_deal_crm": "3",
+            "id_campo_utm_medium_deal_crm": "4",
+            "id_campo_utm_term_deal_crm": "2",
+            "id_campo_utm_var_deal_crm": "43",
+            "id_campo_utm_fun_deal_crm": "44",
+            "id_campo_pergunta9_deal_crm": "81",
+            "id_pipeline_desqualificado_crm": "14",
+            "id_stage_desqualificado_crm": "102",
+            "dia_da_semana_se": "Terça-feira",
+            "id_campo_dia_aplicou_se": "2113710",
+            "id_campo_pergunta10_deal_crm": "82"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-04-17T13:12:01.660Z",
+  "versionId": "849480d1-07d1-4f45-a36c-db4cbc13f15f"
+}
