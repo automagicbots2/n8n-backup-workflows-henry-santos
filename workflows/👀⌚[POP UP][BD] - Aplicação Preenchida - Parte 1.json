@@ -1,0 +1,2403 @@
+{
+  "active": true,
+  "connections": {
+    "formata_dados": {
+      "main": [
+        [
+          {
+            "node": "dados_do_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Listar Campos Personalizados de Deals da Conta3": {
+      "main": [
+        [
+          {
+            "node": "Listar Pipelines e Status da Conta3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Listar Pipelines e Status da Conta3": {
+      "main": [
+        [
+          {
+            "node": "Consulta Users da Conta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Listar Campos Personalizados de Deals da Conta3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_dados1": {
+      "main": [
+        [
+          {
+            "node": "dados_do_lead1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_dados2": {
+      "main": [
+        [
+          {
+            "node": "dados_do_lead2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preencheu_pre_forms3": {
+      "main": [
+        [
+          {
+            "node": "formata_dados2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados_do_lead1": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados_do_lead2": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preencheu_pre_forms2": {
+      "main": [
+        [
+          {
+            "node": "formata_dados1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preencheu_pre_forms": {
+      "main": [
+        [
+          {
+            "node": "formata_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_dados3": {
+      "main": [
+        [
+          {
+            "node": "dados_do_lead3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "preencheu_pre_forms_ebook": {
+      "main": [
+        [
+          {
+            "node": "formata_dados3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados_do_lead3": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_dados4": {
+      "main": [
+        [
+          {
+            "node": "dados_do_lead4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados_do_lead4": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "captura_reuniao_secreta": {
+      "main": [
+        [
+          {
+            "node": "formata_dados4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_dados5": {
+      "main": [
+        [
+          {
+            "node": "dados_do_lead5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "captura_live_semanal": {
+      "main": [
+        [
+          {
+            "node": "formata_dados5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados_do_lead5": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-03-25T19:39:26.264Z",
+  "id": "J4uZO4KvS8XoM1QG",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "👀⌚[POP UP][BD] - Aplicação Preenchida - Parte 1",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "// Extrair informações do input\nconst inputData = $node[\"preencheu_pre_forms\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = $node[\"preencheu_pre_forms\"].json[\"body\"][\"form_fields[utm_content]\"] || '';\nconst utmSource = $node[\"preencheu_pre_forms\"].json[\"body\"][\"form_fields[utm_source]\"] || '';\nconst utmCampaign = $node[\"preencheu_pre_forms\"].json[\"body\"][\"form_fields[utm_campaign]\"] || '';\nconst utmMedium = $node[\"preencheu_pre_forms\"].json[\"body\"][\"form_fields[utm_medium]\"] || '';\nconst utmTerm = $node[\"preencheu_pre_forms\"].json[\"body\"][\"form_fields[utm_term]\"] || '';\n\n// Extrair outras informações do formulário\nconst nome = $node[\"preencheu_pre_forms\"].json[\"body\"][\"form_fields[name]\"] || '';\nconst telefone = $node[\"preencheu_pre_forms\"].json[\"body\"][\"form_fields[message]\"] || '';\nconst email = $node[\"preencheu_pre_forms\"].json[\"body\"][\"form_fields[email]\"] || '';\n//const instagram = (respostas[\"Seu @ no Instagram\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  //instagram,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;\n"
+      },
+      "id": "60f8f1e0-3034-4573-a6fd-302d60d5f406",
+      "name": "formata_dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        740,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "Não Aplicou - Sessão",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "a2331585-725b-4d6b-95e5-6c0cf7ee725d",
+      "name": "entra_na_fila",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        1400
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"formata_dados\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            },
+            {
+              "name": "Data do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy')}}"
+            },
+            {
+              "name": "Hora do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy HH:mm').split(' ')[1]}}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_content\"] }}"
+            },
+            {
+              "name": "id_campo_emailse",
+              "value": "1115994"
+            },
+            {
+              "name": "id_fluxo_nap01",
+              "value": "1895415"
+            },
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "funil",
+              "value": "sessao_estrategica"
+            },
+            {
+              "name": "variacao_do_funil",
+              "value": "v1"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "1123117"
+            },
+            {
+              "name": "id_campo_utm_fun_bot_conversa",
+              "value": "1353849"
+            },
+            {
+              "name": "id_campo_utm_var_bot_conversa",
+              "value": "1353848"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "1123116"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "1123115"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "1123114"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "1123113"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "1351140"
+            },
+            {
+              "name": "data_ultima_quinzena",
+              "value": "={{ $node[\"formata_dados\"].json[\"dataFormatada\"] }}"
+            },
+            {
+              "name": "id_fluxo_notifica_sdr_pop_up"
+            },
+            {
+              "name": "Instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            },
+            {
+              "name": "id_campo_instagram_bot_conversa",
+              "value": "1123096"
+            },
+            {
+              "name": "id_campo_emailse_bot_conversa",
+              "value": "1115994"
+            },
+            {
+              "name": "url_api_activecampaign_crm",
+              "value": "gestaodesaloes67530"
+            },
+            {
+              "name": "valor_produto_principal_em_centavos_crm",
+              "value": "700000"
+            },
+            {
+              "name": "id_pipeline_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_stage_preencheu_aplicacao_crm",
+              "value": "49"
+            },
+            {
+              "name": "id_sdr_crm",
+              "value": "7"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_crm",
+              "value": "257"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_crm",
+              "value": "163"
+            },
+            {
+              "name": "id_campo_instagram_crm",
+              "value": "314"
+            },
+            {
+              "name": "id_campo_utm_source_crm",
+              "value": "140"
+            },
+            {
+              "name": "id_campo_utm_campaign_crm",
+              "value": "141"
+            },
+            {
+              "name": "id_campo_utm_content_crm",
+              "value": "143"
+            },
+            {
+              "name": "id_campo_utm_medium_crm",
+              "value": "142"
+            },
+            {
+              "name": "id_campo_utm_term_crm",
+              "value": "144"
+            },
+            {
+              "name": "id_campo_utm_fun_crm",
+              "value": "263"
+            },
+            {
+              "name": "id_campo_utm_var_crm",
+              "value": "264"
+            },
+            {
+              "name": "id_tag_nap_crm",
+              "value": "110"
+            },
+            {
+              "name": "id_campo_ddd_crm",
+              "value": "185"
+            },
+            {
+              "name": "id_campo_id_banco_deal_crm",
+              "value": "42"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_deal_crm",
+              "value": "53"
+            },
+            {
+              "name": "id_campo_instagram_deal_crm",
+              "value": "21"
+            },
+            {
+              "name": "id_campo_utm_source_deal_crm",
+              "value": "6"
+            },
+            {
+              "name": "id_campo_utm_campaign_deal_crm",
+              "value": "5"
+            },
+            {
+              "name": "id_campo_utm_content_deal_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_campo_utm_medium_deal_crm",
+              "value": "4"
+            },
+            {
+              "name": "id_campo_utm_term_deal_crm",
+              "value": "2"
+            },
+            {
+              "name": "id_campo_utm_var_deal_crm",
+              "value": "43"
+            },
+            {
+              "name": "id_campo_utm_fun_deal_crm",
+              "value": "44"
+            },
+            {
+              "name": "id_campo_iddeal_bot_conversa_crm",
+              "value": "1354465"
+            },
+            {
+              "name": "id_campo_idlead_bot_conversa_crm",
+              "value": "1354600"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "08677cae-5923-4216-a7c3-84b0c9dea20d",
+      "name": "dados_do_lead",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        960,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Para consulta\n\nUtilize estes Nodes para Consultar o ID dos Campos do Deal e o ID das Pipelines e Stages no ActiveCampaign",
+        "height": 494.4652796495957,
+        "width": 933.7183320937115
+      },
+      "id": "c31a29c5-5d89-4648-8162-6494049b6fd5",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://{{ $node[\"Set\"].json[\"url_api_activecampaign\"] }}.api-us1.com/api/3/dealCustomFieldMeta",
+        "options": {},
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $node[\"Set\"].json[\"Api-Token\"] }}"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        }
+      },
+      "name": "Listar Campos Personalizados de Deals da Conta3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        740,
+        640
+      ],
+      "id": "10e0e2d9-0f57-488c-ad87-96e8e807a035"
+    },
+    {
+      "parameters": {
+        "url": "=https://{{ $node[\"Set\"].json[\"url_api_activecampaign\"] }}.api-us1.com/api/3/dealGroups",
+        "options": {},
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $node[\"Set\"].json[\"Api-Token\"] }}"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        }
+      },
+      "name": "Listar Pipelines e Status da Conta3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        960,
+        640
+      ],
+      "id": "a66e984f-4df1-4b07-aa36-323d86d4cc17"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "Api-Token",
+              "value": "d0aa5c89796c6403850c539dbd5bcb58ffc0f8c7ff28b9fc6be0c3b54a540a15403f99b1"
+            },
+            {
+              "name": "url_api_activecampaign",
+              "value": "gestaodesaloes67530"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6ba69532-928b-4387-8a5a-d92aba0d4f4c",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        540,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://{{ $node[\"Set\"].json[\"url_api_activecampaign\"] }}.api-us1.com/api/3/users",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $node[\"Set\"].json[\"Api-Token\"] }}"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bd289721-798e-4555-aa82-b0978e870767",
+      "name": "Consulta Users da Conta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1180,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrair informações do input\nconst inputData = $node[\"preencheu_pre_forms2\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = $node[\"preencheu_pre_forms2\"].json[\"body\"][\"utm_content\"] || '';\nconst utmSource = $node[\"preencheu_pre_forms2\"].json[\"body\"][\"utm_source\"] || '';\nconst utmCampaign = $node[\"preencheu_pre_forms2\"].json[\"body\"][\"utm_campaign\"] || '';\nconst utmMedium = $node[\"preencheu_pre_forms2\"].json[\"body\"][\"utm_medium\"] || '';\nconst utmTerm = $node[\"preencheu_pre_forms2\"].json[\"body\"][\"utm_term\"] || '';\n\n// Extrair outras informações do formulário\nconst nome = $node[\"preencheu_pre_forms2\"].json[\"body\"][\"Sem rótulo name\"] || '';\nconst telefone = $node[\"preencheu_pre_forms2\"].json[\"body\"][\"Qual é o seu WhatsApp com DDD?\"] || '';\nconst email = $node[\"preencheu_pre_forms2\"].json[\"body\"][\"Sem rótulo email\"] || '';\n//const instagram = (respostas[\"Seu @ no Instagram\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  //instagram,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;"
+      },
+      "id": "0819b5b5-f79e-4709-88e8-3522e824bb6b",
+      "name": "formata_dados1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        740,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"formata_dados1\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"formata_dados1\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"formata_dados1\"].json[\"email\"] }}"
+            },
+            {
+              "name": "Data do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy')}}"
+            },
+            {
+              "name": "Hora do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy HH:mm').split(' ')[1]}}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados1\"].json[\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados1\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados1\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados1\"].json[\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados1\"].json[\"utm_content\"] }}"
+            },
+            {
+              "name": "id_campo_emailse",
+              "value": "1115994"
+            },
+            {
+              "name": "id_fluxo_nap01",
+              "value": "1895415"
+            },
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "funil",
+              "value": "sessao_estrategica"
+            },
+            {
+              "name": "variacao_do_funil",
+              "value": "v2"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "1123117"
+            },
+            {
+              "name": "id_campo_utm_fun_bot_conversa",
+              "value": "1353849"
+            },
+            {
+              "name": "id_campo_utm_var_bot_conversa",
+              "value": "1353848"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "1123116"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "1123115"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "1123114"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "1123113"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "1351140"
+            },
+            {
+              "name": "data_ultima_quinzena",
+              "value": "={{ $node[\"formata_dados1\"].json[\"dataFormatada\"] }}"
+            },
+            {
+              "name": "id_fluxo_notifica_sdr_pop_up"
+            },
+            {
+              "name": "Instagram",
+              "value": "={{ $node[\"formata_dados1\"].json[\"instagram\"] }}"
+            },
+            {
+              "name": "id_campo_instagram_bot_conversa",
+              "value": "1123096"
+            },
+            {
+              "name": "id_campo_emailse_bot_conversa",
+              "value": "1115994"
+            },
+            {
+              "name": "url_api_activecampaign_crm",
+              "value": "gestaodesaloes67530"
+            },
+            {
+              "name": "valor_produto_principal_em_centavos_crm",
+              "value": "700000"
+            },
+            {
+              "name": "id_pipeline_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_stage_preencheu_aplicacao_crm",
+              "value": "49"
+            },
+            {
+              "name": "id_sdr_crm",
+              "value": "7"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_crm",
+              "value": "257"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_crm",
+              "value": "163"
+            },
+            {
+              "name": "id_campo_instagram_crm",
+              "value": "314"
+            },
+            {
+              "name": "id_campo_utm_source_crm",
+              "value": "140"
+            },
+            {
+              "name": "id_campo_utm_campaign_crm",
+              "value": "141"
+            },
+            {
+              "name": "id_campo_utm_content_crm",
+              "value": "143"
+            },
+            {
+              "name": "id_campo_utm_medium_crm",
+              "value": "142"
+            },
+            {
+              "name": "id_campo_utm_term_crm",
+              "value": "144"
+            },
+            {
+              "name": "id_campo_utm_fun_crm",
+              "value": "263"
+            },
+            {
+              "name": "id_campo_utm_var_crm",
+              "value": "264"
+            },
+            {
+              "name": "id_tag_nap_crm",
+              "value": "110"
+            },
+            {
+              "name": "id_campo_ddd_crm",
+              "value": "185"
+            },
+            {
+              "name": "id_campo_id_banco_deal_crm",
+              "value": "42"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_deal_crm",
+              "value": "53"
+            },
+            {
+              "name": "id_campo_instagram_deal_crm",
+              "value": "21"
+            },
+            {
+              "name": "id_campo_utm_source_deal_crm",
+              "value": "6"
+            },
+            {
+              "name": "id_campo_utm_campaign_deal_crm",
+              "value": "5"
+            },
+            {
+              "name": "id_campo_utm_content_deal_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_campo_utm_medium_deal_crm",
+              "value": "4"
+            },
+            {
+              "name": "id_campo_utm_term_deal_crm",
+              "value": "2"
+            },
+            {
+              "name": "id_campo_utm_var_deal_crm",
+              "value": "43"
+            },
+            {
+              "name": "id_campo_utm_fun_deal_crm",
+              "value": "44"
+            },
+            {
+              "name": "id_campo_iddeal_bot_conversa_crm",
+              "value": "1354465"
+            },
+            {
+              "name": "id_campo_idlead_bot_conversa_crm",
+              "value": "1354600"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b0cc1988-a79b-49a3-addf-c532e81f2782",
+      "name": "dados_do_lead1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        960,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrair informações do input\nconst inputData = $node[\"preencheu_pre_forms3\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = $node[\"preencheu_pre_forms3\"].json[\"body\"][\"utm_content\"] || '';\nconst utmSource = $node[\"preencheu_pre_forms3\"].json[\"body\"][\"utm_source\"] || '';\nconst utmCampaign = $node[\"preencheu_pre_forms3\"].json[\"body\"][\"utm_campaign\"] || '';\nconst utmMedium = $node[\"preencheu_pre_forms3\"].json[\"body\"][\"utm_medium\"] || '';\nconst utmTerm = $node[\"preencheu_pre_forms3\"].json[\"body\"][\"utm_term\"] || '';\n\n// Extrair outras informações do formulário\nconst nome = $node[\"preencheu_pre_forms3\"].json[\"body\"][\"Sem rótulo name\"] || '';\nconst telefone = $node[\"preencheu_pre_forms3\"].json[\"body\"][\"Qual é o seu WhatsApp com DDD?\"] || '';\nconst email = $node[\"preencheu_pre_forms3\"].json[\"body\"][\"Sem rótulo email\"] || '';\n//const instagram = (respostas[\"Seu @ no Instagram\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  //instagram,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;\n"
+      },
+      "id": "3c32ff6f-05a2-4634-92f2-ed767c7eaf1a",
+      "name": "formata_dados2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        740,
+        1400
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"formata_dados2\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"formata_dados2\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"formata_dados2\"].json[\"email\"] }}"
+            },
+            {
+              "name": "Data do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy')}}"
+            },
+            {
+              "name": "Hora do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy HH:mm').split(' ')[1]}}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados2\"].json[\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados2\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados2\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados2\"].json[\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados2\"].json[\"utm_content\"] }}"
+            },
+            {
+              "name": "id_campo_emailse",
+              "value": "1115994"
+            },
+            {
+              "name": "id_fluxo_nap01",
+              "value": "1895415"
+            },
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "funil",
+              "value": "sessao_estrategica"
+            },
+            {
+              "name": "variacao_do_funil",
+              "value": "v3"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "1123117"
+            },
+            {
+              "name": "id_campo_utm_fun_bot_conversa",
+              "value": "1353849"
+            },
+            {
+              "name": "id_campo_utm_var_bot_conversa",
+              "value": "1353848"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "1123116"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "1123115"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "1123114"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "1123113"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "1351140"
+            },
+            {
+              "name": "data_ultima_quinzena",
+              "value": "={{ $node[\"formata_dados2\"].json[\"dataFormatada\"] }}"
+            },
+            {
+              "name": "id_fluxo_notifica_sdr_pop_up"
+            },
+            {
+              "name": "Instagram",
+              "value": "={{ $node[\"formata_dados2\"].json[\"instagram\"] }}"
+            },
+            {
+              "name": "id_campo_instagram_bot_conversa",
+              "value": "1123096"
+            },
+            {
+              "name": "id_campo_emailse_bot_conversa",
+              "value": "1115994"
+            },
+            {
+              "name": "url_api_activecampaign_crm",
+              "value": "gestaodesaloes67530"
+            },
+            {
+              "name": "valor_produto_principal_em_centavos_crm",
+              "value": "700000"
+            },
+            {
+              "name": "id_pipeline_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_stage_preencheu_aplicacao_crm",
+              "value": "49"
+            },
+            {
+              "name": "id_sdr_crm",
+              "value": "7"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_crm",
+              "value": "257"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_crm",
+              "value": "163"
+            },
+            {
+              "name": "id_campo_instagram_crm",
+              "value": "314"
+            },
+            {
+              "name": "id_campo_utm_source_crm",
+              "value": "140"
+            },
+            {
+              "name": "id_campo_utm_campaign_crm",
+              "value": "141"
+            },
+            {
+              "name": "id_campo_utm_content_crm",
+              "value": "143"
+            },
+            {
+              "name": "id_campo_utm_medium_crm",
+              "value": "142"
+            },
+            {
+              "name": "id_campo_utm_term_crm",
+              "value": "144"
+            },
+            {
+              "name": "id_campo_utm_fun_crm",
+              "value": "263"
+            },
+            {
+              "name": "id_campo_utm_var_crm",
+              "value": "264"
+            },
+            {
+              "name": "id_tag_nap_crm",
+              "value": "110"
+            },
+            {
+              "name": "id_campo_ddd_crm",
+              "value": "185"
+            },
+            {
+              "name": "id_campo_id_banco_deal_crm",
+              "value": "42"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_deal_crm",
+              "value": "53"
+            },
+            {
+              "name": "id_campo_instagram_deal_crm",
+              "value": "21"
+            },
+            {
+              "name": "id_campo_utm_source_deal_crm",
+              "value": "6"
+            },
+            {
+              "name": "id_campo_utm_campaign_deal_crm",
+              "value": "5"
+            },
+            {
+              "name": "id_campo_utm_content_deal_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_campo_utm_medium_deal_crm",
+              "value": "4"
+            },
+            {
+              "name": "id_campo_utm_term_deal_crm",
+              "value": "2"
+            },
+            {
+              "name": "id_campo_utm_var_deal_crm",
+              "value": "43"
+            },
+            {
+              "name": "id_campo_utm_fun_deal_crm",
+              "value": "44"
+            },
+            {
+              "name": "id_campo_iddeal_bot_conversa_crm",
+              "value": "1354465"
+            },
+            {
+              "name": "id_campo_idlead_bot_conversa_crm",
+              "value": "1354600"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ab7c5585-ab8c-46b5-82bb-95b7556b5231",
+      "name": "dados_do_lead2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        960,
+        1400
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "pop-up-se-page03-nova-hetzner-atual",
+        "options": {}
+      },
+      "id": "87ea6e57-84e4-47ae-96be-5a26f138f4f2",
+      "name": "preencheu_pre_forms3",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        540,
+        1400
+      ],
+      "webhookId": "b9467ba7-123c-4619-84a8-95c3e6c5808f"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "pop-up-se-page-02-hetzner-atual",
+        "options": {}
+      },
+      "id": "ca1fc4ae-d9bb-4edf-adcb-d9eb49b06249",
+      "name": "preencheu_pre_forms2",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        540,
+        1240
+      ],
+      "webhookId": "80364f39-fdcf-49bb-8268-0aad9dbdd379"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "pageum",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "id": "e14c49e1-cc42-402f-89bb-e7eec6dbabef",
+      "name": "preencheu_pre_forms",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        540,
+        1080
+      ],
+      "webhookId": "b9467ba7-123c-4619-84a8-95c3e6c5808f"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrair informações do input\nconst inputData = $node[\"preencheu_pre_forms_ebook\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = $node[\"preencheu_pre_forms_ebook\"].json[\"body\"][\"utm_content\"] || '';\nconst utmSource = $node[\"preencheu_pre_forms_ebook\"].json[\"body\"][\"utm_source\"] || '';\nconst utmCampaign = $node[\"preencheu_pre_forms_ebook\"].json[\"body\"][\"utm_campaign\"] || '';\nconst utmMedium = $node[\"preencheu_pre_forms_ebook\"].json[\"body\"][\"utm_medium\"] || '';\nconst utmTerm = $node[\"preencheu_pre_forms_ebook\"].json[\"body\"][\"utm_term\"] || '';\n\nconst form_name = $node[\"preencheu_pre_forms_ebook\"].json[\"body\"][\"form_name\"] || '';\n\n// Extrair outras informações do formulário\nconst nome = $node[\"preencheu_pre_forms_ebook\"].json[\"body\"][\"Nome\"] || '';\nconst telefone = $node[\"preencheu_pre_forms_ebook\"].json[\"body\"][\"DDD + WhatsApp\"] || '';\nconst email = $node[\"preencheu_pre_forms_ebook\"].json[\"body\"][\"E-mail\"] || '';\n//const instagram = (respostas[\"Seu @ no Instagram\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\nconst pre_qualificacao = $node[\"preencheu_pre_forms_ebook\"].json[\"body\"][\"Quantos profissionais você tem na equipe do salão?\"] || '';\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  //instagram,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  formulario: form_name,\n  pre_qualificacao: pre_qualificacao,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;\n"
+      },
+      "id": "22164672-4eea-4cb8-8974-2e6c7f13b4b4",
+      "name": "formata_dados3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        740,
+        1560
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"formata_dados3\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"formata_dados3\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"formata_dados3\"].json[\"email\"] }}"
+            },
+            {
+              "name": "Data do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy')}}"
+            },
+            {
+              "name": "Hora do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy HH:mm').split(' ')[1]}}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados3\"].json[\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados3\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados3\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados3\"].json[\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados3\"].json[\"utm_content\"] }}"
+            },
+            {
+              "name": "id_campo_emailse",
+              "value": "1115994"
+            },
+            {
+              "name": "id_fluxo_nap01",
+              "value": "1895415"
+            },
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "funil",
+              "value": "sessao_estrategica"
+            },
+            {
+              "name": "variacao_do_funil",
+              "value": "ebook"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "1123117"
+            },
+            {
+              "name": "id_campo_utm_fun_bot_conversa",
+              "value": "1353849"
+            },
+            {
+              "name": "id_campo_utm_var_bot_conversa",
+              "value": "1353848"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "1123116"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "1123115"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "1123114"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "1123113"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "1351140"
+            },
+            {
+              "name": "data_ultima_quinzena",
+              "value": "={{ $node[\"formata_dados3\"].json[\"dataFormatada\"] }}"
+            },
+            {
+              "name": "id_fluxo_notifica_sdr_pop_up"
+            },
+            {
+              "name": "Instagram",
+              "value": "={{ $node[\"formata_dados3\"].json[\"instagram\"] }}"
+            },
+            {
+              "name": "id_campo_instagram_bot_conversa",
+              "value": "1123096"
+            },
+            {
+              "name": "id_campo_emailse_bot_conversa",
+              "value": "1115994"
+            },
+            {
+              "name": "url_api_activecampaign_crm",
+              "value": "gestaodesaloes67530"
+            },
+            {
+              "name": "valor_produto_principal_em_centavos_crm",
+              "value": "700000"
+            },
+            {
+              "name": "id_pipeline_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_stage_preencheu_aplicacao_crm",
+              "value": "49"
+            },
+            {
+              "name": "id_sdr_crm",
+              "value": "7"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_crm",
+              "value": "257"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_crm",
+              "value": "163"
+            },
+            {
+              "name": "id_campo_instagram_crm",
+              "value": "314"
+            },
+            {
+              "name": "id_campo_utm_source_crm",
+              "value": "140"
+            },
+            {
+              "name": "id_campo_utm_campaign_crm",
+              "value": "141"
+            },
+            {
+              "name": "id_campo_utm_content_crm",
+              "value": "143"
+            },
+            {
+              "name": "id_campo_utm_medium_crm",
+              "value": "142"
+            },
+            {
+              "name": "id_campo_utm_term_crm",
+              "value": "144"
+            },
+            {
+              "name": "id_campo_utm_fun_crm",
+              "value": "263"
+            },
+            {
+              "name": "id_campo_utm_var_crm",
+              "value": "264"
+            },
+            {
+              "name": "id_tag_nap_crm",
+              "value": "110"
+            },
+            {
+              "name": "id_campo_ddd_crm",
+              "value": "185"
+            },
+            {
+              "name": "id_campo_id_banco_deal_crm",
+              "value": "42"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_deal_crm",
+              "value": "53"
+            },
+            {
+              "name": "id_campo_instagram_deal_crm",
+              "value": "21"
+            },
+            {
+              "name": "id_campo_utm_source_deal_crm",
+              "value": "6"
+            },
+            {
+              "name": "id_campo_utm_campaign_deal_crm",
+              "value": "5"
+            },
+            {
+              "name": "id_campo_utm_content_deal_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_campo_utm_medium_deal_crm",
+              "value": "4"
+            },
+            {
+              "name": "id_campo_utm_term_deal_crm",
+              "value": "2"
+            },
+            {
+              "name": "id_campo_utm_var_deal_crm",
+              "value": "43"
+            },
+            {
+              "name": "id_campo_utm_fun_deal_crm",
+              "value": "44"
+            },
+            {
+              "name": "id_campo_iddeal_bot_conversa_crm",
+              "value": "1354465"
+            },
+            {
+              "name": "id_campo_idlead_bot_conversa_crm",
+              "value": "1354600"
+            },
+            {
+              "name": "formulario",
+              "value": "={{ $node[\"formata_dados3\"].json[\"formulario\"] }}"
+            },
+            {
+              "name": "id_tag_funil_ebook_se_bot_conversa",
+              "value": "8125874"
+            },
+            {
+              "name": "id_fluxo_baixar_ebook_bot_conversa",
+              "value": "3858633"
+            },
+            {
+              "name": "pre_qualificacao_ebook",
+              "value": "={{ $node[\"formata_dados3\"].json[\"pre_qualificacao\"] }}"
+            },
+            {
+              "name": "id_stage_lead_ebook_crm",
+              "value": "150"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "43f22a22-f20b-4789-bc98-131a07296b12",
+      "name": "dados_do_lead3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        960,
+        1560
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "pop-up-se-page-hetzner-ebook",
+        "options": {}
+      },
+      "id": "f2f4ef67-68ce-496d-bdf3-dd2601341a1d",
+      "name": "preencheu_pre_forms_ebook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        540,
+        1560
+      ],
+      "webhookId": "b9467ba7-123c-4619-84a8-95c3e6c5808f"
+    },
+    {
+      "parameters": {
+        "queue": "Não Aplicou - Sessão",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "46b33049-dfad-42b8-96fa-0d635d599b6d",
+      "name": "entra_na_fila1",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        1740
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrair informações do input\nconst inputData = $node[\"captura_reuniao_secreta\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = $node[\"captura_reuniao_secreta\"].json[\"body\"][\"utm_content\"] || '';\nconst utmSource = $node[\"captura_reuniao_secreta\"].json[\"body\"][\"utm_source\"] || '';\nconst utmCampaign = $node[\"captura_reuniao_secreta\"].json[\"body\"][\"utm_campaign\"] || '';\nconst utmMedium = $node[\"captura_reuniao_secreta\"].json[\"body\"][\"utm_medium\"] || '';\nconst utmTerm = $node[\"captura_reuniao_secreta\"].json[\"body\"][\"utm_term\"] || '';\n\nconst form_name = $node[\"captura_reuniao_secreta\"].json[\"body\"][\"form_name\"] || '';\n\n// Extrair outras informações do formulário\nconst nome = $node[\"captura_reuniao_secreta\"].json[\"body\"][\"Nome\"] || '';\nconst telefone = $node[\"captura_reuniao_secreta\"].json[\"body\"][\"DDD + WhatsApp\"] || '';\nconst email = $node[\"captura_reuniao_secreta\"].json[\"body\"][\"E-mail\"] || '';\n//const instagram = (respostas[\"Seu @ no Instagram\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\nconst pre_qualificacao = $node[\"captura_reuniao_secreta\"].json[\"body\"][\"Quantos profissionais você tem na equipe do salão?\"] || '';\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  //instagram,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  formulario: form_name,\n  pre_qualificacao: pre_qualificacao,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;\n"
+      },
+      "id": "f4bab311-87f9-42c8-91ad-95e93c0806a1",
+      "name": "formata_dados4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        740,
+        1740
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"formata_dados4\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"formata_dados4\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"formata_dados4\"].json[\"email\"] }}"
+            },
+            {
+              "name": "Data do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy')}}"
+            },
+            {
+              "name": "Hora do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy HH:mm').split(' ')[1]}}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados4\"].json[\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados4\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados4\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados4\"].json[\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados4\"].json[\"utm_content\"] }}"
+            },
+            {
+              "name": "id_campo_emailse",
+              "value": "1115994"
+            },
+            {
+              "name": "id_fluxo_nap01",
+              "value": "1895415"
+            },
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "funil",
+              "value": "sessao_estrategica"
+            },
+            {
+              "name": "variacao_do_funil",
+              "value": "reuniao-secreta"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "1123117"
+            },
+            {
+              "name": "id_campo_utm_fun_bot_conversa",
+              "value": "1353849"
+            },
+            {
+              "name": "id_campo_utm_var_bot_conversa",
+              "value": "1353848"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "1123116"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "1123115"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "1123114"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "1123113"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "1351140"
+            },
+            {
+              "name": "data_ultima_quinzena",
+              "value": "={{ $node[\"formata_dados4\"].json[\"dataFormatada\"] }}"
+            },
+            {
+              "name": "id_fluxo_notifica_sdr_pop_up"
+            },
+            {
+              "name": "Instagram",
+              "value": "={{ $node[\"formata_dados4\"].json[\"instagram\"] }}"
+            },
+            {
+              "name": "id_campo_instagram_bot_conversa",
+              "value": "1123096"
+            },
+            {
+              "name": "id_campo_emailse_bot_conversa",
+              "value": "1115994"
+            },
+            {
+              "name": "url_api_activecampaign_crm",
+              "value": "gestaodesaloes67530"
+            },
+            {
+              "name": "valor_produto_principal_em_centavos_crm",
+              "value": "700000"
+            },
+            {
+              "name": "id_pipeline_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_stage_preencheu_aplicacao_crm",
+              "value": "49"
+            },
+            {
+              "name": "id_sdr_crm",
+              "value": "7"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_crm",
+              "value": "257"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_crm",
+              "value": "163"
+            },
+            {
+              "name": "id_campo_instagram_crm",
+              "value": "314"
+            },
+            {
+              "name": "id_campo_utm_source_crm",
+              "value": "140"
+            },
+            {
+              "name": "id_campo_utm_campaign_crm",
+              "value": "141"
+            },
+            {
+              "name": "id_campo_utm_content_crm",
+              "value": "143"
+            },
+            {
+              "name": "id_campo_utm_medium_crm",
+              "value": "142"
+            },
+            {
+              "name": "id_campo_utm_term_crm",
+              "value": "144"
+            },
+            {
+              "name": "id_campo_utm_fun_crm",
+              "value": "263"
+            },
+            {
+              "name": "id_campo_utm_var_crm",
+              "value": "264"
+            },
+            {
+              "name": "id_tag_nap_crm",
+              "value": "110"
+            },
+            {
+              "name": "id_campo_ddd_crm",
+              "value": "185"
+            },
+            {
+              "name": "id_campo_id_banco_deal_crm",
+              "value": "42"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_deal_crm",
+              "value": "53"
+            },
+            {
+              "name": "id_campo_instagram_deal_crm",
+              "value": "21"
+            },
+            {
+              "name": "id_campo_utm_source_deal_crm",
+              "value": "6"
+            },
+            {
+              "name": "id_campo_utm_campaign_deal_crm",
+              "value": "5"
+            },
+            {
+              "name": "id_campo_utm_content_deal_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_campo_utm_medium_deal_crm",
+              "value": "4"
+            },
+            {
+              "name": "id_campo_utm_term_deal_crm",
+              "value": "2"
+            },
+            {
+              "name": "id_campo_utm_var_deal_crm",
+              "value": "43"
+            },
+            {
+              "name": "id_campo_utm_fun_deal_crm",
+              "value": "44"
+            },
+            {
+              "name": "id_campo_iddeal_bot_conversa_crm",
+              "value": "1354465"
+            },
+            {
+              "name": "id_campo_idlead_bot_conversa_crm",
+              "value": "1354600"
+            },
+            {
+              "name": "formulario",
+              "value": "={{ $node[\"formata_dados4\"].json[\"formulario\"] }}"
+            },
+            {
+              "name": "id_tag_funil_ebook_se_bot_conversa",
+              "value": "8125874"
+            },
+            {
+              "name": "id_fluxo_baixar_ebook_bot_conversa",
+              "value": "3858633"
+            },
+            {
+              "name": "pre_qualificacao_ebook",
+              "value": "={{ $node[\"formata_dados4\"].json[\"pre_qualificacao\"] }}"
+            },
+            {
+              "name": "id_stage_lead_ebook_crm",
+              "value": "150"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e207d51b-8a9b-4728-8eb9-0deb774fe1ac",
+      "name": "dados_do_lead4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        960,
+        1740
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "reuniao-secreta",
+        "options": {}
+      },
+      "id": "48ba1a4d-ff72-4817-91b3-67dfc42b488a",
+      "name": "captura_reuniao_secreta",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        540,
+        1740
+      ],
+      "webhookId": "b9467ba7-123c-4619-84a8-95c3e6c5808f"
+    },
+    {
+      "parameters": {
+        "queue": "Não Aplicou - Sessão",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "a09e5786-22b1-4e58-884b-221ee8a9cb57",
+      "name": "entra_na_fila2",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        1900
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrair informações do input\nconst inputData = $node[\"captura_live_semanal\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = $node[\"captura_live_semanal\"].json[\"body\"][\"utm_content\"] || '';\nconst utmSource = $node[\"captura_live_semanal\"].json[\"body\"][\"utm_source\"] || '';\nconst utmCampaign = $node[\"captura_live_semanal\"].json[\"body\"][\"utm_campaign\"] || '';\nconst utmMedium = $node[\"captura_live_semanal\"].json[\"body\"][\"utm_medium\"] || '';\nconst utmTerm = $node[\"captura_live_semanal\"].json[\"body\"][\"utm_term\"] || '';\n\nconst form_name = $node[\"captura_live_semanal\"].json[\"body\"][\"form_name\"] || '';\n\n// Extrair outras informações do formulário\nconst nome = $node[\"captura_live_semanal\"].json[\"body\"][\"Nome\"] || '';\nconst telefone = $node[\"captura_live_semanal\"].json[\"body\"][\"(DDD) + WhatsApp\"] || '';\nconst email = $node[\"captura_live_semanal\"].json[\"body\"][\"E-mail\"] || '';\n//const instagram = (respostas[\"Seu @ no Instagram\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\nconst pre_qualificacao = $node[\"captura_live_semanal\"].json[\"body\"][\"Quanto fatura por mês em média?\"] || '';\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  //instagram,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  formulario: form_name,\n  pre_qualificacao: pre_qualificacao,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;\n"
+      },
+      "id": "484abda0-f47c-4bfc-ad7b-77118ba5c2f6",
+      "name": "formata_dados5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        740,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"formata_dados5\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"formata_dados5\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"formata_dados5\"].json[\"email\"] }}"
+            },
+            {
+              "name": "Data do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy')}}"
+            },
+            {
+              "name": "Hora do Evento",
+              "value": "={{$now.toFormat('dd/MM/yyyy HH:mm').split(' ')[1]}}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados5\"].json[\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados5\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados5\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados5\"].json[\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados5\"].json[\"utm_content\"] }}"
+            },
+            {
+              "name": "id_campo_emailse",
+              "value": "1115994"
+            },
+            {
+              "name": "id_fluxo_nap01",
+              "value": "1895415"
+            },
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "funil",
+              "value": "sessao_estrategica"
+            },
+            {
+              "name": "variacao_do_funil",
+              "value": "live-semanal"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "1123117"
+            },
+            {
+              "name": "id_campo_utm_fun_bot_conversa",
+              "value": "1353849"
+            },
+            {
+              "name": "id_campo_utm_var_bot_conversa",
+              "value": "1353848"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "1123116"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "1123115"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "1123114"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "1123113"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "1351140"
+            },
+            {
+              "name": "data_ultima_quinzena",
+              "value": "={{ $node[\"formata_dados5\"].json[\"dataFormatada\"] }}"
+            },
+            {
+              "name": "id_fluxo_notifica_sdr_pop_up"
+            },
+            {
+              "name": "Instagram",
+              "value": "={{ $node[\"formata_dados5\"].json[\"instagram\"] }}"
+            },
+            {
+              "name": "id_campo_instagram_bot_conversa",
+              "value": "1123096"
+            },
+            {
+              "name": "id_campo_emailse_bot_conversa",
+              "value": "1115994"
+            },
+            {
+              "name": "url_api_activecampaign_crm",
+              "value": "gestaodesaloes67530"
+            },
+            {
+              "name": "valor_produto_principal_em_centavos_crm",
+              "value": "700000"
+            },
+            {
+              "name": "id_pipeline_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_stage_iniciou_preencheu_aplicacao_crm",
+              "value": "49"
+            },
+            {
+              "name": "id_sdr_crm",
+              "value": "7"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_crm",
+              "value": "257"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_crm",
+              "value": "163"
+            },
+            {
+              "name": "id_campo_instagram_crm",
+              "value": "314"
+            },
+            {
+              "name": "id_campo_utm_source_crm",
+              "value": "140"
+            },
+            {
+              "name": "id_campo_utm_campaign_crm",
+              "value": "141"
+            },
+            {
+              "name": "id_campo_utm_content_crm",
+              "value": "143"
+            },
+            {
+              "name": "id_campo_utm_medium_crm",
+              "value": "142"
+            },
+            {
+              "name": "id_campo_utm_term_crm",
+              "value": "144"
+            },
+            {
+              "name": "id_campo_utm_fun_crm",
+              "value": "263"
+            },
+            {
+              "name": "id_campo_utm_var_crm",
+              "value": "264"
+            },
+            {
+              "name": "id_tag_nap_crm",
+              "value": "110"
+            },
+            {
+              "name": "id_campo_ddd_crm",
+              "value": "185"
+            },
+            {
+              "name": "id_campo_id_banco_deal_crm",
+              "value": "42"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_deal_crm",
+              "value": "53"
+            },
+            {
+              "name": "id_campo_instagram_deal_crm",
+              "value": "18"
+            },
+            {
+              "name": "id_campo_utm_source_deal_crm",
+              "value": "6"
+            },
+            {
+              "name": "id_campo_utm_campaign_deal_crm",
+              "value": "5"
+            },
+            {
+              "name": "id_campo_utm_content_deal_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_campo_utm_medium_deal_crm",
+              "value": "4"
+            },
+            {
+              "name": "id_campo_utm_term_deal_crm",
+              "value": "2"
+            },
+            {
+              "name": "id_campo_utm_var_deal_crm",
+              "value": "43"
+            },
+            {
+              "name": "id_campo_utm_fun_deal_crm",
+              "value": "44"
+            },
+            {
+              "name": "id_campo_iddeal_bot_conversa_crm",
+              "value": "1354465"
+            },
+            {
+              "name": "id_campo_idlead_bot_conversa_crm",
+              "value": "1354600"
+            },
+            {
+              "name": "formulario",
+              "value": "={{ $node[\"formata_dados5\"].json[\"formulario\"] }}"
+            },
+            {
+              "name": "id_tag_funil_ebook_se_bot_conversa",
+              "value": "8125874"
+            },
+            {
+              "name": "id_fluxo_baixar_ebook_bot_conversa",
+              "value": "3858633"
+            },
+            {
+              "name": "pre_qualificacao_ebook",
+              "value": "={{ $node[\"formata_dados5\"].json[\"pre_qualificacao\"] }}"
+            },
+            {
+              "name": "id_stage_live_semanal_crm",
+              "value": "153"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "47d5dd1e-12d3-47d5-8544-2b5276c79a78",
+      "name": "dados_do_lead5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        960,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "live-semanal",
+        "options": {}
+      },
+      "id": "3a0850c6-7ceb-4a3c-a3e2-8c78e258c725",
+      "name": "captura_live_semanal",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        540,
+        1900
+      ],
+      "webhookId": "b9467ba7-123c-4619-84a8-95c3e6c5808f"
+    }
+  ],
+  "pinData": {
+    "preencheu_pre_forms3": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "WordPress/6.5.5; https://salaolucrativo.gestaodesaloes.com.br",
+            "content-length": "424",
+            "accept": "*/*",
+            "accept-encoding": "deflate, gzip, br",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "34.38.73.110",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "34.38.73.110"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "Sem rótulo name": "Fabiane Kelly Depine",
+            "Sem rótulo email": "kellydepi@yahoo.com.br",
+            "Qual é o seu WhatsApp com DDD?": "(49) 99963-1205",
+            "utm_source": "meta_ads",
+            "utm_campaign": "SE+HM+CADASTRO+CBO+Escala+hot",
+            "utm_medium": "01+-+Aquecimento_de_baleia+Visualizou+video+95_30d++engajou14d",
+            "utm_content": "AD19+-+FUNIL+30+MIN+EST19",
+            "utm_term": "",
+            "form_id": "31f3ee1",
+            "form_name": "CONVITE FUNIL 30 MINUTOS - FORMS"
+          }
+        }
+      }
+    ],
+    "preencheu_pre_forms2": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "WordPress/6.4.3; https://salaolucrativo.gestaodesaloes.com.br",
+            "content-length": "314",
+            "accept": "*/*",
+            "accept-encoding": "deflate, gzip, br",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "34.22.246.154",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "34.22.246.154"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "Sem rótulo name": "Vitor Queiroz de Almeida",
+            "Sem rótulo email": "vitorrqueiroztrafego@gmail.com",
+            "Qual é o seu WhatsApp com DDD?": "(19) 98457-4874",
+            "utm_source": "source1",
+            "utm_campaign": "campaign4",
+            "utm_medium": "medium2",
+            "utm_content": "content3",
+            "utm_term": "term5",
+            "form_id": "b305aa6",
+            "form_name": "CONVITE FUNIL 30 MINUTOS - FORMS"
+          }
+        }
+      }
+    ],
+    "preencheu_pre_forms": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookhenrysantoshetzner.automagicbots.com.br",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+            "content-length": "417",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-BR,pt;q=0.9",
+            "content-type": "application/json",
+            "origin": "https://salaolucrativo.gestaodesaloes.com.br",
+            "referer": "https://salaolucrativo.gestaodesaloes.com.br/",
+            "sec-ch-ua": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "201.74.220.21",
+            "x-forwarded-host": "n8nwebhookhenrysantoshetzner.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "d979bad37cf2",
+            "x-real-ip": "201.74.220.21"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "post_id": "6172",
+            "form_id": "afde08b",
+            "referer_title": "CONVITE FUNIL 30 MINUTOS",
+            "queried_id": "6172",
+            "form_fields[name]": "Vitor Queiroz w3",
+            "form_fields[email]": "vitorrqueiroztrafego@gmail.com",
+            "form_fields[message]": "(19) 98457-4874",
+            "form_fields[utm_source]": "source1",
+            "form_fields[utm_campaign]": "campaign4",
+            "form_fields[utm_medium]": "medium2",
+            "form_fields[utm_content]": "content3",
+            "form_fields[utm_term]": "term5"
+          }
+        }
+      }
+    ],
+    "preencheu_pre_forms_ebook": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "WordPress/6.5.3; https://salaolucrativo.gestaodesaloes.com.br",
+            "content-length": "807",
+            "accept": "*/*",
+            "accept-encoding": "deflate, gzip, br",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "35.187.66.122",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "35.187.66.122"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "Nome": "Vitor Queiroz de Almeida",
+            "E-mail": "vitorrqueiroztrafego@gmail.com",
+            "DDD + WhatsApp": "(19) 98457-4874",
+            "Quantos profissionais você tem na equipe do salão?": "D - Entre 10 e 20",
+            "utm_source": "source1",
+            "utm_campaign": "campaign4",
+            "utm_medium": "medium2",
+            "utm_content": "content3",
+            "utm_term": "term5",
+            "Data": "28 de maio de 2024",
+            "Horário": "16:51",
+            "URL da página": "https://salaolucrativo.gestaodesaloes.com.br/convitefunil/e-book-lideranca/?utm_source=source1&utm_medium=medium2&utm_content=content3&utm_campaign=campaign4&utm_term=term5",
+            "Agente de usuário": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+            "IP remoto": "170.81.239.151",
+            "Desenvolvido por": "Elementor",
+            "form_id": "a6feda7",
+            "form_name": "POPUP_UPSELL_EBOOK"
+          }
+        }
+      }
+    ],
+    "captura_reuniao_secreta": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "WordPress/6.5.3; https://salaolucrativo.gestaodesaloes.com.br",
+            "content-length": "328",
+            "accept": "*/*",
+            "accept-encoding": "deflate, gzip, br",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "35.240.105.111",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "35.240.105.111"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "Nome": "Vitor Queiroz de Almeida",
+            "E-mail": "vitorrqueiroztrafego@gmail.com",
+            "DDD + WhatsApp": "(19) 98457-4874",
+            "utm_source": "source1",
+            "utm_campaign": "campaign4",
+            "utm_medium": "medium2",
+            "utm_content": "content3",
+            "utm_term": "term5",
+            "form_id": "19d2b93",
+            "form_name": "FORMS - Como sair dos 30 mil para 100 mil por mês de faturamento com seu salão de beleza"
+          }
+        }
+      }
+    ],
+    "captura_live_semanal": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "WordPress/6.5.3; https://salaolucrativo.gestaodesaloes.com.br",
+            "content-length": "315",
+            "accept": "*/*",
+            "accept-encoding": "deflate, gzip, br",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "34.79.157.48",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "34.79.157.48"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "Nome": "Vitor",
+            "E-mail": "vitorrqueiroztrafego@gmail.com",
+            "(DDD) + WhatsApp": "(19) 98457-4874",
+            "Quanto fatura por mês em média?": "0 a 25 mil por mês",
+            "utm_source": "source1",
+            "utm_campaign": "campaign2",
+            "utm_medium": "medium4",
+            "utm_content": "content3",
+            "utm_term": "term5",
+            "form_id": "a395823",
+            "form_name": "captação lives forms"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-03-25T19:53:40.790Z",
+      "updatedAt": "2024-03-25T19:53:40.790Z",
+      "id": "WIisTAuvx9v5zjqv",
+      "name": "[NAP]"
+    }
+  ],
+  "triggerCount": 6,
+  "updatedAt": "2024-07-08T17:46:12.035Z",
+  "versionId": "1083b55b-0b51-49f1-a8dc-d2bba9e99d5f"
+}
