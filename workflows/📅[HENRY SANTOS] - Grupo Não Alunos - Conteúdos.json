@@ -1,0 +1,1063 @@
+{
+  "active": false,
+  "connections": {
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "le_planilha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha": {
+      "main": [
+        [
+          {
+            "node": "é_uma_hora_antes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "todo_dia_7:00": {
+      "main": [
+        [
+          {
+            "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha2": {
+      "main": [
+        [
+          {
+            "node": "é_ao_vivo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis2": {
+      "main": [
+        [
+          {
+            "node": "le_planilha2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "todo_dia_8:05": {
+      "main": [
+        [
+          {
+            "node": "variaveis2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha3": {
+      "main": [
+        [
+          {
+            "node": "é_um_dia_antes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis3": {
+      "main": [
+        [
+          {
+            "node": "le_planilha3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_uma_hora_antes": {
+      "main": [
+        [
+          {
+            "node": "busca_todos_grupos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não faça nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_grupo_correto": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não faça nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_grupo_correto2": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não faça nada4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_ao_vivo": {
+      "main": [
+        [
+          {
+            "node": "busca_todos_grupos2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não faça nada4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_um_dia_antes1": {
+      "main": [
+        [
+          {
+            "node": "busca_todos_grupos3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não faça nada5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_grupo_correto3": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não faça nada5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_todos_grupos": {
+      "main": [
+        [
+          {
+            "node": "é_grupo_correto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_todos_grupos2": {
+      "main": [
+        [
+          {
+            "node": "é_grupo_correto2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_todos_grupos3": {
+      "main": [
+        [
+          {
+            "node": "é_grupo_correto3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "todo_dia_19:00": {
+      "main": [
+        [
+          {
+            "node": "variaveis3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-03-26T15:32:13.840Z",
+  "id": "ZEHKzzbaz2KM2bLM",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "📅[HENRY SANTOS] - Grupo Não Alunos - Conteúdos",
+  "nodes": [
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 492858773,
+          "mode": "list",
+          "cachedResultName": "Salão Autoadministrável - Conteúdos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=492858773"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "DATA DISPARO",
+              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "60ce07cc-b057-4373-be5b-bcadd6f324f6",
+      "name": "le_planilha",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        -2000,
+        880
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "iujdsradymo0j5w4dppz8ob"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "HenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363250366394159@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e0f339a6-cf03-4ac9-a6e5-a165b0045a6e",
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -2180,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363250366394159@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"é_uma_hora_antes\"].json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "3c595214-7f2e-4f18-8051-3ba346876290",
+      "name": "EnviaMensagemTexto",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1060,
+        720
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "a3df6da0-efa2-4511-b069-1641067782fb",
+      "name": "Não faça nada",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1060,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "7e4c49ac-b281-4a6b-bd68-660883267d40",
+      "name": "todo_dia_7:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2360,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 492858773,
+          "mode": "list",
+          "cachedResultName": "Salão Autoadministrável - Conteúdos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=492858773"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "DATA DISPARO",
+              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "4dd500a7-c955-455a-a07b-d59d2be79236",
+      "name": "le_planilha2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        -2020,
+        1220
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "iujdsradymo0j5w4dppz8ob"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "HenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363250366394159@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "191daead-9ad3-43f9-b72d-0db34189a629",
+      "name": "variaveis2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -2220,
+        1220
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "6ed7f28a-8c7d-4e4b-be5e-65a9ade24409",
+      "name": "Não faça nada4",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1060,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8,
+              "triggerAtMinute": 5
+            }
+          ]
+        }
+      },
+      "id": "80e702c5-4deb-4385-ae7b-f1a5c519e7a2",
+      "name": "todo_dia_8:05",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2400,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 492858773,
+          "mode": "list",
+          "cachedResultName": "Salão Autoadministrável - Conteúdos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=492858773"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "DATA DISPARO",
+              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "14ffd9bf-1c1f-48b5-9001-b665903dd483",
+      "name": "le_planilha3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        -2060,
+        1660
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "iujdsradymo0j5w4dppz8ob"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "HenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363250366394159@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6770d7dd-6936-45cb-ab8f-8c634ef6123c",
+      "name": "variaveis3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -2240,
+        1660
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis3\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis3\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis3\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363250366394159@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"é_um_dia_antes1\"].json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "a76bf850-032d-42df-955a-ea6dbed7b40d",
+      "name": "EnviaMensagemTexto3",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1060,
+        1500
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "884ac844-b9ff-4d7d-a880-81ee27b7d1c1",
+      "name": "Não faça nada5",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1060,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"le_planilha\"].json[\"TIPO LEMBRETE\"] }}",
+              "operation": "contains",
+              "value2": "1 HORA  ANTES"
+            },
+            {
+              "value1": "={{ $json[\"HORA DISPARO\"] }}",
+              "value2": "07:00:00"
+            }
+          ]
+        }
+      },
+      "id": "1361bca6-81d3-4c84-a891-5c1e4184a849",
+      "name": "é_uma_hora_antes",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1800,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"subject\"] }}",
+              "operation": "contains",
+              "value2": "Salão Autoadministrável - Conteúdos"
+            }
+          ]
+        }
+      },
+      "id": "1951866c-87fd-448f-980c-e04cebb8126c",
+      "name": "é_grupo_correto",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1340,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"subject\"] }}",
+              "operation": "contains",
+              "value2": "Salão Autoadministrável - Conteúdos"
+            }
+          ]
+        }
+      },
+      "id": "e1f56a66-11cb-4e5a-819e-4c6219fd7cd4",
+      "name": "é_grupo_correto2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1320,
+        1160
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"le_planilha2\"].json[\"TIPO LEMBRETE\"] }}",
+              "operation": "contains",
+              "value2": "AO VIVO"
+            },
+            {
+              "value1": "={{ $json[\"HORA DISPARO\"] }}",
+              "value2": "08:05:00"
+            }
+          ]
+        }
+      },
+      "id": "71bbfc07-1b41-452f-ae82-d42d859bdc38",
+      "name": "é_ao_vivo",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1820,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"le_planilha3\"].json[\"TIPO LEMBRETE\"] }}",
+              "operation": "contains",
+              "value2": "1 DIA ANTES"
+            },
+            {
+              "value1": "={{ $json[\"HORA DISPARO\"] }}",
+              "value2": "19:00:00"
+            }
+          ]
+        }
+      },
+      "id": "742dc2ca-77bd-41c8-a33e-5eb3dbe63099",
+      "name": "é_um_dia_antes1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1840,
+        1660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"subject\"] }}",
+              "operation": "contains",
+              "value2": "Salão Autoadministrável - Conteúdos"
+            }
+          ]
+        }
+      },
+      "id": "c16e22ef-4cb1-4ec0-b623-bff98666d56f",
+      "name": "é_grupo_correto3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1320,
+        1580
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"variaveis\"].json[\"url_base\"] }}/group/fetchAllGroups/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}?getParticipants=false",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "51999a80-9ed1-4831-80bb-10e12f2cd321",
+      "name": "busca_todos_grupos",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -1540,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"variaveis2\"].json[\"url_base\"] }}/group/fetchAllGroups/{{ $node[\"variaveis2\"].json[\"nome_da_instancia\"] }}?getParticipants=false",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis2\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cb5465ff-4c7a-4079-919e-8a6ac0525ff8",
+      "name": "busca_todos_grupos2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -1520,
+        1160
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"variaveis3\"].json[\"url_base\"] }}/group/fetchAllGroups/{{ $node[\"variaveis3\"].json[\"nome_da_instancia\"] }}?getParticipants=false",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis3\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "791234b7-be0f-4675-8bd6-0380a551fb37",
+      "name": "busca_todos_grupos3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -1560,
+        1580
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 19
+            }
+          ]
+        }
+      },
+      "id": "8ea9e81e-8bdd-4b8c-bd3d-141b6432fa3b",
+      "name": "todo_dia_19:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2400,
+        1660
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis2\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis2\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis2\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363250366394159@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"é_ao_vivo\"].json[\"MENSAGEM\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "a170c81b-afa7-44f9-b526-05e54401cc8c",
+      "name": "EnviaMensagemTexto4",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1060,
+        1100
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "content": "## DIAPARA 1 DIA ANTES ÁS 19H"
+      },
+      "id": "34e06f85-0111-4234-a2af-8fd8a3edcd4e",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2680,
+        1640
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## DIAPARA NA HORA DA LIVE \"AO VIVO\" - 8:05H\n"
+      },
+      "id": "e4cee943-4d13-4676-89d6-6a7077d06e82",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2680,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## DIAPARA 1H ANTES DA LIVE - 7H"
+      },
+      "id": "64583e4e-e5ec-4ac9-92d3-b9869c5bb295",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2680,
+        860
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:todo_dia_7:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:1": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:05": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:5": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_19:00": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2024-03-27T14:03:25.264Z",
+      "updatedAt": "2024-03-27T14:03:25.264Z",
+      "id": "Ju8yPHXMHj0pxd19",
+      "name": "[LEMBRETE]"
+    }
+  ],
+  "triggerCount": 3,
+  "updatedAt": "2024-06-18T12:30:19.061Z",
+  "versionId": "85b1f140-ef66-4be2-b6ee-6cd324155641"
+}
