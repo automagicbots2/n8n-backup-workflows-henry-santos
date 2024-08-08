@@ -1,0 +1,635 @@
+{
+  "active": true,
+  "connections": {
+    "variaveis5": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMensagemTexto5": {
+      "main": [
+        [
+          {
+            "node": "atualiza_status2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF2": {
+      "main": [
+        [
+          {
+            "node": "puxa_lista2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMensagemTexto": {
+      "main": [
+        [
+          {
+            "node": "atualiza_status3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF3": {
+      "main": [
+        [
+          {
+            "node": "puxa_lista3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "06/08 7h": {
+      "main": [
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_8h": {
+      "main": [
+        [
+          {
+            "node": "IF3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puxa_lista2": {
+      "main": [
+        [
+          {
+            "node": "já_foi_enviado2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "já_foi_enviado2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "variaveis5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puxa_lista3": {
+      "main": [
+        [
+          {
+            "node": "já_foi_enviado3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "já_foi_enviado3": {
+      "main": [
+        [],
+        [
+          {
+            "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-08-05T20:20:47.015Z",
+  "id": "PfoNDY8tU6fIzYgI",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "📅[HENRY SANTOS][V3] - Aulas ao vivo - Live Semanal",
+  "nodes": [
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363295424007193@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bae103c2-f692-4496-bc06-9a3dcc4df918",
+      "name": "variaveis5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis5\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis5\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis5\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis5\"].json[\"id_grupo\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=⏰ A live começa em 1 hora! \n\nPrepare-se para aprender *Como Preparar uma Gerente que Faça Decolar o Teu Salão*. Não adianta ter uma gerente se você não conhece os 3 pilares essenciais: perfil, processos e tecnologia.\n\nSerá no meu Instagram: https://www.instagram.com/henrysantossim?igsh=MTVkZ2Z0b2hzaGExaw=="
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "b8c76b60-a49d-42a2-b1d8-2a9803a279bd",
+      "name": "EnviaMensagemTexto5",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1340,
+        780
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "06/08/2024"
+            }
+          ]
+        }
+      },
+      "id": "09b69478-5ab3-47aa-b802-74ba7098a72d",
+      "name": "IF2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        540,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363295424007193@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ddf9ab28-f6d6-4317-8dff-9a52d1eaae11",
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis\"].json[\"id_grupo\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=🚀 \nEstou ao vivo! Junte-se a nós agora para aprender a preparar uma gerente que vai transformar seu salão e liberar seu tempo para a estratégia. Não perca essa oportunidade única!\n\nClique aqui para entrar:\nhttps://www.instagram.com/henrysantossim?igsh=MTVkZ2Z0b2hzaGExaw==\n\nNos vemos do lado de cá! 💪"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "c9c2fe64-bf38-472b-8265-4fd5d53b8870",
+      "name": "EnviaMensagemTexto",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1340,
+        960
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "06/08/2024"
+            }
+          ]
+        }
+      },
+      "id": "f9c2dc97-054a-41b6-8b91-b2f91136732d",
+      "name": "IF3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        540,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "16f594b8-856f-4e8c-8918-6674f04bad0a",
+      "name": "06/08 7h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        380,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "1b4f7354-f129-42af-a50b-70853e815bc7",
+      "name": "dispara_8h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        380,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "disparo_grupos",
+          "mode": "list",
+          "cachedResultName": "disparo_grupos"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "data_envio",
+              "value": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "hora_envio",
+              "value": "={{ $json[\"Hour\"] }}:{{ $json[\"Minute\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f3ceba7c-1f70-4fff-87fe-46bd2ab69391",
+      "name": "puxa_lista2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        760,
+        760
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"realizado\"] }}",
+              "value2": "enviado"
+            }
+          ]
+        }
+      },
+      "id": "b97e74bc-314e-48a6-a344-8ebb788766ea",
+      "name": "já_foi_enviado2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        920,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "disparo_grupos",
+          "mode": "list",
+          "cachedResultName": "disparo_grupos"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $node[\"já_foi_enviado2\"].json[\"id\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "realizado",
+              "value": "enviado"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6829957a-f468-4bf7-b16d-34819632b3ac",
+      "name": "atualiza_status2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        1520,
+        780
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "disparo_grupos",
+          "mode": "list",
+          "cachedResultName": "disparo_grupos"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "data_envio",
+              "value": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            },
+            {
+              "column": "hora_envio",
+              "value": "={{ $json[\"Hour\"] }}:{{ $json[\"Minute\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e8b6b656-115f-4e73-bf4f-09cd24d90d5c",
+      "name": "puxa_lista3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        760,
+        940
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"realizado\"] }}",
+              "value2": "enviado"
+            }
+          ]
+        }
+      },
+      "id": "70c69e34-56de-4029-b085-b4e4009570c4",
+      "name": "já_foi_enviado3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        920,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "disparo_grupos",
+          "mode": "list",
+          "cachedResultName": "disparo_grupos"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $node[\"já_foi_enviado3\"].json[\"id\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "realizado",
+              "value": "enviado"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "30f7b2fe-a1ef-4b4a-b260-8981ce014641",
+      "name": "atualiza_status3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        1520,
+        960
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": {
+    "node:05/08 19h": {
+      "recurrencyRules": []
+    },
+    "node:06/08 7h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2024-08-05T22:08:12.024Z",
+  "versionId": "e237012b-0fa7-45be-876b-21b5383420a7"
+}
