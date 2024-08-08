@@ -1,0 +1,1842 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_lotes": {
+      "main": [
+        [
+          {
+            "node": "cria_lead_bc1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "formata_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilhas": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_existe2": {
+      "main": [
+        [
+          {
+            "node": "cria_lead_bd",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "dados2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_lead_bd": {
+      "main": [
+        [
+          {
+            "node": "insert_data_utm_lead2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_lead_bc": {
+      "main": [
+        [
+          {
+            "node": "email_vazio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variables": {
+      "main": [
+        [
+          {
+            "node": "le_planilhas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_lead_bc1": {
+      "main": [
+        [
+          {
+            "node": "avisa_whatsapp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila1": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados2": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados1": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_data_utm_lead2": {
+      "main": [
+        [
+          {
+            "node": "dados1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_dados": {
+      "main": [
+        [
+          {
+            "node": "cria_lead_bc",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "email_vazio": {
+      "main": [
+        [
+          {
+            "node": "telefone_vazio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "telefone_vazio1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "telefone_vazio": {
+      "main": [
+        [
+          {
+            "node": "instagram_vazio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "instagram_vazio3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "instagram_vazio": {
+      "main": [
+        [
+          {
+            "node": "sem_acao",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead_insta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "telefone_vazio1": {
+      "main": [
+        [
+          {
+            "node": "instagram_vazio2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "instagram_vazio1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "instagram_vazio1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead_telefone_email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead_telefone_email_insta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "instagram_vazio2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead_email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead_email_insta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "instagram_vazio3": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead_telefone",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead_telefone_insta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead_telefone_email_insta": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead_telefone_email": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead_email_insta": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead_email": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead_telefone_insta": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead_telefone": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead_insta": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead": {
+      "main": [
+        [
+          {
+            "node": "nao_existe2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-03-28T20:55:48.958Z",
+  "id": "DMSFeyixY2wg25Pm",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[HENRY SANTOS] - Aplicação Preenchida - Retroativo",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "d935187e-8cd5-4898-a5c0-b340be2bbfd1",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1380,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "426ae494-1abf-4221-98f0-46ee9649ddb3",
+      "name": "separa_em_lotes",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -780,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1ucPgimUui_TMkvQwNCZfkmpzCeO4yOB-mrBzE1ZBFl8",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Versão 1 do Forms",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ucPgimUui_TMkvQwNCZfkmpzCeO4yOB-mrBzE1ZBFl8/edit#gid=0"
+        },
+        "options": {}
+      },
+      "id": "78d07282-aade-4bdb-8728-1164050ea657",
+      "name": "le_planilhas",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [
+        -980,
+        940
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"pesquisa_lead\"].json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "35180564-e89e-461f-af49-a1ac83684251",
+      "name": "nao_existe2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"formata_dados\"].json[\"full_name\"].split(' ')[0] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            },
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "column": "id_botconversa",
+              "value": "={{ $node[\"cria_lead_bc\"].json[\"id\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"formata_dados\"].json[\"full_name\"].split(\" \").slice(1).join(\" \") }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            },
+            {
+              "column": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            },
+            {
+              "column": "nivel_qualificacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"nivelQualificacao\"] }}"
+            },
+            {
+              "column": "data_de_entrada",
+              "value": "={{ $node[\"formata_dados\"].json[\"Date\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "c2b01b6b-a20c-4c1a-ad13-653b6a5178f4",
+      "name": "cria_lead_bd",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1220,
+        840
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "phone",
+              "value": "=+{{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"formata_dados\"].json[\"full_name\"].split(\" \")[0] }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $node[\"formata_dados\"].json[\"full_name\"].split(' ').slice(1).join(\" \") ? $node[\"formata_dados\"].json[\"full_name\"].split(' ').slice(1).join(\" \") : \".\" }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"variables\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "cria_lead_bc",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -360,
+        1060
+      ],
+      "id": "faecc7c9-6a5e-4701-a8e1-3c28882961f5",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "API-KEY",
+              "stringValue": "e6b9a9d7-6e67-4653-91c5-f2276679b777"
+            },
+            {
+              "name": "telefone_responsavel",
+              "stringValue": "553185711260"
+            },
+            {
+              "name": "nome_completo_responsavel",
+              "stringValue": "Gabriel Amaral Mota"
+            },
+            {
+              "name": "nome_cliente",
+              "stringValue": "XTráfego"
+            },
+            {
+              "name": "id_tag_desqualificado_bot_conversa",
+              "stringValue": "5606699"
+            },
+            {
+              "name": "id_tag_qualificado_bot_conversa",
+              "stringValue": "5607871"
+            },
+            {
+              "name": "id_tag_medio_qualificado_bot_conversa",
+              "stringValue": "4890302"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "stringValue": "1543701"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "stringValue": "1543698"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "stringValue": "1543702"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "stringValue": "1543700"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "stringValue": "1543699"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "stringValue": "1543710"
+            },
+            {
+              "name": "id_campo_emailse_bot_conversa",
+              "stringValue": "1543685"
+            },
+            {
+              "name": "id_campo_pergunta1_bot_conversa",
+              "stringValue": "1543717"
+            },
+            {
+              "name": "id_campo_pergunta2_bot_conversa",
+              "stringValue": "1544878"
+            },
+            {
+              "name": "id_campo_pergunta3_bot_conversa",
+              "stringValue": "1545067"
+            },
+            {
+              "name": "id_campo_pergunta4_bot_conversa",
+              "stringValue": "1545054"
+            },
+            {
+              "name": "id_campo_pergunta5_bot_conversa",
+              "stringValue": "1545052"
+            },
+            {
+              "name": "id_campo_pergunta6_bot_conversa",
+              "stringValue": "1545096"
+            },
+            {
+              "name": "id_campo_instagram_bot_conversa",
+              "stringValue": "1544847"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "5b3dbbf7-0459-47dd-bbb6-2b2f438528fb",
+      "name": "variables",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -1180,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "phone",
+              "value": "=+{{ $node[\"variables\"].json[\"telefone_responsavel\"] }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"variables\"].json[\"nome_completo_responsavel\"].split(\" \")[0] }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $node[\"variables\"].json[\"nome_completo_responsavel\"].split(\" \").slice(1).join(\" \") }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"variables\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "cria_lead_bc1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -540,
+        780
+      ],
+      "id": "fe2f44ec-161b-4c7b-8037-0ba8d546bc91",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"cria_lead_bc1\"].json[\"id\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=🔔 *NOTIFICAÇÃO - {{ $node[\"variables\"].json[\"nome_cliente\"] }}*\n\nA importação dos dados de *Leads e Aplicações finalizou*."
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"variables\"].json[\"API-KEY\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "avisa_whatsapp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -360,
+        780
+      ],
+      "id": "336d8352-4b95-4426-a378-ca02020f5877",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "queue": "Importação de Aplicações - Parte 3",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "36c52121-a620-4b7b-a5e9-19e04dd1bdb8",
+      "name": "entra_na_fila1",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        840
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "id_lead_bd",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"id_lead\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_content\"] }}"
+            },
+            {
+              "name": "pergunta0",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta0\"] }}"
+            },
+            {
+              "name": "pergunta1",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta1\"] }}"
+            },
+            {
+              "name": "pergunta2",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta2\"] }}"
+            },
+            {
+              "name": "pergunta3",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta3\"] }}"
+            },
+            {
+              "name": "pergunta4",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta4\"] }}"
+            },
+            {
+              "name": "pergunta5",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta5\"] }}"
+            },
+            {
+              "name": "pergunta6",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta6\"] }}"
+            },
+            {
+              "name": "pergunta7",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta7\"] }}"
+            },
+            {
+              "name": "pergunta8",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta8\"] }}"
+            },
+            {
+              "name": "pergunta9",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta9\"] }}"
+            },
+            {
+              "name": "pergunta10",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta10\"] }}"
+            },
+            {
+              "name": "data_aplicacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"Date\"] }}"
+            },
+            {
+              "name": "id_tag_desqualificado_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_tag_desqualificado_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_tag_qualificado_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_tag_qualificado_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_tag_medio_qualificado_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_tag_medio_qualificado_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_utm_source_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_utm_campaign_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_utm_term_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_utm_medium_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_utm_content_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_id_banco_de_dados_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_emailse_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_emailse_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta1_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta1_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta2_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta2_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta3_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta3_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta4_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta4_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta5_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta5_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta6_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta6_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta7_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta7_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta8_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta8_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta9_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta9_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta10_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta10_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_instagram_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_instagram_bot_conversa\"] }}"
+            },
+            {
+              "name": "nivel_qualificacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"nivelQualificacao\"] }}"
+            },
+            {
+              "name": "telefone_bd",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "email_bd",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"email\"] }}"
+            },
+            {
+              "name": "instagram_bd",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"instagram\"] }}"
+            },
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"formata_dados\"].json[\"full_name\"] }}"
+            },
+            {
+              "name": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "name": "id_lead_bc",
+              "value": "={{ $node[\"cria_lead_bc\"].json[\"id\"] }}"
+            },
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"variables\"].json[\"API-KEY\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta0_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta0_bot_conversa\"] }}"
+            }
+          ],
+          "boolean": [
+            {
+              "name": "verificacao_lead"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b76e5d24-62eb-45a4-8e6b-f8f75563bfaa",
+      "name": "dados2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1220,
+        1040
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "id_lead_bd",
+              "value": "={{ $node[\"cria_lead_bd\"].json[\"data\"][\"insertId\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_content\"] }}"
+            },
+            {
+              "name": "pergunta0",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta0\"] }}"
+            },
+            {
+              "name": "pergunta1",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta1\"] }}"
+            },
+            {
+              "name": "pergunta2",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta2\"] }}"
+            },
+            {
+              "name": "pergunta3",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta3\"] }}"
+            },
+            {
+              "name": "pergunta4",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta4\"] }}"
+            },
+            {
+              "name": "pergunta5",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta5\"] }}"
+            },
+            {
+              "name": "pergunta6",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta6\"] }}"
+            },
+            {
+              "name": "pergunta7",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta7\"] }}"
+            },
+            {
+              "name": "pergunta8",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta8\"] }}"
+            },
+            {
+              "name": "pergunta9",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta9\"] }}"
+            },
+            {
+              "name": "pergunta10",
+              "value": "={{ $node[\"formata_dados\"].json[\"pergunta10\"] }}"
+            },
+            {
+              "name": "data_aplicacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"Date\"] }}"
+            },
+            {
+              "name": "id_tag_desqualificado_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_tag_desqualificado_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_tag_qualificado_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_tag_qualificado_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_tag_medio_qualificado_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_tag_medio_qualificado_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_utm_source_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_utm_campaign_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_utm_term_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_utm_medium_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_utm_content_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_id_banco_de_dados_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_emailse_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_emailse_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta1_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta1_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta2_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta2_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta3_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta3_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta4_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta4_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta5_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta5_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta6_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta6_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta7_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta7_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta8_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta8_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta9_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta9_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta10_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_pergunta10_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_instagram_bot_conversa",
+              "value": "={{ $node[\"variables\"].json[\"id_campo_instagram_bot_conversa\"] }}"
+            },
+            {
+              "name": "qualificacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"nivelQualificacao\"] }}"
+            },
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"formata_dados\"].json[\"full_name\"] }}"
+            },
+            {
+              "name": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "name": "id_lead_bc",
+              "value": "={{ $node[\"cria_lead_bc\"].json[\"id\"] }}"
+            },
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"variables\"].json[\"API-KEY\"] }}"
+            },
+            {
+              "name": "id_campo_pergunta0_bot_conversa",
+              "value": "={{ $node[\"formata_dados\"].json[\"id_campo_pergunta0_bot_conversa\"] }}"
+            }
+          ],
+          "boolean": [
+            {
+              "name": "verificacao_lead",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"success\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bbc2d088-eb5f-4f9a-9d6d-4381147434da",
+      "name": "dados1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        840
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "Importação de Aplicações - Parte 2",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "2f904fef-7e4d-4d39-b280-b4fbaea181fa",
+      "name": "entra_na_fila",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        1040
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "leads_2_utms",
+          "mode": "list",
+          "cachedResultName": "leads_2_utms"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"cria_lead_bd\"].json[\"data\"][\"insertId\"] }}"
+            },
+            {
+              "column": "utm_source",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_source\"] }}"
+            },
+            {
+              "column": "utm_campaign",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "column": "utm_term",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_term\"] }}"
+            },
+            {
+              "column": "utm_medium",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "column": "utm_content",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_content\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "queryBatching": "single",
+          "detailedOutput": true
+        }
+      },
+      "id": "22b8da0b-595c-44f6-90bb-dca7ddd62763",
+      "name": "insert_data_utm_lead2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1400,
+        840
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Acessando diretamente os dados com $json\nconst item = $json;\n\nconst phone = $node[\"separa_em_lotes\"].json[\"Qual seu telefone (WhatsApp)?\"];\nconst cleanPhone = phone ? phone.toString().replace(/\\D/g, '') : '';\nconst ddd = cleanPhone.slice(2, 4);\nconst ddi = cleanPhone.slice(0, 2);\nconst telefoneFormatado = cleanPhone ? (parseInt(ddd, 10) > 28 ? ddi + ddd + cleanPhone.slice(-8) : ddi + ddd + cleanPhone.slice(-9)) : '';\n\nconst capitalizeFirstLetter = (str) => str.toString().toLowerCase().replace(/(?:^|\\s)\\S/g, (a) => a.toUpperCase());\n\nconst full_name = capitalizeFirstLetter($node[\"separa_em_lotes\"].json[\"Qual seu nome?\"]) || '';\nconst email = $node[\"separa_em_lotes\"].json[\"Qual seu melhor e-mail?\"]?.trim().toLowerCase() || '';\nconst instagram = $node[\"separa_em_lotes\"].json[\"Qual o Instagram da sua loja de iPhones?\"]?.toString().replace('@', '').toLowerCase() || '';\nconst qtd_iphone = $node[\"separa_em_lotes\"].json[\"Quais dessas opções mais te definem?\"] || '';\nconst tem_loja_eletronicos = $node[\"separa_em_lotes\"].json[\"Você possui uma loja de eletrônico e deseja começar a vender iPhones?\"] || '';\nconst vende_outra_marca = $node[\"separa_em_lotes\"].json[\"Você vende alguma outra marca de Smartphone que não seja Apple?\"] || '';\nconst qtd_vendas_outra_marca = $node[\"separa_em_lotes\"].json[\"Quantos Smartphones de outras marcas você vende no mês?\"] || '';\nconst capital_inicial = $node[\"separa_em_lotes\"].json[\"Qual seu capital inicial de investimento para começar vender iPhones?\"] || '';\nconst media_lucro = $node[\"separa_em_lotes\"].json[\"Qual a sua média de lucro por aparelho vendido?\"] || '';\nconst tem_fornecedor = $node[\"separa_em_lotes\"].json[\"Você já possui algum fornecedor de iPhones?\"] || '';\nconst qtd_iphone_mes = $node[\"separa_em_lotes\"].json[\"Quantos iPhones você vende no mês?\"] || '';\nconst impeditivo_100_400_iphones = $node[\"separa_em_lotes\"].json[\"O que você acredita que está impedindo sua loja de vender de 100 a 400 iPhones todos os meses?\"] || '';\nconst historia = $node[\"separa_em_lotes\"].json[\"Conte um pouco da história da sua loja...\"] || '';\nconst oportunidade = $node[\"separa_em_lotes\"].json[\"Porque você acredita que participar da <strong>Consultoria Gratuita</strong> é a oportunidade ideal para você e seu negócio?\"] || '';\nconst utm_source = $node[\"separa_em_lotes\"].json[\"utm_medium\"] || '';\nconst utm_campaign = $node[\"separa_em_lotes\"].json[\"utm_campaign\"] || '';\nconst utm_term = $node[\"separa_em_lotes\"].json[\"utm_term\"] || '';\nconst utm_medium = $node[\"separa_em_lotes\"].json[\"utm_medium\"] || '';\nconst utm_content = $node[\"separa_em_lotes\"].json[\"utm_content\"] || '';\nconst sck = $node[\"separa_em_lotes\"].json[\"sck\"] || '';\nconst Date = $node[\"separa_em_lotes\"].json[\"Date\"] || '';\n\n// Nova variável para armazenar o nível de qualificação\nlet nivelQualificacao = '';\n\n// Verificar as condições de desqualificação baseadas em qtd_iphone\nif (\n  qtd_iphone === 'Estou vendendo até 10 iPhones no mês' ||\n  qtd_iphone === 'Ainda não comecei a vender iPhones mas quero começar'\n) {\n  if (qtd_vendas_outra_marca === 'Até 10 Smartphones' || capital_inicial === 'Até R$5.000' || capital_inicial === 'De R$5.001 a R$10.000' || capital_inicial === 'De R$10.001 a R$20.000') {\n    nivelQualificacao = 'Desqualificado';\n  }\n}\n\n// Se não atender às condições de desqualificação, considerar como qualificado\nif (!nivelQualificacao) {\n  nivelQualificacao = 'Qualificado';\n}\n\n// Adicionar a variável de qualificação ao retorno\nreturn {\n  telefoneFormatado,\n  full_name,\n  email,\n  instagram,\n  qtd_iphone,\n  tem_loja_eletronicos,\n  vende_outra_marca,\n  qtd_vendas_outra_marca,\n  capital_inicial,\n  media_lucro,\n  tem_fornecedor,\n  qtd_iphone_mes,\n  impeditivo_100_400_iphones,\n  historia,\n  oportunidade,\n  utm_source,\n  utm_campaign,\n  utm_term,\n  utm_medium,\n  utm_content,\n  sck,\n  Date,\n  nivelQualificacao\n};\n"
+      },
+      "id": "8254c9b4-cecd-4966-a181-f97a487ce21e",
+      "name": "formata_dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -540,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"formata_dados\"].json[\"email\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "f642af5b-280a-475e-abb0-f94d4d690470",
+      "name": "email_vazio",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "7787ea92-4204-4f09-83fb-ce818f94df88",
+      "name": "telefone_vazio",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        40,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "78e85245-8561-4320-8d4d-4b7ea0b0dfa2",
+      "name": "instagram_vazio",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        240,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "3c5901c3-17e5-49a4-a014-7bf45410ab20",
+      "name": "telefone_vazio1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        60,
+        1400
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "3bbeb498-f27a-4788-9ed0-cc262b17b164",
+      "name": "instagram_vazio1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        240,
+        1580
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "409d354c-9b64-43ee-b92f-f8ff699ffc20",
+      "name": "instagram_vazio2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        240,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "684e56a4-36cf-4f48-922f-0313f44ce28d",
+      "name": "instagram_vazio3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        240,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "column": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            },
+            {
+              "column": "telefone_empresa",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "column": "instagram2",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            },
+            {
+              "column": "email2",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "fe889500-7c98-482c-9e73-55dd4d49037a",
+      "name": "pesquisa_lead_telefone_email_insta",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        1660
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "column": "telefone_empresa",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            },
+            {
+              "column": "email2",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "52c867a8-8b10-48c1-9ec7-2392b0a315d6",
+      "name": "pesquisa_lead_telefone_email",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        1480
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            },
+            {
+              "column": "email2",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            },
+            {
+              "column": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            },
+            {
+              "column": "instagram2",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "53422ff6-ec5c-4966-ada0-d3ae1a96df2c",
+      "name": "pesquisa_lead_email_insta",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        1300
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            },
+            {
+              "column": "email2",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "80c08522-9069-4575-84d8-8de17d6e5cb9",
+      "name": "pesquisa_lead_email",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        1120
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "3b86914a-6cce-4b1a-97f9-62cfd1a7adce",
+      "name": "sem_acao",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "column": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            },
+            {
+              "column": "telefone_empresa",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "column": "instagram2",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "d6f1f9fc-d26d-4ad6-ba1f-0c82280f749b",
+      "name": "pesquisa_lead_telefone_insta",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        940
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            },
+            {
+              "column": "telefone_empresa",
+              "value": "={{ $node[\"formata_dados\"].json[\"telefoneFormatado\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "22c64fc6-b2c5-44e1-b92f-88693d79773f",
+      "name": "pesquisa_lead_telefone",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        780
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            },
+            {
+              "column": "instagram2",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "5c305f2c-23a2-47b9-a7b1-94333f44a949",
+      "name": "pesquisa_lead_insta",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        620
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "f0b55ad4-0170-480a-a97e-149cfa05d2b6",
+      "name": "pesquisa_lead",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        880,
+        980
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-03-28T20:58:14.215Z",
+  "versionId": "828a8b7d-3f99-4533-9774-487efe2a4572"
+}
