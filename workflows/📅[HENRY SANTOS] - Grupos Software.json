@@ -1,190 +1,11 @@
 {
   "active": true,
   "connections": {
-    "le_planilha1": {
-      "main": [
-        [
-          {
-            "node": "Limit",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "variaveis3": {
-      "main": [
-        [
-          {
-            "node": "le_planilha1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "EnviaMensagemTexto1": {
-      "main": [
-        [
-          {
-            "node": "Wait",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "le_planilha": {
-      "main": [
-        [
-          {
-            "node": "É_AO_VIVO",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "variaveis": {
-      "main": [
-        [
-          {
-            "node": "le_planilha",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "dispara_as_18hs": {
-      "main": [
-        [
-          {
-            "node": "variaveis",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "É_AO_VIVO": {
-      "main": [
-        [
-          {
-            "node": "EnviaMensagemTexto2",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Não Faça Nada",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "le_planilha2": {
-      "main": [
-        [
-          {
-            "node": "É_UM_DIA_ANTES",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "variaveis1": {
-      "main": [
-        [
-          {
-            "node": "le_planilha2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "dispara_as_18hs1": {
-      "main": [
-        [
-          {
-            "node": "variaveis1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "É_UM_DIA_ANTES": {
-      "main": [
-        [
-          {
-            "node": "EnviaMensagemTexto",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Não Faça Nada1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "dispara_as_7:00": {
-      "main": [
-        [
-          {
-            "node": "variaveis3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "IF": {
       "main": [
         [
           {
             "node": "variaveis4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "variaveis4": {
-      "main": [
-        [
-          {
-            "node": "EnviaMsg",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "04/08 18h": {
-      "main": [
-        [
-          {
-            "node": "IF",
             "type": "main",
             "index": 0
           }
@@ -202,55 +23,11 @@
         ]
       ]
     },
-    "variaveis5": {
-      "main": [
-        [
-          {
-            "node": "EnviaMsg1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "05/08 7h": {
-      "main": [
-        [
-          {
-            "node": "IF1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "IF2": {
       "main": [
         [
           {
             "node": "variaveis6",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "variaveis6": {
-      "main": [
-        [
-          {
-            "node": "EnviaMsg2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "05/08 12h": {
-      "main": [
-        [
-          {
-            "node": "IF2",
             "type": "main",
             "index": 0
           }
@@ -268,6 +45,50 @@
         ]
       ]
     },
+    "11/08 18h": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "12/08 7h": {
+      "main": [
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "12/08 12h": {
+      "main": [
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "12/08 18h": {
+      "main": [
+        [
+          {
+            "node": "IF3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "variaveis7": {
       "main": [
         [
@@ -279,11 +100,33 @@
         ]
       ]
     },
-    "05/08 18h": {
+    "variaveis6": {
       "main": [
         [
           {
-            "node": "IF3",
+            "node": "EnviaMsg2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis5": {
+      "main": [
+        [
+          {
+            "node": "EnviaMsg1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis4": {
+      "main": [
+        [
+          {
+            "node": "EnviaMsg",
             "type": "main",
             "index": 0
           }
@@ -298,103 +141,6 @@
   },
   "name": "📅[HENRY SANTOS] - Grupos Software",
   "nodes": [
-    {
-      "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 1534692755,
-          "mode": "list",
-          "cachedResultName": "Lembrete Grupo Software",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=1534692755"
-        },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "DATA DISPARO",
-              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
-            }
-          ]
-        },
-        "options": {
-          "returnAllMatches": "returnAllMatches"
-        }
-      },
-      "id": "5f79d83f-1cf6-4cc1-9bba-d91536f934d7",
-      "name": "le_planilha1",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 3,
-      "position": [
-        -4740,
-        740
-      ],
-      "retryOnFail": true,
-      "maxTries": 5,
-      "waitBetweenTries": 5000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "values": {
-          "string": [
-            {
-              "name": "url_base",
-              "value": "https://evolutionapi.automagicbots.com.br"
-            },
-            {
-              "name": "apikey",
-              "value": "iujdsradymo0j5w4dppz8ob"
-            },
-            {
-              "name": "nome_da_instancia",
-              "value": "HenrySantos"
-            },
-            {
-              "name": "id_grupo",
-              "value": "120363166216060509@g.us"
-            },
-            {
-              "name": "numero_adm",
-              "value": "554797464264"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "772b9e3f-e9ba-4afc-a576-2d45d3fc36f3",
-      "name": "variaveis3",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        -4920,
-        740
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "keep": "lastItems"
-      },
-      "id": "c8a3b977-bdce-486d-ae40-435934f62025",
-      "name": "Limit",
-      "type": "n8n-nodes-base.limit",
-      "typeVersion": 1,
-      "position": [
-        -4580,
-        740
-      ],
-      "disabled": true
-    },
     {
       "parameters": {
         "content": "## 120363318948095655@g.us - Grupo Correto",
@@ -412,587 +158,11 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 7
-            }
-          ]
-        }
-      },
-      "id": "68fa4d1a-ca03-4e36-95f8-19a38a8d58d6",
-      "name": "dispara_as_7:00",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1,
-      "position": [
-        -5120,
-        740
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {},
-      "id": "69e4ce4c-eb68-4473-8850-8fabcef91e48",
-      "name": "Wait",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [
-        -4240,
-        740
-      ],
-      "webhookId": "b898a325-7e4f-42e5-b9ec-be0b405ae409",
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "={{ $node[\"variaveis3\"].json[\"url_base\"] }}/message/sendMedia/{{ $node[\"variaveis3\"].json[\"nome_da_instancia\"] }}",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "apikey",
-              "value": "={{ $node[\"variaveis3\"].json[\"apikey\"] }}"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "{\"number\":\"120363297647459613@g.us\",\"options\":{\"delay\":1200,\"presence\":\"composing\"},\"mediaMessage\":{\"mediatype\":\"document\",\"fileName\":\"Calendário.pdf\",\"caption\":\"\",\"media\":\"https://t3135484.p.clickup-attachments.com/t3135484/e34d6124-5a06-4ab2-87df-09c6fdc9b02f/CALEND%C3%81RIO%20COM%20ATUALIZA%C3%87%C3%95ES%20DO%20SOFTWARE.pdf\"}}",
-        "options": {
-          "redirect": {
-            "redirect": {}
-          }
-        }
-      },
-      "id": "b611bdd0-32d4-42cf-b323-79e741671d23",
-      "name": "HTTP Request",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        -4080,
-        740
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "={{ $node[\"variaveis3\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis3\"].json[\"nome_da_instancia\"] }}",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "apikey",
-              "value": "={{ $node[\"variaveis3\"].json[\"apikey\"] }}"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "120363297647459613@g.us"
-            },
-            {
-              "name": "textMessage.text",
-              "value": "={{ $node[\"le_planilha1\"].json[\"MENSAGEM\"] }}"
-            },
-            {
-              "name": "options.delay",
-              "value": "={{ 1200 }}"
-            },
-            {
-              "name": "options.presence",
-              "value": "composing"
-            },
-            {
-              "name": "options.linkPreview",
-              "value": "={{ true }}"
-            },
-            {
-              "name": "=options.mentions.everyOne",
-              "value": "={{ true }}"
-            }
-          ]
-        },
-        "options": {
-          "response": {
-            "response": {
-              "fullResponse": true,
-              "neverError": true
-            }
-          }
-        }
-      },
-      "id": "a3be6f36-345f-4135-aa7a-39052146bee1",
-      "name": "EnviaMensagemTexto1",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        -4400,
-        740
-      ],
-      "typeVersion": 4,
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 1534692755,
-          "mode": "list",
-          "cachedResultName": "Lembrete Grupo Software",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=1534692755"
-        },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "DATA DISPARO",
-              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
-            }
-          ]
-        },
-        "options": {
-          "returnAllMatches": "returnAllMatches"
-        }
-      },
-      "id": "1370b048-d01b-47fd-a692-6804a089747c",
-      "name": "le_planilha",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 3,
-      "position": [
-        -4480,
-        1060
-      ],
-      "retryOnFail": true,
-      "maxTries": 5,
-      "waitBetweenTries": 5000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "values": {
-          "string": [
-            {
-              "name": "url_base",
-              "value": "https://evolutionapi.automagicbots.com.br"
-            },
-            {
-              "name": "apikey",
-              "value": "iujdsradymo0j5w4dppz8ob"
-            },
-            {
-              "name": "nome_da_instancia",
-              "value": "HenrySantos"
-            },
-            {
-              "name": "id_grupo",
-              "value": "120363297647459613@g.us"
-            },
-            {
-              "name": "numero_adm",
-              "value": "554797464264"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "fba37fef-c6af-4810-af02-984d512af2f3",
-      "name": "variaveis",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        -4660,
-        1060
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "={{ $node[\"variaveis\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "apikey",
-              "value": "={{ $node[\"variaveis\"].json[\"apikey\"] }}"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "={{ $node[\"variaveis\"].json[\"id_grupo\"] }}"
-            },
-            {
-              "name": "textMessage.text",
-              "value": "={{ $json[\"MENSAGEM\"] }}"
-            },
-            {
-              "name": "options.delay",
-              "value": "={{ 1200 }}"
-            },
-            {
-              "name": "options.presence",
-              "value": "composing"
-            },
-            {
-              "name": "options.linkPreview",
-              "value": "={{ true }}"
-            },
-            {
-              "name": "=options.mentions.everyOne",
-              "value": "={{ true }}"
-            }
-          ]
-        },
-        "options": {
-          "response": {
-            "response": {
-              "fullResponse": true,
-              "neverError": true
-            }
-          }
-        }
-      },
-      "id": "81284e61-4dfe-49b1-9737-da709aa41610",
-      "name": "EnviaMensagemTexto2",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        -4040,
-        1000
-      ],
-      "typeVersion": 4,
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 18
-            }
-          ]
-        }
-      },
-      "id": "9a362ca0-26a6-4854-9e32-22d84c508672",
-      "name": "dispara_as_18hs",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1,
-      "position": [
-        -4860,
-        1060
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "content": "## 1 DIA ANTES",
-        "height": 80,
-        "width": 219.44087242325202
-      },
-      "id": "f8cdec78-6ee2-48fd-8d58-b1df7b854271",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -5140,
-        1380
-      ]
-    },
-    {
-      "parameters": {
-        "content": "## A0 VIVO",
-        "height": 80,
-        "width": 219.44087242325202
-      },
-      "id": "3e73c22d-df23-4b65-a097-76fe012716a4",
-      "name": "Sticky Note2",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -5140,
-        1080
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "0f8a5237-6bba-4c2c-b07e-2b371c21224b",
-              "leftValue": "={{ $json[\"TIPO LEMBRETE\"] }}",
-              "rightValue": "AO VIVO",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "a0218a2a-391d-483c-84b1-f33a5b20d6ad",
-      "name": "É_AO_VIVO",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        -4300,
-        1060
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {},
-      "id": "937e16cf-41bd-4e38-b6cb-6056d83d301e",
-      "name": "Não Faça Nada",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        -4040,
-        1140
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 1534692755,
-          "mode": "list",
-          "cachedResultName": "Lembrete Grupo Software",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=1534692755"
-        },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "DATA DISPARO",
-              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
-            }
-          ]
-        },
-        "options": {
-          "returnAllMatches": "returnAllMatches"
-        }
-      },
-      "id": "a28fa306-b2fd-4fbb-a924-e555f4bc62c2",
-      "name": "le_planilha2",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 3,
-      "position": [
-        -4480,
-        1360
-      ],
-      "retryOnFail": true,
-      "maxTries": 5,
-      "waitBetweenTries": 5000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "values": {
-          "string": [
-            {
-              "name": "url_base",
-              "value": "https://evolutionapi.automagicbots.com.br"
-            },
-            {
-              "name": "apikey",
-              "value": "iujdsradymo0j5w4dppz8ob"
-            },
-            {
-              "name": "nome_da_instancia",
-              "value": "HenrySantos"
-            },
-            {
-              "name": "id_grupo",
-              "value": "120363297647459613@g.us"
-            },
-            {
-              "name": "numero_adm",
-              "value": "554797464264"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "638a5265-7d13-4967-82e1-93890d6a6155",
-      "name": "variaveis1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        -4660,
-        1360
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "={{ $node[\"variaveis1\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis1\"].json[\"nome_da_instancia\"] }}",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "apikey",
-              "value": "={{ $node[\"variaveis1\"].json[\"apikey\"] }}"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "={{ $node[\"variaveis1\"].json[\"id_grupo\"] }}"
-            },
-            {
-              "name": "textMessage.text",
-              "value": "={{ $json[\"MENSAGEM\"] }}"
-            },
-            {
-              "name": "options.delay",
-              "value": "={{ 1200 }}"
-            },
-            {
-              "name": "options.presence",
-              "value": "composing"
-            },
-            {
-              "name": "options.linkPreview",
-              "value": "={{ true }}"
-            },
-            {
-              "name": "=options.mentions.everyOne",
-              "value": "={{ true }}"
-            }
-          ]
-        },
-        "options": {
-          "response": {
-            "response": {
-              "fullResponse": true,
-              "neverError": true
-            }
-          }
-        }
-      },
-      "id": "793b83da-669b-4d65-b4d5-5da743771600",
-      "name": "EnviaMensagemTexto",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        -4040,
-        1300
-      ],
-      "typeVersion": 4,
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 18
-            }
-          ]
-        }
-      },
-      "id": "5e9ffa79-0380-427c-968d-e56d7a10c02d",
-      "name": "dispara_as_18hs1",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1,
-      "position": [
-        -4860,
-        1360
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {},
-      "id": "be5baf94-0170-4bbb-9d96-de7d81c9040e",
-      "name": "Não Faça Nada1",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        -4040,
-        1440
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "0f8a5237-6bba-4c2c-b07e-2b371c21224b",
-              "leftValue": "={{ $json[\"TIPO LEMBRETE\"] }}",
-              "rightValue": "1 DIA ANTES",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "668b8b96-7b33-478a-af44-6ad59c1427bb",
-      "name": "É_UM_DIA_ANTES",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        -4300,
-        1360
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
         "conditions": {
           "string": [
             {
               "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "value2": "04/08/2024"
+              "value2": "11/08/2024"
             }
           ]
         }
@@ -1039,27 +209,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        -4260,
-        -220
-      ]
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "weeks",
-              "triggerAtHour": 18
-            }
-          ]
-        }
-      },
-      "id": "68f490ad-3b3c-4258-adea-1a9dc4c30f7d",
-      "name": "04/08 18h",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1,
-      "position": [
-        -4840,
+        -4460,
         -180
       ]
     },
@@ -1085,7 +235,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=📢 *Você está com todos os cadastros em dia no Software SIM?*\n\nAmanhã às 18h, teremos nossa sessão ao vivo sobre *Conferência de Cadastros e Abas Chaves do Cadastramento*. Não perca essa oportunidade de garantir que tudo esteja configurado corretamente no Software SIM!\n\n📅 *Data*: 05 de agosto\n🕕 *Horário*: 18h\n🔗 *Link*: Fique atento que vou enviar o link por aqui assim que a aula estiver começando.\nEsperamos por você!"
+              "value": "=*📢 Você sabe como otimizar sua agenda e caixa através do software SIM?*\n\nAmanhã às 18h, teremos nossa sessão ao vivo sobre *Processos Iniciais: Agenda, Caixa e Relatórios de Recepção.*\n \nVenha aprender tudo sobre essas funcionalidades essenciais do Software SIM!\n\n📅 Data: 12 de agosto\n🕕 Horário: 18h\n\nFique atento que vou enviar o link por aqui assim que a aula estiver começando."
             },
             {
               "name": "options.delay",
@@ -1118,8 +268,8 @@
       "name": "EnviaMsg",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -4060,
-        -220
+        -4260,
+        -180
       ],
       "typeVersion": 4
     },
@@ -1129,7 +279,7 @@
           "string": [
             {
               "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "value2": "05/08/2024"
+              "value2": "12/08/2024"
             }
           ]
         }
@@ -1176,8 +326,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        -4260,
-        -40
+        -4460,
+        0
       ]
     },
     {
@@ -1202,7 +352,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=🚨 *Fique ligado!*\n\nÉ HOJE!! Em menos de  12 horas, nossa sessão ao vivo sobre *Conferência de Cadastros e Abas Chaves do Cadastramento* começa! Se você não participar, pode perder:\n\n✅ *Configurações Essenciais*: Aprenda a configurar tudo corretamente para evitar problemas futuros.\n✅ *Resolução de Dúvidas*: Tire todas as suas dúvidas ao vivo e comece a usar o SIM com confiança.\n\n📅 *Data*: hoje\n🕕 *Horário*: 18h\n🔗 *Link*: Fique atento que vou enviar o link por aqui assim que a aula estiver começando."
+              "value": "=🚨 *Fique atento!*\n\n*HOJE tem* sessão ao vivo sobre *Processos Iniciais: Agenda, Caixa e Relatórios de Recepção.* Se você não participar, pode perder:\n\n*Domínio das Ferramentas:* Aprenda a utilizar a agenda, caixa e relatórios de recepção de forma eficaz.\n\n*Tire Suas Dúvidas:* Esta é a sua chance de esclarecer qualquer dúvida ao vivo.\n\n📅 *Data:* hoje dia 12 de agosto\n🕕 *Horário:* 18h\n\nFique atento que vou enviar o link por aqui assim que a aula estiver começando."
             },
             {
               "name": "options.delay",
@@ -1235,33 +385,10 @@
       "name": "EnviaMsg1",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -4060,
-        -40
+        -4260,
+        0
       ],
       "typeVersion": 4
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "weeks",
-              "triggerAtDay": [
-                1
-              ],
-              "triggerAtHour": 7
-            }
-          ]
-        }
-      },
-      "id": "a4f93f23-cb6e-4d0e-a0f7-6cbe80b856ae",
-      "name": "05/08 7h",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1,
-      "position": [
-        -4840,
-        0
-      ]
     },
     {
       "parameters": {
@@ -1269,7 +396,7 @@
           "string": [
             {
               "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "value2": "05/08/2024"
+              "value2": "12/08/2024"
             }
           ]
         }
@@ -1316,8 +443,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        -4260,
-        140
+        -4460,
+        180
       ]
     },
     {
@@ -1342,7 +469,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=⏰ *Alerta Urgente*!\n\nFaltam apenas 6 horas para nossa sessão ao vivo sobre *Conferência de Cadastros e Abas Chaves do Cadastramento*. Esta é a sua chance de garantir que tudo esteja configurado corretamente no Software SIM!\n\n📅 *Data*: 05 de agosto\n🕕 *Horário*: 18h\n🔗 *Link*: Fique atento que vou enviar o link por aqui assim que a aula estiver começando.\nNão perca essa oportunidade exclusiva!"
+              "value": "=⏰ *Atenção!*\n\nFaltam apenas 6 horas para nossa sessão ao vivo sobre *Processos Iniciais: Agenda, Caixa e Relatórios de Recepção.* Esta é uma oportunidade única para otimizar a gestão do seu salão!\n\n📅 *Data:* hoje\n🕕 *Horário:* 18h\n\nFique atento que vou enviar o link por aqui assim que a aula estiver começando.\n\nParticipe!"
             },
             {
               "name": "options.delay",
@@ -1375,33 +502,10 @@
       "name": "EnviaMsg2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -4060,
-        140
+        -4260,
+        180
       ],
       "typeVersion": 4
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "weeks",
-              "triggerAtDay": [
-                1
-              ],
-              "triggerAtHour": 12
-            }
-          ]
-        }
-      },
-      "id": "994318c0-21ee-4849-8547-c794f612a245",
-      "name": "05/08 12h",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1,
-      "position": [
-        -4840,
-        180
-      ]
     },
     {
       "parameters": {
@@ -1409,7 +513,7 @@
           "string": [
             {
               "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "value2": "05/08/2024"
+              "value2": "12/08/2024"
             }
           ]
         }
@@ -1456,8 +560,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        -4260,
-        340
+        -4460,
+        380
       ]
     },
     {
@@ -1482,7 +586,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=🎥 *Estamos ao Vivo!*\n\nA sessão sobre *Conferência de Cadastros e Abas Chaves do Cadastramento* está começando agora. Junte-se a nós e tire todas as suas dúvidas ao vivo!\n\n🔗 *Clique aqui para participar*: https://meet.google.com/gnf-cggd-nng \n\nEsperamos por você!"
+              "value": "=🎥 *Estamos ao Vivo!*\n\nA sessão sobre *Processos Iniciais: Agenda, Caixa e Relatórios de Recepção* está começando agora. Junte-se a nós e aprenda tudo ao vivo.\n\n🔗 *Clique aqui para participar:* https://meet.google.com/gnf-cggd-nng\n\nVenha agora!"
             },
             {
               "name": "options.delay",
@@ -1515,10 +619,76 @@
       "name": "EnviaMsg3",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -4060,
-        340
+        -4260,
+        380
       ],
       "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtHour": 18
+            }
+          ]
+        }
+      },
+      "id": "68f490ad-3b3c-4258-adea-1a9dc4c30f7d",
+      "name": "11/08 18h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -4840,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "a4f93f23-cb6e-4d0e-a0f7-6cbe80b856ae",
+      "name": "12/08 7h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -4840,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 12
+            }
+          ]
+        }
+      },
+      "id": "994318c0-21ee-4849-8547-c794f612a245",
+      "name": "12/08 12h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -4840,
+        180
+      ]
     },
     {
       "parameters": {
@@ -1535,7 +705,7 @@
         }
       },
       "id": "3adaf8cc-30fc-419c-9e98-8d789daa222b",
-      "name": "05/08 18h",
+      "name": "12/08 18h",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
@@ -1599,6 +769,18 @@
     },
     "node:05/08 18h": {
       "recurrencyRules": []
+    },
+    "node:11/08 18h": {
+      "recurrencyRules": []
+    },
+    "node:12/08 7h": {
+      "recurrencyRules": []
+    },
+    "node:12/08 12h": {
+      "recurrencyRules": []
+    },
+    "node:12/08 18h": {
+      "recurrencyRules": []
     }
   },
   "tags": [
@@ -1610,6 +792,6 @@
     }
   ],
   "triggerCount": 4,
-  "updatedAt": "2024-08-05T18:11:05.051Z",
-  "versionId": "94133210-c97f-4dab-9df7-7ce876322022"
+  "updatedAt": "2024-08-09T20:53:39.797Z",
+  "versionId": "735312d8-f905-4bcf-bafe-b68b12de47bb"
 }
