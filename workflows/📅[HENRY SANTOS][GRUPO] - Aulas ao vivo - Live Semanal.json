@@ -1,0 +1,963 @@
+{
+  "active": true,
+  "connections": {
+    "variaveis3": {
+      "main": [
+        [
+          {
+            "node": "Não Faça Nada3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_12h": {
+      "main": [
+        [
+          {
+            "node": "12/08/2024",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "12/08/2024": {
+      "main": [
+        [
+          {
+            "node": "variaveis3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "Não Faça Nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_18h": {
+      "main": [
+        [
+          {
+            "node": "12/08/2024 - msg2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis1": {
+      "main": [
+        [
+          {
+            "node": "Não Faça Nada1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_7h": {
+      "main": [
+        [
+          {
+            "node": "13/08/2024",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "13/08/2024": {
+      "main": [
+        [
+          {
+            "node": "variaveis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "12/08/2024 - msg2": {
+      "main": [
+        [
+          {
+            "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis2": {
+      "main": [
+        [
+          {
+            "node": "Não Faça Nada2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dispara_8h": {
+      "main": [
+        [
+          {
+            "node": "13/08/2024 - msg2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "13/08/2024 - msg2": {
+      "main": [
+        [
+          {
+            "node": "variaveis2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não Faça Nada3": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não Faça Nada": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não Faça Nada1": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não Faça Nada2": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-07-24T15:56:20.671Z",
+  "id": "4iCe5Ul1XQ1go5Lo",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "📅[HENRY SANTOS][GRUPO] - Aulas ao vivo - Live Semanal",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## GRUPO PARA DISPARO: 120363295424007193@g.us\n\n## GRUPO PARA TESTE: 120363256444706105@g.us",
+        "height": 189.04348618878646,
+        "width": 1346.2235630407117
+      },
+      "id": "917d2af4-906f-4ddb-b72b-b790d3349ad0",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## QUANDO FINALIZAR A CONFIGURAÇÃO DAS MENSAGENS SE SERTIFICAR QUE O ID DO GRUPO E AS DATAS DAS MENSAGENS ESTÃO CORRETAS",
+        "height": 207.79070928070064,
+        "width": 417.57528252338807
+      },
+      "id": "48067256-177c-49a0-ba6f-2ef973297cf7",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 843347888,
+          "mode": "list",
+          "cachedResultName": "Live semanal - AO VIVO",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=843347888"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "DATA DISPARO",
+              "lookupValue": "={{ $now.toFormat('dd/MM/yyyy') }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "930ec9ea-debf-446f-bbb7-08ca76103e00",
+      "name": "le_planilha3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        900,
+        240
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363295424007193@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "032203c6-744e-4171-a63c-ba556a5d22ec",
+      "name": "variaveis3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        180,
+        580
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {},
+      "id": "bc6c7596-3521-4c7e-878d-6e854b6d94ed",
+      "name": "Não Faça Nada3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        360,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 12
+            }
+          ]
+        }
+      },
+      "id": "c53ba464-69d1-450a-81d5-588726d7b717",
+      "name": "dispara_12h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "12/08/2024"
+            }
+          ]
+        }
+      },
+      "id": "f5ea5cdc-c745-4f45-adf4-53e842608859",
+      "name": "12/08/2024",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis3\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis3\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis3\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis3\"].json[\"id_grupo\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Lembrete super importante! Amanhã, às 8h (horário de Brasília), temos uma live imperdível sobre *O Guia Definitivo para um Salão Autoadministrável: Mantenha o Controle Enquanto Cresce.*\n\nNão perca essa chance de aprender como equilibrar crescimento e controle operacional no seu salão! 📈✨\n\nSerá pelo meu Instagram: https://www.instagram.com/henrysantossim?igsh=MTVkZ2Z0b2hzaGExaw==\n\nNos vemos lá! 😉"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "b22cb79b-48d4-4089-ab1e-df4b2167fdde",
+      "name": "EnviaMensagemTexto2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        580,
+        580
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363295424007193@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e50dc80d-a1f8-4a27-81ec-d5c520892d05",
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        180,
+        780
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {},
+      "id": "dfbcd9ea-7f5b-4707-b6be-5d8369a069a0",
+      "name": "Não Faça Nada",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        360,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis\"].json[\"id_grupo\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Você está pronta para transformar seu salão hoje? 🚀\n\nEm poucas horas, às 8h (horário de Brasília), estarei ao vivo para ensinar *O Guia Definitivo para um Salão Autoadministrável: Mantenha o Controle Enquanto Cresce.*\n\nVamos abordar como crescer com controle, mantendo tudo funcionando perfeitamente. Não perca essa chance de adquirir conhecimentos valiosos e elevar seu salão ao próximo nível.\n\nTe vejo no meu Instagram: https://www.instagram.com/henrysantossim?igsh=MTVkZ2Z0b2hzaGExaw==\n"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "adcca383-9755-417d-9a73-e498bcac71ad",
+      "name": "EnviaMensagemTexto",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        580,
+        780
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 18
+            }
+          ]
+        }
+      },
+      "id": "136eabf3-90cf-43b7-9055-1981dbdc6847",
+      "name": "dispara_18h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363295424007193@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f31c888d-5d13-4ff0-a8da-88b43a498d6c",
+      "name": "variaveis1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        180,
+        960
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {},
+      "id": "1a7b6256-e651-486d-8362-e63e63b48903",
+      "name": "Não Faça Nada1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        360,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis1\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis1\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis1\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis1\"].json[\"id_grupo\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=⏰A live começa em 1 hora! \n\nPrepare-se para aprender *O Guia Definitivo para um Salão Autoadministrável.* Vamos falar sobre como manter o controle enquanto seu salão cresce, abordando os pilares de perfil, processos e tecnologia.\n\nhttps://www.instagram.com/henrysantossim?igsh=MTVkZ2Z0b2hzaGExaw==\n\nEstamos te esperando! "
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "4c321f59-c47d-4944-898c-6fb2bb712bcf",
+      "name": "EnviaMensagemTexto1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        580,
+        960
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "ccdee02c-d2f4-4d42-93c6-b405952bcb44",
+      "name": "dispara_7h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "13/08/2024"
+            }
+          ]
+        }
+      },
+      "id": "11f6c15f-e449-4c19-a169-991f65f763e2",
+      "name": "13/08/2024",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "12/08/2024"
+            }
+          ]
+        }
+      },
+      "id": "bdc97e21-5ba0-4833-9fe1-e27955d9e83a",
+      "name": "12/08/2024 - msg2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "id_grupo",
+              "value": "120363295424007193@g.us"
+            },
+            {
+              "name": "numero_adm",
+              "value": "554797464264"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "aa6b8b2c-c5b6-477f-addc-01131f3a428e",
+      "name": "variaveis2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        180,
+        1120
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {},
+      "id": "d0b55051-d6a3-4fb4-a34c-2521995da8fb",
+      "name": "Não Faça Nada2",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        360,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis2\"].json[\"url_base\"] }}/message/sendText/{{ $node[\"variaveis2\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis2\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"variaveis2\"].json[\"id_grupo\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Estamos ao vivo!\n\nJunte-se a nós agora para aprender *O Guia Definitivo para um Salão Autoadministrável: Mantenha o Controle Enquanto Cresce.* Não perca essa oportunidade única de aprender como equilibrar crescimento e controle no seu salão.\n\nClique aqui para entrar:https://www.instagram.com/henrysantossim?igsh=MTVkZ2Z0b2hzaGExaw==\n\nNos vemos do lado de cá! 💪"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "b615b261-9321-4b76-9a21-31a2d731dd3d",
+      "name": "EnviaMensagemTexto3",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        580,
+        1120
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "4e9daba8-7104-4146-956b-70118a8c2f73",
+      "name": "dispara_8h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "value2": "13/08/2024"
+            }
+          ]
+        }
+      },
+      "id": "7ac51976-9532-4ef8-aee3-dc844d914c41",
+      "name": "13/08/2024 - msg2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        1120
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": {
+    "node:todo_dia_7:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:1": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:05": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:5": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_19:00": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_18hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_18hs1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_7_manha": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8:05h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_19h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_19h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_18h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_9h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_19h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_7h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_7h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h5m": {
+      "recurrencyRules": []
+    },
+    "node:dispara_8h5m1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_12h": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2024-03-27T14:03:25.264Z",
+      "updatedAt": "2024-03-27T14:03:25.264Z",
+      "id": "Ju8yPHXMHj0pxd19",
+      "name": "[LEMBRETE]"
+    }
+  ],
+  "triggerCount": 4,
+  "updatedAt": "2024-08-12T14:04:52.439Z",
+  "versionId": "deb0e341-c011-4b2c-8d9b-2d345b21bfc5"
+}
