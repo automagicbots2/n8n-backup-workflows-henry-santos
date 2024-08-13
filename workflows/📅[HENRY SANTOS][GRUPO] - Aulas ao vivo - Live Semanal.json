@@ -31,7 +31,8 @@
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "variaveis": {
@@ -202,7 +203,7 @@
     },
     {
       "parameters": {
-        "content": "## QUANDO FINALIZAR A CONFIGURAÇÃO DAS MENSAGENS SE SERTIFICAR QUE O ID DO GRUPO E AS DATAS DAS MENSAGENS ESTÃO CORRETAS",
+        "content": "## QUANDO FINALIZAR A CONFIGURAÇÃO DAS MENSAGENS SE CERTIFICAR QUE O ID DO GRUPO E AS DATAS DAS MENSAGENS ESTÃO CORRETAS",
         "height": 207.79070928070064,
         "width": 417.57528252338807
       },
@@ -313,10 +314,6 @@
         "rule": {
           "interval": [
             {
-              "field": "weeks",
-              "triggerAtDay": [
-                3
-              ],
               "triggerAtHour": 12
             }
           ]
@@ -525,10 +522,6 @@
         "rule": {
           "interval": [
             {
-              "field": "weeks",
-              "triggerAtDay": [
-                3
-              ],
               "triggerAtHour": 18
             }
           ]
@@ -657,10 +650,6 @@
         "rule": {
           "interval": [
             {
-              "field": "weeks",
-              "triggerAtDay": [
-                3
-              ],
               "triggerAtHour": 7
             }
           ]
@@ -829,10 +818,6 @@
         "rule": {
           "interval": [
             {
-              "field": "weeks",
-              "triggerAtDay": [
-                3
-              ],
               "triggerAtHour": 8
             }
           ]
@@ -947,6 +932,9 @@
     },
     "node:dispara_12h": {
       "recurrencyRules": []
+    },
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
     }
   },
   "tags": [
@@ -958,6 +946,6 @@
     }
   ],
   "triggerCount": 4,
-  "updatedAt": "2024-08-12T14:04:52.439Z",
-  "versionId": "deb0e341-c011-4b2c-8d9b-2d345b21bfc5"
+  "updatedAt": "2024-08-13T14:07:41.615Z",
+  "versionId": "a0eeb67a-8cbf-4212-bdcb-044a21f0fb51"
 }
