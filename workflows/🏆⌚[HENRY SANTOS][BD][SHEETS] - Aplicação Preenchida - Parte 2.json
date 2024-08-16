@@ -521,17 +521,6 @@
         ]
       ]
     },
-    "atualiza_campos_deal2": {
-      "main": [
-        [
-          {
-            "node": "insere_dados3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "atualiza_campos_deal": {
       "main": [
         [
@@ -755,17 +744,6 @@
         ]
       ]
     },
-    "insere_dados": {
-      "main": [
-        [
-          {
-            "node": "insert_data_utm_lead",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "dados2": {
       "main": [
         [
@@ -938,7 +916,29 @@
       "main": [
         [
           {
-            "node": "segundo_ou_mais_erro",
+            "node": "telefone_vazio2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_campos_deal2": {
+      "main": [
+        [
+          {
+            "node": "insere_dados3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insere_dados": {
+      "main": [
+        [
+          {
+            "node": "insert_data_utm_lead",
             "type": "main",
             "index": 0
           }
@@ -1260,7 +1260,7 @@
       "typeVersion": 1,
       "position": [
         1080,
-        2220
+        2080
       ]
     },
     {
@@ -2859,6 +2859,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3015,6 +3016,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3057,6 +3059,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3085,6 +3088,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3113,6 +3117,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3557,32 +3562,6 @@
         "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_instagram_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['Instagram']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_id_bot_conversa_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['cadastrar_contato'].json['id']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta0_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta0']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta1_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta1']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta2_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta2']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta3_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta3'].replaceAll('\\n','')}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta4_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta4']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta5_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta5']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta6_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta6']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta7_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta7']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta8_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta8']}}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_source_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_campaign_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_content_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_medium_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_term_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta9_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_fun_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta10_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_var_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta11_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta11\"] }}\"\n      }\n    ]\n  }\n}",
         "options": {}
       },
-      "id": "54bff47f-57e4-465c-94c5-ea7015b42a41",
-      "name": "atualiza_campos_deal2",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        4440,
-        2440
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "=https://{{ $node[\"chega_da_fila\"].json[\"content\"][\"url_api_activecampaign_crm\"] }}.api-us1.com/api/3/deals/{{  $json[\"deal\"][\"id\"]  }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "activeCampaignApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_instagram_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['Instagram']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_id_bot_conversa_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['cadastrar_contato'].json['id']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta0_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta0']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta1_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta1']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta2_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta2']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta3_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta3'].replaceAll('\\n','')}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta4_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta4']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta5_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta5']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta6_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta6']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta7_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta7']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta8_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta8']}}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_source_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_campaign_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_content_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_medium_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_term_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta9_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_fun_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta10_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_var_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta11_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta11\"] }}\"\n      }\n    ]\n  }\n}",
-        "options": {}
-      },
       "id": "49dc97b3-ead8-4d11-8d3c-a3cc76fcc4f1",
       "name": "atualiza_campos_deal",
       "type": "n8n-nodes-base.httpRequest",
@@ -3596,7 +3575,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -3622,7 +3602,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -4632,6 +4613,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -4660,6 +4642,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -4688,6 +4671,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -5105,7 +5089,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -5131,7 +5116,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -5157,7 +5143,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -5185,6 +5172,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -5337,78 +5325,6 @@
       "typeVersion": 2.1,
       "position": [
         5020,
-        3060
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "table": {
-          "__rl": true,
-          "value": "leads",
-          "mode": "list",
-          "cachedResultName": "leads"
-        },
-        "dataMode": "defineBelow",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "nome",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
-            },
-            {
-              "column": "email",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
-            },
-            {
-              "column": "telefone",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
-            },
-            {
-              "column": "id_botconversa",
-              "value": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
-            },
-            {
-              "column": "sobrenome",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \") }}"
-            },
-            {
-              "column": "update_time",
-              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
-            },
-            {
-              "column": "instagram",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Instagram\"] }}"
-            },
-            {
-              "column": "id_lead_activecampaign",
-              "value": "={{ $node[\"cria_lead2\"].json[\"id\"] }}"
-            },
-            {
-              "column": "id_deal_activecampaign",
-              "value": "={{ $node[\"cria_deal_qualificado2\"].json[\"deal\"][\"id\"] }}"
-            },
-            {
-              "column": "nivel_qualificacao",
-              "value": "Qualificado"
-            }
-          ]
-        },
-        "options": {
-          "detailedOutput": true
-        }
-      },
-      "id": "8b5bc9a0-9a7e-4f66-9edb-0a0b88aa9185",
-      "name": "insere_dados",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.1,
-      "position": [
-        4680,
         3060
       ],
       "credentials": {
@@ -6239,6 +6155,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -6267,6 +6184,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -6309,6 +6227,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -6337,6 +6256,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -6365,6 +6285,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -6802,7 +6723,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -6828,7 +6750,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -6854,7 +6777,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -6900,6 +6824,106 @@
         1580
       ],
       "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://{{ $node[\"chega_da_fila\"].json[\"content\"][\"url_api_activecampaign_crm\"] }}.api-us1.com/api/3/deals/{{  $json[\"deal\"][\"id\"]  }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_instagram_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['Instagram']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_id_bot_conversa_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['cadastrar_contato'].json['id']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta0_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta0']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta1_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta1']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta2_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta2']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta3_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta3'].replaceAll('\\n','')}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta4_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta4']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta5_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta5']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta6_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta6']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta7_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta7']}}\"\n      },\n      {\n        \"customFieldId\": \"{{$node['chega_da_fila'].json['content']['id_campo_pergunta8_deal_crm']}}\",\n        \"fieldValue\": \"{{$node['chega_da_fila'].json['content']['pergunta8']}}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_source_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_campaign_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_content_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_medium_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_term_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta9_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_fun_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta10_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta10\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_var_deal_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_pergunta11_crm\"] }}\",\n        \"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta11\"] }}\"\n      }\n    ]\n  }\n}",
+        "options": {}
+      },
+      "id": "54bff47f-57e4-465c-94c5-ea7015b42a41",
+      "name": "atualiza_campos_deal2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4440,
+        2440
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        }
+      },
+      "disabled": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "id_botconversa",
+              "value": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \") }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            },
+            {
+              "column": "instagram",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Instagram\"] }}"
+            },
+            {
+              "column": "id_lead_activecampaign",
+              "value": "={{ $node[\"cria_lead2\"].json[\"id\"] }}"
+            },
+            {
+              "column": "id_deal_activecampaign",
+              "value": "={{ $node[\"cria_deal_qualificado2\"].json[\"deal\"][\"id\"] }}"
+            },
+            {
+              "column": "nivel_qualificacao",
+              "value": "Qualificado"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "8b5bc9a0-9a7e-4f66-9edb-0a0b88aa9185",
+      "name": "insere_dados",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        4680,
+        3060
+      ],
       "credentials": {
         "mySql": {
           "id": "gBeJmlfVOrdUXALL",
@@ -7088,6 +7112,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-13T12:07:25.547Z",
-  "versionId": "c96600e5-c760-443d-a2c7-19adb01d6a40"
+  "updatedAt": "2024-08-15T20:41:10.785Z",
+  "versionId": "9d8bba78-0d22-46b8-878f-ea85f847e220"
 }
