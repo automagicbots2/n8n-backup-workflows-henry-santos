@@ -1,0 +1,489 @@
+{
+  "active": true,
+  "connections": {
+    "separa_linhas": {
+      "main": [
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "formata_data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "e_agora": {
+      "main": [
+        [
+          {
+            "node": "busca_dados",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "separa_linhas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_data": {
+      "main": [
+        [
+          {
+            "node": "e_agora",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_dados": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados5": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_funil": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_grupo": {
+      "main": [
+        [
+          {
+            "node": "separa_linhas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_linhas1": {
+      "main": [
+        [
+          {
+            "node": "separa_linhas",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "dados5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila5": {
+      "main": [
+        [
+          {
+            "node": "separa_linhas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "todo_min": {
+      "main": [
+        [
+          {
+            "node": "ClickUp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ClickUp": {
+      "main": [
+        [
+          {
+            "node": "separa_linhas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-08-15T17:21:42.194Z",
+  "id": "XYUvxOtQ9sGMDmr8",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Henry Santos] - Mensagem nos Grupos - Parte 1",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "32352dad-dc2e-49f1-afec-0127e0ac8356",
+      "name": "Replace Me",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        320,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "8350e7a3-5caf-4b9b-be54-a29d726025ae",
+      "name": "separa_linhas",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        100,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "4d7db62c-6fca-4ec8-8551-4a2f68627bea",
+              "leftValue": "={{ $node[\"formata_data\"].json[\"data_formatada\"] }}",
+              "rightValue": "={{ $now.toFormat(\"yyyy-MM-dd HH:mm\")}}",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "321f1902-80db-47bc-9c4d-45f7f1518078",
+      "name": "e_agora",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        480,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $node[\"separa_linhas\"].json[\"due_date\"] }}",
+        "format": "custom",
+        "customFormat": "yyyy-MM-dd HH:mm",
+        "outputFieldName": "data_formatada",
+        "options": {
+          "includeInputFields": false,
+          "timezone": true
+        }
+      },
+      "id": "08a60308-50bd-45e0-b5c7-1da07a5590a7",
+      "name": "formata_data",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        320,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const respostas = $node[\"separa_linhas\"].json[\"custom_fields\"] || [];\n\n// Pegando o campo específico 'Tipo de Mensagem'\nlet tipo_msg_field = respostas.find(answer => answer.name === \"Tipo de Mensagem\");\nlet tipo_msg = \"Desconhecido\";\n\n// Pegando o campo específico 'Destino da Mensagem'\nlet destino_msg_field = respostas.find(answer => answer.name === \"Destino da Mensagem\");\nlet destino_msg = \"Desconhecido\";\n\n// Pegando o campo específico 'Versão funil'\nlet versao_funil = respostas.find(answer => answer.name === \"Versão funil\")?.value || \"\";\n\n// Verifica se o campo 'Tipo de Mensagem' existe e tem opções configuradas\nif (tipo_msg_field && tipo_msg_field.type_config && Array.isArray(tipo_msg_field.type_config.options)) {\n    let tipo_msg_value = tipo_msg_field.value;\n\n    // Encontra a opção correspondente ao valor de 'orderindex'\n    const tipoOption = tipo_msg_field.type_config.options.find(opt => opt.orderindex === tipo_msg_value);\n\n    // Se encontrar a opção, pega o 'name'\n    if (tipoOption) {\n        tipo_msg = tipoOption.name;\n    }\n}\n\n// Verifica se o campo 'Destino da Mensagem' existe e tem opções configuradas\nif (destino_msg_field && destino_msg_field.type_config && Array.isArray(destino_msg_field.type_config.options)) {\n    let destino_msg_value = destino_msg_field.value;\n\n    // Encontra a opção correspondente ao valor de 'orderindex'\n    const destinoOption = destino_msg_field.type_config.options.find(opt => opt.orderindex === destino_msg_value);\n\n    // Se encontrar a opção, pega o 'name'\n    if (destinoOption) {\n        destino_msg = destinoOption.name;\n    }\n}\n\nlet arquivo = respostas.find(answer => answer.name === \"Base64 da Mídia\")?.value || \"\";\nlet evento = respostas.find(answer => answer.name === \"Evento\")?.value || \"\";\nlet funil = respostas.find(answer => answer.name === \"Funil\")?.value || \"\";\nlet copy = $node[\"separa_linhas\"].json[\"text_content\"] || \"\";\n\n// Retorna os valores processados com os nomes ajustados\nreturn {\n  arquivo,\n  tipo_msg,\n  destino_msg,\n  versao_funil,\n  copy,\n  evento,\n  funil\n}"
+      },
+      "id": "9783a143-f3c0-461d-889f-173bcfef8ea6",
+      "name": "busca_dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "32ca90fd-f0e8-4ceb-90e5-2fb2c2d0332a",
+              "name": "destino",
+              "value": "={{ $node[\"busca_dados\"].json[\"destino_msg\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "16fba742-c2e2-4a46-9743-75ff3b5d6da4",
+              "name": "id_grupo",
+              "value": "={{ $node[\"separa_linhas1\"].json[\"groupJid\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "edca72f1-44ad-4b67-9e34-7d8e8fa9dbcf",
+              "name": "arquivo",
+              "value": "={{ $node[\"busca_dados\"].json[\"arquivo\"].trim() }}",
+              "type": "string"
+            },
+            {
+              "id": "c5859b53-c18f-4c04-841d-82474173d454",
+              "name": "copy",
+              "value": "={{ $node[\"busca_dados\"].json[\"copy\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "f0f03a3c-fb1d-42a2-abab-58225b8e65b1",
+              "name": "valor_msg",
+              "value": "={{ $node[\"busca_dados\"].json[\"tipo_msg\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8295976c-16e0-4e74-9e13-92f6437bfbbd",
+      "name": "dados5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1300,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "funis",
+          "mode": "list",
+          "cachedResultName": "funis"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"busca_dados\"].json[\"funil\"] }}"
+            },
+            {
+              "column": "versao",
+              "value": "={{ Number($node[\"busca_dados\"].json[\"versao_funil\"]) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d850ef0c-57c5-4828-80b6-bdecd5be2ecb",
+      "name": "pesquisa_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        260
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "grupos",
+          "mode": "list",
+          "cachedResultName": "grupos"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "funil",
+              "value": "={{ $node[\"pesquisa_funil\"].json[\"id\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "61e89d4d-4eae-4b29-93ab-ea7f285c51e3",
+      "name": "pesquisa_grupo",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        260
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": "={{ $node[\"separa_linhas1\"].context[\"done\"] }}"
+        }
+      },
+      "id": "96f6a770-c922-430c-8dc5-96cd39ccb1e9",
+      "name": "separa_linhas1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1120,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "=Disparos - Evolution",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "dca23169-50a7-417e-a590-565b09af186b",
+      "name": "entra_na_fila5",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1480,
+        300
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "608d6fa9-99ed-4192-8786-08b86a17275f",
+      "name": "todo_min",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -260,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "getAll",
+        "team": "3135484",
+        "space": "55168085",
+        "folder": "90071118073",
+        "list": "901305125256",
+        "filters": {}
+      },
+      "id": "e7662f7e-419d-4818-bbbb-fd54aaae46ca",
+      "name": "ClickUp",
+      "type": "n8n-nodes-base.clickUp",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        280
+      ],
+      "credentials": {
+        "clickUpOAuth2Api": {
+          "id": "3BP9zfwCAo3HnARY",
+          "name": "[ClickUp] - Automagic Bots - Henry"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": {
+    "node:todo_min": {
+      "recurrencyRules": []
+    },
+    "node:todo_min1": {
+      "recurrencyRules": []
+    },
+    "node:todo_min2": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2024-08-15T19:23:18.899Z",
+      "updatedAt": "2024-08-15T19:23:18.899Z",
+      "id": "q5QO26imaVoOvQxo",
+      "name": "[MSG_EVOLUTION]"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-08-21T14:21:49.463Z",
+  "versionId": "d2143ed3-1c96-4dcb-9329-0bb767066f69"
+}
