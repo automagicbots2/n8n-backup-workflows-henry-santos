@@ -1,0 +1,2073 @@
+{
+  "active": true,
+  "connections": {
+    "msg_de_grupo": {
+      "main": [
+        [
+          {
+            "node": "variaveis_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "msg_de_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis_grupo": {
+      "main": [
+        [
+          {
+            "node": "verifica_midias5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entrou_no_grupo": {
+      "main": [
+        [],
+        [
+          {
+            "node": "saiu_do_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "recuperacao_de_vendas": {
+      "main": [
+        [
+          {
+            "node": "verifica_midias6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "verifica_midias",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "entrou_no_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "verifica_midias6": {
+      "main": [
+        [
+          {
+            "node": "EnviaVideo6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaImagem6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaAudio6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaDocumento6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaMensagemTexto6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaMensagemTexto6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "verifica_midias": {
+      "main": [
+        [
+          {
+            "node": "EnviaVideo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaImagem",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaAudio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaDocumento",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaMensagemTexto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaMensagemTexto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "verifica_midias2": {
+      "main": [
+        [
+          {
+            "node": "EnviaVideo2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaImagem2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaAudio2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaDocumento2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaMensagemTexto2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaMensagemLista1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaMensagemTexto2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "verifica_midias5": {
+      "main": [
+        [
+          {
+            "node": "EnviaVideo5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaImagem5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaAudio5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaDocumento5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "EnviaMensagemTexto5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-08-15T17:57:07.412Z",
+  "id": "W9Yg5G7I7cqIZkNw",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[HENRY SANTOS] [EVOLUTION] - Envio das Mensagens - Parte 2",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Tipos de Mídia\n\n- Vídeo\n- Imagem\n- Áudio\n- Documento\n- Texto\n- Lista",
+        "height": 243
+      },
+      "id": "d39c767d-cd67-4afd-9979-a27f860efb81",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -2640,
+        1400
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "Disparos - Evolution",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": "={{ true }}",
+          "parallelMessages": 3
+        }
+      },
+      "id": "9afca1f7-0053-45e3-8525-5ac68992aab0",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3140,
+        2020
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c9b95d35-c033-4246-939c-f2c516e3b980",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"destino\"] }}",
+              "rightValue": "Grupos",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e02dff95-7362-4312-a699-8dcc38de277a",
+      "name": "msg_de_grupo",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -2940,
+        2020
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtém os parâmetros necessários\nconst wppGrupo = $node[\"pesquisa_configs\"].json[\"wpp_grupo\"];\nconst wpp1x1Captacao = $node[\"pesquisa_configs\"].json[\"wpp_1x1_captacao\"];\nconst wpp1x1Vendas = $node[\"pesquisa_configs\"].json[\"wpp_1x1_vendas\"];\nconst instancias = $json;\n\nconsole.log(\"wppGrupo:\", wppGrupo);\nconsole.log(\"wpp1x1Captacao:\", wpp1x1Captacao);\nconsole.log(\"wpp1x1Vendas:\", wpp1x1Vendas);\nconsole.log(\"instancias:\", instancias);\n\n// Função para encontrar a instância com base no proprietário\nfunction encontrarInstanciaPorProprietario(proprietario, instancias) {\n    const instanciaKeys = Object.keys(instancias);\n    for (const key of instanciaKeys) {\n        const instancia = instancias[key].instance;\n        console.log(\"instancia:\", instancia);\n        if (instancia && instancia.owner === proprietario) {\n            return instancia;\n        }\n    }\n    return null;\n}\n\n// Encontrar instância do grupo\nconst instanciaGrupos = encontrarInstanciaPorProprietario(wppGrupo, instancias);\n\n// Encontrar instância de 1x1 para captação\nconst instancia1x1Captacao = encontrarInstanciaPorProprietario(wpp1x1Captacao, instancias);\n\n// Encontrar instância de 1x1 para vendas\nconst instancia1x1Vendas = encontrarInstanciaPorProprietario(wpp1x1Vendas, instancias);\n\n// Retornar os resultados\nreturn {\n    \"instancia_grupos\": instanciaGrupos,\n    \"instancia_1x1_captacao\": instancia1x1Captacao,\n    \"instancia_1x1_vendas\": instancia1x1Vendas\n};\n"
+      },
+      "id": "335952de-e4e8-4178-9b16-6f1a2b3f849b",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2820,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis_grupo\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis_grupo\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "image"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].trim() }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"habilitar_previa_link\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "455c8119-01ac-478c-a4d1-e2d04ef44ffe",
+      "name": "EnviaImagem5",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -2020,
+        1740
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis_grupo\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis_grupo\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "video"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].trim() }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"habilitar_previa_link\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "b304b398-9d52-4202-8b70-21d4ef28ff10",
+      "name": "EnviaVideo5",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -2020,
+        1580
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis_grupo\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis_grupo\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "document"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
+            },
+            {
+              "name": "mediaMessage.fileName",
+              "value": "opdf.pdf"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"habilitar_previa_link\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "b3daca42-7e6c-45e9-8edf-ca45a8389fdf",
+      "name": "EnviaDocumento5",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -2020,
+        2060
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis_grupo\"].json[\"url_api_evolution\"] }}message/sendWhatsAppAudio/{{ $node[\"variaveis_grupo\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
+            },
+            {
+              "name": "audioMessage.audio",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.encoding",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"habilitar_previa_link\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "bbf866c7-a5de-425e-bcfc-ded2778ee788",
+      "name": "EnviaAudio5",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -2020,
+        1900
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis_grupo\"].json[\"url_api_evolution\"] }}message/sendText/{{ $node[\"variaveis_grupo\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"habilitar_previa_link\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "e6797fe3-e675-472d-8815-acdee1fa44c4",
+      "name": "EnviaMensagemTexto5",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -2020,
+        2220
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "api_key",
+              "stringValue": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "stringValue": "MSAHenrySantos"
+            },
+            {
+              "name": "delay_em_milissegundos",
+              "stringValue": "1"
+            },
+            {
+              "name": "habilitar_previa_link",
+              "type": "booleanValue",
+              "booleanValue": "false"
+            },
+            {
+              "name": "mencionar_todos",
+              "type": "booleanValue"
+            },
+            {
+              "name": "url_api_evolution",
+              "stringValue": "https://evolutionapi.automagicbots.com.br/"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "d01ac277-3d87-4003-866a-6f59dd9555ae",
+      "name": "variaveis_grupo",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -2620,
+        2000
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "image"
+            },
+            {
+              "name": "mediaMessage.fileName",
+              "value": "imagem.png"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"variaveis1\"].json[\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"variaveis1\"].json[\"base64_da_midia\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "25b7c76a-5254-483f-8c6d-38c32b4d7d59",
+      "name": "EnviaImagem2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1140,
+        2800
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "video"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"variaveis1\"].json[\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"variaveis1\"].json[\"base64_da_midia\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "b8dd2397-c86d-4751-a9fb-65bf77ddc73b",
+      "name": "EnviaVideo2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1140,
+        2640
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "document"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"variaveis1\"].json[\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"variaveis1\"].json[\"base64_da_midia\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "mediaMessage.fileName",
+              "value": "opdf.pdf"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "0ea7235b-af13-4ce1-ad68-e03471cf45f3",
+      "name": "EnviaDocumento2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1140,
+        3120
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendWhatsAppAudio/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "audioMessage.audio",
+              "value": "={{ $node[\"variaveis1\"].json[\"base64_da_midia\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.encoding",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "9981ea20-a80e-4381-9215-1381ba429c74",
+      "name": "EnviaAudio2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1140,
+        2960
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendText/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"variaveis\"].json[\"copy\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ $node[\"variaveis\"].json[\"habilitar_previa_link\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "d0fd16c1-719d-4509-9e1e-d9013a6abec9",
+      "name": "EnviaMensagemTexto2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1140,
+        3280
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendList/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"number\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}\",\n    \"options\": {\n        \"delay\": {{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }},\n        \"presence\": \"composing\"\n    },\n    \"listMessage\": {\n        \"title\": \"{{ $node[\"variaveis\"].json[\"titulo_da_lista\"] }}\",\n        \"description\": \"{{ $node[\"variaveis\"].json[\"descricao_lista\"] }}\",\n        \"buttonText\": \"{{ $node[\"variaveis\"].json[\"copy_botao\"] }}\",\n        \"footerText\": \"Teste\",\n        \"sections\": [\n            {\n                \"title\": \"Opção 1\",\n                \"rows\": [\n                    {\n                        \"title\": \"Opção 1\",\n                        \"description\": \"Palavras comuns e simples são dominadas\",\n                        \"rowId\": \"rowId 001\"\n                    },\n                    {\n                        \"title\": \"Opção 2\",\n                        \"description\": \"Os assuntos do dia a dia, você tira de letra\",\n                        \"rowId\": \"rowId 002\"\n                    },\n                    {\n                        \"title\": \"Opção 3\",\n                        \"description\": \"Compreender a maioria das conversas cotidianas e expressar-se de forma clara em situações comuns\",\n                        \"rowId\": \"rowId 002\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "384820b3-5010-44a9-81a1-a3e22d01f52e",
+      "name": "EnviaMensagemLista1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1140,
+        3440
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "8476c441-b8c1-4fc6-8ff5-4e5d70af5670",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"situacao\"] }}",
+              "rightValue": "Entrou no Grupo",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "8cee1a27-46d6-456b-ba26-bc63be8a44f0",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"msg_entrada\"] }}",
+              "rightValue": "=",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "4683574e-29b2-4465-8b8d-88382037cbc7",
+      "name": "entrou_no_grupo",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -1860,
+        3120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "8476c441-b8c1-4fc6-8ff5-4e5d70af5670",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"situacao\"] }}",
+              "rightValue": "Saiu do Grupo",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "95c6e611-df97-4857-a23e-c68329f59d3a",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"msg_saida\"] }}",
+              "rightValue": "=",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "7a93b595-d037-49bf-b0bf-2b4aa18b0690",
+      "name": "saiu_do_grupo",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -1660,
+        3600
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "ae449830-c47e-4e80-9037-3c206dcc5af1",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        -2240,
+        3120
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "image"
+            },
+            {
+              "name": "mediaMessage.fileName",
+              "value": "imagem.png"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"variaveis6\"].json[\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"variaveis6\"].json[\"base64_da_midia\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "f7c4025f-7464-45ce-8afb-f1365d22303f",
+      "name": "EnviaImagem6",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -700,
+        3800
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "video"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"variaveis6\"].json[\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"variaveis6\"].json[\"base64_da_midia\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "2992d247-692c-4d9a-9488-199443dfcaa6",
+      "name": "EnviaVideo6",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -700,
+        3640
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendWhatsAppAudio/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "audioMessage.audio",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].trim() }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.encoding",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "3313cfdd-7f3b-4e5c-b733-537db28c99fc",
+      "name": "EnviaAudio6",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -700,
+        3960
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendText/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ $node[\"variaveis\"].json[\"habilitar_previa_link\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "1fbc2ab9-4e35-4b9c-b9e1-45e697f31968",
+      "name": "EnviaMensagemTexto6",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -700,
+        4280
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "8476c441-b8c1-4fc6-8ff5-4e5d70af5670",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"situacao\"] }}",
+              "rightValue": "Compra Aprovada",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "5e2fbf16-f217-4f56-8374-cdc60cf6d933",
+      "name": "recuperacao_de_vendas",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -1380,
+        4100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "document"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].trim() }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "mediaMessage.fileName",
+              "value": "opdf.pdf"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "2fd8257e-6585-4d73-a7ad-8194dc757103",
+      "name": "EnviaDocumento6",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -700,
+        4120
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "api_key",
+              "stringValue": "frh3o98enbur4b9nvfx4a"
+            },
+            {
+              "name": "nome_da_instancia",
+              "stringValue": "AnaLima01"
+            },
+            {
+              "name": "url_api_evolution",
+              "stringValue": "https://evolutionapi.automagicbots.com.br/"
+            },
+            {
+              "name": "delay_em_milissegundos",
+              "type": "numberValue",
+              "numberValue": "1"
+            },
+            {
+              "name": "habilitar_previa_link",
+              "type": "booleanValue",
+              "booleanValue": "false"
+            },
+            {
+              "name": "base64_da_midia",
+              "stringValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"] }}"
+            },
+            {
+              "name": "copy",
+              "stringValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "media",
+              "stringValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"valor_msg\"] }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "a3500c11-af70-4bd0-9628-f2f41e7367f5",
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -2040,
+        3120
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "image"
+            },
+            {
+              "name": "mediaMessage.fileName",
+              "value": "imagem.png"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"variaveis6\"].json[\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"variaveis6\"].json[\"base64_da_midia\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "7d8e1c2e-8620-4392-aa90-219c6ab4b7b5",
+      "name": "EnviaImagem",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -700,
+        4600
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "video"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"variaveis6\"].json[\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"variaveis6\"].json[\"base64_da_midia\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "71623968-6b9b-4e83-9e47-e53e575ef95c",
+      "name": "EnviaVideo",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -700,
+        4440
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendWhatsAppAudio/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "audioMessage.audio",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].trim() }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.encoding",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "df76b1b3-892e-487c-8e35-0f3b3ba3f902",
+      "name": "EnviaAudio",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -700,
+        4760
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendText/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ $node[\"variaveis\"].json[\"delay_em_milissegundos\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ $node[\"variaveis\"].json[\"habilitar_previa_link\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "b257d687-3f69-40be-afb0-213f83f1499d",
+      "name": "EnviaMensagemTexto",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -700,
+        5080
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}"
+            },
+            {
+              "name": "mediaMessage.mediatype",
+              "value": "document"
+            },
+            {
+              "name": "mediaMessage.caption",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].trim() }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "mediaMessage.fileName",
+              "value": "opdf.pdf"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "46ee8fe6-dd64-4ffc-806f-3248c6a89078",
+      "name": "EnviaDocumento",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -700,
+        4920
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $node[\"variaveis\"].json[\"media\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "Vídeo",
+              "outputKey": "0"
+            },
+            {
+              "value2": "Imagem",
+              "outputKey": "1"
+            },
+            {
+              "value2": "Áudio",
+              "outputKey": "2"
+            },
+            {
+              "value2": "Documento",
+              "outputKey": "3"
+            },
+            {
+              "value2": "Texto",
+              "outputKey": "4"
+            },
+            {}
+          ]
+        },
+        "fallbackOutput": 5
+      },
+      "id": "8e917e45-a5e9-41c0-ab98-04c6bdb9fabe",
+      "name": "verifica_midias6",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 2,
+      "position": [
+        -980,
+        3960
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $node[\"variaveis\"].json[\"media\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "Vídeo",
+              "outputKey": "0"
+            },
+            {
+              "value2": "Imagem",
+              "outputKey": "1"
+            },
+            {
+              "value2": "Áudio",
+              "outputKey": "2"
+            },
+            {
+              "value2": "Documento",
+              "outputKey": "3"
+            },
+            {
+              "value2": "Texto",
+              "outputKey": "4"
+            },
+            {}
+          ]
+        },
+        "fallbackOutput": 5
+      },
+      "id": "f45bb7da-4995-4612-8d10-b61247174086",
+      "name": "verifica_midias",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 2,
+      "position": [
+        -980,
+        4760
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $node[\"variaveis\"].json[\"media\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "Vídeo",
+              "outputKey": "0"
+            },
+            {
+              "value2": "Imagem",
+              "outputKey": "1"
+            },
+            {
+              "value2": "Áudio",
+              "outputKey": "2"
+            },
+            {
+              "value2": "Documento",
+              "outputKey": "3"
+            },
+            {
+              "value2": "Texto",
+              "outputKey": "4"
+            },
+            {
+              "value2": "Lista",
+              "outputKey": "5"
+            },
+            {}
+          ]
+        },
+        "fallbackOutput": 6
+      },
+      "id": "29dc0a69-e331-41f6-92e1-0c1735808b88",
+      "name": "verifica_midias2",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 2,
+      "position": [
+        -1420,
+        2960
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"valor_msg\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "Vídeo",
+              "outputKey": "0"
+            },
+            {
+              "value2": "Imagem",
+              "outputKey": "1"
+            },
+            {
+              "value2": "Áudio",
+              "outputKey": "2"
+            },
+            {
+              "value2": "Documento",
+              "outputKey": "3"
+            },
+            {
+              "value2": "Texto",
+              "outputKey": "4"
+            },
+            {
+              "value2": "Lista",
+              "outputKey": "5"
+            }
+          ]
+        }
+      },
+      "id": "2722fd8d-e67f-4a61-8682-65c7bbadce4e",
+      "name": "verifica_midias5",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 2,
+      "position": [
+        -2440,
+        1980
+      ]
+    }
+  ],
+  "pinData": {
+    "chega_da_fila": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-3kM8zXxDIVMHmZ919DSrKw",
+            "deliveryTag": 1,
+            "redelivered": false,
+            "exchange": "",
+            "routingKey": "Disparos - Evolution"
+          },
+          "properties": {},
+          "content": {
+            "situacao": "Mensagem em Grupo",
+            "id_grupo": "120363256444706105@g.us",
+            "arquivo": "",
+            "copy": "Esperamos que todos tenham aproveitado a sessão ao vivo com Henry Santos sobre Marketing de Diferenciação e Técnicas de Atendimento. Sua opinião é muito importante para nós!\nPor favor, responda nossa pesquisa de satisfação e nos ajudem a melhorar ainda mais. \nhttps://form.typeform.com/to/n7PqfF72  \nMuito obrigado! 🌟",
+            "valor_msg": "Texto"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-08-15T19:23:18.899Z",
+      "updatedAt": "2024-08-15T19:23:18.899Z",
+      "id": "q5QO26imaVoOvQxo",
+      "name": "[MSG_EVOLUTION]"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-08-21T14:25:18.111Z",
+  "versionId": "e103afb2-e94e-4f45-a6a3-dad8fa0a9588"
+}
