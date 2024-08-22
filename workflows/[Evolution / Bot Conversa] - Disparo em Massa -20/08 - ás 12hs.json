@@ -111,7 +111,8 @@
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "nao_existe5": {
@@ -482,10 +483,10 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": 902416578,
+          "value": 1141418511,
           "mode": "list",
-          "cachedResultName": "Página1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1RUcWXDP4U5D2vFxVtbsJ_Et5Aj1VHxqnPsfyBBV-6pw/edit#gid=902416578"
+          "cachedResultName": "Lote 2 - Linha 350",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1RUcWXDP4U5D2vFxVtbsJ_Et5Aj1VHxqnPsfyBBV-6pw/edit#gid=1141418511"
         },
         "options": {}
       },
@@ -563,7 +564,7 @@
           "parameters": [
             {
               "name": "flow",
-              "value": "4997176"
+              "value": "5017349"
             }
           ]
         },
@@ -575,7 +576,7 @@
       "typeVersion": 3,
       "position": [
         220,
-        2460
+        2300
       ],
       "retryOnFail": true,
       "waitBetweenTries": 5000,
@@ -667,7 +668,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "20/08/2024",
+              "rightValue": "21/08/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -770,8 +771,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1160,
-        1960
+        1580,
+        1740
       ]
     },
     {
@@ -850,8 +851,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        400,
-        2460
+        840,
+        2080
       ]
     },
     {
@@ -881,8 +882,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        560,
-        2460
+        1000,
+        2080
       ]
     },
     {
@@ -895,8 +896,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        880,
-        2440
+        1320,
+        2060
       ],
       "webhookId": "d8efb6a8-448f-4090-848f-2d3ae3df7372"
     },
@@ -910,8 +911,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        880,
-        2580
+        1320,
+        2200
       ],
       "webhookId": "5b6731a4-7e53-4e39-8f4d-044f5c661dc3"
     },
@@ -925,8 +926,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        880,
-        2720
+        1320,
+        2340
       ],
       "webhookId": "219215a8-13a7-4f1c-bc1a-7bfa900cdf1b"
     },
@@ -940,8 +941,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        880,
-        2860
+        1320,
+        2480
       ],
       "webhookId": "fe0eea55-ecdf-496a-b768-58dd481ce656"
     },
@@ -1059,6 +1060,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-19T18:53:39.065Z",
-  "versionId": "4f41156e-b860-4d61-8ec0-8663eace79e7"
+  "updatedAt": "2024-08-21T22:36:56.956Z",
+  "versionId": "a7e05220-d5ff-42cc-8c97-f262ea6f9cfd"
 }
