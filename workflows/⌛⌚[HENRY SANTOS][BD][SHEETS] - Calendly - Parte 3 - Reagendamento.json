@@ -5054,7 +5054,7 @@
         "currency": "brl",
         "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
         "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_agendou_reuniao_crm\"] }}",
-        "owner": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }}",
+        "owner": "=1",
         "additionalFields": {}
       },
       "id": "1e6df297-87fe-4f3b-bf3f-81bca41a0c98",
@@ -5150,7 +5150,7 @@
         "currency": "brl",
         "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
         "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_agendou_reuniao_crm\"] }}",
-        "owner": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }}",
+        "owner": "=1",
         "additionalFields": {}
       },
       "id": "60e962e1-6b64-4f6b-be24-d30fcebb88b1",
@@ -5178,7 +5178,7 @@
           "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"valor_produto_principal_em_centavos\"] }}",
           "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
           "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_agendou_reuniao_crm\"] }}",
-          "owner": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }}"
+          "owner": "=1"
         }
       },
       "id": "5730d9a3-68e7-4f3a-9237-ab44a4226001",
@@ -5660,6 +5660,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-16T14:04:36.378Z",
-  "versionId": "8b313f27-021e-432d-8943-2502c1668fc2"
+  "updatedAt": "2024-08-22T15:36:26.935Z",
+  "versionId": "448d3e61-f245-4de0-9d01-e7e44b3edc6b"
 }
