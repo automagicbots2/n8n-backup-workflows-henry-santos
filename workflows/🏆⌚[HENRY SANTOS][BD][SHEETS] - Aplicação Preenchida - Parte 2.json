@@ -3548,7 +3548,7 @@
     },
     {
       "parameters": {
-        "method": "PUT",
+        "method": "POST",
         "url": "=https://{{ $node[\"chega_da_fila\"].json[\"content\"][\"url_api_activecampaign_crm\"] }}.api-us1.com/api/3/deals/{{  $json[\"deal\"][\"id\"]  }}",
         "authentication": "predefinedCredentialType",
         "nodeCredentialType": "activeCampaignApi",
@@ -6914,42 +6914,38 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-8IvEi93rVU1k5b27pQVw3Q",
-            "deliveryTag": 4,
+            "consumerTag": "amq.ctag-oV4Ccrxk-TAQL7nRptB24g",
+            "deliveryTag": 51661,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Não Agendamentos - Sessão - Parte 2"
           },
-          "properties": {
-            "headers": {
-              "x-delivery-count": 14102
-            }
-          },
+          "properties": {},
           "content": {
             "id_fluxo2_nao_agendou_10_min_desqualificados": 2830145,
-            "Nome do Cliente": "Isabela",
-            "E-mail do Cliente": "bela.egusquiza@hotmail.com",
-            "Telefone do Cliente - Formato BC": "+553185289085",
-            "Telefone do Cliente - Formato Z-API": "553185289085",
-            "Instagram": "Char.mestudio",
-            "pergunta0": "NÃO",
-            "pergunta1": "ENTRE 5 E 10",
-            "pergunta2": "Entre R$30.001 e R$50.000 mensal",
+            "Nome do Cliente": "Pedro Henrique Gonçalves Machado",
+            "E-mail do Cliente": "pedrocortex777@gmail.com",
+            "Telefone do Cliente - Formato BC": "+555391387213",
+            "Telefone do Cliente - Formato Z-API": "555391387213",
+            "Instagram": "cortexhairdressers",
+            "pergunta0": "SIM",
+            "pergunta1": "ENTRE 6 E 10",
+            "pergunta2": "Entre R$50.001 e R$100.000 mensal",
             "pergunta3": "",
-            "pergunta4": "Inaugurar minha 2 unidade",
-            "pergunta5": "Tempo",
-            "pergunta6": "Por que já estou com uma unidade e indo para a segunda em breve",
-            "pergunta7": "0 a R$300",
+            "pergunta4": "Aumento de lucro e um plano administrativo eficaz, maior expressão nas redes sociais e captação de clientes,",
+            "pergunta5": "Organização, planejamentos execução comprometimento da equipe num todo",
+            "pergunta6": "Por eu ser ref e acredito que podemos ter uma troca de experiências muito boa para ambas as partes.",
+            "pergunta7": "R$300 a R$700",
             "pergunta8": "",
-            "pergunta9": "Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando",
-            "pergunta11": "Sim! Não preciso falar com mais ninguém",
-            "utm_content": "Instagram_Feed",
-            "utm_source": "meta",
-            "utm_campaign": "meta-ads-f30-est37-cold",
-            "utm_medium": "01 - [Aquecimento_de_baleia] Visualizou video 95%_30d + engajou14d",
-            "utm_term": "meta-ads-f30-est37-cold",
-            "data_resposta_type": "12/08/2024 17:58",
-            "data_ultima_quinzena": "2024-07-28",
+            "pergunta9": "Estou conseguindo pagar as contas e não sobrando",
+            "pergunta11": "Não! Preciso falar com meu Parceiro/parceira",
+            "utm_content": "AD36 - [FUNIL 30 MIN] EST36",
+            "utm_source": "meta_ads",
+            "utm_campaign": "[C] [SE] [HM] [CADASTRO] [ABO] Teste de criativos",
+            "utm_medium": "06 - Adm página de beleza",
+            "utm_term": "120210711863560128",
+            "data_resposta_type": "22/08/2024 11:17",
+            "data_ultima_quinzena": "2024-08-07",
             "id_fluxo_nao_agendou_10_min": "2416169",
             "id_fluxo_nao_agendou_10_min_desqualificados": "2829998",
             "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
@@ -7062,7 +7058,7 @@
             "id_campo_pergunta9_deal_crm": "81",
             "id_pipeline_desqualificado_crm": "14",
             "id_stage_desqualificado_crm": "102",
-            "dia_da_semana_se": "Segunda-feira",
+            "dia_da_semana_se": "Quinta-feira",
             "id_campo_dia_aplicou_se": "2113710",
             "id_campo_pergunta10_deal_crm": "82"
           }
@@ -7089,6 +7085,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-22T14:56:34.626Z",
-  "versionId": "991db8b4-91df-4f56-afcd-3824bb1c98dd"
+  "updatedAt": "2024-08-22T15:11:25.001Z",
+  "versionId": "4a394654-e322-46d2-986f-95217cc34de4"
 }
