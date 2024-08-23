@@ -1031,17 +1031,6 @@
         ]
       ]
     },
-    "cria_atualiza_contato": {
-      "main": [
-        [
-          {
-            "node": "add_tag_agendou",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "id_activecampaign": {
       "main": [
         [
@@ -1058,17 +1047,6 @@
         [
           {
             "node": "atualiza_deal",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "cria_deal1": {
-      "main": [
-        [
-          {
-            "node": "atualizar_campos_deal1",
             "type": "main",
             "index": 0
           }
@@ -1093,44 +1071,11 @@
         ]
       ]
     },
-    "cria_deal2": {
-      "main": [
-        [
-          {
-            "node": "atualizar_campos_deal2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "atualiza_deal": {
-      "main": [
-        [
-          {
-            "node": "atualizar_campos_deal2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "add_id_banco1": {
       "main": [
         [
           {
             "node": "atualiza_campos_deal2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "atualizar_campos_deal1": {
-      "main": [
-        [
-          {
-            "node": "insere_dados",
             "type": "main",
             "index": 0
           }
@@ -1204,6 +1149,61 @@
         [
           {
             "node": "pesquisa_agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualizar_campos_deal1": {
+      "main": [
+        [
+          {
+            "node": "insere_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_atualiza_contato": {
+      "main": [
+        [
+          {
+            "node": "add_tag_agendou",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_deal1": {
+      "main": [
+        [
+          {
+            "node": "atualizar_campos_deal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_deal2": {
+      "main": [
+        [
+          {
+            "node": "atualizar_campos_deal2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_deal": {
+      "main": [
+        [
+          {
+            "node": "atualizar_campos_deal2",
             "type": "main",
             "index": 0
           }
@@ -1403,7 +1403,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -4180,
+        -4020,
         1140
       ],
       "credentials": {
@@ -1531,7 +1531,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -4020,
+        -3860,
         1140
       ]
     },
@@ -1593,7 +1593,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -4360,
+        -4200,
         1140
       ],
       "credentials": {
@@ -4186,119 +4186,6 @@
     },
     {
       "parameters": {
-        "email": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
-        "updateIfExists": true,
-        "additionalFields": {
-          "fieldValues": {
-            "property": [
-              {
-                "field": "52",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}"
-              },
-              {
-                "field": "51",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}"
-              },
-              {
-                "field": "55",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Responsável pelo Evento\"] }}"
-              },
-              {
-                "field": "220",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Responsável\"] }}"
-              },
-              {
-                "field": "226",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split('/')[2].split(' ')[0].replace(',',' ').trim() }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split('/')[0] }}"
-              },
-              {
-                "field": "225",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"] }}"
-              },
-              {
-                "field": "156",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split('/')[2].split(' ')[0].replace(',','').trim() }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split('/')[0] }}"
-              },
-              {
-                "field": "227",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Dia da Semana de Início do Evento\"] }}"
-              },
-              {
-                "field": "223",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Término\"].split('/')[2].split(' ')[0].replace(',','').trim() }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Término\"].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Término\"].split('/')[0] }}"
-              },
-              {
-                "field": "224",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Término\"].replace(',','') }}"
-              },
-              {
-                "field": "155",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}"
-              },
-              {
-                "field": "228",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}"
-              },
-              {
-                "field": "=229",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}"
-              },
-              {
-                "field": "=230",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}"
-              },
-              {
-                "field": "=234",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}"
-              },
-              {
-                "field": "=232",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}"
-              },
-              {
-                "field": "233",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}"
-              },
-              {
-                "field": "=235",
-                "value": "=https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}"
-              },
-              {
-                "field": "=236",
-                "value": "=https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}"
-              },
-              {
-                "field": "=316",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}"
-              },
-              {
-                "field": "=317",
-                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}"
-              }
-            ]
-          },
-          "firstName": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}",
-          "lastName": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \") }}",
-          "phone": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
-        }
-      },
-      "id": "3c73a282-b1b6-444a-823e-0bac6e1d307b",
-      "name": "cria_atualiza_contato",
-      "type": "n8n-nodes-base.activeCampaign",
-      "typeVersion": 1,
-      "position": [
-        -6680,
-        1300
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      }
-    },
-    {
-      "parameters": {
         "resource": "deal",
         "operation": "get",
         "dealId": "={{ $node[\"pesquisa_lead1\"].json[\"id_deal_activecampaign\"] }}"
@@ -4310,34 +4197,6 @@
       "position": [
         -4680,
         1720
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "resource": "deal",
-        "title": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}",
-        "contact": "={{ $node[\"id_activecampaign\"].json[\"id\"] }}",
-        "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"valor_produto_principal_em_centavos\"] }}",
-        "currency": "brl",
-        "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
-        "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_agendou_reuniao_crm\"] }}",
-        "owner": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }}",
-        "additionalFields": {}
-      },
-      "id": "ef325094-114c-451c-95ef-b97f44eab201",
-      "name": "cria_deal1",
-      "type": "n8n-nodes-base.activeCampaign",
-      "typeVersion": 1,
-      "position": [
-        -4720,
-        1140
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -4366,88 +4225,6 @@
         -4860,
         1640
       ]
-    },
-    {
-      "parameters": {
-        "resource": "deal",
-        "title": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}",
-        "contact": "={{ $node[\"id_activecampaign\"].json[\"id\"] }}",
-        "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"valor_produto_principal_em_centavos\"] }}",
-        "currency": "brl",
-        "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
-        "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_agendou_reuniao_crm\"] }}",
-        "owner": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }}",
-        "additionalFields": {}
-      },
-      "id": "24131c77-82bd-4274-a88f-1936ef4d9418",
-      "name": "cria_deal2",
-      "type": "n8n-nodes-base.activeCampaign",
-      "typeVersion": 1,
-      "position": [
-        -4600,
-        1480
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "resource": "deal",
-        "operation": "update",
-        "dealId": "={{ $json.deal.id }}",
-        "updateFields": {
-          "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"valor_produto_principal_em_centavos\"] }}",
-          "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
-          "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_agendou_reuniao_crm\"] }}",
-          "owner": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }}"
-        }
-      },
-      "id": "0bb86ccf-a1ed-436c-aac8-c130260134e2",
-      "name": "atualiza_deal",
-      "type": "n8n-nodes-base.activeCampaign",
-      "typeVersion": 1,
-      "position": [
-        -4520,
-        1720
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "=https://{{ $node[\"entra_na_fila\"].json[\"content\"][\"url_api_activecampaign\"] }}.api-us1.com/api/3/deals/{{  $json[\"deal\"][\"id\"]  }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "activeCampaignApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_cancelamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/cancellations/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_reagendamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/reschedulings/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_cliente_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_dia_semana_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Dia da Semana de Início do Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_email_do_responsavel_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['E-mail do Responsável'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_do_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_da_reuniao_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Link da Reunião'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_tipo_de_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Tipo de Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_source_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_source'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_campaign_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_campaign'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_term_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_term'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_medium_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_medium'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_content_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_content'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_fun_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['funil'] }}\"\n      },\n      {\n        \"customFieldId\": \"18\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_content'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_var_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['variacao_do_funil'] }}\"\n      }\n    ]\n  }\n}",
-        "options": {}
-      },
-      "id": "67c55390-4ea1-4998-951e-98a084c14d9e",
-      "name": "atualizar_campos_deal1",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        -4540,
-        1140
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      }
     },
     {
       "parameters": {
@@ -4528,32 +4305,6 @@
       "position": [
         -4180,
         1820
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "=https://{{ $node[\"entra_na_fila\"].json[\"content\"][\"url_api_activecampaign\"] }}.api-us1.com/api/3/deals/{{  $json[\"deal\"][\"id\"]  }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "activeCampaignApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_cancelamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/cancellations/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_reagendamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/reschedulings/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_cliente_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_dia_semana_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Dia da Semana de Início do Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_email_do_responsavel_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['E-mail do Responsável'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_do_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_da_reuniao_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Link da Reunião'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_tipo_de_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Tipo de Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Evento'] }}\"\n      }\n    ]\n  }\n}\n",
-        "options": {}
-      },
-      "id": "c2408e74-0ce7-4b21-88be-58d06938411e",
-      "name": "atualizar_campos_deal3",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        -4580,
-        920
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -4758,6 +4509,316 @@
         }
       },
       "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://{{ $node[\"entra_na_fila\"].json[\"content\"][\"url_api_activecampaign\"] }}.api-us1.com/api/3/deals/{{  $json[\"deal\"][\"id\"]  }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_cancelamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/cancellations/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_reagendamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/reschedulings/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_cliente_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_dia_semana_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Dia da Semana de Início do Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_email_do_responsavel_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['E-mail do Responsável'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_do_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_da_reuniao_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Link da Reunião'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_tipo_de_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Tipo de Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_source_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_source'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_campaign_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_campaign'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_term_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_term'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_medium_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_medium'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_content_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_content'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_fun_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['funil'] }}\"\n      },\n      {\n        \"customFieldId\": \"18\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['utm_content'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_utm_var_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['variacao_do_funil'] }}\"\n      }\n    ]\n  }\n}",
+        "options": {}
+      },
+      "id": "67c55390-4ea1-4998-951e-98a084c14d9e",
+      "name": "atualizar_campos_deal1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -4720,
+        1140
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "3d8b0fc3-5598-4f67-b968-2c0023173959",
+              "leftValue": "={{ $node[\"atualizar_campos_deal1\"].json[\"error\"][\"cause\"][\"message\"] }}",
+              "rightValue": "403",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e470d9ba-8ee7-4e71-8965-bd1dd1c2ff5c",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -4420,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "email": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
+        "updateIfExists": true,
+        "additionalFields": {
+          "fieldValues": {
+            "property": [
+              {
+                "field": "52",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}"
+              },
+              {
+                "field": "51",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}"
+              },
+              {
+                "field": "55",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Responsável pelo Evento\"] }}"
+              },
+              {
+                "field": "220",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Responsável\"] }}"
+              },
+              {
+                "field": "226",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split('/')[2].split(' ')[0].replace(',',' ').trim() }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split('/')[0] }}"
+              },
+              {
+                "field": "225",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"] }}"
+              },
+              {
+                "field": "156",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split('/')[2].split(' ')[0].replace(',','').trim() }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split('/')[0] }}"
+              },
+              {
+                "field": "227",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Dia da Semana de Início do Evento\"] }}"
+              },
+              {
+                "field": "223",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Término\"].split('/')[2].split(' ')[0].replace(',','').trim() }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Término\"].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Término\"].split('/')[0] }}"
+              },
+              {
+                "field": "224",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Término\"].replace(',','') }}"
+              },
+              {
+                "field": "155",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}"
+              },
+              {
+                "field": "228",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}"
+              },
+              {
+                "field": "=229",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+              },
+              {
+                "field": "=230",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}"
+              },
+              {
+                "field": "=234",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}"
+              },
+              {
+                "field": "=232",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}"
+              },
+              {
+                "field": "233",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}"
+              },
+              {
+                "field": "=235",
+                "value": "=https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}"
+              },
+              {
+                "field": "=236",
+                "value": "=https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}"
+              },
+              {
+                "field": "=316",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}"
+              },
+              {
+                "field": "=317",
+                "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}"
+              }
+            ]
+          },
+          "firstName": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}",
+          "lastName": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \") }}",
+          "phone": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+        }
+      },
+      "id": "3c73a282-b1b6-444a-823e-0bac6e1d307b",
+      "name": "cria_atualiza_contato",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        -6680,
+        1300
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://{{ $node[\"entra_na_fila\"].json[\"content\"][\"url_api_activecampaign\"] }}.api-us1.com/api/3/deals/{{  $json[\"deal\"][\"id\"]  }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "activeCampaignApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_cancelamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/cancellations/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_reagendamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/reschedulings/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_cliente_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_dia_semana_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Dia da Semana de Início do Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_email_do_responsavel_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['E-mail do Responsável'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_do_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_da_reuniao_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Link da Reunião'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_tipo_de_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Tipo de Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Evento'] }}\"\n      }\n    ]\n  }\n}\n",
+        "options": {}
+      },
+      "id": "c2408e74-0ce7-4b21-88be-58d06938411e",
+      "name": "atualizar_campos_deal3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -4580,
+        920
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://gestaodesaloes67530.api-us1.com/api/3/users",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "d0aa5c89796c6403850c539dbd5bcb58ffc0f8c7ff28b9fc6be0c3b54a540a15403f99b1"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d1058b44-56b2-43ea-9bb4-ae1787acd93a",
+      "name": "atualizar_campos_deal4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -4280,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "deal",
+        "title": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}",
+        "contact": "={{ $node[\"id_activecampaign\"].json[\"id\"] }}",
+        "value": "={{ Number($node[\"entra_na_fila\"].json[\"content\"][\"valor_produto_principal_em_centavos\"]) }}",
+        "currency": "brl",
+        "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
+        "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_agendou_reuniao_crm\"] }}",
+        "owner": "1",
+        "additionalFields": {}
+      },
+      "id": "ef325094-114c-451c-95ef-b97f44eab201",
+      "name": "cria_deal1",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        -4900,
+        1140
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "resource": "deal",
+        "title": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}",
+        "contact": "={{ $node[\"id_activecampaign\"].json[\"id\"] }}",
+        "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"valor_produto_principal_em_centavos\"] }}",
+        "currency": "brl",
+        "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
+        "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_agendou_reuniao_crm\"] }}",
+        "owner": "=1",
+        "additionalFields": {}
+      },
+      "id": "24131c77-82bd-4274-a88f-1936ef4d9418",
+      "name": "cria_deal2",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        -4600,
+        1480
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "resource": "deal",
+        "operation": "update",
+        "dealId": "={{ $json.deal.id }}",
+        "updateFields": {
+          "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"valor_produto_principal_em_centavos\"] }}",
+          "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
+          "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_agendou_reuniao_crm\"] }}",
+          "owner": "=1"
+        }
+      },
+      "id": "0bb86ccf-a1ed-436c-aac8-c130260134e2",
+      "name": "atualiza_deal",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        -4520,
+        1720
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        }
+      },
+      "continueOnFail": true
     }
   ],
   "pinData": {
@@ -4765,33 +4826,37 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-sJv-2gv7X7Y03KW9apX-sg",
-            "deliveryTag": 1,
-            "redelivered": false,
+            "consumerTag": "amq.ctag-4Egi0GkTi-quBUYnvrsxSA",
+            "deliveryTag": 1881,
+            "redelivered": true,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica"
           },
-          "properties": {},
+          "properties": {
+            "headers": {
+              "x-delivery-count": 1263249
+            }
+          },
           "content": {
-            "Nome do Cliente": "Vitor",
-            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
-            "Telefone do Cliente - Formato BC": "+5519984574874",
-            "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "Tipo de Evento": "Sessao Estrategica",
-            "ID do Evento": "c220e1ee-2fb4-4f26-81d3-2c3d7aaa92c5",
-            "Responsável pelo Evento": "Henry Santos",
-            "E-mail do Responsável": "henry.dossantos@gmail.com",
-            "Data de Início": "20/03/2024 14:00",
-            "Data em que foi feito o Agendamento": "15/03/2024 16:57",
-            "Data de Término": "20/03/2024 15:30",
-            "Dia da Semana de Início do Evento": "Quarta",
-            "Link da Reunião": "https://calendly.com/events/c220e1ee-2fb4-4f26-81d3-2c3d7aaa92c5/google_meet",
-            "utm_source": "manychat",
-            "utm_campaign": "ad4",
-            "utm_term": "hot",
-            "utm_medium": "image",
-            "utm_content": "imag2",
-            "ID do Cliente": "ac196211-a296-4f20-9a61-c74e6468af0c",
+            "Nome do Cliente": "Riberta Bicalho ‪21 96484‑8853‬ SDR",
+            "E-mail do Cliente": "roberta@hotmail.com",
+            "Telefone do Cliente - Formato BC": "+",
+            "Telefone do Cliente - Formato Z-API": "",
+            "Tipo de Evento": "1 hour Meeting",
+            "ID do Evento": "50c5d486-4f40-43d8-b62f-995de6ac0015",
+            "Responsável pelo Evento": "Willian Novaes",
+            "E-mail do Responsável": "willnovaes01@gmail.com",
+            "Data de Início": "19/08/2024 15:00",
+            "Data em que foi feito o Agendamento": "16/08/2024 11:49",
+            "Data de Término": "19/08/2024 16:00",
+            "Dia da Semana de Início do Evento": "Segunda",
+            "Link da Reunião": null,
+            "utm_source": null,
+            "utm_campaign": null,
+            "utm_term": null,
+            "utm_medium": null,
+            "utm_content": null,
+            "ID do Cliente": "812500a2-a402-4fb0-a960-5bca8b1daa19",
             "id_do_campo_id_do_agendamento_bot_conversa": "1111672",
             "fluxo_de_confirmacao_de_agendamento": "1879004",
             "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
@@ -4801,7 +4866,7 @@
             "id_do_campo_horario_agendado_bot_conversa": "1115968",
             "id_do_campo_id_banco_de_dados_bot_conversa": "1351140",
             "funil": "sessao_estrategica",
-            "variacao_do_funil": "agendamento_manychat",
+            "variacao_do_funil": null,
             "id_do_campo_id_do_cliente_bot_conversa": "1111674",
             "id_do_campo_email_do_responsavel": "1115994",
             "url_api_activecampaign": "gestaodesaloes67530",
@@ -4809,7 +4874,7 @@
             "id_stage_agendou_reuniao_crm": "21",
             "valor_produto_principal_em_centavos": "700000",
             "id_campo_id_banco_de_dados_crm": "257",
-            "id_sdr": "1",
+            "id_sdr": "willnovaes01@gmail.com",
             "id_campo_link_de_cancelamento_crm": "23",
             "id_campo_link_de_reagendamento_crm": "24",
             "id_campo_id_do_cliente_crm": "25",
@@ -4863,6 +4928,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-22T14:26:43.227Z",
-  "versionId": "6c5ab505-a435-4f29-bfcd-419dc2f5aec2"
+  "updatedAt": "2024-08-22T15:34:51.877Z",
+  "versionId": "289d508d-366e-4b7c-a231-a024c90a5f18"
 }
