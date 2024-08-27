@@ -1,0 +1,66 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "busca_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-08-26T21:22:16.722Z",
+  "id": "Hlv4AgvvcOvJS0br",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[Henry Santos] - Insere lead na kommo via API",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "439063a6-0f00-4c17-87f3-68b629225f39",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        180,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://veronicaburgel15.kommo.com/api/v4/leads/6484858",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {}
+      },
+      "id": "0a3d7d55-6c7a-4383-8fb4-cd6096a8aabf",
+      "name": "busca_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        440,
+        260
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-08-27T00:07:11.754Z",
+  "versionId": "4c33f3af-df1b-45f3-b14e-fe74feee7a7e"
+}
