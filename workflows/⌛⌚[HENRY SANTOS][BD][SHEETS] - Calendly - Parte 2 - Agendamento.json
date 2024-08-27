@@ -30,7 +30,7 @@
         ],
         [
           {
-            "node": "id_deal_vazio",
+            "node": "id_lead_kommo_vazio",
             "type": "main",
             "index": 0
           }
@@ -1159,7 +1159,7 @@
       "main": [
         [
           {
-            "node": "insere_dados",
+            "node": "Add_lead_KOMMO2",
             "type": "main",
             "index": 0
           }
@@ -1204,6 +1204,79 @@
         [
           {
             "node": "atualizar_campos_deal2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_lead_KOMMO2": {
+      "main": [
+        [
+          {
+            "node": "insere_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_lead_KOMMO1": {
+      "main": [
+        [
+          {
+            "node": "MySQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL": {
+      "main": [
+        [
+          {
+            "node": "id_deal_vazio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "id_lead_kommo_vazio": {
+      "main": [
+        [
+          {
+            "node": "Add_lead_KOMMO1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_contacts_KOMMO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_contacts_KOMMO": {
+      "main": [
+        [
+          {
+            "node": "update_leads_KOMMO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_leads_KOMMO": {
+      "main": [
+        [
+          {
+            "node": "id_deal_vazio",
             "type": "main",
             "index": 0
           }
@@ -1298,7 +1371,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -2580,
+        -2240,
         1140
       ],
       "credentials": {
@@ -1324,7 +1397,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3760,
+        -3280,
         1540
       ]
     },
@@ -1344,7 +1417,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3960,
+        -3480,
         1580
       ]
     },
@@ -1403,7 +1476,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -4020,
+        -3540,
         1140
       ],
       "credentials": {
@@ -1429,7 +1502,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3420,
+        -2940,
         1360
       ]
     },
@@ -1449,7 +1522,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3580,
+        -3100,
         1440
       ]
     },
@@ -1469,7 +1542,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3580,
+        -3100,
         1960
       ]
     },
@@ -1489,7 +1562,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3400,
+        -2920,
         1840
       ]
     },
@@ -1510,7 +1583,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -2880,
+        -2400,
         1260
       ]
     },
@@ -1531,7 +1604,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -3860,
+        -3380,
         1140
       ]
     },
@@ -1581,6 +1654,14 @@
             {
               "column": "nivel_qualificacao",
               "value": "Qualificado"
+            },
+            {
+              "column": "id_lead_kommo",
+              "value": "={{ $node[\"Add_lead_KOMMO2\"].json[\"id\"] }}"
+            },
+            {
+              "column": "id_contato_kommo",
+              "value": "={{ $node[\"Add_lead_KOMMO2\"].json[\"contact_id\"] }}"
             }
           ]
         },
@@ -1593,7 +1674,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -4200,
+        -3800,
         1140
       ],
       "credentials": {
@@ -1656,7 +1737,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3220,
+        -2740,
         1440
       ],
       "credentials": {
@@ -1715,7 +1796,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3220,
+        -2740,
         1280
       ],
       "credentials": {
@@ -1778,7 +1859,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3420,
+        -2940,
         1600
       ],
       "credentials": {
@@ -1841,7 +1922,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3200,
+        -2720,
         1760
       ],
       "credentials": {
@@ -1908,7 +1989,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3200,
+        -2720,
         1940
       ],
       "credentials": {
@@ -1975,7 +2056,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3400,
+        -2920,
         2040
       ],
       "credentials": {
@@ -2001,7 +2082,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3580,
+        -3100,
         2300
       ]
     },
@@ -2021,7 +2102,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -3740,
+        -3260,
         2380
       ]
     },
@@ -2082,7 +2163,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3580,
+        -3100,
         2540
       ],
       "credentials": {
@@ -2145,7 +2226,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3360,
+        -2880,
         2200
       ],
       "credentials": {
@@ -2212,7 +2293,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3360,
+        -2880,
         2380
       ],
       "credentials": {
@@ -4195,7 +4276,7 @@
       "type": "n8n-nodes-base.activeCampaign",
       "typeVersion": 1,
       "position": [
-        -4680,
+        -4040,
         1720
       ],
       "credentials": {
@@ -4222,7 +4303,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -4860,
+        -4220,
         1640
       ]
     },
@@ -4242,8 +4323,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        -1860,
-        960
+        -1740,
+        920
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -4276,7 +4357,7 @@
       "type": "n8n-nodes-base.activeCampaign",
       "typeVersion": 1,
       "position": [
-        -2360,
+        -2020,
         1140
       ],
       "credentials": {
@@ -4303,7 +4384,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        -4180,
+        -3700,
         1820
       ],
       "credentials": {
@@ -4472,7 +4553,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        -4160,
+        -3680,
         1580
       ],
       "credentials": {
@@ -4499,7 +4580,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        -2120,
+        -1780,
         1140
       ],
       "credentials": {
@@ -4526,7 +4607,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        -4720,
+        -4400,
         1140
       ],
       "alwaysOutputData": true,
@@ -4753,7 +4834,7 @@
       "type": "n8n-nodes-base.activeCampaign",
       "typeVersion": 1,
       "position": [
-        -4900,
+        -4580,
         1140
       ],
       "credentials": {
@@ -4781,7 +4862,7 @@
       "type": "n8n-nodes-base.activeCampaign",
       "typeVersion": 1,
       "position": [
-        -4600,
+        -3960,
         1480
       ],
       "credentials": {
@@ -4809,7 +4890,7 @@
       "type": "n8n-nodes-base.activeCampaign",
       "typeVersion": 1,
       "position": [
-        -4520,
+        -3880,
         1720
       ],
       "credentials": {
@@ -4819,6 +4900,187 @@
         }
       },
       "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n[\n {\n    \"name\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n             \"responsible_user_id\":11762503,\n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1014634,\n                      \"field_name\": \"Data da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[0] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 1014636,\n                      \"field_name\": \"Hora da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[1] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 1014638,\n                      \"field_name\": \"Link da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11762503,\n    \"status_id\":72345787,\n    \"pipeline_id\":9337315\n }\n]",
+        "options": {}
+      },
+      "id": "cac8f9b9-e641-4268-85a5-c52670706aa9",
+      "name": "Add_lead_KOMMO2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -4080,
+        1140
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n[\n {\n    \"name\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n             \"responsible_user_id\":11762503,\n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1014634,\n                      \"field_name\": \"Data da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[0] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 1014636,\n                      \"field_name\": \"Hora da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[1] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 1014638,\n                      \"field_name\": \"Link da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11762503,\n    \"status_id\":72345787,\n    \"pipeline_id\":9337315\n }\n]",
+        "options": {}
+      },
+      "id": "b20e9246-68f4-406e-b3cc-ffd2a18de816",
+      "name": "Add_lead_KOMMO1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -4620,
+        1420
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"pesquisa_lead1\"].json[\"id_lead\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_lead_kommo",
+              "value": "={{ $node[\"Add_lead_KOMMO1\"].json[\"id\"] }}"
+            },
+            {
+              "column": "id_contato_kommo",
+              "value": "={{ $node[\"Add_lead_KOMMO1\"].json[\"contact_id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9edb7e1a-e5a9-493c-818d-f8aed4659426",
+      "name": "MySQL",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        -4460,
+        1420
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"pesquisa_lead1\"].json[\"id_lead_kommo\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "ac3a080e-09b1-4001-818c-fe264e7340be",
+      "name": "id_lead_kommo_vazio",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -4820,
+        1500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_lead1\"].json[\"id_contato_kommo\"] }},\n        \"status_id\": 72345787,\n        \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1014634,\n                      \"field_name\": \"Data da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[0] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 1014636,\n                      \"field_name\": \"Hora da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[1] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 1014638,\n                      \"field_name\": \"Link da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                          }\n                ]\n            }\n        ]\n    }\n]",
+        "options": {}
+      },
+      "id": "c31044bf-74fc-4871-b846-a22cb21b3dba",
+      "name": "update_contacts_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -4640,
+        1660
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_lead1\"].json[\"id_lead_kommo\"] }},\n                \"pipeline_id\": 9337315,\n                \"status_id\": 72345787\n    }\n]",
+        "options": {}
+      },
+      "id": "fcd44411-963f-40db-92ce-1f39e5459a82",
+      "name": "update_leads_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -4440,
+        1660
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
     }
   ],
   "pinData": {
@@ -4914,7 +5176,13 @@
     ]
   },
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
   },
   "staticData": {
     "node:Calendly Trigger": {}
@@ -4928,6 +5196,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-22T15:34:51.877Z",
-  "versionId": "289d508d-366e-4b7c-a231-a024c90a5f18"
+  "updatedAt": "2024-08-27T01:30:18.512Z",
+  "versionId": "99699046-f577-4b96-946a-76c6579958f0"
 }
