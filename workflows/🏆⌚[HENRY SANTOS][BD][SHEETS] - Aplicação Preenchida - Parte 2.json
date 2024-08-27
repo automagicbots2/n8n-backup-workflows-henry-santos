@@ -321,7 +321,7 @@
         ],
         [
           {
-            "node": "funil_live_semanal",
+            "node": "add_tag_qualificado",
             "type": "main",
             "index": 0
           }
@@ -596,79 +596,37 @@
     },
     "dados1": {
       "main": [
-        [
-          {
-            "node": "entra_na_fila9",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "dados14": {
       "main": [
-        [
-          {
-            "node": "entra_na_fila8",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "dados15": {
       "main": [
-        [
-          {
-            "node": "entra_na_fila8",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "dados": {
       "main": [
-        [
-          {
-            "node": "entra_na_fila7",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "dados10": {
       "main": [
-        [
-          {
-            "node": "entra_na_fila6",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "dados8": {
       "main": [
-        [
-          {
-            "node": "entra_na_fila6",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "funil_live_semanal": {
       "main": [
-        [
-          {
-            "node": "add_tag_qualificado",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         [
           {
             "node": "add_tag_qualificado1",
@@ -1063,17 +1021,6 @@
         [
           {
             "node": "insere_dados4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "chega_da_fila": {
-      "main": [
-        [
-          {
-            "node": "segundo_ou_mais_erro",
             "type": "main",
             "index": 0
           }
@@ -2969,6 +2916,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -2991,6 +2939,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3013,6 +2962,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3126,7 +3076,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -3169,6 +3120,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3211,6 +3163,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3239,6 +3192,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3267,6 +3221,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -4636,6 +4591,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -4664,6 +4620,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -4692,6 +4649,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -5111,6 +5069,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -5141,8 +5100,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        3460,
-        2540
+        3400,
+        3340
       ]
     },
     {
@@ -5166,7 +5125,7 @@
       "typeVersion": 1,
       "position": [
         5640,
-        3340
+        3780
       ],
       "credentials": {
         "rabbitmq": {
@@ -5231,7 +5190,7 @@
       "typeVersion": 2.1,
       "position": [
         5020,
-        3060
+        3500
       ],
       "credentials": {
         "mySql": {
@@ -5261,7 +5220,7 @@
       "typeVersion": 1,
       "position": [
         5640,
-        3060
+        3500
       ],
       "credentials": {
         "rabbitmq": {
@@ -5647,7 +5606,7 @@
       "typeVersion": 1,
       "position": [
         5420,
-        3060
+        3500
       ]
     },
     {
@@ -6038,7 +5997,7 @@
       "typeVersion": 1,
       "position": [
         5420,
-        3220
+        3660
       ]
     },
     {
@@ -6053,7 +6012,7 @@
       "typeVersion": 1,
       "position": [
         3760,
-        3140
+        3580
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -6081,7 +6040,7 @@
       "typeVersion": 1,
       "position": [
         4220,
-        3060
+        3500
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -6108,7 +6067,7 @@
       "typeVersion": 1,
       "position": [
         4220,
-        3360
+        3800
       ]
     },
     {
@@ -6123,7 +6082,7 @@
       "typeVersion": 1,
       "position": [
         4440,
-        3500
+        3940
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -6151,7 +6110,7 @@
       "typeVersion": 1,
       "position": [
         4680,
-        3500
+        3940
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -6179,7 +6138,7 @@
       "typeVersion": 1,
       "position": [
         4680,
-        3220
+        3660
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -6206,7 +6165,7 @@
       "typeVersion": 1,
       "position": [
         3940,
-        3140
+        3580
       ]
     },
     {
@@ -6597,7 +6556,7 @@
       "typeVersion": 1,
       "position": [
         5420,
-        3500
+        3940
       ]
     },
     {
@@ -6617,7 +6576,7 @@
       "typeVersion": 4.1,
       "position": [
         4440,
-        3060
+        3500
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -6643,7 +6602,7 @@
       "typeVersion": 4.1,
       "position": [
         5020,
-        3220
+        3660
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -6669,7 +6628,7 @@
       "typeVersion": 4.1,
       "position": [
         5020,
-        3500
+        3940
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -6690,44 +6649,8 @@
       "typeVersion": 1,
       "position": [
         3740,
-        3020
+        3460
       ]
-    },
-    {
-      "parameters": {
-        "operation": "deleteTable",
-        "table": {
-          "__rl": true,
-          "value": "leads",
-          "mode": "list",
-          "cachedResultName": "leads"
-        },
-        "deleteCommand": "delete",
-        "where": {
-          "values": [
-            {
-              "column": "email",
-              "value": "vitorrqueiroztrafego@gmail.com"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "ad4dfcc0-3885-4ee1-a5e6-9c8661f4a517",
-      "name": "pesquisa_lead_telefone_insta1",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.1,
-      "position": [
-        2600,
-        1580
-      ],
-      "alwaysOutputData": true,
-      "credentials": {
-        "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
-        }
-      }
     },
     {
       "parameters": {
@@ -6792,7 +6715,7 @@
       "typeVersion": 2.1,
       "position": [
         4680,
-        3060
+        3500
       ],
       "credentials": {
         "mySql": {
@@ -7158,6 +7081,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -7185,6 +7109,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -7212,6 +7137,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -7239,6 +7165,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -7266,6 +7193,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -7293,6 +7221,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -7614,6 +7543,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-27T01:39:35.500Z",
-  "versionId": "323d6ded-e586-4ed2-9c22-6040ed818221"
+  "updatedAt": "2024-08-27T14:46:35.640Z",
+  "versionId": "93951c95-cbf4-4ad8-b02c-2dddead4995d"
 }
