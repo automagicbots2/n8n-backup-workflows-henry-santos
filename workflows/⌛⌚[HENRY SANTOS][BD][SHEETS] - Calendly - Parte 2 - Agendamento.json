@@ -39,13 +39,7 @@
     },
     "pesquisa_lead": {
       "main": [
-        [
-          {
-            "node": "add_id_banco1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "telefone_igual1": {
@@ -1086,7 +1080,7 @@
       "main": [
         [
           {
-            "node": "cadastrar_contato",
+            "node": "segundo_ou_mais_erro",
             "type": "main",
             "index": 0
           }
@@ -1476,7 +1470,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -3540,
+        -3580,
         1140
       ],
       "credentials": {
@@ -4241,7 +4235,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -4285,6 +4280,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -4305,33 +4301,8 @@
       "position": [
         -4220,
         1640
-      ]
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "=https://{{ $node[\"entra_na_fila\"].json[\"content\"][\"url_api_activecampaign\"] }}.api-us1.com/api/3/dealTasks",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "activeCampaignApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"dealTask\": {\n    \"title\": \"Sessão Estratégica\",\n    \"ownerType\": \"deal\",\n    \"relid\": {{ $node[\"cria_deal1\"].runIndex >= 0 ? $node[\"cria_deal1\"].json[\"deal\"][\"id\"] : ($node[\"cria_deal2\"].runIndex >= 0 ? $node[\"cria_deal2\"].json[\"deal\"][\"id\"] : ($node[\"busca_deal1\"].runIndex >= 0 ? $node[\"busca_deal1\"].json[\"deal\"][\"id\"] : \"\" )) }},\n    \"status\": 0,\n    \"note\": \"Reunião de Sessão Estratégica com este Lead\",\n    \"duedate\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split('/')[2].split(' ')[0] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split('/')[1] }}-{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split('/')[0] }}T{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split('/')[2].split(' ')[1] }}:00-03:00\",\n    \"dealTasktype\": {{ $node[\"entra_na_fila\"].json[\"content\"][\"id_task_reuniao_crm\"] }}\n  }\n}",
-        "options": {}
-      },
-      "id": "f5bd2803-e080-4349-9985-bafe23fbe91f",
-      "name": "cria_task_reuniao",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        -1740,
-        920
       ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      }
+      "disabled": true
     },
     {
       "parameters": {
@@ -4366,33 +4337,8 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "=https://{{ $node[\"entra_na_fila\"].json[\"content\"][\"url_api_activecampaign\"] }}.api-us1.com/api/3/deals/{{ $node[\"cria_deal2\"].runIndex >= 0 ? $node[\"cria_deal2\"].json[\"deal\"][\"id\"] : ($node[\"busca_deal1\"].runIndex >= 0 ? $node[\"busca_deal1\"].json[\"deal\"][\"id\"] : \"\" ) }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "activeCampaignApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_cancelamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/cancellations/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_reagendamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/reschedulings/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_cliente_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_dia_semana_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Dia da Semana de Início do Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_email_do_responsavel_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['E-mail do Responsável'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_do_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_da_reuniao_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Link da Reunião'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_tipo_de_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Tipo de Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Evento'] }}\"\n      }\n    ]\n  }\n}",
-        "options": {}
-      },
-      "id": "536434c2-1621-4d8f-a423-758b7b5aa6e9",
-      "name": "atualizar_campos_deal",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        -3700,
-        1820
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      }
     },
     {
       "parameters": {
@@ -4562,6 +4508,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -4589,6 +4536,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -4617,39 +4565,8 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "3d8b0fc3-5598-4f67-b968-2c0023173959",
-              "leftValue": "={{ $node[\"atualizar_campos_deal1\"].json[\"error\"][\"cause\"][\"message\"] }}",
-              "rightValue": "403",
-              "operator": {
-                "type": "string",
-                "operation": "contains"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "e470d9ba-8ee7-4e71-8965-bd1dd1c2ff5c",
-      "name": "If",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        -4420,
-        760
-      ]
     },
     {
       "parameters": {
@@ -4762,60 +4679,8 @@
           "id": "9rNps4gzqiBpNK6e",
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
-      }
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "=https://{{ $node[\"entra_na_fila\"].json[\"content\"][\"url_api_activecampaign\"] }}.api-us1.com/api/3/deals/{{  $json[\"deal\"][\"id\"]  }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "activeCampaignApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_cancelamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/cancellations/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_reagendamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/reschedulings/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_cliente_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_dia_semana_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Dia da Semana de Início do Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Início'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data de Término'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_email_do_responsavel_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['E-mail do Responsável'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_do_agendamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[2].split(' ')[0] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[1] }}-{{ $node['entra_na_fila'].json['content']['Data em que foi feito o Agendamento'].split('/')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_da_reuniao_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Link da Reunião'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_tipo_de_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Tipo de Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Evento'] }}\"\n      }\n    ]\n  }\n}\n",
-        "options": {}
       },
-      "id": "c2408e74-0ce7-4b21-88be-58d06938411e",
-      "name": "atualizar_campos_deal3",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        -4580,
-        920
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "url": "https://gestaodesaloes67530.api-us1.com/api/3/users",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Api-Token",
-              "value": "d0aa5c89796c6403850c539dbd5bcb58ffc0f8c7ff28b9fc6be0c3b54a540a15403f99b1"
-            },
-            {
-              "name": "accept",
-              "value": "application/json"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "d1058b44-56b2-43ea-9bb4-ae1787acd93a",
-      "name": "atualizar_campos_deal4",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        -4280,
-        920
-      ]
+      "disabled": true
     },
     {
       "parameters": {
@@ -4843,6 +4708,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -4871,6 +4737,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -4899,6 +4766,7 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       },
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -5088,37 +4956,33 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-4Egi0GkTi-quBUYnvrsxSA",
-            "deliveryTag": 1881,
-            "redelivered": true,
+            "consumerTag": "amq.ctag-RY88BysJi-9ZJwJmIqH3hg",
+            "deliveryTag": 1,
+            "redelivered": false,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica"
           },
-          "properties": {
-            "headers": {
-              "x-delivery-count": 1263249
-            }
-          },
+          "properties": {},
           "content": {
-            "Nome do Cliente": "Riberta Bicalho ‪21 96484‑8853‬ SDR",
-            "E-mail do Cliente": "roberta@hotmail.com",
-            "Telefone do Cliente - Formato BC": "+",
-            "Telefone do Cliente - Formato Z-API": "",
+            "Nome do Cliente": "Vitor Queiroz de Almeida",
+            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
+            "Telefone do Cliente - Formato BC": "+5519984574874",
+            "Telefone do Cliente - Formato Z-API": "5519984574874",
             "Tipo de Evento": "1 hour Meeting",
-            "ID do Evento": "50c5d486-4f40-43d8-b62f-995de6ac0015",
+            "ID do Evento": "a7dacf6b-49e3-430f-8fc1-a2500c3386d0",
             "Responsável pelo Evento": "Willian Novaes",
             "E-mail do Responsável": "willnovaes01@gmail.com",
-            "Data de Início": "19/08/2024 15:00",
-            "Data em que foi feito o Agendamento": "16/08/2024 11:49",
-            "Data de Término": "19/08/2024 16:00",
-            "Dia da Semana de Início do Evento": "Segunda",
-            "Link da Reunião": null,
+            "Data de Início": "27/08/2024 17:00",
+            "Data em que foi feito o Agendamento": "27/08/2024 10:47",
+            "Data de Término": "27/08/2024 18:00",
+            "Dia da Semana de Início do Evento": "Terça",
+            "Link da Reunião": "https://calendly.com/events/a7dacf6b-49e3-430f-8fc1-a2500c3386d0/google_meet",
             "utm_source": null,
             "utm_campaign": null,
             "utm_term": null,
             "utm_medium": null,
             "utm_content": null,
-            "ID do Cliente": "812500a2-a402-4fb0-a960-5bca8b1daa19",
+            "ID do Cliente": "d0dde71e-b999-4ed5-89c9-c06cb001e734",
             "id_do_campo_id_do_agendamento_bot_conversa": "1111672",
             "fluxo_de_confirmacao_de_agendamento": "1879004",
             "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
@@ -5136,7 +5000,7 @@
             "id_stage_agendou_reuniao_crm": "21",
             "valor_produto_principal_em_centavos": "700000",
             "id_campo_id_banco_de_dados_crm": "257",
-            "id_sdr": "willnovaes01@gmail.com",
+            "id_sdr": "1",
             "id_campo_link_de_cancelamento_crm": "23",
             "id_campo_link_de_reagendamento_crm": "24",
             "id_campo_id_do_cliente_crm": "25",
@@ -5196,6 +5060,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-27T01:30:18.512Z",
-  "versionId": "99699046-f577-4b96-946a-76c6579958f0"
+  "updatedAt": "2024-08-27T13:57:46.492Z",
+  "versionId": "fc7ca578-63b7-462c-aa36-48fd5348cbc0"
 }
