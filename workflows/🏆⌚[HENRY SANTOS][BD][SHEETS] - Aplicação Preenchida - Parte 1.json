@@ -473,7 +473,7 @@
         ],
         [
           {
-            "node": "qualificado",
+            "node": "extremamente_qualificado1",
             "type": "main",
             "index": 0
           }
@@ -6987,7 +6987,7 @@
             },
             {
               "name": "variacao_do_funil",
-              "value": "software"
+              "value": "sala_secreta"
             },
             {
               "name": "id_stage_preencheu_aplicacao_crm",
@@ -7238,6 +7238,10 @@
             {
               "name": "Qualificação",
               "value": "={{ $node[\"unico_item\"].json[\"Qualificação\"] }}"
+            },
+            {
+              "name": "id_campo_coluna_qualificacao_crm",
+              "value": "={{ $node[\"unico_item\"].json[\"Qualificação\"].replace('Qualificado','72349383').replace('Extremamente Qualificado','72349387') }}"
             }
           ],
           "number": [
@@ -7282,8 +7286,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1000,
-        2920
+        960,
+        2900
       ]
     },
     {
@@ -7513,7 +7517,7 @@
             {
               "id": "b56ad497-8bc0-464e-a37c-697399731304",
               "name": "Qualificação",
-              "value": "Extremamente Qualificado",
+              "value": "Extremamente",
               "type": "string"
             }
           ]
@@ -7601,7 +7605,7 @@
     },
     {
       "parameters": {
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/6616184",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/6718478",
         "authentication": "genericCredentialType",
         "genericAuthType": "oAuth2Api",
         "options": {
@@ -7659,7 +7663,7 @@
     },
     {
       "parameters": {
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/contacts/8055036",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/contacts/8147312",
         "authentication": "genericCredentialType",
         "genericAuthType": "oAuth2Api",
         "options": {
@@ -11230,6 +11234,6 @@
     }
   ],
   "triggerCount": 9,
-  "updatedAt": "2024-08-28T00:51:52.780Z",
-  "versionId": "0fba4ae4-6304-4752-b593-5eacec338da1"
+  "updatedAt": "2024-08-28T14:56:35.533Z",
+  "versionId": "6667c5e0-197c-4084-83c3-52585a666587"
 }
