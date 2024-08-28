@@ -422,7 +422,120 @@
         ]
       ]
     },
+    "aplicacao_preenchida_sala_secreta": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "No Operation, do nothing2": {
+      "main": [
+        [
+          {
+            "node": "extremamente_qualificado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "qualificado": {
+      "main": [
+        [
+          {
+            "node": "qualificado1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "desqualificado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "extremamente_qualificado": {
+      "main": [
+        [
+          {
+            "node": "extremamente_qualificado1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "qualificado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "desqualificado": {
+      "main": [
+        [
+          {
+            "node": "desqualificado1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "desqualificado1": {
+      "main": [
+        [
+          {
+            "node": "unico_item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "qualificado1": {
+      "main": [
+        [
+          {
+            "node": "unico_item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "extremamente_qualificado1": {
+      "main": [
+        [
+          {
+            "node": "unico_item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "unico_item": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing3": {
       "main": [
         [
           {
@@ -433,11 +546,11 @@
         ]
       ]
     },
-    "aplicacao_preenchida_sala_secreta": {
+    "dados_validados7": {
       "main": [
         [
           {
-            "node": "No Operation, do nothing1",
+            "node": "entra_na_fila2",
             "type": "main",
             "index": 0
           }
@@ -7121,6 +7234,10 @@
             {
               "name": "id_campo_pergunta10_deal_crm",
               "value": "82"
+            },
+            {
+              "name": "Qualificação",
+              "value": "={{ $node[\"unico_item\"].json[\"Qualificação\"] }}"
             }
           ],
           "number": [
@@ -7137,35 +7254,36 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2480,
-        3080
+        3240,
+        3820
       ]
     },
     {
       "parameters": {
-        "jsCode": "// Código padrão para typeform via ref\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(2, 4);\n  const ddi = telefoneLimpo.slice(0, 2);\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para traduzir booleanos para Português\nfunction traduzirBooleano(valor) {\n  return valor ? \"Sim\" : \"Não\";\n}\n\n// Função para converter número em reais\nfunction formatarValorEmReal(valor) {\n  if (valor === null || valor === undefined) return \"\";\n  return `R$ ${valor.toFixed(2)}`;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"16284b5e-fa0b-4ba7-885c-2494d1c33e72\");\nconst telefoneFormatado = telefoneAnswer ? extrairDddETelefone(telefoneAnswer.phone_number) : \"\";\n\nconst Ending = $node[\"aplicacao_preenchida_sala_secreta\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\n\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\nconsole.log(dataFormatada); // Saída no formato YYYY-MM-DD\n\n\n// Montar o objeto de output\nconst output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"d0e88234-7413-40bf-9068-5ba28135da8c\")?.text) || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"5041c35b-4606-47f9-8146-66c11e136962\")?.email || \"\",\n  \n  instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace('@','').toLowerCase() || \"\",\n\n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  \n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"e64c18b1-26fd-48eb-9468-f6fb5abbdee6\")?.choice.label || \"\",\n  \n objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  \n // porque_voce: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => answer.field.ref === \"511ca207-0c32-4529-b19f-42be7508c79d\")?.choice.label || \"\",\n  \n  //nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  //porque_voce_2: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n\n  data_ultima_quinzena: dataFormatada,\n  ending: Ending || \"\",  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\"\n};\n\nreturn [output];"
+        "jsCode": "// Código padrão para typeform via ref\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(2, 4);\n  const ddi = telefoneLimpo.slice(0, 2);\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para traduzir booleanos para Português\nfunction traduzirBooleano(valor) {\n  return valor ? \"Sim\" : \"Não\";\n}\n\n// Função para converter número em reais\nfunction formatarValorEmReal(valor) {\n  if (valor === null || valor === undefined) return \"\";\n  return `R$ ${valor.toFixed(2)}`;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"a8fa9e16-a140-4f62-9b56-46cd94c20e79\");\nconst telefoneFormatado = telefoneAnswer ? extrairDddETelefone(telefoneAnswer.phone_number) : \"\";\n\nconst Ending = $node[\"aplicacao_preenchida_sala_secreta\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\n\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\nconsole.log(dataFormatada); // Saída no formato YYYY-MM-DD\n\n\n// Montar o objeto de output\nconst output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"d0f05b37-b405-4438-82a0-c4daf82a9841\")?.text) || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"52e1198a-83c1-4a27-875e-1c140380ebca\")?.email || \"\",\n  \n  instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace('@','').toLowerCase() || \"\",\n\n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  \n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"14d80a71-2dd1-484b-b1a1-cbf4ef37a61d\")?.choice.label || \"\",\n  \n objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  \n porque_voce: respostas.find(answer => answer.field.ref === \"66fec9b4-837b-4783-8ce2-a670902ab134\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => answer.field.ref === \"96a20d28-5273-4315-b77d-df383a1741ae\")?.choice.label || \"\",\n  \n  //nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  //porque_voce_2: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n\n  data_ultima_quinzena: dataFormatada,\n  ending: Ending || \"\",  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\"\n};\n\nreturn [output];"
       },
       "id": "59dc67ff-1c4a-4eed-88d9-65d86b431927",
       "name": "formata_dados15",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2140,
-        3080
+        1580,
+        3840
       ]
     },
     {
       "parameters": {
-        "content": "## INFORMAÇÕES CRM KOMMO",
-        "width": 398.4180871422593
+        "content": "## INFORMAÇÕES CRM KOMMO\n\n*QUALIFICAÇÃO SALA SECRETA*\n\n🏆Extremamente Qualificado🏆\n\nFatura Entre R$50.001 e R$100.000 mensal\nou\nMais de R$100.001 \nou\nQuero conhecer os programas de acompanhamento mais personalizados e próximos ao Henry - + R$50.000\n\n✅Qualificado✅\n\nFatura Entre R$30.001 e R$50.000 mensal\nou\nEntre R$15.001 e R$30.000 mensal\n\n❌Desqualificado❌\n\nEstou saindo de um salão onde eu trabalhava e montando o meu do zero, não tenho muito para investir\nou\nFatura até R$15.000 mensal\n",
+        "height": 1469.6419769650265,
+        "width": 2652.992768461925
       },
       "id": "48ec030e-4cbe-4e94-bfca-576ae1ba054c",
       "name": "Sticky Note4",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1940,
-        2860
+        1000,
+        2920
       ]
     },
     {
@@ -7175,8 +7293,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1960,
-        3080
+        1400,
+        3840
       ]
     },
     {
@@ -7186,8 +7304,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2300,
-        3080
+        1740,
+        3840
       ]
     },
     {
@@ -7201,10 +7319,375 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1800,
-        3080
+        1240,
+        3840
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
+    },
+    {
+      "parameters": {
+        "queue": "Não Agendamentos - Sessão - Parte 2",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "a2292246-cfbe-4f3d-8ded-7f936bb17675",
+      "name": "entra_na_fila2",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        3420,
+        3820
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "d7f097c9-d7dd-4a1c-8deb-c035b5c658b7",
+              "leftValue": "={{ $node[\"formata_dados15\"].json[\"faturamento\"] }}",
+              "rightValue": "Até R$15.000 mensal",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "fc02692b-0397-4d5d-abd8-846da3b89563",
+              "leftValue": "={{ $node[\"formata_dados15\"].json[\"etapa_montar_salao\"] }}",
+              "rightValue": "Estou saindo de um salão onde eu trabalhava e montando o meu do zero, não tenho muito para investir",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "09d2c860-0999-4641-9659-8ab45a4eafee",
+      "name": "desqualificado",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2320,
+        4160
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "23ee32e7-dece-4b45-8681-9cc780953bad",
+      "name": "todos_perguntas",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1060,
+        3860
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "d7f097c9-d7dd-4a1c-8deb-c035b5c658b7",
+              "leftValue": "={{ $node[\"formata_dados15\"].json[\"faturamento\"] }}",
+              "rightValue": "Entre R$15.001 e R$30.000 mensal",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "f9e5a487-5644-4e13-8293-705767506347",
+              "leftValue": "={{ $node[\"formata_dados15\"].json[\"faturamento\"] }}",
+              "rightValue": "Entre R$30.001 e R$50.000 mensal",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "cdd539d6-d23f-4f5a-bcd4-647f3d5ee13c",
+      "name": "qualificado",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2120,
+        4000
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "d7f097c9-d7dd-4a1c-8deb-c035b5c658b7",
+              "leftValue": "={{ $node[\"formata_dados15\"].json[\"faturamento\"] }}",
+              "rightValue": "Entre R$50.001 e R$100.000 mensal",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "f9e5a487-5644-4e13-8293-705767506347",
+              "leftValue": "={{ $node[\"formata_dados15\"].json[\"faturamento\"] }}",
+              "rightValue": "+ de R$100.001",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "d3e062ac-31bf-4ff2-98fa-e5e38d4d069e",
+              "leftValue": "={{ $node[\"formata_dados15\"].json[\"acompanhamento_unico\"] }}",
+              "rightValue": "Quero conhecer os programas de acompanhamento mais personalizados e próximos ao Henry - + R$50.000",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "e386ac99-71fe-4c52-8991-5719371f2730",
+      "name": "extremamente_qualificado",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1920,
+        3840
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b56ad497-8bc0-464e-a37c-697399731304",
+              "name": "Qualificação",
+              "value": "Extremamente Qualificado",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8147137a-8bf1-47c4-b81d-85c010366172",
+      "name": "extremamente_qualificado1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        2120,
+        3820
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b56ad497-8bc0-464e-a37c-697399731304",
+              "name": "Qualificação",
+              "value": "Qualificado",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e12b417f-c5eb-40c0-87d5-500a620a881f",
+      "name": "qualificado1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        2320,
+        4000
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b56ad497-8bc0-464e-a37c-697399731304",
+              "name": "Qualificação",
+              "value": "Desqualificado",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e6282a6b-6340-480e-a04a-0e2384d69121",
+      "name": "desqualificado1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        2520,
+        4160
+      ]
+    },
+    {
+      "parameters": {
+        "keep": "lastItems"
+      },
+      "id": "e2c45072-397a-4e82-a703-e9357cda7120",
+      "name": "unico_item",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        2860,
+        3820
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "97a981e9-5076-4efc-a006-e88ebdbd00c3",
+      "name": "No Operation, do nothing3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3040,
+        3820
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/6616184",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "4a932e27-7d0a-456d-836b-eca71b4021e3",
+      "name": "busca_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2360,
+        3200
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {}
+      },
+      "id": "cb5df794-d51c-4746-a1e7-90e1eaa18916",
+      "name": "update_contacts_KOMMO2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2160,
+        3200
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/contacts/8055036",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "01ff22fc-86f8-4181-828a-c3f8a10fa2c8",
+      "name": "busca_contato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2620,
+        3200
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
     }
   ],
   "pinData": {
@@ -10322,6 +10805,410 @@
           }
         }
       }
+    ],
+    "todos_perguntas": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "9559",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-e97540b4697ba6110dba246d77ee5bd7-fc9d89f7375f3fa0-01",
+            "x-forwarded-for": "34.230.177.131",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "34.230.177.131"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01J6A590AD6PX4NZ1ZQVW5DB2T",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "Zby3ztcx",
+              "token": "uuikwrunk3ezy3v154jzuuikp2cy1u8s",
+              "landed_at": "2024-08-27T14:52:48Z",
+              "submitted_at": "2024-08-27T14:54:11Z",
+              "hidden": {
+                "email": "",
+                "name": "",
+                "telefone": "",
+                "utm_campaign": "campaign2",
+                "utm_content": "content3",
+                "utm_fun": "",
+                "utm_medium": "medium4",
+                "utm_source": "source1",
+                "utm_term": "term5",
+                "utm_var": ""
+              },
+              "definition": {
+                "id": "Zby3ztcx",
+                "title": "✅Imersão Salão Autoadministrável",
+                "fields": [
+                  {
+                    "id": "Nxp9kA17d1J6",
+                    "ref": "69e277e4-a0f8-4865-b01d-970dee3d88eb",
+                    "type": "short_text",
+                    "title": "Para começarmos, pode me informar qual o Instagram do seu salão?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "wn42EXOcUnbV",
+                    "ref": "d0f05b37-b405-4438-82a0-c4daf82a9841",
+                    "type": "short_text",
+                    "title": "E qual o seu nome?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "8zczsCeRgoFy",
+                    "ref": "a8fa9e16-a140-4f62-9b56-46cd94c20e79",
+                    "type": "phone_number",
+                    "title": "Qual seu ddd + whatsapp?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "pGj2yFaik5og",
+                    "ref": "52e1198a-83c1-4a27-875e-1c140380ebca",
+                    "type": "email",
+                    "title": "E qual o seu melhor e-mail?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "l4mmg7gjidqN",
+                    "ref": "9d3235d4-a79e-455d-ac75-4254b19cae96",
+                    "type": "multiple_choice",
+                    "title": "Show! Agora, gostaria de saber um pouco mais do seu momento profissional. Você tem uma recepcionista no seu salão?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "H0m8XoYzHwTg",
+                        "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78",
+                        "label": "SIM"
+                      },
+                      {
+                        "id": "XvcCyN3mH5gH",
+                        "ref": "d81e4036-f5b7-4e82-922a-67a109e09967",
+                        "label": "NÃO"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "ThYiZ2CueKjw",
+                    "ref": "0a89f6b6-19ea-4d15-b412-e502943ff866",
+                    "type": "multiple_choice",
+                    "title": "Para eu entender mais sobre teu negócio, qual opção melhor define você hoje? ",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "3ohr55YuwKeR",
+                        "ref": "cbf1d69a-ea39-4d1b-a644-4980a7bd18ee",
+                        "label": "Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando"
+                      },
+                      {
+                        "id": "RBq7Yvts9MRf",
+                        "ref": "b2c627b5-a406-457e-9a78-cbc552cd484e",
+                        "label": "Estou conseguindo pagar as contas e não sobrando"
+                      },
+                      {
+                        "id": "2CL6QBhMs6ly",
+                        "ref": "ad8665ab-92d0-465a-aa46-1da9651119d6",
+                        "label": "Não estou conseguindo pagar as contas e com dívidas maiores"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "qc1ihMaO7qDD",
+                    "ref": "f4fcda9e-a288-4558-94d9-3e2b0b4f96ad",
+                    "type": "multiple_choice",
+                    "title": "Para eu entender mais sobre teu negócio, quantos profissionais você tem? \n",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "WdMW0uLftMY5",
+                        "ref": "0524d96c-c3c0-4b2b-9e09-c5fae1821d08",
+                        "label": "- DE 2"
+                      },
+                      {
+                        "id": "DheUAp1XUaOw",
+                        "ref": "b8d70724-14ee-4a6d-8a85-4b23756f0c7c",
+                        "label": "ENTRE 3 E 5"
+                      },
+                      {
+                        "id": "2a5bR7YwR8xT",
+                        "ref": "69bc797f-5f9c-47b8-a877-7a7faf0a5bbe",
+                        "label": "ENTRE 6 E 10"
+                      },
+                      {
+                        "id": "KgQJZTOjv1Gr",
+                        "ref": "622f6743-3736-429e-bec0-ccec1fa37259",
+                        "label": "ENTRE 11 E 20"
+                      },
+                      {
+                        "id": "CEi5PLpCMoUv",
+                        "ref": "fd02c44d-8b31-4274-9a37-c06b49da9411",
+                        "label": "+ DE 20"
+                      },
+                      {
+                        "id": "bcnc8yZ1c8VN",
+                        "ref": "a31e8098-1803-4e42-8995-bd8db458550c",
+                        "label": "Estou montando meu salão e minha equipe"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "8nFeshDdmkTk",
+                    "ref": "14d80a71-2dd1-484b-b1a1-cbf4ef37a61d",
+                    "type": "multiple_choice",
+                    "title": "Agora… Em qual etapa de começar a montar o seu salão você está",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "oJWzZqLXnc7b",
+                        "ref": "6ac10fab-5bcd-456f-9816-a2038ee5f9a7",
+                        "label": "Sou investidor, estou comprando/construindo um salão, preciso de ajuda na administração"
+                      },
+                      {
+                        "id": "ggSUOvvemRee",
+                        "ref": "f0ba1896-978e-4899-9b21-f960c8f34bb1",
+                        "label": "Estou saindo de um salão onde eu trabalhava e montando o meu do zero, não tenho muito para investir"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "M9AJ4r3xtkLz",
+                    "ref": "2c42d709-1748-472f-8f28-ebc7677c0398",
+                    "type": "multiple_choice",
+                    "title": "Agora… Em qual etapa de faturamento você esta atualmente? Qual seu faturamento MENSAL MÉDIO em 2024?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "RRHRu06qcsha",
+                        "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87",
+                        "label": "Até R$15.000 mensal"
+                      },
+                      {
+                        "id": "CJK1KLZleWIU",
+                        "ref": "ea4e5a4c-ca76-4a90-8c22-d386a793e6fe",
+                        "label": "Entre R$15.001 e R$30.000 mensal"
+                      },
+                      {
+                        "id": "nU7WNQqsGpCC",
+                        "ref": "179a6666-ea5a-4879-87cc-72611886686e",
+                        "label": "Entre R$30.001 e R$50.000 mensal"
+                      },
+                      {
+                        "id": "egjeVXpt4iZm",
+                        "ref": "af07450b-9d3f-41ff-9b28-c5dd5ee1b366",
+                        "label": "Entre R$50.001 e R$100.000 mensal"
+                      },
+                      {
+                        "id": "6UlCmqyEwZix",
+                        "ref": "34b28fc9-d466-4b5a-83dd-b5a30c052fb8",
+                        "label": "+ de R$100.001"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "RB7ElAwoXCWh",
+                    "ref": "5fe6dab9-dcc1-4984-9408-cc43f052fe64",
+                    "type": "long_text",
+                    "title": "Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar ainda em 2024?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "PC1yhVOgs7SC",
+                    "ref": "66fec9b4-837b-4783-8ce2-a670902ab134",
+                    "type": "short_text",
+                    "title": "Caso eu receba mais interessados que vaga na Imersão, por que eu deveria escolher você?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "vd6TjUuKsy6X",
+                    "ref": "96a20d28-5273-4315-b77d-df383a1741ae",
+                    "type": "multiple_choice",
+                    "title": "Temos algumas opções de acompanhamento:",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "od3XN1snwmjs",
+                        "ref": "cef5eb1b-5b18-41e5-9e04-e761bcfc61d6",
+                        "label": "Imersão SA: Em 2 dias, ao vivo com o Henry, aprenda toda a estratégia e aplicação de como ter um salão autoadministrável, que lucra com equipes engajadas, independente da sua presença, e saia de la com um plano de alavancagem financeira - R$2.997"
+                      },
+                      {
+                        "id": "EsT1ynNIeItc",
+                        "ref": "d8ecd5e0-238f-43e3-9f1f-3c0ba4ae826a",
+                        "label": "Mentoria SA: O acompanhamento PREMIUM com o olhar do Henry direto no seu salão para identificar problemas, montar estratégias eficientes para alcançar resultados desejados de forma mais rápida, evitando desperdício de tempo, durante 1 ano - R$12.000"
+                      },
+                      {
+                        "id": "fC4gz9D86qlv",
+                        "ref": "1261d169-fbff-4b3a-a7a1-fc96e86d7f9b",
+                        "label": "Quero conhecer os programas de acompanhamento mais personalizados e próximos ao Henry - + R$50.000"
+                      }
+                    ]
+                  }
+                ],
+                "endings": [
+                  {
+                    "id": "DcMOJqCSc1xq",
+                    "ref": "01GEF2QQ1BV23MH18E2DAQHWDW",
+                    "title": "*Opa, tudo bem? Henry aqui! *",
+                    "type": "thankyou_screen",
+                    "properties": {
+                      "description": "A Mentoria Salão Autoadministrável é uma mentoria avançada de geração de aumento de lucratividade e produtividade do seu salão através da implantação da nossa metodologia de gestão de salões . E justamente por ser uma mentoria avançada, eu preciso selecionar os participantes\n\nEu quero Donas de Salão de Beleza realmente comprometidas e que, com a minha ajuda e expertise, não medirão esforços para alcançar um maior patamar profissional.\n\nPor meio desta aplicação, analisaremos uma série de fatores para entender em que nível você e seu salão se encontram e se este é o melhor momento para você fazer parte da minha mentoria.\n\nO principal objetivo aqui é o crescimento do seu negócio e o seu próprio crescimento.\n\nNo mais, agradeço a sua confiança e sua vontade em participar do programa. Caso não seja aprovado(a), saiba que o fizemos para o seu próprio bem e não hesite em aplicar novamente em 12 meses, ok?\n\n*Para prosseguir, basta clicar no botão abaixo.*",
+                      "button_text": "INICIAR",
+                      "show_button": true,
+                      "share_icons": false,
+                      "button_mode": "default_redirect"
+                    }
+                  }
+                ]
+              },
+              "answers": [
+                {
+                  "type": "text",
+                  "text": "@eu.vitorqueiroz",
+                  "field": {
+                    "id": "Nxp9kA17d1J6",
+                    "type": "short_text",
+                    "ref": "69e277e4-a0f8-4865-b01d-970dee3d88eb"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "vitor queiroz de almeida",
+                  "field": {
+                    "id": "wn42EXOcUnbV",
+                    "type": "short_text",
+                    "ref": "d0f05b37-b405-4438-82a0-c4daf82a9841"
+                  }
+                },
+                {
+                  "type": "phone_number",
+                  "phone_number": "+5519984574874",
+                  "field": {
+                    "id": "8zczsCeRgoFy",
+                    "type": "phone_number",
+                    "ref": "a8fa9e16-a140-4f62-9b56-46cd94c20e79"
+                  }
+                },
+                {
+                  "type": "email",
+                  "email": "vitorrqueiroztrafego@gmail.com",
+                  "field": {
+                    "id": "pGj2yFaik5og",
+                    "type": "email",
+                    "ref": "52e1198a-83c1-4a27-875e-1c140380ebca"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "H0m8XoYzHwTg",
+                    "label": "SIM",
+                    "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78"
+                  },
+                  "field": {
+                    "id": "l4mmg7gjidqN",
+                    "type": "multiple_choice",
+                    "ref": "9d3235d4-a79e-455d-ac75-4254b19cae96"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "3ohr55YuwKeR",
+                    "label": "Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando",
+                    "ref": "cbf1d69a-ea39-4d1b-a644-4980a7bd18ee"
+                  },
+                  "field": {
+                    "id": "ThYiZ2CueKjw",
+                    "type": "multiple_choice",
+                    "ref": "0a89f6b6-19ea-4d15-b412-e502943ff866"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "WdMW0uLftMY5",
+                    "label": "- DE 2",
+                    "ref": "0524d96c-c3c0-4b2b-9e09-c5fae1821d08"
+                  },
+                  "field": {
+                    "id": "qc1ihMaO7qDD",
+                    "type": "multiple_choice",
+                    "ref": "f4fcda9e-a288-4558-94d9-3e2b0b4f96ad"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "oJWzZqLXnc7b",
+                    "label": "Sou investidor, estou comprando/construindo um salão, preciso de ajuda na administração",
+                    "ref": "6ac10fab-5bcd-456f-9816-a2038ee5f9a7"
+                  },
+                  "field": {
+                    "id": "8nFeshDdmkTk",
+                    "type": "multiple_choice",
+                    "ref": "14d80a71-2dd1-484b-b1a1-cbf4ef37a61d"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "RRHRu06qcsha",
+                    "label": "Até R$15.000 mensal",
+                    "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87"
+                  },
+                  "field": {
+                    "id": "M9AJ4r3xtkLz",
+                    "type": "multiple_choice",
+                    "ref": "2c42d709-1748-472f-8f28-ebc7677c0398"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Meu objetivo ou sonho",
+                  "field": {
+                    "id": "RB7ElAwoXCWh",
+                    "type": "long_text",
+                    "ref": "5fe6dab9-dcc1-4984-9408-cc43f052fe64"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "porque eu deveria escolher você",
+                  "field": {
+                    "id": "PC1yhVOgs7SC",
+                    "type": "short_text",
+                    "ref": "66fec9b4-837b-4783-8ce2-a670902ab134"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "od3XN1snwmjs",
+                    "label": "Imersão SA: Em 2 dias, ao vivo com o Henry, aprenda toda a estratégia e aplicação de como ter um salão autoadministrável, que lucra com equipes engajadas, independente da sua presença, e saia de la com um plano de alavancagem financeira - R$2.997",
+                    "ref": "cef5eb1b-5b18-41e5-9e04-e761bcfc61d6"
+                  },
+                  "field": {
+                    "id": "vd6TjUuKsy6X",
+                    "type": "multiple_choice",
+                    "ref": "96a20d28-5273-4315-b77d-df383a1741ae"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "DcMOJqCSc1xq",
+                "ref": "01GEF2QQ1BV23MH18E2DAQHWDW"
+              }
+            }
+          }
+        }
+      }
     ]
   },
   "settings": {
@@ -10343,6 +11230,6 @@
     }
   ],
   "triggerCount": 9,
-  "updatedAt": "2024-08-27T14:56:00.936Z",
-  "versionId": "4912fd93-742a-4fac-a37c-5556d4d7ee3b"
+  "updatedAt": "2024-08-28T00:51:52.780Z",
+  "versionId": "0fba4ae4-6304-4752-b593-5eacec338da1"
 }
