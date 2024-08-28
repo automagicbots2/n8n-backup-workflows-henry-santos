@@ -187,7 +187,7 @@
       "main": [
         [
           {
-            "node": "add_id_banco1",
+            "node": "dados",
             "type": "main",
             "index": 0
           }
@@ -195,28 +195,6 @@
       ]
     },
     "update_qualificacao_qualificado1": {
-      "main": [
-        [
-          {
-            "node": "add_id_banco1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "add_id_banco1": {
-      "main": [
-        [
-          {
-            "node": "atualiza_campos_deal2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "atualiza_campos_deal2": {
       "main": [
         [
           {
@@ -231,7 +209,7 @@
       "main": [
         [
           {
-            "node": "pesquisa_lead5",
+            "node": "segundo_ou_mais_erro",
             "type": "main",
             "index": 0
           }
@@ -240,13 +218,7 @@
     },
     "dados": {
       "main": [
-        [
-          {
-            "node": "entra_na_fila1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "insert_data_data_lake2": {
@@ -776,6 +748,10 @@
             {
               "column": "formato_sessao",
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta11\"] }}"
+            },
+            {
+              "column": "momento_atual_p9",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}"
             }
           ]
         },
@@ -1451,67 +1427,6 @@
         "rabbitmq": {
           "id": "9ZBMW8Zoa6820Xsp",
           "name": "[RabbitMQ][2.0] - Henry Santos "
-        }
-      }
-    },
-    {
-      "parameters": {
-        "email": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
-        "updateIfExists": true,
-        "additionalFields": {
-          "fieldValues": {
-            "property": [
-              {
-                "field": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_banco_de_dados_crm\"] }}",
-                "value": "={{ $node[\"pesquisa_lead5\"].json[\"id_lead\"] }}"
-              },
-              {
-                "field": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_bot_conversa_crm\"] }}",
-                "value": "={{ $node[\"pesquisa_lead5\"].json[\"id_botconversa\"] }}"
-              }
-            ]
-          }
-        }
-      },
-      "id": "5ddbc480-5c24-41be-b5c0-d59ffe118284",
-      "name": "add_id_banco1",
-      "type": "n8n-nodes-base.activeCampaign",
-      "typeVersion": 1,
-      "position": [
-        2020,
-        1860
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "=https://{{ $node[\"chega_da_fila\"].json[\"content\"][\"url_api_activecampaign_crm\"] }}.api-us1.com/api/3/deals/{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_deal_activecampaign\"] }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "activeCampaignApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n\"deal\": {\n\"fields\": [\n{\n\"customFieldId\": {{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_banco_deal_crm\"] }},\n\"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}\"\n},\n{\n\"customFieldId\": {{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_bot_conversa_deal_crm\"] }},\n\"fieldValue\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}\"\n}\n]\n}\n}",
-        "options": {}
-      },
-      "id": "c8966313-c5ec-4936-a309-0f22f76128f0",
-      "name": "atualiza_campos_deal2",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        2180,
-        1860
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       }
     },
@@ -2315,7 +2230,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-4jDp1iQKAr_jsfkYGThxUw",
+            "consumerTag": "amq.ctag-ym2p4nN6ud1qBGOECJXoww",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
@@ -2324,20 +2239,27 @@
           "properties": {},
           "content": {
             "verificacao_lead": false,
-            "Nome do Cliente": "Vitor Ebook",
+            "Nome do Cliente": "Vitor Queiroz De Almeida",
             "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
             "Telefone do Cliente - Formato BC": "+5519984574874",
             "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "utm_content": "content30",
-            "utm_source": "source10",
-            "utm_campaign": "campaign40",
-            "utm_medium": "medium20",
-            "utm_term": "term50",
-            "instagram": "teste.ebook",
+            "utm_content": "content3",
+            "utm_source": "source1",
+            "utm_campaign": "campaign2",
+            "utm_medium": "medium4",
+            "utm_term": "term5",
+            "instagram": "eu.vitorqueiroz",
             "id_fluxo_nao_agendou_10_min": "2416169",
             "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
-            "pergunta2": "Entre R$40.001 e R$50.000",
-            "pergunta10": "E-book 'Fazendo 500 milhão en 40 dias'",
+            "pergunta0": "SIM",
+            "pergunta1": "- DE 2",
+            "pergunta2": "Até R$15.000 mensal",
+            "pergunta3": "Sou investidor, estou comprando/construindo um salão, preciso de ajuda na administração",
+            "pergunta4": "Meu objetivo ou sonho",
+            "pergunta5": "",
+            "pergunta6": "porque eu deveria escolher você",
+            "pergunta7": "Imersão SA: Em 2 dias, ao vivo com o Henry, aprenda toda a estratégia e aplicação de como ter um salão autoadministrável, que lucra com equipes engajadas, independente da sua presença, e saia de la com um plano de alavancagem financeira - R$2.997",
+            "pergunta9": "Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando",
             "id_campo_pergunta0_bot_conversa": "1123099",
             "id_campo_pergunta1_bot_conversa": "1123101",
             "id_campo_pergunta2_bot_conversa": "1123100",
@@ -2360,7 +2282,7 @@
             "id_campo_pergunta19_bot_conversa": "",
             "id_campo_pergunta20_bot_conversa": "",
             "url_api_activecampaign_crm": "gestaodesaloes67530",
-            "id_ending_typeform": "3768d569-5785-4af7-a771-f64b91a4c800",
+            "id_ending_typeform": "01GEF2QQ1BV23MH18E2DAQHWDW",
             "id_campo_id_banco_de_dados_bot_conversa": "1351140",
             "id_campo_iddealac_bot_conversa": "1354465",
             "id_campo_idleadac_bot_conversa": "1354600",
@@ -2373,19 +2295,17 @@
             "id_campo_utm_var_bot_conversa": "1353848",
             "id_campo_instagram_bot_conversa": "1123096",
             "funil": "sessao estrategica",
-            "variacao_do_funil": "v1",
-            "data_ultima_quinzena": "2024-03-19",
+            "variacao_do_funil": "software",
+            "data_ultima_quinzena": "2024-08-13",
             "id_campo_emailse_bot_conversa": "1115994",
             "id_tag_desqualificado_bot_conversa": "4935232",
             "id_tag_qualificado_bot_conversa": "4891828",
-            "data_resposta_type": "03/04/2024 11:05",
+            "data_resposta_type": "28/08/2024 10:54",
             "id_campo_data_resposta_type_bot_conversa": "",
             "qualificacao": "Desqualificado",
-            "id_lead_bd": 2382,
-            "id_lead_bc": 417093818,
+            "id_lead_bd": 4951,
+            "id_lead_bc": 473136356,
             "id_fluxo_nao_agendou_10_min_desqualificados": "2829998",
-            "id_lead_activecampaign": "15621",
-            "id_deal_activecampaign": "3959",
             "id_campo_id_banco_deal_crm": "42",
             "id_campo_id_bot_conversa_deal_crm": "53",
             "id_campo_id_banco_de_dados_crm": "257",
@@ -2417,6 +2337,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-16T14:00:30.332Z",
-  "versionId": "fad267e2-9488-4462-90c7-b33ad53ba0a5"
+  "updatedAt": "2024-08-28T14:00:29.159Z",
+  "versionId": "e49152e2-c71b-4a87-b775-e95815b91cc5"
 }
