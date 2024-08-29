@@ -227,28 +227,6 @@
         ]
       ]
     },
-    "update_qualificacao_qualificado3": {
-      "main": [
-        [
-          {
-            "node": "dados",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "update_qualificacao_qualificado1": {
-      "main": [
-        [
-          {
-            "node": "dados",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "chega_da_fila": {
       "main": [
         [
@@ -362,16 +340,62 @@
         ]
       ]
     },
-    "dados": {
-      "main": [
-        []
-      ]
-    },
     "espera_10s2": {
       "main": [
         [
           {
             "node": "busca_telefone_na_planilha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_qualificacao_qualificado3": {
+      "main": [
+        [
+          {
+            "node": "e_sala_secreta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_qualificacao_qualificado1": {
+      "main": [
+        [
+          {
+            "node": "e_sala_secreta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "e_sala_secreta": {
+      "main": [
+        [
+          {
+            "node": "add_tag_lead_kmmo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_lead_kmmo": {
+      "main": [
+        [
+          {
+            "node": "dados",
             "type": "main",
             "index": 0
           }
@@ -643,7 +667,7 @@
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        2620,
+        2780,
         1900
       ],
       "credentials": {
@@ -1584,8 +1608,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2360,
-        1900
+        2460,
+        1880
       ]
     },
     {
@@ -2249,6 +2273,76 @@
           "name": "[Google Sheets][2.0] - Henry Santos"
         }
       }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_lead5\"].json[\"id_lead_kommo\"] }},\n        \"_embedded\": {\n            \"tags\": [\n                {\n                    \"id\": 67752\n                }\n            ]\n        }\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "ef5839c1-f024-4bf2-8ee9-95d647eb0bc4",
+      "name": "add_tag_lead_kmmo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2260,
+        1780
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "868e6dd7-2b6c-4cdd-a754-4e12a245dd11",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}",
+              "rightValue": "sala_secreta",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "007ed69e-6b01-452a-b13f-6e78a7b72e76",
+      "name": "e_sala_secreta",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2060,
+        1860
+      ]
     }
   ],
   "pinData": {
@@ -2256,7 +2350,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-5WIhTxvBn5tR9g1wmEmznw",
+            "consumerTag": "amq.ctag-2WohZCoQJuKCrrBZUcuiDw",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
@@ -2321,15 +2415,15 @@
             "id_campo_utm_var_bot_conversa": "1353848",
             "id_campo_instagram_bot_conversa": "1123096",
             "funil": "sessao estrategica",
-            "variacao_do_funil": "software",
+            "variacao_do_funil": "sala_secreta",
             "data_ultima_quinzena": "2024-08-13",
             "id_campo_emailse_bot_conversa": "1115994",
             "id_tag_desqualificado_bot_conversa": "4935232",
             "id_tag_qualificado_bot_conversa": "4891828",
-            "data_resposta_type": "28/08/2024 10:54",
+            "data_resposta_type": "28/08/2024 11:56",
             "id_campo_data_resposta_type_bot_conversa": "",
             "qualificacao": "Qualificado",
-            "id_lead_bd": 4951,
+            "id_lead_bd": 4962,
             "id_lead_bc": 473136356,
             "id_fluxo_nao_agendou_10_min_desqualificados": "2829998",
             "id_campo_id_banco_deal_crm": "42",
@@ -2363,6 +2457,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-28T14:01:41.771Z",
-  "versionId": "1378756c-85a2-4e2e-8c62-3c749cc94dd5"
+  "updatedAt": "2024-08-28T19:45:46.960Z",
+  "versionId": "41f39ace-f0c0-4467-b0e8-ba706a07934a"
 }
