@@ -187,7 +187,7 @@
       "main": [
         [
           {
-            "node": "dados",
+            "node": "e_sala_secreta",
             "type": "main",
             "index": 0
           }
@@ -198,7 +198,7 @@
       "main": [
         [
           {
-            "node": "dados",
+            "node": "e_sala_secreta",
             "type": "main",
             "index": 0
           }
@@ -214,11 +214,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "dados": {
-      "main": [
-        []
       ]
     },
     "insert_data_data_lake2": {
@@ -372,6 +367,35 @@
         [
           {
             "node": "update_qualificacao_qualificado1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "e_sala_secreta": {
+      "main": [
+        [
+          {
+            "node": "add_tag_lead_kmmo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_lead_kmmo": {
+      "main": [
+        [
+          {
+            "node": "dados",
             "type": "main",
             "index": 0
           }
@@ -2223,6 +2247,76 @@
           "name": "[MySQL][2.0] - Henry Santos"
         }
       }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_lead5\"].json[\"id_lead_kommo\"] }},\n        \"_embedded\": {\n            \"tags\": [\n                {\n                    \"id\": 67752\n                }\n            ]\n        }\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "e35e05c7-78d4-4621-a2e9-a9d5d0eff659",
+      "name": "add_tag_lead_kmmo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2180,
+        1780
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "868e6dd7-2b6c-4cdd-a754-4e12a245dd11",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}",
+              "rightValue": "sala_secreta",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "37cb707b-ecda-48d0-aad0-8fc03b7fb95f",
+      "name": "e_sala_secreta",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1980,
+        1860
+      ]
     }
   ],
   "pinData": {
@@ -2230,7 +2324,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-ym2p4nN6ud1qBGOECJXoww",
+            "consumerTag": "amq.ctag-3iO-aYOeTLyqzB2a9nwCwA",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
@@ -2238,7 +2332,7 @@
           },
           "properties": {},
           "content": {
-            "verificacao_lead": false,
+            "verificacao_lead": true,
             "Nome do Cliente": "Vitor Queiroz De Almeida",
             "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
             "Telefone do Cliente - Formato BC": "+5519984574874",
@@ -2281,7 +2375,6 @@
             "id_campo_pergunta18_bot_conversa": "",
             "id_campo_pergunta19_bot_conversa": "",
             "id_campo_pergunta20_bot_conversa": "",
-            "url_api_activecampaign_crm": "gestaodesaloes67530",
             "id_ending_typeform": "01GEF2QQ1BV23MH18E2DAQHWDW",
             "id_campo_id_banco_de_dados_bot_conversa": "1351140",
             "id_campo_iddealac_bot_conversa": "1354465",
@@ -2295,21 +2388,23 @@
             "id_campo_utm_var_bot_conversa": "1353848",
             "id_campo_instagram_bot_conversa": "1123096",
             "funil": "sessao estrategica",
-            "variacao_do_funil": "software",
+            "variacao_do_funil": "sala_secreta",
             "data_ultima_quinzena": "2024-08-13",
             "id_campo_emailse_bot_conversa": "1115994",
             "id_tag_desqualificado_bot_conversa": "4935232",
             "id_tag_qualificado_bot_conversa": "4891828",
-            "data_resposta_type": "28/08/2024 10:54",
+            "data_resposta_type": "28/08/2024 12:28",
             "id_campo_data_resposta_type_bot_conversa": "",
             "qualificacao": "Desqualificado",
-            "id_lead_bd": 4951,
-            "id_lead_bc": 473136356,
             "id_fluxo_nao_agendou_10_min_desqualificados": "2829998",
+            "id_campo_data_da_aplicacao_bot_conversa": "",
+            "id_lead_bd": 4963,
+            "id_lead_bc": 473136356,
             "id_campo_id_banco_deal_crm": "42",
-            "id_campo_id_bot_conversa_deal_crm": "53",
             "id_campo_id_banco_de_dados_crm": "257",
+            "id_campo_id_bot_conversa_deal_crm": "53",
             "id_campo_id_bot_conversa_crm": "163",
+            "url_api_activecampaign_crm": "gestaodesaloes67530",
             "id_fluxo2_nao_agendou_10_min_desqualificados": 2830145,
             "id_campo_dia_aplicou_se": "2113710",
             "dia_da_semana_se": "Quarta-feira"
@@ -2337,6 +2432,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-28T14:00:29.159Z",
-  "versionId": "e49152e2-c71b-4a87-b775-e95815b91cc5"
+  "updatedAt": "2024-08-28T19:16:27.775Z",
+  "versionId": "51f8c7e1-1d33-4c3d-9717-92fc4b0bc794"
 }
