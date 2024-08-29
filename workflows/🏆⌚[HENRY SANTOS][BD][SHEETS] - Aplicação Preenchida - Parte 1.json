@@ -473,7 +473,7 @@
         ],
         [
           {
-            "node": "extremamente_qualificado1",
+            "node": "qualificado",
             "type": "main",
             "index": 0
           }
@@ -7241,7 +7241,7 @@
             },
             {
               "name": "id_campo_coluna_qualificacao_crm",
-              "value": "={{ $node[\"unico_item\"].json[\"Qualificação\"].replace('Qualificado','72349383').replace('Extremamente Qualificado','72349387') }}"
+              "value": "={{ $node[\"unico_item\"].json[\"Qualificação\"].replace('Qualificado','72349383').replace('Extremamente','72349387') }}"
             }
           ],
           "number": [
@@ -7605,7 +7605,7 @@
     },
     {
       "parameters": {
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/6718478",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/6813820",
         "authentication": "genericCredentialType",
         "genericAuthType": "oAuth2Api",
         "options": {
@@ -7621,7 +7621,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2360,
+        2380,
         3200
       ],
       "credentials": {
@@ -7663,7 +7663,7 @@
     },
     {
       "parameters": {
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/contacts/8147312",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/contacts/8217412",
         "authentication": "genericCredentialType",
         "genericAuthType": "oAuth2Api",
         "options": {
@@ -7681,6 +7681,42 @@
       "position": [
         2620,
         3200
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "[\n    {\n        \"id\": 6721742,\n        \"_embedded\": {\n            \"tags\": [\n                {\n                    \"id\": 67752\n                }\n            ]\n        }\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "622bde46-7d4c-44f2-8ad9-3463c1923184",
+      "name": "add_tag_lead_kmmo1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2700,
+        3480
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -11234,6 +11270,6 @@
     }
   ],
   "triggerCount": 9,
-  "updatedAt": "2024-08-28T14:56:35.533Z",
-  "versionId": "6667c5e0-197c-4084-83c3-52585a666587"
+  "updatedAt": "2024-08-29T01:50:36.564Z",
+  "versionId": "9f14978c-b5cc-4e34-a2d8-8f0e0d97a308"
 }
