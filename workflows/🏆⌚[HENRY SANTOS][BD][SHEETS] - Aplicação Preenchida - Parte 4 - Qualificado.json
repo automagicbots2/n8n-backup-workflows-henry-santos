@@ -401,6 +401,22 @@
           }
         ]
       ]
+    },
+    "busca_lead": {
+      "main": [
+        [
+          {
+            "node": "add_tag_lead_kmmo1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        []
+      ]
     }
   },
   "createdAt": "2024-03-25T19:00:41.710Z",
@@ -2343,6 +2359,113 @@
         2060,
         1860
       ]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ \n  $json[\"_embedded\"][\"tags\"].map(tag => ({\n    id: $json[\"id\"], // Substitua 167353 conforme necessário\n    _embedded: {\n      tags: [{ id: tag.id }]\n    }\n  })).concat([{ id: $json[\"id\"], _embedded: { tags: [{ id: 67752 }] } }])\n}}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "27eab13b-8151-4671-9c97-9be7383a1221",
+      "name": "add_tag_lead_kmmo1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        3040,
+        1180
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/6814248",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "1b31ba4d-9bb5-45f9-8430-164f16732f0d",
+      "name": "busca_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2820,
+        1180
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "81a6629e-e5c2-4ae0-91c7-f0c6eede7b38",
+              "name": "tags",
+              "value": "={{ JSON.stringify($json) }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {
+          "ignoreConversionErrors": true
+        }
+      },
+      "id": "85d23ba7-5c74-4f80-a09d-22b47c34ebbe",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        3080,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const tagsData = [\n    ...$json._embedded.tags.map(tag => tag.id), {\"id\": 67752}\n];\n\nreturn tagsData.map((tag, index) => ({\n    id: 167353,\n    _embedded: {\n        tags: [tag]\n    }\n}));\n"
+      },
+      "id": "05bed3c2-037b-4431-8b1b-ee464691e366",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2820,
+        1360
+      ],
+      "disabled": true
     }
   ],
   "pinData": {
@@ -2457,6 +2580,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-28T19:45:46.960Z",
-  "versionId": "41f39ace-f0c0-4467-b0e8-ba706a07934a"
+  "updatedAt": "2024-08-29T19:09:10.525Z",
+  "versionId": "06a37205-4065-4312-94d8-dd77da3d2213"
 }
