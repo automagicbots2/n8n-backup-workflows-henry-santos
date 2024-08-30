@@ -988,7 +988,7 @@
             },
             {
               "name": "Data do Cancelamento",
-              "value": "={{ $node[\"formata_dados1\"].json[\"Data do Cancelamento\"] }}"
+              "value": "={{ $node[\"formata_dados1\"].json[\"Data do Cancelamento\"].split('-')[2] }}/{{ $node[\"formata_dados1\"].json[\"Data do Cancelamento\"].split('-')[1] }}/{{ $node[\"formata_dados1\"].json[\"Data do Cancelamento\"].split('-')[0] }}"
             },
             {
               "name": "ID do Cliente",
@@ -1032,7 +1032,7 @@
             },
             {
               "name": "Data de Início",
-              "value": "={{ $node[\"Evento\"].json[\"payload\"][\"event\"][\"start_time\"].split('T')[0] }}"
+              "value": "={{ $node[\"Evento\"].json[\"payload\"][\"event\"][\"start_time\"].split('T')[0].split('-')[2] }}/{{ $node[\"Evento\"].json[\"payload\"][\"event\"][\"start_time\"].split('T')[0].split('-')[1] }}/{{ $node[\"Evento\"].json[\"payload\"][\"event\"][\"start_time\"].split('T')[0].split('-')[0] }}"
             },
             {
               "name": "Hora de Início",
@@ -2887,7 +2887,7 @@
               }
             },
             "event": {
-              "uuid": "e430253f-c57a-45ad-81a8-08439e0e31cb",
+              "uuid": "a7c48cd0-bddb-4327-9f57-b63104fa2ddf",
               "assigned_to": [
                 "Henry Santos"
               ],
@@ -2898,102 +2898,61 @@
                   "primary": true
                 }
               ],
-              "start_time": "2024-03-26T09:30:00-03:00",
-              "start_time_pretty": "09:30am - Tuesday, March 26, 2024",
-              "invitee_start_time": "2024-03-26T09:30:00-03:00",
-              "invitee_start_time_pretty": "09:30am - Tuesday, March 26, 2024",
-              "end_time": "2024-03-26T11:00:00-03:00",
-              "end_time_pretty": "11:00am - Tuesday, March 26, 2024",
-              "invitee_end_time": "2024-03-26T11:00:00-03:00",
-              "invitee_end_time_pretty": "11:00am - Tuesday, March 26, 2024",
-              "created_at": "2024-03-21T12:12:54-03:00",
-              "location": "https://calendly.com/events/e430253f-c57a-45ad-81a8-08439e0e31cb/google_meet",
+              "start_time": "2024-03-18T16:00:00-03:00",
+              "start_time_pretty": "04:00pm - Monday, March 18, 2024",
+              "invitee_start_time": "2024-03-18T16:00:00-03:00",
+              "invitee_start_time_pretty": "04:00pm - Monday, March 18, 2024",
+              "end_time": "2024-03-18T17:30:00-03:00",
+              "end_time_pretty": "05:30pm - Monday, March 18, 2024",
+              "invitee_end_time": "2024-03-18T17:30:00-03:00",
+              "invitee_end_time_pretty": "05:30pm - Monday, March 18, 2024",
+              "created_at": "2024-03-15T16:40:19-03:00",
+              "location": "https://calendly.com/events/a7c48cd0-bddb-4327-9f57-b63104fa2ddf/google_meet",
               "canceled": true,
               "canceler_name": "Henry Santos",
-              "cancel_reason": "Reagendamento - Teste",
-              "canceled_at": "2024-03-21T12:35:26-03:00"
+              "cancel_reason": "teste",
+              "canceled_at": "2024-03-15T16:42:45-03:00"
             },
             "invitee": {
-              "uuid": "e7ecb783-2fee-41bf-815c-a0ba30ff0873",
+              "uuid": "daa37baa-8d3e-45fb-b731-290913a7a784",
               "first_name": null,
               "last_name": null,
               "name": "Vitor Queiroz de Almeida",
               "email": "vitorrqueiroztrafego@gmail.com",
-              "text_reminder_number": "+55 19 98202-2213",
+              "text_reminder_number": "+55 19 98457-4874",
               "timezone": "America/Sao_Paulo",
-              "created_at": "2024-03-21T12:12:54-03:00",
-              "is_reschedule": true,
+              "created_at": "2024-03-15T16:40:19-03:00",
+              "is_reschedule": false,
               "payments": [],
               "canceled": true,
               "canceler_name": "Henry Santos",
-              "cancel_reason": "Reagendamento - Teste",
-              "canceled_at": "2024-03-21T12:35:26-03:00"
+              "cancel_reason": "teste",
+              "canceled_at": "2024-03-15T16:42:45-03:00"
             },
             "questions_and_answers": [
               {
                 "question": "Seu DDD + Whatsapp",
-                "answer": "+55 19 98202-2213"
+                "answer": "+55 19 98457-4874"
               }
             ],
             "questions_and_responses": {
               "1_question": "Seu DDD + Whatsapp",
-              "1_response": "+55 19 98202-2213"
+              "1_response": "+55 19 98457-4874"
             },
             "tracking": {
-              "utm_campaign": null,
-              "utm_source": null,
-              "utm_medium": null,
-              "utm_content": null,
-              "utm_term": null,
+              "utm_campaign": "campaign4",
+              "utm_source": "source1",
+              "utm_medium": "medium2",
+              "utm_content": "content3",
+              "utm_term": "term5",
               "salesforce_uuid": null
             },
             "old_event": null,
             "old_invitee": null,
-            "new_event": {
-              "uuid": "608ea2e7-150d-42e1-9942-7d11079328f4",
-              "assigned_to": [
-                "Henry Santos"
-              ],
-              "extended_assigned_to": [
-                {
-                  "name": "Henry Santos",
-                  "email": "henry.dossantos@gmail.com",
-                  "primary": true
-                }
-              ],
-              "start_time": "2024-03-21T19:00:00-03:00",
-              "start_time_pretty": "07:00pm - Thursday, March 21, 2024",
-              "invitee_start_time": "2024-03-21T19:00:00-03:00",
-              "invitee_start_time_pretty": "07:00pm - Thursday, March 21, 2024",
-              "end_time": "2024-03-21T20:30:00-03:00",
-              "end_time_pretty": "08:30pm - Thursday, March 21, 2024",
-              "invitee_end_time": "2024-03-21T20:30:00-03:00",
-              "invitee_end_time_pretty": "08:30pm - Thursday, March 21, 2024",
-              "created_at": "2024-03-21T12:35:26-03:00",
-              "location": "https://calendly.com/events/608ea2e7-150d-42e1-9942-7d11079328f4/google_meet",
-              "canceled": false,
-              "canceler_name": null,
-              "cancel_reason": null,
-              "canceled_at": null
-            },
-            "new_invitee": {
-              "uuid": "0e5c6aa1-e0c7-48b6-ad79-037a9a922a3a",
-              "first_name": null,
-              "last_name": null,
-              "name": "Vitor Queiroz de Almeida",
-              "email": "vitorrqueiroztrafego@gmail.com",
-              "text_reminder_number": "+55 19 98202-2213",
-              "timezone": "America/Sao_Paulo",
-              "created_at": "2024-03-21T12:35:26-03:00",
-              "is_reschedule": false,
-              "payments": [],
-              "canceled": false,
-              "canceler_name": null,
-              "cancel_reason": null,
-              "canceled_at": null
-            }
+            "new_event": null,
+            "new_invitee": null
           },
-          "time": "2024-03-21T15:35:27Z"
+          "time": "2024-03-15T19:42:45Z"
         }
       }
     ]
@@ -3010,7 +2969,7 @@
   "staticData": {
     "node:Calendly Trigger": {},
     "node:Evento": {
-      "webhookId": 5040036
+      "webhookId": 5040179
     }
   },
   "tags": [
@@ -3022,6 +2981,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-30T01:32:56.523Z",
-  "versionId": "f52c2bed-6623-485a-9dde-afbb69849f00"
+  "updatedAt": "2024-08-30T03:25:50.829Z",
+  "versionId": "93b3d20f-336a-4f7c-8b42-c9fa0ca0a779"
 }
