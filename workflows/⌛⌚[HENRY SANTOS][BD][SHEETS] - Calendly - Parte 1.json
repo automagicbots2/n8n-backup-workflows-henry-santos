@@ -655,7 +655,7 @@
             },
             {
               "name": "Data em que foi feito o Reagendamento",
-              "value": "={{ $node[\"formata_dados2\"].json[\"Data em que foi feito o Reagendamento\"] }}"
+              "value": "={{ $node[\"formata_dados2\"].json[\"Data em que foi feito o Reagendamento\"].split('-')[2] }}/{{ $node[\"formata_dados2\"].json[\"Data em que foi feito o Reagendamento\"].split('-')[1] }}/{{ $node[\"formata_dados2\"].json[\"Data em que foi feito o Reagendamento\"].split('-')[0] }}"
             },
             {
               "name": "Data de Término",
@@ -815,7 +815,7 @@
             },
             {
               "name": "id_sdr",
-              "value": "1"
+              "value": "={{ $node[\"Evento\"].json[\"payload\"][\"event\"][\"extended_assigned_to\"][\"0\"][\"email\"].replace('henry.dossantos@gmail.com','11743307').replace('willnovaes01@gmail.com','11762515').replace('cassiagregorio@gmail.com','9109819') }}"
             },
             {
               "name": "id_campo_link_de_cancelamento_crm",
@@ -1128,7 +1128,7 @@
             },
             {
               "name": "id_sdr",
-              "value": "1"
+              "value": "={{ $node[\"Evento\"].json[\"payload\"][\"event\"][\"extended_assigned_to\"][\"0\"][\"email\"].replace('henry.dossantos@gmail.com','11743307').replace('willnovaes01@gmail.com','11762515').replace('cassiagregorio@gmail.com','9109819') }}"
             },
             {
               "name": "id_campo_link_de_cancelamento_crm",
@@ -1372,7 +1372,7 @@
             },
             {
               "name": "id_sdr",
-              "value": "1"
+              "value": "={{ $node[\"Evento\"].json[\"payload\"][\"event\"][\"extended_assigned_to\"][\"0\"][\"email\"].replace('henry.dossantos@gmail.com','11743307').replace('willnovaes01@gmail.com','11762515').replace('cassiagregorio@gmail.com','9109819') }}"
             },
             {
               "name": "id_campo_link_de_cancelamento_crm",
@@ -2999,12 +2999,18 @@
     ]
   },
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
   },
   "staticData": {
     "node:Calendly Trigger": {},
     "node:Evento": {
-      "webhookId": 5022178
+      "webhookId": 5040036
     }
   },
   "tags": [
@@ -3016,6 +3022,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-22T15:33:35.206Z",
-  "versionId": "f1ab4ea8-41cb-40f8-b9a5-3035461d261c"
+  "updatedAt": "2024-08-30T01:32:56.523Z",
+  "versionId": "f52c2bed-6623-485a-9dde-afbb69849f00"
 }
