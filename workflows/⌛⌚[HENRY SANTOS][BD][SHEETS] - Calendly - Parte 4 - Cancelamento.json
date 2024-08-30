@@ -3,20 +3,14 @@
   "connections": {
     "pesquisa_lead3": {
       "main": [
-        [
-          {
-            "node": "pesquisa_agendamento",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "pesquisa_agendamento": {
       "main": [
         [
           {
-            "node": "add_id_banco1",
+            "node": "nao_existe1",
             "type": "main",
             "index": 0
           }
@@ -413,7 +407,7 @@
       "main": [
         [
           {
-            "node": "cria_deal1",
+            "node": "Add_contato_KOMMO",
             "type": "main",
             "index": 0
           }
@@ -442,7 +436,7 @@
       "main": [
         [
           {
-            "node": "id_lead1",
+            "node": "update_leads_KOMMO2",
             "type": "main",
             "index": 0
           }
@@ -816,93 +810,6 @@
         ]
       ]
     },
-    "email_vazio": {
-      "main": [
-        [
-          {
-            "node": "telefone_vazio",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "telefone_vazio1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "telefone_vazio": {
-      "main": [
-        [
-          {
-            "node": "sem_acao",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "pesquisa_lead_telefone",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "telefone_vazio1": {
-      "main": [
-        [
-          {
-            "node": "pesquisa_lead_email",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "pesquisa_lead_telefone_email",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "pesquisa_lead_telefone_email": {
-      "main": [
-        [
-          {
-            "node": "pesquisa_lead",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "pesquisa_lead_email": {
-      "main": [
-        [
-          {
-            "node": "pesquisa_lead",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "pesquisa_lead_telefone": {
-      "main": [
-        [
-          {
-            "node": "pesquisa_lead",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "pesquisa_lead": {
       "main": [
         [
@@ -958,112 +865,6 @@
         ]
       ]
     },
-    "cria_deal1": {
-      "main": [
-        [
-          {
-            "node": "atualizar_campos_deal1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "atualizar_campos_deal1": {
-      "main": [
-        [
-          {
-            "node": "Add_lead_KOMMO2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "busca_deal1": {
-      "main": [
-        [
-          {
-            "node": "atualiza_deal",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "id_deal_vazio": {
-      "main": [
-        [
-          {
-            "node": "cria_deal2",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "busca_deal1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "cria_deal2": {
-      "main": [
-        [
-          {
-            "node": "atualizar_campos_deal2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "atualiza_deal": {
-      "main": [
-        [
-          {
-            "node": "atualizar_campos_deal2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "atualizar_campos_deal2": {
-      "main": [
-        [
-          {
-            "node": "telefone_preenchido",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "add_id_banco1": {
-      "main": [
-        [
-          {
-            "node": "atualiza_campos_deal2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "atualiza_campos_deal2": {
-      "main": [
-        [
-          {
-            "node": "nao_existe1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "envia_campo_id_bd_iddealac1": {
       "main": [
         [
@@ -1079,7 +880,7 @@
       "main": [
         [
           {
-            "node": "email_vazio",
+            "node": "pesquisa_lead2",
             "type": "main",
             "index": 0
           }
@@ -1101,32 +902,76 @@
       "main": [
         [
           {
-            "node": "Add_lead_KOMMO1",
+            "node": "Add_contato_KOMMO1",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "update_contacts_KOMMO",
+            "node": "update_contato_KOMMO",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "MySQL": {
+    "pesquisa_lead2": {
       "main": [
         [
           {
-            "node": "id_deal_vazio",
+            "node": "pesquisa_lead",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "update_contacts_KOMMO": {
+    "Add_contato_KOMMO": {
+      "main": [
+        [
+          {
+            "node": "insere_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_leads_KOMMO2": {
+      "main": [
+        [
+          {
+            "node": "id_lead1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_id_kommo": {
+      "main": [
+        [
+          {
+            "node": "update_leads_KOMMO1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_contato_KOMMO1": {
+      "main": [
+        [
+          {
+            "node": "atualiza_id_kommo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_contato_KOMMO": {
       "main": [
         [
           {
@@ -1141,29 +986,18 @@
       "main": [
         [
           {
-            "node": "id_deal_vazio",
+            "node": "telefone_preenchido",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Add_lead_KOMMO1": {
+    "update_leads_KOMMO1": {
       "main": [
         [
           {
-            "node": "MySQL",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Add_lead_KOMMO2": {
-      "main": [
-        [
-          {
-            "node": "insere_dados",
+            "node": "telefone_preenchido",
             "type": "main",
             "index": 0
           }
@@ -1205,7 +1039,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        3060,
+        3460,
         -20
       ],
       "credentials": {
@@ -1242,7 +1076,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        3260,
+        3660,
         -20
       ],
       "credentials": {
@@ -2336,7 +2170,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -1040,
+        320,
         280
       ],
       "id": "f01fa01f-059f-4eda-9d41-cee091a374d0",
@@ -2358,7 +2192,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        480,
+        1220,
         280
       ]
     },
@@ -2381,7 +2215,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        2640,
+        3040,
         -20
       ]
     },
@@ -2439,7 +2273,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2440,
+        2660,
         -20
       ],
       "credentials": {
@@ -2465,7 +2299,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2440,
+        2840,
         240
       ]
     },
@@ -2485,7 +2319,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2280,
+        2680,
         320
       ]
     },
@@ -2505,7 +2339,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2260,
+        2660,
         800
       ]
     },
@@ -2525,7 +2359,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2460,
+        2860,
         720
       ]
     },
@@ -2574,7 +2408,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2640,
+        3040,
         320
       ],
       "credentials": {
@@ -2629,7 +2463,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2440,
+        2840,
         500
       ],
       "credentials": {
@@ -2684,7 +2518,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2660,
+        3060,
         640
       ],
       "credentials": {
@@ -2743,7 +2577,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2660,
+        3060,
         820
       ],
       "credentials": {
@@ -2802,7 +2636,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2460,
+        2860,
         940
       ],
       "credentials": {
@@ -2828,7 +2662,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2300,
+        2700,
         1180
       ]
     },
@@ -2848,7 +2682,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2140,
+        2540,
         1260
       ]
     },
@@ -2901,7 +2735,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2300,
+        2700,
         1420
       ],
       "credentials": {
@@ -2956,7 +2790,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2500,
+        2900,
         1100
       ],
       "credentials": {
@@ -3015,7 +2849,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2500,
+        2900,
         1260
       ],
       "credentials": {
@@ -3041,7 +2875,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2100,
+        2500,
         420
       ]
     },
@@ -3061,7 +2895,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1820,
+        2300,
         500
       ]
     },
@@ -3106,7 +2940,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2640,
+        3040,
         160
       ],
       "credentials": {
@@ -3203,7 +3037,7 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        -1040,
+        320,
         100
       ]
     },
@@ -3223,7 +3057,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1260,
+        100,
         280
       ]
     },
@@ -3240,7 +3074,7 @@
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
       "position": [
-        -1420,
+        -60,
         280
       ],
       "credentials": {
@@ -3497,217 +3331,9 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        2920,
+        3320,
         360
       ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
-              "operation": "isEmpty"
-            }
-          ]
-        },
-        "combineOperation": "any"
-      },
-      "id": "4e08e10a-c8d4-40b4-906c-f578b331e51e",
-      "name": "email_vazio",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        -480,
-        280
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}",
-              "operation": "isEmpty"
-            }
-          ]
-        },
-        "combineOperation": "any"
-      },
-      "id": "d9ba0460-bfba-4359-8785-143875a47a96",
-      "name": "telefone_vazio",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        120
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}",
-              "operation": "isEmpty"
-            }
-          ]
-        },
-        "combineOperation": "any"
-      },
-      "id": "b1d018a3-863c-40d2-8af1-61b27a800c89",
-      "name": "telefone_vazio1",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        -280,
-        440
-      ]
-    },
-    {
-      "parameters": {
-        "operation": "select",
-        "table": {
-          "__rl": true,
-          "value": "leads",
-          "mode": "list",
-          "cachedResultName": "leads"
-        },
-        "where": {
-          "values": [
-            {
-              "column": "telefone",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
-            },
-            {
-              "column": "telefone_empresa",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
-            },
-            {
-              "column": "email",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
-            },
-            {
-              "column": "email2",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
-            }
-          ]
-        },
-        "combineConditions": "OR",
-        "options": {
-          "detailedOutput": false
-        }
-      },
-      "id": "c3bf69b1-b4d1-47b9-a979-3f42501f1249",
-      "name": "pesquisa_lead_telefone_email",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.1,
-      "position": [
-        -20,
-        540
-      ],
-      "alwaysOutputData": true,
-      "credentials": {
-        "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "select",
-        "table": {
-          "__rl": true,
-          "value": "leads",
-          "mode": "list",
-          "cachedResultName": "leads"
-        },
-        "where": {
-          "values": [
-            {
-              "column": "email",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
-            },
-            {
-              "column": "email2",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
-            }
-          ]
-        },
-        "combineConditions": "OR",
-        "options": {
-          "detailedOutput": false
-        }
-      },
-      "id": "5e546b49-9531-4487-98ce-da74ac50be40",
-      "name": "pesquisa_lead_email",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.1,
-      "position": [
-        -20,
-        360
-      ],
-      "alwaysOutputData": true,
-      "credentials": {
-        "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
-        }
-      }
-    },
-    {
-      "parameters": {},
-      "id": "bfcfc5f3-140e-499b-9b58-95f192449718",
-      "name": "sem_acao",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        -20,
-        20
-      ]
-    },
-    {
-      "parameters": {
-        "operation": "select",
-        "table": {
-          "__rl": true,
-          "value": "leads",
-          "mode": "list",
-          "cachedResultName": "leads"
-        },
-        "where": {
-          "values": [
-            {
-              "column": "telefone",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
-            },
-            {
-              "column": "telefone_empresa",
-              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
-            }
-          ]
-        },
-        "combineConditions": "OR",
-        "options": {
-          "detailedOutput": false
-        }
-      },
-      "id": "f7e58ebb-d9ac-4114-b213-1dc750974c58",
-      "name": "pesquisa_lead_telefone",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.1,
-      "position": [
-        -20,
-        200
-      ],
-      "alwaysOutputData": true,
-      "credentials": {
-        "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
-        }
-      }
     },
     {
       "parameters": {
@@ -3719,7 +3345,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        320,
+        1060,
         280
       ]
     },
@@ -3841,7 +3467,7 @@
       "type": "n8n-nodes-base.activeCampaign",
       "typeVersion": 1,
       "position": [
-        -860,
+        500,
         280
       ],
       "credentials": {
@@ -3850,253 +3476,6 @@
           "name": "[ActiveCampaign][2.0] - Henry Santos"
         }
       }
-    },
-    {
-      "parameters": {
-        "resource": "deal",
-        "title": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}",
-        "contact": "={{ $node[\"cria_atualiza_contato\"].json[\"id\"] }}",
-        "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"valor_produto_principal_em_centavos\"] }}",
-        "currency": "brl",
-        "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
-        "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_nao_compareceu_reuniao_crm\"] }}",
-        "owner": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }}",
-        "additionalFields": {}
-      },
-      "id": "81dc42da-e570-4f7f-aa3f-e2ab843b7370",
-      "name": "cria_deal1",
-      "type": "n8n-nodes-base.activeCampaign",
-      "typeVersion": 1,
-      "position": [
-        1580,
-        -20
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true,
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "=https://{{ $node[\"entra_na_fila\"].json[\"content\"][\"url_api_activecampaign\"] }}.api-us1.com/api/3/deals/{{  $json[\"deal\"][\"id\"]  }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "activeCampaignApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_cancelamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/cancellations/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_reagendamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/reschedulings/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_cliente_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'].split('-')[2].split(' ')[0] }}/{{ $node['entra_na_fila'].json['content']['Data de Início'].split('-')[1] }}/{{ $node['entra_na_fila'].json['content']['Data de Início'].split('-')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['data_e_hora_de_termino'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['data_termino_ac'].split('-')[2].split(' ')[0] }}/{{ $node['entra_na_fila'].json['content']['data_termino_ac'].split('-')[1] }}/{{ $node['entra_na_fila'].json['content']['data_termino_ac'].split('-')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_email_do_responsavel_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['E-mail do Responsável'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_do_cancelamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data do Cancelamento'].split('-')[2].split(' ')[0] }}/{{ $node['entra_na_fila'].json['content']['Data do Cancelamento'].split('-')[1] }}/{{ $node['entra_na_fila'].json['content']['Data do Cancelamento'].split('-')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_da_reuniao_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Link da Reunião'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_tipo_de_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Tipo de Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Evento'] }}\"\n      }\n    ]\n  }\n}",
-        "options": {}
-      },
-      "id": "73a725f2-046b-4407-bfba-0e4a0d4606af",
-      "name": "atualizar_campos_deal1",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        1760,
-        -20
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "resource": "deal",
-        "operation": "get",
-        "dealId": "={{ $node[\"pesquisa_lead\"].json[\"id_deal_activecampaign\"] }}"
-      },
-      "id": "e1351bda-a9eb-4f80-85fd-6004d733c7a5",
-      "name": "busca_deal1",
-      "type": "n8n-nodes-base.activeCampaign",
-      "typeVersion": 1,
-      "position": [
-        1340,
-        620
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true,
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"pesquisa_lead\"].json[\"id_deal_activecampaign\"] }}",
-              "operation": "isEmpty"
-            }
-          ]
-        }
-      },
-      "id": "831ae74f-66a1-4af9-bb86-8e3654859d9f",
-      "name": "id_deal_vazio",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        1180,
-        540
-      ]
-    },
-    {
-      "parameters": {
-        "resource": "deal",
-        "title": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}",
-        "contact": "={{ $node[\"id_activecampaign\"].json[\"id\"] }}",
-        "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"valor_produto_principal_em_centavos\"] }}",
-        "currency": "brl",
-        "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
-        "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_nao_compareceu_reuniao_crm\"] }}",
-        "owner": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }}",
-        "additionalFields": {}
-      },
-      "id": "0df6e38f-3a37-492f-8233-8b589b39bc6c",
-      "name": "cria_deal2",
-      "type": "n8n-nodes-base.activeCampaign",
-      "typeVersion": 1,
-      "position": [
-        1460,
-        400
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true,
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "resource": "deal",
-        "operation": "update",
-        "dealId": "={{ $json.deal.id }}",
-        "updateFields": {
-          "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"valor_produto_principal_em_centavos\"] }}",
-          "group": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_pipeline_se_crm\"] }}",
-          "stage": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_stage_nao_compareceu_reuniao_crm\"] }}",
-          "owner": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }}"
-        }
-      },
-      "id": "946c05d1-dfd3-4d9b-8eb5-06a2aa549c27",
-      "name": "atualiza_deal",
-      "type": "n8n-nodes-base.activeCampaign",
-      "typeVersion": 1,
-      "position": [
-        1480,
-        620
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true,
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "=https://{{ $node[\"entra_na_fila\"].json[\"content\"][\"url_api_activecampaign\"] }}.api-us1.com/api/3/deals/{{ $node[\"cria_deal2\"].runIndex >= 0 ? $node[\"cria_deal2\"].json[\"deal\"][\"id\"] : ($node[\"busca_deal1\"].runIndex >= 0 ? $node[\"busca_deal1\"].json[\"deal\"][\"id\"] : \"\" ) }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "activeCampaignApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"deal\": {\n    \"fields\": [\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_cancelamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/cancellations/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_de_reagendamento_crm'] }}\",\n        \"fieldValue\": \"https://calendly.com/reschedulings/{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_cliente_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Cliente'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'].split('-')[2].split(' ')[0] }}/{{ $node['entra_na_fila'].json['content']['Data de Início'].split('-')[1] }}/{{ $node['entra_na_fila'].json['content']['Data de Início'].split('-')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_inicio_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data de Início'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_e_hora_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['data_e_hora_de_termino'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_de_termino_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['data_termino_ac'].split('-')[2].split(' ')[0] }}/{{ $node['entra_na_fila'].json['content']['data_termino_ac'].split('-')[1] }}/{{ $node['entra_na_fila'].json['content']['data_termino_ac'].split('-')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_email_do_responsavel_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['E-mail do Responsável'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_data_do_cancelamento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Data do Cancelamento'].split('-')[2].split(' ')[0] }}/{{ $node['entra_na_fila'].json['content']['Data do Cancelamento'].split('-')[1] }}/{{ $node['entra_na_fila'].json['content']['Data do Cancelamento'].split('-')[0] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_link_da_reuniao_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Link da Reunião'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_tipo_de_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['Tipo de Evento'] }}\"\n      },\n      {\n        \"customFieldId\": \"{{ $node['entra_na_fila'].json['content']['id_campo_id_do_evento_crm'] }}\",\n        \"fieldValue\": \"{{ $node['entra_na_fila'].json['content']['ID do Evento'] }}\"\n      }\n    ]\n  }\n}",
-        "options": {}
-      },
-      "id": "d9d859ec-d37c-4ffd-8314-52907dbeca5a",
-      "name": "atualizar_campos_deal2",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        1640,
-        480
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "email": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}",
-        "updateIfExists": true,
-        "additionalFields": {
-          "fieldValues": {
-            "property": [
-              {
-                "field": "257",
-                "value": "={{ $node[\"pesquisa_lead\"].json[\"id_lead\"] }}"
-              },
-              {
-                "field": "163",
-                "value": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
-              }
-            ]
-          }
-        }
-      },
-      "id": "83eb8df2-d9fb-4e72-948c-503fc3a39b76",
-      "name": "add_id_banco1",
-      "type": "n8n-nodes-base.activeCampaign",
-      "typeVersion": 1,
-      "position": [
-        3460,
-        -20
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true,
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "=https://{{ $node[\"entra_na_fila\"].json[\"content\"][\"url_api_activecampaign\"] }}.api-us1.com/api/3/deals/{{ $node[\"cria_deal1\"].runIndex >= 0 ? $node[\"cria_deal1\"].json[\"deal\"][\"id\"] : ($node[\"cria_deal2\"].runIndex >= 0 ? $node[\"cria_deal2\"].json[\"deal\"][\"id\"] : ($node[\"busca_deal1\"].runIndex >= 0 ? $node[\"busca_deal1\"].json[\"deal\"][\"id\"] : \"\" )) }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "activeCampaignApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n\"deal\": {\n\"fields\": [\n{\n\"customFieldId\": {{ $node[\"entra_na_fila\"].json[\"content\"][\"id_campo_id_banco_deal_crm\"] }},\n\"fieldValue\": \"{{ $node[\"insere_dados\"].runIndex >= 0 ? $node[\"insere_dados\"].json[\"data\"][\"insertId\"] : ($node[\"pesquisa_lead\"].runIndex >= 0 ? $node[\"pesquisa_lead\"].json[\"id_lead\"] : \"\" ) }}\"\n},\n{\n\"customFieldId\": {{ $node[\"entra_na_fila\"].json[\"content\"][\"id_campo_id_bot_conversa_deal_crm\"] }},\n\"fieldValue\": \"{{ $node[\"cadastrar_contato\"].json[\"id\"] }}\"\n}\n]\n}\n}",
-        "options": {}
-      },
-      "id": "723d0089-17a4-44f9-9bc2-03f457166d09",
-      "name": "atualiza_campos_deal2",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        3640,
-        -20
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      },
-      "disabled": true
     },
     {
       "parameters": {
@@ -4148,7 +3527,7 @@
       "type": "n8n-nodes-base.activeCampaign",
       "typeVersion": 1,
       "position": [
-        -680,
+        680,
         280
       ],
       "credentials": {
@@ -4190,24 +3569,16 @@
               "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
             },
             {
-              "column": "id_lead_activecampaign",
-              "value": "={{ $node[\"cria_atualiza_contato\"].json[\"id\"] }}"
-            },
-            {
-              "column": "id_deal_activecampaign",
-              "value": "={{ $node[\"cria_deal1\"].json[\"deal\"][\"id\"] }}"
-            },
-            {
               "column": "nivel_qualificacao",
               "value": "Qualificado"
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"Add_lead_KOMMO2\"].json[\"id\"] }}"
+              "value": "={{ $node[\"Add_contato_KOMMO\"].json[\"id\"] }}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"Add_lead_KOMMO2\"].json[\"contact_id\"] }}"
+              "value": "={{ $node[\"Add_contato_KOMMO\"].json[\"contact_id\"] }}"
             }
           ]
         },
@@ -4220,49 +3591,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2220,
+        2440,
         -20
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "leads",
-          "mode": "list",
-          "cachedResultName": "leads"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "id_lead",
-        "valueToMatchOn": "={{ $node[\"pesquisa_lead\"].json[\"id_lead\"] }}",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "id_lead_kommo",
-              "value": "={{ $node[\"Add_lead_KOMMO1\"].json[\"id\"] }}"
-            },
-            {
-              "column": "id_contato_kommo",
-              "value": "={{ $node[\"Add_lead_KOMMO1\"].json[\"contact_id\"] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "8e270313-8bbe-4535-b73e-7cacff5d5dae",
-      "name": "MySQL",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.2,
-      "position": [
-        1000,
-        420
       ],
       "credentials": {
         "mySql": {
@@ -4287,9 +3617,66 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        640,
-        500
+        1420,
+        440
       ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "email",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"]  || '-----------------------'}}"
+            },
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] || '-----------------------'}}"
+            },
+            {
+              "column": "telefone_empresa",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"]|| '-----------------------'}}"
+            },
+            {
+              "column": "instagram",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"instagram\"]|| '-----------------------'}}"
+            },
+            {
+              "column": "email2",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"]|| '-----------------------'}}"
+            },
+            {
+              "column": "instagram2",
+              "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"instagram\"]|| '-----------------------'}}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "5404c341-b49f-4626-b45b-5dfdf5fe695e",
+      "name": "pesquisa_lead2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        860,
+        280
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
     },
     {
       "parameters": {
@@ -4302,49 +3689,13 @@
         "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n             \"responsible_user_id\":11762503,\n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                  {\n                      \"field_id\": 1015594,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015596,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015598,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015600,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015602,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015604,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015606,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1014634,\n                      \"field_name\": \"Data da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[0] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 1014636,\n                      \"field_name\": \"Hora da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[1] }}\"\n                          }\n                      ]\n                  },\n                                {\n                \"field_id\": 1015570,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015576,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015580,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n                {\n                      \"field_id\": 1014638,\n                      \"field_name\": \"Link da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11762503,\n    \"status_id\":72345791,\n    \"pipeline_id\":9337315\n }\n]",
         "options": {}
       },
-      "id": "3edea058-5d9a-4456-bb2e-717a88154a33",
-      "name": "Add_lead_KOMMO1",
+      "id": "ffea7550-ef6e-434b-ac75-413cacbe794b",
+      "name": "Add_contato_KOMMO",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        820,
-        420
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
-        "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "method": "PATCH",
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/contacts",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "oAuth2Api",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_lead\"].json[\"id_contato_kommo\"] }},\n        \"status_id\": 72345787,    \n        \"custom_fields_values\": [\n            {\n                \"field_id\": 1014636,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[1] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1014634,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                      \"field_id\": 1015594,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015596,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015598,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015600,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015602,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015604,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015606,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n            {\n                \"field_id\": 1014638,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015570,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015576,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015580,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            }\n        ]\n    }\n]",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
-      },
-      "id": "b4e77d41-92ad-48f1-aef3-e156c6ba05dd",
-      "name": "update_contacts_KOMMO",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        800,
-        660
+        2220,
+        -20
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -4365,7 +3716,7 @@
         "genericAuthType": "oAuth2Api",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_lead\"].json[\"id_lead_kommo\"] }},\n                \"pipeline_id\": 9337315,\n                \"status_id\": 72345791\n    }\n]",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"Add_contato_KOMMO\"].json[\"id\"] }},\n        \"name\": \"{{ $node[\"pesquisa_lead1\"].json[\"nome\"] }}\",\n        \"status_id\": 72345787,\n        \"pipeline_id\": 72345791,\n         \"responsible_user_id\":{{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }},\n        \"custom_fields_values\": [\n            {\n                \"field_id\": 1016092,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016094,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016096,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016098,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[1] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016100,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016102,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016104,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016106,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016108,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016110,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016112,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016114,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016116,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016120,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016122,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                    }\n                ]\n            },\n              {\n                \"field_id\": 1016126,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                    }\n                ]\n            }\n        ]\n    }\n]",
         "options": {
           "response": {
             "response": {
@@ -4374,13 +3725,13 @@
           }
         }
       },
-      "id": "9502a69c-e213-4e02-acb0-1a5b11d3ad18",
-      "name": "update_leads_KOMMO",
+      "id": "b9ddc18c-0db9-4954-8bfc-3088cccf499f",
+      "name": "update_leads_KOMMO2",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1000,
-        660
+        2860,
+        -20
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -4395,22 +3746,171 @@
     },
     {
       "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_lead1\"].json[\"id_lead_kommo\"] }},\n        \"name\": \"{{ $node[\"pesquisa_lead1\"].json[\"nome\"] }}\",\n        \"status_id\": 72345787,\n        \"pipeline_id\": 9337315,\n         \"responsible_user_id\":{{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }},\n        \"custom_fields_values\": [\n            {\n                \"field_id\": 1016092,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016094,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016096,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016098,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[1] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016100,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016102,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016104,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016106,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016108,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016110,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016112,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016114,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016116,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016120,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016122,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                    }\n                ]\n            },\n              {\n                \"field_id\": 1016126,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                    }\n                ]\n            }\n        ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "c9db41d0-dfc2-4490-8dfd-19708471b13d",
+      "name": "update_leads_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1820,
+        580
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"pesquisa_lead1\"].json[\"id_lead\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_lead_kommo",
+              "value": "={{ $node[\"Add_contato_KOMMO1\"].json[\"id\"] }}"
+            },
+            {
+              "column": "id_contato_kommo",
+              "value": "={{ $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5baec1a8-6836-479f-9a08-77768f1d7023",
+      "name": "atualiza_id_kommo",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        1840,
+        340
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
         "method": "POST",
         "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
         "authentication": "genericCredentialType",
         "genericAuthType": "oAuth2Api",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n             \"responsible_user_id\":11762503,\n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                  {\n                      \"field_id\": 1015594,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015596,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015598,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015600,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015602,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015604,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015606,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1014634,\n                      \"field_name\": \"Data da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[0] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 1014636,\n                      \"field_name\": \"Hora da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[1] }}\"\n                          }\n                      ]\n                  },\n                                {\n                \"field_id\": 1015570,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015576,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015580,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n                {\n                      \"field_id\": 1014638,\n                      \"field_name\": \"Link da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11762503,\n    \"status_id\":72345791,\n    \"pipeline_id\":9337315\n }\n]",
+        "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n             \"responsible_user_id\":11762503,\n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                        {\n                \"field_id\": 1016078,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016074,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016076,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}\"\n                    }\n                ]\n            },\n                  {\n                      \"field_id\": 1015594,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015596,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015598,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015600,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015602,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015604,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015606,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1014634,\n                      \"field_name\": \"Data da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[0] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 1014636,\n                      \"field_name\": \"Hora da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split (' ')[1] }}\"\n                          }\n                      ]\n                  },\n                                {\n                \"field_id\": 1015570,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015576,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015580,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n                {\n                      \"field_id\": 1014638,\n                      \"field_name\": \"Link da Reunião\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":{{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }},\n    \"status_id\":72345787,\n    \"pipeline_id\":9337315\n }\n]",
         "options": {}
       },
-      "id": "afd9897e-9a54-4303-a8e1-a35a58786055",
-      "name": "Add_lead_KOMMO2",
+      "id": "fcf7d5d0-3220-4734-85d5-f4d30c0a4397",
+      "name": "Add_contato_KOMMO1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2000,
-        -20
+        1640,
+        340
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_lead1\"].json[\"id_contato_kommo\"] }},\n        \"status_id\": 72345787,    \n        \"custom_fields_values\": [\n            {\n                \"field_id\": 1014636,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[1] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1014634,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016078,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016074,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016076,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                      \"field_id\": 1015594,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015596,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015598,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015600,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015602,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015604,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015606,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n            {\n                \"field_id\": 1014638,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015570,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015576,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1015580,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            }\n        ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "415a4f84-2889-4990-aee6-e639d9c050c5",
+      "name": "update_contato_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1620,
+        580
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"Add_contato_KOMMO1\"].json[\"id\"] }},\n        \"name\": \"{{ $node[\"pesquisa_lead1\"].json[\"nome\"] }}\",\n        \"status_id\": 72345787,\n        \"pipeline_id\": 9337315,\n         \"responsible_user_id\":{{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }},\n        \"custom_fields_values\": [\n            {\n                \"field_id\": 1016092,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016094,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016096,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016098,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[1] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016100,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016102,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016104,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016106,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016108,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016110,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016112,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016114,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016116,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016120,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016122,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                    }\n                ]\n            },\n              {\n                \"field_id\": 1016126,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                    }\n                ]\n            }\n        ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "9ae59eb3-34f6-4573-9218-72988d81bbc4",
+      "name": "update_leads_KOMMO1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2040,
+        340
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -4517,6 +4017,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-29T01:49:50.504Z",
-  "versionId": "801b5399-3461-4565-9612-9e880f6b5e20"
+  "updatedAt": "2024-08-30T03:00:03.816Z",
+  "versionId": "cc707bd1-9eed-4bdb-a067-73c19471e5cb"
 }
