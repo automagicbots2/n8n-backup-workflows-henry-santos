@@ -2428,13 +2428,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "={{ $node[\"variaveis_grupo\"].json[\"url_api_evolution\"] }}message/sendText/{{ $node[\"variaveis_grupo\"].json[\"nome_da_instancia\"] }}",
+        "url": "https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "={{ $node[\"variaveis_grupo\"].json[\"api_key\"] }}"
+              "value": "1gozy92fyg3hlty3wkv7f"
             }
           ]
         },
@@ -2443,7 +2443,7 @@
           "parameters": [
             {
               "name": "number",
-              "value": "553188284866"
+              "value": "5531971257650"
             },
             {
               "name": "textMessage.text",
@@ -2510,7 +2510,7 @@
             "data_ultima_quinzena": "2024-08-18",
             "data_resposta_type": "02/09/2024 18:44",
             "qualificacao": "Qualificado",
-            "id_lead_bd": 5008,
+            "id_lead_bd": 5039,
             "dia_da_semana_se": "Segunda-feira"
           }
         }
@@ -2536,6 +2536,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-02T22:17:44.265Z",
-  "versionId": "091d6564-0ccb-49d5-b68c-f9bc617c0ea4"
+  "updatedAt": "2024-09-03T13:26:53.876Z",
+  "versionId": "e2f4313b-14f8-499f-a153-c891eb7d8aec"
 }
