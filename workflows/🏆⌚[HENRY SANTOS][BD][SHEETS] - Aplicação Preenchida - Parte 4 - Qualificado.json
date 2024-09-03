@@ -377,22 +377,11 @@
       "main": [
         [
           {
-            "node": "add_tag_lead_kmmo",
+            "node": "EnviaMensagemTexto5",
             "type": "main",
             "index": 0
           }
         ],
-        [
-          {
-            "node": "dados",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "add_tag_lead_kmmo": {
-      "main": [
         [
           {
             "node": "dados",
@@ -413,9 +402,15 @@
         ]
       ]
     },
-    "Code": {
+    "EnviaMensagemTexto5": {
       "main": [
-        []
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -2292,43 +2287,6 @@
     },
     {
       "parameters": {
-        "method": "PATCH",
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "oAuth2Api",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_lead5\"].json[\"id_lead_kommo\"] }},\n        \"_embedded\": {\n            \"tags\": [\n                {\n                    \"id\": 67752\n                }\n            ]\n        }\n    }\n]",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
-      },
-      "id": "ef5839c1-f024-4bf2-8ee9-95d647eb0bc4",
-      "name": "add_tag_lead_kmmo",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        2260,
-        1780
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
-        "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
-        }
-      },
-      "disabled": true
-    },
-    {
-      "parameters": {
         "conditions": {
           "options": {
             "caseSensitive": true,
@@ -2338,8 +2296,8 @@
           "conditions": [
             {
               "id": "868e6dd7-2b6c-4cdd-a754-4e12a245dd11",
-              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}",
-              "rightValue": "sala_secreta",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}",
+              "rightValue": "manychat",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -2466,6 +2424,62 @@
         1360
       ],
       "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis_grupo\"].json[\"url_api_evolution\"] }}message/sendText/{{ $node[\"variaveis_grupo\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "553188284866"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=🔔NOVO LEAD GERADO PELO MANYCHAT🔔\n\nEntre em contato com o lead e ajude-o a marcar uma sessão estratégica.\n\nSEGUEM AS INFORMAÇÕES DO LEAD:\n\n.................................\n\n*Nome do Cliente:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\n*Telefone do Cliente:* +{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\n*Link do WhatsApp:* wa.me/{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "d4bde7e6-0049-4b0d-a6c3-d0ae1210d2c3",
+      "name": "EnviaMensagemTexto5",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2260,
+        1780
+      ],
+      "typeVersion": 4
     }
   ],
   "pinData": {
@@ -2473,7 +2487,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-2WohZCoQJuKCrrBZUcuiDw",
+            "consumerTag": "amq.ctag-wBnOpWILabN5PdPT6PvwnQ",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
@@ -2482,80 +2496,22 @@
           "properties": {},
           "content": {
             "verificacao_lead": false,
-            "Nome do Cliente": "Vitor Queiroz De Almeida",
-            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
+            "Nome do Cliente": "Vitor Teste",
             "Telefone do Cliente - Formato BC": "+5519984574874",
             "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "utm_content": "content3",
-            "utm_source": "source1",
-            "utm_campaign": "campaign2",
-            "utm_medium": "medium4",
-            "utm_term": "term5",
-            "instagram": "eu.vitorqueiroz",
-            "id_fluxo_nao_agendou_10_min": "2416169",
-            "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
-            "pergunta0": "SIM",
-            "pergunta1": "- DE 2",
-            "pergunta2": "Até R$15.000 mensal",
-            "pergunta3": "Sou investidor, estou comprando/construindo um salão, preciso de ajuda na administração",
-            "pergunta4": "Meu objetivo ou sonho",
-            "pergunta5": "",
-            "pergunta6": "porque eu deveria escolher você",
-            "pergunta7": "Imersão SA: Em 2 dias, ao vivo com o Henry, aprenda toda a estratégia e aplicação de como ter um salão autoadministrável, que lucra com equipes engajadas, independente da sua presença, e saia de la com um plano de alavancagem financeira - R$2.997",
-            "pergunta9": "Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando",
-            "id_campo_pergunta0_bot_conversa": "1123099",
-            "id_campo_pergunta1_bot_conversa": "1123101",
-            "id_campo_pergunta2_bot_conversa": "1123100",
-            "id_campo_pergunta3_bot_conversa": "1860276",
-            "id_campo_pergunta4_bot_conversa": "1123102",
-            "id_campo_pergunta5_bot_conversa": "1860278",
-            "id_campo_pergunta6_bot_conversa": "1359514",
-            "id_campo_pergunta7_bot_conversa": "1860280",
-            "id_campo_pergunta8_bot_conversa": "1860281",
-            "id_campo_pergunta9_bot_conversa": "2056601",
-            "id_campo_pergunta10_bot_conversa": "2193610",
-            "id_campo_pergunta11_bot_conversa": "",
-            "id_campo_pergunta12_bot_conversa": "",
-            "id_campo_pergunta13_bot_conversa": "",
-            "id_campo_pergunta14_bot_conversa": "",
-            "id_campo_pergunta15_bot_conversa": "",
-            "id_campo_pergunta16_bot_conversa": "",
-            "id_campo_pergunta17_bot_conversa": "",
-            "id_campo_pergunta18_bot_conversa": "",
-            "id_campo_pergunta19_bot_conversa": "",
-            "id_campo_pergunta20_bot_conversa": "",
-            "url_api_activecampaign_crm": "gestaodesaloes67530",
-            "id_ending_typeform": "01GEF2QQ1BV23MH18E2DAQHWDW",
-            "id_campo_id_banco_de_dados_bot_conversa": "1351140",
-            "id_campo_iddealac_bot_conversa": "1354465",
-            "id_campo_idleadac_bot_conversa": "1354600",
-            "id_campo_utm_source_bot_conversa": "1123113",
-            "id_campo_utm_campaign_bot_conversa": "1123114",
-            "id_campo_utm_term_bot_conversa": "1123115",
-            "id_campo_utm_medium_bot_conversa": "1123116",
-            "id_campo_utm_content_bot_conversa": "1123117",
-            "id_campo_utm_fun_bot_conversa": "1353849",
-            "id_campo_utm_var_bot_conversa": "1353848",
-            "id_campo_instagram_bot_conversa": "1123096",
+            "utm_content": "",
+            "utm_source": "manychat",
+            "utm_campaign": "Ebook: EQUIPE",
+            "utm_medium": "",
+            "utm_term": "",
+            "pergunta4": "Desenvolver uma equipe autônoma e eficiente",
             "funil": "sessao estrategica",
-            "variacao_do_funil": "sala_secreta",
-            "data_ultima_quinzena": "2024-08-13",
-            "id_campo_emailse_bot_conversa": "1115994",
-            "id_tag_desqualificado_bot_conversa": "4935232",
-            "id_tag_qualificado_bot_conversa": "4891828",
-            "data_resposta_type": "28/08/2024 11:56",
-            "id_campo_data_resposta_type_bot_conversa": "",
+            "variacao_do_funil": "social-selling",
+            "data_ultima_quinzena": "2024-08-18",
+            "data_resposta_type": "02/09/2024 18:44",
             "qualificacao": "Qualificado",
-            "id_lead_bd": 4962,
-            "id_lead_bc": 473136356,
-            "id_fluxo_nao_agendou_10_min_desqualificados": "2829998",
-            "id_campo_id_banco_deal_crm": "42",
-            "id_campo_id_bot_conversa_deal_crm": "53",
-            "id_campo_id_banco_de_dados_crm": "257",
-            "id_campo_id_bot_conversa_crm": "163",
-            "id_fluxo2_nao_agendou_10_min_desqualificados": 2830145,
-            "id_campo_dia_aplicou_se": "2113710",
-            "dia_da_semana_se": "Quarta-feira"
+            "id_lead_bd": 5008,
+            "dia_da_semana_se": "Segunda-feira"
           }
         }
       }
@@ -2580,6 +2536,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-29T19:09:10.525Z",
-  "versionId": "06a37205-4065-4312-94d8-dd77da3d2213"
+  "updatedAt": "2024-09-02T22:17:44.265Z",
+  "versionId": "091d6564-0ccb-49d5-b68c-f9bc617c0ea4"
 }
