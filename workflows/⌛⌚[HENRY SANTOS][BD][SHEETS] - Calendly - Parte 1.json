@@ -1372,7 +1372,7 @@
             },
             {
               "name": "id_sdr",
-              "value": "={{ $node[\"Evento\"].json[\"payload\"][\"event\"][\"extended_assigned_to\"][\"0\"][\"email\"].replace('henry.dossantos@gmail.com','11743307').replace('willnovaes01@gmail.com','11762515').replace('cassiagregorio@gmail.com','9109819') }}"
+              "value": "={{ $node[\"Evento\"].json[\"payload\"][\"event\"][\"extended_assigned_to\"][\"0\"][\"email\"].replace('henry.dossantos@gmail.com','11743307').replace('willnovaes01@gmail.com','11762515').replace('jeandcloser@gmail.com','11762503') }}"
             },
             {
               "name": "id_campo_link_de_cancelamento_crm",
@@ -2873,78 +2873,84 @@
     "Evento": [
       {
         "json": {
-          "event": "invitee.canceled",
+          "event": "invitee.created",
           "payload": {
             "event_type": {
-              "uuid": "558b4559-59c5-4c20-93a0-f162f1354911",
-              "kind": "One-on-One",
-              "slug": "sessao-estrategica-com-henry",
-              "name": "Parabéns, seu perfil foi aprovado, agende a sessão:",
-              "duration": 90,
+              "uuid": "2a21d9e7-454c-4d6c-9fdb-6853c3c32744",
+              "kind": "Collective",
+              "slug": null,
+              "name": "Sessão Estratégica",
+              "duration": 30,
               "owner": {
-                "type": "users",
-                "uuid": "676eec5d-16c3-4e51-b67e-39ebfe84b747"
+                "type": "organizations",
+                "uuid": null
               }
             },
             "event": {
-              "uuid": "a7c48cd0-bddb-4327-9f57-b63104fa2ddf",
+              "uuid": "15e7c31e-e5f3-4c1d-bc29-6c2767102648",
               "assigned_to": [
-                "Henry Santos"
+                "Jean Carlos",
+                "Willian Novaes"
               ],
               "extended_assigned_to": [
                 {
-                  "name": "Henry Santos",
-                  "email": "henry.dossantos@gmail.com",
+                  "name": "Jean Carlos",
+                  "email": "jeandcloser@gmail.com",
+                  "primary": false
+                },
+                {
+                  "name": "Willian Novaes",
+                  "email": "willnovaes01@gmail.com",
                   "primary": true
                 }
               ],
-              "start_time": "2024-03-18T16:00:00-03:00",
-              "start_time_pretty": "04:00pm - Monday, March 18, 2024",
-              "invitee_start_time": "2024-03-18T16:00:00-03:00",
-              "invitee_start_time_pretty": "04:00pm - Monday, March 18, 2024",
-              "end_time": "2024-03-18T17:30:00-03:00",
-              "end_time_pretty": "05:30pm - Monday, March 18, 2024",
-              "invitee_end_time": "2024-03-18T17:30:00-03:00",
-              "invitee_end_time_pretty": "05:30pm - Monday, March 18, 2024",
-              "created_at": "2024-03-15T16:40:19-03:00",
-              "location": "https://calendly.com/events/a7c48cd0-bddb-4327-9f57-b63104fa2ddf/google_meet",
-              "canceled": true,
-              "canceler_name": "Henry Santos",
-              "cancel_reason": "teste",
-              "canceled_at": "2024-03-15T16:42:45-03:00"
+              "start_time": "2024-09-06T18:00:00-04:00",
+              "start_time_pretty": "06:00pm - Friday, September 6, 2024",
+              "invitee_start_time": "2024-09-06T19:00:00-03:00",
+              "invitee_start_time_pretty": "07:00pm - Friday, September 6, 2024",
+              "end_time": "2024-09-06T18:30:00-04:00",
+              "end_time_pretty": "06:30pm - Friday, September 6, 2024",
+              "invitee_end_time": "2024-09-06T19:30:00-03:00",
+              "invitee_end_time_pretty": "07:30pm - Friday, September 6, 2024",
+              "created_at": "2024-09-05T16:08:41-04:00",
+              "location": null,
+              "canceled": false,
+              "canceler_name": null,
+              "cancel_reason": null,
+              "canceled_at": null
             },
             "invitee": {
-              "uuid": "daa37baa-8d3e-45fb-b731-290913a7a784",
+              "uuid": "e814df3a-2df6-4abe-9a7c-7d9a1c5bbf70",
               "first_name": null,
               "last_name": null,
               "name": "Vitor Queiroz de Almeida",
               "email": "vitorrqueiroztrafego@gmail.com",
-              "text_reminder_number": "+55 19 98457-4874",
+              "text_reminder_number": null,
               "timezone": "America/Sao_Paulo",
-              "created_at": "2024-03-15T16:40:19-03:00",
+              "created_at": "2024-09-05T16:08:41-04:00",
               "is_reschedule": false,
               "payments": [],
-              "canceled": true,
-              "canceler_name": "Henry Santos",
-              "cancel_reason": "teste",
-              "canceled_at": "2024-03-15T16:42:45-03:00"
+              "canceled": false,
+              "canceler_name": null,
+              "cancel_reason": null,
+              "canceled_at": null
             },
             "questions_and_answers": [
               {
-                "question": "Seu DDD + Whatsapp",
+                "question": "Qual é o seu telefone?",
                 "answer": "+55 19 98457-4874"
               }
             ],
             "questions_and_responses": {
-              "1_question": "Seu DDD + Whatsapp",
-              "1_response": "+55 19 98457-4874"
+              "2_question": "Qual é o seu telefone?",
+              "2_response": "+55 19 98457-4874"
             },
             "tracking": {
-              "utm_campaign": "campaign4",
-              "utm_source": "source1",
-              "utm_medium": "medium2",
-              "utm_content": "content3",
-              "utm_term": "term5",
+              "utm_campaign": "gatilho_ao-vivo",
+              "utm_source": "manychat",
+              "utm_medium": null,
+              "utm_content": "Mais de R$100 mil por mês",
+              "utm_term": null,
               "salesforce_uuid": null
             },
             "old_event": null,
@@ -2952,7 +2958,7 @@
             "new_event": null,
             "new_invitee": null
           },
-          "time": "2024-03-15T19:42:45Z"
+          "time": "2024-09-05T20:08:42Z"
         }
       }
     ]
@@ -2969,7 +2975,7 @@
   "staticData": {
     "node:Calendly Trigger": {},
     "node:Evento": {
-      "webhookId": 5040179
+      "webhookId": 5056007
     }
   },
   "tags": [
@@ -2981,6 +2987,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-30T03:25:50.829Z",
-  "versionId": "93b3d20f-336a-4f7c-8b42-c9fa0ca0a779"
+  "updatedAt": "2024-09-05T20:36:48.781Z",
+  "versionId": "7de420e9-3891-48cd-8ce9-55a2f1d3b6f9"
 }
