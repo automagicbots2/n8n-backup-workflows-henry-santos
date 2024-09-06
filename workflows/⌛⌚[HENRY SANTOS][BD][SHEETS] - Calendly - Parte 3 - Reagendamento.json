@@ -3480,11 +3480,11 @@
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"id\"] : \n($node[\"update_leads_KOMMO\"].runIndex >= 0 ? $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : '')}}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"update_contato_KOMMO\"].runIndex >= 0 ? $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : \n($node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : '')}}"
             }
           ]
         },
@@ -3543,11 +3543,11 @@
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"id\"] : \n($node[\"update_leads_KOMMO\"].runIndex >= 0 ? $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : '')}}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"update_contato_KOMMO\"].runIndex >= 0 ? $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : \n($node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : '')}}"
             }
           ]
         },
@@ -3606,11 +3606,11 @@
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"id\"] : \n($node[\"update_leads_KOMMO\"].runIndex >= 0 ? $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : '')}}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"update_contato_KOMMO\"].runIndex >= 0 ? $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : \n($node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : '')}}"
             }
           ]
         },
@@ -3673,11 +3673,11 @@
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"id\"] : \n($node[\"update_leads_KOMMO\"].runIndex >= 0 ? $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : '')}}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"update_contato_KOMMO\"].runIndex >= 0 ? $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : \n($node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : '')}}"
             }
           ]
         },
@@ -3740,11 +3740,11 @@
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"id\"] : \n($node[\"update_leads_KOMMO\"].runIndex >= 0 ? $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : '')}}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"update_contato_KOMMO\"].runIndex >= 0 ? $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : \n($node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : '')}}"
             }
           ]
         },
@@ -3847,11 +3847,11 @@
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"id\"] : \n($node[\"update_leads_KOMMO\"].runIndex >= 0 ? $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : '')}}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"update_contato_KOMMO\"].runIndex >= 0 ? $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : \n($node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : '')}}"
             }
           ]
         },
@@ -3910,11 +3910,11 @@
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"id\"] : \n($node[\"update_leads_KOMMO\"].runIndex >= 0 ? $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : '')}}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"update_contato_KOMMO\"].runIndex >= 0 ? $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : \n($node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : '')}}"
             }
           ]
         },
@@ -3977,11 +3977,11 @@
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"id\"] : \n($node[\"update_leads_KOMMO\"].runIndex >= 0 ? $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : '')}}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"update_contato_KOMMO\"].runIndex >= 0 ? $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : \n($node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : '')}}"
             }
           ]
         },
@@ -4076,11 +4076,11 @@
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"id\"] : \n($node[\"update_leads_KOMMO\"].runIndex >= 0 ? $node[\"update_leads_KOMMO\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : '')}}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] }}"
+              "value": "={{$node[\"update_contato_KOMMO\"].runIndex >= 0 ? $node[\"update_contato_KOMMO\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : \n($node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : '')}}"
             }
           ]
         },
@@ -5244,6 +5244,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-30T02:43:35.699Z",
-  "versionId": "0d649271-6745-4ca0-8eb4-c41819505264"
+  "updatedAt": "2024-09-05T20:33:41.125Z",
+  "versionId": "1954b7e5-0fc0-4a61-968b-04cd91e2b097"
 }
