@@ -355,7 +355,7 @@
       "main": [
         [
           {
-            "node": "e_sala_secreta",
+            "node": "manychat",
             "type": "main",
             "index": 0
           }
@@ -366,25 +366,7 @@
       "main": [
         [
           {
-            "node": "e_sala_secreta",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "e_sala_secreta": {
-      "main": [
-        [
-          {
-            "node": "EnviaMensagemTexto5",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "dados",
+            "node": "manychat",
             "type": "main",
             "index": 0
           }
@@ -404,6 +386,24 @@
     },
     "EnviaMensagemTexto5": {
       "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "manychat": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto5",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "dados",
@@ -2287,39 +2287,6 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "868e6dd7-2b6c-4cdd-a754-4e12a245dd11",
-              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}",
-              "rightValue": "manychat",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "007ed69e-6b01-452a-b13f-6e78a7b72e76",
-      "name": "e_sala_secreta",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        2060,
-        1860
-      ]
-    },
-    {
-      "parameters": {
         "method": "PATCH",
         "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
         "authentication": "genericCredentialType",
@@ -2480,6 +2447,39 @@
         1780
       ],
       "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "868e6dd7-2b6c-4cdd-a754-4e12a245dd11",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}",
+              "rightValue": "manychat",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "007ed69e-6b01-452a-b13f-6e78a7b72e76",
+      "name": "manychat",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2060,
+        1860
+      ]
     }
   ],
   "pinData": {
@@ -2536,6 +2536,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-03T13:26:53.876Z",
-  "versionId": "e2f4313b-14f8-499f-a153-c891eb7d8aec"
+  "updatedAt": "2024-09-06T20:04:56.407Z",
+  "versionId": "d96bb070-a2cc-424d-85b1-47a47fe6e144"
 }
