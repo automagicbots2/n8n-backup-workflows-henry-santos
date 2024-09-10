@@ -1,0 +1,1343 @@
+{
+  "active": true,
+  "connections": {
+    "mensagem1": {
+      "main": [
+        [
+          {
+            "node": "MensagemGrupoMSA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MensagemGrupoMSA": {
+      "main": [
+        [
+          {
+            "node": "MensagemGrupoMSA3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MensagemGrupoMSA3": {
+      "main": [
+        [
+          {
+            "node": "MensagemGrupoSoftware1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "11/09/2024": {
+      "main": [
+        [
+          {
+            "node": "mensagem1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "13hs": {
+      "main": [
+        [
+          {
+            "node": "11/09/2024",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mensagem": {
+      "main": [
+        [
+          {
+            "node": "MensagemGrupoAoVivoAntigo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MensagemGrupoSalaSecreta": {
+      "main": [
+        [
+          {
+            "node": "MensagemGrupoSalaoLucrativo#2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MensagemGrupoAoVivoAntigo": {
+      "main": [
+        [
+          {
+            "node": "MensagemGrupoSalaSecreta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MensagemGrupoSalaoLucrativo#2": {
+      "main": [
+        [
+          {
+            "node": "MensagemGrupoAoVivoNovo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MensagemGrupoAoVivoNovo": {
+      "main": [
+        [
+          {
+            "node": "MensagemGrupoSalaoAutoadministravel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WorkshopSalaoAutoadministrável#2": {
+      "main": [
+        [
+          {
+            "node": "WorkshopSalaoAutoadministrável#",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WorkshopSalaoAutoadministrável#": {
+      "main": [
+        [
+          {
+            "node": "WorkshopSalaoAutoadministrável#1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WorkshopSalaoAutoadministrável#1": {
+      "main": [
+        [
+          {
+            "node": "WorkshopSalaoAutoadministrável#3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WorkshopSalaoAutoadministrável#3": {
+      "main": [
+        [
+          {
+            "node": "WorkshopSalaoAutoadministrável#4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MensagemGrupoSalaoAutoadministravel": {
+      "main": [
+        [
+          {
+            "node": "WorkshopSalaoAutoadministrável#2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "11/09/24": {
+      "main": [
+        [
+          {
+            "node": "mensagem",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "18hs": {
+      "main": [
+        [
+          {
+            "node": "11/09/24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-06-28T23:20:10.639Z",
+  "id": "q6IMwFkLFK5nY6mj",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "📅[HENRY SANTOS] - Lembrete Grupos",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fb4581f7-fc6a-4dd8-921c-4bf38304ad21",
+              "name": "mensagem",
+              "value": "🔍 *Descubra Tudo Sobre a Sala Secreta!* 🔍\n\nImagine ter acesso exclusivo aos segredos que transformaram centenas de salões em negócios lucrativos e autoadministráveis!\n \n💥 Na *Sala Secreta*, Henry Santos e Amélia Pinheiro vão revelar como você pode alcançar *mais tempo, mais dinheiro e mais liberdade* com seu salão.\n\n✨ *O que você vai encontrar*:\n\nEstratégias inéditas para transformar seu salão.\nSpoilers exclusivos da *Imersão Presencial* em Florianópolis.\nCondições especiais na pré-venda do *Lote Zero* da Imersão.\n\n🚀 Não deixe essa oportunidade passar! Entre na *Sala Secreta* e prepare-se para transformar seu negócio.\n\n👉 *Clique aqui e descubra tudo*!\n\n📲 https://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "824ce061-6059-4195-a764-3dc75cae26bd",
+      "name": "mensagem1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        2160,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363314632556359@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem1\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "e30e07fa-bb69-40aa-b6ee-0f256e8af60c",
+      "name": "MensagemGrupoMSA",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2340,
+        1120
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363297457001793@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem1\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "193ac694-aa1d-4626-8c6b-f5334c450cd0",
+      "name": "MensagemGrupoMSA3",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2540,
+        1120
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363318948095655@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem1\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "c626ce36-cd96-4a25-8ecb-af13eefdf6ad",
+      "name": "MensagemGrupoSoftware1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2740,
+        1120
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c23e69bf-3556-4d8f-8613-b28b3303573b",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "11/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5e9a6856-5b5b-49d6-8ed3-38d9661138f0",
+      "name": "11/09/2024",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1960,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 13
+            }
+          ]
+        }
+      },
+      "id": "13188ca3-7b7b-402f-a3c5-c079cac4ce55",
+      "name": "13hs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1760,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fb4581f7-fc6a-4dd8-921c-4bf38304ad21",
+              "name": "mensagem",
+              "value": "Claro, todo mundo está muito ocupado para uma 'salinha secreta'... Até perceberem que é a *Amélia Pinheiro e o Henry Santos compartilhando estratégias que já transformaram centenas de salões!*\n\n😏 Mas tudo bem, continue com seus 'compromissos' enquanto outros aproveitam essa chance. Ou... Clique no link e garanta seu lugar na pré-venda agora mesmo.\n \n*A escolha é sua*! TOQUE NO LINK E FAÇA SUA INSCRIÇÃO: \n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bdf7982f-e702-451e-91af-9ee2ac017ede",
+      "name": "mensagem",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        2160,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## ATIVAR",
+        "height": 80
+      },
+      "id": "094cebfb-147c-498d-b426-826ff102cb61",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363307022792711@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "6457806d-20af-4f25-9f0c-dfa70505014a",
+      "name": "MensagemGrupoSalaSecreta",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2540,
+        1480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363023112844213@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "a0a83f37-2dba-4bb9-928c-2f5da16db5e9",
+      "name": "MensagemGrupoSalaoLucrativo#2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2760,
+        1480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363250366394159@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "77bac7ee-baf1-4e6a-99c9-5fe19529cedb",
+      "name": "MensagemGrupoAoVivoAntigo",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2340,
+        1480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363295424007193@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "00b154ca-b642-4663-ac31-76bb0e9d477a",
+      "name": "MensagemGrupoAoVivoNovo",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2980,
+        1480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363198578363705@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "3b3dede6-0b8e-47a7-8440-1ba523792d6d",
+      "name": "MensagemGrupoSalaoAutoadministravel",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        3180,
+        1480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363140239918470@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "c685dc83-1ae2-4c96-84f0-e478453d82a4",
+      "name": "WorkshopSalaoAutoadministrável#2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        3400,
+        1480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363142617591762@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "d3fd3aa0-d337-44f3-a64c-7e6b05370050",
+      "name": "WorkshopSalaoAutoadministrável#",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        3600,
+        1480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363149352683773@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "6a221b7d-088e-4207-9615-2d5dbd97c69c",
+      "name": "WorkshopSalaoAutoadministrável#1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        3780,
+        1480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363146185437035@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "d081acff-bf5d-403e-957d-72a61b632407",
+      "name": "WorkshopSalaoAutoadministrável#3",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        3980,
+        1480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363157785119277@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "a5793fee-22e9-4bda-a17c-e6a38b56d84c",
+      "name": "WorkshopSalaoAutoadministrável#4",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        4200,
+        1480
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c23e69bf-3556-4d8f-8613-b28b3303573b",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "11/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "531fcf19-464f-44ec-9456-881ea80457c4",
+      "name": "11/09/24",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1960,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 18
+            }
+          ]
+        }
+      },
+      "id": "3d02fa30-218a-4693-87c4-89b821983194",
+      "name": "18hs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1760,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363256444706105@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"mensagem\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "5947ffc4-c138-42ee-8154-f678b72e9ec5",
+      "name": "MensagemGrupoTeste1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2360,
+        1760
+      ],
+      "typeVersion": 4,
+      "disabled": true
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": {
+    "node:todo_dia_7:00": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:": {
+      "recurrencyRules": []
+    },
+    "node:todo_dia_8:1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_7:15_manha": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_12:15": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_19:15": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_7:00_manha": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_17:00": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_7:00": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_7:": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_18hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_18hs1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_7hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_12hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_22hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_19hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_20hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8hs1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8hs2": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_6:30h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_7:30h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_8h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_6:30h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_9:30h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_9:30h1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_18:30h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_7:30h": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_12hs1": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_14hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_16hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_17hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_17:30hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_17:45hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara_as_18:15hs": {
+      "recurrencyRules": []
+    },
+    "node:13hs": {
+      "recurrencyRules": []
+    },
+    "node:13hs1": {
+      "recurrencyRules": []
+    },
+    "node:18hs": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2024-03-27T14:03:25.264Z",
+      "updatedAt": "2024-03-27T14:03:25.264Z",
+      "id": "Ju8yPHXMHj0pxd19",
+      "name": "[LEMBRETE]"
+    }
+  ],
+  "triggerCount": 2,
+  "updatedAt": "2024-09-09T17:42:23.678Z",
+  "versionId": "8135628b-d285-4009-b131-de57975b5e87"
+}
