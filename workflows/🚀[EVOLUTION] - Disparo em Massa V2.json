@@ -1,0 +1,784 @@
+{
+  "active": true,
+  "connections": {
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_lotes": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio2": {
+      "main": [
+        [
+          {
+            "node": "Saida Aleatoria2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Saida Aleatoria2": {
+      "main": [
+        [
+          {
+            "node": "40s2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "45s2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "50s2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "53s2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "40s2": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "45s2": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "50s2": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "53s2": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "09/09/24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "13hs": {
+      "main": [
+        [
+          {
+            "node": "09/09/2024",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "09/09/2024": {
+      "main": [
+        [
+          {
+            "node": "le_planilha",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "10/09/2024",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "10/09/2024": {
+      "main": [
+        [
+          {
+            "node": "le_planilha",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não faça nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mensagem-09-09-24": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "09/09/24": {
+      "main": [
+        [
+          {
+            "node": "Mensagem-09-09-24",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mensagem-10-09-24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mensagem-10-09-24": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-09-09T18:06:00.684Z",
+  "id": "Ki8fYF3yoBTZ70rC",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "🚀[EVOLUTION] - Disparo em Massa V2",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "d700f9d4-fc02-4bbc-84c1-cb93acf9c7fe",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        -120,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "=5519984574874"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Disparo em massa do Henry Santos finalizado. 🚀"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "d4fdc22a-a64c-4aa8-8bee-ebb32fdf6ed8",
+      "name": "EnviaMensagemTexto",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        60,
+        860
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1933965763,
+          "mode": "list",
+          "cachedResultName": "Disparo Evolution V2",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=1933965763"
+        },
+        "options": {}
+      },
+      "id": "7b4b3ea2-8cea-4c0d-85ec-b916672e53ca",
+      "name": "le_planilha",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        -620,
+        1040
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "d52bb35c-1524-41ef-bf41-0eecf82a7823",
+      "name": "separa_em_lotes",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -360,
+        1040
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "655153a3-e80e-4fc5-b564-04ba5c00803a",
+      "name": "Não faz nada",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
+      },
+      "id": "6f03376d-4670-433c-abb9-eee4c82e79af",
+      "name": "Retorna Output Aleatorio2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        600,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json[\"aleatorio\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal"
+            },
+            {
+              "operation": "equal",
+              "value2": 1,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 2,
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "6e4d749a-c843-45b2-aba5-8b482b0eeb46",
+      "name": "Saida Aleatoria2",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        760,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 40,
+        "unit": "seconds"
+      },
+      "id": "413a45f8-0807-405e-b4c6-a33c8ae81903",
+      "name": "40s2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        840
+      ],
+      "webhookId": "cef09fa7-cc78-4867-822f-fe5223924d94"
+    },
+    {
+      "parameters": {
+        "amount": 45,
+        "unit": "seconds"
+      },
+      "id": "34ed2160-2522-4dd9-8a6d-e005cb53ab1e",
+      "name": "45s2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        980
+      ],
+      "webhookId": "548f41fc-fe94-4f3c-b9e1-cab6b226004a"
+    },
+    {
+      "parameters": {
+        "amount": 50,
+        "unit": "seconds"
+      },
+      "id": "b5f33b8a-d16c-4da3-b524-4dd6b4e838f8",
+      "name": "50s2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        1120
+      ],
+      "webhookId": "b0add739-55b5-4af0-81e0-6cdaf115dba6"
+    },
+    {
+      "parameters": {
+        "amount": 53,
+        "unit": "seconds"
+      },
+      "id": "d8bcaa2e-fb9c-4e6c-8b68-54f34863a7f8",
+      "name": "53s2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        1260
+      ],
+      "webhookId": "47e14434-d257-4b68-a671-f787de977325"
+    },
+    {
+      "parameters": {
+        "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes\"].json[\"TELEFONE\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "2b41a6ae-8c57-4a74-85bd-3d65ee570cc8",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -120,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 13
+            }
+          ]
+        }
+      },
+      "id": "a9fcf49d-13f2-4f99-a085-c91d0fbfb3b4",
+      "name": "13hs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1180,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "09/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e207ad20-5c67-4d16-a3a2-a148b45eb217",
+      "name": "09/09/2024",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -1000,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "10/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "2ca5a8b2-b896-4e37-95e3-e2f27e897c83",
+      "name": "10/09/2024",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -820,
+        1140
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "733f0f88-5352-45ac-9797-bc14e9eb6ee0",
+      "name": "Não faça nada",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -620,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"Code\"].json[\"telefonefinal\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=🔥 *Alerta de Oportunidade Única*!\n\nJá se perguntou por que seu *salão não está onde você sempre sonhou*? O problema pode estar em decisões que você ainda não tomou.\n\nPela primeira vez, *Henry Santos e Amélia Pinheiro* estarão juntos para te mostrar *como alcançar o ápice do sucesso* no seu salão. \n\nE o melhor de tudo: com condições especiais na pré-venda da Imersão Presencial Salão Autoadministrável em Floripa.\n\nNão deixe essa chance passar. Sua transformação começa agora!\n\n👉 *Garanta sua vaga na Sala Secreta e mude o jogo*! \n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "019facea-9632-4819-8a4a-040473edf314",
+      "name": "Mensagem-09-09-24",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        360,
+        960
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "09/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "709e3c5d-5b7f-4ee0-b497-ba853bd3825a",
+      "name": "09/09/24",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        120,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"Code\"].json[\"telefonefinal\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=🔴 *Você está cansado de viver preso ao seu salão*?\n\nJá imaginou como seria se seu salão funcionasse perfeitamente sem você estar lá o tempo todo?\n\nHenry Santos e Amélia Pinheiro têm a fórmula exata para transformar seu negócio em um salão autoadministrável! Essa é sua chance de finalmente ter mais tempo, mais dinheiro e, principalmente, mais liberdade.\n\n🎯*Mas cuidado*: se você não estiver na Sala Secreta, vai continuar correndo atrás de soluções temporárias enquanto outros estão a caminho da liberdade.\n\n🚀 *Garanta sua vaga* e esteja um passo à frente:\n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "3683d061-9e29-4098-b3a4-f04e52def1c8",
+      "name": "Mensagem-10-09-24",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        360,
+        1140
+      ],
+      "typeVersion": 4
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": {
+    "node:dispara as 12hs1": {
+      "recurrencyRules": []
+    },
+    "node:dispara as 12hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara as 17hs": {
+      "recurrencyRules": []
+    },
+    "node:dispara as 17hs1": {
+      "recurrencyRules": []
+    },
+    "node:13h": {
+      "recurrencyRules": []
+    },
+    "node:9hs": {
+      "recurrencyRules": []
+    },
+    "node:13hs": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-09-09T19:02:16.045Z",
+  "versionId": "c98922ef-c459-46e7-9c10-da23da9fc36a"
+}
