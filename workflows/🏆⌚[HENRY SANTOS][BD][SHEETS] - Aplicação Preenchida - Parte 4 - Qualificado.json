@@ -227,17 +227,6 @@
         ]
       ]
     },
-    "chega_da_fila": {
-      "main": [
-        [
-          {
-            "node": "segundo_ou_mais_erro",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "busca_telefone_na_planilha": {
       "main": [
         [
@@ -436,6 +425,17 @@
         [
           {
             "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro",
             "type": "main",
             "index": 0
           }
@@ -2585,13 +2585,17 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-lD-qPHGpXdRVym3cK5_p8g",
+            "consumerTag": "amq.ctag-b0CEWhgEJWCcoh5Y5SeLMg",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Não Agendamentos - Sessão - Parte 4 - Qualificado"
           },
-          "properties": {},
+          "properties": {
+            "headers": {
+              "x-delivery-count": 101
+            }
+          },
           "content": {
             "verificacao_lead": false,
             "Nome do Cliente": "Vitor Queiroz",
@@ -2680,6 +2684,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-10T21:32:18.445Z",
-  "versionId": "6fec2a84-8467-4329-b150-f9b40df1a753"
+  "updatedAt": "2024-09-11T14:38:18.927Z",
+  "versionId": "5eaf4df1-343f-4b62-84d6-1bfd875023dc"
 }
