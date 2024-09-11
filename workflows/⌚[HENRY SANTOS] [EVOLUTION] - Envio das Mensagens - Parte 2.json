@@ -220,11 +220,6 @@
         ]
       ]
     },
-    "variaveis_grupo": {
-      "main": [
-        []
-      ]
-    },
     "verifica_midias5": {
       "main": [
         [
@@ -258,6 +253,17 @@
         [
           {
             "node": "EnviaMensagemTexto5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis_grupo": {
+      "main": [
+        [
+          {
+            "node": "verifica_midias5",
             "type": "main",
             "index": 0
           }
@@ -2062,6 +2068,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-10T21:51:54.977Z",
-  "versionId": "43ea5bfa-4b31-427b-af3e-72bafc0bba95"
+  "updatedAt": "2024-09-11T12:25:09.764Z",
+  "versionId": "857c19c2-2d84-4e0c-8438-db94b91cd4ce"
 }
