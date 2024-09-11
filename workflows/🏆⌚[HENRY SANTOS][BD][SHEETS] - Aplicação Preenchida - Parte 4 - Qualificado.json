@@ -373,17 +373,6 @@
         ]
       ]
     },
-    "busca_lead": {
-      "main": [
-        [
-          {
-            "node": "add_tag_lead_kmmo1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "EnviaMensagemTexto5": {
       "main": [
         [
@@ -404,6 +393,46 @@
             "index": 0
           }
         ],
+        [
+          {
+            "node": "funil-live-semanal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "funil-live-semanal": {
+      "main": [
+        [
+          {
+            "node": "busca_lead",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_lead": {
+      "main": [
+        [
+          {
+            "node": "add_tag_lead_kmmo1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_lead_kmmo1": {
+      "main": [
         [
           {
             "node": "dados",
@@ -678,8 +707,8 @@
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        2780,
-        1900
+        3160,
+        1920
       ],
       "credentials": {
         "rabbitmq": {
@@ -887,8 +916,8 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        60,
-        1740
+        100,
+        1720
       ]
     },
     {
@@ -1619,8 +1648,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2460,
-        1880
+        2960,
+        1920
       ]
     },
     {
@@ -2293,7 +2322,7 @@
         "genericAuthType": "oAuth2Api",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ \n  $json[\"_embedded\"][\"tags\"].map(tag => ({\n    id: $json[\"id\"], // Substitua 167353 conforme necessário\n    _embedded: {\n      tags: [{ id: tag.id }]\n    }\n  })).concat([{ id: $json[\"id\"], _embedded: { tags: [{ id: 67752 }] } }])\n}}",
+        "jsonBody": "={{ \n  $json[\"_embedded\"][\"tags\"].map(tag => ({\n    id: $json[\"id\"],\n    _embedded: {\n      tags: [{ id: tag.id }]\n    }\n  })).concat([{\n    id: $json[\"id\"], \n    _embedded: { \n      tags: [\n        { id: 78080 }, // Primeira Tag\n        { id: 49674 }  // Segunda Tag (substitua 12345 pelo ID da segunda tag)\n      ]\n    }\n  }])\n}}",
         "options": {
           "response": {
             "response": {
@@ -2307,8 +2336,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        3040,
-        1180
+        2600,
+        1920
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -2323,7 +2352,7 @@
     },
     {
       "parameters": {
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/6814248",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/{{ $node[\"pesquisa_lead5\"].json[\"id_lead_kommo\"] }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "oAuth2Api",
         "options": {
@@ -2339,8 +2368,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2820,
-        1180
+        2420,
+        1920
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -2443,8 +2472,8 @@
       "name": "EnviaMensagemTexto5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2260,
-        1780
+        2280,
+        1740
       ],
       "typeVersion": 4
     },
@@ -2480,6 +2509,75 @@
         2060,
         1860
       ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "868e6dd7-2b6c-4cdd-a754-4e12a245dd11",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}",
+              "rightValue": "live-semanal",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ee525660-5a59-422e-8b7b-343ebdc6165e",
+      "name": "funil-live-semanal",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2300,
+        2100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ \n  $json[\"_embedded\"][\"tags\"].map(tag => ({\n    id: $json[\"id\"], // Substitua 167353 conforme necessário\n    _embedded: {\n      tags: [{ id: tag.id }]\n    }\n  })).concat([{ id: $json[\"id\"], _embedded: { tags: [{ id: 78080 }] } }])\n}}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "a69775aa-492b-4cf5-9121-5f6314469fe6",
+      "name": "add_tag_lead_kmmo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        560,
+        1400
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
     }
   ],
   "pinData": {
@@ -2487,7 +2585,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-wBnOpWILabN5PdPT6PvwnQ",
+            "consumerTag": "amq.ctag-lD-qPHGpXdRVym3cK5_p8g",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
@@ -2496,22 +2594,68 @@
           "properties": {},
           "content": {
             "verificacao_lead": false,
-            "Nome do Cliente": "Vitor Teste",
+            "Nome do Cliente": "Vitor Queiroz",
+            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
             "Telefone do Cliente - Formato BC": "+5519984574874",
             "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "utm_content": "",
-            "utm_source": "manychat",
-            "utm_campaign": "Ebook: EQUIPE",
-            "utm_medium": "",
-            "utm_term": "",
-            "pergunta4": "Desenvolver uma equipe autônoma e eficiente",
+            "utm_content": "content3",
+            "utm_source": "source1",
+            "utm_campaign": "campaign2",
+            "utm_medium": "medium4",
+            "utm_term": "term5",
+            "id_fluxo_nao_agendou_10_min": "2416169",
+            "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
+            "pergunta2": "50 a 100 mil por mês",
+            "id_campo_pergunta0_bot_conversa": "1123099",
+            "id_campo_pergunta1_bot_conversa": "1123101",
+            "id_campo_pergunta2_bot_conversa": "1123100",
+            "id_campo_pergunta3_bot_conversa": "1860276",
+            "id_campo_pergunta4_bot_conversa": "1123102",
+            "id_campo_pergunta5_bot_conversa": "1860278",
+            "id_campo_pergunta6_bot_conversa": "1359514",
+            "id_campo_pergunta7_bot_conversa": "1860280",
+            "id_campo_pergunta8_bot_conversa": "1860281",
+            "id_campo_pergunta9_bot_conversa": "2056601",
+            "id_campo_pergunta10_bot_conversa": "2193610",
+            "id_campo_pergunta11_bot_conversa": "",
+            "id_campo_pergunta12_bot_conversa": "",
+            "id_campo_pergunta13_bot_conversa": "",
+            "id_campo_pergunta14_bot_conversa": "",
+            "id_campo_pergunta15_bot_conversa": "",
+            "id_campo_pergunta16_bot_conversa": "",
+            "id_campo_pergunta17_bot_conversa": "",
+            "id_campo_pergunta18_bot_conversa": "",
+            "id_campo_pergunta19_bot_conversa": "",
+            "id_campo_pergunta20_bot_conversa": "",
+            "url_api_activecampaign_crm": "gestaodesaloes67530",
+            "id_campo_id_banco_de_dados_bot_conversa": "1351140",
+            "id_campo_iddealac_bot_conversa": "1354465",
+            "id_campo_idleadac_bot_conversa": "1354600",
+            "id_campo_utm_source_bot_conversa": "1123113",
+            "id_campo_utm_campaign_bot_conversa": "1123114",
+            "id_campo_utm_term_bot_conversa": "1123115",
+            "id_campo_utm_medium_bot_conversa": "1123116",
+            "id_campo_utm_content_bot_conversa": "1123117",
+            "id_campo_utm_fun_bot_conversa": "1353849",
+            "id_campo_utm_var_bot_conversa": "1353848",
+            "id_campo_instagram_bot_conversa": "1123096",
             "funil": "sessao estrategica",
-            "variacao_do_funil": "social-selling",
-            "data_ultima_quinzena": "2024-08-18",
-            "data_resposta_type": "02/09/2024 18:44",
+            "variacao_do_funil": "live-semanal",
+            "id_campo_emailse_bot_conversa": "1115994",
+            "id_tag_desqualificado_bot_conversa": "4935232",
+            "id_tag_qualificado_bot_conversa": "4891828",
+            "data_resposta_type": "10/09/2024 17:47",
+            "id_campo_data_resposta_type_bot_conversa": "",
             "qualificacao": "Qualificado",
-            "id_lead_bd": 5039,
-            "dia_da_semana_se": "Segunda-feira"
+            "id_lead_bd": 5092,
+            "id_fluxo_nao_agendou_10_min_desqualificados": "2829998",
+            "id_campo_id_banco_deal_crm": "42",
+            "id_campo_id_bot_conversa_deal_crm": "53",
+            "id_campo_id_banco_de_dados_crm": "257",
+            "id_campo_id_bot_conversa_crm": "163",
+            "id_fluxo2_nao_agendou_10_min_desqualificados": 2830145,
+            "id_campo_dia_aplicou_se": "2113710",
+            "dia_da_semana_se": "Terça-feira"
           }
         }
       }
@@ -2536,6 +2680,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-06T20:04:56.407Z",
-  "versionId": "d96bb070-a2cc-424d-85b1-47a47fe6e144"
+  "updatedAt": "2024-09-10T21:32:18.445Z",
+  "versionId": "6fec2a84-8467-4329-b150-f9b40df1a753"
 }
