@@ -151,7 +151,7 @@
       "main": [
         [
           {
-            "node": "No Operation, do nothing",
+            "node": "dados_validados5",
             "type": "main",
             "index": 0
           }
@@ -328,17 +328,6 @@
         [
           {
             "node": "formata_dados14",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "No Operation, do nothing": {
-      "main": [
-        [
-          {
-            "node": "dados_validados5",
             "type": "main",
             "index": 0
           }
@@ -584,6 +573,50 @@
         [
           {
             "node": "entra_na_fila",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_dados18": {
+      "main": [
+        [
+          {
+            "node": "é_qualificado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "aplicacao_preechida_live_semanal": {
+      "main": [
+        [
+          {
+            "node": "formata_dados18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados_validados10": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_qualificado": {
+      "main": [
+        [
+          {
+            "node": "dados_validados10",
             "type": "main",
             "index": 0
           }
@@ -1021,8 +1054,8 @@
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        2720,
-        1100
+        2680,
+        1200
       ],
       "credentials": {
         "rabbitmq": {
@@ -3434,7 +3467,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2500,
+        2400,
         1300
       ]
     },
@@ -3447,7 +3480,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2040,
+        2100,
         1300
       ]
     },
@@ -4087,7 +4120,7 @@
       "typeVersion": 1,
       "position": [
         2520,
-        1540
+        1760
       ]
     },
     {
@@ -4100,7 +4133,7 @@
       "typeVersion": 1,
       "position": [
         2000,
-        1540
+        1760
       ]
     },
     {
@@ -4115,7 +4148,7 @@
       "typeVersion": 1,
       "position": [
         1840,
-        1540
+        1760
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -4131,7 +4164,7 @@
       "typeVersion": 1,
       "position": [
         1740,
-        1960
+        2180
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -4726,7 +4759,7 @@
       "typeVersion": 1,
       "position": [
         2420,
-        1960
+        2180
       ]
     },
     {
@@ -4739,7 +4772,7 @@
       "typeVersion": 1,
       "position": [
         2040,
-        1960
+        2180
       ]
     },
     {
@@ -4752,7 +4785,7 @@
       "typeVersion": 3.3,
       "position": [
         1460,
-        1960
+        2180
       ]
     },
     {
@@ -4776,7 +4809,7 @@
       "typeVersion": 1,
       "position": [
         2720,
-        2140
+        2360
       ],
       "credentials": {
         "rabbitmq": {
@@ -4795,7 +4828,7 @@
       "typeVersion": 3.3,
       "position": [
         1240,
-        1960
+        2180
       ]
     },
     {
@@ -4808,7 +4841,7 @@
       "typeVersion": 1,
       "position": [
         2040,
-        2140
+        2360
       ]
     },
     {
@@ -5402,7 +5435,7 @@
       "typeVersion": 1,
       "position": [
         2420,
-        2140
+        2360
       ]
     },
     {
@@ -5418,7 +5451,7 @@
       "typeVersion": 1,
       "position": [
         1740,
-        2140
+        2360
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -5432,7 +5465,7 @@
       "typeVersion": 1,
       "position": [
         2040,
-        2320
+        2540
       ]
     },
     {
@@ -6026,7 +6059,7 @@
       "typeVersion": 1,
       "position": [
         2420,
-        2320
+        2540
       ]
     },
     {
@@ -6041,7 +6074,7 @@
       "typeVersion": 1,
       "position": [
         1680,
-        1880
+        2100
       ]
     },
     {
@@ -6057,7 +6090,7 @@
       "typeVersion": 1,
       "position": [
         1740,
-        2320
+        2540
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -6652,7 +6685,7 @@
       "typeVersion": 1,
       "position": [
         2520,
-        1720
+        1940
       ]
     },
     {
@@ -6665,7 +6698,7 @@
       "typeVersion": 1,
       "position": [
         2000,
-        1720
+        1940
       ]
     },
     {
@@ -6680,20 +6713,9 @@
       "typeVersion": 1,
       "position": [
         1840,
-        1720
+        1940
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
-    },
-    {
-      "parameters": {},
-      "id": "f3529dda-c087-401f-ad83-0224876538ad",
-      "name": "No Operation, do nothing",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        2260,
-        1300
-      ]
     },
     {
       "parameters": {
@@ -8433,8 +8455,8 @@
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        2700,
-        4460
+        2160,
+        4360
       ],
       "credentials": {
         "rabbitmq": {
@@ -8454,8 +8476,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1760,
-        4460
+        1220,
+        4360
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -8790,8 +8812,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2500,
-        4460
+        1960,
+        4360
       ]
     },
     {
@@ -8803,8 +8825,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1940,
-        4460
+        1400,
+        4360
       ]
     },
     {
@@ -8816,8 +8838,8 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        2120,
-        4460
+        1580,
+        4360
       ]
     },
     {
@@ -8827,14 +8849,14 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2300,
-        4460
+        1760,
+        4360
       ]
     },
     {
       "parameters": {
         "content": "## Funil já atualizado com Kommo\n\n",
-        "height": 488.0346923765203,
+        "height": 273.98853916284077,
         "width": 1199.6160431467256
       },
       "id": "c126bb0b-28e4-4f3b-afba-4f02605c6b42",
@@ -8844,6 +8866,692 @@
       "position": [
         1740,
         1000
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"formata_dados18\"].json[\"nome\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"formata_dados18\"].json[\"email\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato BC",
+              "value": "=+{{ $node[\"formata_dados18\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"formata_dados18\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "Instagram",
+              "value": "={{ $node[\"formata_dados18\"].json[\"instagram\"] }}"
+            },
+            {
+              "name": "pergunta0",
+              "value": "={{ $node[\"formata_dados18\"].json[\"tem_recepcionista\"] }}"
+            },
+            {
+              "name": "pergunta1",
+              "value": "={{ $node[\"formata_dados18\"].json[\"tamanho_da_equipe\"] }}"
+            },
+            {
+              "name": "pergunta2",
+              "value": "={{ $node[\"formata_dados18\"].json[\"faturamento\"] }}"
+            },
+            {
+              "name": "pergunta3",
+              "value": "={{ $node[\"formata_dados18\"].json[\"etapa_montar_salao\"] }}"
+            },
+            {
+              "name": "pergunta4",
+              "value": "={{ $node[\"formata_dados18\"].json[\"objetivo_este_ano\"] }}"
+            },
+            {
+              "name": "pergunta5",
+              "value": "={{ $node[\"formata_dados18\"].json[\"impede_objetivo\"] }}"
+            },
+            {
+              "name": "pergunta6",
+              "value": "={{ $node[\"formata_dados18\"].json[\"porque_voce\"] }}"
+            },
+            {
+              "name": "pergunta7",
+              "value": "={{ $node[\"formata_dados18\"].json[\"acompanhamento_unico\"] }}"
+            },
+            {
+              "name": "pergunta8",
+              "value": "={{ $node[\"formata_dados18\"].json[\"nao_e_momento_ideal\"] }}"
+            },
+            {
+              "name": "pergunta9",
+              "value": "={{ $node[\"formata_dados18\"].json[\"momento_atual\"] }}"
+            },
+            {
+              "name": "pergunta10",
+              "value": "={{ $node[\"formata_dados18\"].json[\"nao_e_momento_ideal\"] }}"
+            },
+            {
+              "name": "pergunta11",
+              "value": "={{ $node[\"formata_dados18\"].json[\"pergunta11\"] }}"
+            },
+            {
+              "name": "pergunta12",
+              "value": "={{ $node[\"formata_dados18\"].json[\"pergunta12\"] }}"
+            },
+            {
+              "name": "pergunta13",
+              "value": "={{ $node[\"formata_dados18\"].json[\"pergunta13\"] }}"
+            },
+            {
+              "name": "pergunta14",
+              "value": "={{ $node[\"formata_dados18\"].json[\"pergunta14\"] }}"
+            },
+            {
+              "name": "pergunta15",
+              "value": "={{ $node[\"formata_dados18\"].json[\"pergunta15\"] }}"
+            },
+            {
+              "name": "pergunta16",
+              "value": "={{ $node[\"formata_dados18\"].json[\"pergunta16\"] }}"
+            },
+            {
+              "name": "pergunta17",
+              "value": "={{ $node[\"formata_dados18\"].json[\"pergunta17\"] }}"
+            },
+            {
+              "name": "pergunta18",
+              "value": "={{ $node[\"formata_dados18\"].json[\"pergunta18\"] }}"
+            },
+            {
+              "name": "pergunta19",
+              "value": "={{ $node[\"formata_dados18\"].json[\"pergunta19\"] }}"
+            },
+            {
+              "name": "pergunta20",
+              "value": "={{ $node[\"formata_dados18\"].json[\"pergunta20\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados18\"].json[\"utm_content\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados18\"].json[\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados18\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados18\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados18\"].json[\"utm_term\"] }}"
+            },
+            {
+              "name": "data_resposta_type",
+              "value": "={{$now.toFormat('dd/MM/yyyy HH:mm')}}"
+            },
+            {
+              "name": "data_ultima_quinzena",
+              "value": "={{ $node[\"formata_dados18\"].json[\"data_ultima_quinzena\"] }}"
+            },
+            {
+              "name": "id_fluxo_nao_agendou_10_min",
+              "value": "2416169"
+            },
+            {
+              "name": "id_fluxo_nao_agendou_10_min_desqualificados",
+              "value": "2829998"
+            },
+            {
+              "name": "API-KEY",
+              "value": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "1351140"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "1123113"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "1123114"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "1123115"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "1123116"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "1123117"
+            },
+            {
+              "name": "id_campo_utm_fun_bot_conversa",
+              "value": "1353849"
+            },
+            {
+              "name": "id_campo_utm_var_bot_conversa",
+              "value": "1353848"
+            },
+            {
+              "name": "id_campo_instagram_bot_conversa",
+              "value": "1123096"
+            },
+            {
+              "name": "id_campo_emailse_bot_conversa",
+              "value": "1115994"
+            },
+            {
+              "name": "id_campo_data_resposta_type_bot_conversa"
+            },
+            {
+              "name": "id_tag_desqualificado_bot_conversa",
+              "value": "4935232"
+            },
+            {
+              "name": "id_tag_qualificado_bot_conversa",
+              "value": "4891828"
+            },
+            {
+              "name": "id_campo_iddealac_bot_conversa",
+              "value": "1354465"
+            },
+            {
+              "name": "id_campo_idleadac_bot_conversa",
+              "value": "1354600"
+            },
+            {
+              "name": "id_campo_pergunta0_bot_conversa",
+              "value": "1123099"
+            },
+            {
+              "name": "id_campo_pergunta1_bot_conversa",
+              "value": "1123101"
+            },
+            {
+              "name": "id_campo_pergunta2_bot_conversa",
+              "value": "1123100"
+            },
+            {
+              "name": "id_campo_pergunta3_bot_conversa",
+              "value": "1860276"
+            },
+            {
+              "name": "id_campo_pergunta4_bot_conversa",
+              "value": "1123102"
+            },
+            {
+              "name": "id_campo_pergunta5_bot_conversa",
+              "value": "1860278"
+            },
+            {
+              "name": "id_campo_pergunta6_bot_conversa",
+              "value": "1359514"
+            },
+            {
+              "name": "id_campo_pergunta7_bot_conversa",
+              "value": "1860280"
+            },
+            {
+              "name": "id_campo_pergunta8_bot_conversa",
+              "value": "1860281"
+            },
+            {
+              "name": "id_campo_pergunta9_bot_conversa",
+              "value": "2056601"
+            },
+            {
+              "name": "id_campo_pergunta10_bot_conversa",
+              "value": "2193610"
+            },
+            {
+              "name": "id_campo_pergunta11_bot_conversa"
+            },
+            {
+              "name": "id_campo_pergunta12_bot_conversa"
+            },
+            {
+              "name": "id_campo_pergunta13_bot_conversa"
+            },
+            {
+              "name": "id_campo_pergunta14_bot_conversa"
+            },
+            {
+              "name": "id_campo_pergunta15_bot_conversa"
+            },
+            {
+              "name": "id_campo_pergunta16_bot_conversa"
+            },
+            {
+              "name": "id_campo_pergunta17_bot_conversa"
+            },
+            {
+              "name": "id_campo_pergunta18_bot_conversa"
+            },
+            {
+              "name": "id_campo_pergunta19_bot_conversa"
+            },
+            {
+              "name": "id_campo_pergunta20_bot_conversa"
+            },
+            {
+              "name": "qualificacao",
+              "value": "Qualificado"
+            },
+            {
+              "name": "id_ending_typeform",
+              "value": "={{ $node[\"formata_dados18\"].json[\"ending\"] }}"
+            },
+            {
+              "name": "id_pipeline_downsell_produto_1_crm",
+              "value": "10"
+            },
+            {
+              "name": "valor_produto_downsell_em_centavos_produto_1_crm",
+              "value": "49700"
+            },
+            {
+              "name": "id_pipeline_downsell_produto_2_crm",
+              "value": "9"
+            },
+            {
+              "name": "valor_produto_downsell_em_centavos_produto_2_crm",
+              "value": "99700"
+            },
+            {
+              "name": "id_pipeline_crm",
+              "value": "3"
+            },
+            {
+              "name": "valor_produto_principal_em_centavos_crm",
+              "value": "700000"
+            },
+            {
+              "name": "url_api_activecampaign_crm",
+              "value": "gestaodesaloes67530"
+            },
+            {
+              "name": "id_sdr_crm",
+              "value": "6"
+            },
+            {
+              "name": "funil",
+              "value": "sessao estrategica"
+            },
+            {
+              "name": "variacao_do_funil",
+              "value": "live-semanal"
+            },
+            {
+              "name": "id_stage_preencheu_aplicacao_crm",
+              "value": "18"
+            },
+            {
+              "name": "id_stage_desqualificado_produto_1_crm",
+              "value": "56"
+            },
+            {
+              "name": "id_stage_desqualificadoproduto_2_crm",
+              "value": "53"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_crm",
+              "value": "257"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_crm",
+              "value": "163"
+            },
+            {
+              "name": "Api-Token",
+              "value": "d0aa5c89796c6403850c539dbd5bcb58ffc0f8c7ff28b9fc6be0c3b54a540a15403f99b1"
+            },
+            {
+              "name": "id_campo_instagram_crm",
+              "value": "314"
+            },
+            {
+              "name": "id_campo_pergunta0_crm",
+              "value": "86"
+            },
+            {
+              "name": "id_campo_pergunta1_crm",
+              "value": "87"
+            },
+            {
+              "name": "id_campo_pergunta2_crm",
+              "value": "88"
+            },
+            {
+              "name": "id_campo_pergunta3_crm",
+              "value": "311"
+            },
+            {
+              "name": "id_campo_pergunta4_crm",
+              "value": "313"
+            },
+            {
+              "name": "id_campo_pergunta5_crm",
+              "value": "90"
+            },
+            {
+              "name": "id_campo_pergunta6_crm",
+              "value": "92"
+            },
+            {
+              "name": "id_campo_pergunta7_crm",
+              "value": "98"
+            },
+            {
+              "name": "id_campo_pergunta8_crm",
+              "value": "99"
+            },
+            {
+              "name": "id_campo_pergunta9_crm",
+              "value": "315"
+            },
+            {
+              "name": "id_campo_pergunta10_crm",
+              "value": "318"
+            },
+            {
+              "name": "id_campo_pergunta11_crm"
+            },
+            {
+              "name": "id_campo_pergunta12_crm"
+            },
+            {
+              "name": "id_campo_pergunta13_crm"
+            },
+            {
+              "name": "id_campo_pergunta14_crm"
+            },
+            {
+              "name": "id_campo_pergunta15_crm"
+            },
+            {
+              "name": "id_campo_pergunta16_crm"
+            },
+            {
+              "name": "id_campo_pergunta17_crm"
+            },
+            {
+              "name": "id_campo_pergunta18_crm"
+            },
+            {
+              "name": "id_campo_pergunta19_crm"
+            },
+            {
+              "name": "id_campo_pergunta20_crm"
+            },
+            {
+              "name": "id_campo_utm_source_crm",
+              "value": "140"
+            },
+            {
+              "name": "id_campo_utm_campaign_crm",
+              "value": "141"
+            },
+            {
+              "name": "id_campo_utm_content_crm",
+              "value": "143"
+            },
+            {
+              "name": "id_campo_utm_medium_crm",
+              "value": "142"
+            },
+            {
+              "name": "id_campo_utm_term_crm",
+              "value": "144"
+            },
+            {
+              "name": "id_campo_utm_fun_crm",
+              "value": "263"
+            },
+            {
+              "name": "id_campo_utm_var_crm",
+              "value": "264"
+            },
+            {
+              "name": "id_tag_desqualificado_crm",
+              "value": "159"
+            },
+            {
+              "name": "id_tag_qualificado_crm",
+              "value": "158"
+            },
+            {
+              "name": "id_tag_aplicou_crm",
+              "value": "99"
+            },
+            {
+              "name": "id_campo_ddd_crm",
+              "value": "185"
+            },
+            {
+              "name": "id_campo_id_banco_deal_crm",
+              "value": "42"
+            },
+            {
+              "name": "id_campo_id_bot_conversa_deal_crm",
+              "value": "53"
+            },
+            {
+              "name": "id_campo_instagram_deal_crm",
+              "value": "21"
+            },
+            {
+              "name": "id_campo_pergunta0_deal_crm",
+              "value": "20"
+            },
+            {
+              "name": "id_campo_pergunta1_deal_crm",
+              "value": "78"
+            },
+            {
+              "name": "id_campo_pergunta2_deal_crm",
+              "value": "18"
+            },
+            {
+              "name": "id_campo_pergunta3_deal_crm",
+              "value": "79"
+            },
+            {
+              "name": "id_campo_pergunta4_deal_crm",
+              "value": "17"
+            },
+            {
+              "name": "id_campo_pergunta5_deal_crm",
+              "value": "16"
+            },
+            {
+              "name": "id_campo_pergunta6_deal_crm",
+              "value": "13"
+            },
+            {
+              "name": "id_campo_pergunta7_deal_crm",
+              "value": "80"
+            },
+            {
+              "name": "id_campo_pergunta8_deal_crm",
+              "value": "50"
+            },
+            {
+              "name": "id_campo_utm_source_deal_crm",
+              "value": "6"
+            },
+            {
+              "name": "id_campo_utm_campaign_deal_crm",
+              "value": "5"
+            },
+            {
+              "name": "id_campo_utm_content_deal_crm",
+              "value": "3"
+            },
+            {
+              "name": "id_campo_utm_medium_deal_crm",
+              "value": "4"
+            },
+            {
+              "name": "id_campo_utm_term_deal_crm",
+              "value": "2"
+            },
+            {
+              "name": "id_campo_utm_var_deal_crm",
+              "value": "43"
+            },
+            {
+              "name": "id_campo_utm_fun_deal_crm",
+              "value": "44"
+            },
+            {
+              "name": "id_campo_pergunta9_deal_crm",
+              "value": "81"
+            },
+            {
+              "name": "dia_da_semana_se",
+              "value": "={{   [     \"Domingo\",      \"Segunda-feira\",      \"Terça-feira\",      \"Quarta-feira\",      \"Quinta-feira\",      \"Sexta-feira\",      \"Sábado\"   ][new Date().getDay()] }}"
+            },
+            {
+              "name": "id_campo_dia_aplicou_se",
+              "value": "2113710"
+            },
+            {
+              "name": "id_stage_desqualificado_crm",
+              "value": "102"
+            },
+            {
+              "name": "id_pipeline_desqualificado_crm",
+              "value": "14"
+            },
+            {
+              "name": "id_campo_pergunta10_deal_crm",
+              "value": "82"
+            }
+          ],
+          "number": [
+            {
+              "name": "id_fluxo2_nao_agendou_10_min_desqualificados",
+              "value": 2830145
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5be25c59-45f9-4688-8bfd-ba524eb317cc",
+      "name": "dados_validados10",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2460,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrair informações do input\nconst inputData = $node[\"aplicacao_preechida_live_semanal\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"utm_content\"] || '';\nconst utmSource = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"utm_source\"] || '';\nconst utmCampaign = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"utm_campaign\"] || '';\nconst utmMedium = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"utm_medium\"] || '';\nconst utmTerm = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"utm_term\"] || '';\n\nconst form_name = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"form_name\"] || '';\n\n// Extrair outras informações do formulário\nconst nome = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"Nome\"] || '';\nconst telefone = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"(DDD) + WhatsApp\"] || '';\nconst email = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"E-mail\"] || '';\n//const instagram = (respostas[\"Seu @ no Instagram\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\nconst faturamento = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"Quanto fatura por mês em média?\"] || '';\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  //instagram,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  formulario: form_name,\n  faturamento: faturamento,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;"
+      },
+      "id": "8b81b9d1-5666-40e4-b7fa-ec3c96bba99c",
+      "name": "formata_dados18",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        2100,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "aplicacao-preenchida-live-semanal",
+        "options": {}
+      },
+      "id": "b3dd401f-09ba-4025-a279-143561723afb",
+      "name": "aplicacao_preechida_live_semanal",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        1840,
+        1480
+      ],
+      "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
+    },
+    {
+      "parameters": {
+        "queue": "Não Agendamentos - Sessão - Parte 2",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "b3fb48d3-8301-4e1a-bb49-5364f5b9722a",
+      "name": "entra_na_fila5",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        2740,
+        1460
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "7b8ad82a-3a46-49a1-8197-e948dc82dd72",
+              "leftValue": "={{ $node[\"formata_dados18\"].json[\"faturamento\"] }}",
+              "rightValue": "0 a 25 mil por mês",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "98dc878d-0ede-4e12-8816-0950e55d8056",
+      "name": "é_qualificado",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2260,
+        1480
       ]
     }
   ],
@@ -12535,6 +13243,41 @@
           }
         }
       }
+    ],
+    "aplicacao_preechida_live_semanal": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "WordPress/6.6.2; https://salaolucrativo.gestaodesaloes.com.br",
+            "content-length": "325",
+            "accept": "*/*",
+            "accept-encoding": "deflate, gzip, br",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "34.34.138.177",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "34.34.138.177"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "Nome": "Vitor Queiroz",
+            "E-mail": "vitorrqueiroztrafego@gmail.com",
+            "(DDD) + WhatsApp": "(19) 98457-4874",
+            "Quanto fatura por mês em média?": "50 a 100 mil por mês",
+            "utm_source": "source1",
+            "utm_campaign": "campaign2",
+            "utm_medium": "medium4",
+            "utm_content": "content3",
+            "utm_term": "term5",
+            "form_id": "a395823",
+            "form_name": "captação lives forms"
+          }
+        }
+      }
     ]
   },
   "settings": {
@@ -12555,7 +13298,7 @@
       "name": "[NAG]"
     }
   ],
-  "triggerCount": 10,
-  "updatedAt": "2024-09-06T20:05:20.607Z",
-  "versionId": "11617fb7-0142-4d81-a4b0-2321e5baff23"
+  "triggerCount": 11,
+  "updatedAt": "2024-09-10T20:46:50.664Z",
+  "versionId": "ff8916d7-aeb0-4974-b2a6-27c0bb20a7f6"
 }
