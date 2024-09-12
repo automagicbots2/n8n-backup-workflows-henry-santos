@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Item Lists": {
       "main": [
@@ -143,43 +143,25 @@
       "main": [
         [
           {
-            "node": "09/09/24",
+            "node": "Mensagem-12-09-24",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "13hs": {
+    "10hs": {
       "main": [
         [
           {
-            "node": "09/09/2024",
+            "node": "12/09/2024",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "09/09/2024": {
-      "main": [
-        [
-          {
-            "node": "le_planilha",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "10/09/2024",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "10/09/2024": {
+    "12/09/2024": {
       "main": [
         [
           {
@@ -187,46 +169,10 @@
             "type": "main",
             "index": 0
           }
-        ],
-        [
-          {
-            "node": "Não faça nada",
-            "type": "main",
-            "index": 0
-          }
         ]
       ]
     },
-    "Mensagem-09-09-24": {
-      "main": [
-        [
-          {
-            "node": "Retorna Output Aleatorio2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "09/09/24": {
-      "main": [
-        [
-          {
-            "node": "Mensagem-09-09-24",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Mensagem-10-09-24",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Mensagem-10-09-24": {
+    "Mensagem-12-09-24": {
       "main": [
         [
           {
@@ -255,7 +201,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        -120,
+        200,
         860
       ]
     },
@@ -314,7 +260,7 @@
       "name": "EnviaMensagemTexto",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        60,
+        380,
         860
       ],
       "typeVersion": 4
@@ -340,7 +286,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        -620,
+        -280,
         1040
       ],
       "retryOnFail": true,
@@ -362,7 +308,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -360,
+        -40,
         1040
       ]
     },
@@ -490,7 +436,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -120,
+        200,
         1060
       ]
     },
@@ -499,17 +445,17 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 13
+              "triggerAtHour": 10
             }
           ]
         }
       },
       "id": "a9fcf49d-13f2-4f99-a085-c91d0fbfb3b4",
-      "name": "13hs",
+      "name": "10hs",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -1180,
+        -660,
         1040
       ]
     },
@@ -525,7 +471,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "09/09/2024",
+              "rightValue": "12/09/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -538,56 +484,12 @@
         "options": {}
       },
       "id": "e207ad20-5c67-4d16-a3a2-a148b45eb217",
-      "name": "09/09/2024",
+      "name": "12/09/2024",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -1000,
+        -480,
         1040
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
-              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "10/09/2024",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "2ca5a8b2-b896-4e37-95e3-e2f27e897c83",
-      "name": "10/09/2024",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        -820,
-        1140
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "733f0f88-5352-45ac-9797-bc14e9eb6ee0",
-      "name": "Não faça nada",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        -620,
-        1200
       ]
     },
     {
@@ -612,7 +514,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=🔥 *Alerta de Oportunidade Única*!\n\nJá se perguntou por que seu *salão não está onde você sempre sonhou*? O problema pode estar em decisões que você ainda não tomou.\n\nPela primeira vez, *Henry Santos e Amélia Pinheiro* estarão juntos para te mostrar *como alcançar o ápice do sucesso* no seu salão. \n\nE o melhor de tudo: com condições especiais na pré-venda da Imersão Presencial Salão Autoadministrável em Floripa.\n\nNão deixe essa chance passar. Sua transformação começa agora!\n\n👉 *Garanta sua vaga na Sala Secreta e mude o jogo*! \n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
+              "value": "=Prepare-se para uma experiência que vai *explodir sua mente*! 💥\n\nHenry Santos e Amélia Pinheiro, juntos pela primeira vez, em uma *Imersão Presencial* que pode mudar o rumo do seu salão.\n\nE o melhor: você pode ter acesso a tudo isso na nossa Sala Secreta, onde serão revelados *detalhes inéditos e condições especiais para a pré-venda*.\n\nNão perca essa chance única de aprender com os melhores e elevar seu negócio a um novo patamar.\n \nClique aqui e entre na Sala Secreta agora! \n\n🚀 https://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
             },
             {
               "name": "options.delay",
@@ -642,104 +544,11 @@
         }
       },
       "id": "019facea-9632-4819-8a4a-040473edf314",
-      "name": "Mensagem-09-09-24",
+      "name": "Mensagem-12-09-24",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        360,
-        960
-      ],
-      "typeVersion": 4
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
-              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "09/09/2024",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "709e3c5d-5b7f-4ee0-b497-ba853bd3825a",
-      "name": "09/09/24",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        120,
+        380,
         1060
-      ]
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "apikey",
-              "value": "1gozy92fyg3hlty3wkv7f"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "={{ $node[\"Code\"].json[\"telefonefinal\"] }}"
-            },
-            {
-              "name": "textMessage.text",
-              "value": "=🔴 *Você está cansado de viver preso ao seu salão*?\n\nJá imaginou como seria se seu salão funcionasse perfeitamente sem você estar lá o tempo todo?\n\nHenry Santos e Amélia Pinheiro têm a fórmula exata para transformar seu negócio em um salão autoadministrável! Essa é sua chance de finalmente ter mais tempo, mais dinheiro e, principalmente, mais liberdade.\n\n🎯*Mas cuidado*: se você não estiver na Sala Secreta, vai continuar correndo atrás de soluções temporárias enquanto outros estão a caminho da liberdade.\n\n🚀 *Garanta sua vaga* e esteja um passo à frente:\n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
-            },
-            {
-              "name": "options.delay",
-              "value": "={{ 1200 }}"
-            },
-            {
-              "name": "options.presence",
-              "value": "composing"
-            },
-            {
-              "name": "options.linkPreview",
-              "value": "={{ false }}"
-            },
-            {
-              "name": "=options.mentions.everyOne",
-              "value": "={{ true }}"
-            }
-          ]
-        },
-        "options": {
-          "response": {
-            "response": {
-              "fullResponse": true,
-              "neverError": true
-            }
-          }
-        }
-      },
-      "id": "3683d061-9e29-4098-b3a4-f04e52def1c8",
-      "name": "Mensagem-10-09-24",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        360,
-        1140
       ],
       "typeVersion": 4
     }
@@ -775,10 +584,13 @@
     },
     "node:13hs": {
       "recurrencyRules": []
+    },
+    "node:10hs": {
+      "recurrencyRules": []
     }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-09-10T21:42:19.444Z",
-  "versionId": "c98922ef-c459-46e7-9c10-da23da9fc36a"
+  "updatedAt": "2024-09-11T20:15:07.703Z",
+  "versionId": "09594d6c-c1f1-4fd9-b2a7-7f24146f5e96"
 }
