@@ -384,46 +384,6 @@
         ],
         [
           {
-            "node": "funil-live-semanal",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "funil-live-semanal": {
-      "main": [
-        [
-          {
-            "node": "busca_lead",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "dados",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "busca_lead": {
-      "main": [
-        [
-          {
-            "node": "add_tag_lead_kmmo1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "add_tag_lead_kmmo1": {
-      "main": [
-        [
-          {
             "node": "dados",
             "type": "main",
             "index": 0
@@ -707,8 +667,8 @@
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        3160,
-        1920
+        2840,
+        1860
       ],
       "credentials": {
         "rabbitmq": {
@@ -1648,8 +1608,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2960,
-        1920
+        2640,
+        1860
       ]
     },
     {
@@ -2316,74 +2276,6 @@
     },
     {
       "parameters": {
-        "method": "PATCH",
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "oAuth2Api",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={{ \n  $json[\"_embedded\"][\"tags\"].map(tag => ({\n    id: $json[\"id\"],\n    _embedded: {\n      tags: [{ id: tag.id }]\n    }\n  })).concat([{\n    id: $json[\"id\"], \n    _embedded: { \n      tags: [\n        { id: 78080 }, // Primeira Tag\n        { id: 49674 }  // Segunda Tag (substitua 12345 pelo ID da segunda tag)\n      ]\n    }\n  }])\n}}",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
-      },
-      "id": "27eab13b-8151-4671-9c97-9be7383a1221",
-      "name": "add_tag_lead_kmmo1",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        2600,
-        1920
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
-        "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/{{ $node[\"pesquisa_lead5\"].json[\"id_lead_kommo\"] }}",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "oAuth2Api",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
-      },
-      "id": "1b31ba4d-9bb5-45f9-8430-164f16732f0d",
-      "name": "busca_lead",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        2420,
-        1920
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
-        "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
-        }
-      }
-    },
-    {
-      "parameters": {
         "assignments": {
           "assignments": [
             {
@@ -2508,39 +2400,6 @@
       "position": [
         2060,
         1860
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "868e6dd7-2b6c-4cdd-a754-4e12a245dd11",
-              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}",
-              "rightValue": "live-semanal",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "ee525660-5a59-422e-8b7b-343ebdc6165e",
-      "name": "funil-live-semanal",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        2300,
-        2100
       ]
     },
     {
@@ -2684,6 +2543,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-11T14:38:18.927Z",
-  "versionId": "5eaf4df1-343f-4b62-84d6-1bfd875023dc"
+  "updatedAt": "2024-09-11T15:41:16.853Z",
+  "versionId": "c9014462-77dd-4b03-b788-60c7e3431bb5"
 }
