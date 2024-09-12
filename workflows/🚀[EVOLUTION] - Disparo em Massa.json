@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Item Lists": {
       "main": [
@@ -143,18 +143,7 @@
       "main": [
         [
           {
-            "node": "09/09/24",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "13hs": {
-      "main": [
-        [
-          {
-            "node": "09/09/2024",
+            "node": "Mensagem-11-09-2024",
             "type": "main",
             "index": 0
           }
@@ -390,25 +379,18 @@
         ]
       ]
     },
-    "09/09/2024": {
+    "23hs": {
       "main": [
         [
           {
-            "node": "le_planilha",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "10/09/2024",
+            "node": "11/09/2024",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "10/09/2024": {
+    "11/09/2024": {
       "main": [
         [
           {
@@ -426,36 +408,7 @@
         ]
       ]
     },
-    "Mensagem-09-09-24": {
-      "main": [
-        [
-          {
-            "node": "Retorna Output Aleatorio2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "09/09/24": {
-      "main": [
-        [
-          {
-            "node": "Mensagem-09-09-24",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Mensagem-10-09-24",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Mensagem-10-09-24": {
+    "Mensagem-11-09-2024": {
       "main": [
         [
           {
@@ -569,7 +522,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        -620,
+        -580,
         1040
       ],
       "retryOnFail": true,
@@ -602,7 +555,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1260,
+        1000,
         1260
       ]
     },
@@ -615,7 +568,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        600,
+        340,
         1060
       ]
     },
@@ -646,7 +599,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        760,
+        500,
         1060
       ]
     },
@@ -660,7 +613,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1020,
+        760,
         840
       ],
       "webhookId": "d8efb6a8-448f-4090-848f-2d3ae3df7372"
@@ -675,7 +628,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1020,
+        760,
         980
       ],
       "webhookId": "5b6731a4-7e53-4e39-8f4d-044f5c661dc3"
@@ -690,7 +643,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1020,
+        760,
         1120
       ],
       "webhookId": "219215a8-13a7-4f1c-bc1a-7bfa900cdf1b"
@@ -705,7 +658,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1020,
+        760,
         1260
       ],
       "webhookId": "fe0eea55-ecdf-496a-b768-58dd481ce656"
@@ -721,25 +674,6 @@
       "position": [
         -120,
         1060
-      ]
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 13
-            }
-          ]
-        }
-      },
-      "id": "031d43c1-dd03-4919-9f65-d45bebcc8600",
-      "name": "13hs",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        -1180,
-        1040
       ]
     },
     {
@@ -1201,33 +1135,30 @@
       ]
     },
     {
+      "parameters": {},
+      "id": "540da61c-f0db-4083-92a5-180e6eedbc99",
+      "name": "Não faça nada",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        1200
+      ]
+    },
+    {
       "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
+        "rule": {
+          "interval": [
             {
-              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
-              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "09/09/2024",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
+              "triggerAtHour": 23
             }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
+          ]
+        }
       },
-      "id": "26e2b69d-307e-4986-8fb9-a8c52df559d2",
-      "name": "09/09/2024",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
+      "id": "031d43c1-dd03-4919-9f65-d45bebcc8600",
+      "name": "23hs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
       "position": [
         -1000,
         1040
@@ -1245,7 +1176,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "10/09/2024",
+              "rightValue": "11/09/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -1257,24 +1188,13 @@
         },
         "options": {}
       },
-      "id": "ab7e8b16-8fb0-4185-84b0-66ecb1fe33c6",
-      "name": "10/09/2024",
+      "id": "26e2b69d-307e-4986-8fb9-a8c52df559d2",
+      "name": "11/09/2024",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
         -820,
-        1140
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "2b82a687-f801-42b1-bf5d-66c99474b4b8",
-      "name": "Não faça nada",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        -620,
-        1200
+        1040
       ]
     },
     {
@@ -1299,7 +1219,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=*Você já imaginou* ter dois grandes nomes do mercado de beleza juntos em um palco, compartilhando estratégias exclusivas para transformar seu salão?\n\nPois é, *Henry Santos e Amélia Pinheiro estão se unindo para a Imersão Salão Autoadministrável!*\n \nE você tem a chance de garantir seu lugar na pré-venda com condições exclusivas.\n\nCurioso(a)? *Clique no link* e inscreva-se na Sala Secreta para saber mais! 🚀\n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
+              "value": "=Claro, todo mundo está muito ocupado para uma 'salinha secreta'... Até perceberem que é a *Amélia Pinheiro e o Henry Santos compartilhando estratégias que já transformaram centenas de salões!*\n\n😏 Mas tudo bem, continue com seus 'compromissos' enquanto outros aproveitam essa chance. Ou... Clique no link e garanta seu lugar na pré-venda agora mesmo.\n \n*A escolha é sua*! TOQUE NO LINK E FAÇA SUA INSCRIÇÃO:\n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
             },
             {
               "name": "options.delay",
@@ -1329,104 +1249,11 @@
         }
       },
       "id": "4bb99d3a-6379-4a1b-a47e-ad1b89cdf475",
-      "name": "Mensagem-09-09-24",
+      "name": "Mensagem-11-09-2024",
       "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        360,
-        960
-      ],
-      "typeVersion": 4
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
-              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "09/09/2024",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "563773d5-0c36-4b24-afa2-1536f99407ba",
-      "name": "09/09/24",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
       "position": [
         120,
         1060
-      ]
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "apikey",
-              "value": "1gozy92fyg3hlty3wkv7f"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "={{ $node[\"Code\"].json[\"telefonefinal\"] }}"
-            },
-            {
-              "name": "textMessage.text",
-              "value": "=Ah, eu sei, *você deve estar pensando:* 'Mais uma reunião?'.\n\n*Mas e se essa reunião for com Henry Santos e Amélia Pinheiro* revelando segredos que podem transformar seu salão?\n \nAí a história muda, né? 😉 \n\n*Garanta sua vaga na Sala Secreta* e veja como dois gigantes do mercado podem mudar sua visão de negócios.\n\nNão deixe para depois! Toque no link:\n\n📲 https://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
-            },
-            {
-              "name": "options.delay",
-              "value": "={{ 1200 }}"
-            },
-            {
-              "name": "options.presence",
-              "value": "composing"
-            },
-            {
-              "name": "options.linkPreview",
-              "value": "={{ false }}"
-            },
-            {
-              "name": "=options.mentions.everyOne",
-              "value": "={{ true }}"
-            }
-          ]
-        },
-        "options": {
-          "response": {
-            "response": {
-              "fullResponse": true,
-              "neverError": true
-            }
-          }
-        }
-      },
-      "id": "ffb63569-c5d3-4871-880f-e8598098017f",
-      "name": "Mensagem-10-09-24",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        360,
-        1140
       ],
       "typeVersion": 4
     }
@@ -1462,10 +1289,13 @@
     },
     "node:13hs": {
       "recurrencyRules": []
+    },
+    "node:23hs": {
+      "recurrencyRules": []
     }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-09-10T21:42:05.825Z",
-  "versionId": "56c3ee68-ec89-4a42-8ea3-242ede186e29"
+  "updatedAt": "2024-09-11T20:15:28.764Z",
+  "versionId": "f6ab61f1-030d-435a-b161-6cc77c453059"
 }
