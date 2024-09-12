@@ -669,7 +669,7 @@
       "main": [
         [
           {
-            "node": "dados12",
+            "node": "No Operation, do nothing",
             "type": "main",
             "index": 0
           }
@@ -790,6 +790,61 @@
         [
           {
             "node": "segundo_ou_mais_erro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_lead": {
+      "main": [
+        [
+          {
+            "node": "add_tag_lead_kmmo1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "funil-live-semanal": {
+      "main": [
+        [
+          {
+            "node": "busca_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila1": {
+      "main": [
+        [
+          {
+            "node": "funil-live-semanal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila11": {
+      "main": [
+        [
+          {
+            "node": "funil-live-semanal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "dados12",
             "type": "main",
             "index": 0
           }
@@ -7453,7 +7508,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        4480,
+        4520,
         3960
       ],
       "credentials": {
@@ -7675,6 +7730,118 @@
           "name": "[Henry Santos] - Kommo ouath 2"
         }
       }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ \n  $json[\"_embedded\"][\"tags\"].map(tag => ({\n    id: $json[\"id\"],\n    _embedded: {\n      tags: [{ id: tag.id }]\n    }\n  })).concat([{\n    id: $json[\"id\"], \n    _embedded: { \n      tags: [\n        { id: 78080 }, // Primeira Tag\n        { id: 49674 }  // Segunda Tag (substitua 12345 pelo ID da segunda tag)\n      ]\n    }\n  }])\n}}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "5147d8d5-3aee-42aa-a919-90f833bbbca9",
+      "name": "add_tag_lead_kmmo1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        6420,
+        3700
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/{{$node[\"update_leads_KOMMO3\"].runIndex >= 0 ? $node[\"update_leads_KOMMO3\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] :\n($node[\"Add_contato_KOMMO5\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO5\"].json[\"id\"] :\n($node[\"Add_contato_KOMMO1\"].runIndex >= 0 ? $node[\"Add_contato_KOMMO1\"].json[\"id\"] : '' ))}}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "937583e3-b23b-49ed-ad0b-9b20d3f0a575",
+      "name": "busca_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        6240,
+        3700
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "868e6dd7-2b6c-4cdd-a754-4e12a245dd11",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}",
+              "rightValue": "live-semanal",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "cc20056f-cfa5-458d-b296-bde89b5921c0",
+      "name": "funil-live-semanal",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        6060,
+        3700
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "f472218d-39cc-4163-945e-7d481295ed56",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        5160,
+        3720
+      ]
     }
   ],
   "pinData": {
@@ -7840,6 +8007,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-10T21:12:38.838Z",
-  "versionId": "7483cbbe-d393-4423-9391-e1baf013e217"
+  "updatedAt": "2024-09-11T15:40:15.888Z",
+  "versionId": "949deaf8-845f-4d6e-a48c-3303370775ab"
 }
