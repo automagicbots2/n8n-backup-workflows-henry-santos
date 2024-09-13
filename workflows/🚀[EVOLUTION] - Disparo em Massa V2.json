@@ -143,25 +143,25 @@
       "main": [
         [
           {
-            "node": "Mensagem-12-09-24",
+            "node": "Mensagem-14-09-24",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "10hs": {
+    "Mensagem-14-09-24": {
       "main": [
         [
           {
-            "node": "12/09/2024",
+            "node": "Retorna Output Aleatorio2",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "12/09/2024": {
+    "14/09/2024": {
       "main": [
         [
           {
@@ -169,14 +169,15 @@
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
-    "Mensagem-12-09-24": {
+    "7hs": {
       "main": [
         [
           {
-            "node": "Retorna Output Aleatorio2",
+            "node": "14/09/2024",
             "type": "main",
             "index": 0
           }
@@ -442,58 +443,6 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 10
-            }
-          ]
-        }
-      },
-      "id": "a9fcf49d-13f2-4f99-a085-c91d0fbfb3b4",
-      "name": "10hs",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        -660,
-        1040
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
-              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "12/09/2024",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "e207ad20-5c67-4d16-a3a2-a148b45eb217",
-      "name": "12/09/2024",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        -480,
-        1040
-      ]
-    },
-    {
-      "parameters": {
         "method": "POST",
         "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
         "sendHeaders": true,
@@ -514,7 +463,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=Prepare-se para uma experiência que vai *explodir sua mente*! 💥\n\nHenry Santos e Amélia Pinheiro, juntos pela primeira vez, em uma *Imersão Presencial* que pode mudar o rumo do seu salão.\n\nE o melhor: você pode ter acesso a tudo isso na nossa Sala Secreta, onde serão revelados *detalhes inéditos e condições especiais para a pré-venda*.\n\nNão perca essa chance única de aprender com os melhores e elevar seu negócio a um novo patamar.\n \nClique aqui e entre na Sala Secreta agora! \n\n🚀 https://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
+              "value": "=🌪️ *A verdade é dura, mas aqui está: seu salão pode estar drenando seu tempo e energia*.\n\nVocê se dedica, faz tudo certo, mas ainda sente que algo está faltando? *Henry Santos e Amélia Pinheiro* vão te mostrar o que você está fazendo de errado e como mudar isso na Imersão Salão Autoadministrável.\n\n💡 *A transformação não acontece por acaso, ela é construída*.\n\n*E quem constrói isso são aqueles que sabem onde encontrar as ferramentas certas*.\n\n🎯 *Vem pra Sala Secreta* e descubra como transformar seu salão em um negócio lucrativo que não dependa de você o tempo todo.\n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/\n"
             },
             {
               "name": "options.delay",
@@ -544,13 +493,65 @@
         }
       },
       "id": "019facea-9632-4819-8a4a-040473edf314",
-      "name": "Mensagem-12-09-24",
+      "name": "Mensagem-14-09-24",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
         380,
         1060
       ],
       "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "14/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e207ad20-5c67-4d16-a3a2-a148b45eb217",
+      "name": "14/09/2024",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -480,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "a9fcf49d-13f2-4f99-a085-c91d0fbfb3b4",
+      "name": "7hs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -660,
+        1040
+      ]
     }
   ],
   "pinData": {},
@@ -587,10 +588,13 @@
     },
     "node:10hs": {
       "recurrencyRules": []
+    },
+    "node:7hs": {
+      "recurrencyRules": []
     }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-09-11T20:15:07.703Z",
-  "versionId": "09594d6c-c1f1-4fd9-b2a7-7f24146f5e96"
+  "updatedAt": "2024-09-12T19:01:28.894Z",
+  "versionId": "f5f30728-dd52-41d9-bd02-6f06c04f07cb"
 }
