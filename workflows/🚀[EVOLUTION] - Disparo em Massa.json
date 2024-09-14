@@ -372,43 +372,25 @@
       "main": [
         [
           {
-            "node": "12/09/2024",
+            "node": "14/09/24",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Mensagem-12-09-24": {
+    "13hs": {
       "main": [
         [
           {
-            "node": "Retorna Output Aleatorio3",
+            "node": "14/09/2024",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "12/09/2024": {
-      "main": [
-        [
-          {
-            "node": "Mensagem-12-09-24",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Mensagem-13-09-24",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "12/09/24": {
+    "14/09/2024": {
       "main": [
         [
           {
@@ -426,7 +408,47 @@
         ]
       ]
     },
-    "13/09/2024": {
+    "14/09/24": {
+      "main": [
+        [
+          {
+            "node": "Mensagem-14-09-24",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "15/09",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mensagem-14-09-24": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "15hs": {
+      "main": [
+        [
+          {
+            "node": "15/09/2024",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "15/09/2024": {
       "main": [
         [
           {
@@ -444,7 +466,25 @@
         ]
       ]
     },
-    "Mensagem-13-09-24": {
+    "15/09": {
+      "main": [
+        [
+          {
+            "node": "Mensagem-15-09-24",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "16/09",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mensagem-15-09-24": {
       "main": [
         [
           {
@@ -455,22 +495,58 @@
         ]
       ]
     },
-    "20hs": {
+    "Mensagem-16-09": {
       "main": [
         [
           {
-            "node": "12/09/24",
+            "node": "Retorna Output Aleatorio3",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "12hs": {
+    "16/09/2024": {
       "main": [
         [
           {
-            "node": "13/09/2024",
+            "node": "le_planilha2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não faça nada1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "8hs": {
+      "main": [
+        [
+          {
+            "node": "16/09/2024",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "16/09": {
+      "main": [
+        [
+          {
+            "node": "Mensagem-16-09",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Não faz nada2",
             "type": "main",
             "index": 0
           }
@@ -1071,8 +1147,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1080,
-        1040
+        1460,
+        1180
       ]
     },
     {
@@ -1084,7 +1160,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        420,
+        780,
         840
       ]
     },
@@ -1115,7 +1191,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        580,
+        940,
         840
       ]
     },
@@ -1129,7 +1205,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        840,
+        1200,
         620
       ],
       "webhookId": "d8efb6a8-448f-4090-848f-2d3ae3df7372"
@@ -1144,7 +1220,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        840,
+        1200,
         760
       ],
       "webhookId": "5b6731a4-7e53-4e39-8f4d-044f5c661dc3"
@@ -1159,7 +1235,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        840,
+        1200,
         900
       ],
       "webhookId": "219215a8-13a7-4f1c-bc1a-7bfa900cdf1b"
@@ -1174,7 +1250,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        840,
+        1200,
         1040
       ],
       "webhookId": "fe0eea55-ecdf-496a-b768-58dd481ce656"
@@ -1205,6 +1281,91 @@
     },
     {
       "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 13
+            }
+          ]
+        }
+      },
+      "id": "3075e9b2-03dd-4b93-a6f7-40c7f505dba0",
+      "name": "13hs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1340,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "14/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b1ff7dba-8c44-458c-bb53-34309753bd53",
+      "name": "14/09/2024",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -1120,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "14/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "67da718f-e075-4d06-802e-9661da2097af",
+      "name": "14/09/24",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        840
+      ]
+    },
+    {
+      "parameters": {
         "method": "POST",
         "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
         "sendHeaders": true,
@@ -1225,7 +1386,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=🔥*Imagine isso*: 3 dias intensos, 10 palestrantes de peso no palco, 5 estratégias infalíveis e centenas de salões transformados… *Agora, multiplique essa sensação* de liberdade e sucesso por 100.\n \nÉ isso que você vai sentir ao participar da Imersão Presencial com Amélia Pinheiro e Henry Santos neste mês de Outubro em Florianópolis!\n\n🎉 Quer saber mais? Entre na Sala Secreta e descubra tudo.\n \nO link está aqui esperando por você!\n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
+              "value": "=🌪️ A verdade é dura, mas aqui está: seu salão pode estar drenando seu tempo e energia.\n\nVocê se dedica, faz tudo certo, mas ainda sente que algo está faltando? Henry Santos e Amélia Pinheiro vão te mostrar o que você está fazendo de errado e como mudar isso na Imersão Salão Autoadministrável.\n\n💡 A transformação não acontece por acaso, ela é construída.\n\nE quem constrói isso são aqueles que sabem onde encontrar as ferramentas certas.\n\n🎯 Vem pra Sala Secreta e descubra como transformar seu salão em um negócio lucrativo que não dependa de você o tempo todo.\n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
             },
             {
               "name": "options.delay",
@@ -1255,45 +1416,31 @@
         }
       },
       "id": "b375db01-a4c4-40b4-bcd7-f2646fbe2388",
-      "name": "Mensagem-12-09-24",
+      "name": "Mensagem-14-09-24",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        180,
-        740
+        500,
+        640
       ],
       "typeVersion": 4
     },
     {
       "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
+        "rule": {
+          "interval": [
             {
-              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
-              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "12/09/2024",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
+              "triggerAtHour": 15
             }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
+          ]
+        }
       },
-      "id": "67da718f-e075-4d06-802e-9661da2097af",
-      "name": "12/09/2024",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
+      "id": "152b83cb-313f-4ce5-ac05-3b192be63066",
+      "name": "15hs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
       "position": [
-        -60,
-        840
+        -1340,
+        940
       ]
     },
     {
@@ -1308,40 +1455,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "12/09/2024",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "b1ff7dba-8c44-458c-bb53-34309753bd53",
-      "name": "12/09/24",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        -1000,
-        720
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
-              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "13/09/2024",
+              "rightValue": "15/09/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -1354,11 +1468,44 @@
         "options": {}
       },
       "id": "3adce345-f0a6-4758-a4e4-86f14c7b1f2a",
-      "name": "13/09/2024",
+      "name": "15/09/2024",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -1000,
+        -1120,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "15/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d6ca18d6-44a0-41c9-8736-1e593e28e2fc",
+      "name": "15/09",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        80,
         940
       ]
     },
@@ -1384,7 +1531,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=Você pode continuar fazendo as mesmas coisas e esperando resultados diferentes… Ou pode descobrir as estratégias de Henry Santos e Amélia Pinheiro na Imersão Salão Autoadministrável.\n \nÉ simples: você entra na Sala Secreta, recebe o conhecimento e tem acesso exclusivo à *pré-venda da Imersão Salão Autoadministrável em Floripa* ... e boom! Resultado garantido!\n \nNão perca essa oportunidade.\n\n😎Toque aqui e te inscreve gratuitamente:\n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
+              "value": "=Prepare-se para algo que você nunca viu antes! Henry Santos e Amélia Pinheiro, juntos pela primeira vez, em um evento exclusivo que pode mudar o rumo do seu salão.\n\nE o melhor: você pode ter acesso a tudo isso na nossa Sala Secreta, onde serão revelados detalhes inéditos e condições especiais para a pré-venda. \n\nNão perca essa chance única de aprender com os melhores e elevar seu negócio a um novo patamar. \n\nClique aqui e entre na Sala Secreta agora! \n\n🚀https://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/\n"
             },
             {
               "name": "options.delay",
@@ -1414,31 +1561,105 @@
         }
       },
       "id": "d2093185-2d67-41b6-8a04-66911837e51e",
-      "name": "Mensagem-13-09-24",
+      "name": "Mensagem-15-09-24",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        180,
-        920
+        500,
+        800
       ],
       "typeVersion": 4
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
             {
-              "triggerAtHour": 20
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
             }
           ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"Code2\"].json[\"telefonefinal\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Você já imaginou como seria ter dois dos maiores nomes da gestão de salões de beleza e estética juntos no mesmo palco, compartilhando estratégias que podem transformar completamente o seu negócio?\n\n🤔 Pois essa é sua chance! Henry Santos e Amélia Pinheiro se uniram para criar a Imersão Salão Autoadministrável, um evento exclusivo para donos de salão que querem alcançar mais tempo, mais dinheiro e, claro, mais liberdade!\n\nNão vai ficar de fora dessa, né?\n\nGaranta sua vaga na Sala Secreta agora! 🚀Clique aqui: \n\nhttps://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
         }
       },
-      "id": "3075e9b2-03dd-4b93-a6f7-40c7f505dba0",
-      "name": "20hs",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
+      "id": "11cb8431-a481-4853-9f34-3298917051aa",
+      "name": "Mensagem-16-09",
+      "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1220,
-        720
+        500,
+        980
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "16/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0a63bf1b-310a-40a9-86d8-63c5ecdede41",
+      "name": "16/09/2024",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -1120,
+        1120
       ]
     },
     {
@@ -1446,18 +1667,51 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 12
+              "triggerAtHour": 8
             }
           ]
         }
       },
-      "id": "152b83cb-313f-4ce5-ac05-3b192be63066",
-      "name": "12hs",
+      "id": "35b38f63-dc6b-4e73-bb8f-0d41df1dce0f",
+      "name": "8hs",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -1220,
-        940
+        -1340,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "16/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ae02a78a-9e1a-4927-89eb-abdcc54b1973",
+      "name": "16/09",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        260,
+        1040
       ]
     }
   ],
@@ -1501,10 +1755,19 @@
     },
     "node:12hs": {
       "recurrencyRules": []
+    },
+    "node:15hs": {
+      "recurrencyRules": []
+    },
+    "node:15hs1": {
+      "recurrencyRules": []
+    },
+    "node:8hs": {
+      "recurrencyRules": []
     }
   },
   "tags": [],
-  "triggerCount": 2,
-  "updatedAt": "2024-09-12T18:37:06.451Z",
-  "versionId": "93ca191e-aac9-4829-afae-cd92098bd7ba"
+  "triggerCount": 3,
+  "updatedAt": "2024-09-13T19:48:38.152Z",
+  "versionId": "6073ca55-6aab-4115-aeeb-5ee5985df23c"
 }
