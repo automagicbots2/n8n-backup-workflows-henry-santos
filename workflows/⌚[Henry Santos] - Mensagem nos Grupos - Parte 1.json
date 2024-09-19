@@ -142,6 +142,51 @@
           }
         ]
       ]
+    },
+    "variaveis_evolution": {
+      "main": [
+        [
+          {
+            "node": "get_groups",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_groups": {
+      "main": [
+        [
+          {
+            "node": "nome_certo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nome_certo": {
+      "main": [
+        [],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "variaveis_evolution",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-08-15T17:21:42.194Z",
@@ -452,6 +497,105 @@
           "name": "[ClickUp] - Automagic Bots - Henry"
         }
       }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url_base",
+              "value": "https://evolutionapi.automagicbots.com.br"
+            },
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            },
+            {
+              "name": "nome_da_instancia",
+              "value": "MSAHenrySantos"
+            },
+            {
+              "name": "nome_evento",
+              "value": "Teste"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "759d8ad5-b4f0-474b-b77f-27d52d273fc0",
+      "name": "variaveis_evolution",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        0,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"variaveis_evolution\"].json[\"url_base\"] }}/group/fetchAllGroups/{{ $node[\"variaveis_evolution\"].json[\"nome_da_instancia\"] }}?getParticipants=false",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis_evolution\"].json[\"apikey\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "75c46b3a-9422-4e42-88ed-ee269e5c9ed0",
+      "name": "get_groups",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        200,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"get_groups\"].json[\"subject\"] }}",
+              "operation": "contains",
+              "value2": "={{ $item(\"0\").$node[\"variaveis_evolution\"].json[\"nome_evento\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "be39cffb-9b78-44fb-91b0-4c39f2d2a639",
+      "name": "nome_certo",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        400,
+        -260
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0375d878-e02a-409e-b447-2b613e71a236",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        620,
+        -160
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "067fb59b-5070-493b-8a92-d87c0e973ddb",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        -260
+      ]
     }
   ],
   "pinData": {},
@@ -484,6 +628,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-08-26T13:05:01.713Z",
-  "versionId": "d2143ed3-1c96-4dcb-9329-0bb767066f69"
+  "updatedAt": "2024-09-19T13:04:04.030Z",
+  "versionId": "b83672a7-52ec-42d9-bd78-7600b465a4a2"
 }
