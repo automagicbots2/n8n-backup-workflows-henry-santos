@@ -1012,6 +1012,21 @@
           }
         ]
       ]
+    },
+    "MensagemGrupoD": {
+      "main": [
+        []
+      ]
+    },
+    "23/09/2024.": {
+      "main": [
+        []
+      ]
+    },
+    "Escolher Horario": {
+      "main": [
+        []
+      ]
     }
   },
   "createdAt": "2024-06-28T23:20:10.639Z",
@@ -6593,6 +6608,157 @@
         1940,
         2460
       ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fb4581f7-fc6a-4dd8-921c-4bf38304ad21",
+              "name": "mensagem",
+              "value": "teste",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2b34e7c1-bfb3-45f2-acd8-49bdc3195cca",
+      "name": "MensagemGrupoD",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        -940,
+        2720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c23e69bf-3556-4d8f-8613-b28b3303573b",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "23/09/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "3b02de04-1d6d-4f8f-af58-7769754e968d",
+      "name": "23/09/2024.",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -1140,
+        2720
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Workflow Grupo teste\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 313.56661676646706,
+        "width": 852.5975056445235
+      },
+      "id": "780da01a-89b7-49ce-90c1-42b7f6e05350",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1380,
+        2615.0973053892217
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "1gozy92fyg3hlty3wkv7f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "120363318226685709@g.us"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "={{ $node[\"MensagemGrupoD1\"].json[\"mensagem\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "a7bc8a85-324a-481c-ac09-f5078a2c0e13",
+      "name": "Grupo teste",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -720,
+        2720
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9,
+              "triggerAtMinute": 49
+            }
+          ]
+        }
+      },
+      "id": "f099bc16-b8e1-48c8-9c03-14aea868532c",
+      "name": "Escolher Horario",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1340,
+        2720
+      ]
     }
   ],
   "pinData": {},
@@ -6758,6 +6924,9 @@
     },
     "node:7h": {
       "recurrencyRules": []
+    },
+    "node:Escolher Horario": {
+      "recurrencyRules": []
     }
   },
   "tags": [
@@ -6768,7 +6937,7 @@
       "name": "[LEMBRETE]"
     }
   ],
-  "triggerCount": 9,
-  "updatedAt": "2024-09-20T17:21:42.837Z",
-  "versionId": "2b8062a6-b7b5-4ced-a82e-7db08e0f93d6"
+  "triggerCount": 10,
+  "updatedAt": "2024-09-23T12:57:22.528Z",
+  "versionId": "8c01d008-acc4-4a86-a547-386beba13024"
 }
