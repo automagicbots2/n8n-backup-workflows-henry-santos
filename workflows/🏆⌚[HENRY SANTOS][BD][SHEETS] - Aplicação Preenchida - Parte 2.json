@@ -494,7 +494,7 @@
       "main": [
         [
           {
-            "node": "Add_contato_KOMMO",
+            "node": "Retorna Output Aleatorio1",
             "type": "main",
             "index": 0
           }
@@ -534,7 +534,7 @@
       "main": [
         [
           {
-            "node": "Add_contato_KOMMO4",
+            "node": "Retorna Output Aleatorio",
             "type": "main",
             "index": 0
           }
@@ -564,28 +564,6 @@
         [
           {
             "node": "dados11",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Add_contato_KOMMO": {
-      "main": [
-        [
-          {
-            "node": "insere_dados",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Add_contato_KOMMO4": {
-      "main": [
-        [
-          {
-            "node": "MySQL2",
             "type": "main",
             "index": 0
           }
@@ -965,6 +943,108 @@
         [
           {
             "node": "entra_na_fila12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio1": {
+      "main": [
+        [
+          {
+            "node": "divide_closers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "divide_closers": {
+      "main": [
+        [
+          {
+            "node": "Add_contato_KOMMO_willian",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add_contato_KOMMO_Jean",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_contato_KOMMO_willian": {
+      "main": [
+        [
+          {
+            "node": "insere_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_contato_KOMMO_Jean": {
+      "main": [
+        [
+          {
+            "node": "insere_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio": {
+      "main": [
+        [
+          {
+            "node": "divide_closers1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "divide_closers1": {
+      "main": [
+        [
+          {
+            "node": "Add_contato_KOMMO_wilian",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add_contato_KOMMO_jean",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_contato_KOMMO_wilian": {
+      "main": [
+        [
+          {
+            "node": "MySQL2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_contato_KOMMO_jean": {
+      "main": [
+        [
+          {
+            "node": "MySQL2",
             "type": "main",
             "index": 0
           }
@@ -2733,7 +2813,7 @@
       "typeVersion": 1,
       "position": [
         5360,
-        2700
+        2640
       ]
     },
     {
@@ -4279,8 +4359,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        4280,
-        2700
+        4300,
+        2640
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -4315,8 +4395,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        4480,
-        2700
+        4500,
+        2640
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -4750,11 +4830,11 @@
             },
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"Add_contato_KOMMO\"].json[\"id\"] }}"
+              "value": "={{ $node[\"Add_contato_KOMMO_willian\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO_willian\"].json[\"id\"] : $node[\"Add_contato_KOMMO_Jean\"].json[\"id\"] }}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"Add_contato_KOMMO\"].json[\"contact_id\"] }}"
+              "value": "={{ $node[\"Add_contato_KOMMO_willian\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO_willian\"].json[\"contact_id\"] : $node[\"Add_contato_KOMMO_Jean\"].json[\"contact_id\"] }}"
             }
           ]
         },
@@ -5989,11 +6069,11 @@
           "values": [
             {
               "column": "id_lead_kommo",
-              "value": "={{ $node[\"Add_contato_KOMMO4\"].json[\"id\"] }}"
+              "value": "={{ $node[\"Add_contato_KOMMO_wilian\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO_wilian\"].json[\"id\"] : $node[\"Add_contato_KOMMO_jean\"].json[\"id\"] }}"
             },
             {
               "column": "id_contato_kommo",
-              "value": "={{ $node[\"Add_contato_KOMMO4\"].json[\"contact_id\"] }}"
+              "value": "={{ $node[\"Add_contato_KOMMO_wilian\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO_wilian\"].json[\"contact_id\"] : $node[\"Add_contato_KOMMO_jean\"].json[\"contact_id\"] }}"
             }
           ]
         },
@@ -6004,7 +6084,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        4680,
+        5080,
         3100
       ],
       "credentials": {
@@ -6056,7 +6136,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        4460,
+        4260,
         3340
       ],
       "credentials": {
@@ -6092,80 +6172,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        4680,
+        4480,
         3340
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
-        "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "oAuth2Api",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n\"responsible_user_id\":11743307,           \n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 788730,\n                      \"field_name\": \"Você tem uma recepcionista no seu salão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1017816,\n                      \"field_name\": \"Em qual etapa de começar a montar o seu salão você está\",\n                      \"values\": [\n                          {\n                              \"value\": \".{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788734,\n                      \"field_name\": \"quantos profissionais você tem?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788786,\n                      \"field_name\": \"Qual seu faturamento MENSAL MÉDIO em 2024 (considerando até este mês)?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}\"\n                          }\n                      ]\n                  },  \n                 {\n                      \"field_id\": 1015182,\n                      \"field_name\": \"Para eu entender mais sobre teu negócio, qual opção melhor define você hoje?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n                          }\n                      ]\n                  }, \n                {\n                      \"field_id\": 1015504,\n                      \"field_name\": \"Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2024?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}\"\n                          }\n                      ]\n                  },    \n                {\n                      \"field_id\": 789046,\n                      \"field_name\": \"Quais são os problemas que têm te impedido de alcançar esse objetivo?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}\"\n                          }\n                      ]\n                  },     \n                {\n                      \"field_id\": 1018040,\n                      \"field_name\": \"Caso eu receba mais interessados que vaga na sessão, por que eu deveria escolher você?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789054,\n                      \"field_name\": \"Se existisse um acompanhamento único que solucionasse os problemas que citou antes e te ajudasse a chegar no seu objetivo, quanto você estaria disposto a investir POR MÊS?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}\"\n                          }\n                      ]\n                  },\n        \n                {\n                      \"field_id\": 1017806,\n                      \"field_name\": \"Quantas horas você está disposto a investir na sua semana para atingir estes objetivos que você acabou de citar/\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta13\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017810,\n                      \"field_name\": \"Quando você contrata alguém para trabalhar no salão, você toma essa decisão sozinha?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta11\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017814,\n                      \"field_name\": \"Quando você pretende colocar em ação tudo o que for mostrado para você na sessão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta12\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789052,\n                      \"field_name\": \"Possuímos 2 opções para a sessão estratégica:\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta14\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015234,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015236,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015238,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015240,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015242,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015244,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015246,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788726,\n                      \"field_name\": \"Instagram\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Instagram\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11762503,\n    \"status_id\":72349379,\n    \"pipeline_id\":9337315\n }\n]",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
-      },
-      "id": "655e3f8a-1467-45cf-ad48-2bf3bd6b3199",
-      "name": "Add_contato_KOMMO",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        4500,
-        2940
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
-        "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "oAuth2Api",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n\"responsible_user_id\":11743307,           \n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 788730,\n                      \"field_name\": \"Você tem uma recepcionista no seu salão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1017816,\n                      \"field_name\": \"Em qual etapa de começar a montar o seu salão você está\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788734,\n                      \"field_name\": \"quantos profissionais você tem?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788786,\n                      \"field_name\": \"Qual seu faturamento MENSAL MÉDIO em 2024 (considerando até este mês)?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}\"\n                          }\n                      ]\n                  },  \n                 {\n                      \"field_id\": 1015182,\n                      \"field_name\": \"Para eu entender mais sobre teu negócio, qual opção melhor define você hoje?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n                          }\n                      ]\n                  }, \n                {\n                      \"field_id\": 1015504,\n                      \"field_name\": \"Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2024?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}\"\n                          }\n                      ]\n                  },    \n                {\n                      \"field_id\": 789046,\n                      \"field_name\": \"Quais são os problemas que têm te impedido de alcançar esse objetivo?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}\"\n                          }\n                      ]\n                  },     \n                {\n                      \"field_id\": 1018040,\n                      \"field_name\": \"Caso eu receba mais interessados que vaga na sessão, por que eu deveria escolher você?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789054,\n                      \"field_name\": \"Se existisse um acompanhamento único que solucionasse os problemas que citou antes e te ajudasse a chegar no seu objetivo, quanto você estaria disposto a investir POR MÊS?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}\"\n                          }\n                      ]\n                  },\n        \n                {\n                      \"field_id\": 1017806,\n                      \"field_name\": \"Quantas horas você está disposto a investir na sua semana para atingir estes objetivos que você acabou de citar/\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta13\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017810,\n                      \"field_name\": \"Quando você contrata alguém para trabalhar no salão, você toma essa decisão sozinha?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta11\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017814,\n                      \"field_name\": \"Quando você pretende colocar em ação tudo o que for mostrado para você na sessão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta12\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789052,\n                      \"field_name\": \"Possuímos 2 opções para a sessão estratégica:\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta14\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015234,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015236,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015238,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015240,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015242,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015244,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015246,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788726,\n                      \"field_name\": \"Instagram\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Instagram\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11762503,\n    \"status_id\":72349379,\n    \"pipeline_id\":9337315\n }\n]",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
-      },
-      "id": "cbffc6d6-2118-413d-8d3a-61b85d219e40",
-      "name": "Add_contato_KOMMO4",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        4500,
-        3100
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -9423,6 +9431,216 @@
           "name": "[MySQL][2.0] - Henry Santos"
         }
       }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Gere um número aleatório entre 0 e 1\nconst randomValue = Math.random();\n\n// Arredonde o número para 1 ou 2\nconst result = Math.round(randomValue) + 1;\n\nreturn [{ result }];\n"
+      },
+      "id": "ffd66ffd-2fb7-41a5-bc76-706b336c43ca",
+      "name": "Retorna Output Aleatorio1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        4120,
+        2860
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ String($node[\"Retorna Output Aleatorio1\"].json[\"result\"]) }}",
+              "value2": "1"
+            }
+          ]
+        }
+      },
+      "id": "1a4cbd52-6039-45fd-8fac-459fcd59e789",
+      "name": "divide_closers",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        4300,
+        2860
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n\"responsible_user_id\":11743307,           \n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 788730,\n                      \"field_name\": \"Você tem uma recepcionista no seu salão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1017816,\n                      \"field_name\": \"Em qual etapa de começar a montar o seu salão você está\",\n                      \"values\": [\n                          {\n                              \"value\": \".{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788734,\n                      \"field_name\": \"quantos profissionais você tem?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788786,\n                      \"field_name\": \"Qual seu faturamento MENSAL MÉDIO em 2024 (considerando até este mês)?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}\"\n                          }\n                      ]\n                  },  \n                 {\n                      \"field_id\": 1015182,\n                      \"field_name\": \"Para eu entender mais sobre teu negócio, qual opção melhor define você hoje?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n                          }\n                      ]\n                  }, \n                {\n                      \"field_id\": 1015504,\n                      \"field_name\": \"Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2024?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}\"\n                          }\n                      ]\n                  },    \n                {\n                      \"field_id\": 789046,\n                      \"field_name\": \"Quais são os problemas que têm te impedido de alcançar esse objetivo?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}\"\n                          }\n                      ]\n                  },     \n                {\n                      \"field_id\": 1018040,\n                      \"field_name\": \"Caso eu receba mais interessados que vaga na sessão, por que eu deveria escolher você?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789054,\n                      \"field_name\": \"Se existisse um acompanhamento único que solucionasse os problemas que citou antes e te ajudasse a chegar no seu objetivo, quanto você estaria disposto a investir POR MÊS?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}\"\n                          }\n                      ]\n                  },\n        \n                {\n                      \"field_id\": 1017806,\n                      \"field_name\": \"Quantas horas você está disposto a investir na sua semana para atingir estes objetivos que você acabou de citar/\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta13\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017810,\n                      \"field_name\": \"Quando você contrata alguém para trabalhar no salão, você toma essa decisão sozinha?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta11\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017814,\n                      \"field_name\": \"Quando você pretende colocar em ação tudo o que for mostrado para você na sessão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta12\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789052,\n                      \"field_name\": \"Possuímos 2 opções para a sessão estratégica:\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta14\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015234,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015236,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015238,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015240,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015242,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015244,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015246,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788726,\n                      \"field_name\": \"Instagram\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Instagram\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11762515,\n    \"status_id\":72349379,\n    \"pipeline_id\":9337315\n }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "655e3f8a-1467-45cf-ad48-2bf3bd6b3199",
+      "name": "Add_contato_KOMMO_willian",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4700,
+        2740
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n\"responsible_user_id\":11743307,           \n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 788730,\n                      \"field_name\": \"Você tem uma recepcionista no seu salão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1017816,\n                      \"field_name\": \"Em qual etapa de começar a montar o seu salão você está\",\n                      \"values\": [\n                          {\n                              \"value\": \".{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788734,\n                      \"field_name\": \"quantos profissionais você tem?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788786,\n                      \"field_name\": \"Qual seu faturamento MENSAL MÉDIO em 2024 (considerando até este mês)?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}\"\n                          }\n                      ]\n                  },  \n                 {\n                      \"field_id\": 1015182,\n                      \"field_name\": \"Para eu entender mais sobre teu negócio, qual opção melhor define você hoje?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n                          }\n                      ]\n                  }, \n                {\n                      \"field_id\": 1015504,\n                      \"field_name\": \"Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2024?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}\"\n                          }\n                      ]\n                  },    \n                {\n                      \"field_id\": 789046,\n                      \"field_name\": \"Quais são os problemas que têm te impedido de alcançar esse objetivo?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}\"\n                          }\n                      ]\n                  },     \n                {\n                      \"field_id\": 1018040,\n                      \"field_name\": \"Caso eu receba mais interessados que vaga na sessão, por que eu deveria escolher você?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789054,\n                      \"field_name\": \"Se existisse um acompanhamento único que solucionasse os problemas que citou antes e te ajudasse a chegar no seu objetivo, quanto você estaria disposto a investir POR MÊS?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}\"\n                          }\n                      ]\n                  },\n        \n                {\n                      \"field_id\": 1017806,\n                      \"field_name\": \"Quantas horas você está disposto a investir na sua semana para atingir estes objetivos que você acabou de citar/\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta13\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017810,\n                      \"field_name\": \"Quando você contrata alguém para trabalhar no salão, você toma essa decisão sozinha?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta11\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017814,\n                      \"field_name\": \"Quando você pretende colocar em ação tudo o que for mostrado para você na sessão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta12\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789052,\n                      \"field_name\": \"Possuímos 2 opções para a sessão estratégica:\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta14\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015234,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015236,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015238,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015240,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015242,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015244,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015246,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788726,\n                      \"field_name\": \"Instagram\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Instagram\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11918983,\n    \"status_id\":72349379,\n    \"pipeline_id\":9337315\n }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "2cb51cac-8925-413d-8419-767a4ef4beb6",
+      "name": "Add_contato_KOMMO_Jean",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4520,
+        2880
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Gere um número aleatório entre 0 e 1\nconst randomValue = Math.random();\n\n// Arredonde o número para 1 ou 2\nconst result = Math.round(randomValue) + 1;\n\nreturn [{ result }];\n"
+      },
+      "id": "8d318372-f041-40bf-a4f1-31e4b27c6a7d",
+      "name": "Retorna Output Aleatorio",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        4260,
+        3080
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ String($node[\"Retorna Output Aleatorio\"].json[\"result\"]) }}",
+              "value2": "1"
+            }
+          ]
+        }
+      },
+      "id": "936f3765-1439-4137-8965-80f3f33c48b8",
+      "name": "divide_closers1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        4440,
+        3080
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n\"responsible_user_id\":11743307,           \n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 788730,\n                      \"field_name\": \"Você tem uma recepcionista no seu salão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1017816,\n                      \"field_name\": \"Em qual etapa de começar a montar o seu salão você está\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788734,\n                      \"field_name\": \"quantos profissionais você tem?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788786,\n                      \"field_name\": \"Qual seu faturamento MENSAL MÉDIO em 2024 (considerando até este mês)?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}\"\n                          }\n                      ]\n                  },  \n                 {\n                      \"field_id\": 1015182,\n                      \"field_name\": \"Para eu entender mais sobre teu negócio, qual opção melhor define você hoje?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n                          }\n                      ]\n                  }, \n                {\n                      \"field_id\": 1015504,\n                      \"field_name\": \"Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2024?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}\"\n                          }\n                      ]\n                  },    \n                {\n                      \"field_id\": 789046,\n                      \"field_name\": \"Quais são os problemas que têm te impedido de alcançar esse objetivo?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}\"\n                          }\n                      ]\n                  },     \n                {\n                      \"field_id\": 1018040,\n                      \"field_name\": \"Caso eu receba mais interessados que vaga na sessão, por que eu deveria escolher você?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789054,\n                      \"field_name\": \"Se existisse um acompanhamento único que solucionasse os problemas que citou antes e te ajudasse a chegar no seu objetivo, quanto você estaria disposto a investir POR MÊS?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}\"\n                          }\n                      ]\n                  },\n        \n                {\n                      \"field_id\": 1017806,\n                      \"field_name\": \"Quantas horas você está disposto a investir na sua semana para atingir estes objetivos que você acabou de citar/\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta13\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017810,\n                      \"field_name\": \"Quando você contrata alguém para trabalhar no salão, você toma essa decisão sozinha?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta11\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017814,\n                      \"field_name\": \"Quando você pretende colocar em ação tudo o que for mostrado para você na sessão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta12\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789052,\n                      \"field_name\": \"Possuímos 2 opções para a sessão estratégica:\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta14\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015234,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015236,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015238,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015240,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015242,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015244,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015246,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788726,\n                      \"field_name\": \"Instagram\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Instagram\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11762515,\n    \"status_id\":72349379,\n    \"pipeline_id\":9337315\n }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "cbffc6d6-2118-413d-8d3a-61b85d219e40",
+      "name": "Add_contato_KOMMO_wilian",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4800,
+        2980
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n\"responsible_user_id\":11743307,           \n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 788730,\n                      \"field_name\": \"Você tem uma recepcionista no seu salão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1017816,\n                      \"field_name\": \"Em qual etapa de começar a montar o seu salão você está\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta3\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788734,\n                      \"field_name\": \"quantos profissionais você tem?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788786,\n                      \"field_name\": \"Qual seu faturamento MENSAL MÉDIO em 2024 (considerando até este mês)?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}\"\n                          }\n                      ]\n                  },  \n                 {\n                      \"field_id\": 1015182,\n                      \"field_name\": \"Para eu entender mais sobre teu negócio, qual opção melhor define você hoje?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta9\"] }}\"\n                          }\n                      ]\n                  }, \n                {\n                      \"field_id\": 1015504,\n                      \"field_name\": \"Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2024?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta4\"] }}\"\n                          }\n                      ]\n                  },    \n                {\n                      \"field_id\": 789046,\n                      \"field_name\": \"Quais são os problemas que têm te impedido de alcançar esse objetivo?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta5\"] }}\"\n                          }\n                      ]\n                  },     \n                {\n                      \"field_id\": 1018040,\n                      \"field_name\": \"Caso eu receba mais interessados que vaga na sessão, por que eu deveria escolher você?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta6\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789054,\n                      \"field_name\": \"Se existisse um acompanhamento único que solucionasse os problemas que citou antes e te ajudasse a chegar no seu objetivo, quanto você estaria disposto a investir POR MÊS?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta7\"] }}\"\n                          }\n                      ]\n                  },\n        \n                {\n                      \"field_id\": 1017806,\n                      \"field_name\": \"Quantas horas você está disposto a investir na sua semana para atingir estes objetivos que você acabou de citar/\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta13\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017810,\n                      \"field_name\": \"Quando você contrata alguém para trabalhar no salão, você toma essa decisão sozinha?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta11\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 1017814,\n                      \"field_name\": \"Quando você pretende colocar em ação tudo o que for mostrado para você na sessão?\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta12\"] }}\"\n                          }\n                      ]\n                  },        \n                {\n                      \"field_id\": 789052,\n                      \"field_name\": \"Possuímos 2 opções para a sessão estratégica:\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta14\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015234,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015236,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015238,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015240,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015242,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015244,\n                      \"field_name\": \"utm_fun\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"funil\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015246,\n                      \"field_name\": \"utm_var\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                          }\n                      ]\n                  },\n                {\n                      \"field_id\": 788726,\n                      \"field_name\": \"Instagram\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Instagram\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11918983,\n    \"status_id\":72349379,\n    \"pipeline_id\":9337315\n }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "af1ec82c-04b5-451a-9e3f-901d8dcb200f",
+      "name": "Add_contato_KOMMO_jean",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4800,
+        3160
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
     }
   ],
   "pinData": {
@@ -9609,6 +9827,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-20T01:09:39.883Z",
-  "versionId": "9f84eb69-4400-440d-b327-2948578f9258"
+  "updatedAt": "2024-09-23T14:32:57.241Z",
+  "versionId": "3c27b766-e5e6-4181-8d6f-0397db4d3cc9"
 }
