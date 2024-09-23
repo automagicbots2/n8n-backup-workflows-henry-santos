@@ -12,11 +12,6 @@
         ]
       ]
     },
-    "chega_da_fila": {
-      "main": [
-        []
-      ]
-    },
     "entrou_no_grupo": {
       "main": [
         [],
@@ -258,6 +253,17 @@
         [
           {
             "node": "verifica_midias5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "msg_de_grupo",
             "type": "main",
             "index": 0
           }
@@ -2025,8 +2031,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-CYGlhcVWHGfO1QkU1GJFig",
-            "deliveryTag": 1,
+            "consumerTag": "amq.ctag-83PvUa6wYz7wbYmjXxEztQ",
+            "deliveryTag": 16,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Disparos - Evolution"
@@ -2034,10 +2040,10 @@
           "properties": {},
           "content": {
             "destino": "Grupos",
-            "id_grupo": "120363256444706105@g.us",
-            "arquivo": "https://t3135484.p.clickup-attachments.com/t3135484/c556ce95-8538-407f-85e7-95c474788022/Checklist%20da%20Rotina%20Di%C3%A1ria%20de%20uma%20Recepcionista%20de%20alta%20performance%20de%20Sal%C3%A3o%20de%20Beleza%20(1).docx.pdf?view=open",
-            "copy": "Amanhã, 04/09, às 8:00(Brasília) teremos um treinamento especial para as equipes dos salões com Henry Santos! \n\n💇‍♀️ Vamos aprender técnicas práticas de organização, comunicação eficaz e atendimento ao cliente.\n Garanta que sua equipe esteja presente para elevar o nível do seu salão!",
-            "valor_msg": "Vídeo"
+            "id_grupo": "120363318948095655@g.us",
+            "arquivo": "",
+            "copy": "🔥 Notícia quentíssima! Hoje é o grande dia, às 19h!\n\nPela primeira vez, Henry Santos e Amélia Pinheiro, os titãs da gestão de salões de beleza, estarão juntos no palco para te mostrar como alcançar o ápice do sucesso.\n\nE o melhor: você pode garantir seu lugar na Sala Secreta agora mesmo e ainda ter acesso exclusivo às condições diferenciadas de pré-venda para a Imersão em Outubro, em Floripa!\n\nNão perca essa chance única de transformar seu salão e sua vida.\n\nClique no link e garanta sua vaga! 👉https://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/",
+            "valor_msg": "Texto"
           }
         }
       }
@@ -2062,6 +2068,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-20T16:55:49.393Z",
-  "versionId": "61edc14c-5f99-4860-9f19-0aadb41723b3"
+  "updatedAt": "2024-09-23T13:11:40.707Z",
+  "versionId": "15adad83-4e6e-40c6-b1da-5a6739f66e74"
 }
