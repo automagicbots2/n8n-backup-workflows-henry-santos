@@ -1,0 +1,288 @@
+{
+  "active": true,
+  "connections": {
+    "segundo_ou_mais_erro": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "dados_da_compra",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados_da_compra": {
+      "main": [
+        [
+          {
+            "node": "Add_lead_KOMMO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-09-23T20:09:35.765Z",
+  "id": "1ivScbgYQ7pHArp4",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[HENRY_SANTOS] - EDUZZ - COMPRA APROVADA EVENTO - PARTE 2",
+  "nodes": [
+    {
+      "parameters": {
+        "queue": "Evento - Compra Aprovada",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": "={{ true }}",
+          "parallelMessages": 3
+        }
+      },
+      "id": "90e96653-c38b-44f8-8917-e764cc341d31",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        120,
+        1120
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"fields\"][\"redelivered\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "7013b5a1-efde-4131-a0e0-667bca89d3f2",
+      "name": "segundo_ou_mais_erro",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        340,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "An error ocurred!"
+      },
+      "id": "6959ad1b-e097-49c8-ae09-7a09dbd25a40",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        520,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "API-KEY"
+            },
+            {
+              "name": "id_campo_cpfcnpj"
+            },
+            {
+              "name": "id_campo_data_compra_prod1"
+            },
+            {
+              "name": "id_campo_email_compra_prod1"
+            },
+            {
+              "name": "id_campo_data_compra_prod2"
+            },
+            {
+              "name": "id_campo_email_compra_prod2"
+            },
+            {
+              "name": "id_fluxo_compra_aprovada_prod1"
+            },
+            {
+              "name": "id_fluxo_compra_aprovada_prod2"
+            },
+            {
+              "name": "nome_prod1"
+            },
+            {
+              "name": "nome_prod2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0e6075a2-5c0c-4766-be46-a8a4d3bcb83d",
+      "name": "dados_da_compra",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        580,
+        1140
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split (' ')[0] }}\",\n\"responsible_user_id\":11743307,           \n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato BC\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1021880,\n                      \"field_name\": \"Produto\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"nome_produto\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015234,\n                      \"field_name\": \"utm_source\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015236,\n                      \"field_name\": \"utm_campaign\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015238,\n                      \"field_name\": \"utm_content\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015240,\n                      \"field_name\": \"utm_medium\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                          }\n                      ]\n                  },\n                 {\n                      \"field_id\": 1015242,\n                      \"field_name\": \"utm_term\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11743307,\n    \"status_id\":74348451,\n    \"pipeline_id\":9650131\n }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "b73bda8a-78dc-42d7-8537-87895b9326ce",
+      "name": "Add_lead_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        780,
+        1140
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "chega_da_fila": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-U9xS6sa9T2gbF4P0tMDhSA",
+            "deliveryTag": 1,
+            "redelivered": false,
+            "exchange": "",
+            "routingKey": "Evento - Compra Aprovada"
+          },
+          "properties": {
+            "headers": {
+              "x-delivery-count": 11
+            }
+          },
+          "content": {
+            "value": 51,
+            "conversion_date": "04/09/2019",
+            "gateway_comission": 1,
+            "warranty_date": "11/09/2019",
+            "nome_produto": "Nome do produto",
+            "Nome do Cliente": "Mateus Diniz",
+            "E-mail do Cliente": "mateusdiniz@automagicbots.com.br",
+            "Telefone do Cliente - Formato Z-API": "554835191298",
+            "CPF/CNPJ do Cliente": "999.999.999-11",
+            "transaction_id": 999999999,
+            "offer_code": 999999999,
+            "currency": "BRL",
+            "subscription_code": 999999999,
+            "plan": "Recurrence plan",
+            "payment_method": "Desconhecido",
+            "trans_status": "Compra Aprovada",
+            "ddd": "69",
+            "utm_source": "Anunciante",
+            "utm_campaign": "Campanha do anúncio",
+            "utm_term": "",
+            "utm_medium": "Midia utilizada do Anúncio",
+            "Link do Boleto": "https://eduzz.com/9/9999/1",
+            "utm_content": "Fonte dentro do Anúncio",
+            "Linha Digitável do Boleto": "99999.99999 99999.99999 99999.999999 9 99999999999999",
+            "Nome do Afiliado": "Nome do Afiliado",
+            "E-mail do Afiliado": "emaildoafiliado@provedor.com",
+            "id_fluxo_compra_aprovada": "4297785",
+            "Telefone do Cliente - Formato BC": "+556981196678",
+            "id_campo_id_banco_de_dados_bot_conversa": "2370554",
+            "id_campo_utm_var_bot_conversa": "2370558",
+            "id_campo_utm_fun_bot_conversa": "2370559",
+            "id_campo_utm_medium_bot_conversa": "2370545",
+            "id_campo_utm_source_bot_conversa": "2370544",
+            "id_campo_utm_campaign_bot_conversa": "2370543",
+            "id_campo_utm_term_bot_conversa": "2370542",
+            "id_campo_utm_content_bot_conversa": "2370546",
+            "id_campo_email_da_compra_bot_conversa": "2435070",
+            "id_campo_cpf_cnpj_bot_conversa": "2435161",
+            "id_campo_id_da_compra_bot_conversa": "2435074",
+            "id_campo_link_pagamento_pix_bot_conversa": "2435107",
+            "id_campo_link_pagamento_boleto_bot_conversa": "2435106",
+            "id_campo_linha_digitavel_boleto_bot_conversa": "2435104",
+            "id_campo_linha_digitavel_pix_bot_conversa": "2435105",
+            "id_fluxo_aguardando_pagamento": "4297801",
+            "id_fluxo_compra_cancelada": "4297793",
+            "id_fluxo_aguardando_reembolso": "4303402",
+            "id_fluxo_compra_reembolsada": "4297805",
+            "id_fluxo_compra_expirada": "4297809",
+            "id_fluxo_compra_atrasada": "4297797",
+            "API-KEY": "d241868f-0b6e-4974-b2ae-f2ad1b5e5e25"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-09-23T20:54:07.278Z",
+  "versionId": "09414567-b7b5-4651-8492-66d586085c22"
+}
