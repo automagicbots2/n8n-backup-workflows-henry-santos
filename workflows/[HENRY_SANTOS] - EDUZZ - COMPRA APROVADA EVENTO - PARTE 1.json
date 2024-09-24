@@ -1,0 +1,571 @@
+{
+  "active": true,
+  "connections": {
+    "Dados da Compra": {
+      "main": [
+        [
+          {
+            "node": "é_compra_aprovada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "tratamento_dados": {
+      "main": [
+        [
+          {
+            "node": "Dados da Compra",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evento de Fatura": {
+      "main": [
+        [
+          {
+            "node": "tratamento_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_compra_aprovada": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-09-23T19:43:36.776Z",
+  "id": "iECylutlz3F1uMkH",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[HENRY_SANTOS] - EDUZZ - COMPRA APROVADA EVENTO - PARTE 1",
+  "nodes": [
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "nome_produto",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"product_name\"].trim() }}"
+            },
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"cus_name\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"cus_email\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"cus_cel\"] }}"
+            },
+            {
+              "name": "CPF/CNPJ do Cliente",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"cpf_cnpj\"] }}"
+            },
+            {
+              "name": "transaction_id",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"trans_cod\"] }}"
+            },
+            {
+              "name": "offer_code",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"product_cod\"] }}"
+            },
+            {
+              "name": "currency",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"trans_currency\"] }}"
+            },
+            {
+              "name": "subscription_code",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_cod\"] }}"
+            },
+            {
+              "name": "plan",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_plan\"] }}"
+            },
+            {
+              "name": "payment_method",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"forma_de_pagamento\"] }}"
+            },
+            {
+              "name": "trans_status",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"status_da_compra\"] }}"
+            },
+            {
+              "name": "ddd",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"cus_cel\"].slice('2','4') }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_medium\"] }}"
+            },
+            {
+              "name": "Link do Boleto",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"trans_bankslip\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"utm_content\"] }}"
+            },
+            {
+              "name": "Linha Digitável do Boleto",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"trans_barcode\"] }}"
+            },
+            {
+              "name": "Nome do Afiliado",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"aff_name\"] }}"
+            },
+            {
+              "name": "E-mail do Afiliado",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"aff_email\"] }}"
+            },
+            {
+              "name": "cep",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"cep\"] }}"
+            },
+            {
+              "name": "id_fluxo_compra_aprovada",
+              "value": "4297785"
+            },
+            {
+              "name": "product_id",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"product_id\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato BC",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"cus_cel\"] ? '+' + $node[\"tratamento_dados\"].json[\"cus_cel\"] : '' }}"
+            },
+            {
+              "name": "installments",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"numeroParcelas\"] }}"
+            },
+            {
+              "name": "link_pagamento_pix",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"pix_qr_code\"] }}"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "2370554"
+            },
+            {
+              "name": "id_campo_utm_var_bot_conversa",
+              "value": "2370558"
+            },
+            {
+              "name": "id_campo_utm_fun_bot_conversa",
+              "value": "2370559"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "2370545"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "2370544"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "2370543"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "2370542"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "2370546"
+            },
+            {
+              "name": "id_campo_email_da_compra_bot_conversa",
+              "value": "2435070"
+            },
+            {
+              "name": "id_campo_cpf_cnpj_bot_conversa",
+              "value": "2435161"
+            },
+            {
+              "name": "id_campo_id_da_compra_bot_conversa",
+              "value": "2435074"
+            },
+            {
+              "name": "id_campo_link_pagamento_pix_bot_conversa",
+              "value": "2435107"
+            },
+            {
+              "name": "id_campo_link_pagamento_boleto_bot_conversa",
+              "value": "2435106"
+            },
+            {
+              "name": "id_campo_linha_digitavel_boleto_bot_conversa",
+              "value": "2435104"
+            },
+            {
+              "name": "id_campo_linha_digitavel_pix_bot_conversa",
+              "value": "2435105"
+            },
+            {
+              "name": "id_fluxo_aguardando_pagamento",
+              "value": "4297801"
+            },
+            {
+              "name": "id_fluxo_compra_cancelada",
+              "value": "4297793"
+            },
+            {
+              "name": "id_fluxo_aguardando_reembolso",
+              "value": "4303402"
+            },
+            {
+              "name": "id_fluxo_compra_reembolsada",
+              "value": "4297805"
+            },
+            {
+              "name": "id_fluxo_compra_expirada",
+              "value": "4297809"
+            },
+            {
+              "name": "id_fluxo_compra_atrasada",
+              "value": "4297797"
+            },
+            {
+              "name": "API-KEY",
+              "value": "d241868f-0b6e-4974-b2ae-f2ad1b5e5e25"
+            }
+          ],
+          "number": [
+            {
+              "name": "value",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"trans_paid\"] }}"
+            },
+            {
+              "name": "conversion_date",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"data_pedido\"] }}"
+            },
+            {
+              "name": "gateway_comission",
+              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"eduzz_value\"] }}"
+            },
+            {
+              "name": "warranty_date",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"data_garantia\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Dados da Compra",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        4040,
+        2060
+      ],
+      "id": "682ff89b-26b3-4769-9632-713990f0e1d0"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrair informações do nó de entrada\nconst body = $node[\"Evento de Fatura\"].json.body;\nconst transCreateDate = body.trans_createdate;\nconst productRefundDays = body.product_refund;\nconst transPaymentMethod = parseInt(body.trans_paymentmethod); // Converter para número\nconst transStatus = parseInt(body.trans_status); // Converter para número\nconst recurrenceCount = parseInt(body.recurrence_count); // Converter para número\nconst cusCel = body.cus_cel;\nconst cusTaxNumber = body.cus_taxnumber;\nconst inputData = items[0].json;\n\n// Função para formatar a data no formato DD/MM/YYYY\nfunction formatDateYYYYMMDDToDDMMYYYY(date) {\n  const year = date.substring(0, 4);\n  const month = date.substring(4, 6);\n  const day = date.substring(6, 8);\n  return `${day}/${month}/${year}`;\n}\n\n// Formatar a data do pedido\nconst formattedCreateDate = formatDateYYYYMMDDToDDMMYYYY(transCreateDate);\n\n// Calcular a data de vencimento da garantia\nconst createDate = new Date(\n  parseInt(transCreateDate.substring(0, 4)),\n  parseInt(transCreateDate.substring(4, 6)) - 1,\n  parseInt(transCreateDate.substring(6, 8))\n);\nconst warrantyExpirationDate = new Date(createDate);\nwarrantyExpirationDate.setDate(warrantyExpirationDate.getDate() + parseInt(productRefundDays));\nconst formattedWarrantyExpirationDate = formatDateYYYYMMDDToDDMMYYYY(\n  warrantyExpirationDate.toISOString().split(\"T\")[0].replace(/-/g, \"\")\n);\n\n// Traduzir a forma de pagamento\nlet paymentMethodTranslation = \"\";\nswitch (transPaymentMethod) {\n  case 1:\n    paymentMethodTranslation = \"Boleto Bancário\";\n    break;\n  case 32:\n    paymentMethodTranslation = \"PIX\";\n    break;\n  case 9:\n  case 25:\n    paymentMethodTranslation = \"Paypal\";\n    break;\n  case 13:\n  case 15:\n  case 21:\n  case 24:\n  case 27:\n    paymentMethodTranslation = \"Cartão de Crédito\";\n    break;\n  default:\n    paymentMethodTranslation = \"Desconhecido\";\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Traduzir o status da compra\nlet purchaseStatusTranslation = \"\";\nswitch (transStatus) {\n  case 1:\n    purchaseStatusTranslation = \"Aguardando Pagamento\";\n    break;\n  case 3:\n    purchaseStatusTranslation = \"Compra Aprovada\";\n    break;\n  case 4:\n    purchaseStatusTranslation = \"Compra Cancelada\";\n    break;\n  case 6:\n    purchaseStatusTranslation = \"Aguardando Reembolso\";\n    break;\n  case 7:\n    purchaseStatusTranslation = \"Compra reembolsada\";\n    break;\n  case 10:\n    purchaseStatusTranslation = \"Compra Expirada\";\n    break;\n  case 15:\n    purchaseStatusTranslation = \"Compra Atrasada\";\n    break;\n  default:\n    purchaseStatusTranslation = \"Desconhecido\";\n}\n\n// Verificar se é renovação\nlet isRenewal = null;\nif (transStatus === 3) {\n  if (recurrenceCount === 1) {\n    isRenewal = false;\n  } else if (!isNaN(recurrenceCount)) {\n    isRenewal = true;\n  }\n}\n\n// Validar DDD e ajustar número de telefone\nlet formattedCusCel = cusCel.replace(/[\\+\\s-()]/g, '');\nconst ddi = '55'\nconst ddd = parseInt(cusCel.substring(0, 2));\nif (ddd > 28) {\n  formattedCusCel = ddi + ddd + cusCel.slice(-8);\n} else formattedCusCel = ddi + ddd + cusCel.slice(-9);\n\n// Formatar o número de CNPJ\nlet formattedCusTaxNumber = '';\n\nif (cusTaxNumber.length === 11) {\n  const cpfPart1 = cusTaxNumber.substring(0, 3);\n  const cpfPart2 = cusTaxNumber.substring(3, 6);\n  const cpfPart3 = cusTaxNumber.substring(6, 9);\n  const cpfPart4 = cusTaxNumber.substring(9, 11);\n  formattedCusTaxNumber = `${cpfPart1}.${cpfPart2}.${cpfPart3}-${cpfPart4}`;\n} else {\n  const cnpjPart1 = cusTaxNumber.substring(0, 2);\n  const cnpjPart2 = cusTaxNumber.substring(2, 5);\n  const cnpjPart3 = cusTaxNumber.substring(5, 8);\n  const cnpjPart4 = cusTaxNumber.substring(8, 12);\n  const cnpjPart5 = cusTaxNumber.substring(12, 14);\n  formattedCusTaxNumber = `${cnpjPart1}.${cnpjPart2}.${cnpjPart3}/${cnpjPart4}-${cnpjPart5}`;\n}\n\n// Construir o objeto de saída\nconst outputData = {\n  data_pedido: formattedCreateDate,\n  data_garantia: formattedWarrantyExpirationDate,\n  forma_de_pagamento: paymentMethodTranslation,\n  status_da_compra: purchaseStatusTranslation,\n  cus_cel: formattedCusCel,\n  cpf_cnpj: formattedCusTaxNumber,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm\n};\n\nif (isRenewal !== null) {\n  outputData.e_renovacao = isRenewal;\n}\n\n// Retornar o objeto de saída\nreturn [outputData]; // Observe que estou retornando um array com o objeto de saída\n"
+      },
+      "id": "6ac423a2-a096-4fc4-91cb-55b5af244f67",
+      "name": "tratamento_dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        3820,
+        2060
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "Evento - Compra Aprovada",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "5909f535-7303-4448-ad2f-580d4b14c86a",
+      "name": "entra_na_fila",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        4520,
+        2000
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "evento-fatura",
+        "options": {}
+      },
+      "id": "c1e899a9-985c-4a91-ab23-446f1e43d87b",
+      "name": "Evento de Fatura",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        3600,
+        2060
+      ],
+      "webhookId": "92a7cc90-e416-491a-b8e9-97fadeb7e244"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "3be7cd34-12a8-407d-803d-b24f5368e59a",
+              "leftValue": "={{ $json[\"trans_status\"] }}",
+              "rightValue": "Compra Aprovada",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "806bcc81-052a-4fdd-aa85-a8cf60d35d20",
+      "name": "é_compra_aprovada",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        4260,
+        2060
+      ]
+    }
+  ],
+  "pinData": {
+    "Evento de Fatura": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "node",
+            "content-length": "3642",
+            "accept": "*/*",
+            "accept-encoding": "br, gzip, deflate",
+            "accept-language": "*",
+            "baggage": "sentry-environment=production-v2,sentry-public_key=fbd6ecfbd5504d06a33f293d44c5f1bd,sentry-trace_id=19f3396f4d044c8e8287327b77926b4f",
+            "content-type": "application/json",
+            "sec-fetch-mode": "cors",
+            "sentry-trace": "19f3396f4d044c8e8287327b77926b4f-9e97abc2ada99468",
+            "x-forwarded-for": "52.54.196.208",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "52.54.196.208"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "type": "invoice",
+            "pro_value": 10,
+            "trans_cod": 999999999,
+            "trans_checkoutid": 50,
+            "trans_value": 50,
+            "trans_paid": 51,
+            "cop_value": 0,
+            "partner_cod": 999999999,
+            "trans_next": 5,
+            "trans_recovered": null,
+            "main_affiliate": 999999999,
+            "notification_url": "http://urldepostback.com",
+            "trans_paymentmethod": 3,
+            "trans_createdate": "20190904",
+            "trans_paiddate": "20190905",
+            "trans_duedate": "20191005",
+            "trans_createtime": "12:00:00",
+            "trans_paidtime": null,
+            "event_name": "invoice_paid",
+            "trans_status": 3,
+            "event": "invoice_paid",
+            "recurrence_status": 1,
+            "recurrence_status_name": "Em Dia",
+            "recurrence_finishes_at": "21000101",
+            "recurrence_next_charge": "20191005",
+            "recurrence_is_infinite": false,
+            "trans_duetime": "12:00:00",
+            "trans_items_quantity": 1,
+            "trans_key": "7d8as76fa8d8sa7da8g78a6sd",
+            "trans_recovery_url": "https://edz.la/r/7d8as76fa8d8sa7da8g78a6sd",
+            "recurrence_cod": 999999999,
+            "recurrence_type": "Recurrence type",
+            "recurrence_plan": "Recurrence plan",
+            "product_cod": 999999999,
+            "product_name": "Nome do produto",
+            "product_parent_cod": 999999999,
+            "product_refund": 7,
+            "product_sku": "83782391",
+            "discount_coupon_code": "CK98S5",
+            "cus_cod": 999999999,
+            "cus_taxnumber": "99999999911",
+            "cus_name": "Mateus Diniz",
+            "cus_email": "mateusdiniz@automagicbots.com.br",
+            "cus_tel": "062981196678",
+            "cus_tel2": "062981196678",
+            "cus_cel": "062981196678",
+            "cus_apikey": "ccmcqDl7o3",
+            "cus_address": "Av. São Paulo",
+            "refund_type": "parcial",
+            "student_cod": 999999999,
+            "student_taxnumber": "99999999999",
+            "student_name": "Nome do aluno",
+            "student_email": "emaildoaluno@provedor.com",
+            "student_tel": "011999999999",
+            "student_tel2": "011999999999",
+            "student_cel": "011999999999",
+            "cus_address_number": "111",
+            "cus_address_country": "Brasil",
+            "cus_address_district": "Jardim Brasil",
+            "cus_address_comp": "AP 38",
+            "cus_address_city": "Sorocaba",
+            "cus_address_state": "São Paulo",
+            "cus_address_zip_code": "07052-160",
+            "recurrence_startdate": "2022-09-04 10:08:46",
+            "recurrence_interval": 1,
+            "recurrence_interval_type": "month",
+            "recurrence_count": 3,
+            "recurrence_first_payment": 1,
+            "aff_cod": 999999999,
+            "aff_name": "Nome do Afiliado",
+            "aff_email": "emaildoafiliado@provedor.com",
+            "aff_document_number": "99999999999",
+            "aff_value": 20,
+            "tracker_trk": "Tracker 1 da transação",
+            "tracker_trk2": "Tracker 2 da transação",
+            "tracker_trk3": "Tracker 3 da transação",
+            "tracker_utm_source": "Anunciante",
+            "tracker_utm_content": "Fonte dentro do Anúncio",
+            "tracker_utm_medium": "Midia utilizada do Anúncio",
+            "tracker_utm_campaign": "Campanha do anúncio",
+            "utm_source": "Anunciante",
+            "utm_content": "Fonte dentro do Anúncio",
+            "utm_medium": "Midia utilizada do Anúncio",
+            "utm_campaign": "Campanha do anúncio",
+            "sku_reference": "Codigo sku do Produto",
+            "eduzz_value": 1,
+            "other_values": 0,
+            "trans_items": [
+              {
+                "item_id": 2,
+                "item_name": "Descrição do item adquirido",
+                "item_value": 50,
+                "item_coupon_code": "CK98S5",
+                "item_coupon_value": 0.5,
+                "item_product_id": 1,
+                "item_product_name": "Descrição do produto adquirido",
+                "item_product_refund": 7,
+                "item_eduzz_value": 10,
+                "producer_id": 5,
+                "item_product_sku_reference": "CK98S5",
+                "item_product_partner_cod": 5,
+                "item_product_chargetype": "N"
+              }
+            ],
+            "trans_barcode": "99999.99999 99999.99999 99999.999999 9 99999999999999",
+            "trans_orderid": "99999999999999999999999999999999",
+            "trans_currency": "BRL",
+            "trans_job_id": 5,
+            "trans_job_status": 3,
+            "request_token": "6J8iaAeFBj",
+            "billet_url": "https://sun.eduzz.com/c_99999999999999999999999999999999",
+            "page_checkout_url": "https://sun.eduzz.com/1",
+            "trans_bankslip": "https://eduzz.com/9/9999/1",
+            "recurrence_canceled_at": "2019-09-03 20:02:34",
+            "product_chargetype": "N",
+            "refund_date": "2019-02-03",
+            "pro_cod": 21202455,
+            "pro_document_number": "08489330000102",
+            "pro_name": "Verônica Burgel",
+            "pro_email": "veronicaburgel1@gmail.com",
+            "origin_secret": null,
+            "origin": "",
+            "api_key": "508e6da11cd88a5"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-09-23T19:50:52.911Z",
+      "updatedAt": "2024-09-23T19:50:52.911Z",
+      "id": "cPXTCkMvAPiczvEc",
+      "name": "[COMPRA APROVADA]"
+    },
+    {
+      "createdAt": "2024-09-23T19:50:52.921Z",
+      "updatedAt": "2024-09-23T19:50:52.921Z",
+      "id": "CZq0iNhX5obpwx1h",
+      "name": "[EDUZZ]"
+    },
+    {
+      "createdAt": "2024-09-23T19:50:52.906Z",
+      "updatedAt": "2024-09-23T19:50:52.906Z",
+      "id": "mTwf5MELZxTRz0fB",
+      "name": "[EVENTOS DE CHECKOUT]"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-09-23T20:40:04.140Z",
+  "versionId": "c59527ed-731e-45a8-89bc-91c3a1fb9d21"
+}
