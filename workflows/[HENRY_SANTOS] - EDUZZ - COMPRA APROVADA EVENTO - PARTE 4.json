@@ -1,0 +1,1651 @@
+{
+  "active": true,
+  "connections": {
+    "segundo_ou_mais_erro3": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_existe2": {
+      "main": [
+        [
+          {
+            "node": "cria_conversao2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_conversion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_conversao2": {
+      "main": [
+        [
+          {
+            "node": "cria_utm_conversao1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_utm_conversao1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_data_data_lake",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_conversion": {
+      "main": [
+        [
+          {
+            "node": "nao_existe2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_produto": {
+      "main": [
+        [
+          {
+            "node": "nao_existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_existe": {
+      "main": [
+        [
+          {
+            "node": "insert_data_produto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_data_produto": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_conversion": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_data_data_lake",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_data_data_lake": {
+      "main": [
+        [
+          {
+            "node": "nao_encontrou_registro_hj_data_lake",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_conversion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_encontrou_registro_hj_data_lake": {
+      "main": [
+        [
+          {
+            "node": "lead_ja_existia2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "lead_ja_existia3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_ja_existia2": {
+      "main": [
+        [
+          {
+            "node": "nada",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "insert_data_data_lake3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_data_data_lake3": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_data_data_lake1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_ja_existia3": {
+      "main": [
+        [
+          {
+            "node": "nada1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_data_data_lake3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_data_data_lake3": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_data_data_lake1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_ja_existia5": {
+      "main": [
+        [
+          {
+            "node": "insert_data_data_lake1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "insert_data_data_lake5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_ja_existia6": {
+      "main": [
+        [
+          {
+            "node": "update_data_data_lake",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_data_data_lake5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_ja_existia1": {
+      "main": [
+        [
+          {
+            "node": "nada2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "insert_data_data_lake6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_ja_existia7": {
+      "main": [
+        [
+          {
+            "node": "nada3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_data_data_lake6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_existe_conversao2": {
+      "main": [
+        [
+          {
+            "node": "lead_ja_existia5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "lead_ja_existia1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_existe_conversao3": {
+      "main": [
+        [
+          {
+            "node": "lead_ja_existia6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "lead_ja_existia7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_data_data_lake1": {
+      "main": [
+        [
+          {
+            "node": "nao_encontrou_registro_hj_data_lake1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_encontrou_registro_hj_data_lake1": {
+      "main": [
+        [
+          {
+            "node": "nao_existe_conversao2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "formata_faturamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_faturamento": {
+      "main": [
+        [
+          {
+            "node": "nao_existe_conversao3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nada": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_data_data_lake1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nada1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_data_data_lake1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-09-24T20:59:45.825Z",
+  "id": "dBM6wRwGlIJJ1gq9",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[HENRY_SANTOS] - EDUZZ - COMPRA APROVADA EVENTO - PARTE 4",
+  "nodes": [
+    {
+      "parameters": {
+        "queue": "Evento - Compra Aprovada - Parte 4",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": "={{ true }}",
+          "parallelMessages": 3
+        }
+      },
+      "id": "0799fb97-5a9f-4edd-893d-540a3b4eb788",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        760
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "errorMessage": "An error ocurred!"
+      },
+      "id": "3107b8be-f271-4e92-87aa-3d8d32f3b7a0",
+      "name": "Stop and Error3",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.fields.redelivered }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "ec7bba03-0eae-4fbf-a0d5-512406b4cf7c",
+      "name": "segundo_ou_mais_erro3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        140,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"pesquisa_conversion\"].json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "7747f697-561b-46a8-85b4-2ba39812f2d8",
+      "name": "nao_existe2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "conversions",
+          "mode": "list",
+          "cachedResultName": "conversions"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}"
+            },
+            {
+              "column": "transaction_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] }}"
+            },
+            {
+              "column": "product_id",
+              "value": "={{ $node[\"insert_data_produto\"].runIndex >= 0 ? $node[\"insert_data_produto\"].json[\"data\"][\"insertId\"] : $node[\"pesquisa_produto\"].json[\"id_produto\"] }}"
+            },
+            {
+              "column": "value",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            },
+            {
+              "column": "installments",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"installments\"] }}"
+            },
+            {
+              "column": "offer_code",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"offer_code\"] }}"
+            },
+            {
+              "column": "subscription_code",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"subscription_code\"] }}"
+            },
+            {
+              "column": "gateway_comission",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
+            },
+            {
+              "column": "plan",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"plan\"] }}"
+            },
+            {
+              "column": "currency",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"currency\"] }}"
+            },
+            {
+              "column": "payment_method",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_method\"] }}"
+            },
+            {
+              "column": "trans_status",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
+            },
+            {
+              "column": "dias_para_conversao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"dias_para_conversao\"] }}"
+            },
+            {
+              "column": "warranty_date",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"warranty_date\"] }}"
+            },
+            {
+              "column": "conversion_date",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "529d17a1-6005-4ae9-a5de-8220dc3ace1d",
+      "name": "cria_conversao2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1540,
+        660
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "conversion_2_utms",
+          "mode": "list",
+          "cachedResultName": "conversion_2_utms"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_conversion",
+              "value": "={{ $node[\"cria_conversao2\"].json[\"data\"][\"insertId\"] }}"
+            },
+            {
+              "column": "utm_source",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "column": "utm_campaign",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "column": "utm_term",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "column": "utm_medium",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "column": "utm_content",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "f5faf39b-351f-4f10-9aef-9346d01ec7e7",
+      "name": "cria_utm_conversao1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1760,
+        660
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "conversions",
+          "mode": "list",
+          "cachedResultName": "conversions"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "transaction_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "b0b3f0ea-4aaa-4552-8281-aafd833a168c",
+      "name": "pesquisa_conversion",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1180,
+        780
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "produtos",
+          "mode": "list",
+          "cachedResultName": "produtos"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_produto",
+              "condition": "LIKE",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome_produto\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "8b462305-a367-49fa-b29c-60cb6a4023c1",
+      "name": "pesquisa_produto",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        520,
+        780
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"pesquisa_produto\"].json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "5fd7d4ad-8ef9-4fba-be75-99b5ec190359",
+      "name": "nao_existe",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        680,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "produtos",
+          "mode": "list",
+          "cachedResultName": "produtos"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome_produto",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome_produto\"] }}"
+            },
+            {
+              "column": "valor_produto",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "d72cf274-92fd-4042-96cb-506e7c150c44",
+      "name": "insert_data_produto",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        840,
+        580
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "conversions",
+          "mode": "list",
+          "cachedResultName": "conversions"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "transaction_id",
+        "valueToMatchOn": "={{ $node[\"pesquisa_conversion\"].json[\"id_conversion\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}"
+            },
+            {
+              "column": "product_id",
+              "value": "={{ $node[\"insert_data_produto\"].runIndex >= 0 ? $node[\"insert_data_produto\"].json[\"data\"][\"insertId\"] : $node[\"pesquisa_produto\"].json[\"id_produto\"] }}"
+            },
+            {
+              "column": "value",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            },
+            {
+              "column": "installments",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"installments\"] }}"
+            },
+            {
+              "column": "offer_code",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"offer_code\"] }}"
+            },
+            {
+              "column": "subscription_code",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"subscription_code\"] }}"
+            },
+            {
+              "column": "gateway_comission",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
+            },
+            {
+              "column": "plan",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"plan\"] }}"
+            },
+            {
+              "column": "currency",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"currency\"] }}"
+            },
+            {
+              "column": "payment_method",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_method\"] }}"
+            },
+            {
+              "column": "trans_status",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
+            },
+            {
+              "column": "dias_para_conversao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"dias_para_conversao\"] }}"
+            },
+            {
+              "column": "warranty_date",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"warranty_date\"] }}"
+            },
+            {
+              "column": "conversion_date",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "75fdbaeb-e504-4c50-ac88-1fb4e92a29be",
+      "name": "update_conversion",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1540,
+        880
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "data_lake_ht",
+          "mode": "list",
+          "cachedResultName": "data_lake_ht"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "data",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].split(' ')[0] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "a753bde6-fe38-4f37-bce9-a0c17d8430e2",
+      "name": "pesquisa_data_data_lake",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        2060,
+        760
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "limit"
+      },
+      "id": "3b48f439-8917-403e-93de-22b86a2f62eb",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1000,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "5948a73e-a12d-478b-b57b-63028b763d27",
+      "name": "nao_encontrou_registro_hj_data_lake",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2280,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"verificacao_lead\"] }}"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "aec60c39-5232-49e9-b491-91c69849193f",
+      "name": "lead_ja_existia2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "data_lake_ht",
+          "mode": "list",
+          "cachedResultName": "data_lake_ht"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "data",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].split(' ')[0] }}"
+            },
+            {
+              "column": "qtd_leads",
+              "value": "=1"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "003c008d-85c8-47e7-9781-acd58c9224af",
+      "name": "insert_data_data_lake3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        2680,
+        600
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"verificacao_lead\"] }}"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "b7311788-61b5-4a6f-97ae-35fc6860efa5",
+      "name": "lead_ja_existia3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "data_lake_ht",
+          "mode": "list",
+          "cachedResultName": "data_lake_ht"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_data",
+        "valueToMatchOn": "={{ $node[\"pesquisa_data_data_lake\"].json[\"id_data\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "qtd_leads",
+              "value": "={{ $node[\"pesquisa_data_data_lake\"].json[\"qtd_leads\"] + 1 }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "94cf15f6-2e74-4b33-b18d-9341e43a2ded",
+      "name": "update_data_data_lake3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        2680,
+        1040
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "data_lake_vendas",
+          "mode": "list",
+          "cachedResultName": "data_lake_vendas"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "data",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].split(' ')[0] }}"
+            },
+            {
+              "column": "qtd_vendas",
+              "value": "=1"
+            },
+            {
+              "column": "faturamento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            },
+            {
+              "column": "comissao_gateway",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "cec1aa65-6980-476c-875a-3cec6b2abde8",
+      "name": "insert_data_data_lake1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        3720,
+        260
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "data_lake_vendas",
+          "mode": "list",
+          "cachedResultName": "data_lake_vendas"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_data",
+        "valueToMatchOn": "={{ $node[\"pesquisa_data_data_lake1\"].json[\"id_data\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "qtd_vendas",
+              "value": "={{ $node[\"pesquisa_data_data_lake1\"].json[\"qtd_vendas\"] + 1}}"
+            },
+            {
+              "column": "faturamento",
+              "value": "={{ $node[\"formata_faturamento\"].json[\"faturamento\"] + $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            },
+            {
+              "column": "comissao_gateway",
+              "value": "={{ $node[\"formata_faturamento\"].json[\"comissao_gateway\"] + $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "b21522e6-14ba-4794-8864-79827e3d66dc",
+      "name": "update_data_data_lake",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        3920,
+        1020
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"verificacao_lead\"] }}"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "25011da6-7738-4edf-b585-15977cd8b7f6",
+      "name": "lead_ja_existia5",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3520,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "data_lake_vendas",
+          "mode": "list",
+          "cachedResultName": "data_lake_vendas"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "data",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].split(' ')[0] }}"
+            },
+            {
+              "column": "qtd_leads",
+              "value": "=1"
+            },
+            {
+              "column": "qtd_vendas",
+              "value": "1"
+            },
+            {
+              "column": "faturamento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            },
+            {
+              "column": "comissao_gateway",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "a1d97406-3f9e-4f50-87b8-e27199c2dc3c",
+      "name": "insert_data_data_lake5",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        3720,
+        420
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"verificacao_lead\"] }}"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "fc05c406-8a19-4c4c-ae34-31aed58e406b",
+      "name": "lead_ja_existia6",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3720,
+        1140
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "data_lake_vendas",
+          "mode": "list",
+          "cachedResultName": "data_lake_vendas"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_data",
+        "valueToMatchOn": "={{ $node[\"pesquisa_data_data_lake1\"].json[\"id_data\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "qtd_vendas",
+              "value": "={{ $node[\"pesquisa_data_data_lake1\"].json[\"qtd_vendas\"] + 1 }}"
+            },
+            {
+              "column": "qtd_leads",
+              "value": "={{ $node[\"pesquisa_data_data_lake1\"].json[\"qtd_leads\"] + 1 }}"
+            },
+            {
+              "column": "faturamento",
+              "value": "={{ $node[\"formata_faturamento\"].json[\"faturamento\"] + $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            },
+            {
+              "column": "comissao_gateway",
+              "value": "={{ $node[\"formata_faturamento\"].json[\"comissao_gateway\"] + $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "181d3d3a-61dd-42df-a5ef-69bfe8c64e04",
+      "name": "update_data_data_lake5",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        3920,
+        1220
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"verificacao_lead\"] }}"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "3cec107b-55bb-42bb-a95b-e85c8a1a874e",
+      "name": "lead_ja_existia1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3500,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "data_lake_vendas",
+          "mode": "list",
+          "cachedResultName": "data_lake_vendas"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "data",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].split(' ')[0] }}"
+            },
+            {
+              "column": "qtd_leads",
+              "value": "=1"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "6406b7d3-f3e0-4302-8f2c-1010cb884780",
+      "name": "insert_data_data_lake6",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        3700,
+        860
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "1d405c40-1b7e-44de-b491-df1e9553d310",
+      "name": "nada2",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3700,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"verificacao_lead\"] }}"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "56db0f54-d5ca-4840-b8c7-f849037e928b",
+      "name": "lead_ja_existia7",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3720,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "data_lake_vendas",
+          "mode": "list",
+          "cachedResultName": "data_lake_vendas"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_data",
+        "valueToMatchOn": "={{ $node[\"pesquisa_data_data_lake1\"].json[\"id_data\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "qtd_leads",
+              "value": "={{ $node[\"pesquisa_data_data_lake1\"].json[\"qtd_leads\"] + 1 }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "38d5dd3b-08c3-4bf1-be89-2543c839953d",
+      "name": "update_data_data_lake6",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        3920,
+        1640
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "9c2cab16-7dbe-400a-9ecd-f6c2b8b41a5a",
+      "name": "nada3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3920,
+        1440
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"pesquisa_conversion\"].json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "c057e51f-111a-470c-85f7-31648a0d7698",
+      "name": "nao_existe_conversao2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3320,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node[\"pesquisa_conversion\"].json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "d8e0b7ed-6263-4378-9f53-93334ab14b2b",
+      "name": "nao_existe_conversao3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3500,
+        1320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "data_lake_vendas",
+          "mode": "list",
+          "cachedResultName": "data_lake_vendas"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "data",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].split(' ')[0] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "0fc77f77-1796-4cb9-9fc5-115c32f0c9dc",
+      "name": "pesquisa_data_data_lake1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        2920,
+        760
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"success\"] }}",
+              "value2": true
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "af422568-8539-4091-b761-697c8e986022",
+      "name": "nao_encontrou_registro_hj_data_lake1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3120,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Verifica se o valor de faturamento é nulo e, se for, define como 0\nif (items[0].json.faturamento === null) {\n    items[0].json.faturamento = 0;\n} else {\n    // Caso o valor não seja nulo, converte para um número\n    items[0].json.faturamento = parseFloat(items[0].json.faturamento);\n}\n\n// Verifica se o valor de comissao_gateway é nulo e, se for, define como 0\nif (items[0].json.comissao_gateway === null) {\n    items[0].json.comissao_gateway = 0;\n} else {\n    // Caso o valor não seja nulo, converte para um número\n    items[0].json.comissao_gateway = parseFloat(items[0].json.comissao_gateway );\n}\n\nreturn items;\n"
+      },
+      "id": "241865f2-25eb-4740-bf82-58dcfc43ec0f",
+      "name": "formata_faturamento",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        3320,
+        1120
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b0f2ef6d-f4e4-44f5-93d4-6566442d5364",
+      "name": "nada",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2680,
+        440
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "358e97e0-3c76-416c-8905-290cfd20ae32",
+      "name": "nada1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2680,
+        860
+      ]
+    }
+  ],
+  "pinData": {
+    "chega_da_fila": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-4-y71eBbmr3K8YW-qck7Aw",
+            "deliveryTag": 1,
+            "redelivered": false,
+            "exchange": "",
+            "routingKey": "Experiência Carnívora - Compra Aprovada - Parte 4"
+          },
+          "properties": {
+            "headers": {}
+          },
+          "content": {
+            "verificacao_lead": false,
+            "Nome do Cliente": "Vitor Queiroz De Almeida",
+            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
+            "Telefone do Cliente - Formato Z-API": "5519982022213",
+            "id_lead_bd": 139,
+            "id_lead_bc": 322971539,
+            "utm_source": "facebook",
+            "utm_campaign": "quente",
+            "utm_term": "ad01",
+            "utm_medium": "stories",
+            "utm_content": "ad01",
+            "id_campo_utm_medium_bot_conversa": "1421493",
+            "id_campo_utm_source_bot_conversa": "1421492",
+            "id_campo_utm_campaign_bot_conversa": "1421496",
+            "id_campo_utm_term_bot_conversa": "1421495",
+            "id_campo_utm_content_bot_conversa": "1421494",
+            "id_campo_id_banco_de_dados_bot_conversa": "1501133",
+            "id_campo_email_da_compra_bot_conversa": "1421498",
+            "id_fluxo_compra_aprovada": "2540263",
+            "API-KEY": "e478c192-2871-4f5f-a55e-9940c6d1fed2",
+            "link_pagamento_boleto": null,
+            "link_pagamento_pix": null,
+            "transaction_id": "c8e6b594-4561-4640-ae90-0c42ed2cc1aa",
+            "value": 5,
+            "offer_code": "oferta 5",
+            "gateway_comission": 2.94,
+            "currency": "BRL",
+            "payment_method": "Cartão de Crédito",
+            "trans_status": "Compra Aprovada",
+            "dias_para_conversao": 0,
+            "warranty_date": "2023-10-12",
+            "conversion_date": "2023-10-05 18:54:00",
+            "id_campo_cpf_cnpj_bot_conversa": "1421499",
+            "cpf/cnpj": "470.224.718-27",
+            "id_campo_id_da_compra_bot_conversa": "1501134",
+            "id_campo_link_pagamento_pix_bot_conversa": "1418358",
+            "id_campo_link_pagamento_boleto_bot_conversa": "1418359",
+            "id_campo_linha_digitavel_boleto_bot_conversa": "1432860",
+            "id_campo_linha_digitavel_pix_bot_conversa": "1418360",
+            "nome_produto": "Experiência Carnívora",
+            "installments": 1,
+            "id_campo_idleadac_bot_conversa": "1375550",
+            "id_lead_activecampaign": "478",
+            "id_campo_id_banco_de_dados_ac": ""
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-09-24T21:05:35.566Z",
+  "versionId": "ab63cbd8-fec9-4096-8585-071c707fcbed"
+}
