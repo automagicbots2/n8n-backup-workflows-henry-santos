@@ -1,0 +1,1308 @@
+{
+  "active": true,
+  "connections": {
+    "telefone_igual2": {
+      "main": [
+        [
+          {
+            "node": "email_preenchido5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "email_preenchido6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "telefone_preenchido2": {
+      "main": [
+        [
+          {
+            "node": "telefone_igual2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "email_preenchido4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "email_igual4": {
+      "main": [
+        [
+          {
+            "node": "atualiza_dados_sem_email_e_telefone2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "atualiza_dados_email_secundario1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "email_preenchido4": {
+      "main": [
+        [
+          {
+            "node": "email_igual7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "atualiza_dados_telefone1_email3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "email_igual7": {
+      "main": [
+        [
+          {
+            "node": "atualiza_dados_telefone1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "atualiza_dados_telefone1_email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_dados_sem_email_e_telefone2": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_dados_email3": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "email_preenchido5": {
+      "main": [
+        [
+          {
+            "node": "email_igual4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "atualiza_dados_email3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_dados_email_secundario1": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "email_preenchido6": {
+      "main": [
+        [
+          {
+            "node": "email_igual8",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "atualiza_dados_telefone2_e_email3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "email_igual8": {
+      "main": [
+        [
+          {
+            "node": "atualiza_dados_telefone3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "atualiza_dados_telefone2_e_email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_dados_telefone3": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_dados_telefone2_e_email": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_dados_telefone2_e_email3": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_dados_telefone1_email": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_dados_telefone1_email3": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "segundo_ou_mais_erro": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "telefone_preenchido2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "segundo_ou_mais_erro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_dados_telefone1": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-09-24T20:56:58.518Z",
+  "id": "VBUb4hdLVCZmufyx",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[HENRY_SANTOS] - EDUZZ - COMPRA APROVADA EVENTO - PARTE 3",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "ddfe3c55-6a3b-4b77-b30f-9caf1cf87af1",
+      "name": "telefone_igual2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"content\"][\"telefone_bd\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "1de498ce-4470-458b-a51d-b8741651cf7c",
+      "name": "telefone_preenchido2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "2e470a31-34f9-4d2a-8fe7-8a2d9f22688c",
+      "name": "email_igual4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        280,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_bd\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "1f756753-2880-459b-b084-66c64b41634c",
+      "name": "email_preenchido4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "0ba5d2e6-96ab-4bb7-9d46-4ccbf7babcd5",
+      "name": "email_igual7",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        280,
+        1500
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \") }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "3be72335-b42a-494b-8834-4f16779d8aa0",
+      "name": "atualiza_dados_sem_email_e_telefone2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        460
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \")\n }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "04a8e5d4-d236-4331-b744-a3c3b4cf7562",
+      "name": "atualiza_dados_email3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        280,
+        820
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_bd\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "9d75c490-d759-40c8-9f7f-f754b188b485",
+      "name": "email_preenchido5",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        120,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "email2",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \")\n }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "9ea238d7-062d-4191-8c70-6d5976c904fc",
+      "name": "atualiza_dados_email_secundario1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        640
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_bd\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "4fab404b-02ad-4079-8a00-997bf0820231",
+      "name": "email_preenchido6",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        120,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "4f07c265-6373-44e7-b2ab-0b4cb14d412f",
+      "name": "email_igual8",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        280,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \")\n }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            },
+            {
+              "column": "telefone_empresa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "70cc9152-5860-46e7-823e-16327e0efdd1",
+      "name": "atualiza_dados_telefone3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        940
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \")\n }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            },
+            {
+              "column": "telefone_empresa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "email2",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "4c462fc9-559a-4309-83e0-0f9c915a67d8",
+      "name": "atualiza_dados_telefone2_e_email",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        1160
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \")\n }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            },
+            {
+              "column": "telefone_empresa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "94369005-1837-47ec-8f85-5ae9847a4cb9",
+      "name": "atualiza_dados_telefone2_e_email3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        280,
+        1280
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \")\n }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            },
+            {
+              "column": "email2",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "dfeb3e8f-9872-40a1-b70e-bf5730476e91",
+      "name": "atualiza_dados_telefone1_email",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        440,
+        1680
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \")\n }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "f84185b8-fa8f-4831-8703-5d21cfc632ce",
+      "name": "atualiza_dados_telefone1_email3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        440,
+        1860
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "queue": "Evento - Compra Aprovada - Parte 3",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              },
+              {}
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": "={{ true }}",
+          "parallelMessages": 3
+        }
+      },
+      "id": "fb2f9af2-681b-4695-803e-16fe78611ecf",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -620,
+        900
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "errorMessage": "An error ocurred!"
+      },
+      "id": "a81900c7-8104-400e-b6f7-dfeef435cb4f",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.fields.redelivered }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "00105191-c896-40db-9628-84c84d157d18",
+      "name": "segundo_ou_mais_erro",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -440,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "Evento - Compra Aprovada - Parte 4",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "23a826af-c919-45c1-8e84-0468e9792f4b",
+      "name": "entra_na_fila",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        980,
+        560
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Nome do Cliente",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
+            },
+            {
+              "name": "E-mail do Cliente",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "name": "Telefone do Cliente - Formato Z-API",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "name": "id_lead_bd",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}"
+            },
+            {
+              "name": "id_lead_bc",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
+            },
+            {
+              "name": "id_campo_utm_medium_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_medium_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_source_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_source_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_campaign_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_campaign_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_term_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_term_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_utm_content_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_content_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_banco_de_dados_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_email_da_compra_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_email_da_compra_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_fluxo_compra_aprovada",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_fluxo_compra_aprovada\"] }}"
+            },
+            {
+              "name": "API-KEY",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"API-KEY\"] }}"
+            },
+            {
+              "name": "link_pagamento_boleto",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_pagamento_boleto\"] }}"
+            },
+            {
+              "name": "link_pagamento_pix",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_pagamento_pix\"] }}"
+            },
+            {
+              "name": "transaction_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] }}"
+            },
+            {
+              "name": "value",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            },
+            {
+              "name": "offer_code",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"offer_code\"] }}"
+            },
+            {
+              "name": "subscription_code",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"subscription_code\"] }}"
+            },
+            {
+              "name": "gateway_comission",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
+            },
+            {
+              "name": "plan",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"plan\"] }}"
+            },
+            {
+              "name": "currency",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"currency\"] }}"
+            },
+            {
+              "name": "payment_method",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_method\"] }}"
+            },
+            {
+              "name": "trans_status",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
+            },
+            {
+              "name": "dias_para_conversao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"dias_para_conversao\"] }}"
+            },
+            {
+              "name": "warranty_date",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"warranty_date\"] }}"
+            },
+            {
+              "name": "conversion_date",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"] }}"
+            },
+            {
+              "name": "id_campo_cpf_cnpj_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_cpf_cnpj_bot_conversa\"] }}"
+            },
+            {
+              "name": "cpf/cnpj",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"cpf/cnpj\"] }}"
+            },
+            {
+              "name": "id_campo_id_da_compra_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_da_compra_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_link_pagamento_pix_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_pix_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_link_pagamento_boleto_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_boleto_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_linha_digitavel_boleto_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_boleto_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_campo_linha_digitavel_pix_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_pix_bot_conversa\"] }}"
+            },
+            {
+              "name": "nome_produto",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome_produto\"] }}"
+            },
+            {
+              "name": "installments",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"installments\"] }}"
+            },
+            {
+              "name": "id_campo_idleadac_bot_conversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_idleadac_bot_conversa\"] }}"
+            },
+            {
+              "name": "id_lead_activecampaign",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_activecampaign\"] }}"
+            },
+            {
+              "name": "id_campo_id_banco_de_dados_ac",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_banco_de_dados_ac\"] }}"
+            }
+          ],
+          "boolean": [
+            {
+              "name": "verificacao_lead",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"verificacao_lead\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "998922a9-45c1-4d0a-b111-839e75b17824",
+      "name": "dados",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        780,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \")\n }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "ddbc9dfe-0dd5-4a94-9b98-3f91c4b437a9",
+      "name": "atualiza_dados_telefone1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        440,
+        1500
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "chega_da_fila": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-u8s076sXIdkSUHFUKYYUpQ",
+            "deliveryTag": 1,
+            "redelivered": false,
+            "exchange": "",
+            "routingKey": "Experiência Carnívora - Compra Aprovada - Parte 3"
+          },
+          "properties": {
+            "headers": {}
+          },
+          "content": {
+            "verificacao_lead": false,
+            "Nome do Cliente": "Vitor Queiroz De Almeida",
+            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
+            "Telefone do Cliente - Formato Z-API": "5519982022213",
+            "id_lead_bd": 139,
+            "id_lead_bc": 322971539,
+            "utm_source": "facebook",
+            "utm_campaign": "quente",
+            "utm_term": "ad01",
+            "utm_medium": "stories",
+            "utm_content": "ad01",
+            "id_campo_utm_medium_bot_conversa": "1421493",
+            "id_campo_utm_source_bot_conversa": "1421492",
+            "id_campo_utm_campaign_bot_conversa": "1421496",
+            "id_campo_utm_term_bot_conversa": "1421495",
+            "id_campo_utm_content_bot_conversa": "1421494",
+            "id_campo_id_banco_de_dados_bot_conversa": "1501133",
+            "id_campo_email_da_compra_bot_conversa": "1421498",
+            "id_fluxo_compra_aprovada": "2540263",
+            "API-KEY": "e478c192-2871-4f5f-a55e-9940c6d1fed2",
+            "link_pagamento_pix": null,
+            "link_pagamento_boleto": null,
+            "telefone_bd": "5519982022213",
+            "transaction_id": "c8e6b594-4561-4640-ae90-0c42ed2cc1aa",
+            "dias_para_conversao": 0,
+            "id_campo_cpf_cnpj_bot_conversa": "1421499",
+            "cpf/cnpj": "470.224.718-27",
+            "id_campo_id_da_compra_bot_conversa": "1501134",
+            "product_id": "3f4d4de0-deae-11ed-b7ab-c9237000edea",
+            "value": 5,
+            "offer_code": "oferta 5",
+            "gateway_comission": 2.94,
+            "currency": "BRL",
+            "payment_method": "Cartão de Crédito",
+            "trans_status": "Compra Aprovada",
+            "warranty_date": "2023-10-12",
+            "conversion_date": "2023-10-05 18:54:00",
+            "email_bd": "vitorrqueiroztrafego@gmail.com",
+            "id_campo_link_pagamento_pix_bot_conversa": "1418358",
+            "id_campo_link_pagamento_boleto_bot_conversa": "1418359",
+            "id_campo_linha_digitavel_boleto_bot_conversa": "1432860",
+            "id_campo_linha_digitavel_pix_bot_conversa": "1418360",
+            "nome_produto": "Experiência Carnívora",
+            "installments": 1,
+            "id_campo_idleadac_bot_conversa": "1375550",
+            "id_lead_activecampaign": "478",
+            "id_campo_id_banco_de_dados_ac": ""
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-09-24T20:59:36.839Z",
+  "versionId": "c0b3a491-c44b-4781-9b7c-b733633731ec"
+}
