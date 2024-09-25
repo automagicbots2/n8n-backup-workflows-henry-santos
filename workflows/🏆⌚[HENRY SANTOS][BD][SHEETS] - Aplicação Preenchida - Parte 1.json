@@ -3518,7 +3518,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(0, 2);\n  const ddi = '55';\n\n  // Verifica se o número começa com '351' e mantém inalterado\n  if (telefoneLimpo.startsWith('351')) {\n    return telefoneLimpo;\n  }\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para determinar a qualificação\nfunction determinarQualificacao(faturamento, comecaQuando) {\n  // Ajustando a lógica para verificar as faixas de faturamento\n  const faturamentoAcima30k = (\n    faturamento === \"Entre R$30.001 e R$50.000 mensal\" || \n    faturamento === \"Entre R$50.001 e R$100.000 mensal\" || \n    faturamento === \"+ de R$100.001\"\n  );\n\n  // Verificando a urgência corretamente\n  const urgenciaAlta = (comecaQuando === \"Imediatamente\" || comecaQuando === \"Pra ontem!\");\n\n  if (faturamentoAcima30k && urgenciaAlta) {\n    return \"Extremamente Qualificado\";\n  } else if (faturamentoAcima30k) {\n    return \"Qualificado\";\n  } else if (!faturamentoAcima30k && urgenciaAlta) {\n    return \"Neutro\";\n  } else {\n    return \"Desqualificado\";\n  }\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = $node[\"aplicacao_preenchida_pop_up\"].json[\"body\"][\"form_response\"][\"hidden\"][\"telefone\"] || \"\";\nconst telefoneFormatado = extrairDddETelefone(telefoneAnswer);\n\nconst Ending = $node[\"aplicacao_preenchida_pop_up\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Montar o objeto de output\nlet output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"0f46af7d-ea52-450e-af61-e471f4965cac\")?.text) || $node[\"aplicacao_preenchida_pop_up\"].json[\"body\"][\"form_response\"][\"hidden\"][\"name\"] || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"c4b529b3-aaad-4d5a-9a90-30b140ee812d\")?.email || $node[\"aplicacao_preenchida_pop_up\"].json[\"body\"][\"form_response\"][\"hidden\"][\"email\"] || '',\n\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace(/@/g, \"\") || \"\",\n  \n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  \n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"14d80a71-2dd1-484b-b1a1-cbf4ef37a61d\")?.choice.label || \"\",\n  \n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n\n  quantas_horas: $node[\"aplicacao_preenchida_pop_up\"].json[\"body\"][\"form_response\"][\"answers\"][\"7\"][\"choice\"][\"label\"] || \"\",\n  \n  porque_voce: respostas.find(answer => answer.field.ref === \"66fec9b4-837b-4783-8ce2-a670902ab134\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => {\n    const fieldRef = answer.field.ref;\n    return fieldRef === \"d31760df-623d-435d-ac2f-092b82c7803b\" || fieldRef === \"511ca207-0c32-4529-b19f-42be7508c79d\";\n  })?.choice.label || \"\",\n\n  nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  pergunta11: $node[\"aplicacao_preenchida_pop_up\"].json[\"body\"][\"form_response\"][\"answers\"][\"8\"][\"choice\"][\"label\"] || \"\",\n\n  // Corrigido para buscar o valor correto de \"comeca_quando\"\n  comeca_quando: respostas.find(answer => answer.field.ref === \"7d285441-c756-4a57-9768-2c7f3d8d9f85\")?.choice?.label || \"\",\n\n  data_ultima_quinzena: dataFormatada,  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\",\n  Ending: Ending || \"\"\n};\n\n// Adiciona a qualificação com base nos valores já coletados\noutput.qualificacao = determinarQualificacao(\n  output.faturamento, // Usando o valor já coletado de faturamento\n  output.comeca_quando // Usando o valor já coletado de comeca_quando\n);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output = { ...output, Pais: \"Portugal\" };\n}\n\nreturn [output];\n"
+        "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(0, 2);\n  const ddi = '55';\n\n  // Verifica se o número começa com '351' e mantém inalterado\n  if (telefoneLimpo.startsWith('351')) {\n    return telefoneLimpo;\n  }\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para determinar a qualificação\nfunction determinarQualificacao(faturamento, comecaQuando) {\n  // Ajustando a lógica para verificar as faixas de faturamento\n  const faturamentoAcima30k = (\n    faturamento === \"Entre R$30.001 e R$50.000 mensal\" || \n    faturamento === \"Entre R$50.001 e R$100.000 mensal\" || \n    faturamento === \"+ de R$100.001\"\n  );\n\n  // Verificando a urgência corretamente\n  const urgenciaAlta = (comecaQuando === \"Imediatamente\" || comecaQuando === \"Pra ontem!\");\n\n  if (faturamentoAcima30k && urgenciaAlta) {\n    return \"Extremamente Qualificado\";\n  } else if (faturamentoAcima30k) {\n    return \"Qualificado\";\n  } else if (!faturamentoAcima30k && urgenciaAlta) {\n    return \"Neutro\";\n  } else {\n    return \"Desqualificado\";\n  }\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = $node[\"aplicacao_preenchida_pop_up\"].json[\"body\"][\"form_response\"][\"hidden\"][\"telefone\"] || \"\";\nconst telefoneFormatado = extrairDddETelefone(telefoneAnswer);\n\nconst Ending = $node[\"aplicacao_preenchida_pop_up\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Montar o objeto de output\nlet output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"0f46af7d-ea52-450e-af61-e471f4965cac\")?.text) || $node[\"aplicacao_preenchida_pop_up\"].json[\"body\"][\"form_response\"][\"hidden\"][\"name\"] || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"c4b529b3-aaad-4d5a-9a90-30b140ee812d\")?.email || $node[\"aplicacao_preenchida_pop_up\"].json[\"body\"][\"form_response\"][\"hidden\"][\"email\"] || '',\n\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace(/@/g, \"\") || \"\",\n  \n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  \n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"14d80a71-2dd1-484b-b1a1-cbf4ef37a61d\")?.choice.label || \"\",\n  \n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n\n  quantas_horas: $node[\"aplicacao_preenchida_pop_up\"].json[\"body\"][\"form_response\"][\"answers\"][\"7\"][\"choice\"][\"label\"] || \"\",\n  \n  porque_voce: respostas.find(answer => answer.field.ref === \"66fec9b4-837b-4783-8ce2-a670902ab134\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => {\n    const fieldRef = answer.field.ref;\n    return fieldRef === \"d31760df-623d-435d-ac2f-092b82c7803b\" || fieldRef === \"511ca207-0c32-4529-b19f-42be7508c79d\";\n  })?.choice.label || \"\",\n\n  nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  pergunta11: $node[\"aplicacao_preenchida_pop_up\"].json[\"body\"][\"form_response\"][\"answers\"][\"8\"][\"text\"] || \"\",\n\n  // Corrigido para buscar o valor correto de \"comeca_quando\"\n  comeca_quando: respostas.find(answer => answer.field.ref === \"7d285441-c756-4a57-9768-2c7f3d8d9f85\")?.choice?.label || \"\",\n\n  data_ultima_quinzena: dataFormatada,  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\",\n  Ending: Ending || \"\"\n};\n\n// Adiciona a qualificação com base nos valores já coletados\noutput.qualificacao = determinarQualificacao(\n  output.faturamento, // Usando o valor já coletado de faturamento\n  output.comeca_quando // Usando o valor já coletado de comeca_quando\n);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output = { ...output, Pais: \"Portugal\" };\n}\n\nreturn [output];\n"
       },
       "id": "ce968332-bcbf-41cb-87bf-76330439bde2",
       "name": "formata_dados9",
@@ -10468,38 +10468,38 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "Typeform Webhooks",
-            "content-length": "10637",
+            "content-length": "8456",
             "accept-encoding": "gzip",
             "content-type": "application/json",
-            "traceparent": "00-65b4925dea84662f932ca1df2cb45322-6c70266abc6792a5-01",
-            "x-forwarded-for": "18.204.78.134",
+            "traceparent": "00-227b1a7ec6746ff1bc7668027efbfe78-f3a7fb5e72c45a3f-01",
+            "x-forwarded-for": "18.210.136.162",
             "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
             "x-forwarded-server": "b71525949d32",
-            "x-real-ip": "18.204.78.134"
+            "x-real-ip": "18.210.136.162"
           },
           "params": {},
           "query": {},
           "body": {
-            "event_id": "01J6Z4A1GMV3NRGRM158M3V6B3",
+            "event_id": "01J8JX91R4XRA3R15MDNE3257A",
             "event_type": "form_response",
             "form_response": {
               "form_id": "WHYDoReb",
-              "token": "25o2lx58uinddzohrqrx25o2ui77n7ja",
-              "landed_at": "2024-09-04T18:18:36Z",
-              "submitted_at": "2024-09-04T18:21:20Z",
+              "token": "9urxji2u6hmzztsibotz8b9urxji2upb",
+              "landed_at": "2024-09-24T20:56:44Z",
+              "submitted_at": "2024-09-24T20:58:58Z",
               "hidden": {
-                "email": "mateusdiniz@automagicbots.com.br",
-                "name": "Mateus Diniz",
-                "telefone": "62981196678",
-                "utm_campaign": "xxxxx",
-                "utm_content": "xxxxx",
-                "utm_fun": "xxxxx",
-                "utm_medium": "xxxxx",
-                "utm_source": "xxxxx",
-                "utm_term": "xxxxx",
-                "utm_var": "xxxxx"
+                "email": "elenicemattoshair@gmail.com",
+                "name": "Elenice de Matos",
+                "telefone": "(21) 97041-4477",
+                "utm_campaign": "[C] [SE] [HM] [CADASTRO] [ABO] Teste de público",
+                "utm_content": "AD35 - [FUNIL 30 MIN] EST35",
+                "utm_fun": "",
+                "utm_medium": "06 - Adm página de beleza",
+                "utm_source": "meta_ads",
+                "utm_term": "120209185090700128",
+                "utm_var": ""
               },
               "definition": {
                 "id": "WHYDoReb",
@@ -10643,40 +10643,6 @@
                     "properties": {}
                   },
                   {
-                    "id": "HFLFtXwzkQLr",
-                    "ref": "119623d5-e6d2-436a-bdaf-43f7e35bddfb",
-                    "type": "multiple_choice",
-                    "title": "Quantas horas você está disposto a investir na sua semana para atingir estes objetivos que você acabou de citar?",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "I96hOggdqmBe",
-                        "ref": "8da35bc6-5b6f-4afa-8f00-def38b15a816",
-                        "label": "Até 1 hora por semana"
-                      },
-                      {
-                        "id": "g0bHoKMrxaLa",
-                        "ref": "d1ac5ae1-0c4b-41ae-8f56-b252dc2eb05d",
-                        "label": "De 1 a 5 horas por semana"
-                      },
-                      {
-                        "id": "VRsgbo7jqV4h",
-                        "ref": "6ebaff35-cff3-47ec-8c74-08d561ec8e54",
-                        "label": "De 5 a 7 horas por semana"
-                      },
-                      {
-                        "id": "gSjw4caB3ecb",
-                        "ref": "c1fa4d3c-fd55-48ad-9742-6dfa1adf714b",
-                        "label": "De 7 a 10 horas por semana"
-                      },
-                      {
-                        "id": "gK0XeSjY2t86",
-                        "ref": "8d66af1d-fad1-4d68-8dd2-a1e00a4ee051",
-                        "label": "Mais de 10 horas por semana"
-                      }
-                    ]
-                  },
-                  {
                     "id": "g5we6lD6Mxga",
                     "ref": "86e5206c-d28f-4fcd-bc84-d48ceb88abce",
                     "type": "multiple_choice",
@@ -10737,25 +10703,6 @@
                     ]
                   },
                   {
-                    "id": "HGVNV8ZWHhaK",
-                    "ref": "96a20d28-5273-4315-b77d-df383a1741ae",
-                    "type": "multiple_choice",
-                    "title": "Possuímos 2 opções para a sessão estratégica:",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "3PXQzMOBzpOs",
-                        "ref": "cef5eb1b-5b18-41e5-9e04-e761bcfc61d6",
-                        "label": "Sessão gratuita, uma das nossas estrategistas em gestão de salão, analisará o seu negócio e vai te entregar um diagnóstico junto com um plano de ação personalizado baseado na nossa metodologia Salão Autoadministrável, duração média de 40 min"
-                      },
-                      {
-                        "id": "xAqQuCDHTUoj",
-                        "ref": "d8ecd5e0-238f-43e3-9f1f-3c0ba4ae826a",
-                        "label": "Consultoria individual VIP direto comigo, o criador da metodologia, Henry Santos. Eu vou reservar 1h30 a 2h da minha agenda para analisar a sua empresa, te ajudar com os desafios. Caso você seja aprovado o investimento será de R$997"
-                      }
-                    ]
-                  },
-                  {
                     "id": "p8dPxdCLDSYP",
                     "ref": "511ca207-0c32-4529-b19f-42be7508c79d",
                     "type": "multiple_choice",
@@ -10805,7 +10752,7 @@
               "answers": [
                 {
                   "type": "text",
-                  "text": "prmateusdiniz",
+                  "text": "Emattos.hair",
                   "field": {
                     "id": "4WwdMxyPIK8V",
                     "type": "short_text",
@@ -10815,9 +10762,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "O57xy1NPKfHB",
-                    "label": "NÃO",
-                    "ref": "d81e4036-f5b7-4e82-922a-67a109e09967"
+                    "id": "t2iyEzHDzJHh",
+                    "label": "SIM",
+                    "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78"
                   },
                   "field": {
                     "id": "DX8ABAdScHtI",
@@ -10828,9 +10775,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "IlELwG6RAn8n",
-                    "label": "Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando",
-                    "ref": "cbf1d69a-ea39-4d1b-a644-4980a7bd18ee"
+                    "id": "Bt5as1XGtnHg",
+                    "label": "Estou conseguindo pagar as contas e não sobrando",
+                    "ref": "b2c627b5-a406-457e-9a78-cbc552cd484e"
                   },
                   "field": {
                     "id": "WWIA3IWem76Q",
@@ -10854,9 +10801,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "8bn3cPAnp0gq",
-                    "label": "Entre R$30.001 e R$50.000 mensal",
-                    "ref": "179a6666-ea5a-4879-87cc-72611886686e"
+                    "id": "OvG7ODI9ntjN",
+                    "label": "Até R$15.000 mensal",
+                    "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87"
                   },
                   "field": {
                     "id": "9NzjmZovePi4",
@@ -10866,7 +10813,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "testando automação",
+                  "text": "Faturamento de 80 mil",
                   "field": {
                     "id": "IkvX0hrgE8BI",
                     "type": "long_text",
@@ -10875,7 +10822,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "automagic bots",
+                  "text": "Abri tem um mês",
                   "field": {
                     "id": "zLAbSrRIC3WW",
                     "type": "short_text",
@@ -10885,22 +10832,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "g0bHoKMrxaLa",
-                    "label": "De 1 a 5 horas por semana",
-                    "ref": "d1ac5ae1-0c4b-41ae-8f56-b252dc2eb05d"
-                  },
-                  "field": {
-                    "id": "HFLFtXwzkQLr",
-                    "type": "multiple_choice",
-                    "ref": "119623d5-e6d2-436a-bdaf-43f7e35bddfb"
-                  }
-                },
-                {
-                  "type": "choice",
-                  "choice": {
-                    "id": "fdC60Wwv6RWp",
-                    "label": "Sim! Não preciso falar com mais ninguém",
-                    "ref": "93360123-549f-4650-b8fc-3eba931ac382"
+                    "id": "WZ7YKEjaAdm2",
+                    "label": "Não! Preciso falar com meu Parceiro/parceira",
+                    "ref": "8d088b07-dc1b-46d3-acda-c1554cab7e5d"
                   },
                   "field": {
                     "id": "g5we6lD6Mxga",
@@ -10910,7 +10844,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "case de sucesso",
+                  "text": "Preciso de ajuda crescimento",
                   "field": {
                     "id": "FjX4JtmKoI78",
                     "type": "short_text",
@@ -10920,9 +10854,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "CTCSBM9Mo3ES",
-                    "label": "Imediatamente",
-                    "ref": "c20117b6-90a8-43d0-b7b5-75eaeae2682d"
+                    "id": "ubVYZnhIeHM7",
+                    "label": "Pra ontem!",
+                    "ref": "8a641300-77e6-4140-8ee3-68ec8dba871a"
                   },
                   "field": {
                     "id": "63qdtPkNiVBq",
@@ -10933,22 +10867,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "3PXQzMOBzpOs",
-                    "label": "Sessão gratuita, uma das nossas estrategistas em gestão de salão, analisará o seu negócio e vai te entregar um diagnóstico junto com um plano de ação personalizado baseado na nossa metodologia Salão Autoadministrável, duração média de 40 min",
-                    "ref": "cef5eb1b-5b18-41e5-9e04-e761bcfc61d6"
-                  },
-                  "field": {
-                    "id": "HGVNV8ZWHhaK",
-                    "type": "multiple_choice",
-                    "ref": "96a20d28-5273-4315-b77d-df383a1741ae"
-                  }
-                },
-                {
-                  "type": "choice",
-                  "choice": {
-                    "id": "jAMiY7A0zQ2U",
-                    "label": "R$300 a R$700",
-                    "ref": "0de62864-d439-4c8a-8629-1835ab9d5c5f"
+                    "id": "BF9P3N3527SK",
+                    "label": "0 a R$300",
+                    "ref": "73b895ce-c2a6-47d0-ae22-743b27426241"
                   },
                   "field": {
                     "id": "p8dPxdCLDSYP",
@@ -13299,6 +13220,6 @@
     }
   ],
   "triggerCount": 11,
-  "updatedAt": "2024-09-17T14:17:03.995Z",
-  "versionId": "e639dad0-79d0-4060-be1e-821793ace690"
+  "updatedAt": "2024-09-24T21:59:11.052Z",
+  "versionId": "820d2538-9a23-47f0-8eba-73128aea3fd1"
 }
