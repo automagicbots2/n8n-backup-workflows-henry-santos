@@ -504,15 +504,15 @@
           "string": [
             {
               "name": "Nome do Cliente",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"Nome do Cliente\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
             },
             {
               "name": "E-mail do Cliente",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
             },
             {
               "name": "Telefone do Cliente - Formato Z-API",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
             },
             {
               "name": "id_lead_bd",
@@ -524,67 +524,67 @@
             },
             {
               "name": "utm_source",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"utm_source\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
             },
             {
               "name": "utm_campaign",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"utm_campaign\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
             },
             {
               "name": "utm_term",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"utm_term\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
             },
             {
               "name": "utm_medium",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"utm_medium\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
             },
             {
               "name": "utm_content",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"utm_content\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
             },
             {
               "name": "id_campo_utm_medium_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_utm_medium_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_medium_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_utm_source_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_utm_source_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_source_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_utm_campaign_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_utm_campaign_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_campaign_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_utm_term_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_utm_term_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_term_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_utm_content_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_utm_content_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_content_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_id_banco_de_dados_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_id_banco_de_dados_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_banco_de_dados_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_email_da_compra_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_email_da_compra_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_email_da_compra_bot_conversa\"] }}"
             },
             {
               "name": "id_fluxo_compra_aprovada",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_fluxo_compra_aprovada\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_fluxo_compra_aprovada\"] }}"
             },
             {
               "name": "API-KEY",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"API-KEY\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"API-KEY\"] }}"
             },
             {
               "name": "link_pagamento_pix",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"link_pagamento_pix\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_pagamento_pix\"] }}"
             },
             {
               "name": "link_pagamento_boleto",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"link_pagamento_boleto\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_pagamento_boleto\"] }}"
             },
             {
               "name": "telefone_bd",
@@ -592,7 +592,7 @@
             },
             {
               "name": "transaction_id",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"transaction_id\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] }}"
             },
             {
               "name": "dias_para_conversao",
@@ -600,59 +600,59 @@
             },
             {
               "name": "id_campo_cpf_cnpj_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_cpf_cnpj_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_cpf_cnpj_bot_conversa\"] }}"
             },
             {
               "name": "cpf/cnpj",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"cpf/cnpj\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"cpf/cnpj\"] }}"
             },
             {
               "name": "id_campo_id_da_compra_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_id_da_compra_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_da_compra_bot_conversa\"] }}"
             },
             {
               "name": "product_id",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"product_id\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"product_id\"] }}"
             },
             {
               "name": "value",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"value\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
             },
             {
               "name": "offer_code",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"offer_code\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"offer_code\"] }}"
             },
             {
               "name": "subscription_code",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"subscription_code\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"subscription_code\"] }}"
             },
             {
               "name": "gateway_comission",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"gateway_comission\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
             },
             {
               "name": "plan",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"plan\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"plan\"] }}"
             },
             {
               "name": "currency",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"currency\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"currency\"] }}"
             },
             {
               "name": "payment_method",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"payment_method\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_method\"] }}"
             },
             {
               "name": "trans_status",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"trans_status\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
             },
             {
               "name": "warranty_date",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"warranty_date\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"warranty_date\"] }}"
             },
             {
               "name": "conversion_date",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"conversion_date\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"] }}"
             },
             {
               "name": "email_bd",
@@ -660,39 +660,31 @@
             },
             {
               "name": "id_campo_link_pagamento_pix_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_link_pagamento_pix_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_pix_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_link_pagamento_boleto_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_link_pagamento_boleto_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_boleto_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_linha_digitavel_boleto_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_linha_digitavel_boleto_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_boleto_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_linha_digitavel_pix_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_linha_digitavel_pix_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_pix_bot_conversa\"] }}"
             },
             {
               "name": "nome_produto",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"nome_produto\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome_produto\"] }}"
             },
             {
               "name": "installments",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"installments\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"installments\"] }}"
             },
             {
               "name": "id_campo_idleadac_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_idleadac_bot_conversa\"] }}"
-            },
-            {
-              "name": "id_lead_activecampaign",
-              "value": "={{ $node[\"cria_atualiza_contato_no_ac2\"].runIndex >= 0 ? $node[\"cria_atualiza_contato_no_ac2\"].json[\"id\"] : $node[\"cria_atualiza_contato_no_ac3\"].json[\"id\"] }}"
-            },
-            {
-              "name": "id_campo_id_banco_de_dados_ac",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_id_banco_de_dados_ac\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_idleadac_bot_conversa\"] }}"
             }
           ],
           "boolean": [
@@ -719,91 +711,87 @@
           "string": [
             {
               "name": "Nome do Cliente",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"Nome do Cliente\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}"
             },
             {
               "name": "E-mail do Cliente",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
             },
             {
               "name": "Telefone do Cliente - Formato Z-API",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}"
             },
             {
               "name": "id_lead_bd",
               "value": "={{ $node[\"cria_lead_bd\"].json[\"data\"][\"insertId\"] }}"
             },
             {
-              "name": "id_lead_bc",
-              "value": "={{ $node[\"cadastra_contato\"].json[\"id\"] }}"
-            },
-            {
               "name": "utm_source",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"utm_source\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
             },
             {
               "name": "utm_campaign",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"utm_campaign\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}"
             },
             {
               "name": "utm_term",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"utm_term\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}"
             },
             {
               "name": "utm_medium",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"utm_medium\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}"
             },
             {
               "name": "utm_content",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"utm_content\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}"
             },
             {
               "name": "id_campo_utm_medium_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_utm_medium_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_medium_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_utm_source_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_utm_source_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_source_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_utm_campaign_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_utm_campaign_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_campaign_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_utm_term_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_utm_term_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_term_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_utm_content_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_utm_content_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_utm_content_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_id_banco_de_dados_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_id_banco_de_dados_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_banco_de_dados_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_email_da_compra_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_email_da_compra_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_email_da_compra_bot_conversa\"] }}"
             },
             {
               "name": "id_fluxo_compra_aprovada",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_fluxo_compra_aprovada\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_fluxo_compra_aprovada\"] }}"
             },
             {
               "name": "API-KEY",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"API-KEY\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"API-KEY\"] }}"
             },
             {
               "name": "link_pagamento_pix",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"link_pagamento_pix\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_pagamento_pix\"] }}"
             },
             {
               "name": "link_pagamento_boleto",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"link_pagamento_boleto\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_pagamento_boleto\"] }}"
             },
             {
               "name": "transaction_id",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"transaction_id\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] }}"
             },
             {
               "name": "dias_para_conversao",
@@ -811,99 +799,91 @@
             },
             {
               "name": "id_campo_cpf_cnpj_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_cpf_cnpj_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_cpf_cnpj_bot_conversa\"] }}"
             },
             {
               "name": "cpf/cnpj",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"cpf/cnpj\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"cpf/cnpj\"] }}"
             },
             {
               "name": "id_campo_id_da_compra_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_id_da_compra_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_id_da_compra_bot_conversa\"] }}"
             },
             {
               "name": "product_id",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"product_id\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"product_id\"] }}"
             },
             {
               "name": "transaction_id",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"transaction_id\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] }}"
             },
             {
               "name": "value",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"value\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
             },
             {
               "name": "offer_code",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"offer_code\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"offer_code\"] }}"
             },
             {
               "name": "subscription_code",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"subscription_code\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"subscription_code\"] }}"
             },
             {
               "name": "gateway_comission",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"gateway_comission\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] }}"
             },
             {
               "name": "plan",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"plan\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"plan\"] }}"
             },
             {
               "name": "currency",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"currency\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"currency\"] }}"
             },
             {
               "name": "payment_method",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"payment_method\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_method\"] }}"
             },
             {
               "name": "trans_status",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"trans_status\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
             },
             {
               "name": "warranty_date",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"warranty_date\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"warranty_date\"] }}"
             },
             {
               "name": "conversion_date",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"conversion_date\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"] }}"
             },
             {
               "name": "id_campo_link_pagamento_pix_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_link_pagamento_pix_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_pix_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_link_pagamento_boleto_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_link_pagamento_boleto_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_link_pagamento_boleto_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_linha_digitavel_boleto_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_linha_digitavel_boleto_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_boleto_bot_conversa\"] }}"
             },
             {
               "name": "id_campo_linha_digitavel_pix_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_linha_digitavel_pix_bot_conversa\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_linha_digitavel_pix_bot_conversa\"] }}"
             },
             {
               "name": "nome_produto",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"nome_produto\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome_produto\"] }}"
             },
             {
               "name": "installments",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"installments\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"installments\"] }}"
             },
             {
               "name": "id_campo_idleadac_bot_conversa",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_idleadac_bot_conversa\"] }}"
-            },
-            {
-              "name": "id_lead_activecampaign",
-              "value": "={{ $node[\"cria_atualiza_contato_no_ac2\"].runIndex >= 0 ? $node[\"cria_atualiza_contato_no_ac2\"].json[\"id\"] : $node[\"cria_atualiza_contato_no_ac3\"].json[\"id\"] }}"
-            },
-            {
-              "name": "id_campo_id_banco_de_dados_ac",
-              "value": "={{ $node[\"chega_da_fila1\"].json[\"content\"][\"id_campo_id_banco_de_dados_ac\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_campo_idleadac_bot_conversa\"] }}"
             }
           ],
           "boolean": [
@@ -1012,7 +992,7 @@
     },
     {
       "parameters": {
-        "jsCode": "let dataEntradaLead = $node[\"pesquisa_lead6\"].json[\"data_de_entrada\"]; // Data de entrada da lead (no formato YYYY-MM-DD HH:mm:ss)\nlet dataCompra = $node[\"chega_da_fila1\"].json[\"content\"][\"conversion_date\"]; // Nova Data da compra (no formato YYYY-MM-DD HH:mm:ss)\n\n// Converter as datas para objetos Date\nlet dataEntradaLeadObj = new Date(dataEntradaLead);\nlet dataCompraObj = new Date(dataCompra);\n\n// Calcular a diferença em milissegundos entre as datas\nlet diff = dataCompraObj - dataEntradaLeadObj;\n\n// Calcular a diferença em dias\nlet diffEmDias = Math.floor(diff / (1000 * 60 * 60 * 24));\n\n// Se a diferença for negativa, significa que a data de entrada é posterior à data de conversão\n// Nesse caso, ajustamos para zero, já que não há diferença em dias\nif (diffEmDias < 0) {\n  diffEmDias = 0;\n}\n\n// Retornar o resultado incluindo a diferença em dias\nreturn [{ \n  diffEmDias: diffEmDias\n}];\n"
+        "jsCode": "let dataEntradaLead = $node[\"pesquisa_lead6\"].json[\"data_de_entrada\"]; // Data de entrada da lead (no formato YYYY-MM-DD HH:mm:ss)\nlet dataCompra = $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"]; // Nova Data da compra (no formato YYYY-MM-DD HH:mm:ss)\n\n// Converter as datas para objetos Date\nlet dataEntradaLeadObj = new Date(dataEntradaLead);\nlet dataCompraObj = new Date(dataCompra);\n\n// Calcular a diferença em milissegundos entre as datas\nlet diff = dataCompraObj - dataEntradaLeadObj;\n\n// Calcular a diferença em dias\nlet diffEmDias = Math.floor(diff / (1000 * 60 * 60 * 24));\n\n// Se a diferença for negativa, significa que a data de entrada é posterior à data de conversão\n// Nesse caso, ajustamos para zero, já que não há diferença em dias\nif (diffEmDias < 0) {\n  diffEmDias = 0;\n}\n\n// Retornar o resultado incluindo a diferença em dias\nreturn [{ \n  diffEmDias: diffEmDias\n}];\n"
       },
       "id": "dfd5dd9f-0276-44cb-8177-dc2d52fd4486",
       "name": "dias_para_conversao",
@@ -1262,6 +1242,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-09-24T22:28:20.653Z",
-  "versionId": "c9dc29cb-27d4-450d-a5b9-45ceee2cf41d"
+  "updatedAt": "2024-09-25T12:43:04.923Z",
+  "versionId": "bcf57150-a8a2-464e-baed-058039de9190"
 }
