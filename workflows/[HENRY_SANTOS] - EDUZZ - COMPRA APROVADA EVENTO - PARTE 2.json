@@ -519,10 +519,6 @@
               "value": "={{ $node[\"pesquisa_lead6\"].json[\"id_lead\"] }}"
             },
             {
-              "name": "id_lead_bc",
-              "value": "={{ $node[\"cadastra_contato\"].json[\"id\"] }}"
-            },
-            {
               "name": "utm_source",
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}"
             },
@@ -1163,7 +1159,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-U9xS6sa9T2gbF4P0tMDhSA",
+            "consumerTag": "amq.ctag-ewTaIXzLiXBPJJLIe1XZFA",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
@@ -1171,38 +1167,38 @@
           },
           "properties": {
             "headers": {
-              "x-delivery-count": 11
+              "x-delivery-count": 15767
             }
           },
           "content": {
-            "value": 51,
-            "conversion_date": "04/09/2019",
-            "gateway_comission": 1,
-            "warranty_date": "11/09/2019",
-            "nome_produto": "Nome do produto",
-            "Nome do Cliente": "Mateus Diniz",
-            "E-mail do Cliente": "mateusdiniz@automagicbots.com.br",
-            "Telefone do Cliente - Formato Z-API": "554835191298",
-            "CPF/CNPJ do Cliente": "999.999.999-11",
-            "transaction_id": 999999999,
-            "offer_code": 999999999,
+            "value": 1116,
+            "conversion_date": "25/09/2024",
+            "gateway_comission": 49.9,
+            "warranty_date": "02/10/2024",
+            "nome_produto": "Imersão Presencial Salão Autoadministrável - BLACK - Lote Zero",
+            "Nome do Cliente": "paulo ricardo dos reis",
+            "E-mail do Cliente": "paulimrr@hotmail.com",
+            "Telefone do Cliente - Formato Z-API": "555993755286",
+            "CPF/CNPJ do Cliente": "366.962.168-71",
+            "transaction_id": 78857567,
+            "offer_code": 2510095,
             "currency": "BRL",
-            "subscription_code": 999999999,
-            "plan": "Recurrence plan",
-            "payment_method": "Desconhecido",
+            "subscription_code": null,
+            "plan": null,
+            "payment_method": "Cartão de Crédito",
             "trans_status": "Compra Aprovada",
-            "ddd": "69",
-            "utm_source": "Anunciante",
-            "utm_campaign": "Campanha do anúncio",
+            "ddd": "59",
+            "utm_source": "",
+            "utm_campaign": "",
             "utm_term": "",
-            "utm_medium": "Midia utilizada do Anúncio",
-            "Link do Boleto": "https://eduzz.com/9/9999/1",
-            "utm_content": "Fonte dentro do Anúncio",
-            "Linha Digitável do Boleto": "99999.99999 99999.99999 99999.999999 9 99999999999999",
-            "Nome do Afiliado": "Nome do Afiliado",
-            "E-mail do Afiliado": "emaildoafiliado@provedor.com",
+            "utm_medium": "",
+            "Link do Boleto": null,
+            "utm_content": "",
+            "Linha Digitável do Boleto": null,
+            "Nome do Afiliado": null,
+            "E-mail do Afiliado": null,
             "id_fluxo_compra_aprovada": "4297785",
-            "Telefone do Cliente - Formato BC": "+556981196678",
+            "Telefone do Cliente - Formato BC": "+555993755286",
             "id_campo_id_banco_de_dados_bot_conversa": "2370554",
             "id_campo_utm_var_bot_conversa": "2370558",
             "id_campo_utm_fun_bot_conversa": "2370559",
@@ -1242,6 +1238,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-09-25T12:43:04.923Z",
-  "versionId": "bcf57150-a8a2-464e-baed-058039de9190"
+  "updatedAt": "2024-09-26T11:37:17.770Z",
+  "versionId": "7711b408-b8d4-43b9-bdb4-c93727fb15ac"
 }
