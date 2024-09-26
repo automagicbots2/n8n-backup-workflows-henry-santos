@@ -876,11 +876,12 @@
           "mode": "list",
           "cachedResultName": "data_lake_ht"
         },
+        "returnAll": true,
         "where": {
           "values": [
             {
               "column": "data",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].split(' ')[0] }}"
+              "value": "={{ \n  $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"]\n    .split(' ')[0]  // Pegando apenas a parte da data, sem hora\n    .split('/')  // Separando em dia, mês e ano\n    .reverse()  // Invertendo para o formato YYYY-MM-DD\n    .join('-')  // Juntando novamente com hífen\n}}"
             }
           ]
         },
@@ -1489,7 +1490,7 @@
           "values": [
             {
               "column": "data",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"].split(' ')[0] }}"
+              "value": "={{ \n  $node[\"chega_da_fila\"].json[\"content\"][\"conversion_date\"]\n    .split(' ')[0]  // Pegando apenas a parte da data, sem hora\n    .split('/')  // Separando em dia, mês e ano\n    .reverse()  // Invertendo para o formato YYYY-MM-DD\n    .join('-')  // Juntando novamente com hífen\n}}\n"
             }
           ]
         },
@@ -1575,60 +1576,56 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-4-y71eBbmr3K8YW-qck7Aw",
+            "consumerTag": "amq.ctag-TPE3FOn1YzkSN13YDuOirQ",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
-            "routingKey": "Experiência Carnívora - Compra Aprovada - Parte 4"
+            "routingKey": "Evento - Compra Aprovada - Parte 4"
           },
           "properties": {
-            "headers": {}
+            "headers": {
+              "x-delivery-count": 18291
+            }
           },
           "content": {
-            "verificacao_lead": false,
-            "Nome do Cliente": "Vitor Queiroz De Almeida",
-            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
-            "Telefone do Cliente - Formato Z-API": "5519982022213",
-            "id_lead_bd": 139,
-            "id_lead_bc": 322971539,
-            "utm_source": "facebook",
-            "utm_campaign": "quente",
-            "utm_term": "ad01",
-            "utm_medium": "stories",
-            "utm_content": "ad01",
-            "id_campo_utm_medium_bot_conversa": "1421493",
-            "id_campo_utm_source_bot_conversa": "1421492",
-            "id_campo_utm_campaign_bot_conversa": "1421496",
-            "id_campo_utm_term_bot_conversa": "1421495",
-            "id_campo_utm_content_bot_conversa": "1421494",
-            "id_campo_id_banco_de_dados_bot_conversa": "1501133",
-            "id_campo_email_da_compra_bot_conversa": "1421498",
-            "id_fluxo_compra_aprovada": "2540263",
-            "API-KEY": "e478c192-2871-4f5f-a55e-9940c6d1fed2",
-            "link_pagamento_boleto": null,
-            "link_pagamento_pix": null,
-            "transaction_id": "c8e6b594-4561-4640-ae90-0c42ed2cc1aa",
-            "value": 5,
-            "offer_code": "oferta 5",
-            "gateway_comission": 2.94,
+            "verificacao_lead": true,
+            "Nome do Cliente": "Edicler Camargo Zerma",
+            "E-mail do Cliente": "edi.mehl@hotmail.com",
+            "Telefone do Cliente - Formato Z-API": "555991067734",
+            "id_lead_bd": 5485,
+            "utm_source": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_medium": "",
+            "utm_content": "",
+            "id_campo_utm_medium_bot_conversa": "2370545",
+            "id_campo_utm_source_bot_conversa": "2370544",
+            "id_campo_utm_campaign_bot_conversa": "2370543",
+            "id_campo_utm_term_bot_conversa": "2370542",
+            "id_campo_utm_content_bot_conversa": "2370546",
+            "id_campo_id_banco_de_dados_bot_conversa": "2370554",
+            "id_campo_email_da_compra_bot_conversa": "2435070",
+            "id_fluxo_compra_aprovada": "4297785",
+            "API-KEY": "d241868f-0b6e-4974-b2ae-f2ad1b5e5e25",
+            "transaction_id": 78855583,
+            "dias_para_conversao": null,
+            "id_campo_cpf_cnpj_bot_conversa": "2435161",
+            "id_campo_id_da_compra_bot_conversa": "2435074",
+            "value": 998,
+            "offer_code": 2510095,
+            "subscription_code": null,
+            "gateway_comission": 49.9,
+            "plan": null,
             "currency": "BRL",
             "payment_method": "Cartão de Crédito",
             "trans_status": "Compra Aprovada",
-            "dias_para_conversao": 0,
-            "warranty_date": "2023-10-12",
-            "conversion_date": "2023-10-05 18:54:00",
-            "id_campo_cpf_cnpj_bot_conversa": "1421499",
-            "cpf/cnpj": "470.224.718-27",
-            "id_campo_id_da_compra_bot_conversa": "1501134",
-            "id_campo_link_pagamento_pix_bot_conversa": "1418358",
-            "id_campo_link_pagamento_boleto_bot_conversa": "1418359",
-            "id_campo_linha_digitavel_boleto_bot_conversa": "1432860",
-            "id_campo_linha_digitavel_pix_bot_conversa": "1418360",
-            "nome_produto": "Experiência Carnívora",
-            "installments": 1,
-            "id_campo_idleadac_bot_conversa": "1375550",
-            "id_lead_activecampaign": "478",
-            "id_campo_id_banco_de_dados_ac": ""
+            "warranty_date": "02/10/2024",
+            "conversion_date": "25/09/2024",
+            "id_campo_link_pagamento_pix_bot_conversa": "2435107",
+            "id_campo_link_pagamento_boleto_bot_conversa": "2435106",
+            "id_campo_linha_digitavel_boleto_bot_conversa": "2435104",
+            "id_campo_linha_digitavel_pix_bot_conversa": "2435105",
+            "nome_produto": "Imersão Presencial Salão Autoadministrável - BLACK - Lote Zero"
           }
         }
       }
@@ -1646,6 +1643,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-09-24T21:05:35.566Z",
-  "versionId": "ab63cbd8-fec9-4096-8585-071c707fcbed"
+  "updatedAt": "2024-09-26T11:32:19.826Z",
+  "versionId": "b48c3028-67d6-4ade-98e2-b7f705f6fa6d"
 }
