@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "le_planilha1": {
       "main": [
@@ -17,17 +17,6 @@
         [
           {
             "node": "excluir_lista",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "When clicking \"Test workflow\"": {
-      "main": [
-        [
-          {
-            "node": "verifica_data1",
             "type": "main",
             "index": 0
           }
@@ -251,6 +240,17 @@
           }
         ]
       ]
+    },
+    "Segunda - 08hrs": {
+      "main": [
+        [
+          {
+            "node": "verifica_data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-09-26T19:37:25.506Z",
@@ -366,7 +366,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "26/09/2024",
+              "rightValue": "30/09/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -384,17 +384,6 @@
       "typeVersion": 2,
       "position": [
         -1060,
-        -220
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "610f3378-a2af-46ec-8c48-9f18c98951a3",
-      "name": "When clicking \"Test workflow\"",
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        -1220,
         -220
       ]
     },
@@ -751,6 +740,29 @@
           "name": "[MySQL][2.0] - Henry Santos"
         }
       }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "55ea4358-d5b6-4396-b6cb-b445533c8ba9",
+      "name": "Segunda - 08hrs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1220,
+        -220
+      ]
     }
   ],
   "pinData": {},
@@ -802,10 +814,13 @@
     },
     "node:8hs": {
       "recurrencyRules": []
+    },
+    "node:Segunda - 08hrs": {
+      "recurrencyRules": []
     }
   },
   "tags": [],
-  "triggerCount": 3,
-  "updatedAt": "2024-09-26T19:55:02.763Z",
-  "versionId": "06582e77-3659-4906-a9d7-838d6a707a0e"
+  "triggerCount": 1,
+  "updatedAt": "2024-09-27T12:58:40.344Z",
+  "versionId": "748c1ef4-96ba-4d0e-8ca9-3ff02ce8da7f"
 }
