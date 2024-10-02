@@ -644,6 +644,17 @@
           }
         ]
       ]
+    },
+    "dados_validados11": {
+      "main": [
+        [
+          {
+            "node": "entra_na_fila6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-03-25T13:17:12.845Z",
@@ -8878,7 +8889,7 @@
     {
       "parameters": {
         "content": "## Funil já atualizado com Kommo\n\n",
-        "height": 685.0991926201593,
+        "height": 919.311846782348,
         "width": 1199.6160431467256
       },
       "id": "c126bb0b-28e4-4f3b-afba-4f02605c6b42",
@@ -9900,7 +9911,7 @@
             },
             {
               "name": "funil",
-              "value": "sessao estrategica"
+              "value": "aplicacao_imersao_presencial"
             },
             {
               "name": "variacao_do_funil",
@@ -10152,6 +10163,10 @@
             {
               "name": "id_campo_pergunta10_deal_crm",
               "value": "82"
+            },
+            {
+              "name": "pergunta21",
+              "value": "={{ $node[\"formata_dados19\"].json[\"objetivo_participacao\"] }}"
             }
           ],
           "number": [
@@ -10168,20 +10183,20 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2360,
+        2220,
         1720
       ]
     },
     {
       "parameters": {
-        "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(0, 2);\n  const ddi = '55';\n\n  // Verifica se o número começa com '351' e mantém inalterado\n  if (telefoneLimpo.startsWith('351')) {\n    return telefoneLimpo;\n  }\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para determinar a qualificação\nfunction determinarQualificacao(faturamento, comecaQuando) {\n  // Ajustando a lógica para verificar as faixas de faturamento\n  const faturamentoAcima30k = (\n    faturamento === \"Entre R$30.001 e R$50.000 mensal\" || \n    faturamento === \"Entre R$50.001 e R$100.000 mensal\" || \n    faturamento === \"+ de R$100.001\"\n  );\n\n  // Verificando a urgência corretamente\n  const urgenciaAlta = (comecaQuando === \"Imediatamente\" || comecaQuando === \"Pra ontem!\");\n\n  if (faturamentoAcima30k && urgenciaAlta) {\n    return \"Extremamente Qualificado\";\n  } else if (faturamentoAcima30k) {\n    return \"Qualificado\";\n  } else if (!faturamentoAcima30k && urgenciaAlta) {\n    return \"Neutro\";\n  } else {\n    return \"Desqualificado\";\n  }\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = $node[\"aplicacao_preenchida_evento_presencial\"].json[\"body\"][\"form_response\"][\"hidden\"][\"telefone\"] || \"\";\nconst telefoneFormatado = extrairDddETelefone(telefoneAnswer);\n\nconst Ending = $node[\"aplicacao_preenchida_evento_presencial\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Montar o objeto de output\nlet output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"0f46af7d-ea52-450e-af61-e471f4965cac\")?.text) || $node[\"aplicacao_preenchida_evento_presencial\"].json[\"body\"][\"form_response\"][\"hidden\"][\"name\"] || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"c4b529b3-aaad-4d5a-9a90-30b140ee812d\")?.email || $node[\"aplicacao_preenchida_evento_presencial\"].json[\"body\"][\"form_response\"][\"hidden\"][\"email\"] || '',\n\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace(/@/g, \"\") || \"\",\n  \n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  \n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"14d80a71-2dd1-484b-b1a1-cbf4ef37a61d\")?.choice.label || \"\",\n  \n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n\n  quantas_horas: $node[\"aplicacao_preenchida_evento_presencial\"].json[\"body\"][\"form_response\"][\"answers\"][\"7\"][\"choice\"][\"label\"] || \"\",\n  \n  porque_voce: respostas.find(answer => answer.field.ref === \"66fec9b4-837b-4783-8ce2-a670902ab134\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => {\n    const fieldRef = answer.field.ref;\n    return fieldRef === \"d31760df-623d-435d-ac2f-092b82c7803b\" || fieldRef === \"511ca207-0c32-4529-b19f-42be7508c79d\";\n  })?.choice.label || \"\",\n\n  nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  pergunta11: $node[\"aplicacao_preenchida_evento_presencial\"].json[\"body\"][\"form_response\"][\"answers\"][\"8\"][\"text\"] || \"\",\n\n  // Corrigido para buscar o valor correto de \"comeca_quando\"\n  comeca_quando: respostas.find(answer => answer.field.ref === \"7d285441-c756-4a57-9768-2c7f3d8d9f85\")?.choice?.label || \"\",\n\n  data_ultima_quinzena: dataFormatada,  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\",\n  Ending: Ending || \"\"\n};\n\n// Adiciona a qualificação com base nos valores já coletados\noutput.qualificacao = determinarQualificacao(\n  output.faturamento, // Usando o valor já coletado de faturamento\n  output.comeca_quando // Usando o valor já coletado de comeca_quando\n);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output = { ...output, Pais: \"Portugal\" };\n}\n\nreturn [output];\n"
+        "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers || [];\nconst hiddenFields = inputData.body.form_response.hidden || {};\n\n// Função para extrair e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\"); // Remove todos os caracteres não numéricos\n  const ddi = '55'; // DDI padrão do Brasil\n  const ddd = telefoneLimpo.slice(0, 2); // Primeiro dois dígitos são o DDD\n  const numero = telefoneLimpo.slice(2); // O restante é o número de telefone\n\n  // Verifica se o número tem 8 ou 9 dígitos após o DDD\n  if (numero.length === 8 || numero.length === 9) {\n    return ddi + ddd + numero;\n  } else {\n    return telefoneLimpo; // Retorna o número original se não for no formato esperado\n  }\n}\n\n// Função para determinar a qualificação\nfunction determinarQualificacao(faturamento, comecaQuando) {\n  const faturamentoAcima30k = (\n    faturamento === \"Entre R$30.001 e R$50.000 mensal\" || \n    faturamento === \"Entre R$50.001 e R$100.000 mensal\" || \n    faturamento === \"+ de R$100.001\"\n  );\n\n  const urgenciaAlta = (comecaQuando === \"Imediatamente\" || comecaQuando === \"Pra ontem!\");\n\n  if (faturamentoAcima30k && urgenciaAlta) {\n    return \"Extremamente Qualificado\";\n  } else if (faturamentoAcima30k) {\n    return \"Qualificado\";\n  } else if (!faturamentoAcima30k && urgenciaAlta) {\n    return \"Neutro\";\n  } else {\n    return \"Desqualificado\";\n  }\n}\n\n// Obter a data atual\nconst dataAtual = new Date();\ndataAtual.setDate(dataAtual.getDate() - 15); // Subtrair 15 dias\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0');\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Extrair os dados do formulário, com fallback para campos hidden (UTM tags)\nconst nome = respostas.find(answer => answer.field.id === \"wn42EXOcUnbV\")?.text || hiddenFields.name || \"\";\nconst telefone = respostas.find(answer => answer.field.id === \"8zczsCeRgoFy\")?.phone_number || hiddenFields.telefone || \"\";\nconst Instagram = respostas.find(answer => answer.field.id === \"Nxp9kA17d1J6\")?.text || \"\";\nconst tamanho_da_equipe = respostas.find(answer => answer.field.id === \"qc1ihMaO7qDD\")?.choice.label || \"\";\nconst faturamento = respostas.find(answer => answer.field.id === \"M9AJ4r3xtkLz\")?.choice.label || \"\";\nconst objetivo_participacao = respostas.find(answer => answer.field.id === \"vd6TjUuKsy6X\")?.choice.label || \"\";\n\n// Verificar UTMs primeiro nos campos hidden, com fallback para as UTMs no formulário\nconst utm_content = hiddenFields.utm_content || inputData.body.utm_content || '';\nconst utm_source = hiddenFields.utm_source || inputData.body.utm_source || '';\nconst utm_campaign = hiddenFields.utm_campaign || inputData.body.utm_campaign || '';\nconst utm_medium = hiddenFields.utm_medium || inputData.body.utm_medium || '';\nconst utm_term = hiddenFields.utm_term || inputData.body.utm_term || '';\n\n// Formatar o telefone\nconst telefoneFormatado = extrairDddETelefone(telefone);\n\n// Montar o objeto de output\nlet output = {\n  nome: formatarPrimeiraLetraMaiuscula(nome),\n  telefone: telefoneFormatado,\n  email: hiddenFields.email || '',\n  Instagram: Instagram.replace(/@/g, \"\"),  // Remover o símbolo @ se presente\n  tamanho_da_equipe: tamanho_da_equipe,\n  faturamento: faturamento,\n  objetivo_participacao: objetivo_participacao,\n  data_ultima_quinzena: dataFormatada,\n  utm_content: utm_content,\n  utm_source: utm_source,\n  utm_campaign: utm_campaign,\n  utm_medium: utm_medium,\n  utm_term: utm_term,\n  Ending: inputData.body.form_response.ending?.ref || ''\n};\n\n// Adicionar a qualificação com base nos valores já coletados\noutput.qualificacao = determinarQualificacao(output.faturamento, output.objetivo_participacao);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output = { ...output, Pais: \"Portugal\" };\n}\n\nreturn [output];\n"
       },
       "id": "f582c015-cf04-4e76-8ecf-645d0002113a",
       "name": "formata_dados19",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2060,
+        2020,
         1720
       ]
     },
@@ -10200,6 +10215,36 @@
         1720
       ],
       "webhookId": "80364f39-fdcf-49bb-8268-0aad9dbdd379"
+    },
+    {
+      "parameters": {
+        "queue": "Evento - Aplicacao - Parte 2",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "6fe59486-c674-48a8-a88d-5cc69c5637b6",
+      "name": "entra_na_fila6",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        2460,
+        1720
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
     }
   ],
   "pinData": {
@@ -13853,10 +13898,10 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "Typeform Webhooks",
-            "content-length": "8456",
+            "content-length": "5104",
             "accept-encoding": "gzip",
             "content-type": "application/json",
-            "traceparent": "00-227b1a7ec6746ff1bc7668027efbfe78-f3a7fb5e72c45a3f-01",
+            "traceparent": "00-b5b69e281343c5c6ee03ec68b1d4c9d9-6ee9ce4275822198-01",
             "x-forwarded-for": "18.210.136.162",
             "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "x-forwarded-port": "443",
@@ -13867,269 +13912,161 @@
           "params": {},
           "query": {},
           "body": {
-            "event_id": "01J8JX91R4XRA3R15MDNE3257A",
+            "event_id": "01J947JEZ9Y930YY9N22NE4G2K",
             "event_type": "form_response",
             "form_response": {
-              "form_id": "WHYDoReb",
-              "token": "9urxji2u6hmzztsibotz8b9urxji2upb",
-              "landed_at": "2024-09-24T20:56:44Z",
-              "submitted_at": "2024-09-24T20:58:58Z",
+              "form_id": "Zby3ztcx",
+              "token": "o7z5zwz3zs0i9wbzw2i6lo7z57x3tzej",
+              "landed_at": "2024-10-01T14:23:04Z",
+              "submitted_at": "2024-10-01T14:25:57Z",
               "hidden": {
-                "email": "elenicemattoshair@gmail.com",
-                "name": "Elenice de Matos",
-                "telefone": "(21) 97041-4477",
-                "utm_campaign": "[C] [SE] [HM] [CADASTRO] [ABO] Teste de público",
-                "utm_content": "AD35 - [FUNIL 30 MIN] EST35",
-                "utm_fun": "",
-                "utm_medium": "06 - Adm página de beleza",
-                "utm_source": "meta_ads",
-                "utm_term": "120209185090700128",
-                "utm_var": ""
+                "email": "mateusdiniz@automagicbots.com.br",
+                "name": "xxxxx",
+                "telefone": "xxxxx",
+                "utm_campaign": "xxxxx",
+                "utm_content": "xxxxx",
+                "utm_fun": "xxxxx",
+                "utm_medium": "xxxxx",
+                "utm_source": "xxxxx",
+                "utm_term": "xxxxx",
+                "utm_var": "xxxxx"
               },
               "definition": {
-                "id": "WHYDoReb",
-                "title": "✅Funil 30 min - Salão Autoadministrável",
+                "id": "Zby3ztcx",
+                "title": "✅Imersão Salão Autoadministrável",
                 "fields": [
                   {
-                    "id": "4WwdMxyPIK8V",
+                    "id": "Nxp9kA17d1J6",
                     "ref": "69e277e4-a0f8-4865-b01d-970dee3d88eb",
                     "type": "short_text",
                     "title": "Para começarmos, pode me informar qual o Instagram do seu salão?",
                     "properties": {}
                   },
                   {
-                    "id": "DX8ABAdScHtI",
-                    "ref": "9d3235d4-a79e-455d-ac75-4254b19cae96",
-                    "type": "multiple_choice",
-                    "title": "Show! Agora, gostaria de saber um pouco mais do seu momento profissional. Você tem uma recepcionista no seu salão?",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "t2iyEzHDzJHh",
-                        "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78",
-                        "label": "SIM"
-                      },
-                      {
-                        "id": "O57xy1NPKfHB",
-                        "ref": "d81e4036-f5b7-4e82-922a-67a109e09967",
-                        "label": "NÃO"
-                      }
-                    ]
+                    "id": "wn42EXOcUnbV",
+                    "ref": "d0f05b37-b405-4438-82a0-c4daf82a9841",
+                    "type": "short_text",
+                    "title": "E qual o seu nome?",
+                    "properties": {}
                   },
                   {
-                    "id": "WWIA3IWem76Q",
-                    "ref": "0a89f6b6-19ea-4d15-b412-e502943ff866",
-                    "type": "multiple_choice",
-                    "title": "Para eu entender mais sobre teu negócio, qual opção melhor define você hoje? ",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "IlELwG6RAn8n",
-                        "ref": "cbf1d69a-ea39-4d1b-a644-4980a7bd18ee",
-                        "label": "Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando"
-                      },
-                      {
-                        "id": "Bt5as1XGtnHg",
-                        "ref": "b2c627b5-a406-457e-9a78-cbc552cd484e",
-                        "label": "Estou conseguindo pagar as contas e não sobrando"
-                      },
-                      {
-                        "id": "0g8xAYIENEXV",
-                        "ref": "ad8665ab-92d0-465a-aa46-1da9651119d6",
-                        "label": "Não estou conseguindo pagar as contas e com dívidas maiores"
-                      }
-                    ]
+                    "id": "8zczsCeRgoFy",
+                    "ref": "a8fa9e16-a140-4f62-9b56-46cd94c20e79",
+                    "type": "phone_number",
+                    "title": "Qual seu ddd + whatsapp?",
+                    "properties": {}
                   },
                   {
-                    "id": "3nawAGKqGShU",
+                    "id": "qc1ihMaO7qDD",
                     "ref": "f4fcda9e-a288-4558-94d9-3e2b0b4f96ad",
                     "type": "multiple_choice",
                     "title": "Para eu entender mais sobre teu negócio, quantos profissionais você tem? \n",
                     "properties": {},
                     "choices": [
                       {
-                        "id": "coWfqNMD2GPZ",
+                        "id": "WdMW0uLftMY5",
                         "ref": "0524d96c-c3c0-4b2b-9e09-c5fae1821d08",
                         "label": "- DE 2"
                       },
                       {
-                        "id": "0USzkDrTeirz",
+                        "id": "DheUAp1XUaOw",
                         "ref": "b8d70724-14ee-4a6d-8a85-4b23756f0c7c",
                         "label": "ENTRE 3 E 5"
                       },
                       {
-                        "id": "0NFTyLwW7ij8",
+                        "id": "2a5bR7YwR8xT",
                         "ref": "69bc797f-5f9c-47b8-a877-7a7faf0a5bbe",
                         "label": "ENTRE 6 E 10"
                       },
                       {
-                        "id": "u0b11sxH30NX",
+                        "id": "KgQJZTOjv1Gr",
                         "ref": "622f6743-3736-429e-bec0-ccec1fa37259",
                         "label": "ENTRE 11 E 20"
                       },
                       {
-                        "id": "e2sVLeUm3xkX",
+                        "id": "CEi5PLpCMoUv",
                         "ref": "fd02c44d-8b31-4274-9a37-c06b49da9411",
                         "label": "+ DE 20"
                       },
                       {
-                        "id": "nkkJDZxq8Sqw",
+                        "id": "bcnc8yZ1c8VN",
                         "ref": "a31e8098-1803-4e42-8995-bd8db458550c",
                         "label": "Estou montando meu salão e minha equipe"
                       }
                     ]
                   },
                   {
-                    "id": "9NzjmZovePi4",
+                    "id": "M9AJ4r3xtkLz",
                     "ref": "2c42d709-1748-472f-8f28-ebc7677c0398",
                     "type": "multiple_choice",
                     "title": "Agora… Em qual etapa de faturamento você esta atualmente? Qual seu faturamento MENSAL MÉDIO em 2024?",
                     "properties": {},
                     "choices": [
                       {
-                        "id": "OvG7ODI9ntjN",
+                        "id": "RRHRu06qcsha",
                         "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87",
                         "label": "Até R$15.000 mensal"
                       },
                       {
-                        "id": "RygnSZlYULRD",
+                        "id": "CJK1KLZleWIU",
                         "ref": "ea4e5a4c-ca76-4a90-8c22-d386a793e6fe",
                         "label": "Entre R$15.001 e R$30.000 mensal"
                       },
                       {
-                        "id": "8bn3cPAnp0gq",
+                        "id": "nU7WNQqsGpCC",
                         "ref": "179a6666-ea5a-4879-87cc-72611886686e",
                         "label": "Entre R$30.001 e R$50.000 mensal"
                       },
                       {
-                        "id": "OzM4mUSlPHey",
+                        "id": "egjeVXpt4iZm",
                         "ref": "af07450b-9d3f-41ff-9b28-c5dd5ee1b366",
                         "label": "Entre R$50.001 e R$100.000 mensal"
                       },
                       {
-                        "id": "Xl0H0e4WE1ky",
+                        "id": "6UlCmqyEwZix",
                         "ref": "34b28fc9-d466-4b5a-83dd-b5a30c052fb8",
                         "label": "+ de R$100.001"
                       }
                     ]
                   },
                   {
-                    "id": "IkvX0hrgE8BI",
-                    "ref": "5fe6dab9-dcc1-4984-9408-cc43f052fe64",
-                    "type": "long_text",
-                    "title": "Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2024?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "zLAbSrRIC3WW",
-                    "ref": "193b63eb-8173-4a1a-8fa0-c930cab89161",
-                    "type": "short_text",
-                    "title": "Quais são os problemas que têm te impedido de alcançar esse objetivo?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "g5we6lD6Mxga",
-                    "ref": "86e5206c-d28f-4fcd-bc84-d48ceb88abce",
+                    "id": "vd6TjUuKsy6X",
+                    "ref": "96a20d28-5273-4315-b77d-df383a1741ae",
                     "type": "multiple_choice",
-                    "title": "Quando você contrata alguém para trabalhar no salão, você toma essa decisão sozinha?",
+                    "title": "Somente uma gestão forte transforma seu salão em uma máquina de crescimento: Estruture processos eficientes e ganhe mais tempo para liderar a expansão do seu negócio, enquanto vê seu salão crescer e faturar mais. Esta é a promessa da Imersão, o quão comprometido você está em participar?\n",
                     "properties": {},
                     "choices": [
                       {
-                        "id": "fdC60Wwv6RWp",
-                        "ref": "93360123-549f-4650-b8fc-3eba931ac382",
-                        "label": "Sim! Não preciso falar com mais ninguém"
+                        "id": "EsT1ynNIeItc",
+                        "ref": "d8ecd5e0-238f-43e3-9f1f-3c0ba4ae826a",
+                        "label": "Tenho certeza que vou, só quero comprar os ingressos"
                       },
                       {
-                        "id": "WZ7YKEjaAdm2",
-                        "ref": "8d088b07-dc1b-46d3-acda-c1554cab7e5d",
-                        "label": "Não! Preciso falar com meu Parceiro/parceira"
+                        "id": "od3XN1snwmjs",
+                        "ref": "cef5eb1b-5b18-41e5-9e04-e761bcfc61d6",
+                        "label": "Quero muitooo, mas quero saber mais detalhes com alguém da equipe!"
                       },
                       {
-                        "id": "gtqOhm8Q5Nzm",
-                        "ref": "4109eaf9-d31c-4b00-b564-57a2a81b95d0",
-                        "label": "Depende do valor da remuneração do profissional"
-                      }
-                    ]
-                  },
-                  {
-                    "id": "FjX4JtmKoI78",
-                    "ref": "66fec9b4-837b-4783-8ce2-a670902ab134",
-                    "type": "short_text",
-                    "title": "Caso eu receba mais interessados que vaga na sessão, por que eu deveria escolher você?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "63qdtPkNiVBq",
-                    "ref": "7d285441-c756-4a57-9768-2c7f3d8d9f85",
-                    "type": "multiple_choice",
-                    "title": "Quando você pretende colocar em ação tudo o que for mostrado para você na sessão?",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "ubVYZnhIeHM7",
-                        "ref": "8a641300-77e6-4140-8ee3-68ec8dba871a",
-                        "label": "Pra ontem!"
-                      },
-                      {
-                        "id": "CTCSBM9Mo3ES",
-                        "ref": "c20117b6-90a8-43d0-b7b5-75eaeae2682d",
-                        "label": "Imediatamente"
-                      },
-                      {
-                        "id": "con6Pby4gk8r",
-                        "ref": "45c3b9e0-56fd-4a79-9e35-356ecb417205",
-                        "label": "Nas próximas semanas"
-                      },
-                      {
-                        "id": "D12mNxLwOZHM",
-                        "ref": "3abec702-69b2-4ee6-9b40-ece7a42d8cde",
-                        "label": "Daqui uns meses"
-                      }
-                    ]
-                  },
-                  {
-                    "id": "p8dPxdCLDSYP",
-                    "ref": "511ca207-0c32-4529-b19f-42be7508c79d",
-                    "type": "multiple_choice",
-                    "title": "Se existisse um acompanhamento único que solucionasse os problemas que citou antes e te ajudasse a chegar no seu objetivo, quanto você estaria disposto a investir POR MÊS?",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "BF9P3N3527SK",
-                        "ref": "73b895ce-c2a6-47d0-ae22-743b27426241",
-                        "label": "0 a R$300"
-                      },
-                      {
-                        "id": "jAMiY7A0zQ2U",
-                        "ref": "0de62864-d439-4c8a-8629-1835ab9d5c5f",
-                        "label": "R$300 a R$700"
-                      },
-                      {
-                        "id": "xjVQ7yIa2ABl",
-                        "ref": "53f87fdf-3d59-414f-85dd-276dc35e06ce",
-                        "label": "R$700 a R$1.000"
-                      },
-                      {
-                        "id": "GrsL4DZ8JzvH",
-                        "ref": "bf7eebbe-2c54-49fd-b685-9d1812236f07",
-                        "label": "R$1.000 a R$5.000"
-                      },
-                      {
-                        "id": "7DAO2ABx4OSC",
-                        "ref": "08812e8d-cbb1-4dcd-83bc-3f0c358d3725",
-                        "label": "+ R$5.000"
+                        "id": "fC4gz9D86qlv",
+                        "ref": "1261d169-fbff-4b3a-a7a1-fc96e86d7f9b",
+                        "label": "Ainda estou conhecendo, quero mais informações"
                       }
                     ]
                   }
                 ],
                 "endings": [
                   {
-                    "id": "IwI9Hkcc3FMS",
-                    "ref": "caf08015-66e0-4179-8742-756787a07223",
-                    "title": "https://salaolucrativo.gestaodesaloes.com.br/mentoriasa_obrigado/",
-                    "type": "url_redirect",
+                    "id": "WRvxJZS0z8DQ",
+                    "ref": "7d7a1cb5-a06b-4456-a528-3f52291149bf",
+                    "title": "Sua aplicação foi enviada com sucesso! Olhe seu whatsapp, alguém da nossa equipe já entrou em contato com você!",
+                    "type": "thankyou_screen",
                     "properties": {
-                      "redirect_url": "https://salaolucrativo.gestaodesaloes.com.br/mentoriasa_obrigado/"
+                      "description": "Enquanto isso, você pode dar uma olhada no PDF do evento que preparamos pra você:",
+                      "button_text": "Ver mais detalhes sobre ",
+                      "show_button": true,
+                      "share_icons": false,
+                      "button_mode": "redirect",
+                      "redirect_url": "https://drive.google.com/file/d/1vgQMw9uEQgKIKcjVhu13HJ5zvZi5ZJWz/view?usp=sharing"
                     }
                   }
                 ]
@@ -14137,48 +14074,40 @@
               "answers": [
                 {
                   "type": "text",
-                  "text": "Emattos.hair",
+                  "text": "prmateusdiniz",
                   "field": {
-                    "id": "4WwdMxyPIK8V",
+                    "id": "Nxp9kA17d1J6",
                     "type": "short_text",
                     "ref": "69e277e4-a0f8-4865-b01d-970dee3d88eb"
                   }
                 },
                 {
-                  "type": "choice",
-                  "choice": {
-                    "id": "t2iyEzHDzJHh",
-                    "label": "SIM",
-                    "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78"
-                  },
+                  "type": "text",
+                  "text": "mateus",
                   "field": {
-                    "id": "DX8ABAdScHtI",
-                    "type": "multiple_choice",
-                    "ref": "9d3235d4-a79e-455d-ac75-4254b19cae96"
+                    "id": "wn42EXOcUnbV",
+                    "type": "short_text",
+                    "ref": "d0f05b37-b405-4438-82a0-c4daf82a9841"
+                  }
+                },
+                {
+                  "type": "phone_number",
+                  "phone_number": "+554835191298",
+                  "field": {
+                    "id": "8zczsCeRgoFy",
+                    "type": "phone_number",
+                    "ref": "a8fa9e16-a140-4f62-9b56-46cd94c20e79"
                   }
                 },
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "Bt5as1XGtnHg",
-                    "label": "Estou conseguindo pagar as contas e não sobrando",
-                    "ref": "b2c627b5-a406-457e-9a78-cbc552cd484e"
-                  },
-                  "field": {
-                    "id": "WWIA3IWem76Q",
-                    "type": "multiple_choice",
-                    "ref": "0a89f6b6-19ea-4d15-b412-e502943ff866"
-                  }
-                },
-                {
-                  "type": "choice",
-                  "choice": {
-                    "id": "0USzkDrTeirz",
+                    "id": "DheUAp1XUaOw",
                     "label": "ENTRE 3 E 5",
                     "ref": "b8d70724-14ee-4a6d-8a85-4b23756f0c7c"
                   },
                   "field": {
-                    "id": "3nawAGKqGShU",
+                    "id": "qc1ihMaO7qDD",
                     "type": "multiple_choice",
                     "ref": "f4fcda9e-a288-4558-94d9-3e2b0b4f96ad"
                   }
@@ -14186,86 +14115,33 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "OvG7ODI9ntjN",
-                    "label": "Até R$15.000 mensal",
-                    "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87"
+                    "id": "CJK1KLZleWIU",
+                    "label": "Entre R$15.001 e R$30.000 mensal",
+                    "ref": "ea4e5a4c-ca76-4a90-8c22-d386a793e6fe"
                   },
                   "field": {
-                    "id": "9NzjmZovePi4",
+                    "id": "M9AJ4r3xtkLz",
                     "type": "multiple_choice",
                     "ref": "2c42d709-1748-472f-8f28-ebc7677c0398"
                   }
                 },
                 {
-                  "type": "text",
-                  "text": "Faturamento de 80 mil",
-                  "field": {
-                    "id": "IkvX0hrgE8BI",
-                    "type": "long_text",
-                    "ref": "5fe6dab9-dcc1-4984-9408-cc43f052fe64"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "Abri tem um mês",
-                  "field": {
-                    "id": "zLAbSrRIC3WW",
-                    "type": "short_text",
-                    "ref": "193b63eb-8173-4a1a-8fa0-c930cab89161"
-                  }
-                },
-                {
                   "type": "choice",
                   "choice": {
-                    "id": "WZ7YKEjaAdm2",
-                    "label": "Não! Preciso falar com meu Parceiro/parceira",
-                    "ref": "8d088b07-dc1b-46d3-acda-c1554cab7e5d"
+                    "id": "od3XN1snwmjs",
+                    "label": "Quero muitooo, mas quero saber mais detalhes com alguém da equipe!",
+                    "ref": "cef5eb1b-5b18-41e5-9e04-e761bcfc61d6"
                   },
                   "field": {
-                    "id": "g5we6lD6Mxga",
+                    "id": "vd6TjUuKsy6X",
                     "type": "multiple_choice",
-                    "ref": "86e5206c-d28f-4fcd-bc84-d48ceb88abce"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "Preciso de ajuda crescimento",
-                  "field": {
-                    "id": "FjX4JtmKoI78",
-                    "type": "short_text",
-                    "ref": "66fec9b4-837b-4783-8ce2-a670902ab134"
-                  }
-                },
-                {
-                  "type": "choice",
-                  "choice": {
-                    "id": "ubVYZnhIeHM7",
-                    "label": "Pra ontem!",
-                    "ref": "8a641300-77e6-4140-8ee3-68ec8dba871a"
-                  },
-                  "field": {
-                    "id": "63qdtPkNiVBq",
-                    "type": "multiple_choice",
-                    "ref": "7d285441-c756-4a57-9768-2c7f3d8d9f85"
-                  }
-                },
-                {
-                  "type": "choice",
-                  "choice": {
-                    "id": "BF9P3N3527SK",
-                    "label": "0 a R$300",
-                    "ref": "73b895ce-c2a6-47d0-ae22-743b27426241"
-                  },
-                  "field": {
-                    "id": "p8dPxdCLDSYP",
-                    "type": "multiple_choice",
-                    "ref": "511ca207-0c32-4529-b19f-42be7508c79d"
+                    "ref": "96a20d28-5273-4315-b77d-df383a1741ae"
                   }
                 }
               ],
               "ending": {
-                "id": "IwI9Hkcc3FMS",
-                "ref": "caf08015-66e0-4179-8742-756787a07223"
+                "id": "WRvxJZS0z8DQ",
+                "ref": "7d7a1cb5-a06b-4456-a528-3f52291149bf"
               }
             }
           }
@@ -14292,6 +14168,6 @@
     }
   ],
   "triggerCount": 12,
-  "updatedAt": "2024-10-01T14:10:50.416Z",
-  "versionId": "1f81f57c-33f3-4c6d-8d4c-ff192961547f"
+  "updatedAt": "2024-10-01T20:09:53.079Z",
+  "versionId": "592eb63b-cd00-40ed-ae4a-1d90bb7ef133"
 }
