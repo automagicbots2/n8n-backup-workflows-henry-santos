@@ -1,0 +1,65 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-10-02T12:30:13.173Z",
+  "id": "hv1jgVqYUsW38Dgg",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "ee687ef4-da1b-4278-aa49-73acf23e76e2",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        600,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "425053257355840",
+        "recipientPhoneNumber": "+5562981196678",
+        "template": "hello_world|en_US"
+      },
+      "id": "1d3178c9-9668-4632-8c2b-312b315d59a3",
+      "name": "WhatsApp Business Cloud",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        820,
+        340
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-10-02T12:30:13.173Z",
+  "versionId": "cd562350-0b41-4182-bb08-30d268243ca2"
+}
