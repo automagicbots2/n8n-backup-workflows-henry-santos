@@ -125,18 +125,7 @@
       "main": [
         [
           {
-            "node": "ClickUp",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "ClickUp": {
-      "main": [
-        [
-          {
-            "node": "separa_linhas",
+            "node": "HTTP Request",
             "type": "main",
             "index": 0
           }
@@ -182,6 +171,38 @@
         [
           {
             "node": "variaveis_evolution",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ClickUp": {
+      "main": [
+        []
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        []
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "separa_linhas",
             "type": "main",
             "index": 0
           }
@@ -469,34 +490,9 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -260,
+        -400,
         280
       ]
-    },
-    {
-      "parameters": {
-        "authentication": "oAuth2",
-        "operation": "getAll",
-        "team": "3135484",
-        "space": "55168085",
-        "folder": "90132837125",
-        "list": "901305125256",
-        "filters": {}
-      },
-      "id": "e7662f7e-419d-4818-bbbb-fd54aaae46ca",
-      "name": "ClickUp",
-      "type": "n8n-nodes-base.clickUp",
-      "typeVersion": 1,
-      "position": [
-        -80,
-        280
-      ],
-      "credentials": {
-        "clickUpOAuth2Api": {
-          "id": "3BP9zfwCAo3HnARY",
-          "name": "[ClickUp] - Automagic Bots - Henry"
-        }
-      }
     },
     {
       "parameters": {
@@ -596,6 +592,67 @@
         -220,
         -260
       ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "getAll",
+        "team": "=3135484",
+        "space": "=55168085",
+        "folder": "90132837125",
+        "list": "=901305125256",
+        "filters": {}
+      },
+      "id": "7cb6ec72-a56b-455a-988f-19ec54cb294f",
+      "name": "ClickUp",
+      "type": "n8n-nodes-base.clickUp",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        60
+      ],
+      "credentials": {
+        "clickUpOAuth2Api": {
+          "id": "3BP9zfwCAo3HnARY",
+          "name": "[ClickUp] - Automagic Bots - Henry"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "https://api.clickup.com/api/v2/list/901305125256/task?archived=false",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "clickUpOAuth2Api",
+        "options": {}
+      },
+      "id": "69ddd8af-c184-4723-a35f-2e88025e6777",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -240,
+        280
+      ],
+      "credentials": {
+        "clickUpOAuth2Api": {
+          "id": "Sdu52tAOUmObziGb",
+          "name": "ClickUp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Input dinâmico (você pode substituir isso pelo input real no n8n)\nconst input = $input.all();\n\n// Verificar se há tarefas no input\nconst tarefasSeparadas = [];\n\ninput.forEach(item => {\n  if (item.json.tasks && Array.isArray(item.json.tasks)) {\n    // Iterar sobre todas as tarefas e separá-las\n    item.json.tasks.forEach(tarefa => {\n      tarefasSeparadas.push({\n        json: tarefa // Mantém todos os dados da tarefa\n      });\n    });\n  }\n});\n\n// Retornar as tarefas separadas\nreturn tarefasSeparadas;\n"
+      },
+      "id": "727f9ae6-bef3-4038-967c-6f449b8ed040",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        280
+      ]
     }
   ],
   "pinData": {},
@@ -628,6 +685,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-20T16:55:14.626Z",
-  "versionId": "b2a26c80-fc52-4ac2-bf70-bfd6d39d690d"
+  "updatedAt": "2024-10-03T20:18:03.201Z",
+  "versionId": "06853bc8-3b19-4527-826b-f6062aa2bf2c"
 }
