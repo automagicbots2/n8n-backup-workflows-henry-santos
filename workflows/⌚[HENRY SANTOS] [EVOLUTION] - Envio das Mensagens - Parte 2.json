@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "variaveis_grupo",
+            "node": "Wait",
             "type": "main",
             "index": 0
           }
@@ -269,6 +269,17 @@
           }
         ]
       ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "variaveis_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-08-15T17:57:07.412Z",
@@ -306,7 +317,7 @@
           },
           "acknowledge": "executionFinishesSuccessfully",
           "jsonParseBody": "={{ true }}",
-          "parallelMessages": 3
+          "parallelMessages": 1
         }
       },
       "id": "9afca1f7-0053-45e3-8525-5ac68992aab0",
@@ -429,7 +440,7 @@
       "name": "EnviaImagem5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -2020,
+        -1800,
         1820
       ],
       "typeVersion": 4
@@ -493,7 +504,7 @@
       "name": "EnviaVideo5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -2020,
+        -1800,
         1660
       ],
       "typeVersion": 4
@@ -561,7 +572,7 @@
       "name": "EnviaDocumento5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -2020,
+        -1800,
         2140
       ],
       "typeVersion": 4
@@ -621,7 +632,7 @@
       "name": "EnviaAudio5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -2020,
+        -1800,
         1980
       ],
       "typeVersion": 4
@@ -677,7 +688,7 @@
       "name": "EnviaMensagemTexto5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -2020,
+        -1800,
         2300
       ],
       "typeVersion": 4
@@ -721,7 +732,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        -2660,
+        -2440,
         2000
       ]
     },
@@ -2021,9 +2032,21 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 2,
       "position": [
-        -2440,
+        -2220,
         1980
       ]
+    },
+    {
+      "parameters": {},
+      "id": "a40c2eab-0cf4-42ca-838c-9f337628d2f0",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -2660,
+        2000
+      ],
+      "webhookId": "3015cfd2-b5be-4920-955d-a87ad28fd4e4"
     }
   ],
   "pinData": {
@@ -2031,8 +2054,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-CkeYcMhfe2y3PwwJapeBXw",
-            "deliveryTag": 1,
+            "consumerTag": "amq.ctag-v99BdITNI2R4rr6Gws8OOg",
+            "deliveryTag": 25,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Disparos - Evolution"
@@ -2040,9 +2063,9 @@
           "properties": {},
           "content": {
             "destino": "Grupos",
-            "id_grupo": "120363331626654305@g.us",
+            "id_grupo": "120363318948095655@g.us",
             "arquivo": "",
-            "copy": "📢 Aqui está o que vai rolar nos 3 dias de Imersão:\n\n📍 *Dia 1* – Visão estratégica e liderança\n 📍 *Dia 2* – Organização e aplicação de processos \n📍 *Dia 3* – Resultados: como alcançar liberdade financeira\n\nVamos implementar juntos *o plano para que seu salão seja capaz de gerar renda estável sem precisar da sua presença constante.*\n\nGaranta seu ingresso com desconto antes que o Lote Zero acabe! ⤵ \n🔗 https://salaolucrativo.gestaodesaloes.com.br/vendas-imersao-presencial-florianopolis-outubro-2024",
+            "copy": "Sua Transformação Começa Agora!\n\n📣 Quer sair da Imersão em Florianópolis com um plano de ação prático, que realmente transforma o seu salão? Então, a sua jornada começa antes, e é AO VIVO!\n\nNa semana de aquecimento, vou ajudar você a desbloquear o potencial do seu salão com conteúdos exclusivos para te preparar para o grande evento. É o pré-jogo que define a vitória!\n\n📅 Conteúdos das Aulas:\n07/10: Raio-X financeiro e diagnóstico estratégico do negócio\n08/10: Cultura organizacional, visão e plano de meta\n09/10: Plano de ação estratégico do salão\n10/10: Análise dos resultados do salão no mês de setembro\n11/10: Planejamento financeiro até dezembro\n\n🚀 Estar AO VIVO comigo te dá a chance de aplicar as estratégias antes da imersão e já chegar em Floripa com clareza e foco total.",
             "valor_msg": "Texto"
           }
         }
@@ -2068,6 +2091,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-27T17:50:14.646Z",
-  "versionId": "4c665bb1-4886-4594-8eef-fef0ee1ffe54"
+  "updatedAt": "2024-10-03T21:24:27.857Z",
+  "versionId": "858ab2dd-27e2-4230-8d92-40d68e42ddf4"
 }
