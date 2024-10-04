@@ -366,7 +366,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "30/09/2024",
+              "rightValue": "07/10/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -383,8 +383,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -1060,
-        -220
+        -1040,
+        -200
       ]
     },
     {
@@ -547,7 +547,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        -60,
+        -100,
         -340
       ],
       "credentials": {
@@ -566,7 +566,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -320,
+        -260,
         -160
       ]
     },
@@ -594,7 +594,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        -160,
+        -100,
         -160
       ],
       "credentials": {
@@ -711,7 +711,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        -220,
+        -260,
         -340
       ]
     },
@@ -760,8 +760,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -1220,
-        -220
+        -1200,
+        -200
       ]
     }
   ],
@@ -821,6 +821,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-09-27T12:58:40.344Z",
-  "versionId": "748c1ef4-96ba-4d0e-8ca9-3ff02ce8da7f"
+  "updatedAt": "2024-10-04T13:15:00.815Z",
+  "versionId": "70741fc2-9577-4a85-aa0e-8d73b43fca16"
 }
