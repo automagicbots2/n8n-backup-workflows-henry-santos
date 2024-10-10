@@ -209,6 +209,39 @@
         ]
       ]
     },
+    "variaveis_grupo": {
+      "main": [
+        [
+          {
+            "node": "verifica_midias5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "msg_de_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "variaveis_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "verifica_midias5": {
       "main": [
         [
@@ -242,39 +275,6 @@
         [
           {
             "node": "EnviaMensagemTexto5",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "variaveis_grupo": {
-      "main": [
-        [
-          {
-            "node": "verifica_midias5",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "chega_da_fila": {
-      "main": [
-        [
-          {
-            "node": "msg_de_grupo",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait": {
-      "main": [
-        [
-          {
-            "node": "variaveis_grupo",
             "type": "main",
             "index": 0
           }
@@ -658,7 +658,7 @@
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
             },
             {
-              "name": "textMessage.text",
+              "name": "text",
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
             },
             {
@@ -699,7 +699,7 @@
           "values": [
             {
               "name": "api_key",
-              "stringValue": "jsvhasy6ni20702nrvluf"
+              "stringValue": "C4414F881BE2-40E2-B30F-587AF5B85F01"
             },
             {
               "name": "nome_da_instancia",
@@ -720,7 +720,7 @@
             },
             {
               "name": "url_api_evolution",
-              "stringValue": "https://evolutionapi.automagicbots.com.br/"
+              "stringValue": "https://apievolution.automagicbots.com.br/"
             }
           ]
         },
@@ -1995,6 +1995,18 @@
       ]
     },
     {
+      "parameters": {},
+      "id": "a40c2eab-0cf4-42ca-838c-9f337628d2f0",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -2660,
+        2000
+      ],
+      "webhookId": "3015cfd2-b5be-4920-955d-a87ad28fd4e4"
+    },
+    {
       "parameters": {
         "dataType": "string",
         "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"valor_msg\"] }}",
@@ -2035,18 +2047,6 @@
         -2220,
         1980
       ]
-    },
-    {
-      "parameters": {},
-      "id": "a40c2eab-0cf4-42ca-838c-9f337628d2f0",
-      "name": "Wait",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [
-        -2660,
-        2000
-      ],
-      "webhookId": "3015cfd2-b5be-4920-955d-a87ad28fd4e4"
     }
   ],
   "pinData": {
@@ -2054,8 +2054,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-v99BdITNI2R4rr6Gws8OOg",
-            "deliveryTag": 25,
+            "consumerTag": "amq.ctag-kBoxj9U1nOPU0aFtKAj1bg",
+            "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Disparos - Evolution"
@@ -2063,10 +2063,10 @@
           "properties": {},
           "content": {
             "destino": "Grupos",
-            "id_grupo": "120363318948095655@g.us",
-            "arquivo": "",
-            "copy": "Sua Transformação Começa Agora!\n\n📣 Quer sair da Imersão em Florianópolis com um plano de ação prático, que realmente transforma o seu salão? Então, a sua jornada começa antes, e é AO VIVO!\n\nNa semana de aquecimento, vou ajudar você a desbloquear o potencial do seu salão com conteúdos exclusivos para te preparar para o grande evento. É o pré-jogo que define a vitória!\n\n📅 Conteúdos das Aulas:\n07/10: Raio-X financeiro e diagnóstico estratégico do negócio\n08/10: Cultura organizacional, visão e plano de meta\n09/10: Plano de ação estratégico do salão\n10/10: Análise dos resultados do salão no mês de setembro\n11/10: Planejamento financeiro até dezembro\n\n🚀 Estar AO VIVO comigo te dá a chance de aplicar as estratégias antes da imersão e já chegar em Floripa com clareza e foco total.",
-            "valor_msg": "Texto"
+            "id_grupo": "120363318226685709@g.us",
+            "arquivo": "https://t3135484.p.clickup-attachments.com/t3135484/bc50b603-7b8a-4646-a6f6-739e7655c3c7/Captura%20de%20Tela%202024-10-10%20a%CC%80s%2000.53.37.png?view=open",
+            "copy": "teste",
+            "valor_msg": "Imagem"
           }
         }
       }
@@ -2091,6 +2091,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-10-03T21:24:27.857Z",
-  "versionId": "858ab2dd-27e2-4230-8d92-40d68e42ddf4"
+  "updatedAt": "2024-10-10T05:14:31.143Z",
+  "versionId": "c4fc31b7-788e-41a3-9140-33e405eccd3c"
 }
