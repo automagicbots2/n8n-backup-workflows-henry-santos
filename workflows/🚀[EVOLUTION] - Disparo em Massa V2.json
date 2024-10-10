@@ -525,7 +525,7 @@
         ]
       ]
     },
-    "23/09": {
+    "09/10": {
       "main": [
         [
           {
@@ -536,11 +536,11 @@
         ]
       ]
     },
-    "12hs1": {
+    "14h09min": {
       "main": [
         [
           {
-            "node": "23/09",
+            "node": "09/10",
             "type": "main",
             "index": 0
           }
@@ -1287,8 +1287,8 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        160,
-        2220
+        180,
+        2640
       ]
     },
     {
@@ -1346,8 +1346,8 @@
       "name": "EnviaMensagemTexto2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        340,
-        2220
+        360,
+        2640
       ],
       "typeVersion": 4
     },
@@ -1355,15 +1355,15 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "value": "1cKzyhtIgcitE9pKXysypoISO6-BgYuRfz6IKGRZERUU",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": 1933965763,
+          "value": "gid=0",
           "mode": "list",
-          "cachedResultName": "Disparo Evolution V2",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=1933965763"
+          "cachedResultName": "disparo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cKzyhtIgcitE9pKXysypoISO6-BgYuRfz6IKGRZERUU/edit#gid=0"
         },
         "options": {}
       },
@@ -1372,8 +1372,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        -320,
-        2400
+        -300,
+        2820
       ],
       "retryOnFail": true,
       "maxTries": 5,
@@ -1394,8 +1394,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -80,
-        2400
+        -60,
+        2820
       ]
     },
     {
@@ -1405,8 +1405,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1260,
-        2620
+        1280,
+        3040
       ]
     },
     {
@@ -1418,8 +1418,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        600,
-        2420
+        620,
+        2840
       ]
     },
     {
@@ -1449,8 +1449,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        760,
-        2420
+        780,
+        2840
       ]
     },
     {
@@ -1463,8 +1463,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1020,
-        2200
+        1040,
+        2620
       ],
       "webhookId": "cef09fa7-cc78-4867-822f-fe5223924d94"
     },
@@ -1478,8 +1478,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1020,
-        2340
+        1040,
+        2760
       ],
       "webhookId": "548f41fc-fe94-4f3c-b9e1-cab6b226004a"
     },
@@ -1493,8 +1493,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1020,
-        2480
+        1040,
+        2900
       ],
       "webhookId": "b0add739-55b5-4af0-81e0-6cdaf115dba6"
     },
@@ -1508,8 +1508,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1020,
-        2620
+        1040,
+        3040
       ],
       "webhookId": "47e14434-d257-4b68-a671-f787de977325"
     },
@@ -1522,20 +1522,20 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        160,
-        2420
+        180,
+        2840
       ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/MSAHenrySantos",
+        "url": "https://evolutionapi.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "1gozy92fyg3hlty3wkv7f"
+              "value": "jsvhasy6ni20702nrvluf"
             }
           ]
         },
@@ -1548,7 +1548,7 @@
             },
             {
               "name": "textMessage.text",
-              "value": "=🎟️ Atenção! Essa é a última chamada para garantir seu acesso à Sala Secreta com Henry Santos e Amélia Pinheiro.\n\nVocê está prestes a descobrir as estratégias que podem transformar seu salão em um negócio lucrativo e autônomo.\n\nE o melhor: vai ter acesso à pré-venda da Imersão Salão Autoadministrável, com condições exclusivas.\n\nNão deixe essa oportunidade escapar!\n\n💎 Toque no link e venha fazer parte desse grupo seleto!\n\n👉 https://salaolucrativo.gestaodesaloes.com.br/salasecretaflorianopolis/"
+              "value": "=Ola🤗!\n\nLembras que dias atrás, você preencheu um formulário, solicitando auxílio, para melhorar a Gestão de Resultados do seu salão? \n\nNós escolhemos você, para solucionar os pontos que você citou no formulário 👏🏽\n\nMas, não estou conseguindo falar contigo, nem por ligação e nem por aqui🫤.\n\nAinda tens interesse, ou vai optar em passar sua vaga, para outra dona de salão de beleza?"
             },
             {
               "name": "options.delay",
@@ -1581,8 +1581,8 @@
       "name": "Mensagem-23-09",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        340,
-        2420
+        440,
+        2840
       ],
       "typeVersion": 4
     },
@@ -1598,7 +1598,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "23/09/2024",
+              "rightValue": "09/10/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -1611,12 +1611,12 @@
         "options": {}
       },
       "id": "5be51df2-d256-425b-bf5e-fa540f304d9d",
-      "name": "23/09",
+      "name": "09/10",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -520,
-        2400
+        -500,
+        2820
       ]
     },
     {
@@ -1624,18 +1624,19 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 12
+              "triggerAtHour": 14,
+              "triggerAtMinute": 10
             }
           ]
         }
       },
       "id": "5830940b-06a5-446b-b742-49f41298f241",
-      "name": "12hs1",
+      "name": "14h09min",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -700,
-        2400
+        -680,
+        2820
       ]
     }
   ],
@@ -1688,10 +1689,16 @@
     },
     "node:12hs1": {
       "recurrencyRules": []
+    },
+    "node:14h07min": {
+      "recurrencyRules": []
+    },
+    "node:14h09min": {
+      "recurrencyRules": []
     }
   },
   "tags": [],
   "triggerCount": 3,
-  "updatedAt": "2024-09-16T19:48:07.161Z",
-  "versionId": "46f9d06c-4464-401f-a2ec-6769cfcf8e47"
+  "updatedAt": "2024-10-09T17:09:28.706Z",
+  "versionId": "e3233f87-6e75-49a3-805c-56c97dc0a451"
 }
