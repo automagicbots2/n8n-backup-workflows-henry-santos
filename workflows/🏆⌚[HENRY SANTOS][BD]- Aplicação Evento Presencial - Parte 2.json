@@ -158,14 +158,14 @@
       "main": [
         [
           {
-            "node": "Add_lead_KOMMO_Veronica",
+            "node": "Add_lead_KOMMO_Jean",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Add_lead_KOMMO_Jean",
+            "node": "Add_lead_KOMMO_Veronica",
             "type": "main",
             "index": 0
           }
@@ -209,14 +209,14 @@
       "main": [
         [
           {
-            "node": "Add_lead_KOMMO_Veronica1",
+            "node": "Add_lead_KOMMO_Jean1",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Add_lead_KOMMO_Jean1",
+            "node": "Add_lead_KOMMO_Veronica1",
             "type": "main",
             "index": 0
           }
@@ -1441,7 +1441,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Gere um número aleatório entre 0 e 1\nconst randomValue = Math.random();\n\n// Arredonde o número para 1 ou 2\nconst result = Math.round(randomValue) + 1;\n\nreturn [{ result }];\n"
+        "jsCode": "// Variável para armazenar o último valor gerado\nlet lastResult = $json.lastResult || null;\n\nfunction generateUniqueRandom() {\n    let newResult;\n\n    // Garantir que o novo valor seja diferente do último\n    do {\n        newResult = Math.round(Math.random()) + 1;\n    } while (newResult === lastResult);\n\n    return newResult;\n}\n\n// Gerar o novo valor aleatório\nconst result = generateUniqueRandom();\n\n// Armazenar o último valor gerado para evitar repetição na próxima execução\nreturn [{ json: { result, lastResult: result } }];\n"
       },
       "id": "5eeec034-4f12-40e7-b2d8-a8e94568cea9",
       "name": "Retorna Output Aleatorio1",
@@ -1495,7 +1495,7 @@
       "typeVersion": 4.1,
       "position": [
         4120,
-        1600
+        1440
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -1531,7 +1531,7 @@
       "typeVersion": 4.1,
       "position": [
         4120,
-        1440
+        1620
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -1546,7 +1546,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Gere um número aleatório entre 0 e 1\nconst randomValue = Math.random();\n\n// Arredonde o número para 1 ou 2\nconst result = Math.round(randomValue) + 1;\n\nreturn [{ result }];\n"
+        "jsCode": "// Variável para armazenar o último valor gerado\nlet lastResult = $json.lastResult || null;\n\nfunction generateUniqueRandom() {\n    let newResult;\n\n    // Garantir que o novo valor seja diferente do último\n    do {\n        newResult = Math.round(Math.random()) + 1;\n    } while (newResult === lastResult);\n\n    return newResult;\n}\n\n// Gerar o novo valor aleatório\nconst result = generateUniqueRandom();\n\n// Armazenar o último valor gerado para evitar repetição na próxima execução\nreturn [{ json: { result, lastResult: result } }];\n"
       },
       "id": "0e8dff53-ba20-4c92-9aee-62b91346c7dd",
       "name": "Retorna Output Aleatorio",
@@ -1600,7 +1600,7 @@
       "typeVersion": 4.1,
       "position": [
         4120,
-        2000
+        1840
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -1636,7 +1636,7 @@
       "typeVersion": 4.1,
       "position": [
         4120,
-        1840
+        2040
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -1850,6 +1850,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-10-01T19:48:22.762Z",
-  "versionId": "0fd0041a-7071-4b17-a025-42ae038ccb59"
+  "updatedAt": "2024-10-10T17:02:36.364Z",
+  "versionId": "c2b90dc1-2e40-4551-a020-c9bdb93cea31"
 }
