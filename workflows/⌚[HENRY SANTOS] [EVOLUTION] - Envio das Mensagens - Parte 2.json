@@ -242,11 +242,33 @@
         ]
       ]
     },
+    "EnviaMensagemTexto7": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "EnviaAudio5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "verifica_midias5": {
       "main": [
         [
           {
-            "node": "EnviaVideo5",
+            "node": "EnviaVideo7",
             "type": "main",
             "index": 0
           }
@@ -260,7 +282,7 @@
         ],
         [
           {
-            "node": "EnviaAudio5",
+            "node": "EnviaMensagemTexto7",
             "type": "main",
             "index": 0
           }
@@ -441,71 +463,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "position": [
         -1800,
-        1820
-      ],
-      "typeVersion": 4
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "={{ $node[\"variaveis_grupo\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis_grupo\"].json[\"nome_da_instancia\"] }}",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "apikey",
-              "value": "={{ $node[\"variaveis_grupo\"].json[\"api_key\"] }}"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
-            },
-            {
-              "name": "mediaMessage.mediatype",
-              "value": "video"
-            },
-            {
-              "name": "mediaMessage.caption",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
-            },
-            {
-              "name": "mediaMessage.media",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].trim() }}"
-            },
-            {
-              "name": "options.presence",
-              "value": "composing"
-            },
-            {
-              "name": "=options.mentions.everyOne",
-              "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
-            },
-            {
-              "name": "options.linkPreview",
-              "value": "={{ $node[\"variaveis_grupo\"].json[\"habilitar_previa_link\"] }}"
-            }
-          ]
-        },
-        "options": {
-          "response": {
-            "response": {
-              "fullResponse": true,
-              "neverError": true
-            }
-          }
-        }
-      },
-      "id": "b304b398-9d52-4202-8b70-21d4ef28ff10",
-      "name": "EnviaVideo5",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        -1800,
-        1660
+        1840
       ],
       "typeVersion": 4
     },
@@ -573,7 +531,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "position": [
         -1800,
-        2140
+        2120
       ],
       "typeVersion": 4
     },
@@ -598,7 +556,7 @@
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
             },
             {
-              "name": "audioMessage.audio",
+              "name": "audio",
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"] }}"
             },
             {
@@ -632,7 +590,7 @@
       "name": "EnviaAudio5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1800,
+        -1440,
         1980
       ],
       "typeVersion": 4
@@ -689,7 +647,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "position": [
         -1800,
-        2300
+        2260
       ],
       "typeVersion": 4
     },
@@ -2008,6 +1966,142 @@
     },
     {
       "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis_grupo\"].json[\"url_api_evolution\"] }}message/sendText/{{ $node[\"variaveis_grupo\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
+            },
+            {
+              "name": "text",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"habilitar_previa_link\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "f1f6f6b0-730e-4c3f-93c2-eebfbaa5981b",
+      "name": "EnviaMensagemTexto7",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1800,
+        1980
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "70ac8031-d8ab-4916-8ad1-97b1508b9b23",
+      "name": "Wait1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1620,
+        1980
+      ],
+      "webhookId": "a87c4794-4b84-4f69-8d8b-85b2ea234035"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"variaveis_grupo\"].json[\"url_api_evolution\"] }}message/sendMedia/{{ $node[\"variaveis_grupo\"].json[\"nome_da_instancia\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"api_key\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
+            },
+            {
+              "name": "media",
+              "value": "video"
+            },
+            {
+              "name": "mediatype",
+              "value": "video"
+            },
+            {
+              "name": "text",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
+            },
+            {
+              "name": "mediaMessage.media",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].trim() }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ $node[\"variaveis_grupo\"].json[\"habilitar_previa_link\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "b5dce9e7-263b-4081-9b8e-710bd47b72d5",
+      "name": "EnviaVideo7",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1800,
+        1700
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
         "dataType": "string",
         "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"valor_msg\"] }}",
         "rules": {
@@ -2054,7 +2148,7 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-kBoxj9U1nOPU0aFtKAj1bg",
+            "consumerTag": "amq.ctag-j_agZMozWpLZ1NoJBfVzGA",
             "deliveryTag": 1,
             "redelivered": false,
             "exchange": "",
@@ -2064,9 +2158,9 @@
           "content": {
             "destino": "Grupos",
             "id_grupo": "120363318226685709@g.us",
-            "arquivo": "https://t3135484.p.clickup-attachments.com/t3135484/bc50b603-7b8a-4646-a6f6-739e7655c3c7/Captura%20de%20Tela%202024-10-10%20a%CC%80s%2000.53.37.png?view=open",
-            "copy": "teste",
-            "valor_msg": "Imagem"
+            "arquivo": "https://t3135484.p.clickup-attachments.com/t3135484/64a0064c-7a8e-4a1d-86db-2933a7254b85/Nova%20guia%20-%20Brave%202024-10-11%2013-13-06.mp4",
+            "copy": "teste 2",
+            "valor_msg": "Vídeo"
           }
         }
       }
@@ -2091,6 +2185,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-10-10T05:14:31.143Z",
-  "versionId": "c4fc31b7-788e-41a3-9140-33e405eccd3c"
+  "updatedAt": "2024-10-11T17:34:49.481Z",
+  "versionId": "d9cb3cdf-e27a-4a95-ab77-e5a74daf73c8"
 }
