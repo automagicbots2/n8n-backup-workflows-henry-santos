@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Item Lists3": {
       "main": [
@@ -84,6 +84,17 @@
           }
         ]
       ]
+    },
+    "terça - 15/10 17hrs": {
+      "main": [
+        [
+          {
+            "node": "le_planilha3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-15T19:36:08.621Z",
@@ -116,10 +127,10 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": 1472062179,
+          "value": 1199971817,
           "mode": "list",
-          "cachedResultName": "disparo x1 - Leads Funil Saque Dinheiro 15-10",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cKzyhtIgcitE9pKXysypoISO6-BgYuRfz6IKGRZERUU/edit#gid=1472062179"
+          "cachedResultName": "disparo x1 - EventoPresencial/Convidados",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cKzyhtIgcitE9pKXysypoISO6-BgYuRfz6IKGRZERUU/edit#gid=1199971817"
         },
         "options": {}
       },
@@ -197,7 +208,7 @@
       "parameters": {
         "phoneNumberId": "417653434771940",
         "recipientPhoneNumber": "=+{{ $node[\"Code3\"].json[\"telefonefinal\"] }}",
-        "template": "disparo_saque_dinheiro_17h_15_10|pt_BR"
+        "template": "disparo_ip_16_10_8h|pt_BR"
       },
       "id": "b6cb1851-e639-4b42-b99e-0d4388634657",
       "name": "WhatsApp Business Cloud6",
@@ -243,7 +254,7 @@
           "interval": [
             {
               "field": "cronExpression",
-              "expression": "0 17 15 10 *"
+              "expression": "0 8 16 10 *"
             }
           ]
         }
@@ -253,7 +264,7 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -60,
+        100,
         500
       ]
     }
@@ -262,9 +273,13 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "staticData": null,
+  "staticData": {
+    "node:terça - 15/10 17hrs": {
+      "recurrencyRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-10-15T19:36:20.571Z",
-  "versionId": "41b62756-91fd-4e29-b3f4-71b6776eb3d7"
+  "triggerCount": 1,
+  "updatedAt": "2024-10-16T04:24:20.955Z",
+  "versionId": "1d688910-c82f-4014-bd7b-440941464016"
 }
