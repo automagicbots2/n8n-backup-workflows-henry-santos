@@ -538,13 +538,7 @@
     },
     "14h09min": {
       "main": [
-        [
-          {
-            "node": "09/10",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     }
   },
@@ -1624,8 +1618,8 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 14,
-              "triggerAtMinute": 10
+              "field": "cronExpression",
+              "expression": "0 17 15"
             }
           ]
         }
@@ -1699,6 +1693,6 @@
   },
   "tags": [],
   "triggerCount": 3,
-  "updatedAt": "2024-10-09T17:09:28.706Z",
-  "versionId": "e3233f87-6e75-49a3-805c-56c97dc0a451"
+  "updatedAt": "2024-10-15T16:01:54.836Z",
+  "versionId": "88d08cab-d4fc-4b4c-a687-15d405ced3f5"
 }
