@@ -297,22 +297,106 @@
         ]
       ]
     },
-    "segunda - 8hrs": {
+    "14/10/2024": {
       "main": [
         [
           {
-            "node": "14/10/2024",
+            "node": "le_planilha2",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "14/10/2024": {
+    "Item Lists3": {
       "main": [
         [
           {
-            "node": "le_planilha2",
+            "node": "WhatsApp Business Cloud7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha3": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_lotes3": {
+      "main": [
+        [
+          {
+            "node": "Item Lists3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada3": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code3": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2s3": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud6": {
+      "main": [
+        [
+          {
+            "node": "2s3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "segunda - 8hrs": {
+      "main": [
+        [
+          {
+            "node": "14/10/2024",
             "type": "main",
             "index": 0
           }
@@ -870,29 +954,6 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "weeks",
-              "triggerAtDay": [
-                1
-              ],
-              "triggerAtHour": 8
-            }
-          ]
-        }
-      },
-      "id": "d165cb3e-f212-4378-b441-859c709733e1",
-      "name": "segunda - 8hrs",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        -1200,
-        1500
-      ]
-    },
-    {
-      "parameters": {
         "conditions": {
           "options": {
             "caseSensitive": true,
@@ -923,6 +984,193 @@
         -1020,
         1500
       ]
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "c8fe9371-be00-4c11-a124-9535e38fa509",
+      "name": "Item Lists3",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        -340,
+        1820
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1cKzyhtIgcitE9pKXysypoISO6-BgYuRfz6IKGRZERUU",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1472062179,
+          "mode": "list",
+          "cachedResultName": "disparo x1 - Leads Funil Saque Dinheiro 15-10",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cKzyhtIgcitE9pKXysypoISO6-BgYuRfz6IKGRZERUU/edit#gid=1472062179"
+        },
+        "options": {}
+      },
+      "id": "572e1cdd-d209-4435-a0bb-711c224cd1f0",
+      "name": "le_planilha3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        -820,
+        2000
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "9560e3a6-149b-423c-8b97-f4ef57848b15",
+      "name": "separa_em_lotes3",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -580,
+        2000
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "719584fc-5327-4d30-bbac-9d8e5dc57d53",
+      "name": "Não faz nada3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        260,
+        2020
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes3\"].json[\"telefone\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "2f8d014c-a292-4289-bc6f-2f1227c77d28",
+      "name": "Code3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -340,
+        2020
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "123ce9fd-e01f-4e72-b7aa-918814d6e929",
+      "name": "2s3",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        60,
+        2020
+      ],
+      "webhookId": "47e14434-d257-4b68-a671-f787de977325"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+{{ $node[\"Code3\"].json[\"telefonefinal\"] }}",
+        "template": "imersao_12_10_19hrs|pt_BR"
+      },
+      "id": "ddb2cf14-d140-4461-be25-b250552738a5",
+      "name": "WhatsApp Business Cloud6",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        2020
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+5562981196678",
+        "template": "disparo_finalizado|pt_BR"
+      },
+      "id": "c6fd9c97-c7fe-49aa-8f25-63857a989164",
+      "name": "WhatsApp Business Cloud7",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        1820
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "2c919143-0825-4b7f-ab8b-0d9db5c33d57",
+      "name": "segunda - 8hrs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1200,
+        1500
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 17 15 10 *"
+            }
+          ]
+        }
+      },
+      "id": "327bd545-67ee-4ea2-8f76-cedc3f6e64ce",
+      "name": "segunda - 8hrs1",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1180,
+        2000
+      ]
     }
   ],
   "pinData": {},
@@ -950,10 +1198,13 @@
     },
     "node:segunda - 8hrs": {
       "recurrencyRules": []
+    },
+    "node:segunda - 8hrs1": {
+      "recurrencyRules": []
     }
   },
   "tags": [],
-  "triggerCount": 3,
-  "updatedAt": "2024-10-11T20:40:04.997Z",
-  "versionId": "fa73b977-d3df-4e23-88e2-63aabfc18779"
+  "triggerCount": 4,
+  "updatedAt": "2024-10-15T19:21:39.196Z",
+  "versionId": "6aa9f57c-e9d4-4152-8553-8e568835b305"
 }
