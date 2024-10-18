@@ -220,17 +220,6 @@
         ]
       ]
     },
-    "chega_da_fila": {
-      "main": [
-        [
-          {
-            "node": "msg_de_grupo",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Wait": {
       "main": [
         [
@@ -264,11 +253,22 @@
         ]
       ]
     },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "msg_de_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "verifica_midias5": {
       "main": [
         [
           {
-            "node": "EnviaVideo7",
+            "node": "enviar_video",
             "type": "main",
             "index": 0
           }
@@ -304,8 +304,8 @@
       ]
     }
   },
-  "createdAt": "2024-08-15T17:57:07.412Z",
-  "id": "W9Yg5G7I7cqIZkNw",
+  "createdAt": "2024-10-17T17:45:32.875Z",
+  "id": "KoxbZ7GsdyHVNYHo",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -316,7 +316,7 @@
         "content": "## Tipos de Mídia\n\n- Vídeo\n- Imagem\n- Áudio\n- Documento\n- Texto\n- Lista",
         "height": 243
       },
-      "id": "d39c767d-cd67-4afd-9979-a27f860efb81",
+      "id": "76586a93-3af6-449e-91e8-437d2600f06e",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -324,38 +324,6 @@
         -2640,
         1400
       ]
-    },
-    {
-      "parameters": {
-        "queue": "Disparos - Evolution",
-        "options": {
-          "arguments": {
-            "argument": [
-              {
-                "key": "x-queue-type",
-                "value": "quorum"
-              }
-            ]
-          },
-          "acknowledge": "executionFinishesSuccessfully",
-          "jsonParseBody": "={{ true }}",
-          "parallelMessages": 1
-        }
-      },
-      "id": "9afca1f7-0053-45e3-8525-5ac68992aab0",
-      "name": "chega_da_fila",
-      "type": "n8n-nodes-base.rabbitmqTrigger",
-      "typeVersion": 1,
-      "position": [
-        -3140,
-        2020
-      ],
-      "credentials": {
-        "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
-        }
-      }
     },
     {
       "parameters": {
@@ -381,7 +349,7 @@
         },
         "options": {}
       },
-      "id": "e02dff95-7362-4312-a699-8dcc38de277a",
+      "id": "c3065913-34f1-474b-860e-351919544ea3",
       "name": "msg_de_grupo",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
@@ -394,7 +362,7 @@
       "parameters": {
         "jsCode": "// Obtém os parâmetros necessários\nconst wppGrupo = $node[\"pesquisa_configs\"].json[\"wpp_grupo\"];\nconst wpp1x1Captacao = $node[\"pesquisa_configs\"].json[\"wpp_1x1_captacao\"];\nconst wpp1x1Vendas = $node[\"pesquisa_configs\"].json[\"wpp_1x1_vendas\"];\nconst instancias = $json;\n\nconsole.log(\"wppGrupo:\", wppGrupo);\nconsole.log(\"wpp1x1Captacao:\", wpp1x1Captacao);\nconsole.log(\"wpp1x1Vendas:\", wpp1x1Vendas);\nconsole.log(\"instancias:\", instancias);\n\n// Função para encontrar a instância com base no proprietário\nfunction encontrarInstanciaPorProprietario(proprietario, instancias) {\n    const instanciaKeys = Object.keys(instancias);\n    for (const key of instanciaKeys) {\n        const instancia = instancias[key].instance;\n        console.log(\"instancia:\", instancia);\n        if (instancia && instancia.owner === proprietario) {\n            return instancia;\n        }\n    }\n    return null;\n}\n\n// Encontrar instância do grupo\nconst instanciaGrupos = encontrarInstanciaPorProprietario(wppGrupo, instancias);\n\n// Encontrar instância de 1x1 para captação\nconst instancia1x1Captacao = encontrarInstanciaPorProprietario(wpp1x1Captacao, instancias);\n\n// Encontrar instância de 1x1 para vendas\nconst instancia1x1Vendas = encontrarInstanciaPorProprietario(wpp1x1Vendas, instancias);\n\n// Retornar os resultados\nreturn {\n    \"instancia_grupos\": instanciaGrupos,\n    \"instancia_1x1_captacao\": instancia1x1Captacao,\n    \"instancia_1x1_vendas\": instancia1x1Vendas\n};\n"
       },
-      "id": "335952de-e4e8-4178-9b16-6f1a2b3f849b",
+      "id": "48f42db7-4394-44ac-9e77-490cf2bda768",
       "name": "Code",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -458,7 +426,7 @@
           }
         }
       },
-      "id": "455c8119-01ac-478c-a4d1-e2d04ef44ffe",
+      "id": "e6b6e143-7676-4574-a9e9-9c1cdaa5e408",
       "name": "EnviaImagem5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -526,7 +494,7 @@
           }
         }
       },
-      "id": "b3daca42-7e6c-45e9-8edf-ca45a8389fdf",
+      "id": "d4ddb836-2862-4fa9-b803-7785454d3351",
       "name": "EnviaDocumento5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -586,7 +554,7 @@
           }
         }
       },
-      "id": "bbf866c7-a5de-425e-bcfc-ded2778ee788",
+      "id": "7d4b0ca0-9fa7-48b2-832b-baaf109e3f00",
       "name": "EnviaAudio5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -642,7 +610,7 @@
           }
         }
       },
-      "id": "e6797fe3-e675-472d-8815-acdee1fa44c4",
+      "id": "320019ec-680d-4e18-9d7e-7659bc87f530",
       "name": "EnviaMensagemTexto5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -685,7 +653,7 @@
         "include": "none",
         "options": {}
       },
-      "id": "d01ac277-3d87-4003-866a-6f59dd9555ae",
+      "id": "2a41c24a-a82c-4cc2-afe2-26d793ef7f80",
       "name": "variaveis_grupo",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
@@ -749,7 +717,7 @@
           }
         }
       },
-      "id": "25b7c76a-5254-483f-8c6d-38c32b4d7d59",
+      "id": "e855e07f-64d8-4dd8-a6bc-13739cb4bc5e",
       "name": "EnviaImagem2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -809,7 +777,7 @@
           }
         }
       },
-      "id": "b8dd2397-c86d-4751-a9fb-65bf77ddc73b",
+      "id": "ad5d0237-e982-4613-ad7a-399565b48a81",
       "name": "EnviaVideo2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -873,7 +841,7 @@
           }
         }
       },
-      "id": "0ea7235b-af13-4ce1-ad68-e03471cf45f3",
+      "id": "c3398274-843a-4515-8fd6-1e921ce0e1d5",
       "name": "EnviaDocumento2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -929,7 +897,7 @@
           }
         }
       },
-      "id": "9981ea20-a80e-4381-9215-1381ba429c74",
+      "id": "e66c50eb-4e31-4590-99fa-ec0e1da8eae7",
       "name": "EnviaAudio2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -985,7 +953,7 @@
           }
         }
       },
-      "id": "d0fd16c1-719d-4509-9e1e-d9013a6abec9",
+      "id": "9bd43856-c6f8-4f9c-8398-34c814467e55",
       "name": "EnviaMensagemTexto2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1019,7 +987,7 @@
           }
         }
       },
-      "id": "384820b3-5010-44a9-81a1-a3e22d01f52e",
+      "id": "b130cf76-e6bf-4740-8f1c-6f95231606e9",
       "name": "EnviaMensagemLista1",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1062,7 +1030,7 @@
         },
         "options": {}
       },
-      "id": "4683574e-29b2-4465-8b8d-88382037cbc7",
+      "id": "f68cd9a1-015f-4c5f-b870-5cd21377f793",
       "name": "entrou_no_grupo",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
@@ -1105,7 +1073,7 @@
         },
         "options": {}
       },
-      "id": "7a93b595-d037-49bf-b0bf-2b4aa18b0690",
+      "id": "380cc3e4-b815-4bb0-827b-3e3d1f03900d",
       "name": "saiu_do_grupo",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
@@ -1135,7 +1103,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "ae449830-c47e-4e80-9037-3c206dcc5af1",
+      "id": "8c2300eb-5c20-4d5c-9df0-653f68fa9385",
       "name": "pesquisa_user",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
@@ -1206,7 +1174,7 @@
           }
         }
       },
-      "id": "f7c4025f-7464-45ce-8afb-f1365d22303f",
+      "id": "0656dc86-8389-4701-9692-4dd514933cff",
       "name": "EnviaImagem6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1266,7 +1234,7 @@
           }
         }
       },
-      "id": "2992d247-692c-4d9a-9488-199443dfcaa6",
+      "id": "24319411-b14e-4746-bcb8-3945f296f66b",
       "name": "EnviaVideo6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1322,7 +1290,7 @@
           }
         }
       },
-      "id": "3313cfdd-7f3b-4e5c-b733-537db28c99fc",
+      "id": "2e85c916-d45e-44c0-b326-dba4f7cf1de4",
       "name": "EnviaAudio6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1378,7 +1346,7 @@
           }
         }
       },
-      "id": "1fbc2ab9-4e35-4b9c-b9e1-45e697f31968",
+      "id": "f012104e-e50c-4d01-89d2-ab6865c39118",
       "name": "EnviaMensagemTexto6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1411,7 +1379,7 @@
         },
         "options": {}
       },
-      "id": "5e2fbf16-f217-4f56-8374-cdc60cf6d933",
+      "id": "a252404c-4e16-4ab1-800d-d8cd0a45491b",
       "name": "recuperacao_de_vendas",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
@@ -1471,7 +1439,7 @@
           }
         }
       },
-      "id": "2fd8257e-6585-4d73-a7ad-8194dc757103",
+      "id": "7ce13838-0f81-4ce9-95b3-b1a6bd73a225",
       "name": "EnviaDocumento6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1523,7 +1491,7 @@
         "include": "none",
         "options": {}
       },
-      "id": "a3500c11-af70-4bd0-9628-f2f41e7367f5",
+      "id": "ae2933f6-487b-41f4-b897-9725edbb01e4",
       "name": "variaveis",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
@@ -1587,7 +1555,7 @@
           }
         }
       },
-      "id": "7d8e1c2e-8620-4392-aa90-219c6ab4b7b5",
+      "id": "6492ad71-b149-4c3a-8c26-9c625afb90f7",
       "name": "EnviaImagem",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1647,7 +1615,7 @@
           }
         }
       },
-      "id": "71623968-6b9b-4e83-9e47-e53e575ef95c",
+      "id": "56dab95a-1224-4a26-95ec-fd5858d4f8a5",
       "name": "EnviaVideo",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1703,7 +1671,7 @@
           }
         }
       },
-      "id": "df76b1b3-892e-487c-8e35-0f3b3ba3f902",
+      "id": "ed699109-a369-4d94-bdc7-c8f4632a9851",
       "name": "EnviaAudio",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1759,7 +1727,7 @@
           }
         }
       },
-      "id": "b257d687-3f69-40be-afb0-213f83f1499d",
+      "id": "1ba74d96-0577-4dbe-ba2b-c7db3d26ee9f",
       "name": "EnviaMensagemTexto",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1819,7 +1787,7 @@
           }
         }
       },
-      "id": "46ee8fe6-dd64-4ffc-806f-3248c6a89078",
+      "id": "e4638bef-656a-470c-a0e6-fd005014423f",
       "name": "EnviaDocumento",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -1859,7 +1827,7 @@
         },
         "fallbackOutput": 5
       },
-      "id": "8e917e45-a5e9-41c0-ab98-04c6bdb9fabe",
+      "id": "1f142a88-4e5f-40ec-8be7-8a912c786a78",
       "name": "verifica_midias6",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 2,
@@ -1899,7 +1867,7 @@
         },
         "fallbackOutput": 5
       },
-      "id": "f45bb7da-4995-4612-8d10-b61247174086",
+      "id": "dffb16c1-e937-40c8-9df7-2089b0541f19",
       "name": "verifica_midias",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 2,
@@ -1943,7 +1911,7 @@
         },
         "fallbackOutput": 6
       },
-      "id": "29dc0a69-e331-41f6-92e1-0c1735808b88",
+      "id": "f8dac654-6c7c-4c27-8466-cf4ee52c3a94",
       "name": "verifica_midias2",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 2,
@@ -1954,7 +1922,7 @@
     },
     {
       "parameters": {},
-      "id": "a40c2eab-0cf4-42ca-838c-9f337628d2f0",
+      "id": "a95b005e-e012-487e-a867-bc13bd410999",
       "name": "Wait",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
@@ -1962,7 +1930,7 @@
         -2660,
         2000
       ],
-      "webhookId": "3015cfd2-b5be-4920-955d-a87ad28fd4e4"
+      "webhookId": "a7c3e1f9-23e9-4c80-ad35-cfeaef28712e"
     },
     {
       "parameters": {
@@ -2011,7 +1979,7 @@
           }
         }
       },
-      "id": "f1f6f6b0-730e-4c3f-93c2-eebfbaa5981b",
+      "id": "28f65a53-bd68-4558-a457-2f0d2aaf6613",
       "name": "EnviaMensagemTexto7",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -2022,7 +1990,7 @@
     },
     {
       "parameters": {},
-      "id": "70ac8031-d8ab-4916-8ad1-97b1508b9b23",
+      "id": "c6f6b849-476f-448d-a33b-fb6d16155c62",
       "name": "Wait1",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
@@ -2030,7 +1998,7 @@
         -1620,
         1980
       ],
-      "webhookId": "a87c4794-4b84-4f69-8d8b-85b2ea234035"
+      "webhookId": "89e88efa-c0de-45f9-8ec2-f57844f50022"
     },
     {
       "parameters": {
@@ -2053,52 +2021,77 @@
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
             },
             {
-              "name": "media",
-              "value": "video"
-            },
-            {
               "name": "mediatype",
               "value": "video"
             },
             {
-              "name": "text",
+              "name": "mimetype",
+              "value": "video/mp4"
+            },
+            {
+              "name": "caption",
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
             },
             {
-              "name": "mediaMessage.media",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].trim() }}"
+              "name": "media",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].split(\"?\")[0] }}"
             },
             {
-              "name": "options.presence",
-              "value": "composing"
+              "name": "fileName",
+              "value": "video.mp4"
             },
             {
-              "name": "=options.mentions.everyOne",
+              "name": "mentionsEveryOne",
               "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
-            },
-            {
-              "name": "options.linkPreview",
-              "value": "={{ $node[\"variaveis_grupo\"].json[\"habilitar_previa_link\"] }}"
             }
           ]
         },
         "options": {
-          "response": {
-            "response": {
-              "fullResponse": true,
-              "neverError": true
-            }
+          "redirect": {
+            "redirect": {}
           }
         }
       },
-      "id": "b5dce9e7-263b-4081-9b8e-710bd47b72d5",
-      "name": "EnviaVideo7",
+      "id": "eef5b080-879b-4f21-96a1-f96737c8c7e4",
+      "name": "enviar_video",
       "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
       "position": [
         -1800,
         1700
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "Disparos - Evolution",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": "={{ true }}",
+          "parallelMessages": 1
+        }
+      },
+      "id": "b751f610-182b-406c-a085-a7cd5721fa50",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3160,
+        2020
       ],
-      "typeVersion": 4
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
     },
     {
       "parameters": {
@@ -2133,7 +2126,7 @@
           ]
         }
       },
-      "id": "2722fd8d-e67f-4a61-8682-65c7bbadce4e",
+      "id": "43d9ff7a-632e-4e52-97e6-1b5a2b80bb49",
       "name": "verifica_midias5",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 2,
@@ -2148,8 +2141,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-afeR3jviD6HLY2zdvy5e-w",
-            "deliveryTag": 39,
+            "consumerTag": "amq.ctag-nVptKUEcqG1ey7jwcMDhQA",
+            "deliveryTag": 5,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Disparos - Evolution"
@@ -2158,9 +2151,9 @@
           "content": {
             "destino": "Grupos",
             "id_grupo": "120363318226685709@g.us",
-            "arquivo": "",
-            "copy": "*Engajar a equipe é um problema para você?*\n\nA Vivian também enfrentava essa dificuldade, até que decidiu aplicar os ensinamentos do Henry. E hoje, a história é completamente diferente! Ela não só conseguiu engajar sua equipe, como também *mudou a realidade do seu salão* e da sua vida.\n\nQuer saber como ela fez isso?\n\n👉 *Ouça o áudio da Vivian e veja os resultados que ela está colhendo!*",
-            "valor_msg": "Áudio"
+            "arquivo": "https://t3135484.p.clickup-attachments.com/t3135484/2d5815e8-9c67-44b4-a357-63f771538965/DEP%2003%20-%201080X1080.mp4?view=open",
+            "copy": "teste",
+            "valor_msg": "Vídeo"
           }
         }
       }
@@ -2185,6 +2178,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-10-16T15:11:17.016Z",
-  "versionId": "1e1aed11-233d-4ef8-b102-223fb3bb7a9b"
+  "updatedAt": "2024-10-17T17:47:45.907Z",
+  "versionId": "fe828740-49db-4a06-a779-2434135c7a93"
 }
