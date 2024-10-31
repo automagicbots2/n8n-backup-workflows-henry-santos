@@ -264,17 +264,6 @@
         ]
       ]
     },
-    "30/": {
-      "main": [
-        [
-          {
-            "node": "le_planilha1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "30/10 - 19hrs": {
       "main": [
         [
@@ -525,6 +514,17 @@
         [
           {
             "node": "31/1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "30/": {
+      "main": [
+        [
+          {
+            "node": "le_planilha1",
             "type": "main",
             "index": 0
           }
@@ -1030,39 +1030,6 @@
       "typeVersion": 1.1,
       "position": [
         -1200,
-        620
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
-              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "30/10/2024",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "26321d0d-dda5-433e-af8e-bf1bd25597db",
-      "name": "30/",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        -1020,
         620
       ]
     },
@@ -1591,6 +1558,39 @@
         -1140,
         2320
       ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "30/10/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "26321d0d-dda5-433e-af8e-bf1bd25597db",
+      "name": "30/",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -1020,
+        620
+      ]
     }
   ],
   "pinData": {},
@@ -1649,6 +1649,6 @@
   },
   "tags": [],
   "triggerCount": 5,
-  "updatedAt": "2024-10-30T14:00:04.186Z",
-  "versionId": "dc7bbd5c-2084-4ec9-a42a-3bf88923079c"
+  "updatedAt": "2024-10-30T15:16:08.530Z",
+  "versionId": "c2e76e2d-4d59-4ad9-b89f-b66069ae603a"
 }
