@@ -888,17 +888,6 @@
         ]
       ]
     },
-    "entra_na_fila": {
-      "main": [
-        [
-          {
-            "node": "segundo_ou_mais_erro",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "envia_campo_id_do_agendamento": {
       "main": [
         [
@@ -1163,24 +1152,6 @@
         ]
       ]
     },
-    "id_lead_kommo_vazio": {
-      "main": [
-        [
-          {
-            "node": "Add_contato_KOMMO1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "update_contato_KOMMO",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "pesquisa_lead2": {
       "main": [
         [
@@ -1236,17 +1207,6 @@
         ]
       ]
     },
-    "update_leads_KOMMO": {
-      "main": [
-        [
-          {
-            "node": "telefone_preenchido3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "update_leads_KOMMO1": {
       "main": [
         [
@@ -1274,6 +1234,46 @@
         [
           {
             "node": "pesquisa_agendamento_antigo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila": {
+      "main": [
+        [
+          {
+            "node": "cadastrar_contato1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "id_lead_kommo_vazio": {
+      "main": [
+        [
+          {
+            "node": "Add_contato_KOMMO1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_contato_KOMMO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_leads_KOMMO": {
+      "main": [
+        [
+          {
+            "node": "telefone_preenchido3",
             "type": "main",
             "index": 0
           }
@@ -4172,41 +4172,9 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        560,
-        1540
+        580,
+        1400
       ]
-    },
-    {
-      "parameters": {
-        "queue": "Calendly - Reagendamentos",
-        "options": {
-          "arguments": {
-            "argument": [
-              {
-                "key": "x-queue-type",
-                "value": "quorum"
-              }
-            ]
-          },
-          "acknowledge": "executionFinishesSuccessfully",
-          "jsonParseBody": true,
-          "parallelMessages": 3
-        }
-      },
-      "id": "6f7dcad1-f860-45ba-8699-4ce8db35ce64",
-      "name": "entra_na_fila",
-      "type": "n8n-nodes-base.rabbitmqTrigger",
-      "typeVersion": 1,
-      "position": [
-        360,
-        1540
-      ],
-      "credentials": {
-        "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
-        }
-      }
     },
     {
       "parameters": {
@@ -4808,26 +4776,6 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"pesquisa_lead1\"].json[\"id_lead_kommo\"] }}",
-              "operation": "isEmpty"
-            }
-          ]
-        }
-      },
-      "id": "e9413f24-0653-46b2-9606-9ac784b803fd",
-      "name": "id_lead_kommo_vazio",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        1600,
-        1780
-      ]
-    },
-    {
-      "parameters": {
         "operation": "select",
         "table": {
           "__rl": true,
@@ -4937,42 +4885,6 @@
       "position": [
         2860,
         1300
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
-        "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "method": "PATCH",
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "oAuth2Api",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_lead1\"].json[\"id_lead_kommo\"] }},\n        \"name\": \"{{ $node[\"pesquisa_lead1\"].json[\"nome\"] }}\",\n        \"status_id\": 72345787,\n        \"pipeline_id\": 9337315,\n         \"responsible_user_id\":{{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }},\n        \"custom_fields_values\": [\n            {\n                \"field_id\": 1016092,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016094,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016096,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016098,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[1] }}\"\n                    }\n                ]\n            },\n                      {\n                \"field_id\": 1016184,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Reagendamento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016100,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016102,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016104,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016106,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016108,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016110,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016112,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016114,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016116,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016120,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016122,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                    }\n                ]\n            },\n              {\n                \"field_id\": 1016126,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                    }\n                ]\n            }\n        ]\n    }\n]",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
-      },
-      "id": "681a4e98-3fa0-451c-9ad1-0e986d617b48",
-      "name": "update_leads_KOMMO",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        2100,
-        1940
       ],
       "credentials": {
         "activeCampaignApi": {
@@ -5127,6 +5039,95 @@
           "name": "[Henry Santos] - Kommo ouath 2"
         }
       }
+    },
+    {
+      "parameters": {
+        "queue": "Calendly - Reagendamentos",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": true,
+          "parallelMessages": 3
+        }
+      },
+      "id": "6f7dcad1-f860-45ba-8699-4ce8db35ce64",
+      "name": "entra_na_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        360,
+        1540
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"pesquisa_lead1\"].json[\"id_lead_kommo\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "e9413f24-0653-46b2-9606-9ac784b803fd",
+      "name": "id_lead_kommo_vazio",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        1780
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": \"{{ $node[\"pesquisa_lead1\"].json[\"id_lead_kommo\"] || \"\" }}\",\n        \"name\": \"{{ $node[\"pesquisa_lead1\"].json[\"nome\"] || \"\" }}\",\n        \"status_id\": 72345787,\n        \"pipeline_id\": 9337315,\n        \"responsible_user_id\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] || \"\" }}\",\n        \"custom_fields_values\": [\n            {\n                \"field_id\": 1016092,\n                \"values\": [\n                    {\n                        \"value\": \"{{ ($node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"] || \"\").split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016094,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016096,\n                \"values\": [\n                    {\n                        \"value\": \"{{ ($node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"] || \"\").split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016098,\n                \"values\": [\n                    {\n                        \"value\": \"{{ ($node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"] || \"\").split(' ')[1] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016184,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Reagendamento\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016100,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016102,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016104,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016106,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016108,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016110,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016112,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016114,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016116,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016120,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016122,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] || \"\" }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016126,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] || \"\" }}\"\n                    }\n                ]\n            }\n        ]\n    }\n]\n",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "681a4e98-3fa0-451c-9ad1-0e986d617b48",
+      "name": "update_leads_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2100,
+        1940
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {
@@ -5134,38 +5135,38 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-Cx_FIStEyLSlomx5W580GA",
-            "deliveryTag": 1,
-            "redelivered": false,
+            "consumerTag": "amq.ctag-yQRFgfZShYP7Epk-UcjUbQ",
+            "deliveryTag": 2,
+            "redelivered": true,
             "exchange": "",
             "routingKey": "Calendly - Reagendamentos"
           },
           "properties": {
             "headers": {
-              "x-delivery-count": 844333
+              "x-delivery-count": 2678270
             }
           },
           "content": {
             "propertyName": false,
-            "Nome do Cliente": "Daise Sdr +55 41 99528-4284",
-            "E-mail do Cliente": "daise@hotmail.com",
+            "Nome do Cliente": "Studio Lc Ss",
+            "E-mail do Cliente": "studio.lc.vix@gmail.com",
             "Telefone do Cliente - Formato BC": "+",
             "Telefone do Cliente - Formato Z-API": "",
-            "ID do Evento": "136d8402-812a-428d-a94a-5198cbf935e0",
+            "ID do Evento": "4ebb0582-1164-441e-8e0c-8e129f6a4a52",
             "Responsável pelo Evento": "Jean Carlos",
             "E-mail do Responsável": "jeancmello.13@gmail.com",
-            "Data de Início": "25/09/2024 16:00",
-            "Data em que foi feito o Reagendamento": "23/09/2024",
-            "Data de Término": "25/09/2024 17:00",
-            "Dia da Semana de Início do Evento": "Quarta",
+            "Data de Início": "11/10/2024 17:00",
+            "Data em que foi feito o Reagendamento": "11/10/2024",
+            "Data de Término": "11/10/2024 18:00",
+            "Dia da Semana de Início do Evento": "Sexta",
             "utm_source": null,
             "utm_campaign": null,
             "utm_term": null,
             "utm_medium": null,
             "utm_content": null,
             "Motivo do Reagendamento": null,
-            "ID do Cliente": "cced3dba-4f9a-4b91-9be6-aaa1a69aae61",
-            "ID do Evento Antigo": "456da8b9-ebe8-40c0-b5c7-035ea8cee483",
+            "ID do Cliente": "f4daa870-f6f7-4149-be50-4d387a25f717",
+            "ID do Evento Antigo": "951ffadb-fbc2-4e31-a72d-a4c8ea905f83",
             "Tipo de Evento": "Sessão Estratégica",
             "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
             "id_do_campo_id_do_agendamento_bot_conversa": "1111672",
@@ -5174,18 +5175,18 @@
             "id_do_campo_data_do_agendamento_bot_conversa": "1115965",
             "id_do_campo_dia_da_semana_do_agendamento_bot_conversa": "1115966",
             "fluxo_de_confirmacao_de_reagendamento": "2360856",
-            "Link da Reunião": null,
-            "ID do Cliente Antigo": "62748829-ce7f-48bd-a991-dd5923487a43",
-            "data_de_inicio_antigo": "2024-09-23",
-            "hora_de_inicio_antigo": "15:00:00",
-            "Link da Reunião Antigo": null,
-            "Dia da Semana de Início do Evento Antigo": "Segunda",
-            "Data do Agendamento Antigo": "2024-09-20 16:15:33",
+            "Link da Reunião": "https://calendly.com/events/4ebb0582-1164-441e-8e0c-8e129f6a4a52/google_meet",
+            "ID do Cliente Antigo": "433061fa-841b-4b87-a694-bd76d4e3e938",
+            "data_de_inicio_antigo": "2024-10-11",
+            "hora_de_inicio_antigo": "10:00:00",
+            "Link da Reunião Antigo": "https://calendly.com/events/951ffadb-fbc2-4e31-a72d-a4c8ea905f83/google_meet",
+            "Dia da Semana de Início do Evento Antigo": "Sexta",
+            "Data do Agendamento Antigo": "2024-10-10 19:08:10",
             "Responsável pelo Evento Antigo": "Jean Carlos",
             "E-mail do Responsável Antigo": "jeancmello.13@gmail.com",
-            "data_de_inicio_novo": "2024-09-25",
-            "data_agendamento_novo": "2024-09-23 13:09:17",
-            "hora_de_inicio_novo": "16:00:00",
+            "data_de_inicio_novo": "2024-10-11",
+            "data_agendamento_novo": "2024-10-11 10:38:40",
+            "hora_de_inicio_novo": "17:00:00",
             "id_campo_id_banco_de_dados_bot_conversa": "1351140",
             "variacao_do_funil": null,
             "funil": "sessao_estrategica",
@@ -5248,6 +5249,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-24T21:07:45.621Z",
-  "versionId": "b1af02ba-1130-4738-b0c3-e593a3a437a6"
+  "updatedAt": "2024-10-31T14:31:00.666Z",
+  "versionId": "1004c241-1149-468b-823b-02328965d03d"
 }
