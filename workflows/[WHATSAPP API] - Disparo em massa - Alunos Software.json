@@ -1,0 +1,338 @@
+{
+  "active": false,
+  "connections": {
+    "Item Lists4": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha4": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_lotes4": {
+      "main": [
+        [
+          {
+            "node": "Item Lists4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada4": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code4": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2s4": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud8": {
+      "main": [
+        [
+          {
+            "node": "2s4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "31/10 - 8:15hrs": {
+      "main": [
+        [
+          {
+            "node": "01/11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "01/11": {
+      "main": [
+        [
+          {
+            "node": "le_planilha4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-11-01T13:46:17.251Z",
+  "id": "eZx7wWtyNE5lYEx3",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[WHATSAPP API] - Disparo em massa - Alunos Software",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "3e48cbe0-6910-45af-9d9c-7b4cdf2334c2",
+      "name": "Item Lists4",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        540,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 948771043,
+          "mode": "list",
+          "cachedResultName": "Software",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=948771043"
+        },
+        "options": {}
+      },
+      "id": "8c17a013-d567-4f31-8086-0b65c2a9042b",
+      "name": "le_planilha4",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        80,
+        520
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "a9604dc3-d7a5-4275-9bf7-cb94ea25dbf9",
+      "name": "separa_em_lotes4",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        300,
+        520
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "9f27d0f1-49b7-41d8-851b-35f57eb4912d",
+      "name": "Não faz nada4",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes4\"].json[\"telefone\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "432d9081-7649-4fd5-8428-e0a0831ec528",
+      "name": "Code4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        540,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "7ce08d73-65fd-48ec-971b-d6e584c6833f",
+      "name": "2s4",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        940,
+        540
+      ],
+      "webhookId": "a9e5fde7-78f6-47fa-a9fb-2120c3b261df"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+{{ $node[\"Code4\"].json[\"telefonefinal\"] }}",
+        "template": "plano30k_31_10|pt_BR"
+      },
+      "id": "d5428a5e-c066-4940-b7d6-7dc631178cc3",
+      "name": "WhatsApp Business Cloud8",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        740,
+        540
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+5562981196678",
+        "template": "disparo_finalizado|pt_BR"
+      },
+      "id": "a5021ddf-5e80-4ed2-9db7-4e1396a5197a",
+      "name": "WhatsApp Business Cloud9",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        740,
+        340
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                4
+              ],
+              "triggerAtHour": 8,
+              "triggerAtMinute": 15
+            }
+          ]
+        }
+      },
+      "id": "f15c098e-5de8-4cd2-9fe5-d41235e82578",
+      "name": "31/10 - 8:15hrs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "01/11/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "44e2c3a0-7ee4-4927-b3cb-c609f21c2368",
+      "name": "01/11",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -140,
+        560
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": {
+    "node:31/10 - 8:15hrs": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-11-01T13:50:40.833Z",
+  "versionId": "d9aaaef9-bfd6-4906-8f19-b6854b8cf474"
+}
