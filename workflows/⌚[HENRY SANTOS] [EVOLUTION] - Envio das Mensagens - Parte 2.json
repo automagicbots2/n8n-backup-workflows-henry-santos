@@ -392,15 +392,15 @@
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
             },
             {
-              "name": "mediaMessage.mediatype",
+              "name": "mediatype",
               "value": "image"
             },
             {
-              "name": "mediaMessage.caption",
+              "name": "caption",
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
             },
             {
-              "name": "mediaMessage.media",
+              "name": "media",
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"].trim() }}"
             },
             {
@@ -408,7 +408,7 @@
               "value": "composing"
             },
             {
-              "name": "=options.mentions.everyOne",
+              "name": "=mentionsEveryOne",
               "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
             },
             {
@@ -456,15 +456,15 @@
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_grupo\"] }}"
             },
             {
-              "name": "mediaMessage.mediatype",
+              "name": "mediatype",
               "value": "document"
             },
             {
-              "name": "mediaMessage.caption",
+              "name": "caption",
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"copy\"] }}"
             },
             {
-              "name": "mediaMessage.media",
+              "name": "media",
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"arquivo\"] }}"
             },
             {
@@ -472,11 +472,11 @@
               "value": "composing"
             },
             {
-              "name": "=options.mentions.everyOne",
+              "name": "=mentionsEveryOne",
               "value": "={{ $node[\"variaveis_grupo\"].json[\"mencionar_todos\"] }}"
             },
             {
-              "name": "mediaMessage.fileName",
+              "name": "fileName",
               "value": "opdf.pdf"
             },
             {
@@ -2141,8 +2141,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-nVptKUEcqG1ey7jwcMDhQA",
-            "deliveryTag": 5,
+            "consumerTag": "amq.ctag-zNNB5WY0RjjD37wNAP6yVg",
+            "deliveryTag": 110,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Disparos - Evolution"
@@ -2151,9 +2151,9 @@
           "content": {
             "destino": "Grupos",
             "id_grupo": "120363318226685709@g.us",
-            "arquivo": "https://t3135484.p.clickup-attachments.com/t3135484/2d5815e8-9c67-44b4-a357-63f771538965/DEP%2003%20-%201080X1080.mp4?view=open",
-            "copy": "teste",
-            "valor_msg": "Vídeo"
+            "arquivo": "https://drive.google.com/file/d/10EfjUG5TtPHclgcg2I1F6CMRT8QDaEIP/view",
+            "copy": "🗣️ *Atenção!*\n\nNosso _Desafio da Gestão 45 Dias_ começa em breve, e queremos garantir que vocês estejam prontos para essa jornada de transformação!\n\n Nesta segunda-feira, dia *04/11*, teremos o primeiro encontro para uma análise completa da lucratividade e revisão do DRE, além da organização das informações cadastrais no sistema.\n\n📊 *Atividades do Encontro:*\nRealizar o Raio X financeiro ou revisão do DRE\nDefinir metas claras para impulsionar o crescimento\n*Reuniões individuais com a equipe*: Foco em revisar o ano que passou, ajustar os preparativos para o final de 2023 e alinhar o plano de crescimento para 2025, compartilhando o plano de metas com cada membro.\n\n💡 Preparem seus documentos financeiros e organizem as informações cadastrais. Estamos prontos para fazer 2025 um ano de grandes conquistas!\n\nSegue abaixo o cronograma do DESAFIO. Leia com ATENÇÃO todas as regras, datas e horários do seu desafio.",
+            "valor_msg": "Documento"
           }
         }
       }
@@ -2178,6 +2178,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-10-30T17:38:20.859Z",
-  "versionId": "4da0e749-4a18-445e-8dbb-642c1b42bc84"
+  "updatedAt": "2024-11-01T22:44:01.702Z",
+  "versionId": "ff4131d9-77f8-410b-bd07-56024790d02b"
 }
