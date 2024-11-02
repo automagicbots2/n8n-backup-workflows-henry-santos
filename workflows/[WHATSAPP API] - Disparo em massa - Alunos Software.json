@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Item Lists4": {
       "main": [
@@ -85,22 +85,658 @@
         ]
       ]
     },
-    "31/10 - 8:15hrs": {
+    "le_planilha": {
       "main": [
         [
           {
-            "node": "01/11",
+            "node": "separa_em_lotes",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "01/11": {
+    "separa_em_lotes": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2s": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud": {
+      "main": [
+        [
+          {
+            "node": "2s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "05/11 - 9h": {
+      "main": [
+        [
+          {
+            "node": "05/11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "04/11 - 14h": {
+      "main": [
+        [
+          {
+            "node": "04/11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha1": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_lotes1": {
+      "main": [
+        [
+          {
+            "node": "Item Lists1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada1": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2s1": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud1": {
+      "main": [
+        [
+          {
+            "node": "2s1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists1": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "06/11 - 9h": {
+      "main": [
+        [
+          {
+            "node": "06/11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha2": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_lotes2": {
+      "main": [
+        [
+          {
+            "node": "Item Lists2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada2": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2s2": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud2": {
+      "main": [
+        [
+          {
+            "node": "2s2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists2": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha3": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_lotes3": {
+      "main": [
+        [
+          {
+            "node": "Item Lists3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada3": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code3": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2s3": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud3": {
+      "main": [
+        [
+          {
+            "node": "2s3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists3": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "13/11- 9h": {
+      "main": [
+        [
+          {
+            "node": "13/11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha5": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_lotes5": {
+      "main": [
+        [
+          {
+            "node": "Item Lists5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada5": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code5": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2s5": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud4": {
+      "main": [
+        [
+          {
+            "node": "2s5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists5": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "19/11 - 9h": {
+      "main": [
+        [
+          {
+            "node": "19/11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha7": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_lotes7": {
+      "main": [
+        [
+          {
+            "node": "Item Lists7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada7": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code7": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2s7": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud5": {
+      "main": [
+        [
+          {
+            "node": "2s7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists7": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "12/11- 8:55h": {
+      "main": [
+        [
+          {
+            "node": "12/11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "12/11- 9h": {
+      "main": [
+        [
+          {
+            "node": "12/",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "04/11": {
       "main": [
         [
           {
             "node": "le_planilha4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "05/11": {
+      "main": [
+        [
+          {
+            "node": "le_planilha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "06/11": {
+      "main": [
+        [
+          {
+            "node": "le_planilha1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "12/11": {
+      "main": [
+        [
+          {
+            "node": "le_planilha2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "12/": {
+      "main": [
+        [
+          {
+            "node": "le_planilha7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "13/11": {
+      "main": [
+        [
+          {
+            "node": "le_planilha3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "19/11": {
+      "main": [
+        [
+          {
+            "node": "le_planilha5",
             "type": "main",
             "index": 0
           }
@@ -219,7 +855,7 @@
       "parameters": {
         "phoneNumberId": "417653434771940",
         "recipientPhoneNumber": "=+{{ $node[\"Code4\"].json[\"telefonefinal\"] }}",
-        "template": "plano30k_31_10|pt_BR"
+        "template": "software_04_11_14h|pt_BR"
       },
       "id": "d5428a5e-c066-4940-b7d6-7dc631178cc3",
       "name": "WhatsApp Business Cloud8",
@@ -240,7 +876,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+5562981196678",
+        "recipientPhoneNumber": "=+5531992796934",
         "template": "disparo_finalizado|pt_BR"
       },
       "id": "a5021ddf-5e80-4ed2-9db7-4e1396a5197a",
@@ -261,25 +897,1060 @@
     },
     {
       "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 948771043,
+          "mode": "list",
+          "cachedResultName": "Software",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=948771043"
+        },
+        "options": {}
+      },
+      "id": "0a2e615f-0072-4489-bbe3-3bc1be28e3b2",
+      "name": "le_planilha",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        60,
+        880
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "1f078978-0b7a-4d0a-a0a0-a7f8678be513",
+      "name": "separa_em_lotes",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        280,
+        880
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "97948d84-8172-4496-a23a-e44935858716",
+      "name": "Não faz nada",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes\"].json[\"telefone\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "070579cf-cf49-4058-a466-b6dbc48c272c",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "07260381-f7ae-4ae2-8f94-2b1c3cf5adaa",
+      "name": "2s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        920,
+        900
+      ],
+      "webhookId": "a9e5fde7-78f6-47fa-a9fb-2120c3b261df"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+{{ $node[\"Code\"].json[\"telefonefinal\"] }}",
+        "template": "software_05_11_9h|pt_BR"
+      },
+      "id": "d17c143f-879b-4da7-86ab-3660644a239a",
+      "name": "WhatsApp Business Cloud",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        720,
+        900
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
         "rule": {
           "interval": [
             {
               "field": "weeks",
               "triggerAtDay": [
-                4
+                2
               ],
-              "triggerAtHour": 8,
-              "triggerAtMinute": 15
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "74c72173-723d-4950-b1a9-e67ae04ab313",
+      "name": "05/11 - 9h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 14
             }
           ]
         }
       },
       "id": "f15c098e-5de8-4cd2-9fe5-d41235e82578",
-      "name": "31/10 - 8:15hrs",
+      "name": "04/11 - 14h",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
         -320,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "a1511877-749b-4c05-8a82-ffb4703c1eae",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        520,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+5531992796934",
+        "template": "disparo_finalizado|pt_BR"
+      },
+      "id": "260b1451-d6d2-432f-be74-031abbe3eb29",
+      "name": "WhatsApp Business Cloud10",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        720,
+        720
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 948771043,
+          "mode": "list",
+          "cachedResultName": "Software",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=948771043"
+        },
+        "options": {}
+      },
+      "id": "4c3b2038-7a62-4f29-8ac5-f6eb242b7f1d",
+      "name": "le_planilha1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        60,
+        1260
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "75f35c1a-529a-4025-8421-0f8b70459d3a",
+      "name": "separa_em_lotes1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        280,
+        1260
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "dbb721af-41a6-446d-93e2-de5b61778b50",
+      "name": "Não faz nada1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes1\"].json[\"telefone\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "df5450ef-80eb-488f-ba1e-c6d923a7e6a5",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "4cc80c4a-5061-4c4b-8ad9-2134046288de",
+      "name": "2s1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        920,
+        1280
+      ],
+      "webhookId": "a9e5fde7-78f6-47fa-a9fb-2120c3b261df"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+{{ $node[\"Code1\"].json[\"telefonefinal\"] }}",
+        "template": "software_06_11_9h|pt_BR"
+      },
+      "id": "98b45ebd-38c7-4d45-a3ab-ed938a03f9af",
+      "name": "WhatsApp Business Cloud1",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        720,
+        1280
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "0b3ed6b2-c532-45c6-8c3a-cfdee79ba2fd",
+      "name": "Item Lists1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        520,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+5531992796934",
+        "template": "disparo_finalizado|pt_BR"
+      },
+      "id": "ceb8877e-235c-492b-b0e8-73ad48818b01",
+      "name": "WhatsApp Business Cloud11",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        720,
+        1100
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "23baffc8-3794-4507-bd81-7ce59aaab800",
+      "name": "06/11 - 9h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 948771043,
+          "mode": "list",
+          "cachedResultName": "Software",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=948771043"
+        },
+        "options": {}
+      },
+      "id": "b3d65b08-28ac-43c3-86fb-9c6f425237ba",
+      "name": "le_planilha2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        60,
+        1680
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "499189eb-87b0-45d4-86b0-ccc7519cb92c",
+      "name": "separa_em_lotes2",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        280,
+        1680
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "31ade15e-0fdf-4966-a40b-0195cf46d56d",
+      "name": "Não faz nada2",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        1700
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes2\"].json[\"telefone\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "6945a301-35f3-4f7c-83f8-db39b094108d",
+      "name": "Code2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        1700
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "6fb8efcf-9741-4f27-999d-484dcf132813",
+      "name": "2s2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        920,
+        1700
+      ],
+      "webhookId": "a9e5fde7-78f6-47fa-a9fb-2120c3b261df"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+{{ $node[\"Code2\"].json[\"telefonefinal\"] }}",
+        "template": "software_12_11_8h55m|pt_BR"
+      },
+      "id": "b8019ff0-e399-42aa-a3df-5da539d43af8",
+      "name": "WhatsApp Business Cloud2",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        720,
+        1700
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "a06476e8-e42f-4b41-8f38-65c0a1191e3b",
+      "name": "Item Lists2",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        520,
+        1520
+      ]
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+5531992796934",
+        "template": "disparo_finalizado|pt_BR"
+      },
+      "id": "c8aba0ab-85eb-41c0-b9a4-d6dcbca6fbf3",
+      "name": "WhatsApp Business Cloud12",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        720,
+        1520
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 948771043,
+          "mode": "list",
+          "cachedResultName": "Software",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=948771043"
+        },
+        "options": {}
+      },
+      "id": "10dc576e-881b-4c5e-80a7-d5ae8bd8590a",
+      "name": "le_planilha3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        40,
+        2560
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "1e64149a-50eb-49a5-baa5-40661eacb747",
+      "name": "separa_em_lotes3",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        260,
+        2560
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e142ed50-cce3-4e9e-b131-57b09664ec58",
+      "name": "Não faz nada3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2580
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes3\"].json[\"telefone\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "b6370e78-7576-489e-b9d7-cfeddf5bb71d",
+      "name": "Code3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        2580
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "c327298e-ce99-460f-8aa7-30506aa686b0",
+      "name": "2s3",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        900,
+        2580
+      ],
+      "webhookId": "a9e5fde7-78f6-47fa-a9fb-2120c3b261df"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+{{ $node[\"Code3\"].json[\"telefonefinal\"] }}",
+        "template": "software_13_11_9h|pt_PT"
+      },
+      "id": "c732ae42-bf70-4911-9ec5-d93cdd2c14ed",
+      "name": "WhatsApp Business Cloud3",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        700,
+        2580
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "876f1cf5-6bbe-4743-ae9c-e151fa229d84",
+      "name": "Item Lists3",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        500,
+        2400
+      ]
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+5531992796934",
+        "template": "disparo_finalizado|pt_BR"
+      },
+      "id": "8d724c86-4061-4a81-9905-f3c75e59e082",
+      "name": "WhatsApp Business Cloud13",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        700,
+        2400
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "8bba31a2-6a26-496b-a07e-993e528bbf40",
+      "name": "13/11- 9h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -340,
+        2600
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 948771043,
+          "mode": "list",
+          "cachedResultName": "Software",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=948771043"
+        },
+        "options": {}
+      },
+      "id": "12b00e3b-2044-4d79-b4d8-3bac484d5e74",
+      "name": "le_planilha5",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        40,
+        2960
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "2d5284e4-3b50-4b82-9760-550cc197f930",
+      "name": "separa_em_lotes5",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        260,
+        2960
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "87cb645f-cb35-47b8-9ac0-161666343ef7",
+      "name": "Não faz nada5",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2980
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes5\"].json[\"telefone\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "d9860920-3dac-42ef-8a0d-126023896dcb",
+      "name": "Code5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        2980
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "c85d4e9c-1d45-4fb2-b9ca-50db054723d3",
+      "name": "2s5",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        900,
+        2980
+      ],
+      "webhookId": "a9e5fde7-78f6-47fa-a9fb-2120c3b261df"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+{{ $node[\"Code5\"].json[\"telefonefinal\"] }}",
+        "template": "software_19_11_9h|pt_BR"
+      },
+      "id": "e59fd016-50f2-49d3-a1d5-b2309c573322",
+      "name": "WhatsApp Business Cloud4",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        700,
+        2980
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "bafc2a5b-6200-412a-b876-28815fbc2581",
+      "name": "Item Lists5",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        480,
+        2800
+      ]
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+5531992796934",
+        "template": "disparo_finalizado|pt_BR"
+      },
+      "id": "912d489d-bf5e-4374-b5d9-97b70c585d9a",
+      "name": "WhatsApp Business Cloud14",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        700,
+        2800
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                2
+              ],
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "0e9715e9-0046-4154-aad7-6fef315abcb7",
+      "name": "19/11 - 9h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -340,
+        3000
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 948771043,
+          "mode": "list",
+          "cachedResultName": "Software",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=948771043"
+        },
+        "options": {}
+      },
+      "id": "79dff6fc-fb5a-4e69-a80e-14675e035ed2",
+      "name": "le_planilha7",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        60,
+        2100
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kSS8cTZsJdfO7Y4i",
+          "name": "[Google Sheets][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "c2b6e785-0019-4c14-8d45-785ce60f4633",
+      "name": "separa_em_lotes7",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        280,
+        2100
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "eed8dedc-0a0f-465e-9234-7376605fe875",
+      "name": "Não faz nada7",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        2120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes7\"].json[\"telefone\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "74434ea2-fc4a-41c3-9d21-9f62f57ff01e",
+      "name": "Code7",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        2120
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "378f608c-4c48-4d5e-b89d-8814edc0ca4c",
+      "name": "2s7",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        920,
+        2120
+      ],
+      "webhookId": "a9e5fde7-78f6-47fa-a9fb-2120c3b261df"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+{{ $node[\"Code7\"].json[\"telefonefinal\"] }}",
+        "template": "software_12_11_9h|pt_BR"
+      },
+      "id": "7eb49ee1-befd-4b4b-a6c2-034d5791cc34",
+      "name": "WhatsApp Business Cloud5",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        720,
+        2120
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "743cdbb6-8bf7-43e0-a69f-85a4c2494dc1",
+      "name": "Item Lists7",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        520,
+        1940
+      ]
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "=+5531992796934",
+        "template": "disparo_finalizado|pt_BR"
+      },
+      "id": "a7adf957-de1c-42c1-8dc6-1edefee81413",
+      "name": "WhatsApp Business Cloud17",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        720,
+        1940
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "B2wsurT3J6v50Zh1",
+          "name": "[WhatsApp] - Henry"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                2
+              ],
+              "triggerAtHour": 8,
+              "triggerAtMinute": 55
+            }
+          ]
+        }
+      },
+      "id": "e6545866-2d6d-4555-ae31-54dcd7a2a284",
+      "name": "12/11- 8:55h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                2
+              ],
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "b8c055d6-2c57-4c16-8db9-a4d3bcea1365",
+      "name": "12/11- 9h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        2140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "04/11/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "44e2c3a0-7ee4-4927-b3cb-c609f21c2368",
+      "name": "04/11",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -140,
         560
       ]
     },
@@ -295,7 +1966,7 @@
             {
               "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
               "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "01/11/2024",
+              "rightValue": "05/11/2024",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -307,13 +1978,178 @@
         },
         "options": {}
       },
-      "id": "44e2c3a0-7ee4-4927-b3cb-c609f21c2368",
-      "name": "01/11",
+      "id": "b6dff122-98c2-4778-8f09-07b65df851b3",
+      "name": "05/11",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -140,
-        560
+        -160,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "06/11/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c9b843ef-224a-4c84-862d-b911038fccc3",
+      "name": "06/11",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "12/11/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ff94cc67-c119-460a-a3a9-35b25d4985b9",
+      "name": "12/11",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "12/11/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f1db5c50-1768-49e4-94fe-d86574da5583",
+      "name": "12/",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        2140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "13/11/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "fdacc744-bb2e-4073-82d3-dbf2f0a3235e",
+      "name": "13/11",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -180,
+        2600
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "19/11/2024",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "9835574a-b9c3-41f3-bb50-4ec09f76af91",
+      "name": "19/11",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -180,
+        3000
       ]
     }
   ],
@@ -329,10 +2165,31 @@
   "staticData": {
     "node:31/10 - 8:15hrs": {
       "recurrencyRules": []
+    },
+    "node:05/11 - 9h": {
+      "recurrencyRules": []
+    },
+    "node:04/11 - 14h": {
+      "recurrencyRules": []
+    },
+    "node:06/11 - 9h": {
+      "recurrencyRules": []
+    },
+    "node:13/11- 9h": {
+      "recurrencyRules": []
+    },
+    "node:19/11 - 9h": {
+      "recurrencyRules": []
+    },
+    "node:12/11- 8:55h": {
+      "recurrencyRules": []
+    },
+    "node:12/11- 9h": {
+      "recurrencyRules": []
     }
   },
   "tags": [],
-  "triggerCount": 1,
-  "updatedAt": "2024-11-01T13:50:40.833Z",
-  "versionId": "d9aaaef9-bfd6-4906-8f19-b6854b8cf474"
+  "triggerCount": 7,
+  "updatedAt": "2024-11-01T19:35:12.108Z",
+  "versionId": "2666addf-7605-4d46-ae51-8ef3937d0804"
 }
