@@ -519,7 +519,16 @@
     },
     {
       "parameters": {
-        "url": "={{ $node[\"variaveis_evolution\"].json[\"url_base\"] }}/group/fetchAllGroups/{{ $node[\"variaveis_evolution\"].json[\"nome_da_instancia\"] }}?getParticipants=false",
+        "url": "={{ $node[\"variaveis_evolution\"].json[\"url_base\"] }}/group/fetchAllGroups/{{ $node[\"variaveis_evolution\"].json[\"nome_da_instancia\"] }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "getParticipants",
+              "value": "true"
+            }
+          ]
+        },
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -12746,6 +12755,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-10-30T17:49:00.034Z",
-  "versionId": "13a16a69-807f-4c0b-ad44-52a9bc583f61"
+  "updatedAt": "2024-11-01T20:23:27.971Z",
+  "versionId": "b3044146-b9d4-4a1a-8679-d73e84fcae76"
 }
