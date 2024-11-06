@@ -3551,7 +3551,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n  searchUTMs(json);\n  return utmParams;\n}\n\n// Função para formatar o telefone e extrair DDD\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(0, 2);\n  const ddi = '55';\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n  return telefoneFormatado;\n}\n\n// Função para determinar a qualificação ajustada\nfunction determinarQualificacao(faturamento, comecaQuando, momentoAtual) {\n  // Condição de desqualificação caso o faturamento esteja vazio\n  if (!faturamento) {\n    return \"Desqualificado\";\n  }\n\n  // Lógica de qualificação para \"Extremamente Qualificado\"\n  const faturamentoAcima30k = (\n    faturamento === \"Entre R$35.001 e R$50.000 mensal\" || \n    faturamento === \"Entre R$50.001 e R$100.000 mensal\" || \n    faturamento === \"+ de R$100.001\"\n  );\n\n  // Qualificação com base nas faixas de faturamento e no estado financeiro\n  if (faturamentoAcima30k && momentoAtual === \"Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando\") {\n    return \"Extremamente Qualificado\";\n  } else if (faturamentoAcima30k) {\n    return \"Qualificado\";\n  }\n\n  // Lógica para \"Neutro\" e \"Desqualificado\"\n  if (faturamento === \"15 a 35 mil\") {\n    if (momentoAtual === \"Estou conseguindo pagar as contas e não sobrando\") {\n      return \"Neutro\";\n    } else if (momentoAtual === \"Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando\") {\n      return \"Desqualificado\";\n    }\n  }\n\n  // Adicional para quem fatura até R$15.000 ou está em situação de dívida\n  if (faturamento.includes(\"R$15.000\") && momentoAtual === \"Não estou conseguindo pagar as contas e com dívidas maiores\") {\n    return \"Desqualificado\";\n  }\n\n  // Desqualificação padrão para outros casos\n  return \"Desqualificado\";\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = inputData.body.form_response.hidden.telefone || \"\";\nconst telefoneFormatado = extrairDddETelefone(telefoneAnswer);\n\nconst Ending = inputData.body.form_response.ending.ref || '';\n\n// Obter a data atual e subtrair 15 dias\nconst dataAtual = new Date();\ndataAtual.setDate(dataAtual.getDate() - 15);\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0');\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Montar o objeto de output\nlet output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text) || inputData.body.form_response.hidden.name || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: inputData.body.form_response.hidden.email || '',\n\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace(/@/g, \"\") || \"\",\n  \n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n\n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"14d80a71-2dd1-484b-b1a1-cbf4ef37a61d\")?.choice.label || \"\",\n  \n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n\n  quantas_horas: inputData.body.form_response.answers[7]?.choice?.label || \"\",\n  \n  porque_voce: respostas.find(answer => answer.field.ref === \"66fec9b4-837b-4783-8ce2-a670902ab134\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => {\n    const fieldRef = answer.field.ref;\n    return fieldRef === \"d31760df-623d-435d-ac2f-092b82c7803b\" || fieldRef === \"511ca207-0c32-4529-b19f-42be7508c79d\";\n  })?.choice.label || \"\",\n\n  nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  pergunta11: inputData.body.form_response.answers[8]?.text || \"\",\n\n  comeca_quando: respostas.find(answer => answer.field.ref === \"7d285441-c756-4a57-9768-2c7f3d8d9f85\")?.choice?.label || \"\",\n\n  data_ultima_quinzena: dataFormatada,  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\",\n  Ending: Ending || \"\"\n};\n\n// Adiciona a qualificação com base nos valores já coletados\noutput.qualificacao = determinarQualificacao(\n  output.faturamento,\n  output.comeca_quando,\n  output.momento_atual\n);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output = { ...output, Pais: \"Portugal\" };\n}\n\nreturn [output];\n"
+        "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n  searchUTMs(json);\n  return utmParams;\n}\n\n// Função para formatar o telefone e extrair DDD\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(0, 2);\n  const ddi = '55';\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n  return telefoneFormatado;\n}\n\n// Função para determinar a qualificação ajustada\nfunction determinarQualificacao(faturamento, comecaQuando, momentoAtual) {\n  // Condição de desqualificação caso o faturamento esteja vazio\n  if (!faturamento) {\n    return \"Desqualificado\";\n  }\n\n  // Lógica de qualificação para \"Extremamente Qualificado\"\n  const faturamentoAcima30k = (\n    faturamento === \"Entre R$35.001 e R$50.000 mensal\" || \n    faturamento === \"Entre R$50.001 e R$100.000 mensal\" || \n    faturamento === \"+ de R$100.001\"\n  );\n\n  // Qualificação com base nas faixas de faturamento e no estado financeiro\n  if (faturamentoAcima30k && momentoAtual === \"Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando\") {\n    return \"Extremamente Qualificado\";\n  } else if (faturamentoAcima30k) {\n    return \"Qualificado\";\n  }\n\n  // Lógica para \"Neutro\" e \"Desqualificado\"\n  if (faturamento === \"15 a 35 mil\") {\n    if (momentoAtual === \"Estou conseguindo pagar as contas e não sobrando\") {\n      return \"Neutro\";\n    } else if (momentoAtual === \"Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando\") {\n      return \"Desqualificado\";\n    }\n  }\n\n  // Adicional para quem fatura até R$15.000 ou está em situação de dívida\n  if (faturamento.includes(\"R$15.000\") && momentoAtual === \"Não estou conseguindo pagar as contas e com dívidas maiores\") {\n    return \"Desqualificado\";\n  }\n\n  // Desqualificação padrão para outros casos\n  return \"Desqualificado\";\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = inputData.body.form_response.hidden.telefone || \"\";\nconst telefoneFormatado = extrairDddETelefone(telefoneAnswer);\n\nconst Ending = inputData.body.form_response.ending.ref || '';\n\n// Obter a data atual e subtrair 15 dias\nconst dataAtual = new Date();\ndataAtual.setDate(dataAtual.getDate() - 15);\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0');\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Montar o objeto de output\nlet output = {\n  nome: formatarPrimeiraLetraMaiuscula(inputData.body.form_response.hidden.name || \"\"),\n  \n  telefone: telefoneFormatado,\n  \n  email: inputData.body.form_response.hidden.email || '',\n\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace(/@/g, \"\") || \"\",\n  \n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n\n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"14d80a71-2dd1-484b-b1a1-cbf4ef37a61d\")?.choice.label || \"\",\n  \n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n\n  quantas_horas: inputData.body.form_response.answers[7]?.choice?.label || \"\",\n  \n  porque_voce: respostas.find(answer => answer.field.ref === \"66fec9b4-837b-4783-8ce2-a670902ab134\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => {\n    const fieldRef = answer.field.ref;\n    return fieldRef === \"d31760df-623d-435d-ac2f-092b82c7803b\" || fieldRef === \"511ca207-0c32-4529-b19f-42be7508c79d\";\n  })?.choice.label || \"\",\n\n  nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  pergunta11: inputData.body.form_response.answers[8]?.text || \"\",\n\n  comeca_quando: respostas.find(answer => answer.field.ref === \"7d285441-c756-4a57-9768-2c7f3d8d9f85\")?.choice?.label || \"\",\n\n  data_ultima_quinzena: dataFormatada,  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\",\n  Ending: Ending || \"\"\n};\n\n// Adiciona a qualificação com base nos valores já coletados\noutput.qualificacao = determinarQualificacao(\n  output.faturamento,\n  output.comeca_quando,\n  output.momento_atual\n);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output = { ...output, Pais: \"Portugal\" };\n}\n\nreturn [output];\n"
       },
       "id": "ce968332-bcbf-41cb-87bf-76330439bde2",
       "name": "formata_dados9",
@@ -11160,10 +11160,10 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "Typeform Webhooks",
-            "content-length": "3385",
+            "content-length": "5330",
             "accept-encoding": "gzip",
             "content-type": "application/json",
-            "traceparent": "00-72f2895f367d1f00724e1bf28e708f5d-607373714dbc9822-01",
+            "traceparent": "00-a203e268e1f09c313afad511ab315059-e5e6cc68ee1bce68-01",
             "x-forwarded-for": "18.210.136.162",
             "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "x-forwarded-port": "443",
@@ -11174,23 +11174,23 @@
           "params": {},
           "query": {},
           "body": {
-            "event_id": "01JBH9YVKQSEE7WCEXY3VGF2KX",
+            "event_id": "01JC0KP2DZ9B6VFYZD3SH6SCJN",
             "event_type": "form_response",
             "form_response": {
               "form_id": "WHYDoReb",
-              "token": "1ossleao7tz0p80ye1b1os3tsbrz8fdv",
-              "landed_at": "2024-10-31T12:47:58Z",
-              "submitted_at": "2024-10-31T12:49:12Z",
+              "token": "q9sr402u76omg77ymyq9sjsysz0y3mfd",
+              "landed_at": "2024-11-06T11:26:06Z",
+              "submitted_at": "2024-11-06T11:27:46Z",
               "hidden": {
-                "email": "nayasouza03@gmail.com",
-                "name": "Naya",
-                "telefone": "(61) 99438-7842",
+                "email": "crispaivas@hotmail.com",
+                "name": "Cristiane",
+                "telefone": "(11) 96224-5706",
                 "utm_campaign": "[C] [SE] [HM] [CADASTRO] [ABO] Teste de público",
                 "utm_content": "AD35 VID - [FUNIL 30 MIN] — Cópia",
                 "utm_fun": "",
-                "utm_medium": "26. Institutos de aprendizado",
+                "utm_medium": "27. [ADV] Seguidores",
                 "utm_source": "meta_ads",
-                "utm_term": "120212661913300128",
+                "utm_term": "120212662265820128",
                 "utm_var": ""
               },
               "definition": {
@@ -11248,6 +11248,79 @@
                     ]
                   },
                   {
+                    "id": "3nawAGKqGShU",
+                    "ref": "f4fcda9e-a288-4558-94d9-3e2b0b4f96ad",
+                    "type": "multiple_choice",
+                    "title": "Para eu entender mais sobre teu negócio, quantos profissionais você tem? \n",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "coWfqNMD2GPZ",
+                        "ref": "0524d96c-c3c0-4b2b-9e09-c5fae1821d08",
+                        "label": "- DE 4"
+                      },
+                      {
+                        "id": "0USzkDrTeirz",
+                        "ref": "b8d70724-14ee-4a6d-8a85-4b23756f0c7c",
+                        "label": "ENTRE 4 E 5"
+                      },
+                      {
+                        "id": "0NFTyLwW7ij8",
+                        "ref": "69bc797f-5f9c-47b8-a877-7a7faf0a5bbe",
+                        "label": "ENTRE 6 E 10"
+                      },
+                      {
+                        "id": "u0b11sxH30NX",
+                        "ref": "622f6743-3736-429e-bec0-ccec1fa37259",
+                        "label": "ENTRE 11 E 20"
+                      },
+                      {
+                        "id": "e2sVLeUm3xkX",
+                        "ref": "fd02c44d-8b31-4274-9a37-c06b49da9411",
+                        "label": "+ DE 20"
+                      },
+                      {
+                        "id": "nkkJDZxq8Sqw",
+                        "ref": "a31e8098-1803-4e42-8995-bd8db458550c",
+                        "label": "Estou montando meu salão e minha equipe"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "9NzjmZovePi4",
+                    "ref": "2c42d709-1748-472f-8f28-ebc7677c0398",
+                    "type": "multiple_choice",
+                    "title": "Agora… Em qual etapa de faturamento você esta atualmente? Qual seu faturamento MENSAL MÉDIO em 2024?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "OvG7ODI9ntjN",
+                        "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87",
+                        "label": "Até R$15.000 mensal"
+                      },
+                      {
+                        "id": "RygnSZlYULRD",
+                        "ref": "ea4e5a4c-ca76-4a90-8c22-d386a793e6fe",
+                        "label": "Entre R$15.001 e R$35.000 mensal"
+                      },
+                      {
+                        "id": "8bn3cPAnp0gq",
+                        "ref": "179a6666-ea5a-4879-87cc-72611886686e",
+                        "label": "Entre R$35.001 e R$50.000 mensal"
+                      },
+                      {
+                        "id": "OzM4mUSlPHey",
+                        "ref": "af07450b-9d3f-41ff-9b28-c5dd5ee1b366",
+                        "label": "Entre R$50.001 e R$100.000 mensal"
+                      },
+                      {
+                        "id": "Xl0H0e4WE1ky",
+                        "ref": "34b28fc9-d466-4b5a-83dd-b5a30c052fb8",
+                        "label": "+ de R$100.001"
+                      }
+                    ]
+                  },
+                  {
                     "id": "86RlcHUmwEOh",
                     "ref": "59e8c3be-eb80-4660-af76-919d55c54aa3",
                     "type": "multiple_choice",
@@ -11277,7 +11350,7 @@
               "answers": [
                 {
                   "type": "text",
-                  "text": "Famiglia D'mano",
+                  "text": "Studio_paivas_",
                   "field": {
                     "id": "4WwdMxyPIK8V",
                     "type": "short_text",
@@ -11287,9 +11360,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "O57xy1NPKfHB",
-                    "label": "NÃO",
-                    "ref": "d81e4036-f5b7-4e82-922a-67a109e09967"
+                    "id": "t2iyEzHDzJHh",
+                    "label": "SIM",
+                    "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78"
                   },
                   "field": {
                     "id": "DX8ABAdScHtI",
@@ -11300,14 +11373,40 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "0g8xAYIENEXV",
-                    "label": "Não estou conseguindo pagar as contas e com dívidas maiores",
-                    "ref": "ad8665ab-92d0-465a-aa46-1da9651119d6"
+                    "id": "Bt5as1XGtnHg",
+                    "label": "Estou conseguindo pagar as contas e não sobrando",
+                    "ref": "b2c627b5-a406-457e-9a78-cbc552cd484e"
                   },
                   "field": {
                     "id": "WWIA3IWem76Q",
                     "type": "multiple_choice",
                     "ref": "0a89f6b6-19ea-4d15-b412-e502943ff866"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "0USzkDrTeirz",
+                    "label": "ENTRE 4 E 5",
+                    "ref": "b8d70724-14ee-4a6d-8a85-4b23756f0c7c"
+                  },
+                  "field": {
+                    "id": "3nawAGKqGShU",
+                    "type": "multiple_choice",
+                    "ref": "f4fcda9e-a288-4558-94d9-3e2b0b4f96ad"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "OvG7ODI9ntjN",
+                    "label": "Até R$15.000 mensal",
+                    "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87"
+                  },
+                  "field": {
+                    "id": "9NzjmZovePi4",
+                    "type": "multiple_choice",
+                    "ref": "2c42d709-1748-472f-8f28-ebc7677c0398"
                   }
                 },
                 {
@@ -13922,6 +14021,6 @@
     }
   ],
   "triggerCount": 12,
-  "updatedAt": "2024-10-31T13:41:02.052Z",
-  "versionId": "75834b91-ce13-41df-9aeb-7a821137aae9"
+  "updatedAt": "2024-11-06T13:48:58.603Z",
+  "versionId": "09c6b26e-2d3f-471a-83d0-ac26c00b6685"
 }
