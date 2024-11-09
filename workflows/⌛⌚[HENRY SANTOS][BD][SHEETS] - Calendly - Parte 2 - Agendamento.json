@@ -1050,17 +1050,6 @@
         ]
       ]
     },
-    "update_leads_KOMMO": {
-      "main": [
-        [
-          {
-            "node": "telefone_preenchido1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "id_lead4": {
       "main": [
         [
@@ -1087,7 +1076,36 @@
       "main": [
         [
           {
-            "node": "segundo_ou_mais_erro",
+            "node": "cadastrar_contato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_leads_KOMMO": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Add_contato_KOMMO1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "telefone_preenchido1",
             "type": "main",
             "index": 0
           }
@@ -1119,7 +1137,7 @@
       "typeVersion": 1,
       "position": [
         -5300,
-        1180
+        1080
       ]
     },
     {
@@ -3962,42 +3980,6 @@
     },
     {
       "parameters": {
-        "method": "PATCH",
-        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "oAuth2Api",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_lead1\"].json[\"id_lead_kommo\"] }},\n        \"name\": \"{{ $node[\"pesquisa_lead1\"].json[\"nome\"] }}\",\n        \"status_id\": 72345787,\n        \"pipeline_id\": 9337315,\n         \"responsible_user_id\":{{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }},\n        \"custom_fields_values\": [\n            {\n                \"field_id\": 1016092,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016094,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016096,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016098,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[1] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016100,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016102,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016104,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016106,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016108,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016110,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016112,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016114,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016116,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016120,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016122,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                    }\n                ]\n            },\n              {\n                \"field_id\": 1016126,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                    }\n                ]\n            }\n        ]\n    }\n]",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
-      },
-      "id": "fcd44411-963f-40db-92ce-1f39e5459a82",
-      "name": "update_leads_KOMMO",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        -3960,
-        1540
-      ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
-        "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
-        }
-      }
-    },
-    {
-      "parameters": {
         "operation": "update",
         "table": {
           "__rl": true,
@@ -4272,6 +4254,76 @@
           "name": "[Henry Santos] - Kommo ouath 2"
         }
       }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_lead1\"].json[\"id_lead_kommo\"] }},\n        \"name\": \"{{ $node[\"pesquisa_lead1\"].json[\"nome\"] }}\",\n        \"status_id\": 72345787,\n        \"pipeline_id\": 9337315,\n         \"responsible_user_id\":{{ $node[\"entra_na_fila\"].json[\"content\"][\"id_sdr\"] }},\n        \"custom_fields_values\": [\n            {\n                \"field_id\": 1016092,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data em que foi feito o Agendamento\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016094,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Tipo de Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016096,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[0] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016098,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Data de Início\"].split(' ')[1] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016100,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"Link da Reunião\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016102,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/reschedulings/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016104,\n                \"values\": [\n                    {\n                        \"value\": \"https://calendly.com/cancellations/{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016106,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016108,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016110,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_source\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016112,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_campaign\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016114,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_medium\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016116,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_content\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016120,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"utm_term\"] }}\"\n                    }\n                ]\n            },\n            {\n                \"field_id\": 1016122,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"funil\"] }}\"\n                    }\n                ]\n            },\n              {\n                \"field_id\": 1016126,\n                \"values\": [\n                    {\n                        \"value\": \"{{ $node[\"entra_na_fila\"].json[\"content\"][\"variacao_do_funil\"] }}\"\n                    }\n                ]\n            }\n        ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "fcd44411-963f-40db-92ce-1f39e5459a82",
+      "name": "update_leads_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -3960,
+        1540
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "949db636-00f0-4eb5-b93f-1a9ec6bbb8ee",
+              "leftValue": "={{ $json[\"error\"][\"message\"] }}",
+              "rightValue": "400",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "cedf8222-8a45-4cea-b99b-3efe8e70e7dc",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -3760,
+        1540
+      ]
     }
   ],
   "pinData": {
@@ -4279,33 +4331,37 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-UuusOojAQeiVoVnUE85ekQ",
-            "deliveryTag": 7,
-            "redelivered": false,
+            "consumerTag": "amq.ctag-0waxOzt4QJ5sb00n2ng5Ow",
+            "deliveryTag": 2,
+            "redelivered": true,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica"
           },
-          "properties": {},
+          "properties": {
+            "headers": {
+              "x-delivery-count": 2711
+            }
+          },
           "content": {
-            "Nome do Cliente": "Vitor Queiroz de Almeida",
-            "E-mail do Cliente": "vitorrqueiroztrafego@gmail.com",
-            "Telefone do Cliente - Formato BC": "+5519984574874",
-            "Telefone do Cliente - Formato Z-API": "5519984574874",
-            "Tipo de Evento": "Sessão Estratégica",
-            "ID do Evento": "15e7c31e-e5f3-4c1d-bc29-6c2767102648",
-            "Responsável pelo Evento": "Jean Carlos",
-            "E-mail do Responsável": "jeandcloser@gmail.com",
-            "Data de Início": "06/09/2024 19:00",
-            "Data em que foi feito o Agendamento": "05/09/2024 17:08",
-            "Data de Término": "06/09/2024 19:30",
-            "Dia da Semana de Início do Evento": "Sexta",
-            "Link da Reunião": null,
-            "utm_source": "manychat",
-            "utm_campaign": "gatilho_ao-vivo",
+            "Nome do Cliente": "Mateus Diniz",
+            "E-mail do Cliente": "mateusdiniz@automagicbots.com.br",
+            "Telefone do Cliente - Formato BC": "+5562981196678",
+            "Telefone do Cliente - Formato Z-API": "5562981196678",
+            "Tipo de Evento": "Aula ao Vivo: Fature seus primeiros 30 mil com o salão",
+            "ID do Evento": "620161c3-7f74-4525-a47c-185b768262a0",
+            "Responsável pelo Evento": "Henry Santos",
+            "E-mail do Responsável": "henry.dossantos@gmail.com",
+            "Data de Início": "13/11/2024 19:00",
+            "Data em que foi feito o Agendamento": "08/11/2024 11:30",
+            "Data de Término": "13/11/2024 20:00",
+            "Dia da Semana de Início do Evento": "Quarta",
+            "Link da Reunião": "https://calendly.com/events/620161c3-7f74-4525-a47c-185b768262a0/google_meet",
+            "utm_source": null,
+            "utm_campaign": null,
             "utm_term": null,
             "utm_medium": null,
-            "utm_content": "Mais de R$100 mil por mês",
-            "ID do Cliente": "e814df3a-2df6-4abe-9a7c-7d9a1c5bbf70",
+            "utm_content": null,
+            "ID do Cliente": "625ef27c-26ee-4939-928e-001429131a0b",
             "id_do_campo_id_do_agendamento_bot_conversa": "1111672",
             "fluxo_de_confirmacao_de_agendamento": "1879004",
             "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
@@ -4315,7 +4371,7 @@
             "id_do_campo_horario_agendado_bot_conversa": "1115968",
             "id_do_campo_id_banco_de_dados_bot_conversa": "1351140",
             "funil": "sessao_estrategica",
-            "variacao_do_funil": "agendamento_manychat",
+            "variacao_do_funil": null,
             "id_do_campo_id_do_cliente_bot_conversa": "1111674",
             "id_do_campo_email_do_responsavel": "1115994",
             "url_api_activecampaign": "gestaodesaloes67530",
@@ -4323,7 +4379,7 @@
             "id_stage_agendou_reuniao_crm": "21",
             "valor_produto_principal_em_centavos": "700000",
             "id_campo_id_banco_de_dados_crm": "257",
-            "id_sdr": "11762503",
+            "id_sdr": "11743307",
             "id_campo_link_de_cancelamento_crm": "23",
             "id_campo_link_de_reagendamento_crm": "24",
             "id_campo_id_do_cliente_crm": "25",
@@ -4383,6 +4439,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-06T20:20:39.150Z",
-  "versionId": "e6de4a7f-acda-43d5-b33d-33a2faccc159"
+  "updatedAt": "2024-11-09T01:46:18.238Z",
+  "versionId": "01cefdf2-1499-4762-b4ed-e81be9919216"
 }
