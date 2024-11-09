@@ -2876,58 +2876,52 @@
           "event": "invitee.created",
           "payload": {
             "event_type": {
-              "uuid": "2a21d9e7-454c-4d6c-9fdb-6853c3c32744",
-              "kind": "Collective",
-              "slug": null,
-              "name": "Sessão Estratégica",
-              "duration": 30,
+              "uuid": "4bb89c30-f0c0-42aa-b189-8e09b91b73af",
+              "kind": "Group",
+              "slug": "aula-fature-seus-primeiros-30-mil-com-o-salao",
+              "name": "Aula ao Vivo: Fature seus primeiros 30 mil com o salão",
+              "duration": 60,
               "owner": {
-                "type": "organizations",
-                "uuid": null
+                "type": "users",
+                "uuid": "676eec5d-16c3-4e51-b67e-39ebfe84b747"
               }
             },
             "event": {
-              "uuid": "15e7c31e-e5f3-4c1d-bc29-6c2767102648",
+              "uuid": "620161c3-7f74-4525-a47c-185b768262a0",
               "assigned_to": [
-                "Jean Carlos",
-                "Willian Novaes"
+                "Henry Santos"
               ],
               "extended_assigned_to": [
                 {
-                  "name": "Jean Carlos",
-                  "email": "jeandcloser@gmail.com",
-                  "primary": false
-                },
-                {
-                  "name": "Willian Novaes",
-                  "email": "willnovaes01@gmail.com",
+                  "name": "Henry Santos",
+                  "email": "henry.dossantos@gmail.com",
                   "primary": true
                 }
               ],
-              "start_time": "2024-09-06T18:00:00-04:00",
-              "start_time_pretty": "06:00pm - Friday, September 6, 2024",
-              "invitee_start_time": "2024-09-06T19:00:00-03:00",
-              "invitee_start_time_pretty": "07:00pm - Friday, September 6, 2024",
-              "end_time": "2024-09-06T18:30:00-04:00",
-              "end_time_pretty": "06:30pm - Friday, September 6, 2024",
-              "invitee_end_time": "2024-09-06T19:30:00-03:00",
-              "invitee_end_time_pretty": "07:30pm - Friday, September 6, 2024",
-              "created_at": "2024-09-05T16:08:41-04:00",
-              "location": null,
+              "start_time": "2024-11-13T19:00:00-03:00",
+              "start_time_pretty": "07:00pm - Wednesday, November 13, 2024",
+              "invitee_start_time": "2024-11-13T19:00:00-03:00",
+              "invitee_start_time_pretty": "07:00pm - Wednesday, November 13, 2024",
+              "end_time": "2024-11-13T20:00:00-03:00",
+              "end_time_pretty": "08:00pm - Wednesday, November 13, 2024",
+              "invitee_end_time": "2024-11-13T20:00:00-03:00",
+              "invitee_end_time_pretty": "08:00pm - Wednesday, November 13, 2024",
+              "created_at": "2024-11-08T11:30:35-03:00",
+              "location": "https://calendly.com/events/620161c3-7f74-4525-a47c-185b768262a0/google_meet",
               "canceled": false,
               "canceler_name": null,
               "cancel_reason": null,
               "canceled_at": null
             },
             "invitee": {
-              "uuid": "e814df3a-2df6-4abe-9a7c-7d9a1c5bbf70",
+              "uuid": "625ef27c-26ee-4939-928e-001429131a0b",
               "first_name": null,
               "last_name": null,
-              "name": "Vitor Queiroz de Almeida",
-              "email": "vitorrqueiroztrafego@gmail.com",
+              "name": "ksmdkaem",
+              "email": "veronicaburgel15@gmail.com",
               "text_reminder_number": null,
               "timezone": "America/Sao_Paulo",
-              "created_at": "2024-09-05T16:08:41-04:00",
+              "created_at": "2024-11-08T11:30:35-03:00",
               "is_reschedule": false,
               "payments": [],
               "canceled": false,
@@ -2937,19 +2931,25 @@
             },
             "questions_and_answers": [
               {
-                "question": "Qual é o seu telefone?",
-                "answer": "+55 19 98457-4874"
+                "question": "DDD + Whatsapp",
+                "answer": "+55 47 97446-4264"
+              },
+              {
+                "question": "Por favor, compartilhe qualquer coisa que possa ser útil para a preparação da nossa reunião.",
+                "answer": "ks\\xmpkasm"
               }
             ],
             "questions_and_responses": {
-              "2_question": "Qual é o seu telefone?",
-              "2_response": "+55 19 98457-4874"
+              "1_question": "DDD + Whatsapp",
+              "1_response": "+55 47 97446-4264",
+              "2_question": "Por favor, compartilhe qualquer coisa que possa ser útil para a preparação da nossa reunião.",
+              "2_response": "ks\\xmpkasm"
             },
             "tracking": {
-              "utm_campaign": "gatilho_ao-vivo",
-              "utm_source": "manychat",
+              "utm_campaign": null,
+              "utm_source": null,
               "utm_medium": null,
-              "utm_content": "Mais de R$100 mil por mês",
+              "utm_content": null,
               "utm_term": null,
               "salesforce_uuid": null
             },
@@ -2958,7 +2958,7 @@
             "new_event": null,
             "new_invitee": null
           },
-          "time": "2024-09-05T20:08:42Z"
+          "time": "2024-11-08T14:30:36Z"
         }
       }
     ]
@@ -2975,7 +2975,7 @@
   "staticData": {
     "node:Calendly Trigger": {},
     "node:Evento": {
-      "webhookId": 5060038
+      "webhookId": 5212663
     }
   },
   "tags": [
@@ -2987,6 +2987,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-07T14:12:09.673Z",
-  "versionId": "788ec052-74c8-4669-9f19-07864da0e85e"
+  "updatedAt": "2024-11-08T17:59:20.869Z",
+  "versionId": "1e7d85fb-6c25-4d76-80e6-f95563a94f54"
 }
