@@ -1230,6 +1230,50 @@
           }
         ]
       ]
+    },
+    "entra_na_fila7": {
+      "main": [
+        [
+          {
+            "node": "notifica_SDR_Geriane",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila6": {
+      "main": [
+        [
+          {
+            "node": "notifica_SDR_Geriane",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila11": {
+      "main": [
+        [
+          {
+            "node": "notifica_SDR_Geriane1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila1": {
+      "main": [
+        [
+          {
+            "node": "notifica_SDR_Geriane1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-03-25T18:35:23.926Z",
@@ -10161,6 +10205,126 @@
         }
       },
       "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "C4414F881BE2-40E2-B30F-587AF5B85F01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "558196568911"
+            },
+            {
+              "name": "text",
+              "value": "=🔔 NOTIFICAÇÃO | *APLICAÇÃO PREENCHIDA*\n\nO Lead {{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }} preencheu  aplicação sendo *{{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"] }}*.\n\n*Seguem abaixo os dados do Lead:*\n\n----------------------------\n👉🏻 *NOME:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\n👉🏻 *EMAIL:*{{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\n👉🏻 *LINK DO WHATSAPP DO LEAD:* https://wa.me/{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\n👉🏻 *DATA E HORÁRIO DO EVENTO:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"data_resposta_type\"] }} (Fuso de Brasília)\n👉🏻 *TEM RECEPCIONISTA:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}\n👉🏻 *TAMANHO DA EQUIPE:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}\n👉🏻 *FATURAMENTO:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}\n👉🏻 *QUANDO COMEÇA:*{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta12\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "d6e3ce65-8c32-402a-950f-568c6e08b828",
+      "name": "notifica_SDR_Geriane",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        5960,
+        2440
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "C4414F881BE2-40E2-B30F-587AF5B85F01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "558196568911"
+            },
+            {
+              "name": "text",
+              "value": "=🔔 NOTIFICAÇÃO | *APLICAÇÃO PREENCHIDA*\n\nO Lead {{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }} preencheu  aplicação sendo *{{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"] }}*.\n\n*Seguem abaixo os dados do Lead:*\n\n----------------------------\n👉🏻 *NOME:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"] }}\n👉🏻 *EMAIL:*{{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}\n👉🏻 *LINK DO WHATSAPP DO LEAD:* https://wa.me/{{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone do Cliente - Formato Z-API\"] }}\n👉🏻 *DATA E HORÁRIO DO EVENTO:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"data_resposta_type\"] }} (Fuso de Brasília)\n👉🏻 *TEM RECEPCIONISTA:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta0\"] }}\n👉🏻 *TAMANHO DA EQUIPE:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta1\"] }}\n👉🏻 *FATURAMENTO:* {{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta2\"] }}\n👉🏻 *QUANDO COMEÇA:*{{ $node[\"chega_da_fila\"].json[\"content\"][\"pergunta12\"] }}"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "c79cdffb-6d22-4c38-b406-f2b5b53cb898",
+      "name": "notifica_SDR_Geriane1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        6140,
+        3700
+      ],
+      "typeVersion": 4
     }
   ],
   "pinData": {
@@ -10341,6 +10505,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-09T01:24:12.100Z",
-  "versionId": "8c19c05a-b4c8-4653-a704-2eb79868b37e"
+  "updatedAt": "2024-11-12T12:52:18.551Z",
+  "versionId": "e9579054-0bd7-4c27-a4e7-1e2ca5377170"
 }
