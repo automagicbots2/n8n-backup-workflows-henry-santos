@@ -48,11 +48,6 @@
         ]
       ]
     },
-    "insert_data_utm_lead4": {
-      "main": [
-        []
-      ]
-    },
     "Add_lead_KOMMO1": {
       "main": [
         [
@@ -163,8 +158,7 @@
             "type": "main",
             "index": 0
           }
-        ],
-        []
+        ]
       ]
     },
     "update_leads_KOMMO": {
@@ -530,7 +524,7 @@
             },
             {
               "column": "id_botconversa",
-              "value": "={{ $node[\"cadastrar_contato\"].json[\"id\"] }}"
+              "value": "="
             },
             {
               "column": "sobrenome",
@@ -1201,44 +1195,19 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-P7-uj1sZezuQsikelI5i4A",
-            "deliveryTag": 1,
-            "redelivered": true,
+            "consumerTag": "amq.ctag-GSBSigijCsrb8F-Q4e4I1A",
             "exchange": "",
-            "routingKey": "Não Agendamentos - Sessão - Parte 2"
+            "routingKey": "Webinario - Parte 2"
           },
-          "properties": {
-            "headers": {
-              "x-delivery-count": 749
-            }
-          },
+          "properties": {},
           "content": {
             "id_fluxo2_nao_agendou_10_min_desqualificados": 2830145,
-            "Nome do Cliente": "Erlande Medina Novais",
-            "E-mail do Cliente": "erlandenovais@hotmail.com",
-            "Telefone do Cliente - Formato BC": "+5553999211141",
-            "Telefone do Cliente - Formato Z-API": "5553999211141",
-            "Instagram": "Salão Rafa Brasil",
-            "pergunta0": "SIM",
-            "pergunta1": "ENTRE 4 E 5",
-            "pergunta2": "Entre R$25.001 e R$50.000",
-            "pergunta4": "Estruturar a equipe \nAbri a segunda unidade \nSer referência",
-            "pergunta5": "Falta de conhecimento em marketing digital",
-            "pergunta6": "Porque esse é um projeto que Deus me  deu para ajudar as pessoas",
-            "pergunta9": "",
-            "pergunta11": "",
-            "pergunta12": "Imediatamente para gerar resultados imediatos",
-            "pergunta14": "",
-            "pergunta15": "Não",
-            "pergunta16": "Conseguir ter uma equipe auto administrável e ter o segundo salão",
-            "pergunta17": "Mentoria Salão Autoadministrável -> R$8.400 ANUAL",
-            "utm_content": "xxxxx",
-            "utm_source": "xxxxx",
-            "utm_campaign": "xxxxx",
-            "utm_medium": "xxxxx",
-            "utm_term": "xxxxx",
-            "data_resposta_type": "21/11/2024 18:47",
-            "data_ultima_quinzena": "2024-11-06",
+            "Nome do Cliente": "Eliane",
+            "E-mail do Cliente": "mana.uruguaia2@gmail.com",
+            "Telefone do Cliente - Formato BC": "+555196599944",
+            "Telefone do Cliente - Formato Z-API": "555196599944",
+            "pergunta2": "Qual o faturamento mensal médio do salão?",
+            "data_resposta_type": "04/12/2024 08:08",
             "id_fluxo_nao_agendou_10_min": "2416169",
             "id_fluxo_nao_agendou_10_min_desqualificados": "2829998",
             "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
@@ -1278,8 +1247,7 @@
             "id_campo_pergunta18_bot_conversa": "",
             "id_campo_pergunta19_bot_conversa": "",
             "id_campo_pergunta20_bot_conversa": "",
-            "qualificacao": "Extremamente Qualificado",
-            "id_ending_typeform": "caf08015-66e0-4179-8742-756787a07223",
+            "qualificacao": "Desqualificado",
             "id_pipeline_downsell_produto_1_crm": "10",
             "valor_produto_downsell_em_centavos_produto_1_crm": "49700",
             "id_pipeline_downsell_produto_2_crm": "9",
@@ -1288,8 +1256,8 @@
             "valor_produto_principal_em_centavos_crm": "700000",
             "url_api_activecampaign_crm": "gestaodesaloes67530",
             "id_sdr_crm": "6",
-            "funil": "aplicacao",
-            "variacao_do_funil": "v7",
+            "funil": "webinario",
+            "variacao_do_funil": "dez_24",
             "id_stage_preencheu_aplicacao_crm": "18",
             "id_stage_desqualificado_produto_1_crm": "56",
             "id_stage_desqualificadoproduto_2_crm": "53",
@@ -1351,7 +1319,7 @@
             "id_campo_pergunta9_deal_crm": "81",
             "id_pipeline_desqualificado_crm": "14",
             "id_stage_desqualificado_crm": "102",
-            "dia_da_semana_se": "Quinta-feira",
+            "dia_da_semana_se": "Quarta-feira",
             "id_campo_dia_aplicou_se": "2113710",
             "id_campo_pergunta10_deal_crm": "82"
           }
@@ -1370,6 +1338,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-02T19:34:11.378Z",
-  "versionId": "d63ef817-99ea-4691-93c6-a68a7309d63c"
+  "updatedAt": "2024-12-04T19:46:28.890Z",
+  "versionId": "b9a58e1f-e5f2-4f8d-a6d8-f4899fdd94b5"
 }
