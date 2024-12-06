@@ -10325,6 +10325,34 @@
         3700
       ],
       "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "url": "https://veronicaburgel15.kommo.com/api/v4/leads/custom_fields",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4120,
+        1460
+      ],
+      "id": "62eefbb1-0ece-403c-b1f1-e5ffbab72cc8",
+      "name": "pesquisar field_id",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
     }
   ],
   "pinData": {
@@ -10509,6 +10537,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-12-02T18:01:44.338Z",
-  "versionId": "72afad7f-5413-4edb-892c-de0e1b931f23"
+  "updatedAt": "2024-12-06T02:13:47.707Z",
+  "versionId": "26bb6ea5-33ac-4656-8814-74a882a370a2"
 }
