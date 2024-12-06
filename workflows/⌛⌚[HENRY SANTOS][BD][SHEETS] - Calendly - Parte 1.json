@@ -293,7 +293,7 @@
       "main": [
         [
           {
-            "node": "sessao_estrategica",
+            "node": "remover eventos",
             "type": "main",
             "index": 0
           }
@@ -327,6 +327,18 @@
         [
           {
             "node": "entra_na_fila2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "remover eventos": {
+      "main": [
+        [],
+        [
+          {
+            "node": "sessao_estrategica",
             "type": "main",
             "index": 0
           }
@@ -1797,7 +1809,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -680,
+        -620,
         760
       ]
     },
@@ -2200,7 +2212,7 @@
       "type": "n8n-nodes-base.calendlyTrigger",
       "typeVersion": 1,
       "position": [
-        -860,
+        -940,
         760
       ],
       "webhookId": "945ee3d2-a828-4b8f-9b49-5175de6629d8",
@@ -2210,6 +2222,60 @@
           "name": "[Calendly][2.0] - Henry Santos"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7c2ed4e6-f1b8-4231-8e45-b133b389ef27",
+              "leftValue": "={{ $json[\"payload\"][\"event_type\"][\"slug\"] }}",
+              "rightValue": "30min",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "1bdbb77a-2d28-47df-a5b9-909a9f6f5d5f",
+              "leftValue": "={{ $json[\"payload\"][\"event_type\"][\"slug\"] }}",
+              "rightValue": "sessao-estrategica",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "f1724217-128b-4cfb-b950-aa77599f847c",
+              "leftValue": "={{ $json[\"payload\"][\"event_type\"][\"slug\"] }}",
+              "rightValue": "aula-fature-seus-primeiros-30-mil-com-o-salao",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -760,
+        620
+      ],
+      "id": "929aff1b-d9c7-4360-84c2-4c1af3ed5c7b",
+      "name": "remover eventos"
     }
   ],
   "pinData": {
@@ -2975,7 +3041,7 @@
   "staticData": {
     "node:Calendly Trigger": {},
     "node:Evento": {
-      "webhookId": 5212663
+      "webhookId": 5286755
     }
   },
   "tags": [
@@ -2987,6 +3053,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-08T17:59:20.869Z",
-  "versionId": "1e7d85fb-6c25-4d76-80e6-f95563a94f54"
+  "updatedAt": "2024-12-06T12:40:04.741Z",
+  "versionId": "ffb8351f-a555-4e68-b8c2-46502ba845b5"
 }
