@@ -54,13 +54,7 @@
     },
     "Code4": {
       "main": [
-        [
-          {
-            "node": "WhatsApp Business Cloud8",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "2s4": {
@@ -76,13 +70,7 @@
     },
     "WhatsApp Business Cloud8": {
       "main": [
-        [
-          {
-            "node": "2s4",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "10/12/2024": {
@@ -90,6 +78,17 @@
         [
           {
             "node": "le_planilha4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "enviar image1",
             "type": "main",
             "index": 0
           }
@@ -172,8 +171,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1140,
-        540
+        1460,
+        560
       ]
     },
     {
@@ -199,16 +198,16 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        940,
-        540
+        1260,
+        560
       ],
       "webhookId": "47e14434-d257-4b68-a671-f787de977325"
     },
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code4\"].json[\"telefonefinal\"] }}",
-        "template": "plano30k_31_10|pt_BR",
+        "recipientPhoneNumber": "+558398539693",
+        "template": "disparo_finalizado|pt_BR",
         "requestOptions": {}
       },
       "id": "ae8e263e-8a40-492d-8a0d-b17f54e9947a",
@@ -216,8 +215,8 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        740,
-        540
+        300,
+        880
       ],
       "credentials": {
         "whatsAppApi": {
@@ -302,6 +301,229 @@
         -140,
         560
       ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "telefone",
+              "stringValue": "+554840426391"
+            },
+            {
+              "name": "nome_template",
+              "stringValue": "presente_natal_2024"
+            },
+            {
+              "name": "id_telefone",
+              "stringValue": "417653434771940"
+            },
+            {
+              "name": "token",
+              "stringValue": "Bearer EAASQdr15ZA1kBOz49XNdms7kNFup0SLyBp4CPwZBEYu8ZAshLBJg3ZCdnFtIdk3B6xRj6lArpJ8kPdg2AwtLGZA1mbF8G8aqjjKM5ZAVKKyCExD4d8qJZCdNMDNfx3AZAZAKp0CAsqgZCDPXuKLVJxdnqjs86B4jQlZBTVg07Ihq1qu1KOnBjC0qmM97SsRaYzZBvCSb"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f2be753c-b046-4764-bd75-eb0fdf71c72d",
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        740,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v21.0/{{ $node[\"variaveis\"].json[\"id_telefone\"] }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ $node[\"variaveis\"].json[\"token\"] }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "messaging_product",
+              "value": "=whatsapp"
+            },
+            {
+              "name": "recipient_type",
+              "value": "individual"
+            },
+            {
+              "name": "to",
+              "value": "=+5562981196678"
+            },
+            {
+              "name": "type",
+              "value": "image"
+            },
+            {
+              "name": "image.link",
+              "value": "https://automagicbots.com.br/wp-content/uploads/2024/12/VOUCHER-AGENDAMENTO.png"
+            },
+            {
+              "name": "caption",
+              "value": "=Seu presente antecipado de Natal chegou 🎁🎅🎄\n\nPara garantir responda esta mensagem com “EU QUERO”"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5618361e-d1fa-4d6c-a2ab-ff50e64acc4c",
+      "name": "enviar image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        740,
+        880
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v21.0/{{ $node[\"variaveis\"].json[\"id_telefone\"] }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ $node[\"variaveis\"].json[\"token\"] }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "to",
+              "value": "=+5562981196678"
+            },
+            {
+              "name": "type",
+              "value": "template"
+            },
+            {
+              "name": "template.name",
+              "value": "={{ $node[\"variaveis\"].json[\"nome_template\"] }}"
+            },
+            {
+              "name": "template.language.code",
+              "value": "pt_BR"
+            },
+            {
+              "name": "type",
+              "value": "header"
+            },
+            {
+              "name": "type",
+              "value": "image"
+            },
+            {
+              "name": "image.link",
+              "value": "https://automagicbots.com.br/wp-content/uploads/2024/12/VOUCHER-AGENDAMENTO.png"
+            },
+            {
+              "name": "messaging_product",
+              "value": "whatsapp"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "787c5614-e87c-4ba5-8d58-c5e81b08c16f",
+      "name": "enviar image1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        920,
+        540
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v19.0/{{ $node[\"variaveis\"].json[\"id_telefone\"] }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ $node[\"variaveis\"].json[\"token\"] }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "to",
+              "value": "=+558398539693"
+            },
+            {
+              "name": "type",
+              "value": "template"
+            },
+            {
+              "name": "template.name",
+              "value": "={{ $node[\"variaveis\"].json[\"nome_template\"] }}"
+            },
+            {
+              "name": "template.language.code",
+              "value": "pt_BR"
+            },
+            {
+              "name": "template.components[0].type",
+              "value": "header"
+            },
+            {
+              "name": "template.components[0].parameters[0].type",
+              "value": "image"
+            },
+            {
+              "name": "template.components[0].parameters[0].image.link",
+              "value": "https://automagicbots.com.br/wp-content/uploads/2024/12/VOUCHER-AGENDAMENTO.png"
+            },
+            {
+              "name": "messaging_product",
+              "value": "whatsapp"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0c8f4310-131a-4035-a3c1-55d719ade42d",
+      "name": "enviar image2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        520,
+        880
+      ],
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {},
@@ -324,6 +546,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-10T14:17:32.800Z",
-  "versionId": "bda144cd-f361-41fd-8821-e2eb2d6f3c9e"
+  "updatedAt": "2024-12-10T18:00:24.596Z",
+  "versionId": "8756e39f-d9a4-45d4-bb57-8ad843945ff5"
 }
