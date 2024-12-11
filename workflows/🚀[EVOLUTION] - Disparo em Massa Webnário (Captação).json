@@ -1994,35 +1994,6 @@
         ]
       ]
     },
-    "14/12/1": {
-      "main": [
-        [
-          {
-            "node": "Mensagem- 14/12/",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Não faz nada6",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Mensagem- 14/12/": {
-      "main": [
-        [
-          {
-            "node": "Retorna Output Aleatorio8",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "(15/12 - 12h)": {
       "main": [
         [
@@ -5157,13 +5128,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://apievolution.automagicbots.com.br/message/sendText/Henry_Santos",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "75626DE79AA7-43EB-BC64-258E864404B4"
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
             }
           ]
         },
@@ -5302,13 +5273,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://apievolution.automagicbots.com.br/message/sendText/Henry_Santos",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "75626DE79AA7-43EB-BC64-258E864404B4"
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
             }
           ]
         },
@@ -5447,13 +5418,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://apievolution.automagicbots.com.br/message/sendText/Henry_Santos",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "75626DE79AA7-43EB-BC64-258E864404B4"
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
             }
           ]
         },
@@ -5852,13 +5823,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://apievolution.automagicbots.com.br/message/sendText/Henry_Santos",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "75626DE79AA7-43EB-BC64-258E864404B4"
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
             }
           ]
         },
@@ -5997,13 +5968,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://apievolution.automagicbots.com.br/message/sendText/Henry_Santos",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "75626DE79AA7-43EB-BC64-258E864404B4"
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
             }
           ]
         },
@@ -6142,13 +6113,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://apievolution.automagicbots.com.br/message/sendText/Henry_Santos",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "75626DE79AA7-43EB-BC64-258E864404B4"
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
             }
           ]
         },
@@ -6513,99 +6484,6 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
-              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
-              "rightValue": "14/12/2024",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "9d4dc15f-698e-41c7-8995-5ce1843548f7",
-      "name": "14/12/1",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [
-        280,
-        5400
-      ]
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "=https://apievolution.automagicbots.com.br/message/sendText/Henry_Santos",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "apikey",
-              "value": "75626DE79AA7-43EB-BC64-258E864404B4"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "={{ $node[\"Code6\"].json[\"telefonefinal\"] }}"
-            },
-            {
-              "name": "text",
-              "value": "=👉 *Clique no link abaixo e garanta sua vaga.*\n\nhttps://salaolucrativo.gestaodesaloes.com.br/webinario-final-do-ano-24-org/\n\nhttps://drive.google.com/file/d/1WV3HGS0gvfIsKb89EQqIZzE9OZDF_WER/view?usp=drive_link\n"
-            },
-            {
-              "name": "options.delay",
-              "value": "={{ 1200 }}"
-            },
-            {
-              "name": "options.presence",
-              "value": "composing"
-            },
-            {
-              "name": "options.linkPreview",
-              "value": "={{ false }}"
-            },
-            {
-              "name": "=options.mentions.everyOne",
-              "value": "={{ true }}"
-            }
-          ]
-        },
-        "options": {
-          "response": {
-            "response": {
-              "fullResponse": true,
-              "neverError": true
-            }
-          }
-        }
-      },
-      "id": "5cd498f1-431d-4ec3-a69a-7be5b4582d90",
-      "name": "Mensagem- 14/12/",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        520,
-        5280
-      ],
-      "typeVersion": 4
-    },
-    {
-      "parameters": {
         "rule": {
           "interval": [
             {
@@ -6692,13 +6570,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://apievolution.automagicbots.com.br/message/sendText/Henry_Santos",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "75626DE79AA7-43EB-BC64-258E864404B4"
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
             }
           ]
         },
@@ -6752,13 +6630,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://apievolution.automagicbots.com.br/message/sendText/Henry_Santos",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "75626DE79AA7-43EB-BC64-258E864404B4"
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
             }
           ]
         },
@@ -7260,6 +7138,6 @@
   },
   "tags": [],
   "triggerCount": 18,
-  "updatedAt": "2024-12-06T15:05:15.257Z",
-  "versionId": "b07b744b-d9a8-4e7e-b9b2-d2336e7a1ee4"
+  "updatedAt": "2024-12-10T15:09:37.637Z",
+  "versionId": "c856ef04-4bea-4686-a062-5c1f150f7951"
 }
