@@ -34,6 +34,17 @@
           }
         ]
       ]
+    },
+    "formatar_dados": {
+      "main": [
+        [
+          {
+            "node": "Add_lead_KOMMO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-12-10T13:04:10.297Z",
@@ -106,16 +117,52 @@
     },
     {
       "parameters": {
-        "jsCode": "// Extrair o corpo do webhook\nconst body = $node[\"Loop Over Items\"].json || null;\n\n// Verificar se o corpo do webhook existe e não está vazio\nif (!body || Object.keys(body).length === 0) {\n    // Se o corpo estiver ausente, vazio ou nulo, trava a execução\n    return [];\n}\n\n// Extrair o payload e as respostas do webhook\nconst payload = body || null;\nconst responses = payload || null;\n\n// Verificar se o payload existe e não está vazio\nif (!payload || Object.keys(payload).length === 0) {\n    return [];\n}\n\n// Extrair valores das respostas, garantindo que não quebrem caso estejam ausentes\nconst titulo = responses?.[\"SOFTWARE\"] || \"\";\nconst gestor = responses?.[\"GESTOR\"] || \"\";\nconst emailAnswer = responses?.[\"EMAIL\"] || \"\";\nconst whatsappInput = responses?.[\"TELEFONE\"] || \"\";\n\n\n// Função para formatar email\nfunction formatEmail(email) {\n    return email ? email.toLowerCase().trim() : '';\n}\n\n// Função para formatar número de WhatsApp, retornando null se não existir\nfunction formatWhatsApp(number) {\n    if (!number) return null;\n\n    // Remover todos os caracteres não numéricos\n    let whatsapp = number.toString().replace(/\\D/g, '');\n\n    // Retornar null se não houver dígitos\n    if (!whatsapp) return null;\n\n    // Adicionar código do país se necessário\n    if (!whatsapp.startsWith('55')) {\n        whatsapp = '55' + whatsapp;\n    }\n\n    // Remover o código do país para processamento\n    whatsapp = whatsapp.slice(2);\n\n    // Obter DDD e número\n    const ddd = whatsapp.slice(0, 2);\n    let phoneNumber = whatsapp.slice(2);\n\n    // Verificar se o número tem o tamanho mínimo\n    if (phoneNumber.length < 8) {\n        return null;\n    }\n\n    // Converter DDD para número inteiro\n    const dddInt = parseInt(ddd, 10);\n\n    // Lógica para ajustar o número com base no DDD e no comprimento\n    if (dddInt > 27) {\n        // Se o DDD for maior que 27 e o número tiver 9 dígitos, remover o primeiro dígito\n        if (phoneNumber.length >= 9) {\n            phoneNumber = phoneNumber.slice(1);\n        }\n        // Não adicionar '9' para DDDs maiores que 27\n    } else {\n        // Para DDDs de 11 a 27, garantir que o número tenha 9 dígitos\n        if (phoneNumber.length === 8) {\n            phoneNumber = '9' + phoneNumber;\n        }\n    }\n\n    // Reconstituir o número completo com o código do país\n    whatsapp = '55' + ddd + phoneNumber;\n\n    return whatsapp;\n}\n\n// Obter dados formatados\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedWhatsApp = formatWhatsApp(whatsappInput);\n\n// Metadata typebot\nconst metadata_instagram = payload?.metadata?.typeBInsta \n    ? payload.metadata.typeBInsta.replace(\"@\",\"\") \n    : null;\nconst metadata_email = payload?.metadata?.typeBEmail || null;\nconst metadata_telefone = payload?.metadata?.typeBTelefone?.trim() || null;\n\n// Extração das UTMs\nconst utm_source = responses?.[\"utm_source\"]?.[\"value\"] || \"\";\nconst utm_campaign = responses?.[\"utm_campaign\"]?.[\"value\"] || \"\";\nconst utm_content = responses?.[\"utm_content\"]?.[\"value\"] || \"\";\nconst utm_medium = responses?.[\"utm_medium\"]?.[\"value\"] || \"\";\nconst utm_term = responses?.[\"utm_term\"]?.[\"value\"] || \"\";\n\n// Agendado por\n// Obter o valor de 'agendadoPor', retornando 'Lead' ou null caso não esteja presente\nconst agendadoPor = body?.payload?.userFieldsResponses?.agendadoPor?.value || null;\n\n// Construir o objeto de resultado\nconst result = {\n    email: formattedEmail,\n    whatsapp: formattedWhatsApp,\n    iCalUID: payload[\"iCalUID\"] || '',\n    bookingId: payload[\"bookingId\"] || '',\n    data_criacao: body[\"createdAt\"] || '',\n    data_agendamento: payload[\"startTime\"] || '',\n    url: payload[\"bookerUrl\"] || '',\n    utm_source: utm_source,\n    utm_campaign: utm_campaign,\n    utm_content: utm_content,\n    utm_medium: utm_medium,\n    utm_term: utm_term,\n    metadata_instagram: metadata_instagram,\n    metadata_email: metadata_email,\n    metadata_telefone: metadata_telefone,\n    agendadoPor: agendadoPor\n};\n\n// Retornar o resultado no formato que o n8n espera\nreturn [{ json: result }];"
+        "jsCode": "// Extrair o corpo do webhook\nconst body = $node[\"Loop Over Items\"].json || null;\n\n// Verificar se o corpo do webhook existe e não está vazio\nif (!body || Object.keys(body).length === 0) {\n    // Se o corpo estiver ausente, vazio ou nulo, trava a execução\n    return [];\n}\n\n// Extrair o payload e as respostas do webhook\nconst payload = body || null;\nconst responses = payload || null;\n\n// Verificar se o payload existe e não está vazio\nif (!payload || Object.keys(payload).length === 0) {\n    return [];\n}\n\n// Extrair valores das respostas, garantindo que não quebrem caso estejam ausentes\nconst titulo = responses?.[\"SOFTWARE\"] || \"\";\nconst gestor = responses?.[\"GESTOR\"].replace(/^\\d+\\s*/, '') || \"\";\nconst emailAnswer = responses?.[\"EMAIL\"] || \"\";\nconst whatsappInput = responses?.[\"TELEFONE\"] || \"\";\nconst inicio = responses?.[\"INICIO\"] || \"\";\nconst identificacao = responses?.[\"IDENTIFICAÇÃO\"] || \"\";\nconst cnpj = responses?.[\"CNPJ\"] || \"\";\nconst dt_vencimento_assinatura = responses?.[\"VENCIMENTO ASSINATURA\"] || \"\";\nconst valor_assinatura = responses?.[\"VALOR\"] || \"\";\nconst dt_vencimento_mentoria = responses?.[\"VENCIMENTO MENTORIA \"] || \"\";\n\n\n// Função para formatar email\nfunction formatEmail(email) {\n    return email ? email.toLowerCase().trim() : '';\n}\n\n// Função para formatar número de WhatsApp, retornando null se não existir\nfunction formatWhatsApp(number) {\n    if (!number) return null;\n\n    // Remover todos os caracteres não numéricos\n    let whatsapp = number.toString().replace(/\\D/g, '');\n\n    // Retornar null se não houver dígitos\n    if (!whatsapp) return null;\n\n    // Adicionar código do país se necessário\n    if (!whatsapp.startsWith('55')) {\n        whatsapp = '55' + whatsapp;\n    }\n\n    // Remover o código do país para processamento\n    whatsapp = whatsapp.slice(2);\n\n    // Obter DDD e número\n    const ddd = whatsapp.slice(0, 2);\n    let phoneNumber = whatsapp.slice(2);\n\n    // Verificar se o número tem o tamanho mínimo\n    if (phoneNumber.length < 8) {\n        return null;\n    }\n\n    // Converter DDD para número inteiro\n    const dddInt = parseInt(ddd, 10);\n\n    // Lógica para ajustar o número com base no DDD e no comprimento\n    if (dddInt > 27) {\n        // Se o DDD for maior que 27 e o número tiver 9 dígitos, remover o primeiro dígito\n        if (phoneNumber.length >= 9) {\n            phoneNumber = phoneNumber.slice(1);\n        }\n        // Não adicionar '9' para DDDs maiores que 27\n    } else {\n        // Para DDDs de 11 a 27, garantir que o número tenha 9 dígitos\n        if (phoneNumber.length === 8) {\n            phoneNumber = '9' + phoneNumber;\n        }\n    }\n\n    // Reconstituir o número completo com o código do país\n    whatsapp = '55' + ddd + phoneNumber;\n\n    return whatsapp;\n}\n\n// Obter dados formatados\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedWhatsApp = formatWhatsApp(whatsappInput);\n\n// Construir o objeto de resultado\nconst result = {\n    titulo: titulo,\n    nome: gestor,\n    inicio: inicio,\n    identificacao: identificacao,\n    telefone: formattedWhatsApp,\n    email: formattedEmail,\n    cnpj: cnpj,\n    dt_vencimento_assinatura: dt_vencimento_assinatura,\n    valor_assinatura: valor_assinatura,\n    dt_vencimento_mentoria: dt_vencimento_mentoria\n    \n};\n\n// Retornar o resultado no formato que o n8n espera\nreturn [{ json: result }];"
       },
       "id": "d3612fe7-5277-40f9-a025-18005162e99e",
       "name": "formatar_dados",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        740,
-        120
+        640,
+        140
       ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n {\n    \"name\": \"{{ $node[\"formatar_dados\"].json[\"nome\"] }}\",\n    \"_embedded\":{\n       \"contacts\":[\n          {\n             \"first_name\":\"{{ $node[\"formatar_dados\"].json[\"nome\"].split(' ')[0] }}\",\n\"responsible_user_id\":11743307,           \n             \"custom_fields_values\": [\n                  {\n                      \"field_id\": 710450,\n                      \"field_name\": \"Phone\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"formatar_dados\"].json[\"telefone\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  },\n               {\n                      \"field_id\": 710452,\n                      \"field_name\": \"Email\",\n                      \"values\": [\n                          {\n                              \"value\": \"{{ $node[\"formatar_dados\"].json[\"email\"] }}\",\n                              \"enum_code\": \"WORK\"\n                          }\n                      ]\n                  }\n              ],\n             \"updated_by\":0\n          }\n       ],\n       \"companies\": []\n    },\n    \"responsible_user_id\":11762503,\n    \"status_id\":72349375,\n    \"pipeline_id\":9337315\n }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "46b48639-13e9-43a6-86ae-1e91500176fa",
+      "name": "Add_lead_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        940,
+        140
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -125,6 +172,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-10T13:23:26.232Z",
-  "versionId": "4ba69199-7eba-4629-b84d-9c5c66d43af8"
+  "updatedAt": "2024-12-10T19:06:47.445Z",
+  "versionId": "8a3c17f5-9bee-4df6-82d3-5c896fe6b641"
 }
