@@ -906,7 +906,13 @@
     },
     "é_PLANO30K": {
       "main": [
-        []
+        [
+          {
+            "node": "Add_contato_KOMMO2",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -3853,7 +3859,8 @@
               "value": "={{ false }}"
             },
             {
-              "name": "classroom_ids"
+              "name": "classroom_ids",
+              "value": "279041"
             },
             {
               "name": "membership_level_id",
@@ -3891,13 +3898,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://apievolution.automagicbots.com.br/message/sendText/Henry-santos",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
               "name": "apikey",
-              "value": "903E80C14D5D-4B72-B351-E53A9B265003"
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
             }
           ]
         },
@@ -3910,7 +3917,7 @@
             },
             {
               "name": "text",
-              "value": "=Compra Confirmada! Bem-vindo(a) ao Plano 30K 🚀\n\nOlá {{ $node[\"Dados do Evento\"].json[\"name\"].split(' ')[0] }},\n\nParabéns pela sua decisão! Sua compra foi *aprovada* e você está oficialmente no *Plano 30K*. Estamos muito empolgados em começar essa jornada com você e ajudar seu salão a alcançar novos patamares!\n\nAqui estão suas informações de acesso:\n\n🔗 *Link de acesso:* [Link de Acesso]\n🧑‍💻 *Login:* {{ $node[\"Dados do Evento\"].json[\"email\"] }}\n🔑 *Senha:* [Senha provisória]\n\n*Importante:*\nAo acessar pela primeira vez, recomendamos que altere sua senha para garantir ainda mais segurança.\nSe tiver qualquer dúvida, estamos aqui para ajudar! Basta responder a esta mensagem.\n\n*Prepare-se para transformar a gestão do seu salão e alcançar resultados incríveis!*\n\nNos vemos em breve,Henry Santos e \n*Equipe Plano 30K.*"
+              "value": "=Compra Confirmada! Bem-vindo(a) ao Plano 30K 🚀\n\nOlá {{ $node[\"Dados do Evento\"].json[\"name\"].split(' ')[0] }},\n\nParabéns pela sua decisão! Sua compra foi *aprovada* e você está oficialmente no *Plano 30K*. Estamos muito empolgados em começar essa jornada com você e ajudar seu salão a alcançar novos patamares!\n\nAqui estão suas informações de acesso:\n\n🔗 *Link de acesso:* https://mentoria-salao-autoadministravel.memberkit.com.br/\n🧑‍💻 *Login:* {{ $node[\"Dados do Evento\"].json[\"email\"] }}\n🔑 *Senha:* Salao321*\n\n*Importante:*\nAo acessar pela primeira vez, recomendamos que altere sua senha para garantir ainda mais segurança.\nSe tiver qualquer dúvida, estamos aqui para ajudar! Basta responder a esta mensagem.\n\n*Prepare-se para transformar a gestão do seu salão e alcançar resultados incríveis!*\n\nNos vemos em breve,Henry Santos e \n*Equipe Plano 30K.*"
             },
             {
               "name": "options.delay",
@@ -4396,6 +4403,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-27T20:00:58.484Z",
-  "versionId": "135ef290-8c0a-47e6-bf11-45a45a315e99"
+  "updatedAt": "2024-12-10T19:31:27.383Z",
+  "versionId": "b3c65411-9bba-476e-889e-9f9946ac3a2e"
 }
