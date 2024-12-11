@@ -54,13 +54,7 @@
     },
     "Code4": {
       "main": [
-        [
-          {
-            "node": "WhatsApp Business Cloud8",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "2s4": {
@@ -76,13 +70,7 @@
     },
     "WhatsApp Business Cloud8": {
       "main": [
-        [
-          {
-            "node": "2s4",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "10/12/2024": {
@@ -90,6 +78,17 @@
         [
           {
             "node": "le_planilha4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "enviar image1",
             "type": "main",
             "index": 0
           }
@@ -172,7 +171,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1140,
+        1260,
         540
       ]
     },
@@ -185,7 +184,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        540,
+        500,
         540
       ]
     },
@@ -199,7 +198,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        940,
+        1060,
         540
       ],
       "webhookId": "31da3a2d-a803-42c8-8599-56a375deb8c7"
@@ -216,8 +215,8 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        740,
-        540
+        260,
+        820
       ],
       "credentials": {
         "whatsAppApi": {
@@ -302,6 +301,105 @@
         -380,
         560
       ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "telefone",
+              "stringValue": "+554840426391"
+            },
+            {
+              "name": "nome_template",
+              "stringValue": "voucher_alunos_2024"
+            },
+            {
+              "name": "id_telefone",
+              "stringValue": "417653434771940"
+            },
+            {
+              "name": "token",
+              "stringValue": "Bearer EAASQdr15ZA1kBOz49XNdms7kNFup0SLyBp4CPwZBEYu8ZAshLBJg3ZCdnFtIdk3B6xRj6lArpJ8kPdg2AwtLGZA1mbF8G8aqjjKM5ZAVKKyCExD4d8qJZCdNMDNfx3AZAZAKp0CAsqgZCDPXuKLVJxdnqjs86B4jQlZBTVg07Ihq1qu1KOnBjC0qmM97SsRaYzZBvCSb"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "930d6a9a-2c4a-4ae3-b228-96e56e3858ca",
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        700,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v21.0/{{ $node[\"variaveis\"].json[\"id_telefone\"] }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ $node[\"variaveis\"].json[\"token\"] }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "to",
+              "value": "=+5562981196678"
+            },
+            {
+              "name": "type",
+              "value": "template"
+            },
+            {
+              "name": "template.name",
+              "value": "={{ $node[\"variaveis\"].json[\"nome_template\"] }}"
+            },
+            {
+              "name": "template.language.code",
+              "value": "pt_BR"
+            },
+            {
+              "name": "type",
+              "value": "header"
+            },
+            {
+              "name": "type",
+              "value": "image"
+            },
+            {
+              "name": "image.link",
+              "value": "https://t3135484.p.clickup-attachments.com/t3135484/4e4451da-8862-4ecb-87d8-1f30d447d9de/VOUCHER%20INDICA%C3%87%C3%83O.png"
+            },
+            {
+              "name": "messaging_product",
+              "value": "whatsapp"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "82d9f8cd-a61d-4b76-8275-58ad08c384b5",
+      "name": "enviar image1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        860,
+        540
+      ],
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {},
@@ -324,6 +422,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-10T12:57:27.846Z",
-  "versionId": "95586485-8bd9-40b8-a43b-3785f7bb6f69"
+  "updatedAt": "2024-12-10T18:00:16.339Z",
+  "versionId": "2eba9024-5d80-4062-95bf-c0b1ccfcb0b7"
 }
