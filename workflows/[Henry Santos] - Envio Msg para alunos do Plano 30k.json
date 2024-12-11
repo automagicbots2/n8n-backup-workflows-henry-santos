@@ -1,0 +1,545 @@
+{
+  "active": false,
+  "connections": {
+    "Todo_dia_9hrs": {
+      "main": [
+        [
+          {
+            "node": "MySQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL": {
+      "main": [
+        [
+          {
+            "node": "é_semana1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_semana1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "é_semana2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_semana2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "é_semana3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_semana3": {
+      "main": [
+        [],
+        [
+          {
+            "node": "é_semana4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_semana4": {
+      "main": [
+        [],
+        [
+          {
+            "node": "é_semana5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_semana5": {
+      "main": [
+        [],
+        [
+          {
+            "node": "é_semana6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "MySQL1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "msg_onboarding_evolution": {
+      "main": [
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL1": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "msg_onboarding_evolution",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-10T19:31:55.024Z",
+  "id": "Vs3QXJDfgoouO5aE",
+  "meta": null,
+  "name": "[Henry Santos] - Envio Msg para alunos do Plano 30k",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "be6c88fe-76b6-4edb-8b5b-23a8c78de043",
+      "name": "Todo_dia_9hrs"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"formata_telefone\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "text",
+              "value": "=Compra Confirmada! Bem-vindo(a) ao Plano 30K 🚀\n\nOlá {{ $node[\"Dados do Evento\"].json[\"name\"].split(' ')[0] }},\n\nParabéns pela sua decisão! Sua compra foi *aprovada* e você está oficialmente no *Plano 30K*. Estamos muito empolgados em começar essa jornada com você e ajudar seu salão a alcançar novos patamares!\n\nAqui estão suas informações de acesso:\n\n🔗 *Link de acesso:* https://mentoria-salao-autoadministravel.memberkit.com.br/\n🧑‍💻 *Login:* {{ $node[\"Dados do Evento\"].json[\"email\"] }}\n🔑 *Senha:* Salao321*\n\n*Importante:*\nAo acessar pela primeira vez, recomendamos que altere sua senha para garantir ainda mais segurança.\nSe tiver qualquer dúvida, estamos aqui para ajudar! Basta responder a esta mensagem.\n\n*Prepare-se para transformar a gestão do seu salão e alcançar resultados incríveis!*\n\nNos vemos em breve,Henry Santos e \n*Equipe Plano 30K.*"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "754296b9-f479-4d86-a39d-55f7d46529c0",
+      "name": "msg_onboarding_evolution",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1240,
+        -40
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "plano30k",
+          "mode": "list",
+          "cachedResultName": "plano30k"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        220,
+        0
+      ],
+      "id": "fb4bc826-97ac-473e-8db6-ca2ec6b0e54e",
+      "name": "MySQL",
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c22541c9-aaf4-4e69-a402-993c1161bf37",
+              "leftValue": "={{ $json[\"semana1\"] }}",
+              "rightValue": "={{ $now.toFormat('yyyy-MM-dd') }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        440,
+        0
+      ],
+      "id": "a505e8ed-2fc3-4c89-96e8-59af4bc579b2",
+      "name": "é_semana1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c22541c9-aaf4-4e69-a402-993c1161bf37",
+              "leftValue": "={{ $node[\"MySQL\"].json[\"semana2\"] }}",
+              "rightValue": "={{ $now.toFormat('yyyy-MM-dd') }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        600,
+        240
+      ],
+      "id": "ba5187c1-c95e-411f-89d8-bb81bfefbd53",
+      "name": "é_semana2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c22541c9-aaf4-4e69-a402-993c1161bf37",
+              "leftValue": "={{ $node[\"MySQL\"].json[\"semana3\"] }}",
+              "rightValue": "={{ $now.toFormat('yyyy-MM-dd') }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        760,
+        540
+      ],
+      "id": "0de58e4b-0bc1-4a1f-bb07-9d867ea8d86d",
+      "name": "é_semana3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c22541c9-aaf4-4e69-a402-993c1161bf37",
+              "leftValue": "={{ $node[\"MySQL\"].json[\"semana4\"] }}",
+              "rightValue": "={{ $now.toFormat('yyyy-MM-dd') }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        900,
+        880
+      ],
+      "id": "85aa3a09-ac5f-4d23-9f4f-c6be448c8007",
+      "name": "é_semana4"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c22541c9-aaf4-4e69-a402-993c1161bf37",
+              "leftValue": "={{ $node[\"MySQL\"].json[\"semana5\"] }}",
+              "rightValue": "={{ $now.toFormat('yyyy-MM-dd') }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1060,
+        1300
+      ],
+      "id": "ad38bc75-84f2-458a-a8e4-a3e1f90b673e",
+      "name": "é_semana5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c22541c9-aaf4-4e69-a402-993c1161bf37",
+              "leftValue": "={{ $node[\"MySQL\"].json[\"semana6\"] }}",
+              "rightValue": "={{ $now.toFormat('yyyy-MM-dd') }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1220,
+        1620
+      ],
+      "id": "8259c37f-5e8a-474a-8d37-b1023f171315",
+      "name": "é_semana6"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        660,
+        -100
+      ],
+      "id": "452ee488-64af-4057-857f-8b164b8aa49a",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        -40
+      ],
+      "id": "851c20e3-6b28-423b-89d4-d8f1d5117a35"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"MySQL\"].json[\"id_lead\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        880,
+        -40
+      ],
+      "id": "861d6717-9344-424e-b10d-7a2338774ca7",
+      "name": "MySQL1",
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        -40
+      ],
+      "id": "fe27d874-9055-481d-8f92-7e2dc9c0646d",
+      "name": "Limit"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-12-10T20:01:44.210Z",
+  "versionId": "976b9783-5760-4dfa-9c3a-7e9ba0b090d9"
+}
