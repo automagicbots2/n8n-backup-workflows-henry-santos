@@ -43,7 +43,13 @@
     },
     "é_semana2": {
       "main": [
-        [],
+        [
+          {
+            "node": "MySQL1",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "é_semana3",
@@ -144,6 +150,73 @@
           }
         ]
       ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "MySQL2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL2": {
+      "main": [
+        [
+          {
+            "node": "Limit1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit1": {
+      "main": [
+        [
+          {
+            "node": "msg_6semanas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "é_semana6": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "msg_6semanas": {
+      "main": [
+        [
+          {
+            "node": "Replace Me1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-12-10T19:31:55.024Z",
@@ -188,7 +261,7 @@
           "parameters": [
             {
               "name": "number",
-              "value": "={{ $node[\"formata_telefone\"].json[\"telefone\"] }}"
+              "value": "={{ $node[\"Limit\"].json[\"telefone\"] }}"
             },
             {
               "name": "text",
@@ -455,7 +528,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1220,
+        1280,
         1620
       ],
       "id": "8259c37f-5e8a-474a-8d37-b1023f171315",
@@ -531,6 +604,137 @@
       ],
       "id": "fe27d874-9055-481d-8f92-7e2dc9c0646d",
       "name": "Limit"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1560,
+        1600
+      ],
+      "id": "dbf333a8-d17f-4adf-ba9e-78251a4b4dd1",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me1",
+      "typeVersion": 1,
+      "position": [
+        2340,
+        1660
+      ],
+      "id": "c1dbf44b-5f56-45ff-89eb-7b2a304035c2"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"MySQL\"].json[\"id_lead\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1780,
+        1660
+      ],
+      "id": "80d625a3-8d6e-45b0-bb31-1074fef2d66e",
+      "name": "MySQL2",
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1940,
+        1660
+      ],
+      "id": "9b8d1b87-a57a-4be9-8a60-5f554dcad692",
+      "name": "Limit1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"Limit1\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "text",
+              "value": "=Chegou a hora de planejar seus próximos passos! 🚀\n\nOi {{ $node[\"Limit1\"].json[\"nome\"] }}, tudo bem?\n\nJá se passou 1 semana desde que você começou sua jornada no Plano 30K! Agora é hora de garantir que você está no caminho certo e definir os próximos passos para crescer ainda mais.\n\nHenry está pronto para te ajudar pessoalmente em uma sessão em grupo! Vamos revisar o que você já conquistou e traçar um plano de ação para ir ainda mais longe.\n\nNão perca essa oportunidade de ter uma orientação direta e prática!\n\n👉 Clique aqui para agendar sua sessão: [Link de Agendamento]\n\nEstamos ansiosos para te ver lá e continuar construindo seu sucesso!\n\nAbraços,Henry Santos e\nEquipe Plano 30k"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "c66c603b-c973-4d01-9de1-8567ea168d9c",
+      "name": "msg_6semanas",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2140,
+        1660
+      ],
+      "typeVersion": 4
     }
   ],
   "pinData": {},
@@ -540,6 +744,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-10T20:01:44.210Z",
-  "versionId": "976b9783-5760-4dfa-9c3a-7e9ba0b090d9"
+  "updatedAt": "2024-12-11T20:29:56.173Z",
+  "versionId": "ff30b49b-21aa-4d05-9edf-9638c037114b"
 }
