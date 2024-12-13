@@ -63,17 +63,6 @@
         ]
       ]
     },
-    "10/12/2024": {
-      "main": [
-        [
-          {
-            "node": "le_planilha4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "variaveis": {
       "main": [
         [
@@ -89,7 +78,7 @@
       "main": [
         [
           {
-            "node": "variaveis",
+            "node": "WhatsApp Business Cloud8",
             "type": "main",
             "index": 0
           }
@@ -101,6 +90,28 @@
         [
           {
             "node": "le_planilha4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud8": {
+      "main": [
+        [
+          {
+            "node": "2s4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "10/12 às 12h": {
+      "main": [
+        [
+          {
+            "node": "10/12/2024",
             "type": "main",
             "index": 0
           }
@@ -138,10 +149,10 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": 591438058,
+          "value": 1781005266,
           "mode": "list",
-          "cachedResultName": "TESTE",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=591438058"
+          "cachedResultName": "Disparo (Indicação Alunos)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=1781005266"
         },
         "options": {}
       },
@@ -183,8 +194,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1460,
-        560
+        1260,
+        540
       ]
     },
     {
@@ -210,8 +221,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1260,
-        560
+        1040,
+        540
       ],
       "webhookId": "47e14434-d257-4b68-a671-f787de977325"
     },
@@ -220,6 +231,21 @@
         "phoneNumberId": "417653434771940",
         "recipientPhoneNumber": "=+{{ $node[\"Code4\"].json[\"telefonefinal\"] }}",
         "template": "presente_natal_2024|pt_BR",
+        "components": {
+          "component": [
+            {
+              "type": "header",
+              "headerParameters": {
+                "parameter": [
+                  {
+                    "type": "image",
+                    "imageLink": "https://t3135484.p.clickup-attachments.com/t3135484/7552b388-388f-40dd-98d6-db7d09559913/VOUCHER%20AGENDAMENTO.png?view=open"
+                  }
+                ]
+              }
+            }
+          ]
+        },
         "requestOptions": {}
       },
       "id": "ae8e263e-8a40-492d-8a0d-b17f54e9947a",
@@ -227,8 +253,8 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        1100,
-        440
+        800,
+        540
       ],
       "credentials": {
         "whatsAppApi": {
@@ -241,7 +267,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+5562981196678",
+        "recipientPhoneNumber": "=+5531992796934",
         "template": "disparo_finalizado|pt_BR",
         "requestOptions": {}
       },
@@ -276,8 +302,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -440,
-        820
+        -360,
+        740
       ],
       "disabled": true
     },
@@ -311,8 +337,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -140,
-        560
+        -180,
+        740
       ]
     },
     {
@@ -344,8 +370,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        700,
-        540
+        1000,
+        880
       ]
     },
     {
@@ -467,8 +493,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        860,
-        540
+        1160,
+        880
       ],
       "onError": "continueRegularOutput"
     },
@@ -546,7 +572,7 @@
       "typeVersion": 1,
       "position": [
         -180,
-        400
+        520
       ]
     }
   ],
@@ -570,6 +596,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-11T19:14:52.792Z",
-  "versionId": "6e8416b9-1f8c-48b0-bcb5-f7ebc93f8553"
+  "updatedAt": "2024-12-12T21:32:38.965Z",
+  "versionId": "d77b284e-b9ec-41c0-9506-9a1ff22c0f65"
 }
