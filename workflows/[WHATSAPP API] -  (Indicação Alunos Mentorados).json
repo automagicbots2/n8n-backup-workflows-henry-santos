@@ -84,6 +84,28 @@
           }
         ]
       ]
+    },
+    "Code4": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud8": {
+      "main": [
+        [
+          {
+            "node": "2s4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-12-10T12:50:19.763Z",
@@ -197,7 +219,22 @@
       "parameters": {
         "phoneNumberId": "417653434771940",
         "recipientPhoneNumber": "=+{{ $node[\"Code4\"].json[\"telefonefinal\"] }}",
-        "template": "plano30k_31_10|pt_BR",
+        "template": "voucher_alunos_2024|pt_BR",
+        "components": {
+          "component": [
+            {
+              "type": "header",
+              "headerParameters": {
+                "parameter": [
+                  {
+                    "type": "image",
+                    "imageLink": "https://t3135484.p.clickup-attachments.com/t3135484/4e4451da-8862-4ecb-87d8-1f30d447d9de/VOUCHER%20INDICA%C3%87%C3%83O.png?view=open"
+                  }
+                ]
+              }
+            }
+          ]
+        },
         "requestOptions": {}
       },
       "id": "451f7a9d-36d0-45ef-8f36-4dd5340a6439",
@@ -205,8 +242,8 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        260,
-        820
+        800,
+        540
       ],
       "credentials": {
         "whatsAppApi": {
@@ -219,7 +256,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+5562981196678",
+        "recipientPhoneNumber": "=+5531992796934",
         "template": "disparo_finalizado|pt_BR",
         "requestOptions": {}
       },
@@ -321,8 +358,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        700,
-        540
+        860,
+        860
       ]
     },
     {
@@ -386,8 +423,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        860,
-        540
+        1020,
+        860
       ],
       "onError": "continueRegularOutput"
     }
@@ -408,10 +445,13 @@
     },
     "node:10/12 às 12h": {
       "recurrenceRules": []
+    },
+    "node:10/12 às 17h": {
+      "recurrenceRules": []
     }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-11T19:14:27.955Z",
-  "versionId": "eb240fce-792e-4075-abff-b6061d0dd593"
+  "updatedAt": "2024-12-12T21:52:20.733Z",
+  "versionId": "ac67ace6-ef7c-484e-b209-be6673c823e7"
 }
