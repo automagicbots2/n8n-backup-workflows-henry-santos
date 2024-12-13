@@ -163,15 +163,1692 @@
           "name": "[Henry Santos] - Kommo ouath 2"
         }
       }
+    },
+    {
+      "parameters": {
+        "url": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "281d0164-11f6-4c80-9264-bff336d24a3c",
+      "name": "Add_lead_KOMMO1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        60,
+        340
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "Add_lead_KOMMO1": [
+      {
+        "json": {
+          "_total_items": 63,
+          "_page": 1,
+          "_page_count": 1,
+          "_links": {
+            "self": {
+              "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields?page=1&limit=250"
+            }
+          },
+          "_embedded": {
+            "custom_fields": [
+              {
+                "id": 710448,
+                "name": "Posição",
+                "type": "text",
+                "account_id": 33305415,
+                "code": "POSITION",
+                "sort": 513,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": false,
+                "is_predefined": true,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/710448?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 710450,
+                "name": "Telefone",
+                "type": "multitext",
+                "account_id": 33305415,
+                "code": "PHONE",
+                "sort": 4,
+                "is_api_only": false,
+                "enums": [
+                  {
+                    "id": 509266,
+                    "value": "WORK",
+                    "sort": 2
+                  },
+                  {
+                    "id": 509268,
+                    "value": "WORKDD",
+                    "sort": 4
+                  },
+                  {
+                    "id": 509270,
+                    "value": "MOB",
+                    "sort": 6
+                  },
+                  {
+                    "id": 509272,
+                    "value": "FAX",
+                    "sort": 8
+                  },
+                  {
+                    "id": 509274,
+                    "value": "HOME",
+                    "sort": 10
+                  },
+                  {
+                    "id": 509276,
+                    "value": "OTHER",
+                    "sort": 12
+                  }
+                ],
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": false,
+                "is_predefined": true,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/710450?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 710452,
+                "name": "O email",
+                "type": "multitext",
+                "account_id": 33305415,
+                "code": "EMAIL",
+                "sort": 6,
+                "is_api_only": false,
+                "enums": [
+                  {
+                    "id": 509278,
+                    "value": "WORK",
+                    "sort": 2
+                  },
+                  {
+                    "id": 509280,
+                    "value": "PRIV",
+                    "sort": 4
+                  },
+                  {
+                    "id": 509282,
+                    "value": "OTHER",
+                    "sort": 6
+                  }
+                ],
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": false,
+                "is_predefined": true,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/710452?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 788726,
+                "name": "Instagram",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 521,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/788726?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 788730,
+                "name": "Você tem uma recepcionista no seu salão?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 522,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/788730?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 788734,
+                "name": "Quantos profissionais você tem?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 524,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/788734?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 788786,
+                "name": "Qual seu faturamento MENSAL MÉDIO em 2024 (considerando até este mês)?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 526,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/788786?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 789046,
+                "name": "Quais são os problemas que têm te impedido de alcançar esse objetivo?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 531,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/789046?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 789052,
+                "name": "Possuímos 2 opções para a sessão estratégica:",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 530,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/789052?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 789054,
+                "name": "Se existisse um acompanhamento único que solucionasse os problemas que citou antes e te ajudasse a chegar no seu objetivo, quanto você estaria disposto a investir POR MÊS?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 528,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/789054?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 789152,
+                "name": "QUALIFICAÇÃO",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 520,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/789152?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1009078,
+                "name": "MENTORIA",
+                "type": "multiselect",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 515,
+                "is_api_only": false,
+                "enums": [
+                  {
+                    "id": 727846,
+                    "value": "NÃO",
+                    "sort": 500
+                  },
+                  {
+                    "id": 727848,
+                    "value": "SIM",
+                    "sort": 1
+                  }
+                ],
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1009078?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1009080,
+                "name": "SOFTWARE",
+                "type": "multiselect",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 514,
+                "is_api_only": false,
+                "enums": [
+                  {
+                    "id": 727850,
+                    "value": "SIM",
+                    "sort": 500
+                  },
+                  {
+                    "id": 727852,
+                    "value": "NÃO",
+                    "sort": 1
+                  }
+                ],
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1009080?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1009082,
+                "name": "NÍVEL",
+                "type": "multiselect",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 519,
+                "is_api_only": false,
+                "enums": [
+                  {
+                    "id": 727854,
+                    "value": "INICIAL",
+                    "sort": 500
+                  },
+                  {
+                    "id": 727856,
+                    "value": "AVANÇADO",
+                    "sort": 1
+                  }
+                ],
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1009082?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1009084,
+                "name": "FISCAL",
+                "type": "multiselect",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 516,
+                "is_api_only": false,
+                "enums": [
+                  {
+                    "id": 727858,
+                    "value": "NÃO",
+                    "sort": 500
+                  },
+                  {
+                    "id": 727860,
+                    "value": "SIM",
+                    "sort": 1
+                  }
+                ],
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1009084?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1009086,
+                "name": "Vencimento Mentoria",
+                "type": "date",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 518,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1009086?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1009088,
+                "name": "Mensalidade",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 517,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1009088?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1014634,
+                "name": "Data da Reunião",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 541,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1014634?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1014636,
+                "name": "Hora da Reunião",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 542,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1014636?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1014638,
+                "name": "Link da Reunião",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 543,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1014638?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015182,
+                "name": "Para eu entender mais sobre teu negócio, qual opção melhor define você hoje?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 523,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015182?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015184,
+                "name": "Em qual etapa de começar a montar o seu salão você está",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 525,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015184?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015234,
+                "name": "utm_source",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 532,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015234?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015236,
+                "name": "utm_campaign",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 533,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015236?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015238,
+                "name": "utm_content",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 534,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015238?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015240,
+                "name": "utm_medium",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 535,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015240?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015242,
+                "name": "utm_term",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 536,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015242?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015244,
+                "name": "utm_fun",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 537,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015244?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015246,
+                "name": "utm_var",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 538,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015246?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015504,
+                "name": "Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2024?",
+                "type": "textarea",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 527,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015504?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015506,
+                "name": "Caso eu receba mais interessados que vaga na sessão, por que eu deveria escolher você?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 529,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015506?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015570,
+                "name": "Nome do evento",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 540,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015570?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015576,
+                "name": "Link do Reagendamento",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 544,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015576?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015580,
+                "name": "Link do Cancelamento",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 545,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015580?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015594,
+                "name": "[C] - utm_source",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 548,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015594?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015596,
+                "name": "[C] - utm_campaign",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 549,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015596?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015598,
+                "name": "[C] - utm_content",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 551,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015598?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015600,
+                "name": "[C] - utm_medium",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 550,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015600?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015602,
+                "name": "[C] - utm_term",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 552,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015602?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015604,
+                "name": "[C] - utm_fun",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 553,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015604?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1015606,
+                "name": "[C] - utm_var",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 554,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1015606?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1016074,
+                "name": "ID do Cliente",
+                "type": "textarea",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 546,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1016074?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1016076,
+                "name": "ID do Evento",
+                "type": "textarea",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 547,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1016076?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1016078,
+                "name": "Data do Agendamento",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 539,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1016078?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1016188,
+                "name": "Data do Reagendamento",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 555,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1016188?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1016190,
+                "name": "Data do Cancelamento",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 556,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1016190?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1016194,
+                "name": "NIVEL",
+                "type": "multiselect",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 510,
+                "is_api_only": false,
+                "enums": [
+                  {
+                    "id": 737370,
+                    "value": "INICIAL",
+                    "sort": 500
+                  },
+                  {
+                    "id": 737372,
+                    "value": "AVANÇADO",
+                    "sort": 1
+                  }
+                ],
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1016194?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1016196,
+                "name": "Aniversário",
+                "type": "date",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 512,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1016196?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1016198,
+                "name": "NIVEL",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 511,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1016198?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1016200,
+                "name": "Aniversários",
+                "type": "date",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 509,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1016200?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1017806,
+                "name": "Quantas horas você está disposto a investir na sua semana para atingir estes objetivos que você acabou de citar/",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 557,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1017806?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1017810,
+                "name": "Quando você contrata alguém para trabalhar no salão, você toma essa decisão sozinha?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 558,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1017810?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1017812,
+                "name": "Para eu entender mais sobre teu negócio, quantos profissionais você tem?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 559,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1017812?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1017814,
+                "name": "Quando você pretende colocar em ação tudo o que for mostrado para você na sessão?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 560,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1017814?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1017816,
+                "name": "Agora… Em qual etapa de começar a montar o seu salão você está",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 561,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1017816?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1018040,
+                "name": "Caso eu receba mais interessados que vaga na sessão, por que eu deveria escolher você?",
+                "type": "textarea",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 508,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1018040?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1021880,
+                "name": "Produto",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 562,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1021880?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1023229,
+                "name": "o quão comprometido você está em participar?",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 503,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1023229?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1023231,
+                "name": "Responsável",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 504,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1023231?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1026508,
+                "name": "Qual Mentoria",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 505,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1026508?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1026510,
+                "name": "Investimento Compromete Fluxo",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 506,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1026510?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1026512,
+                "name": "Plano com a mentoria",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 507,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1026512?page=1&limit=250"
+                  }
+                }
+              },
+              {
+                "id": 1027702,
+                "name": "Valor do Produto",
+                "type": "text",
+                "account_id": 33305415,
+                "code": null,
+                "sort": 564,
+                "is_api_only": false,
+                "enums": null,
+                "group_id": null,
+                "required_statuses": [],
+                "is_deletable": true,
+                "is_predefined": false,
+                "entity_type": "contacts",
+                "remind": null,
+                "triggers": [],
+                "currency": null,
+                "hidden_statuses": [],
+                "_links": {
+                  "self": {
+                    "href": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields/1027702?page=1&limit=250"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-10T19:06:47.445Z",
-  "versionId": "8a3c17f5-9bee-4df6-82d3-5c896fe6b641"
+  "updatedAt": "2024-12-13T03:00:32.117Z",
+  "versionId": "eb4d226d-3209-42b5-84c8-c62f6d850475"
 }
