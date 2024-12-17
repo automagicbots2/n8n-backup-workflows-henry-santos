@@ -710,6 +710,17 @@
           }
         ]
       ]
+    },
+    "aplicacao_preenchida_pop_up": {
+      "main": [
+        [
+          {
+            "node": "formata_dados9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-03-25T13:17:12.845Z",
@@ -11534,6 +11545,22 @@
         1600
       ],
       "webhookId": "80364f39-fdcf-49bb-8268-0aad9dbdd379"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "aplicacao-preenchida-hetzner-pop-up",
+        "options": {}
+      },
+      "id": "fe86714b-3b80-4c2a-8d60-682833ea1bd4",
+      "name": "aplicacao_preenchida_pop_up",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        1060
+      ],
+      "webhookId": "80364f39-fdcf-49bb-8268-0aad9dbdd379"
     }
   ],
   "pinData": {
@@ -15941,6 +15968,431 @@
           "executionMode": "production"
         }
       }
+    ],
+    "aplicacao_preenchida_pop_up": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "8463",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-740ad70985d29952497888b51b2534d3-964a8d79a6ebe718-01",
+            "x-forwarded-for": "18.210.136.162",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "18.210.136.162"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01JD6WQ9KVRVYGBYNX218DM0QW",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "WHYDoReb",
+              "token": "sc7o2zf1zhki54kdksc7o214l7ozxdm8",
+              "landed_at": "2024-11-21T08:14:43Z",
+              "submitted_at": "2024-11-21T08:16:52Z",
+              "hidden": {
+                "email": "professoraaniellyjaime@gmail.com",
+                "name": "anielly",
+                "telefone": "(62) 99222-8565",
+                "utm_campaign": "[LF] [SE] [CAPTAÇÃO] [CADASTROS] [AUTO] [F] Meia Cebola",
+                "utm_content": "AD35 VID - [FUNIL 30 MIN]",
+                "utm_fun": "",
+                "utm_medium": "02 - [AUTO] [F] Lal 1% Cadastrados",
+                "utm_source": "meta_ads",
+                "utm_term": "120212948865950128",
+                "utm_var": ""
+              },
+              "definition": {
+                "id": "WHYDoReb",
+                "title": "✅Funil 30 min - Salão Autoadministrável",
+                "fields": [
+                  {
+                    "id": "4WwdMxyPIK8V",
+                    "ref": "69e277e4-a0f8-4865-b01d-970dee3d88eb",
+                    "type": "short_text",
+                    "title": "Para começarmos, pode me informar qual o Instagram do seu salão?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "DX8ABAdScHtI",
+                    "ref": "9d3235d4-a79e-455d-ac75-4254b19cae96",
+                    "type": "multiple_choice",
+                    "title": "Show! Agora, gostaria de saber um pouco mais do seu momento profissional. Você tem uma recepcionista no seu salão?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "t2iyEzHDzJHh",
+                        "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78",
+                        "label": "SIM"
+                      },
+                      {
+                        "id": "O57xy1NPKfHB",
+                        "ref": "d81e4036-f5b7-4e82-922a-67a109e09967",
+                        "label": "NÃO"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "WWIA3IWem76Q",
+                    "ref": "0a89f6b6-19ea-4d15-b412-e502943ff866",
+                    "type": "multiple_choice",
+                    "title": "Para eu entender mais sobre teu negócio, qual opção melhor define você hoje? ",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "IlELwG6RAn8n",
+                        "ref": "cbf1d69a-ea39-4d1b-a644-4980a7bd18ee",
+                        "label": "Estou numa situação tranquila financeiramente, conseguindo pagar as contas e sobrando"
+                      },
+                      {
+                        "id": "Bt5as1XGtnHg",
+                        "ref": "b2c627b5-a406-457e-9a78-cbc552cd484e",
+                        "label": "Estou conseguindo pagar as contas e não sobrando"
+                      },
+                      {
+                        "id": "0g8xAYIENEXV",
+                        "ref": "ad8665ab-92d0-465a-aa46-1da9651119d6",
+                        "label": "Não estou conseguindo pagar as contas e com dívidas maiores"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "3nawAGKqGShU",
+                    "ref": "f4fcda9e-a288-4558-94d9-3e2b0b4f96ad",
+                    "type": "multiple_choice",
+                    "title": "Para eu entender mais sobre teu negócio, quantos profissionais você tem? \n",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "coWfqNMD2GPZ",
+                        "ref": "0524d96c-c3c0-4b2b-9e09-c5fae1821d08",
+                        "label": "- DE 4"
+                      },
+                      {
+                        "id": "0USzkDrTeirz",
+                        "ref": "b8d70724-14ee-4a6d-8a85-4b23756f0c7c",
+                        "label": "ENTRE 4 E 5"
+                      },
+                      {
+                        "id": "0NFTyLwW7ij8",
+                        "ref": "69bc797f-5f9c-47b8-a877-7a7faf0a5bbe",
+                        "label": "ENTRE 6 E 10"
+                      },
+                      {
+                        "id": "u0b11sxH30NX",
+                        "ref": "622f6743-3736-429e-bec0-ccec1fa37259",
+                        "label": "ENTRE 11 E 20"
+                      },
+                      {
+                        "id": "e2sVLeUm3xkX",
+                        "ref": "fd02c44d-8b31-4274-9a37-c06b49da9411",
+                        "label": "+ DE 20"
+                      },
+                      {
+                        "id": "nkkJDZxq8Sqw",
+                        "ref": "a31e8098-1803-4e42-8995-bd8db458550c",
+                        "label": "Estou montando meu salão e minha equipe"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "9NzjmZovePi4",
+                    "ref": "2c42d709-1748-472f-8f28-ebc7677c0398",
+                    "type": "multiple_choice",
+                    "title": "Agora… Em qual etapa de faturamento você esta atualmente? Qual seu faturamento MENSAL MÉDIO em 2024?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "OvG7ODI9ntjN",
+                        "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87",
+                        "label": "Até R$15.000 mensal"
+                      },
+                      {
+                        "id": "RygnSZlYULRD",
+                        "ref": "ea4e5a4c-ca76-4a90-8c22-d386a793e6fe",
+                        "label": "Entre R$15.001 e R$25.000 mensal"
+                      },
+                      {
+                        "id": "8bn3cPAnp0gq",
+                        "ref": "179a6666-ea5a-4879-87cc-72611886686e",
+                        "label": "Entre R$25.001 e R$50.000 mensal"
+                      },
+                      {
+                        "id": "OzM4mUSlPHey",
+                        "ref": "af07450b-9d3f-41ff-9b28-c5dd5ee1b366",
+                        "label": "Entre R$50.001 e R$100.000 mensal"
+                      },
+                      {
+                        "id": "Xl0H0e4WE1ky",
+                        "ref": "34b28fc9-d466-4b5a-83dd-b5a30c052fb8",
+                        "label": "+ de R$100.001"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "IkvX0hrgE8BI",
+                    "ref": "5fe6dab9-dcc1-4984-9408-cc43f052fe64",
+                    "type": "long_text",
+                    "title": "Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2024?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "zLAbSrRIC3WW",
+                    "ref": "193b63eb-8173-4a1a-8fa0-c930cab89161",
+                    "type": "short_text",
+                    "title": "Quais são os problemas que têm te impedido de alcançar esse objetivo?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "g5we6lD6Mxga",
+                    "ref": "86e5206c-d28f-4fcd-bc84-d48ceb88abce",
+                    "type": "multiple_choice",
+                    "title": "Quando você contrata alguém para trabalhar no salão, você toma essa decisão sozinha?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "fdC60Wwv6RWp",
+                        "ref": "93360123-549f-4650-b8fc-3eba931ac382",
+                        "label": "Sim! Não preciso falar com mais ninguém"
+                      },
+                      {
+                        "id": "WZ7YKEjaAdm2",
+                        "ref": "8d088b07-dc1b-46d3-acda-c1554cab7e5d",
+                        "label": "Não! Preciso falar com meu Parceiro/parceira"
+                      },
+                      {
+                        "id": "gtqOhm8Q5Nzm",
+                        "ref": "4109eaf9-d31c-4b00-b564-57a2a81b95d0",
+                        "label": "Depende do valor da remuneração do profissional"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "FjX4JtmKoI78",
+                    "ref": "66fec9b4-837b-4783-8ce2-a670902ab134",
+                    "type": "short_text",
+                    "title": "Caso eu receba mais interessados que vaga na sessão, por que eu deveria escolher você?",
+                    "properties": {}
+                  },
+                  {
+                    "id": "63qdtPkNiVBq",
+                    "ref": "7d285441-c756-4a57-9768-2c7f3d8d9f85",
+                    "type": "multiple_choice",
+                    "title": "Quando você pretende colocar em ação tudo o que for mostrado para você na sessão?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "ubVYZnhIeHM7",
+                        "ref": "8a641300-77e6-4140-8ee3-68ec8dba871a",
+                        "label": "Pra ontem!"
+                      },
+                      {
+                        "id": "CTCSBM9Mo3ES",
+                        "ref": "c20117b6-90a8-43d0-b7b5-75eaeae2682d",
+                        "label": "Imediatamente"
+                      },
+                      {
+                        "id": "con6Pby4gk8r",
+                        "ref": "45c3b9e0-56fd-4a79-9e35-356ecb417205",
+                        "label": "Nas próximas semanas"
+                      },
+                      {
+                        "id": "D12mNxLwOZHM",
+                        "ref": "3abec702-69b2-4ee6-9b40-ece7a42d8cde",
+                        "label": "Daqui uns meses"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "p8dPxdCLDSYP",
+                    "ref": "511ca207-0c32-4529-b19f-42be7508c79d",
+                    "type": "multiple_choice",
+                    "title": "Se existisse um acompanhamento único que solucionasse os problemas que citou antes e te ajudasse a chegar no seu objetivo, quanto você estaria disposto a investir POR MÊS?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "BF9P3N3527SK",
+                        "ref": "73b895ce-c2a6-47d0-ae22-743b27426241",
+                        "label": "0 a R$300"
+                      },
+                      {
+                        "id": "jAMiY7A0zQ2U",
+                        "ref": "0de62864-d439-4c8a-8629-1835ab9d5c5f",
+                        "label": "R$300 a R$700"
+                      },
+                      {
+                        "id": "xjVQ7yIa2ABl",
+                        "ref": "53f87fdf-3d59-414f-85dd-276dc35e06ce",
+                        "label": "R$700 a R$1.000"
+                      },
+                      {
+                        "id": "GrsL4DZ8JzvH",
+                        "ref": "bf7eebbe-2c54-49fd-b685-9d1812236f07",
+                        "label": "R$1.000 a R$5.000"
+                      },
+                      {
+                        "id": "7DAO2ABx4OSC",
+                        "ref": "08812e8d-cbb1-4dcd-83bc-3f0c358d3725",
+                        "label": "+ R$5.000"
+                      }
+                    ]
+                  }
+                ],
+                "endings": [
+                  {
+                    "id": "IwI9Hkcc3FMS",
+                    "ref": "caf08015-66e0-4179-8742-756787a07223",
+                    "title": "https://salaolucrativo.gestaodesaloes.com.br/mentoriasa_obrigado/",
+                    "type": "url_redirect",
+                    "properties": {
+                      "redirect_url": "https://salaolucrativo.gestaodesaloes.com.br/mentoriasa_obrigado/"
+                    }
+                  }
+                ]
+              },
+              "answers": [
+                {
+                  "type": "text",
+                  "text": "destakesteticaebeleza",
+                  "field": {
+                    "id": "4WwdMxyPIK8V",
+                    "type": "short_text",
+                    "ref": "69e277e4-a0f8-4865-b01d-970dee3d88eb"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "t2iyEzHDzJHh",
+                    "label": "SIM",
+                    "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78"
+                  },
+                  "field": {
+                    "id": "DX8ABAdScHtI",
+                    "type": "multiple_choice",
+                    "ref": "9d3235d4-a79e-455d-ac75-4254b19cae96"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "Bt5as1XGtnHg",
+                    "label": "Estou conseguindo pagar as contas e não sobrando",
+                    "ref": "b2c627b5-a406-457e-9a78-cbc552cd484e"
+                  },
+                  "field": {
+                    "id": "WWIA3IWem76Q",
+                    "type": "multiple_choice",
+                    "ref": "0a89f6b6-19ea-4d15-b412-e502943ff866"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "0NFTyLwW7ij8",
+                    "label": "ENTRE 6 E 10",
+                    "ref": "69bc797f-5f9c-47b8-a877-7a7faf0a5bbe"
+                  },
+                  "field": {
+                    "id": "3nawAGKqGShU",
+                    "type": "multiple_choice",
+                    "ref": "f4fcda9e-a288-4558-94d9-3e2b0b4f96ad"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "8bn3cPAnp0gq",
+                    "label": "Entre R$25.001 e R$50.000 mensal",
+                    "ref": "179a6666-ea5a-4879-87cc-72611886686e"
+                  },
+                  "field": {
+                    "id": "9NzjmZovePi4",
+                    "type": "multiple_choice",
+                    "ref": "2c42d709-1748-472f-8f28-ebc7677c0398"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "aumento de lucro",
+                  "field": {
+                    "id": "IkvX0hrgE8BI",
+                    "type": "long_text",
+                    "ref": "5fe6dab9-dcc1-4984-9408-cc43f052fe64"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "gestao",
+                  "field": {
+                    "id": "zLAbSrRIC3WW",
+                    "type": "short_text",
+                    "ref": "193b63eb-8173-4a1a-8fa0-c930cab89161"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "fdC60Wwv6RWp",
+                    "label": "Sim! Não preciso falar com mais ninguém",
+                    "ref": "93360123-549f-4650-b8fc-3eba931ac382"
+                  },
+                  "field": {
+                    "id": "g5we6lD6Mxga",
+                    "type": "multiple_choice",
+                    "ref": "86e5206c-d28f-4fcd-bc84-d48ceb88abce"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "18 anos no mercado",
+                  "field": {
+                    "id": "FjX4JtmKoI78",
+                    "type": "short_text",
+                    "ref": "66fec9b4-837b-4783-8ce2-a670902ab134"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "CTCSBM9Mo3ES",
+                    "label": "Imediatamente",
+                    "ref": "c20117b6-90a8-43d0-b7b5-75eaeae2682d"
+                  },
+                  "field": {
+                    "id": "63qdtPkNiVBq",
+                    "type": "multiple_choice",
+                    "ref": "7d285441-c756-4a57-9768-2c7f3d8d9f85"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "BF9P3N3527SK",
+                    "label": "0 a R$300",
+                    "ref": "73b895ce-c2a6-47d0-ae22-743b27426241"
+                  },
+                  "field": {
+                    "id": "p8dPxdCLDSYP",
+                    "type": "multiple_choice",
+                    "ref": "511ca207-0c32-4529-b19f-42be7508c79d"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "IwI9Hkcc3FMS",
+                "ref": "caf08015-66e0-4179-8742-756787a07223"
+              }
+            }
+          }
+        }
+      }
     ]
   },
   "settings": {
@@ -15961,7 +16413,7 @@
       "name": "[NAG]"
     }
   ],
-  "triggerCount": 13,
-  "updatedAt": "2024-12-13T18:35:02.444Z",
-  "versionId": "e49e4a2e-5ec3-448c-9fbe-998ac28a61b2"
+  "triggerCount": 14,
+  "updatedAt": "2024-12-16T20:09:47.689Z",
+  "versionId": "637b6fc8-0a11-4c33-9657-3b30b3689364"
 }
