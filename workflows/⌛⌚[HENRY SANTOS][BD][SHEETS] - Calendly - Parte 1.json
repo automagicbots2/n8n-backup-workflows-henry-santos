@@ -2252,16 +2252,6 @@
                 "operation": "equals",
                 "name": "filter.operator.equals"
               }
-            },
-            {
-              "id": "f1724217-128b-4cfb-b950-aa77599f847c",
-              "leftValue": "={{ $json[\"payload\"][\"event_type\"][\"slug\"] }}",
-              "rightValue": "aula-fature-seus-primeiros-30-mil-com-o-salao",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
             }
           ],
           "combinator": "or"
@@ -2939,77 +2929,71 @@
     "Evento": [
       {
         "json": {
-          "event": "invitee.created",
+          "event": "invitee.canceled",
           "payload": {
             "event_type": {
-              "uuid": "4bb89c30-f0c0-42aa-b189-8e09b91b73af",
-              "kind": "Group",
-              "slug": "aula-fature-seus-primeiros-30-mil-com-o-salao",
-              "name": "Aula ao Vivo: Fature seus primeiros 30 mil com o salão",
+              "uuid": "6c1fd5e0-9c2c-49b0-8c0e-e4b459829fbd",
+              "kind": "One-on-One",
+              "slug": "sessao-estrategica-com-henry",
+              "name": "Sessão Estratégica",
               "duration": 60,
               "owner": {
                 "type": "users",
-                "uuid": "676eec5d-16c3-4e51-b67e-39ebfe84b747"
+                "uuid": "7725d4fa-6d92-4137-aae3-056307347166"
               }
             },
             "event": {
-              "uuid": "620161c3-7f74-4525-a47c-185b768262a0",
+              "uuid": "4a5e6470-38d6-4021-8c30-7769c3426e93",
               "assigned_to": [
-                "Henry Santos"
+                "Jean Carlos"
               ],
               "extended_assigned_to": [
                 {
-                  "name": "Henry Santos",
-                  "email": "henry.dossantos@gmail.com",
+                  "name": "Jean Carlos",
+                  "email": "jeancmello.13@gmail.com",
                   "primary": true
                 }
               ],
-              "start_time": "2024-11-13T19:00:00-03:00",
-              "start_time_pretty": "07:00pm - Wednesday, November 13, 2024",
-              "invitee_start_time": "2024-11-13T19:00:00-03:00",
-              "invitee_start_time_pretty": "07:00pm - Wednesday, November 13, 2024",
-              "end_time": "2024-11-13T20:00:00-03:00",
-              "end_time_pretty": "08:00pm - Wednesday, November 13, 2024",
-              "invitee_end_time": "2024-11-13T20:00:00-03:00",
-              "invitee_end_time_pretty": "08:00pm - Wednesday, November 13, 2024",
-              "created_at": "2024-11-08T11:30:35-03:00",
-              "location": "https://calendly.com/events/620161c3-7f74-4525-a47c-185b768262a0/google_meet",
-              "canceled": false,
-              "canceler_name": null,
-              "cancel_reason": null,
-              "canceled_at": null
+              "start_time": "2024-12-16T10:00:00-03:00",
+              "start_time_pretty": "10:00am - Monday, December 16, 2024",
+              "invitee_start_time": "2024-12-16T10:00:00-03:00",
+              "invitee_start_time_pretty": "10:00am - Monday, December 16, 2024",
+              "end_time": "2024-12-16T11:00:00-03:00",
+              "end_time_pretty": "11:00am - Monday, December 16, 2024",
+              "invitee_end_time": "2024-12-16T11:00:00-03:00",
+              "invitee_end_time_pretty": "11:00am - Monday, December 16, 2024",
+              "created_at": "2024-12-11T14:44:56-03:00",
+              "location": "https://calendly.com/events/4a5e6470-38d6-4021-8c30-7769c3426e93/google_meet",
+              "canceled": true,
+              "canceler_name": "Henry Santos",
+              "cancel_reason": "",
+              "canceled_at": "2024-12-15T20:43:10-03:00"
             },
             "invitee": {
-              "uuid": "625ef27c-26ee-4939-928e-001429131a0b",
+              "uuid": "57ed5292-a41c-4837-a058-7149fae686ff",
               "first_name": null,
               "last_name": null,
-              "name": "ksmdkaem",
-              "email": "veronicaburgel15@gmail.com",
+              "name": "Daniela Castro (SE) SDR ‪+55 19 99820‑5245‬",
+              "email": "daniela@hormail.com",
               "text_reminder_number": null,
               "timezone": "America/Sao_Paulo",
-              "created_at": "2024-11-08T11:30:35-03:00",
+              "created_at": "2024-12-11T14:44:56-03:00",
               "is_reschedule": false,
               "payments": [],
-              "canceled": false,
-              "canceler_name": null,
-              "cancel_reason": null,
-              "canceled_at": null
+              "canceled": true,
+              "canceler_name": "Henry Santos",
+              "cancel_reason": "",
+              "canceled_at": "2024-12-15T20:43:10-03:00"
             },
             "questions_and_answers": [
               {
-                "question": "DDD + Whatsapp",
-                "answer": "+55 47 97446-4264"
-              },
-              {
-                "question": "Por favor, compartilhe qualquer coisa que possa ser útil para a preparação da nossa reunião.",
-                "answer": "ks\\xmpkasm"
+                "question": "Please share anything that will help prepare for our meeting.",
+                "answer": "."
               }
             ],
             "questions_and_responses": {
-              "1_question": "DDD + Whatsapp",
-              "1_response": "+55 47 97446-4264",
-              "2_question": "Por favor, compartilhe qualquer coisa que possa ser útil para a preparação da nossa reunião.",
-              "2_response": "ks\\xmpkasm"
+              "1_question": "Please share anything that will help prepare for our meeting.",
+              "1_response": "."
             },
             "tracking": {
               "utm_campaign": null,
@@ -3024,7 +3008,7 @@
             "new_event": null,
             "new_invitee": null
           },
-          "time": "2024-11-08T14:30:36Z"
+          "time": "2024-12-15T23:43:11Z"
         }
       }
     ]
@@ -3041,7 +3025,7 @@
   "staticData": {
     "node:Calendly Trigger": {},
     "node:Evento": {
-      "webhookId": 5286755
+      "webhookId": 5324555
     }
   },
   "tags": [
@@ -3053,6 +3037,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-12-06T12:40:04.741Z",
-  "versionId": "ffb8351f-a555-4e68-b8c2-46502ba845b5"
+  "updatedAt": "2024-12-20T18:33:39.163Z",
+  "versionId": "3f7ada58-d198-4079-abac-b8bead6afe28"
 }
