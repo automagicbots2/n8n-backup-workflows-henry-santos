@@ -1,0 +1,3759 @@
+{
+  "active": false,
+  "connections": {
+    "puxa_agendamentos": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio": {
+      "main": [
+        [
+          {
+            "node": "Saida Aleatoria",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Saida Aleatoria": {
+      "main": [
+        [
+          {
+            "node": "40s",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "45s",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "50s",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "53s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "40s": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "45s": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "50s": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "53s": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMensagemTexto7": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead1": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "domingo_11h": {
+      "main": [
+        [
+          {
+            "node": "puxa_agendamentos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puxa_agendamentos1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead3": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio1": {
+      "main": [
+        [
+          {
+            "node": "Saida Aleatoria1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Saida Aleatoria1": {
+      "main": [
+        [
+          {
+            "node": "40s1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "45s1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "50s1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "53s1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "40s1": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "45s1": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "50s1": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "53s1": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMensagemTexto": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "segunda_11h": {
+      "main": [
+        [
+          {
+            "node": "puxa_agendamentos1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puxa_agendamentos2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead4": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead5": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio2": {
+      "main": [
+        [
+          {
+            "node": "Saida Aleatoria2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Saida Aleatoria2": {
+      "main": [
+        [
+          {
+            "node": "40s2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "45s2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "50s2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "53s2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "40s2": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "45s2": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "50s2": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "53s2": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMensagemTexto1": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "terça_11h": {
+      "main": [
+        [
+          {
+            "node": "puxa_agendamentos2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puxa_agendamentos3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items3": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead6": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead7": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada6": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio3": {
+      "main": [
+        [
+          {
+            "node": "Saida Aleatoria3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Saida Aleatoria3": {
+      "main": [
+        [
+          {
+            "node": "40s3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "45s3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "50s3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "53s3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "40s3": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "45s3": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "50s3": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "53s3": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMensagemTexto2": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "quarta_12h": {
+      "main": [
+        [
+          {
+            "node": "puxa_agendamentos3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puxa_agendamentos4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items4": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada9",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead8": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead9": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada8": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio4": {
+      "main": [
+        [
+          {
+            "node": "Saida Aleatoria4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Saida Aleatoria4": {
+      "main": [
+        [
+          {
+            "node": "40s4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "45s4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "50s4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "53s4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "40s4": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "45s4": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "50s4": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "53s4": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMensagemTexto3": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "quarta_17h": {
+      "main": [
+        [
+          {
+            "node": "puxa_agendamentos4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puxa_agendamentos5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items5": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada11",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead10": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead11": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada10": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio5": {
+      "main": [
+        [
+          {
+            "node": "Saida Aleatoria5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Saida Aleatoria5": {
+      "main": [
+        [
+          {
+            "node": "40s5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "45s5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "50s5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "53s5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "40s5": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "45s5": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "50s5": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "53s5": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMensagemTexto4": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "quarta_18h": {
+      "main": [
+        [
+          {
+            "node": "puxa_agendamentos5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puxa_agendamentos6": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items6": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada13",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead12": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead13": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada12": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio6": {
+      "main": [
+        [
+          {
+            "node": "Saida Aleatoria6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Saida Aleatoria6": {
+      "main": [
+        [
+          {
+            "node": "40s6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "45s6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "50s6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "53s6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "40s6": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "45s6": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "50s6": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "53s6": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMensagemTexto5": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "quarta_19h": {
+      "main": [
+        [
+          {
+            "node": "puxa_agendamentos6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "puxa_agendamentos7": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items7": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada15",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_lead15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead14": {
+      "main": [
+        [
+          {
+            "node": "EnviaMensagemTexto6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_lead15": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_lead14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada14": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retorna Output Aleatorio7": {
+      "main": [
+        [
+          {
+            "node": "Saida Aleatoria7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Saida Aleatoria7": {
+      "main": [
+        [
+          {
+            "node": "40s7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "45s7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "50s7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "53s7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "40s7": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "45s7": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "50s7": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "53s7": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EnviaMensagemTexto6": {
+      "main": [
+        [
+          {
+            "node": "Retorna Output Aleatorio7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "quarta_19h10m": {
+      "main": [
+        [
+          {
+            "node": "puxa_agendamentos7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-20T18:08:06.175Z",
+  "id": "H8ShpE8m3DN9kKkE",
+  "meta": null,
+  "name": "[HENRY SANTOS] - Disparo Plano 30k semanal - Para participantes",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        220,
+        0
+      ],
+      "id": "0df3d4f2-898e-4e52-b6e3-a3c303ad8cf2",
+      "name": "puxa_agendamentos",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        440,
+        0
+      ],
+      "id": "6e3865e0-b074-4243-8925-89694fb41e56",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "bb349ad3-06ff-4a57-a688-08b697baf28e",
+      "name": "pesquisa_lead1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        880,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $json[\"id_lead\"] || '-----------------------'}}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "66aace67-2db5-497f-8c13-9cd9b5a472e5",
+      "name": "pesquisa_lead2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        680,
+        100
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "e5be70db-f42b-4b12-8867-e834f6710243",
+      "name": "Não faz nada1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
+      },
+      "id": "b40c7c6e-b079-469a-b42f-ce5af55b2678",
+      "name": "Retorna Output Aleatorio",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json[\"aleatorio\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal"
+            },
+            {
+              "operation": "equal",
+              "value2": 1,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 2,
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "43910b5a-c3cd-4436-81a1-3e40e40bf400",
+      "name": "Saida Aleatoria",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 40,
+        "unit": "seconds"
+      },
+      "id": "ca207b78-1821-4bbc-92b6-4b23684b41ea",
+      "name": "40s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        40
+      ],
+      "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
+    },
+    {
+      "parameters": {
+        "amount": 45,
+        "unit": "seconds"
+      },
+      "id": "63fa51bf-c34d-4e65-8c6c-edb0b6fc09c8",
+      "name": "45s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        180
+      ],
+      "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
+    },
+    {
+      "parameters": {
+        "amount": 50,
+        "unit": "seconds"
+      },
+      "id": "bffebe50-96c2-4a28-b887-5961603f8dce",
+      "name": "50s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        320
+      ],
+      "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
+    },
+    {
+      "parameters": {
+        "amount": 53,
+        "unit": "seconds"
+      },
+      "id": "03717614-4b95-4a6d-a245-d665db4b7bc6",
+      "name": "53s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        460
+      ],
+      "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"pesquisa_lead1\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Oie!🚀\n\n*Nesta quarta-feira, às 19h*, você tem a chance de aprender como transformar seu salão e alcançar *R$30 mil mensais de faturamento*. Henry vai te ensinar:\n\n▶️ Como estruturar suas finanças e criar uma reserva financeira.\n▶️ O passo a passo para contratar e treinar uma equipe eficiente.\n▶️ Ferramentas para precificação lucrativa que garantem seu lucro.\n\n*Não perca! Marque na sua agenda e garanta sua presença.*\n\nhttps://meet.google.com/ymv-whhb-nff"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "895ed759-eb09-4155-af8f-773099344073",
+      "name": "EnviaMensagemTexto7",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1100,
+        100
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "4d2ba960-0354-40fe-844d-3b21c5b1a2d3",
+      "name": "Não faz nada",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        680,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtHour": 11
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a1e2eb60-cd19-4725-aa5d-82b1b10700b2",
+      "name": "domingo_11h"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        180,
+        660
+      ],
+      "id": "cff5923d-3036-4c6e-92b0-c4d8b97ef387",
+      "name": "puxa_agendamentos1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        400,
+        660
+      ],
+      "id": "5c3169b4-8b43-4e83-ba15-887019f89c2e",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "f50c7bf2-8043-4204-b805-e20615698a98",
+      "name": "pesquisa_lead",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        840,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $json[\"id_lead\"] || '-----------------------'}}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "9c50a9d5-047c-4138-acb1-208319fcf08b",
+      "name": "pesquisa_lead3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        640,
+        760
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "fc97a38b-7e3f-4df1-ada8-767bca91520b",
+      "name": "Não faz nada2",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1880,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
+      },
+      "id": "417cb8db-f83e-4139-99a7-fbeca267a8aa",
+      "name": "Retorna Output Aleatorio1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json[\"aleatorio\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal"
+            },
+            {
+              "operation": "equal",
+              "value2": 1,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 2,
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "cb123bf6-fea5-4cfe-acdf-c745a019dbce",
+      "name": "Saida Aleatoria1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 40,
+        "unit": "seconds"
+      },
+      "id": "496d0dd1-514e-49f0-9d6a-89d35386e5fe",
+      "name": "40s1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        700
+      ],
+      "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
+    },
+    {
+      "parameters": {
+        "amount": 45,
+        "unit": "seconds"
+      },
+      "id": "0f3ac08f-a77b-40b3-9130-6f1b5d9b321b",
+      "name": "45s1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        840
+      ],
+      "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
+    },
+    {
+      "parameters": {
+        "amount": 50,
+        "unit": "seconds"
+      },
+      "id": "40eca8db-13bb-4562-8975-d532d4bb0a69",
+      "name": "50s1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        980
+      ],
+      "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
+    },
+    {
+      "parameters": {
+        "amount": 53,
+        "unit": "seconds"
+      },
+      "id": "805a0fab-fb0e-44ad-88be-6f9a3ccd086f",
+      "name": "53s1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        1120
+      ],
+      "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Você sabia que a falta de controle financeiro pode afundar um salão, mesmo com clientes? \n\nNão organizar suas finanças, contratar sem estratégia e precificar sem garantir lucro são erros que muitos cometem… mas você não precisa ser um deles.\n\nNesta *quarta-feira, às 19h*, você aprenderá como evitar esses riscos e mudar completamente seus resultados e lucros no salão.\n\n*Garanta sua presença!*\n\nhttps://meet.google.com/ymv-whhb-nff"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "4ffb3d90-3092-48bd-98de-cba9d03b1c70",
+      "name": "EnviaMensagemTexto",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1060,
+        760
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "9d5904f3-ea20-4a8a-8940-5cfab563c926",
+      "name": "Não faz nada3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        640,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 11
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -40,
+        660
+      ],
+      "id": "f63037e5-6e03-4850-90b8-3100f86bb3ce",
+      "name": "segunda_11h"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        160,
+        1340
+      ],
+      "id": "52f2eb1d-7691-4b34-b4fe-65dca25bc7a0",
+      "name": "puxa_agendamentos2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        380,
+        1340
+      ],
+      "id": "26651c05-7958-4e4e-952b-17d15a179856",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "53685e29-1f4e-4c25-9332-909cfde3556b",
+      "name": "pesquisa_lead4",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        820,
+        1440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $json[\"id_lead\"] || '-----------------------'}}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "0948ce3d-4cc3-439a-b2e2-d4cfddb2bc8b",
+      "name": "pesquisa_lead5",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        620,
+        1440
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "969e7f7f-3abb-4868-83cb-f7ae36e95d23",
+      "name": "Não faz nada4",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        1760
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
+      },
+      "id": "4126fe08-8c02-425b-8295-49375190686a",
+      "name": "Retorna Output Aleatorio2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        1440
+      ]
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json[\"aleatorio\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal"
+            },
+            {
+              "operation": "equal",
+              "value2": 1,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 2,
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "f94cba81-afcc-4056-a01c-a55f6cfd14cb",
+      "name": "Saida Aleatoria2",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 40,
+        "unit": "seconds"
+      },
+      "id": "96036e23-1606-43ef-ad42-b88d65a06e27",
+      "name": "40s2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        1380
+      ],
+      "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
+    },
+    {
+      "parameters": {
+        "amount": 45,
+        "unit": "seconds"
+      },
+      "id": "ac7ba4fa-c43b-4a56-a72c-467d3a456b7a",
+      "name": "45s2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        1520
+      ],
+      "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
+    },
+    {
+      "parameters": {
+        "amount": 50,
+        "unit": "seconds"
+      },
+      "id": "df8e6bbe-fac1-42d0-813c-68c82a45f302",
+      "name": "50s2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        1660
+      ],
+      "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
+    },
+    {
+      "parameters": {
+        "amount": 53,
+        "unit": "seconds"
+      },
+      "id": "d523c92d-9948-47a6-8832-1a35b5ffdc0e",
+      "name": "53s2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        1800
+      ],
+      "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"pesquisa_lead4\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Nesta quarta, você terá a oportunidade de aprender estratégias que muitos salões nunca descobrem – e por isso continuam patinando em dívidas e falta de crescimento. \n\nVocê vai ver como é possível:\n\n▶️ Organizar suas finanças para ter segurança.\n▶️ Treinar uma equipe que faz a diferença.\n▶️ Precificar com lucro, sem medo.\n\n*Ignorar esta chance pode ser um erro caro.*\n\n*Não perca!*\n\nhttps://meet.google.com/ymv-whhb-nff"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "71dd65be-e380-4cc0-8d52-a74dae897631",
+      "name": "EnviaMensagemTexto1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1040,
+        1440
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "4befc8ba-e486-4ec5-a674-21c4d0a1f435",
+      "name": "Não faz nada5",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        620,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                2
+              ],
+              "triggerAtHour": 11
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -60,
+        1340
+      ],
+      "id": "4b003782-d200-40ee-9d66-dcfc5f6867e5",
+      "name": "terça_11h"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        120,
+        2000
+      ],
+      "id": "5635411c-b70a-4be4-bcf5-c916944ec144",
+      "name": "puxa_agendamentos3",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        340,
+        2000
+      ],
+      "id": "a98e510f-c3b6-4a87-9dac-069271382e86",
+      "name": "Loop Over Items3"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "f0c89066-3ea0-421f-bbd0-dbdf99945baf",
+      "name": "pesquisa_lead6",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        780,
+        2100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $json[\"id_lead\"] || '-----------------------'}}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "74aa1f4e-83f8-4b8c-b3b5-f9cfb82cae86",
+      "name": "pesquisa_lead7",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        580,
+        2100
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "959a3b30-e6f6-4c8f-b0f2-abef1aaf741d",
+      "name": "Não faz nada6",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        2420
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
+      },
+      "id": "a62f17cc-3896-4877-8408-ee72af21cc59",
+      "name": "Retorna Output Aleatorio3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1220,
+        2100
+      ]
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json[\"aleatorio\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal"
+            },
+            {
+              "operation": "equal",
+              "value2": 1,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 2,
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "d101af2a-e829-4c2e-b345-de77568dfe3b",
+      "name": "Saida Aleatoria3",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        2080
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 40,
+        "unit": "seconds"
+      },
+      "id": "ff63e3f6-cb84-49c7-bd48-0ff3e0bffd30",
+      "name": "40s3",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        2040
+      ],
+      "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
+    },
+    {
+      "parameters": {
+        "amount": 45,
+        "unit": "seconds"
+      },
+      "id": "df7990f6-4e17-489b-8040-d244a8f6b116",
+      "name": "45s3",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        2180
+      ],
+      "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
+    },
+    {
+      "parameters": {
+        "amount": 50,
+        "unit": "seconds"
+      },
+      "id": "b7fafbaa-845d-42d6-a9b6-37bca26d31ac",
+      "name": "50s3",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        2320
+      ],
+      "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
+    },
+    {
+      "parameters": {
+        "amount": 53,
+        "unit": "seconds"
+      },
+      "id": "b3e45634-4d9e-400b-a68b-913a24e5abcd",
+      "name": "53s3",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        2460
+      ],
+      "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"pesquisa_lead6\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=*Hoje, às 19h*, começa a aula que pode colocar seu salão na rota de sucesso financeiro. \n\nNão perca a chance de aprender estratégias financeiras, contratação e precificação que fazem a diferença.\n\n*Garanta seu lugar e não fique de fora!*\n\nhttps://meet.google.com/ymv-whhb-nff"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "cd303082-03df-498c-91c5-fc71f7b2189f",
+      "name": "EnviaMensagemTexto2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1000,
+        2100
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "678820d1-6d9e-4bca-91fd-413dfb7e7dfb",
+      "name": "Não faz nada7",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        580,
+        1960
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 12
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -100,
+        2000
+      ],
+      "id": "30c5a5a0-a955-439b-ba5c-822744e980b1",
+      "name": "quarta_12h"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        100,
+        2660
+      ],
+      "id": "4fa8d703-f8a5-49e7-8e3b-4160cd2afabd",
+      "name": "puxa_agendamentos4",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        320,
+        2660
+      ],
+      "id": "ca7aeb64-6b26-440c-9189-bc8122ce7a31",
+      "name": "Loop Over Items4"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "bbfd672b-3ea3-4f9d-a1fc-dda062168917",
+      "name": "pesquisa_lead8",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        760,
+        2760
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $json[\"id_lead\"] || '-----------------------'}}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "db7ebaaf-89c4-4922-9f60-9d5a2e0d43ce",
+      "name": "pesquisa_lead9",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        560,
+        2760
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "e24a7681-d2bd-4bab-bdec-cde01b7babd0",
+      "name": "Não faz nada8",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        3080
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
+      },
+      "id": "765d8237-4bb8-4ae1-901d-9b0b903363ff",
+      "name": "Retorna Output Aleatorio4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        2760
+      ]
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json[\"aleatorio\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal"
+            },
+            {
+              "operation": "equal",
+              "value2": 1,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 2,
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "0f075b62-24fd-45e8-979e-e90fe5047e12",
+      "name": "Saida Aleatoria4",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        2740
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 40,
+        "unit": "seconds"
+      },
+      "id": "d4660dca-01f0-4244-84a7-0cf37ada68bc",
+      "name": "40s4",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        2700
+      ],
+      "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
+    },
+    {
+      "parameters": {
+        "amount": 45,
+        "unit": "seconds"
+      },
+      "id": "ae9590d8-d9ff-4cd7-b4f6-c97d1ce9384d",
+      "name": "45s4",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        2840
+      ],
+      "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
+    },
+    {
+      "parameters": {
+        "amount": 50,
+        "unit": "seconds"
+      },
+      "id": "be9981af-2a9f-4b91-a6df-ce659196266b",
+      "name": "50s4",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        2980
+      ],
+      "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
+    },
+    {
+      "parameters": {
+        "amount": 53,
+        "unit": "seconds"
+      },
+      "id": "079d5751-9d25-4721-ae9f-3b61e12c5ee2",
+      "name": "53s4",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        3120
+      ],
+      "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"pesquisa_lead8\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Venha com Henry Santos  ao vivo e você terá acesso exclusivo ao caminho para levar seu salão ao próximo nível com faturamento de *R$30 mil mensais*.\n\n*Clique aqui para participar*: https://meet.google.com/ymv-whhb-nff"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "45e57ca7-3fdf-4960-b636-4525beb5baf1",
+      "name": "EnviaMensagemTexto3",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        980,
+        2760
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "e7e8236f-76da-42a1-a3d1-ec3c1f339145",
+      "name": "Não faz nada9",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        560,
+        2620
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 17
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -120,
+        2660
+      ],
+      "id": "a83071d9-aee7-4a87-9b70-764eea07c06c",
+      "name": "quarta_17h"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        60,
+        3320
+      ],
+      "id": "61c4f4c9-6fc9-4206-86ce-19e328056d9b",
+      "name": "puxa_agendamentos5",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        280,
+        3320
+      ],
+      "id": "3bac16d9-da3e-44b3-878a-f0ddbe217b44",
+      "name": "Loop Over Items5"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "440435f9-7d5a-4c4f-bdb2-3f539d9d3791",
+      "name": "pesquisa_lead10",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        720,
+        3420
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $json[\"id_lead\"] || '-----------------------'}}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "30ed141e-32bf-464f-a3be-2496b5d74b26",
+      "name": "pesquisa_lead11",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        520,
+        3420
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "e19a6586-7238-408e-8f3f-a51fffef720d",
+      "name": "Não faz nada10",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        3740
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
+      },
+      "id": "3eba93e4-919c-4e27-97e6-70348a0e8e2f",
+      "name": "Retorna Output Aleatorio5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        3420
+      ]
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json[\"aleatorio\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal"
+            },
+            {
+              "operation": "equal",
+              "value2": 1,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 2,
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "46fec05e-ae23-4668-89c3-c1a6034bb001",
+      "name": "Saida Aleatoria5",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        3400
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 40,
+        "unit": "seconds"
+      },
+      "id": "a83539b5-1bdc-469c-803c-17461e53de4f",
+      "name": "40s5",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        3360
+      ],
+      "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
+    },
+    {
+      "parameters": {
+        "amount": 45,
+        "unit": "seconds"
+      },
+      "id": "b59abd7f-a81c-4733-9f50-34911a6e8298",
+      "name": "45s5",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        3500
+      ],
+      "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
+    },
+    {
+      "parameters": {
+        "amount": 50,
+        "unit": "seconds"
+      },
+      "id": "fad29988-0339-4861-bd31-11f261c1311b",
+      "name": "50s5",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        3640
+      ],
+      "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
+    },
+    {
+      "parameters": {
+        "amount": 53,
+        "unit": "seconds"
+      },
+      "id": "47983021-ea94-4a7d-9180-92bb0a3d78df",
+      "name": "53s5",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        3780
+      ],
+      "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"pesquisa_lead10\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=Estamos a *1 hora* de iniciar a aula que vai desbloquear o potencial de faturamento do seu salão.Não perca!\n\n*Acesse aqui:* https://meet.google.com/ymv-whhb-nff"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "0bf1a52f-5694-44cb-bb9a-6bc9d03a0695",
+      "name": "EnviaMensagemTexto4",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        940,
+        3420
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "1285562f-5871-432f-a4e9-d25e6d6f2bbb",
+      "name": "Não faz nada11",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        520,
+        3280
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 18
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -160,
+        3320
+      ],
+      "id": "81420ae6-30d5-4c89-a41c-0777f501baa5",
+      "name": "quarta_18h"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        40,
+        3980
+      ],
+      "id": "65d70526-dedb-453f-a409-ff7c2c4d1aa6",
+      "name": "puxa_agendamentos6",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        260,
+        3980
+      ],
+      "id": "505d5d4b-f9b5-40d6-b4a4-056df905f82d",
+      "name": "Loop Over Items6"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "142da31e-0a31-4fcf-9a3a-da6f271cb3a7",
+      "name": "pesquisa_lead12",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        700,
+        4080
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $json[\"id_lead\"] || '-----------------------'}}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "d6a3ffa7-0f68-44ec-bd2e-0f8c588dc0af",
+      "name": "pesquisa_lead13",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        500,
+        4080
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "4071e5ad-67f2-4a65-9232-0189346d23f9",
+      "name": "Não faz nada12",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        4400
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
+      },
+      "id": "a677ff56-4892-4129-94e5-83f3f0fd8149",
+      "name": "Retorna Output Aleatorio6",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        4080
+      ]
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json[\"aleatorio\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal"
+            },
+            {
+              "operation": "equal",
+              "value2": 1,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 2,
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "f1bc0e28-8858-4c7c-a6cf-9d1b4a42c74e",
+      "name": "Saida Aleatoria6",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        4060
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 40,
+        "unit": "seconds"
+      },
+      "id": "4cbb9375-1e3a-4015-a733-13be08eb3583",
+      "name": "40s6",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        4020
+      ],
+      "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
+    },
+    {
+      "parameters": {
+        "amount": 45,
+        "unit": "seconds"
+      },
+      "id": "c3f41b17-5236-465a-9569-7f05430f5637",
+      "name": "45s6",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        4160
+      ],
+      "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
+    },
+    {
+      "parameters": {
+        "amount": 50,
+        "unit": "seconds"
+      },
+      "id": "712d94c5-84ac-468a-893c-1369dc6c31da",
+      "name": "50s6",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        4300
+      ],
+      "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
+    },
+    {
+      "parameters": {
+        "amount": 53,
+        "unit": "seconds"
+      },
+      "id": "7f1b188f-3651-4d8c-b707-73d6e25d97e7",
+      "name": "53s6",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        4440
+      ],
+      "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"pesquisa_lead12\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=A aula ao vivo começou e estamos compartilhando estratégias práticas para mudar completamente seus resultados e lucros no salão.\n\nNão fique de fora!\n\n*Entre agora:* https://meet.google.com/ymv-whhb-nff\n"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "af24afe0-38e3-428d-91ae-db583f11528d",
+      "name": "EnviaMensagemTexto5",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        920,
+        4080
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "b9125ff6-79a4-4f03-b659-1acfbd2ef466",
+      "name": "Não faz nada13",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        500,
+        3940
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 19
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -180,
+        3980
+      ],
+      "id": "18a0fe9a-ae36-454d-80cc-f00ec65749eb",
+      "name": "quarta_19h"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        0,
+        4640
+      ],
+      "id": "c3644a50-eecb-4520-8d06-c8c43c58b1f1",
+      "name": "puxa_agendamentos7",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        220,
+        4640
+      ],
+      "id": "bc3fc8f9-c6c7-4e31-9b64-98f63a2807cb",
+      "name": "Loop Over Items7"
+    },
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "d9c005c0-f341-4aec-a9b0-a00d8b5648da",
+      "name": "pesquisa_lead14",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        660,
+        4740
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_lead",
+              "value": "={{ $json[\"id_lead\"] || '-----------------------'}}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "id": "2ac5990e-d704-4c83-823b-51ef8905154c",
+      "name": "pesquisa_lead15",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        4740
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "c37e1189-a9e0-4a86-a339-5a0420aaac85",
+      "name": "Não faz nada14",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        5060
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
+      },
+      "id": "2815a8c4-9a5f-410f-9864-4d7ca752159d",
+      "name": "Retorna Output Aleatorio7",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        4740
+      ]
+    },
+    {
+      "parameters": {
+        "value1": "={{ $json[\"aleatorio\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "equal"
+            },
+            {
+              "operation": "equal",
+              "value2": 1,
+              "output": 1
+            },
+            {
+              "operation": "equal",
+              "value2": 2,
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "a2dd818f-0a91-4347-88ff-71c216a73e95",
+      "name": "Saida Aleatoria7",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        4720
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 40,
+        "unit": "seconds"
+      },
+      "id": "a12d990f-b239-4768-99e9-0c6b41f01794",
+      "name": "40s7",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        4680
+      ],
+      "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
+    },
+    {
+      "parameters": {
+        "amount": 45,
+        "unit": "seconds"
+      },
+      "id": "9174ecf2-60dd-4c40-bcab-e321e85f7fa5",
+      "name": "45s7",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        4820
+      ],
+      "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
+    },
+    {
+      "parameters": {
+        "amount": 50,
+        "unit": "seconds"
+      },
+      "id": "a8506c46-019e-43b4-b740-a9329ccdb6d5",
+      "name": "50s7",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        4960
+      ],
+      "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
+    },
+    {
+      "parameters": {
+        "amount": 53,
+        "unit": "seconds"
+      },
+      "id": "487fc60b-20fe-4d1c-9f78-71c05bc020c3",
+      "name": "53s7",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        5100
+      ],
+      "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://evolutionapi.automagicbots.com.br/message/sendText/HenrySantos",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "0EAD0386DBC7-46F1-8414-06CFB9E2E7D4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $node[\"pesquisa_lead14\"].json[\"telefone\"] }}"
+            },
+            {
+              "name": "textMessage.text",
+              "value": "=A aula já começou, mas você ainda pode participar e aprender como alcançar *R$30 mil de faturamento mensal* com seu salão. Não perca!\n\n*Entre agora:* https://meet.google.com/ymv-whhb-nff\n"
+            },
+            {
+              "name": "options.delay",
+              "value": "={{ 1200 }}"
+            },
+            {
+              "name": "options.presence",
+              "value": "composing"
+            },
+            {
+              "name": "options.linkPreview",
+              "value": "={{ false }}"
+            },
+            {
+              "name": "=options.mentions.everyOne",
+              "value": "={{ true }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "4b8bf3eb-2dfd-463d-b554-d33dd1de04c0",
+      "name": "EnviaMensagemTexto6",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        880,
+        4740
+      ],
+      "typeVersion": 4
+    },
+    {
+      "parameters": {},
+      "id": "f9c2f21a-dbdf-47f2-a6c9-d391df5a6028",
+      "name": "Não faz nada15",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        460,
+        4600
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 19,
+              "triggerAtMinute": 10
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -220,
+        4640
+      ],
+      "id": "fbc436fa-8055-4cd2-a647-8c75410eeb63",
+      "name": "quarta_19h10m"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-12-20T23:16:01.783Z",
+  "versionId": "9d3d54d2-dc64-40c1-8ea4-9b2845b413dc"
+}
