@@ -1,0 +1,702 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "formatar_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formatar_dados": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_lead_KOMMO": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_lead_KOMMO4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_no_crm": {
+      "main": [
+        [
+          {
+            "node": "get_lead",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add_lead_KOMMO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_lead": {
+      "main": [
+        [
+          {
+            "node": "update_leads_KOMMO2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_leads_KOMMO2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "existe_no_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-12-10T13:04:10.297Z",
+  "id": "iQgCbs0UebpzYL2x",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Temporário] Adicionar clientes do sheets para o kommo",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        0
+      ],
+      "id": "7dba19b4-a918-423b-870f-6f789476d241",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/18C4HBGt-hHQrGr6RvtJWoOxd5y2gxp6PE--Avqm8MhQ/edit?gid=164546055#gid=164546055",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1365393235,
+          "mode": "list",
+          "cachedResultName": "Cópia de CLIENTES",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/18C4HBGt-hHQrGr6RvtJWoOxd5y2gxp6PE--Avqm8MhQ/edit#gid=1365393235"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -160,
+        0
+      ],
+      "id": "8d520b6b-efa8-499e-8386-1aeca4f18d2a",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "mv05vcFs4fQSWBmO",
+          "name": "[Google Sheets] - Automagic Bots"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        80,
+        0
+      ],
+      "id": "334d0c8e-4a47-4a2c-a5bc-7ad4c14efdb1",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrair o corpo do webhook\nconst body = $node[\"Loop Over Items\"].json || null;\n\n// Verificar se o corpo do webhook existe e não está vazio\nif (!body || Object.keys(body).length === 0) {\n    // Se o corpo estiver ausente, vazio ou nulo, trava a execução\n    return [];\n}\n\n// Extrair o payload e as respostas do webhook\nconst payload = body || null;\nconst responses = payload || null;\n\n// Verificar se o payload existe e não está vazio\nif (!payload || Object.keys(payload).length === 0) {\n    return [];\n}\n\n// Extrair valores das respostas, garantindo que não quebrem caso estejam ausentes\nconst titulo = responses?.[\"SOFTWARE\"] || \"\";\nconst gestor = responses?.[\"GESTOR\"].replace(/^\\d+\\s*/, '') || \"\";\nconst emailAnswer = responses?.[\"EMAIL\"] || \"\";\nconst whatsappInput = responses?.[\"TELEFONE\"] || \"\";\nconst inicio = responses?.[\"INICIO\"] || \"\";\nconst identificacao = responses?.[\"IDENTIFICAÇÃO\"] || \"\";\nconst cnpj = responses?.[\"CNPJ\"] || \"\";\nconst dt_vencimento_assinatura = responses?.[\"VENCIMENTO ASSINATURA\"] || \"\";\nconst valor_assinatura = responses?.[\"VALOR\"] || \"\";\nconst dt_vencimento_mentoria = responses?.[\"VENCIMENTO MENTORIA \"] || \"\";\n\n\n// Função para formatar email\nfunction formatEmail(email) {\n    return email ? email.toLowerCase().trim() : '';\n}\n\n// Função para formatar número de WhatsApp, retornando null se não existir\nfunction formatWhatsApp(number) {\n    if (!number) return null;\n\n    // Remover todos os caracteres não numéricos\n    let whatsapp = number.toString().replace(/\\D/g, '');\n\n    // Retornar null se não houver dígitos\n    if (!whatsapp) return null;\n\n    // Adicionar código do país se necessário\n    if (!whatsapp.startsWith('55')) {\n        whatsapp = '55' + whatsapp;\n    }\n\n    // Remover o código do país para processamento\n    whatsapp = whatsapp.slice(2);\n\n    // Obter DDD e número\n    const ddd = whatsapp.slice(0, 2);\n    let phoneNumber = whatsapp.slice(2);\n\n    // Verificar se o número tem o tamanho mínimo\n    if (phoneNumber.length < 8) {\n        return null;\n    }\n\n    // Converter DDD para número inteiro\n    const dddInt = parseInt(ddd, 10);\n\n    // Lógica para ajustar o número com base no DDD e no comprimento\n    if (dddInt > 27) {\n        // Se o DDD for maior que 27 e o número tiver 9 dígitos, remover o primeiro dígito\n        if (phoneNumber.length >= 9) {\n            phoneNumber = phoneNumber.slice(1);\n        }\n        // Não adicionar '9' para DDDs maiores que 27\n    } else {\n        // Para DDDs de 11 a 27, garantir que o número tenha 9 dígitos\n        if (phoneNumber.length === 8) {\n            phoneNumber = '9' + phoneNumber;\n        }\n    }\n\n    // Reconstituir o número completo com o código do país\n    whatsapp = '55' + ddd + phoneNumber;\n\n    return whatsapp;\n}\n\n// Obter dados formatados\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedWhatsApp = formatWhatsApp(whatsappInput);\n\n// Construir o objeto de resultado\nconst result = {\n    titulo: titulo,\n    nome: gestor,\n    inicio: inicio,\n    identificacao: identificacao,\n    telefone: formattedWhatsApp,\n    email: formattedEmail,\n    cnpj: cnpj,\n    dt_vencimento_assinatura: dt_vencimento_assinatura,\n    valor_assinatura: valor_assinatura,\n    dt_vencimento_mentoria: dt_vencimento_mentoria\n    \n};\n\n// Retornar o resultado no formato que o n8n espera\nreturn [{ json: result }];"
+      },
+      "id": "d3612fe7-5277-40f9-a025-18005162e99e",
+      "name": "formatar_dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        320,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  {\n    \"name\": \"{{ $node['formatar_dados'].json['nome'] }}\",\n    \"_embedded\": {\n      \"contacts\": [\n        {\n          \"first_name\": \"{{ $node['formatar_dados'].json['nome'].split(' ')[0] }}\",\n          \"responsible_user_id\": 11743307,\n          \"custom_fields_values\": [\n            {\n              \"field_id\": 710450,\n              \"field_name\": \"Phone\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 710452,\n              \"field_name\": \"Email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028928,\n              \"field_name\": \"Início\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['inicio'] === null ? '' : $node['formatar_dados'].json['inicio'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028926,\n              \"field_name\": \"Identificação\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['identificacao'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028924,\n              \"field_name\": \"CNPJ\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['cnpj'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028918,\n              \"field_name\": \"Vencimento assinatura\",\n              \"values\": [\n                {\n                  \"value\": \"{{$node['formatar_dados'].json['dt_vencimento_assinatura'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028920,\n              \"field_name\": \"Valor assinatura\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['valor_assinatura'] }}\"\n                }\n              ]\n            }{{ $node['formatar_dados'].json['dt_vencimento_mentoria'] ? `,\n              {\n              \"field_id\": 1009086,\n              \"field_name\": \"Vencimento mentoria\",\n              \"values\": [\n                {\n                  \"value\": \"${new Date($node['formatar_dados'].json['dt_vencimento_mentoria'].split('/').reverse().join('-') + 'T00:00:00Z').toISOString().replace('Z', '+00:00')}\"\n                }\n              ]\n            },` : '' }}\n          ],\n          \"updated_by\": 0\n        }\n      ],\n      \"companies\": []\n    },\n    \"responsible_user_id\": 11762503,\n    \"status_id\": 72349695,\n    \"pipeline_id\": 9337915\n  }\n]\n",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "46b48639-13e9-43a6-86ae-1e91500176fa",
+      "name": "Add_lead_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1300,
+        340
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://veronicaburgel15.kommo.com/api/v4/contacts/custom_fields",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "281d0164-11f6-4c80-9264-bff336d24a3c",
+      "name": "Add_lead_KOMMO1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -400,
+        440
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://veronicaburgel15.kommo.com/api/v4/leads/pipelines/9337915\n",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "f3eb20ec-c96f-4d1f-b99b-8fec68ff3917",
+      "name": "Add_lead_KOMMO2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -160,
+        280
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/contacts/14199112",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "a68765db-e332-4d8a-ab04-541fa9100f41",
+      "name": "Add_lead_KOMMO3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -380,
+        260
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://veronicaburgel15.kommo.com/api/v4/contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "query",
+              "value": "={{ $node[\"formatar_dados\"].json[\"email\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "queryParameterArrays": "repeat",
+          "lowercaseHeaders": true,
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {
+              "neverError": true,
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "94e7c001-5807-4063-8ce1-a857376186ef",
+      "name": "pesquisacontato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -400,
+        640
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "28bf3aed-9015-4552-b7a6-fb1de95624c8",
+              "leftValue": "={{ $json[\"_embedded\"][\"contacts\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "array",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -200,
+        640
+      ],
+      "id": "fbb095cb-0345-4fe5-b109-94735d746de2",
+      "name": "existe"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  {\n    \"name\": \"{{ $node['formatar_dados'].json['nome'] }}\",\n    \"_embedded\": {\n      \"contacts\": [\n        {\n          \"first_name\": \"{{ $node['formatar_dados'].json['nome'].split(' ')[0] }}\",\n          \"responsible_user_id\": 11743307,\n          \"custom_fields_values\": [\n            {\n              \"field_id\": 710450,\n              \"field_name\": \"Phone\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 710452,\n              \"field_name\": \"Email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028928,\n              \"field_name\": \"Início\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['inicio'] === null ? '' : $node['formatar_dados'].json['inicio'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028926,\n              \"field_name\": \"Identificação\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['identificacao'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028924,\n              \"field_name\": \"CNPJ\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['cnpj'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028918,\n              \"field_name\": \"Vencimento assinatura\",\n              \"values\": [\n                {\n                  \"value\": \"{{$node['formatar_dados'].json['dt_vencimento_assinatura'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028920,\n              \"field_name\": \"Valor assinatura\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['valor_assinatura'] }}\"\n                }\n              ]\n            }{{ $node['formatar_dados'].json['dt_vencimento_mentoria'] ? `,\n              {\n              \"field_id\": 1009086,\n              \"field_name\": \"Vencimento mentoria\",\n              \"values\": [\n                {\n                  \"value\": \"${new Date($node['formatar_dados'].json['dt_vencimento_mentoria'].split('/').reverse().join('-') + 'T00:00:00Z').toISOString().replace('Z', '+00:00')}\"\n                }\n              ]\n            },` : '' }}\n          ],\n          \"updated_by\": 0\n        }\n      ],\n      \"companies\": []\n    },\n    \"responsible_user_id\": 11762503,\n    \"status_id\": 72349695,\n    \"pipeline_id\": 9337915\n  }\n]\n",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "b351fa56-1f52-498b-bf0a-3f47454bc254",
+      "name": "Add_lead_KOMMO4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1300,
+        580
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "9rNps4gzqiBpNK6e",
+          "name": "[ActiveCampaign][2.0] - Henry Santos"
+        },
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/pipelines/9337915/statuses",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -160,
+        460
+      ],
+      "id": "44b44109-6b0f-44a5-b030-45d04b5a8b7e",
+      "name": "busca_tags_crm",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "email",
+              "value": "={{ $node[\"formatar_dados\"].json[\"email\"] }}"
+            },
+            {
+              "column": "email2",
+              "value": "={{ $node[\"formatar_dados\"].json[\"email\"] }}"
+            },
+            {
+              "column": "telefone",
+              "value": "={{ $node[\"formatar_dados\"].json[\"telefone\"] }}"
+            },
+            {
+              "column": "telefone_empresa",
+              "value": "={{ $node[\"formatar_dados\"].json[\"telefone\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "c9039c58-ab4f-4aa9-a1d3-fbaf25a99d5a",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        540,
+        80
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f684eeae-7bf1-4946-86a7-d10259ff7122",
+              "leftValue": "={{ $node[\"Limit\"].json[\"id_lead_kommo\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "number",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1020,
+        80
+      ],
+      "id": "17d79eb9-138b-4474-be04-98a987806fa9",
+      "name": "existe_no_crm"
+    },
+    {
+      "parameters": {
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/{{ $node[\"Limit\"].json[\"id_lead_kommo\"] }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "95ed4615-bea1-4d56-8103-dca76fea719d",
+      "name": "get_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1220,
+        80
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://veronicaburgel15.kommo.com/api/v4/leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  {\n    \"name\": \"{{ $node['formatar_dados'].json['nome'] }}\",\n    \"_embedded\": {\n      \"contacts\": [\n        {\n          \"first_name\": \"{{ $node['formatar_dados'].json['nome'].split(' ')[0] }}\",\n          \"responsible_user_id\": 11743307,\n          \"custom_fields_values\": [\n            {\n              \"field_id\": 710450,\n              \"field_name\": \"Phone\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 710452,\n              \"field_name\": \"Email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028928,\n              \"field_name\": \"Início\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['inicio'] === null ? '' : $node['formatar_dados'].json['inicio'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028926,\n              \"field_name\": \"Identificação\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['identificacao'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028924,\n              \"field_name\": \"CNPJ\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['cnpj'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028918,\n              \"field_name\": \"Vencimento assinatura\",\n              \"values\": [\n                {\n                  \"value\": \"{{$node['formatar_dados'].json['dt_vencimento_assinatura'] }}\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 1028920,\n              \"field_name\": \"Valor assinatura\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['formatar_dados'].json['valor_assinatura'] }}\"\n                }\n              ]\n            }{{ $node['formatar_dados'].json['dt_vencimento_mentoria'] ? `,\n              {\n              \"field_id\": 1009086,\n              \"field_name\": \"Vencimento mentoria\",\n              \"values\": [\n                {\n                  \"value\": \"${new Date($node['formatar_dados'].json['dt_vencimento_mentoria'].split('/').reverse().join('-') + 'T00:00:00Z').toISOString().replace('Z', '+00:00')}\"\n                }\n              ]\n            },` : '' }}\n          ],\n          \"updated_by\": 0\n        }\n      ],\n      \"companies\": []\n    },\n    \"responsible_user_id\": 11762503,\n    \"status_id\": 72349695,\n    \"pipeline_id\": 9337915\n  }\n]\n",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "dfaf5dba-7344-4248-abbb-0cf48757fb37",
+      "name": "update_leads_KOMMO2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1400,
+        80
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        800,
+        80
+      ],
+      "id": "3bf907c8-bf35-4103-82cb-3268ec71b002",
+      "name": "Limit"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-12-23T20:41:24.813Z",
+  "versionId": "e4c3ff11-0e6c-4be7-8546-eecad2c19547"
+}
