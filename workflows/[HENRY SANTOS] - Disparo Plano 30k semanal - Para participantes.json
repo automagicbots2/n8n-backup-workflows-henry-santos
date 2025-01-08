@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "puxa_agendamentos": {
       "main": [
@@ -1378,7 +1378,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 3 DAY);\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -1671,7 +1671,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 2 DAY);\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -1967,7 +1967,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 1 DAY);\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -2263,7 +2263,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 0 DAY);\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -2559,7 +2559,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 0 DAY);\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -2855,7 +2855,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 0 DAY);\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -3151,7 +3151,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 0 DAY);\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -3447,7 +3447,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 5 DAY);\n",
+        "query": "SELECT *\nFROM agendamentos\nWHERE servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  AND data_de_inicio BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 0 DAY);\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -3751,9 +3751,34 @@
     "callerPolicy": "workflowsFromSameOwner",
     "errorWorkflow": "9WrqNFN2jagHPbWV"
   },
-  "staticData": null,
+  "staticData": {
+    "node:domingo_11h": {
+      "recurrenceRules": []
+    },
+    "node:segunda_11h": {
+      "recurrenceRules": []
+    },
+    "node:terça_11h": {
+      "recurrenceRules": []
+    },
+    "node:quarta_12h": {
+      "recurrenceRules": []
+    },
+    "node:quarta_17h": {
+      "recurrenceRules": []
+    },
+    "node:quarta_18h": {
+      "recurrenceRules": []
+    },
+    "node:quarta_19h": {
+      "recurrenceRules": []
+    },
+    "node:quarta_19h10m": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-12-20T23:16:01.783Z",
-  "versionId": "9d3d54d2-dc64-40c1-8ea4-9b2845b413dc"
+  "triggerCount": 8,
+  "updatedAt": "2025-01-07T19:14:53.717Z",
+  "versionId": "99dd5daf-7647-4ccb-91e4-807fcfbe7abd"
 }
