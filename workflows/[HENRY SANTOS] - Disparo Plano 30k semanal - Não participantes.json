@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Loop Over Items": {
       "main": [
@@ -898,7 +898,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT l.*\nFROM leads l\nWHERE l.nivel_qualificacao = 'desqualificado'\n  AND l.update_time BETWEEN DATE_SUB(CURDATE(), INTERVAL 5 DAY) AND CURDATE()\n  AND NOT EXISTS (\n    SELECT 1\n    FROM agendamentos a\n    WHERE a.id_lead = l.id_lead\n      AND a.servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  );\n",
+        "query": "SELECT l.*\nFROM leads l\nWHERE l.nivel_qualificacao = 'desqualificado'\n  AND l.update_time BETWEEN DATE_SUB(CURDATE(), INTERVAL 6 DAY) AND CURDATE()\n  AND NOT EXISTS (\n    SELECT 1\n    FROM agendamentos a\n    WHERE a.id_lead = l.id_lead\n      AND a.servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  );\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -1143,7 +1143,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT l.*\nFROM leads l\nWHERE l.nivel_qualificacao = 'desqualificado'\n  AND l.update_time BETWEEN DATE_SUB(CURDATE(), INTERVAL 5 DAY) AND CURDATE()\n  AND NOT EXISTS (\n    SELECT 1\n    FROM agendamentos a\n    WHERE a.id_lead = l.id_lead\n      AND a.servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  );\n",
+        "query": "SELECT l.*\nFROM leads l\nWHERE l.nivel_qualificacao = 'desqualificado'\n  AND l.update_time BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE()\n  AND NOT EXISTS (\n    SELECT 1\n    FROM agendamentos a\n    WHERE a.id_lead = l.id_lead\n      AND a.servico = 'Aula ao Vivo: Fature seus primeiros 30 mil com o salão'\n  );\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -1196,9 +1196,19 @@
     "callerPolicy": "workflowsFromSameOwner",
     "errorWorkflow": "9WrqNFN2jagHPbWV"
   },
-  "staticData": null,
+  "staticData": {
+    "node:domingo_11h": {
+      "recurrenceRules": []
+    },
+    "node:segunda_11h": {
+      "recurrenceRules": []
+    },
+    "node:terça_11h": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-12-20T23:37:37.267Z",
-  "versionId": "c85e6e6c-2250-497c-9319-6f383b94c2f9"
+  "triggerCount": 3,
+  "updatedAt": "2025-01-07T20:57:26.102Z",
+  "versionId": "de026d39-bd47-452c-9f4c-963e87b1adb5"
 }
