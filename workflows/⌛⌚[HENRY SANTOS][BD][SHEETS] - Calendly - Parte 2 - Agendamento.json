@@ -975,13 +975,7 @@
     },
     "Não Faça Nada": {
       "main": [
-        [
-          {
-            "node": "envia_campo_id_lead_ac",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "atualiza_id_kommo": {
@@ -1330,7 +1324,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -2240,
+        -2280,
         1140
       ],
       "credentials": {
@@ -2651,10 +2645,13 @@
             {
               "column": "id_evento",
               "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}"
+            },
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"pesquisa_lead\"].json[\"id_lead\"] }}"
             }
           ]
         },
-        "combineConditions": "OR",
         "options": {
           "detailedOutput": false
         }
@@ -2664,7 +2661,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        -2000,
+        -2100,
         1140
       ],
       "credentials": {
@@ -2690,7 +2687,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1800,
+        -1940,
         1140
       ]
     },
@@ -2922,7 +2919,7 @@
         "conditions": {
           "boolean": [
             {
-              "value1": "={{ $node[\"pesquisa_agendamento\"].json[\"success\"] }}",
+              "value1": "={{ $node[\"pesquisa_agendamento1\"].json[\"success\"] }}",
               "value2": true
             }
           ]
@@ -3014,7 +3011,7 @@
         "conditions": {
           "boolean": [
             {
-              "value1": "={{ $node[\"pesquisa_agendamento\"].json[\"success\"] }}",
+              "value1": "={{ $node[\"pesquisa_agendamento1\"].json[\"success\"] }}",
               "value2": true
             }
           ]
@@ -4675,33 +4672,33 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-EK5IaDfj4OuLTLozqglRpA",
-            "deliveryTag": 4,
+            "consumerTag": "amq.ctag-2zEjzsK7s8XHOcTj88K-jQ",
+            "deliveryTag": 84,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Calendly - Sessão Estratégica"
           },
           "properties": {},
           "content": {
-            "Nome do Cliente": "Mateus Diniz",
-            "E-mail do Cliente": "mateusdiniz@automagicbots.com.br",
-            "Telefone do Cliente - Formato BC": "+5562981196678",
-            "Telefone do Cliente - Formato Z-API": "5562981196678",
+            "Nome do Cliente": "Bianca rossetto",
+            "E-mail do Cliente": "biancaabem@gmail.com",
+            "Telefone do Cliente - Formato BC": "+5511916347326",
+            "Telefone do Cliente - Formato Z-API": "5511916347326",
             "Tipo de Evento": "Aula ao Vivo: Fature seus primeiros 30 mil com o salão",
-            "ID do Evento": "3d4b8192-6527-45c0-b20a-6562fc496a93",
+            "ID do Evento": "3b63a6ca-9125-4960-afcb-4b4d748f59cc",
             "Responsável pelo Evento": "Henry Santos",
             "E-mail do Responsável": "henry.dossantos@gmail.com",
-            "Data de Início": "24/12/2024 19:00",
-            "Data em que foi feito o Agendamento": "01/12/2024 19:31",
-            "Data de Término": "24/12/2024 20:00",
+            "Data de Início": "22/01/2025 19:00",
+            "Data em que foi feito o Agendamento": "06/01/2025 23:27",
+            "Data de Término": "22/01/2025 20:00",
             "Dia da Semana de Início do Evento": "Quarta",
-            "Link da Reunião": "https://calendly.com/events/3d4b8192-6527-45c0-b20a-6562fc496a93/google_meet",
-            "utm_source": "_____",
-            "utm_campaign": "_____",
-            "utm_term": "_____",
-            "utm_medium": "_____",
-            "utm_content": "_____",
-            "ID do Cliente": "befc298a-2e4f-4d6e-a6a7-fe1afe78876d",
+            "Link da Reunião": "https://calendly.com/events/3b63a6ca-9125-4960-afcb-4b4d748f59cc/google_meet",
+            "utm_source": "meta_ads",
+            "utm_campaign": "[LF] [SE] [CAPTAÇÃO] [CADASTROS] [AUTO] [F] Público frio novos",
+            "utm_term": "120214222836720128",
+            "utm_medium": "02 - [AUTO] [F] LAL 2% - IG - [Seguidores] Envolvimento",
+            "utm_content": "SE_AD005",
+            "ID do Cliente": "184875d6-dc94-4d51-a892-a59a46b6b04d",
             "id_do_campo_id_do_agendamento_bot_conversa": "1111672",
             "fluxo_de_confirmacao_de_agendamento": "1879004",
             "API-KEY": "adfd6c51-1101-48ba-bd0a-2f15568e2cfe",
@@ -4711,7 +4708,7 @@
             "id_do_campo_horario_agendado_bot_conversa": "1115968",
             "id_do_campo_id_banco_de_dados_bot_conversa": "1351140",
             "funil": "sessao_estrategica",
-            "variacao_do_funil": "_____",
+            "variacao_do_funil": "meta_ads",
             "id_do_campo_id_do_cliente_bot_conversa": "1111674",
             "id_do_campo_email_do_responsavel": "1115994",
             "url_api_activecampaign": "gestaodesaloes67530",
@@ -4779,6 +4776,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-12-20T18:10:18.491Z",
-  "versionId": "f4a9f2d1-47f0-412f-a37b-44e0139c73ed"
+  "updatedAt": "2025-01-08T20:33:14.480Z",
+  "versionId": "c09f2635-a863-4863-97be-23ec2a5d7927"
 }
