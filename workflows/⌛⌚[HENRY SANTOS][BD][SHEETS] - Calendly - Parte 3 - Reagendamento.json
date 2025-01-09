@@ -1527,10 +1527,13 @@
             {
               "column": "id_evento",
               "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento Antigo\"] }}"
+            },
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"pesquisa_lead4\"].json[\"id_lead\"] }}"
             }
           ]
         },
-        "combineConditions": "OR",
         "options": {
           "detailedOutput": false
         }
@@ -1564,10 +1567,13 @@
             {
               "column": "id_evento",
               "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Evento\"] }}"
+            },
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"pesquisa_lead4\"].json[\"id_lead\"] }}"
             }
           ]
         },
-        "combineConditions": "OR",
         "options": {
           "detailedOutput": false
         }
@@ -5249,6 +5255,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-10-31T14:31:00.666Z",
-  "versionId": "1004c241-1149-468b-823b-02328965d03d"
+  "updatedAt": "2025-01-09T00:09:09.779Z",
+  "versionId": "377fafc9-faee-45dc-8163-7a0ff0106155"
 }
