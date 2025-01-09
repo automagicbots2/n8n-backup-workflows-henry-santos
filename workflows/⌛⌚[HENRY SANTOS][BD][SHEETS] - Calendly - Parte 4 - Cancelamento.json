@@ -1047,10 +1047,13 @@
             {
               "column": "id_cliente",
               "value": "={{ $node[\"entra_na_fila\"].json[\"content\"][\"ID do Cliente\"] }}"
+            },
+            {
+              "column": "id_lead",
+              "value": "={{ $node[\"pesquisa_lead3\"].json[\"id_lead\"] }}"
             }
           ]
         },
-        "combineConditions": "OR",
         "options": {
           "detailedOutput": false
         }
@@ -3939,6 +3942,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-09-05T20:36:35.533Z",
-  "versionId": "9751576d-364c-4c6d-a37e-b3e318364478"
+  "updatedAt": "2025-01-09T00:08:18.879Z",
+  "versionId": "a86a155d-0832-4dc9-9190-b088c5f8d709"
 }
