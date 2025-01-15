@@ -1,11 +1,361 @@
 {
   "active": false,
   "connections": {
-    "When clicking \"Test workflow\"": {
+    "fluxo_chamado": {
       "main": [
         [
           {
-            "node": "WhatsApp Business Cloud",
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "existe_no_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_no_crm": {
+      "main": [
+        [
+          {
+            "node": "get_lead",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "lead_mql",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_contacts_KOMMO1": {
+      "main": [
+        [
+          {
+            "node": "update_leads_KOMMO1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_leads_KOMMO1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_tag_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_base_crm": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "consulta_sdr": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_base_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_rotacionamento_colaboradores": {
+      "main": [
+        [
+          {
+            "node": "consulta_sdr",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_mql": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_stage_pipeline",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_stage_pipeline1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_stage_pipeline": {
+      "main": [
+        [
+          {
+            "node": "Add_contato_KOMMO3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_stage_pipeline1": {
+      "main": [
+        [
+          {
+            "node": "Add_contato_KOMMO1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_tag_funil": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_mql1": {
+      "main": [
+        [
+          {
+            "node": "lead_etapa_oportunidade_ou_antes_ou_base_futura",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "lead_etapa_oportunidade_ou_antes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_contato_KOMMO3": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_tag_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_contato_KOMMO1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_tag_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_lead": {
+      "main": [
+        [
+          {
+            "node": "lead_mql1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_stage_pipeline2": {
+      "main": [
+        [
+          {
+            "node": "update_contacts_KOMMO1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_contacts_KOMMO": {
+      "main": [
+        [
+          {
+            "node": "update_leads_KOMMO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_leads_KOMMO": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_tag_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_contacts_KOMMO2": {
+      "main": [
+        [
+          {
+            "node": "update_leads_KOMMO2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_leads_KOMMO2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_tag_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_stage_pipeline3": {
+      "main": [
+        [
+          {
+            "node": "update_contacts_KOMMO2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_contacts_KOMMO3": {
+      "main": [
+        [
+          {
+            "node": "update_leads_KOMMO3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_leads_KOMMO3": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_tag_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_etapa_oportunidade_ou_antes": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_stage_pipeline2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_contacts_KOMMO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_etapa_oportunidade_ou_antes_ou_base_futura": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_stage_pipeline3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_contacts_KOMMO3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_lead": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_tag_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "update_id_crm",
             "type": "main",
             "index": 0
           }
@@ -13,44 +363,918 @@
       ]
     }
   },
-  "createdAt": "2024-10-02T12:30:13.173Z",
-  "id": "hv1jgVqYUsW38Dgg",
-  "meta": {
-    "templateCredsSetupCompleted": true
-  },
+  "createdAt": "2025-01-15T14:47:04.836Z",
+  "id": "NxIfZtbe556AVKLw",
+  "meta": null,
   "name": "My workflow 3",
   "nodes": [
     {
-      "parameters": {},
-      "id": "ee687ef4-da1b-4278-aa49-73acf23e76e2",
-      "name": "When clicking \"Test workflow\"",
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
+      "parameters": {
+        "path": "cria-atualiza-crm",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1940,
+        520
+      ],
+      "id": "0a5c56bb-eac7-48d8-abb2-52b465c37995",
+      "name": "fluxo_chamado",
+      "webhookId": "ce9e0c49-3b01-40d1-a43e-0275d34030ce"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "6d2d99ee-a7a9-4e5e-8fd1-2b83b048f668",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1080,
+        520
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f684eeae-7bf1-4946-86a7-d10259ff7122",
+              "leftValue": "={{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -840,
+        520
+      ],
+      "id": "72971e76-769b-460f-9dbd-a42d33bb3982",
+      "name": "existe_no_crm"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_user\"].json[\"id_contact_crm\"] }},\n        \"status_id\": {{ $node[\"pesquisa_stage_pipeline2\"].json[\"id_stage\"] }},\n        \"custom_fields_values\": [\n            {\n              \"field_id\": 210468,\n              \"field_name\": \"Telefone\",\n              \"values\": [\n                {\n                  \"value\": \"+{{ $node['fluxo_chamado'].json['body']['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 210470,\n              \"field_name\": \"O email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['fluxo_chamado'].json['body']['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            }\n          ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "77f1e965-726a-41d0-8e33-74a86d6a0d99",
+      "name": "update_contacts_KOMMO1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        340,
+        200
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }},\n                \"pipeline_id\": {{ $node[\"pesquisa_stage_pipeline2\"].json[\"id_pipeline\"] }},\n                \"status_id\": {{ $node[\"pesquisa_stage_pipeline2\"].json[\"id_stage\"] }},\n                \"custom_fields_values\": [\n      {\n        \"field_id\": 210476,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210478,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210480,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210482,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210484,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1110519,\n        \"field_name\": \"Ano de prova\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['graduacao'].replace('+','') }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1111674,\n        \"field_name\": \"Instagram\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['instagram'] }}\"\n          }\n        ]\n      }\n    ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "bcf9c25d-48ae-45ef-a317-8ae37a61151e",
+      "name": "update_leads_KOMMO1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
       "position": [
         600,
+        200
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL Base do CRM"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "54d8a889-cec4-45f0-96a1-04b91d458d68",
+      "name": "pesquisa_url_base_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1300,
+        520
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_rotacionamento_colaboradores\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "time",
+              "value": "SDR"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1520,
+        520
+      ],
+      "id": "c3dc9474-57e2-498e-b324-830574279c28",
+      "name": "consulta_sdr"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Rotacionamento de Colaboradores"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "cd77774b-4f7b-4bce-ac71-183e2b9cdae3",
+      "name": "pesquisa_url_rotacionamento_colaboradores",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1720,
+        520
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f684eeae-7bf1-4946-86a7-d10259ff7122",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"graduacao\"] }}",
+              "rightValue": "2025",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "50698d46-d702-434d-ba14-b1dddac8ccfc",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"graduacao\"] }}",
+              "rightValue": "2026",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -620,
+        720
+      ],
+      "id": "3afdca82-d973-4084-a189-799c0ab199ea",
+      "name": "lead_mql"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "=1"
+            },
+            {
+              "column": "situacao",
+              "value": "Qualificado"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7ea3bdb9-de6c-40b4-8ca3-de9974324bba",
+      "name": "pesquisa_stage_pipeline",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -360,
+        560
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "=1"
+            },
+            {
+              "column": "situacao",
+              "value": "Desqualificado"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "46a2a4fd-6dea-4f06-8027-4919c6cdeab5",
+      "name": "pesquisa_stage_pipeline1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -360,
+        800
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_funil = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"] }}; -- Substitua \"1\" pelo ID do funil que você deseja pesquisar\n",
+        "options": {}
+      },
+      "id": "68065d4b-28a9-4284-a5f4-3d4a15ed69cf",
+      "name": "pesquisa_tag_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1180,
+        200
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE users\nSET \n    id_deal_crm = {{ $node[\"Add_contato_KOMMO3\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO3\"].json[\"id\"] : $node[\"Add_contato_KOMMO1\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO1\"].json[\"id\"] : $node[\"pesquisa_user\"].runIndex >= 0      ?   $node[\"pesquisa_user\"].json[\"id_deal_crm\"] : null }},        -- Substitua 12345 pelo valor desejado para o campo id_deal_crm\n    id_contact_crm = {{ $node[\"Add_contato_KOMMO3\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO3\"].json[\"contact_id\"] : $node[\"Add_contato_KOMMO1\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : $node[\"pesquisa_user\"].runIndex >= 0      ?   $node[\"pesquisa_user\"].json[\"id_contact_crm\"] : null }},     -- Substitua 67890 pelo valor desejado para o campo id_contact_crm\n      data_atualizacao = CURRENT_TIMESTAMP -- Define a data/hora atual no formato TIMESTAMP\nWHERE \n    id = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }};                    -- Substitua 1 pelo ID do lead específico",
+        "options": {}
+      },
+      "id": "5ff1d604-b5b2-45f9-82cd-3ec41ec1dd3e",
+      "name": "update_id_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1840,
+        0
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f684eeae-7bf1-4946-86a7-d10259ff7122",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"graduacao\"] }}",
+              "rightValue": "2025",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "50698d46-d702-434d-ba14-b1dddac8ccfc",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"graduacao\"] }}",
+              "rightValue": "2026",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -360,
+        240
+      ],
+      "id": "c59e0343-cd69-4bb5-afc1-6db92d39300b",
+      "name": "lead_mql1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  {\n    \"name\": \"{{ $node['fluxo_chamado'].json['body']['nome'] + ($node['fluxo_chamado'].json['body']['sobrenome'] ? ' ' + $node['fluxo_chamado'].json['body']['sobrenome'] : '') }}\",\n    \"_embedded\": {\n      \"contacts\": [\n        {\n          \"first_name\": \"{{ $node['fluxo_chamado'].json['body']['nome'] }}\",\n          \"responsible_user_id\": {{ $('consulta_sdr').item.json.id_crm }},\n          \"custom_fields_values\": [\n            {\n              \"field_id\": 210468,\n              \"field_name\": \"Telefone\",\n              \"values\": [\n                {\n                  \"value\": \"+{{ $node['fluxo_chamado'].json['body']['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 210470,\n              \"field_name\": \"O email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['fluxo_chamado'].json['body']['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"responsible_user_id\": {{ $('consulta_sdr').item.json.id_crm }},\n    \"status_id\": {{ $node['pesquisa_stage_pipeline'].json['id_stage'] }},\n    \"pipeline_id\": {{ $node['pesquisa_stage_pipeline'].json['id_pipeline'] }},\n    \"custom_fields_values\": [\n      {\n        \"field_id\": 210476,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210478,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210480,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210482,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210484,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1110519,\n        \"field_name\": \"Ano de prova\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['graduacao'].replace('+','').replace('Selecione','2025') }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1111674,\n        \"field_name\": \"Instagram\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['instagram'] }}\"\n          }\n        ]\n      }\n    ]\n  }\n]\n",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 500000
+        }
+      },
+      "id": "72bce2db-78a9-425c-b2b3-f15deccbfed2",
+      "name": "Add_contato_KOMMO3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -140,
+        560
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  {\n    \"name\": \"{{ $node['fluxo_chamado'].json['body']['nome'] + ($node['fluxo_chamado'].json['body']['sobrenome'] ? ' ' + $node['fluxo_chamado'].json['body']['sobrenome'] : '') }}\",\n    \"_embedded\": {\n      \"contacts\": [\n        {\n          \"first_name\": \"{{ $node['fluxo_chamado'].json['body']['nome'] }}\",\n          \"responsible_user_id\": {{ $('consulta_sdr').item.json.id_crm }},\n          \"custom_fields_values\": [\n            {\n              \"field_id\": 210468,\n              \"field_name\": \"Telefone\",\n              \"values\": [\n                {\n                  \"value\": \"+{{ $node['fluxo_chamado'].json['body']['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 210470,\n              \"field_name\": \"O email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['fluxo_chamado'].json['body']['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"responsible_user_id\": {{ $('consulta_sdr').item.json.id_crm }},\n    \"status_id\": {{ $node['pesquisa_stage_pipeline1'].json['id_stage'] }},\n    \"pipeline_id\": {{ $node['pesquisa_stage_pipeline1'].json['id_pipeline'] }},\n    \"custom_fields_values\": [\n      {\n        \"field_id\": 210476,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210478,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210480,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210482,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210484,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1110519,\n        \"field_name\": \"Ano de prova\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['graduacao'].replace('Selecione','2025') }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1111674,\n        \"field_name\": \"Instagram\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['instagram'] }}\"\n          }\n        ]\n      }\n    ]\n  }\n]\n",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "d3ab40a5-33ed-4a51-b3fd-0b5ad1bc3c91",
+      "name": "Add_contato_KOMMO1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -140,
+        800
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads/{{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "aa7ab4f6-dfed-4d2c-90a7-58b8a0f7137e",
+      "name": "get_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -560,
+        240
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "=1"
+            },
+            {
+              "column": "situacao",
+              "value": "Desqualificado"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7bd5d274-f7c2-4ea9-b908-f547a32e8824",
+      "name": "pesquisa_stage_pipeline2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        100,
+        200
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_user\"].json[\"id_contact_crm\"] }},\n        \"custom_fields_values\": [\n            {\n              \"field_id\": 210468,\n              \"field_name\": \"Telefone\",\n              \"values\": [\n                {\n                  \"value\": \"+{{ $node['fluxo_chamado'].json['body']['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 210470,\n              \"field_name\": \"O email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['fluxo_chamado'].json['body']['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            }\n          ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "dcaecae2-a516-4e6d-90f2-016de47df3b2",
+      "name": "update_contacts_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        100,
+        380
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }},\n                \"custom_fields_values\": [\n      {\n        \"field_id\": 210476,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210478,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210480,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210482,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210484,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1110519,\n        \"field_name\": \"Ano de prova\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['graduacao'].replace('+','') }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1111674,\n        \"field_name\": \"Instagram\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['instagram'] }}\"\n          }\n        ]\n      }\n    ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "26809e87-2c17-40a9-83e9-b47d87eb7168",
+      "name": "update_leads_KOMMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        340,
+        380
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_user\"].json[\"id_contact_crm\"] }},\n        \"status_id\": {{ $node[\"pesquisa_stage_pipeline3\"].json[\"id_stage\"] }},\n        \"custom_fields_values\": [\n            {\n              \"field_id\": 210468,\n              \"field_name\": \"Telefone\",\n              \"values\": [\n                {\n                  \"value\": \"+{{ $node['fluxo_chamado'].json['body']['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 210470,\n              \"field_name\": \"O email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['fluxo_chamado'].json['body']['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            }\n          ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "14adda13-d523-4426-aa9e-bb9a0a093363",
+      "name": "update_contacts_KOMMO2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        360,
+        -220
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }},\n                \"pipeline_id\": {{ $node[\"pesquisa_stage_pipeline3\"].json[\"id_pipeline\"] }},\n                \"status_id\": {{ $node[\"pesquisa_stage_pipeline3\"].json[\"id_stage\"] }},\n                \"custom_fields_values\": [\n      {\n        \"field_id\": 210476,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210478,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210480,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210482,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210484,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1110519,\n        \"field_name\": \"Ano de prova\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['graduacao'].replace('+','') }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1111674,\n        \"field_name\": \"Instagram\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['instagram'] }}\"\n          }\n        ]\n      }\n    ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "8037362a-7b61-4f9d-b24e-f1204abc854b",
+      "name": "update_leads_KOMMO2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        600,
+        -220
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "=1"
+            },
+            {
+              "column": "situacao",
+              "value": "Qualificado"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b548a4c3-9359-4784-b91d-02a594bcf4e5",
+      "name": "pesquisa_stage_pipeline3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        120,
+        -220
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_user\"].json[\"id_contact_crm\"] }},\n        \"custom_fields_values\": [\n            {\n              \"field_id\": 210468,\n              \"field_name\": \"Telefone\",\n              \"values\": [\n                {\n                  \"value\": \"+{{ $node['fluxo_chamado'].json['body']['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 210470,\n              \"field_name\": \"O email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['fluxo_chamado'].json['body']['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            }\n          ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "91235ad4-4802-44ad-a4e8-e4687fec4fe3",
+      "name": "update_contacts_KOMMO3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        120,
+        -40
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }},\n                \"custom_fields_values\": [\n      {\n        \"field_id\": 210476,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210478,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210480,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210482,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 210484,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1110519,\n        \"field_name\": \"Ano de prova\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['graduacao'].replace('+','') }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1111674,\n        \"field_name\": \"Instagram\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['instagram'] }}\"\n          }\n        ]\n      }\n    ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "11551316-b8f3-4175-af32-dbc8a9417c6a",
+      "name": "update_leads_KOMMO3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        360,
+        -40
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f684eeae-7bf1-4946-86a7-d10259ff7122",
+              "leftValue": "={{ $node[\"get_lead\"].json[\"status_id\"] }}",
+              "rightValue": 73480376,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "40f7922c-48d6-4a03-b326-cdbbf702d63c",
+              "leftValue": "={{ $node[\"get_lead\"].json[\"status_id\"] }}",
+              "rightValue": 75068676,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "4100c493-0a4f-442b-b6d9-46b5b61652fd",
+              "leftValue": "={{ $node[\"get_lead\"].json[\"status_id\"] }}",
+              "rightValue": 73480372,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -140,
         340
+      ],
+      "id": "a53ec2bf-1919-4bc1-b4d8-c13807e38c68",
+      "name": "lead_etapa_oportunidade_ou_antes"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f684eeae-7bf1-4946-86a7-d10259ff7122",
+              "leftValue": "={{ $node[\"get_lead\"].json[\"status_id\"] }}",
+              "rightValue": 73480376,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "40f7922c-48d6-4a03-b326-cdbbf702d63c",
+              "leftValue": "={{ $node[\"get_lead\"].json[\"status_id\"] }}",
+              "rightValue": 75068676,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "4100c493-0a4f-442b-b6d9-46b5b61652fd",
+              "leftValue": "={{ $node[\"get_lead\"].json[\"status_id\"] }}",
+              "rightValue": 73480372,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "b44860a7-4b1e-4d80-93a9-fbb3bd90f525",
+              "leftValue": "={{ $node[\"get_lead\"].json[\"pipeline_id\"] }}",
+              "rightValue": 9602132,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "1c84328e-0cfd-4329-8c77-fbcb3474c30d",
+              "leftValue": "={{ $node[\"get_lead\"].json[\"status_id\"] }}",
+              "rightValue": 58065379,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "3c768e80-ac21-43d5-af72-f74767931a07",
+              "leftValue": "={{ $node[\"get_lead\"].json[\"status_id\"] }}",
+              "rightValue": 75068424,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -160,
+        -100
+      ],
+      "id": "a22e1ecc-d193-42c2-9610-562a2d26570c",
+      "name": "lead_etapa_oportunidade_ou_antes_ou_base_futura"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://oplanor.kommo.com/api/v4/leads/{{ $node[\"Add_contato_KOMMO3\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO3\"].json[\"id\"] : $node[\"Add_contato_KOMMO1\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO1\"].json[\"id\"] : $node[\"pesquisa_user\"].runIndex >= 0      ?   $node[\"pesquisa_user\"].json[\"id_deal_crm\"] : null }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"tags_to_add\": [\n    {\n      \"id\": \"{{ $node[\"Loop Over Items\"].json[\"id_crm\"] }}\"\n    }\n  ]\n}",
+        "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": true
+            }
+          }
+        }
+      },
+      "id": "7f03e008-6f91-4091-b6a2-6be8a07869a7",
+      "name": "add_tag_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1600,
+        280
       ]
     },
     {
       "parameters": {
-        "phoneNumberId": "425053257355840",
-        "recipientPhoneNumber": "+5562981196678",
-        "template": "hello_world|en_US"
+        "options": {}
       },
-      "id": "1d3178c9-9668-4632-8c2b-312b315d59a3",
-      "name": "WhatsApp Business Cloud",
-      "type": "n8n-nodes-base.whatsApp",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1400,
+        200
+      ],
+      "id": "49c128da-e87e-4168-a33b-c7d25b9980b5",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        820,
-        340
+        1600,
+        0
       ],
-      "credentials": {
-        "whatsAppApi": {
-          "id": "B2wsurT3J6v50Zh1",
-          "name": "[WhatsApp] - Henry"
-        }
-      }
+      "id": "9d271038-60af-4a22-8699-258769dd65db",
+      "name": "Limit"
     }
   ],
   "pinData": {},
@@ -60,6 +1284,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-02T12:30:13.173Z",
-  "versionId": "cd562350-0b41-4182-bb08-30d268243ca2"
+  "updatedAt": "2025-01-15T14:47:04.836Z",
+  "versionId": "bfb9fa7c-626e-482a-b470-28c8ae882449"
 }
