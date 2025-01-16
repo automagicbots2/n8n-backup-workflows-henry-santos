@@ -44,6 +44,17 @@
           }
         ]
       ]
+    },
+    "cria_cadastro": {
+      "main": [
+        [
+          {
+            "node": "cria_atualiza_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-01-15T14:23:45.841Z",
@@ -272,6 +283,74 @@
           "name": "[RabbitMQ][2.0] - Henry Santos "
         }
       }
+    },
+    {
+      "parameters": {
+        "url": "=https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/cria-atualiza-crm",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"]  || \"\" }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] || \"\" }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] || \"\" }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] || \"\" }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "instagram",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2140,
+        -380
+      ],
+      "id": "10462deb-3e1a-4fc1-a8e0-0e8896faa196",
+      "name": "cria_atualiza_crm",
+      "retryOnFail": true
     }
   ],
   "pinData": {
@@ -313,6 +392,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-15T14:35:13.504Z",
-  "versionId": "3f136f44-17de-4a0d-9866-fd4485453006"
+  "updatedAt": "2025-01-15T16:50:32.518Z",
+  "versionId": "902a0274-f374-44ac-bd9f-1854a392d535"
 }
