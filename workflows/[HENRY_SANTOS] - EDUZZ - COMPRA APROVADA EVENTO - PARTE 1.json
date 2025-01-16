@@ -1,22 +1,11 @@
 {
   "active": true,
   "connections": {
-    "Dados da Compra": {
-      "main": [
-        [
-          {
-            "node": "é_compra_aprovada",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "tratamento_dados": {
       "main": [
         [
           {
-            "node": "Dados da Compra",
+            "node": "dados",
             "type": "main",
             "index": 0
           }
@@ -34,7 +23,7 @@
         ]
       ]
     },
-    "é_compra_aprovada": {
+    "dados": {
       "main": [
         [
           {
@@ -55,243 +44,7 @@
   "nodes": [
     {
       "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "nome_produto",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"product_name\"].trim() }}"
-            },
-            {
-              "name": "Nome do Cliente",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"cus_name\"] }}"
-            },
-            {
-              "name": "E-mail do Cliente",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"cus_email\"] }}"
-            },
-            {
-              "name": "Telefone do Cliente - Formato Z-API",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"cus_cel\"] }}"
-            },
-            {
-              "name": "CPF/CNPJ do Cliente",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"cpf_cnpj\"] }}"
-            },
-            {
-              "name": "transaction_id",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"trans_cod\"] }}"
-            },
-            {
-              "name": "offer_code",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"product_cod\"] }}"
-            },
-            {
-              "name": "currency",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"trans_currency\"] }}"
-            },
-            {
-              "name": "subscription_code",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_cod\"] }}"
-            },
-            {
-              "name": "plan",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_plan\"] }}"
-            },
-            {
-              "name": "payment_method",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"forma_de_pagamento\"] }}"
-            },
-            {
-              "name": "trans_status",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"status_da_compra\"] }}"
-            },
-            {
-              "name": "ddd",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"cus_cel\"].slice('2','4') }}"
-            },
-            {
-              "name": "utm_source",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_source\"] }}"
-            },
-            {
-              "name": "utm_campaign",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_campaign\"] }}"
-            },
-            {
-              "name": "utm_term",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_term\"] }}"
-            },
-            {
-              "name": "utm_medium",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_medium\"] }}"
-            },
-            {
-              "name": "Link do Boleto",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"trans_bankslip\"] }}"
-            },
-            {
-              "name": "utm_content",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"utm_content\"] }}"
-            },
-            {
-              "name": "Linha Digitável do Boleto",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"trans_barcode\"] }}"
-            },
-            {
-              "name": "Nome do Afiliado",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"aff_name\"] }}"
-            },
-            {
-              "name": "E-mail do Afiliado",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"aff_email\"] }}"
-            },
-            {
-              "name": "cep",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"cep\"] }}"
-            },
-            {
-              "name": "id_fluxo_compra_aprovada",
-              "value": "4297785"
-            },
-            {
-              "name": "product_id",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"product_id\"] }}"
-            },
-            {
-              "name": "Telefone do Cliente - Formato BC",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"cus_cel\"] ? '+' + $node[\"tratamento_dados\"].json[\"cus_cel\"] : '' }}"
-            },
-            {
-              "name": "installments",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"numeroParcelas\"] }}"
-            },
-            {
-              "name": "link_pagamento_pix",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"pix_qr_code\"] }}"
-            },
-            {
-              "name": "id_campo_id_banco_de_dados_bot_conversa",
-              "value": "2370554"
-            },
-            {
-              "name": "id_campo_utm_var_bot_conversa",
-              "value": "2370558"
-            },
-            {
-              "name": "id_campo_utm_fun_bot_conversa",
-              "value": "2370559"
-            },
-            {
-              "name": "id_campo_utm_medium_bot_conversa",
-              "value": "2370545"
-            },
-            {
-              "name": "id_campo_utm_source_bot_conversa",
-              "value": "2370544"
-            },
-            {
-              "name": "id_campo_utm_campaign_bot_conversa",
-              "value": "2370543"
-            },
-            {
-              "name": "id_campo_utm_term_bot_conversa",
-              "value": "2370542"
-            },
-            {
-              "name": "id_campo_utm_content_bot_conversa",
-              "value": "2370546"
-            },
-            {
-              "name": "id_campo_email_da_compra_bot_conversa",
-              "value": "2435070"
-            },
-            {
-              "name": "id_campo_cpf_cnpj_bot_conversa",
-              "value": "2435161"
-            },
-            {
-              "name": "id_campo_id_da_compra_bot_conversa",
-              "value": "2435074"
-            },
-            {
-              "name": "id_campo_link_pagamento_pix_bot_conversa",
-              "value": "2435107"
-            },
-            {
-              "name": "id_campo_link_pagamento_boleto_bot_conversa",
-              "value": "2435106"
-            },
-            {
-              "name": "id_campo_linha_digitavel_boleto_bot_conversa",
-              "value": "2435104"
-            },
-            {
-              "name": "id_campo_linha_digitavel_pix_bot_conversa",
-              "value": "2435105"
-            },
-            {
-              "name": "id_fluxo_aguardando_pagamento",
-              "value": "4297801"
-            },
-            {
-              "name": "id_fluxo_compra_cancelada",
-              "value": "4297793"
-            },
-            {
-              "name": "id_fluxo_aguardando_reembolso",
-              "value": "4303402"
-            },
-            {
-              "name": "id_fluxo_compra_reembolsada",
-              "value": "4297805"
-            },
-            {
-              "name": "id_fluxo_compra_expirada",
-              "value": "4297809"
-            },
-            {
-              "name": "id_fluxo_compra_atrasada",
-              "value": "4297797"
-            },
-            {
-              "name": "API-KEY",
-              "value": "d241868f-0b6e-4974-b2ae-f2ad1b5e5e25"
-            }
-          ],
-          "number": [
-            {
-              "name": "value",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"trans_paid\"] }}"
-            },
-            {
-              "name": "conversion_date",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"data_pedido\"] }}"
-            },
-            {
-              "name": "gateway_comission",
-              "value": "={{ $node[\"Evento de Fatura\"].json[\"body\"][\"eduzz_value\"] }}"
-            },
-            {
-              "name": "warranty_date",
-              "value": "={{ $node[\"tratamento_dados\"].json[\"data_garantia\"] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "name": "Dados da Compra",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        4040,
-        2060
-      ],
-      "id": "682ff89b-26b3-4769-9632-713990f0e1d0"
-    },
-    {
-      "parameters": {
-        "jsCode": "const net_value = $node[\"Evento de Fatura\"].json[\"body\"][\"pro_value\"] || \"\";\nconst transaction_id = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_cod\"] || \"\";\nconst value = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_paid\"] || \"\";\nconst transStatus = parseInt($node[\"Evento de Fatura\"].json[\"body\"][\"trans_status\"]); // Converter para número\nconst refundDate = $node[\"Evento de Fatura\"].json[\"body\"][\"refund_date\"] || \"\";\nconst eventDate = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_createdate\"] || \"\";\nconst eventTime = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_createtime\"] || \"\";\nconst paidDate = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_paiddate\"] || \"\";\nconst paidTime = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_paidtime\"] || \"\";\nconst paymentMethod = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_paymentmethod\"] || \"\";\nconst productId = $node[\"Evento de Fatura\"].json[\"body\"][\"product_cod\"] || \"\";\nconst productName = $node[\"Evento de Fatura\"].json[\"body\"][\"product_name\"] || \"\";\nconst chargeType = $node[\"Evento de Fatura\"].json[\"body\"][\"product_chargetype\"] || \"\";\nconst warrantyDays = $node[\"Evento de Fatura\"].json[\"body\"][\"product_refund\"] || \"\";\nconst offer_code = $node[\"Evento de Fatura\"].json[\"body\"][\"product_parent_cod\"] || \"\";\nconst discount_coupon = $node[\"Evento de Fatura\"].json[\"body\"][\"discount_coupon_code\"] || \"\";\nconst street = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address\"] || \"\";\nconst address_number = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_number\"] || \"\";\nconst address_country = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_country\"] || \"\";\nconst address_district = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_district\"] || \"\";\nconst address_complement = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_comp\"] || \"\";\nconst address_city = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_city\"] || \"\";\nconst address_state = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_state\"] || \"\";\nconst address_zipCode = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_zip_code\"] || \"\";\nconst recurrenceCount = $node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_count\"] || \"\";\nconst affiliate_value = $node[\"Evento de Fatura\"].json[\"body\"][\"aff_value\"] || \"\";\nconst gateway_comission = $node[\"Evento de Fatura\"].json[\"body\"][\"eduzz_value\"] || \"\";\nconst billet_barcode = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_barcode\"] || \"\";\nconst currency = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_currency\"] || \"\";\nconst bankslip = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_bankslip\"] || \"\";\n\nconst fullNameAnswer = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_name\"] || \"\";\nconst emailAnswer = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_email\"] || \"\";\nconst telefoneClienteOriginal = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_cel\"]|| \"\";\nconst instagramAnswer = $node[\"Evento de Fatura\"].json[\"body\"][\"Instagram\"] || \"\";\n\n// Função para calcular a data de expiração da recorrência\nfunction calculateRecurrenceExpiration(interval, intervalType) {\n    const now = new Date();\n    let daysToAdd = 0;\n\n    switch (intervalType) {\n        case \"day\":\n            daysToAdd = interval;\n            break;\n        case \"month\":\n            daysToAdd = interval * 30; // Aproximando um mês como 30 dias\n            break;\n        case \"Year\":\n            daysToAdd = interval * 365; // Aproximando um ano como 365 dias\n            break;\n        default:\n            throw new Error(\"Tipo de intervalo de recorrência inválido.\");\n    }\n\n    now.setDate(now.getDate() + daysToAdd);\n\n    // Retorna a data no formato YYYY-MM-DD\n    const year = now.getFullYear();\n    const month = String(now.getMonth() + 1).padStart(2, '0');\n    const day = String(now.getDate()).padStart(2, '0');\n\n    return `${year}-${month}-${day}`;\n}\n\n\n// Calculando a data de expiração da recorrência\nconst recurrenceInterval = parseInt($node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_interval\"] || \"0\", 10);\nconst recurrenceIntervalType = $node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_interval_type\"] || \"\";\nlet recurrenceExpirationDate = \"\";\n\nif (!isNaN(recurrenceInterval) && recurrenceInterval > 0 && recurrenceIntervalType) {\n    try {\n        recurrenceExpirationDate = calculateRecurrenceExpiration(recurrenceInterval, recurrenceIntervalType);\n    } catch (error) {\n        console.error(\"Erro ao calcular a data de expiração da recorrência:\", error.message);\n    }\n}\n\n\n// Verificar se é renovação\nlet isRenewal = false; // Padrão para false\nif (transStatus === 3) {\n    if (recurrenceCount === 1) {\n        isRenewal = false;\n    } else if (recurrenceCount > 1) {\n        isRenewal = true;\n    }\n}\n\nfunction formatCEP(cep) {\n    const cepLimpo = cep.replace(/\\D/g, \"\"); // Remove qualquer caractere não numérico\n    if (cepLimpo.length === 8) {\n        return `${cepLimpo.slice(0, 2)}.${cepLimpo.slice(2, 5)}-${cepLimpo.slice(5, 8)}`;\n    }\n    return cep; // Retorna o valor original se não tiver 8 dígitos\n}\n\n// Concatenando data e hora de pagamento\nlet formattedPaidDateTime = \"\";\nif (paidDate) {\n    try {\n        const formattedDate = formatDate(paidDate);\n        formattedPaidDateTime = `${formattedDate} ${paidTime}`;\n    } catch (error) {\n        console.error(\"Erro ao formatar paidDate:\", error.message);\n    }\n}\n\n// Adicionando dias à data atual para calcular o warranty_date\nconst refundDays = parseInt($node[\"Evento de Fatura\"].json[\"body\"][\"product_refund\"] || \"0\", 10);\nlet warrantyDate = \"\";\nif (!isNaN(refundDays)) {\n    try {\n        // Obtém a data atual\n        const currentDate = new Date();\n\n        // Adiciona os dias\n        currentDate.setDate(currentDate.getDate() + refundDays);\n\n        // Formata a data no formato YYYY-MM-DD\n        const year = currentDate.getFullYear();\n        const month = String(currentDate.getMonth() + 1).padStart(2, '0');\n        const day = String(currentDate.getDate()).padStart(2, '0');\n\n        warrantyDate = `${year}-${month}-${day}`;\n    } catch (error) {\n        console.error(\"Erro ao calcular o warranty_date:\", error.message);\n    }\n}\n\nlet translatedChargeType = \"\";\nswitch (chargeType) {\n    case \"N\":\n        translatedChargeType = \"Cobrança única\";\n        break;\n    case \"A\":\n        translatedChargeType = \"Assinatura\";\n        break;\n    case \"L\":\n        translatedChargeType = \"Outros\";\n        break;\n    case \"G\":\n        translatedChargeType = \"Gratuito\";\n        break;\n    default:\n        translatedChargeType = \"Tipo desconhecido\";\n}\n\nfunction formatDate(dateString) {\n    // Certifique-se de que o input seja uma string de 8 caracteres\n    if (!/^[0-9]{8}$/.test(dateString)) {\n        throw new Error(\"Formato de data inválido. Use o formato YYYYMMDD.\");\n    }\n\n    // Extraia o ano, mês e dia da string\n    const year = dateString.slice(0, 4);\n    const month = dateString.slice(4, 6);\n    const day = dateString.slice(6, 8);\n\n    // Retorne o formato desejado\n    return `${year}-${month}-${day}`;\n}\n\n// Verificando se a data existe e formatando-a\nlet formattedRefundDate = \"\";\nif (refundDate) {\n    try {\n        formattedRefundDate = formatDate(refundDate);\n    } catch (error) {\n        console.error(\"Erro ao formatar refundDate:\", error.message);\n    }\n}\n\n// Concatenando data e hora\nlet formattedEventDateTime = \"\";\nif (eventDate) {\n    try {\n        const formattedDate = formatDate(eventDate);\n        formattedEventDateTime = `${formattedDate} ${eventTime}`;\n    } catch (error) {\n        console.error(\"Erro ao formatar eventDate:\", error.message);\n    }\n}\n\n// Traduzir a forma de pagamento\nlet paymentMethodTranslation = \"\";\nswitch (paymentMethod) {\n  case 1:\n    paymentMethodTranslation = \"Boleto Bancário\";\n    break;\n  case 32:\n    paymentMethodTranslation = \"PIX\";\n    break;\n  case 9:\n  case 25:\n    paymentMethodTranslation = \"Paypal\";\n    break;\n  case 13:\n  case 15:\n  case 21:\n  case 24:\n  case 27:\n    paymentMethodTranslation = \"Cartão de Crédito\";\n    break;\n  default:\n    paymentMethodTranslation = \"Desconhecido\";\n}\n\n// Ajustar trans_status caso seja renovação\nlet purchaseStatusTranslation = \"\";\nif (isRenewal === true) {\n    purchaseStatusTranslation = \"Renovação\";\n} else {\n    // Traduzir o status da compra\n    switch (transStatus) {\n        case 1:\n            purchaseStatusTranslation = \"Aguardando Pagamento\";\n            break;\n        case 3:\n            purchaseStatusTranslation = \"Compra Aprovada\";\n            break;\n        case 4:\n            purchaseStatusTranslation = \"Compra Cancelada\";\n            break;\n        case 6:\n            purchaseStatusTranslation = \"Aguardando Reembolso\";\n            break;\n        case 7:\n            purchaseStatusTranslation = \"Compra reembolsada\";\n            break;\n        case 10:\n            purchaseStatusTranslation = \"Compra Expirada\";\n            break;\n        case 15:\n            purchaseStatusTranslation = \"Compra Atrasada\";\n            break;\n        default:\n            purchaseStatusTranslation = \"Desconhecido\";\n    }\n}\n\n\nfunction capitalizeName(fullName) {\n    if (typeof fullName === 'undefined') {\n        return { fname: '', lname: '', fullname: '' };\n    }\n\n    const lowerCaseWords = ['da', 'de', 'do', 'di', 'du'];\n    let words = fullName.toLowerCase().split(' ').map((word, index) => {\n        if (lowerCaseWords.includes(word) && index !== 0) {\n            return word;\n        }\n        return word.charAt(0).toUpperCase() + word.slice(1);\n    });\n\n    let fname = words.shift();\n    let lname = words.join(' ');\n\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\nfunction formatEmail(email) {\n    return email.toLowerCase().trim();\n}\n\nfunction formatInstagram(instagram) {\n    return instagram.toLowerCase().replace(/^@/, \"\");\n}\n\nfunction formatCPF(cpf) {\n    const cpfLimpo = cpf.replace(/\\D/g, \"\");\n    if (cpfLimpo.length === 11) {\n        return `${cpfLimpo.slice(0, 3)}.${cpfLimpo.slice(3, 6)}.${cpfLimpo.slice(6, 9)}-${cpfLimpo.slice(9, 11)}`;\n    }\n    return cpf;\n}\n\nfunction formatCNPJ(cnpj) {\n    const cnpjLimpo = cnpj.replace(/\\D/g, \"\");\n    if (cnpjLimpo.length === 14) {\n        return `${cnpjLimpo.slice(0, 2)}.${cnpjLimpo.slice(2, 5)}.${cnpjLimpo.slice(5, 8)}/${cnpjLimpo.slice(8, 12)}-${cnpjLimpo.slice(12, 14)}`;\n    }\n    return cnpj;\n}\n\nfunction isCPFOrCNPJ(cpfCnpj) {\n    const cleaned = cpfCnpj.replace(/\\D/g, \"\"); // Remove caracteres não numéricos\n    if (cleaned.length === 11) {\n        return \"CPF\"; // É um CPF\n    } else if (cleaned.length === 14) {\n        return \"CNPJ\"; // É um CNPJ\n    }\n    return null; // Valor inválido\n}\n\n// Modifique o formato conforme o tipo\nconst cpfCnpj = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_taxnumber\"] || \"\";\nlet formattedCPFOrCNPJ = \"\";\n\nif (isCPFOrCNPJ(cpfCnpj) === \"CPF\") {\n    formattedCPFOrCNPJ = formatCPF(cpfCnpj);\n} else if (isCPFOrCNPJ(cpfCnpj) === \"CNPJ\") {\n    formattedCPFOrCNPJ = formatCNPJ(cpfCnpj);\n}\n\nlet telefoneFinal = \"\";\n\nif (telefoneClienteOriginal) {\n    const telefoneLimpo = telefoneClienteOriginal.replace(/\\D/g, \"\");\n\n    let DDI = '';\n    let DDD = '';\n    let numero = '';\n\n    if (telefoneLimpo.length > 11) {\n        DDI = telefoneLimpo.slice(0, 2);\n        DDD = telefoneLimpo.slice(2, 4);\n        numero = telefoneLimpo.slice(4);\n    } else if (telefoneLimpo.length === 11) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else if (telefoneLimpo.length === 10) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else {\n        telefoneFinal = telefoneLimpo;\n    }\n\n    if (DDD && numero) {\n        if (parseInt(DDD) > 28) {\n            if (numero.length === 9 && numero.startsWith(\"9\")) {\n                numero = numero.slice(1);\n            }\n        } else {\n            if (numero.length === 8) {\n                numero = `9${numero}`;\n            }\n        }\n    }\n\n    if (DDI && DDD && numero) {\n        telefoneFinal = `${DDI}${DDD}${numero}`;\n    }\n}\n\nconst formattedNames = capitalizeName(fullNameAnswer);\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedInstagram = formatInstagram(instagramAnswer);\nconst utm_source = $node[\"Evento de Fatura\"].json[\"body\"][\"utm_source\"] || \"\";\nconst utm_campaign = $node[\"Evento de Fatura\"].json[\"body\"][\"utm_campaign\"] || \"\";\nconst utm_medium = $node[\"Evento de Fatura\"].json[\"body\"][\"utm_medium\"] || \"\";\nconst utm_term = $node[\"Evento de Fatura\"].json[\"body\"][\"utm_term\"] || \"\";\nconst utm_content = $node[\"Evento de Fatura\"].json[\"body\"][\"utm_content\"] || \"\";\nconst form_id = $node[\"Evento de Fatura\"].json[\"body\"][\"product_hash\"] || \"\";\nconst form_name = $node[\"Evento de Fatura\"].json[\"body\"][\"product_name\"] || \"\";\nconst formattedPostalCode = formatCEP(address_zipCode);\n\nconst result = {\n    ...formattedNames,\n    email: formattedEmail,\n    whatsapp: telefoneFinal,\n    instagram: formattedInstagram,\n    cpf_cnpj: formattedCPFOrCNPJ,\n    utm_source: utm_source,\n    utm_campaign: utm_campaign,\n    utm_term: utm_term,\n    utm_medium: utm_medium,\n    utm_content: utm_content,\n    form_id: form_id,\n    form_name: form_name,\n    value: value,\n    transaction_id: transaction_id,\n    net_value: net_value,\n    trans_status: purchaseStatusTranslation,\n    payment_method: paymentMethodTranslation,\n    refund_date: formattedRefundDate,\n    event_date: formattedEventDateTime,\n    payment_date: formattedPaidDateTime,\n    product_type: translatedChargeType,\n    product_id: productId,\n    product_name: productName,\n    warranty_date: warrantyDate,\n    offer_code: offer_code,\n    discount_coupon: discount_coupon,\n    street: street,\n    address_number: address_number,\n    country: address_country,\n    district: address_district,\n    address_complement: address_complement,\n    city: address_city,\n    address_state: address_state,\n    zipcode: formattedPostalCode,\n    affiliate_value: affiliate_value,\n    gateway_comission: gateway_comission,\n    billet_barcode: billet_barcode,\n    currency: currency,\n    bankslip: bankslip,\n    recurrenceExpirationDate: recurrenceExpirationDate,\n        };\n\nreturn [{ json: result }];\n"
+        "jsCode": "const net_value = $node[\"Evento de Fatura\"].json[\"body\"][\"pro_value\"] || \"\";\nconst transaction_id = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_cod\"] || \"\";\nconst value = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_paid\"] || \"\";\nconst transStatus = parseInt($node[\"Evento de Fatura\"].json[\"body\"][\"trans_status\"]); // Converter para número\nconst refundDate = $node[\"Evento de Fatura\"].json[\"body\"][\"refund_date\"] || \"\";\nconst eventDate = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_createdate\"] || \"\";\nconst eventTime = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_createtime\"] || \"\";\nconst paidDate = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_paiddate\"] || \"\";\nconst paidTime = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_paidtime\"] || \"\";\nconst paymentMethod = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_paymentmethod\"] || \"\";\nconst productId = $node[\"Evento de Fatura\"].json[\"body\"][\"product_cod\"] || \"\";\nconst productName = $node[\"Evento de Fatura\"].json[\"body\"][\"product_name\"] || \"\";\nconst chargeType = $node[\"Evento de Fatura\"].json[\"body\"][\"product_chargetype\"] || \"\";\nconst warrantyDays = $node[\"Evento de Fatura\"].json[\"body\"][\"product_refund\"] || \"\";\nconst offer_code = $node[\"Evento de Fatura\"].json[\"body\"][\"product_parent_cod\"] || \"\";\nconst discount_coupon = $node[\"Evento de Fatura\"].json[\"body\"][\"discount_coupon_code\"] || \"\";\nconst street = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address\"] || \"\";\nconst address_number = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_number\"] || \"\";\nconst address_country = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_country\"] || \"\";\nconst address_district = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_district\"] || \"\";\nconst address_complement = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_comp\"] || \"\";\nconst address_city = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_city\"] || \"\";\nconst address_state = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_state\"] || \"\";\nconst address_zipCode = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_address_zip_code\"] || \"\";\nconst recurrenceCount = $node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_count\"] || \"\";\nconst affiliate_value = $node[\"Evento de Fatura\"].json[\"body\"][\"aff_value\"] || \"\";\nconst gateway_comission = $node[\"Evento de Fatura\"].json[\"body\"][\"eduzz_value\"] || \"\";\nconst billet_barcode = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_barcode\"] || \"\";\nconst currency = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_currency\"] || \"\";\nconst bankslip = $node[\"Evento de Fatura\"].json[\"body\"][\"trans_bankslip\"] || \"\";\nconst cancelledDate = $node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_canceled_at\"] || \"\";\nconst fullNameAnswer = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_name\"] || \"\";\nconst emailAnswer = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_email\"] || \"\";\nconst telefoneClienteOriginal = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_cel\"]|| \"\";\nconst instagramAnswer = $node[\"Evento de Fatura\"].json[\"body\"][\"Instagram\"] || \"\";\n\n// Função para calcular a data de expiração da recorrência\nfunction calculateRecurrenceExpiration(interval, intervalType) {\n    const now = new Date();\n    let daysToAdd = 0;\n\n    switch (intervalType) {\n        case \"day\":\n            daysToAdd = interval;\n            break;\n        case \"month\":\n            daysToAdd = interval * 30; // Aproximando um mês como 30 dias\n            break;\n        case \"Year\":\n            daysToAdd = interval * 365; // Aproximando um ano como 365 dias\n            break;\n        default:\n            throw new Error(\"Tipo de intervalo de recorrência inválido.\");\n    }\n\n    now.setDate(now.getDate() + daysToAdd);\n\n    // Retorna a data no formato YYYY-MM-DD\n    const year = now.getFullYear();\n    const month = String(now.getMonth() + 1).padStart(2, '0');\n    const day = String(now.getDate()).padStart(2, '0');\n\n    return `${year}-${month}-${day}`;\n}\n\n\n// Calculando a data de expiração da recorrência\nconst recurrenceInterval = parseInt($node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_interval\"] || \"0\", 10);\nconst recurrenceIntervalType = $node[\"Evento de Fatura\"].json[\"body\"][\"recurrence_interval_type\"] || \"\";\nlet recurrenceExpirationDate = \"\";\n\nif (!isNaN(recurrenceInterval) && recurrenceInterval > 0 && recurrenceIntervalType) {\n    try {\n        recurrenceExpirationDate = calculateRecurrenceExpiration(recurrenceInterval, recurrenceIntervalType);\n    } catch (error) {\n        console.error(\"Erro ao calcular a data de expiração da recorrência:\", error.message);\n    }\n}\n\n\n// Verificar se é renovação\nlet isRenewal = false; // Padrão para false\nif (transStatus === 3) {\n    if (recurrenceCount === 1) {\n        isRenewal = false;\n    } else if (recurrenceCount > 1) {\n        isRenewal = true;\n    }\n}\n\nfunction formatCEP(cep) {\n    const cepLimpo = cep.replace(/\\D/g, \"\"); // Remove qualquer caractere não numérico\n    if (cepLimpo.length === 8) {\n        return `${cepLimpo.slice(0, 2)}.${cepLimpo.slice(2, 5)}-${cepLimpo.slice(5, 8)}`;\n    }\n    return cep; // Retorna o valor original se não tiver 8 dígitos\n}\n\n// Concatenando data e hora de pagamento\nlet formattedPaidDateTime = \"\";\nif (paidDate) {\n    try {\n        const formattedDate = formatDate(paidDate);\n        formattedPaidDateTime = `${formattedDate} ${paidTime}`;\n    } catch (error) {\n        console.error(\"Erro ao formatar paidDate:\", error.message);\n    }\n}\n\n// Função para adicionar dias à data atual para calcular warranty_date\nfunction calculateWarrantyDate(refundDays) {\n    if (isNaN(refundDays) || refundDays <= 0) {\n        throw new Error(\"Dias de reembolso inválidos.\");\n    }\n\n    const currentDate = new Date();\n    currentDate.setDate(currentDate.getDate() + refundDays);\n\n    const year = currentDate.getFullYear();\n    const month = String(currentDate.getMonth() + 1).padStart(2, '0');\n    const day = String(currentDate.getDate()).padStart(2, '0');\n\n    return `${year}-${month}-${day}`;\n}\n\nlet translatedChargeType = \"\";\nswitch (chargeType) {\n    case \"N\":\n        translatedChargeType = \"Cobrança única\";\n        break;\n    case \"A\":\n        translatedChargeType = \"Assinatura\";\n        break;\n    case \"L\":\n        translatedChargeType = \"Outros\";\n        break;\n    case \"G\":\n        translatedChargeType = \"Gratuito\";\n        break;\n    default:\n        translatedChargeType = \"Tipo desconhecido\";\n}\n\nfunction formatDate(dateString) {\n    // Certifique-se de que o input seja uma string de 8 caracteres\n    if (!/^[0-9]{8}$/.test(dateString)) {\n        throw new Error(\"Formato de data inválido. Use o formato YYYYMMDD.\");\n    }\n\n    // Extraia o ano, mês e dia da string\n    const year = dateString.slice(0, 4);\n    const month = dateString.slice(4, 6);\n    const day = dateString.slice(6, 8);\n\n    // Retorne o formato desejado\n    return `${year}-${month}-${day}`;\n}\n\n// Verificando se a data existe e formatando-a\nlet formattedRefundDate = \"\";\nif (refundDate) {\n    try {\n        formattedRefundDate = formatDate(refundDate);\n    } catch (error) {\n        console.error(\"Erro ao formatar refundDate:\", error.message);\n    }\n}\n\n// Verificando se a data existe e formatando-a\nlet formattedCancelledDate = \"\";\nif (cancelledDate) {\n    try {\n        formattedCancelledDate = formatDate(cancelledDate);\n    } catch (error) {\n        console.error(\"Erro ao formatar refundDate:\", error.message);\n    }\n}\n\n// Concatenando data e hora\nlet formattedEventDateTime = \"\";\nif (eventDate) {\n    try {\n        const formattedDate = formatDate(eventDate);\n        formattedEventDateTime = `${formattedDate} ${eventTime}`;\n    } catch (error) {\n        console.error(\"Erro ao formatar eventDate:\", error.message);\n    }\n}\n\n// Traduzir a forma de pagamento\nlet paymentMethodTranslation = \"\";\nswitch (paymentMethod) {\n  case 1:\n    paymentMethodTranslation = \"Boleto Bancário\";\n    break;\n  case 32:\n    paymentMethodTranslation = \"PIX\";\n    break;\n  case 9:\n  case 25:\n    paymentMethodTranslation = \"Paypal\";\n    break;\n  case 13:\n  case 15:\n  case 21:\n  case 24:\n  case 27:\n    paymentMethodTranslation = \"Cartão de Crédito\";\n    break;\n  default:\n    paymentMethodTranslation = \"Desconhecido\";\n}\n\n// Ajustar trans_status caso seja renovação\nlet purchaseStatusTranslation = \"\";\nif (isRenewal === true) {\n    purchaseStatusTranslation = \"Renovação\";\n} else {\n    // Traduzir o status da compra\n    switch (transStatus) {\n        case 1:\n            purchaseStatusTranslation = \"Aguardando Pagamento\";\n            break;\n        case 3:\n            purchaseStatusTranslation = \"Compra Aprovada\";\n            break;\n        case 4:\n            purchaseStatusTranslation = \"Compra Cancelada\";\n            break;\n        case 6:\n            purchaseStatusTranslation = \"Aguardando Reembolso\";\n            break;\n        case 7:\n            purchaseStatusTranslation = \"Compra Reembolsada\";\n            break;\n        case 10:\n            purchaseStatusTranslation = \"Compra Expirada\";\n            break;\n        case 15:\n            purchaseStatusTranslation = \"Compra Atrasada\";\n            break;\n        default:\n            purchaseStatusTranslation = \"Desconhecido\";\n    }\n}\n\n// Garantir que warranty_date só será calculado se o status for \"Compra Aprovada\"\nconst refundDays = parseInt($node[\"Evento de Fatura\"].json[\"body\"][\"product_refund\"] || \"0\", 10);\nlet warrantyDate = \"\";\nif (purchaseStatusTranslation === \"Compra Aprovada\" && !isNaN(refundDays)) {\n    try {\n        warrantyDate = calculateWarrantyDate(refundDays);\n    } catch (error) {\n        console.error(\"Erro ao calcular o warranty_date:\", error.message);\n    }\n}\n\nfunction capitalizeName(fullName) {\n    if (typeof fullName === 'undefined') {\n        return { fname: '', lname: '', fullname: '' };\n    }\n\n    const lowerCaseWords = ['da', 'de', 'do', 'di', 'du'];\n    let words = fullName.toLowerCase().split(' ').map((word, index) => {\n        if (lowerCaseWords.includes(word) && index !== 0) {\n            return word;\n        }\n        return word.charAt(0).toUpperCase() + word.slice(1);\n    });\n\n    let fname = words.shift();\n    let lname = words.join(' ');\n\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\nfunction formatEmail(email) {\n    return email.toLowerCase().trim();\n}\n\nfunction formatInstagram(instagram) {\n    return instagram.toLowerCase().replace(/^@/, \"\");\n}\n\nfunction formatCPF(cpf) {\n    const cpfLimpo = cpf.replace(/\\D/g, \"\");\n    if (cpfLimpo.length === 11) {\n        return `${cpfLimpo.slice(0, 3)}.${cpfLimpo.slice(3, 6)}.${cpfLimpo.slice(6, 9)}-${cpfLimpo.slice(9, 11)}`;\n    }\n    return cpf;\n}\n\nfunction formatCNPJ(cnpj) {\n    const cnpjLimpo = cnpj.replace(/\\D/g, \"\");\n    if (cnpjLimpo.length === 14) {\n        return `${cnpjLimpo.slice(0, 2)}.${cnpjLimpo.slice(2, 5)}.${cnpjLimpo.slice(5, 8)}/${cnpjLimpo.slice(8, 12)}-${cnpjLimpo.slice(12, 14)}`;\n    }\n    return cnpj;\n}\n\nfunction isCPFOrCNPJ(cpfCnpj) {\n    const cleaned = cpfCnpj.replace(/\\D/g, \"\"); // Remove caracteres não numéricos\n    if (cleaned.length === 11) {\n        return \"CPF\"; // É um CPF\n    } else if (cleaned.length === 14) {\n        return \"CNPJ\"; // É um CNPJ\n    }\n    return null; // Valor inválido\n}\n\n// Modifique o formato conforme o tipo\nconst cpfCnpj = $node[\"Evento de Fatura\"].json[\"body\"][\"cus_taxnumber\"] || \"\";\nlet formattedCPFOrCNPJ = \"\";\n\nif (isCPFOrCNPJ(cpfCnpj) === \"CPF\") {\n    formattedCPFOrCNPJ = formatCPF(cpfCnpj);\n} else if (isCPFOrCNPJ(cpfCnpj) === \"CNPJ\") {\n    formattedCPFOrCNPJ = formatCNPJ(cpfCnpj);\n}\n\nlet telefoneFinal = \"\";\n\nif (telefoneClienteOriginal) {\n    const telefoneLimpo = telefoneClienteOriginal.replace(/\\D/g, \"\");\n\n    let DDI = '';\n    let DDD = '';\n    let numero = '';\n\n    if (telefoneLimpo.length > 11) {\n        DDI = telefoneLimpo.slice(0, 2);\n        DDD = telefoneLimpo.slice(2, 4);\n        numero = telefoneLimpo.slice(4);\n    } else if (telefoneLimpo.length === 11) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else if (telefoneLimpo.length === 10) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else {\n        telefoneFinal = telefoneLimpo;\n    }\n\n    if (DDD && numero) {\n        if (parseInt(DDD) > 28) {\n            if (numero.length === 9 && numero.startsWith(\"9\")) {\n                numero = numero.slice(1);\n            }\n        } else {\n            if (numero.length === 8) {\n                numero = `9${numero}`;\n            }\n        }\n    }\n\n    if (DDI && DDD && numero) {\n        telefoneFinal = `${DDI}${DDD}${numero}`;\n    }\n}\n\nconst formattedNames = capitalizeName(fullNameAnswer);\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedInstagram = formatInstagram(instagramAnswer);\nconst utm_source = $node[\"Evento de Fatura\"].json[\"body\"][\"utm_source\"] || \"\";\nconst utm_campaign = $node[\"Evento de Fatura\"].json[\"body\"][\"utm_campaign\"] || \"\";\nconst utm_medium = $node[\"Evento de Fatura\"].json[\"body\"][\"utm_medium\"] || \"\";\nconst utm_term = $node[\"Evento de Fatura\"].json[\"body\"][\"utm_term\"] || \"\";\nconst utm_content = $node[\"Evento de Fatura\"].json[\"body\"][\"utm_content\"] || \"\";\nconst form_id = $node[\"Evento de Fatura\"].json[\"body\"][\"product_hash\"] || \"\";\nconst form_name = $node[\"Evento de Fatura\"].json[\"body\"][\"product_name\"] || \"\";\nconst formattedPostalCode = formatCEP(address_zipCode);\n\nconst result = {\n    ...formattedNames,\n    email: formattedEmail,\n    whatsapp: telefoneFinal,\n    instagram: formattedInstagram,\n    cpf_cnpj: formattedCPFOrCNPJ,\n    utm_source: utm_source,\n    utm_campaign: utm_campaign,\n    utm_term: utm_term,\n    utm_medium: utm_medium,\n    utm_content: utm_content,\n    form_id: form_id,\n    form_name: form_name,\n    value: value,\n    transaction_id: transaction_id,\n    net_value: net_value,\n    trans_status: purchaseStatusTranslation,\n    payment_method: paymentMethodTranslation,\n    refund_date: formattedRefundDate,\n    event_date: formattedEventDateTime,\n    payment_date: formattedPaidDateTime,\n    product_type: translatedChargeType,\n    product_id: productId,\n    product_name: productName,\n    warranty_date: warrantyDate,\n    offer_code: offer_code,\n    discount_coupon: discount_coupon,\n    street: street,\n    address_number: address_number,\n    country: address_country,\n    district: address_district,\n    address_complement: address_complement,\n    city: address_city,\n    address_state: address_state,\n    zipcode: formattedPostalCode,\n    affiliate_value: affiliate_value,\n    gateway_comission: gateway_comission,\n    billet_barcode: billet_barcode,\n    currency: currency,\n    bankslip: bankslip,\n    recurrenceExpirationDate: recurrenceExpirationDate,\n    formattedCancelledDate: formattedCancelledDate,\n        };\n\nreturn [{ json: result }];\n"
       },
       "id": "6ac423a2-a096-4fc4-91cb-55b5af244f67",
       "name": "tratamento_dados",
@@ -322,8 +75,8 @@
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        4520,
-        2000
+        4280,
+        2060
       ],
       "credentials": {
         "rabbitmq": {
@@ -350,36 +103,189 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
+        "keepOnlySet": true,
+        "values": {
+          "string": [
             {
-              "id": "3be7cd34-12a8-407d-803d-b24f5368e59a",
-              "leftValue": "={{ $json[\"trans_status\"] }}",
-              "rightValue": "Compra Aprovada",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
+              "name": "nome",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"fname\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"lname\"] || \"\" }}"
+            },
+            {
+              "name": "nome_completo",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"fullname\"] || \"\" }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"whatsapp\"] || \"\" }}"
+            },
+            {
+              "name": "cpf_cnpj",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"cpf_cnpj\"] || \"\" }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_source\"] || \"\" }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_campaign\"] || \"\" }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_term\"] || \"\" }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_medium\"] || \"\" }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"utm_content\"] || \"\" }}"
+            },
+            {
+              "name": "form_id",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"form_id\"] || \"\" }}"
+            },
+            {
+              "name": "form_name",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"form_name\"] || \"\" }}"
+            },
+            {
+              "name": "value",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"value\"] || \"\" }}"
+            },
+            {
+              "name": "transaction_id",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"transaction_id\"] || \"\" }}"
+            },
+            {
+              "name": "net_value",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"net_value\"] || \"\" }}"
+            },
+            {
+              "name": "trans_status",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"trans_status\"] || \"\" }}"
+            },
+            {
+              "name": "payment_method",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"payment_method\"] || \"\" }}"
+            },
+            {
+              "name": "refund_date",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"refund_date\"] || \"\" }}"
+            },
+            {
+              "name": "event_date",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"event_date\"] || \"\" }}"
+            },
+            {
+              "name": "payment_date",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"payment_date\"] || \"\" }}"
+            },
+            {
+              "name": "product_type",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"product_type\"] || \"\" }}"
+            },
+            {
+              "name": "product_id",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"product_id\"] || \"\" }}"
+            },
+            {
+              "name": "product_name",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"product_name\"] || \"\" }}"
+            },
+            {
+              "name": "warranty_date",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"warranty_date\"] || \"\" }}"
+            },
+            {
+              "name": "offer_code",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"offer_code\"] || \"\" }}"
+            },
+            {
+              "name": "discount_coupon",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"discount_coupon\"] || \"\" }}"
+            },
+            {
+              "name": "street",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"street\"] || \"\" }}"
+            },
+            {
+              "name": "address_number",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"address_number\"] || \"\" }}"
+            },
+            {
+              "name": "country",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"country\"] || \"\" }}"
+            },
+            {
+              "name": "district",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"district\"] || \"\" }}"
+            },
+            {
+              "name": "address_complement",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"address_complement\"] || \"\" }}"
+            },
+            {
+              "name": "city",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"city\"] || \"\" }}"
+            },
+            {
+              "name": "address_state",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"address_state\"] || \"\" }}"
+            },
+            {
+              "name": "zipcode",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"zipcode\"] || \"\" }}"
+            },
+            {
+              "name": "affiliate_value",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"affiliate_value\"] || \"\" }}"
+            },
+            {
+              "name": "gateway_comission",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"gateway_comission\"] || \"\" }}"
+            },
+            {
+              "name": "billet_barcode",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"billet_barcode\"] || \"\" }}"
+            },
+            {
+              "name": "currency",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"currency\"] || \"\" }}"
+            },
+            {
+              "name": "bankslip",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"bankslip\"] || \"\" }}"
+            },
+            {
+              "name": "recurrenceExpirationDate",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"recurrenceExpirationDate\"] || \"\" }}"
+            },
+            {
+              "name": "cancelledDate",
+              "value": "={{ $node[\"tratamento_dados\"].json[\"formattedCancelledDate\"] || \"\" }}"
             }
-          ],
-          "combinator": "and"
+          ]
         },
         "options": {}
       },
-      "id": "806bcc81-052a-4fdd-aa85-a8cf60d35d20",
-      "name": "é_compra_aprovada",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
+      "name": "dados",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
       "position": [
-        4260,
+        4040,
         2060
-      ]
+      ],
+      "id": "682ff89b-26b3-4769-9632-713990f0e1d0"
     }
   ],
   "pinData": {
@@ -417,9 +323,9 @@
             "trans_checkoutid": 306599444,
             "trans_value": 97.9,
             "trans_paid": 97.9,
-            "trans_status": 17,
-            "trans_paymentmethod": 29,
-            "refund_date": "20250115",
+            "trans_status": 3,
+            "trans_paymentmethod": 32,
+            "refund_date": null,
             "trans_createdate": "20250115",
             "trans_paiddate": "20250115",
             "trans_duedate": "20250117",
@@ -438,37 +344,37 @@
             "recurrence_is_infinite": null,
             "product_cod": 2615430,
             "product_name": "Planejamento estratégico 2025: Lucre sem enlouquecer com seu salão de beleza Autoadministrável - ÚNICO - Ingresso Único",
-            "product_chargetype": "S",
+            "product_chargetype": "N",
             "product_refund": 7,
             "partner_cod": 28,
             "product_sku": "9defda86-5bd3-4354-99e6-104dc9e04c82",
             "product_parent_cod": 2615429,
             "product_hash": "VWG3786V07",
-            "discount_coupon_code": "TESTE",
+            "discount_coupon_code": null,
             "cus_cod": 1921912522,
-            "cus_taxnumber": "45157482000126",
+            "cus_taxnumber": "04307799097",
             "cus_name": "Gabriel Amaral",
             "cus_email": "teste@automagicbots.com.br",
             "cus_tel": null,
             "cus_tel2": null,
-            "cus_cel": "+5528985711260",
+            "cus_cel": "+5531985711260",
             "cus_apikey": null,
-            "cus_address": "Rua Ozanam",
-            "cus_address_number": "169",
-            "cus_address_country": "Brazil",
-            "cus_address_district": "Ipiranga",
-            "cus_address_comp": "Apto 202",
-            "cus_address_city": "Belo Horizonte",
-            "cus_address_state": "MG",
-            "cus_address_zip_code": "31160210",
+            "cus_address": null,
+            "cus_address_number": null,
+            "cus_address_country": null,
+            "cus_address_district": null,
+            "cus_address_comp": null,
+            "cus_address_city": null,
+            "cus_address_state": null,
+            "cus_address_zip_code": "",
             "recurrence_startdate": null,
             "recurrence_status": null,
             "recurrence_status_name": null,
-            "recurrence_interval": 2,
-            "recurrence_interval_type": "day",
+            "recurrence_interval": null,
+            "recurrence_interval_type": null,
             "recurrence_first_payment": null,
             "recurrence_canceled_at": null,
-            "recurrence_count": 2,
+            "recurrence_count": null,
             "aff_value": 0,
             "main_affiliate": 0,
             "tracker_trk": null,
@@ -572,6 +478,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-16T01:24:37.057Z",
-  "versionId": "0cd94a46-5bb4-4069-856a-3bed0e27070e"
+  "updatedAt": "2025-01-16T14:25:44.409Z",
+  "versionId": "97372ea9-51d5-4c21-84aa-a56248c41e96"
 }
