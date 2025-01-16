@@ -1,0 +1,752 @@
+{
+  "active": true,
+  "connections": {
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "existe_no_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_no_crm": {
+      "main": [
+        [
+          {
+            "node": "get_lead",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_stage_pipeline1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_base_crm": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "consulta_sdr": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_base_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_rotacionamento_colaboradores": {
+      "main": [
+        [
+          {
+            "node": "consulta_sdr",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_stage_pipeline1": {
+      "main": [
+        [
+          {
+            "node": "Add_contato_KOMMO1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_tag_funil": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add_contato_KOMMO1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_tag_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_lead": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_stage_pipeline3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_contacts_KOMMO2": {
+      "main": [
+        [
+          {
+            "node": "update_leads_KOMMO2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_leads_KOMMO2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_tag_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_stage_pipeline3": {
+      "main": [
+        [
+          {
+            "node": "update_contacts_KOMMO2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_lead": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_tag_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "update_id_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-15T14:47:04.836Z",
+  "id": "NxIfZtbe556AVKLw",
+  "meta": null,
+  "name": "⌚[Henry Santos][KommoCRM][Webinar] - Cria ou Atualiza Contatos e Leads",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "cria-atualiza-crm",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1940,
+        520
+      ],
+      "id": "0a5c56bb-eac7-48d8-abb2-52b465c37995",
+      "name": "fluxo_chamado",
+      "webhookId": "ce9e0c49-3b01-40d1-a43e-0275d34030ce"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "6d2d99ee-a7a9-4e5e-8fd1-2b83b048f668",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1080,
+        520
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f684eeae-7bf1-4946-86a7-d10259ff7122",
+              "leftValue": "={{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -840,
+        520
+      ],
+      "id": "72971e76-769b-460f-9dbd-a42d33bb3982",
+      "name": "existe_no_crm"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL Base do CRM"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "54d8a889-cec4-45f0-96a1-04b91d458d68",
+      "name": "pesquisa_url_base_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1300,
+        520
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_rotacionamento_colaboradores\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "time",
+              "value": "SDR"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1520,
+        520
+      ],
+      "id": "c3dc9474-57e2-498e-b324-830574279c28",
+      "name": "consulta_sdr"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Rotacionamento de Colaboradores"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "cd77774b-4f7b-4bce-ac71-183e2b9cdae3",
+      "name": "pesquisa_url_rotacionamento_colaboradores",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1720,
+        520
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "=1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "46a2a4fd-6dea-4f06-8027-4919c6cdeab5",
+      "name": "pesquisa_stage_pipeline1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -560,
+        780
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_funil = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"] }}; -- Substitua \"1\" pelo ID do funil que você deseja pesquisar\n",
+        "options": {}
+      },
+      "id": "68065d4b-28a9-4284-a5f4-3d4a15ed69cf",
+      "name": "pesquisa_tag_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        940,
+        600
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE users\nSET \n    id_deal_crm = {{ $node[\"Add_contato_KOMMO1\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO1\"].json[\"id\"] : $node[\"pesquisa_user\"].runIndex >= 0      ?   $node[\"pesquisa_user\"].json[\"id_deal_crm\"] : null }},        -- Substitua 12345 pelo valor desejado para o campo id_deal_crm\n    id_contact_crm = {{ $node[\"Add_contato_KOMMO1\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO1\"].json[\"contact_id\"] : $node[\"pesquisa_user\"].runIndex >= 0      ?   $node[\"pesquisa_user\"].json[\"id_contact_crm\"] : null }},     -- Substitua 67890 pelo valor desejado para o campo id_contact_crm\n      data_atualizacao = CURRENT_TIMESTAMP -- Define a data/hora atual no formato TIMESTAMP\nWHERE \n    id = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }};                    -- Substitua 1 pelo ID do lead específico",
+        "options": {}
+      },
+      "id": "5ff1d604-b5b2-45f9-82cd-3ec41ec1dd3e",
+      "name": "update_id_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1600,
+        400
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads/complex",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  {\n    \"name\": \"{{ $node['fluxo_chamado'].json['body']['nome'] + ($node['fluxo_chamado'].json['body']['sobrenome'] ? ' ' + $node['fluxo_chamado'].json['body']['sobrenome'] : '') }}\",\n    \"_embedded\": {\n      \"contacts\": [\n        {\n          \"first_name\": \"{{ $node['fluxo_chamado'].json['body']['nome'] }}\",\n          \"responsible_user_id\": {{ $('consulta_sdr').item.json.id_crm }},\n          \"custom_fields_values\": [\n            {\n              \"field_id\": 710450,\n              \"field_name\": \"Telefone\",\n              \"values\": [\n                {\n                  \"value\": \"+{{ $node['fluxo_chamado'].json['body']['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 710452,\n              \"field_name\": \"O email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['fluxo_chamado'].json['body']['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"responsible_user_id\": {{ $('consulta_sdr').item.json.id_crm }},\n    \"status_id\": {{ $node['pesquisa_stage_pipeline1'].json['id_stage'] }},\n    \"pipeline_id\": {{ $node['pesquisa_stage_pipeline1'].json['id_pipeline'] }},\n    \"custom_fields_values\": [\n      {\n        \"field_id\": 1008412,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018516,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018514,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018512,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018518,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1029842,\n        \"field_name\": \"Funil Atual\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"].replace ('10','web jan 25').replace ('12','aplicação').replace ('13','web jan 25') }}\"\n          }\n        ]\n      }\n    ]\n  }\n]\n",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "d3ab40a5-33ed-4a51-b3fd-0b5ad1bc3c91",
+      "name": "Add_contato_KOMMO1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -340,
+        780
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads/{{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "aa7ab4f6-dfed-4d2c-90a7-58b8a0f7137e",
+      "name": "get_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -580,
+        440
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_user\"].json[\"id_contact_crm\"] }},\n        \"status_id\": {{ $node[\"pesquisa_stage_pipeline3\"].json[\"id_stage\"] }},\n        \"custom_fields_values\": [\n            {\n              \"field_id\": 710450,\n              \"field_name\": \"Telefone\",\n              \"values\": [\n                {\n                  \"value\": \"+{{ $node['fluxo_chamado'].json['body']['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 710452,\n              \"field_name\": \"O email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['fluxo_chamado'].json['body']['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            }\n          ]\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "14adda13-d523-4426-aa9e-bb9a0a093363",
+      "name": "update_contacts_KOMMO2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -100,
+        440
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }},\n                \"pipeline_id\": {{ $node[\"pesquisa_stage_pipeline3\"].json[\"id_pipeline\"] }},\n                \"status_id\": {{ $node[\"pesquisa_stage_pipeline3\"].json[\"id_stage\"] }},\n                \"custom_fields_values\": [\n      {\n        \"field_id\": 1008412,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018516,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018514,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018512,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018518,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1029842,\n        \"field_name\": \"Funil Atual\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"].replace ('10','web jan 25').replace ('12','aplicação').replace ('13','web jan 25') }}\"\n          }\n        ]\n      }\n    ]\n  }\n]\n",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "8037362a-7b61-4f9d-b24e-f1204abc854b",
+      "name": "update_leads_KOMMO2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        140,
+        440
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "=1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b548a4c3-9359-4784-b91d-02a594bcf4e5",
+      "name": "pesquisa_stage_pipeline3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -340,
+        440
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads/{{ $node[\"Add_contato_KOMMO1\"].runIndex >= 0      ?   $node[\"Add_contato_KOMMO1\"].json[\"id\"] : $node[\"pesquisa_user\"].runIndex >= 0      ?   $node[\"pesquisa_user\"].json[\"id_deal_crm\"] : null }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"tags_to_add\": [\n    {\n      \"id\": \"{{ $node[\"Loop Over Items\"].json[\"id_crm\"] }}\"\n    }\n  ]\n}",
+        "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": true
+            }
+          }
+        }
+      },
+      "id": "7f03e008-6f91-4091-b6a2-6be8a07869a7",
+      "name": "add_tag_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1360,
+        680
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1160,
+        600
+      ],
+      "id": "49c128da-e87e-4168-a33b-c7d25b9980b5",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        400
+      ],
+      "id": "9d271038-60af-4a22-8699-258769dd65db",
+      "name": "Limit"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "272",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_funil": "10",
+            "id_user": 6,
+            "utm_source": "facebook",
+            "utm_campaign": "organico",
+            "utm_term": "ig",
+            "utm_medium": "reels",
+            "utm_content": "ia-sem-codigo",
+            "nome": "Mateus",
+            "sobrenome": "Diniz",
+            "email": "mateusdiniz@automagicbots.com.br",
+            "telefone": "5562981196678",
+            "instagram": "prmateusdiniz"
+          },
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/cria-atualiza-crm",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-15T20:54:38.498Z",
+  "versionId": "8d6b9b76-e9cd-41ee-af06-0f3f026796e3"
+}
