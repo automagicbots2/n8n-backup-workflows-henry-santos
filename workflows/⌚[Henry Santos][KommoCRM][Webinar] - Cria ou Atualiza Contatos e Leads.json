@@ -469,7 +469,7 @@
         "genericAuthType": "oAuth2Api",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "=[\n  {\n    \"name\": \"{{ $node['fluxo_chamado'].json['body']['nome'] + ($node['fluxo_chamado'].json['body']['sobrenome'] ? ' ' + $node['fluxo_chamado'].json['body']['sobrenome'] : '') }}\",\n    \"_embedded\": {\n      \"contacts\": [\n        {\n          \"first_name\": \"{{ $node['fluxo_chamado'].json['body']['nome'] }}\",\n          \"responsible_user_id\": {{ $('consulta_sdr').item.json.id_crm }},\n          \"custom_fields_values\": [\n            {\n              \"field_id\": 710450,\n              \"field_name\": \"Telefone\",\n              \"values\": [\n                {\n                  \"value\": \"+{{ $node['fluxo_chamado'].json['body']['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 710452,\n              \"field_name\": \"O email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['fluxo_chamado'].json['body']['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"responsible_user_id\": {{ $('consulta_sdr').item.json.id_crm }},\n    \"status_id\": {{ $node['pesquisa_stage_pipeline1'].json['id_stage'] }},\n    \"pipeline_id\": {{ $node['pesquisa_stage_pipeline1'].json['id_pipeline'] }},\n    \"custom_fields_values\": [\n      {\n        \"field_id\": 1008412,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018516,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018514,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018512,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018518,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1029842,\n        \"field_name\": \"Funil Atual\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"].replace ('10','web jan 25').replace ('12','aplicação').replace ('13','web jan 25') }}\"\n          }\n        ]\n      }\n    ]\n  }\n]\n",
+        "jsonBody": "=[\n  {\n    \"name\": \"{{ $node['fluxo_chamado'].json['body']['nome'] + ($node['fluxo_chamado'].json['body']['sobrenome'] ? ' ' + $node['fluxo_chamado'].json['body']['sobrenome'] : '') }}\",\n    \"_embedded\": {\n      \"contacts\": [\n        {\n          \"first_name\": \"{{ $node['fluxo_chamado'].json['body']['nome'] }}\",\n          \"responsible_user_id\": {{ $('consulta_sdr').item.json.id_crm }},\n          \"custom_fields_values\": [\n            {\n              \"field_id\": 710450,\n              \"field_name\": \"Telefone\",\n              \"values\": [\n                {\n                  \"value\": \"+{{ $node['fluxo_chamado'].json['body']['telefone'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            },\n            {\n              \"field_id\": 710452,\n              \"field_name\": \"O email\",\n              \"values\": [\n                {\n                  \"value\": \"{{ $node['fluxo_chamado'].json['body']['email'] }}\",\n                  \"enum_code\": \"WORK\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"responsible_user_id\": {{ $('consulta_sdr').item.json.id_crm }},\n    \"status_id\": {{ $node['pesquisa_stage_pipeline1'].json['id_stage'] }},\n    \"pipeline_id\": {{ $node['pesquisa_stage_pipeline1'].json['id_pipeline'] }},\n    \"custom_fields_values\": [\n      {\n        \"field_id\": 1008412,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018516,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018514,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018512,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018518,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1029842,\n        \"field_name\": \"Funil Atual\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"].replace ('12','web jan 25').replace ('10','aplicação').replace ('13','web jan 25') }}\"\n          }\n        ]\n      }\n    ]\n  }\n]\n",
         "options": {
           "response": {
             "response": {
@@ -573,7 +573,7 @@
         "genericAuthType": "oAuth2Api",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }},\n                \"pipeline_id\": {{ $node[\"pesquisa_stage_pipeline3\"].json[\"id_pipeline\"] }},\n                \"status_id\": {{ $node[\"pesquisa_stage_pipeline3\"].json[\"id_stage\"] }},\n                \"custom_fields_values\": [\n      {\n        \"field_id\": 1008412,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018516,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018514,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018512,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018518,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1029842,\n        \"field_name\": \"Funil Atual\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"].replace ('10','web jan 25').replace ('12','aplicação').replace ('13','web jan 25') }}\"\n          }\n        ]\n      }\n    ]\n  }\n]\n",
+        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }},\n                \"pipeline_id\": {{ $node[\"pesquisa_stage_pipeline3\"].json[\"id_pipeline\"] }},\n                \"status_id\": {{ $node[\"pesquisa_stage_pipeline3\"].json[\"id_stage\"] }},\n                \"custom_fields_values\": [\n      {\n        \"field_id\": 1008412,\n        \"field_name\": \"utm_content\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_content'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018516,\n        \"field_name\": \"utm_medium\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_medium'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018514,\n        \"field_name\": \"utm_campaign\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_campaign'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018512,\n        \"field_name\": \"utm_source\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_source'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1018518,\n        \"field_name\": \"utm_term\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node['fluxo_chamado'].json['body']['utm_term'] }}\"\n          }\n        ]\n      },\n      {\n        \"field_id\": 1029842,\n        \"field_name\": \"Funil Atual\",\n        \"values\": [\n          {\n            \"value\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"].replace ('12','web jan 25').replace ('10','aplicação').replace ('13','web jan 25') }}\"\n          }\n        ]\n      }\n    ]\n  }\n]\n",
         "options": {
           "response": {
             "response": {
@@ -706,7 +706,7 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "axios/1.7.4",
-            "content-length": "272",
+            "content-length": "239",
             "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
             "accept-encoding": "gzip, compress, deflate, br",
             "content-type": "application/json",
@@ -721,16 +721,16 @@
           "query": {},
           "body": {
             "id_funil": "10",
-            "id_user": 6,
-            "utm_source": "facebook",
-            "utm_campaign": "organico",
-            "utm_term": "ig",
-            "utm_medium": "reels",
-            "utm_content": "ia-sem-codigo",
+            "id_user": 16,
+            "utm_source": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_medium": "",
+            "utm_content": "",
             "nome": "Mateus",
-            "sobrenome": "Diniz",
+            "sobrenome": "",
             "email": "mateusdiniz@automagicbots.com.br",
-            "telefone": "5562981196678",
+            "telefone": "556281196678",
             "instagram": "prmateusdiniz"
           },
           "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/cria-atualiza-crm",
@@ -747,6 +747,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-15T20:54:38.498Z",
-  "versionId": "8d6b9b76-e9cd-41ee-af06-0f3f026796e3"
+  "updatedAt": "2025-01-16T17:49:05.214Z",
+  "versionId": "548cc48a-2573-417f-af99-6b15d6580d58"
 }
