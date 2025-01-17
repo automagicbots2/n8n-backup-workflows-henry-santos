@@ -1,0 +1,122 @@
+{
+  "active": true,
+  "connections": {
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "executa_procedure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "executa_procedure": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-16T21:32:55.883Z",
+  "id": "xEu5sfuAFaRlpaMS",
+  "meta": null,
+  "name": "⌚[Henry Santos][Banco de Dados] - Busca Produto",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "78d28a6e-8198-4f81-9926-e2e6c6164519",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -660,
+        180
+      ],
+      "id": "9ccfd93d-06fb-4aad-a482-6461ff2a867a",
+      "name": "fluxo_chamado",
+      "webhookId": "78d28a6e-8198-4f81-9926-e2e6c6164519"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CALL busca_produto('{{ $node[\"fluxo_chamado\"].json[\"body\"][\"product_id\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"product_name\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"value\"] }}');",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -440,
+        180
+      ],
+      "id": "2834b7a6-a500-435b-9c85-229ec255427e",
+      "name": "executa_procedure",
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        180
+      ],
+      "id": "7245b444-0508-4065-abdc-4cbb920cca10",
+      "name": "Limit"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "177",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "product_id": 2615430,
+            "product_name": "Planejamento estratégico 2025: Lucre sem enlouquecer com seu salão de beleza Autoadministrável - ÚNICO - Ingresso Único",
+            "value": 97.9
+          },
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/78d28a6e-8198-4f81-9926-e2e6c6164519",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-16T22:14:40.341Z",
+  "versionId": "a6385f36-24a3-4b9b-a4ea-8afb1d5df6c2"
+}
