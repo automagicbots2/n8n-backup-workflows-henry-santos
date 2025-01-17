@@ -1,0 +1,533 @@
+{
+  "active": false,
+  "connections": {
+    "pesquisa_url_base_crm": {
+      "main": [
+        [
+          {
+            "node": "get_deal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_base_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_deal": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_ultima_ordem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_ultima_ordem": {
+      "main": [
+        [
+          {
+            "node": "existe_registro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_registro": {
+      "main": [
+        [
+          {
+            "node": "get_deal2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "get_deal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_pipeline_stage": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_pipeline_stage1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_deal1": {
+      "main": [
+        [
+          {
+            "node": "insert_pipeline_stage1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_deal2": {
+      "main": [
+        [
+          {
+            "node": "insert_pipeline_stage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-17T10:35:00.702Z",
+  "id": "bQwYdXakaLLZeq3q",
+  "meta": null,
+  "name": "My workflow 4",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL Base do CRM"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "84725e20-a715-4728-b238-c987b05ec28b",
+      "name": "pesquisa_url_base_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1180,
+        0
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1380,
+        0
+      ],
+      "id": "ce6eb630-0e36-4080-b9f4-86c99852aafe",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads/pipelines/9516964/statuses",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "912e0929-1219-4dab-a5a7-d44f77ca4274",
+      "name": "get_deal",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -980,
+        0
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "_embedded.statuses",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        0
+      ],
+      "id": "36a46fff-5414-45b6-a29b-b580ab6c438d",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -560,
+        0
+      ],
+      "id": "225b6f2e-d7a0-456a-b80b-28d4b3303a10",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pipelines_stages_crm",
+          "mode": "list",
+          "cachedResultName": "pipelines_stages_crm"
+        },
+        "limit": 1,
+        "combineConditions": "OR",
+        "sort": {
+          "values": [
+            {
+              "column": "ordem",
+              "direction": "DESC"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d86e875f-feb8-4ba2-924d-7ef3d33c5e2b",
+      "name": "pesquisa_ultima_ordem",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -320,
+        60
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "db38b613-3744-436e-8ccd-b8eb244ab44f",
+              "leftValue": "={{ $node[\"pesquisa_ultima_ordem\"].json[\"id\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "number",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -80,
+        60
+      ],
+      "id": "8374f15b-9176-40e8-99ca-a88377486b87",
+      "name": "existe_registro"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "pipelines_stages_crm",
+          "mode": "list",
+          "cachedResultName": "pipelines_stages_crm"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_pipeline_crm",
+              "value": "={{ $node[\"get_deal2\"].json[\"id\"] }}"
+            },
+            {
+              "column": "nome_pipeline",
+              "value": "={{ $node[\"get_deal2\"].json[\"name\"] }}"
+            },
+            {
+              "column": "id_stage_crm",
+              "value": "={{ $node[\"Loop Over Items\"].json[\"id\"] }}"
+            },
+            {
+              "column": "nome_stage",
+              "value": "={{ $node[\"Loop Over Items\"].json[\"name\"] }}"
+            },
+            {
+              "column": "ordem",
+              "value": "={{ $node[\"pesquisa_ultima_ordem\"].json[\"ordem\"] + 1 }}"
+            }
+          ]
+        },
+        "options": {
+          "replaceEmptyStrings": true,
+          "detailedOutput": true
+        }
+      },
+      "id": "e39aec4d-971d-4029-b3a2-cac049d697d3",
+      "name": "insert_pipeline_stage",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        400,
+        -80
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "pipelines_stages_crm",
+          "mode": "list",
+          "cachedResultName": "pipelines_stages_crm"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_pipeline_crm",
+              "value": "={{ $node[\"get_deal1\"].json[\"id\"] }}"
+            },
+            {
+              "column": "nome_pipeline",
+              "value": "={{ $node[\"get_deal1\"].json[\"name\"] }}"
+            },
+            {
+              "column": "id_stage_crm",
+              "value": "={{ $node[\"Loop Over Items\"].json[\"id\"] }}"
+            },
+            {
+              "column": "nome_stage",
+              "value": "={{ $node[\"Loop Over Items\"].json[\"name\"] }}"
+            },
+            {
+              "column": "ordem",
+              "value": "=1"
+            }
+          ]
+        },
+        "options": {
+          "replaceEmptyStrings": true,
+          "detailedOutput": true
+        }
+      },
+      "id": "62b085e7-b036-4cc6-9ef0-03674a3cb545",
+      "name": "insert_pipeline_stage1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        400,
+        120
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -320,
+        -100
+      ],
+      "id": "ac1f4e97-ed86-482b-9b0e-629fa80bc254",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads/pipelines/{{ $node[\"Loop Over Items\"].json[\"pipeline_id\"] }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "16a29ab2-fe82-4140-9c5d-0535541357de",
+      "name": "get_deal1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        160,
+        120
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads/pipelines/{{ $node[\"Loop Over Items\"].json[\"pipeline_id\"] }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "5f96647c-4a3a-4aab-8159-e897cbf53005",
+      "name": "get_deal2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        160,
+        -80
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-01-17T10:35:00.702Z",
+  "versionId": "39e241ab-7a41-462d-ac93-c4a0acbef39b"
+}
