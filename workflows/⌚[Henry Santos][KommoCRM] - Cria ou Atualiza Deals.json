@@ -1,0 +1,1510 @@
+{
+  "active": true,
+  "connections": {
+    "pesquisa_stage_pipeline": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_deal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_base_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_deal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_deal": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_base_crm": {
+      "main": [
+        [
+          {
+            "node": "checkout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_rotacionamento_colaboradores": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_etapa_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_etapa_funil": {
+      "main": [
+        [
+          {
+            "node": "consulta_sdr",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "existe_no_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_no_crm": {
+      "main": [
+        [
+          {
+            "node": "get_deal",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "contato_existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_id_crm": {
+      "main": [
+        [
+          {
+            "node": "retorna_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "consulta_sdr": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "contato_existe": {
+      "main": [
+        [
+          {
+            "node": "cria_deal_com_contato_linkado",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_url_create_update_contact_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_deal_com_contato_linkado": {
+      "main": [
+        [
+          {
+            "node": "update_id_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_create_update_contact_crm": {
+      "main": [
+        [
+          {
+            "node": "chama_fluxo_create_update_contact_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_deal": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_ordem_stage_ideal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_deal1": {
+      "main": [
+        [
+          {
+            "node": "deal_nao_existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_deal": {
+      "main": [
+        [
+          {
+            "node": "update_id_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deal_nao_existe": {
+      "main": [
+        [
+          {
+            "node": "cria_deal_com_contato_linkado1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_id_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_deal_com_contato_linkado1": {
+      "main": [
+        [
+          {
+            "node": "update_id_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_ordem_stage_ideal": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_ordem_stage_atual",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_ordem_stage_atual": {
+      "main": [
+        [
+          {
+            "node": "lead_antes_da_etapa_ideal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lead_antes_da_etapa_ideal": {
+      "main": [
+        [
+          {
+            "node": "update_deal",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_deal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "checkout": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_stage_pipeline1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "qualificacao_preenchida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal1": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_deal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_stage_pipeline1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_deal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_deal1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chama_fluxo_create_update_contact_crm": {
+      "main": [
+        [
+          {
+            "node": "cria_deal_com_contato_linkado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_deal2": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_deal2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_stage_pipeline2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_deal2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_deal2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "qualificacao_preenchida": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_stage_pipeline",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_stage_pipeline2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-17T10:32:07.094Z",
+  "id": "UIqAgWg5RAS85Sxv",
+  "meta": null,
+  "name": "⌚[Henry Santos][KommoCRM] - Cria ou Atualiza Deals",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "cria-atualiza-deal-crm",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -3820,
+        620
+      ],
+      "id": "ed115df7-f4f2-4c02-9e31-20ce0a48c726",
+      "name": "fluxo_chamado",
+      "webhookId": "ce9e0c49-3b01-40d1-a43e-0275d34030ce"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            },
+            {
+              "column": "situacao",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"qualificacao\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a640b831-4e90-47a0-89e6-fc335b7f78e4",
+      "name": "pesquisa_stage_pipeline",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -2900,
+        620
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_crm_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_crm_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "deal"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b5ddc7f9-d970-4e95-84e7-5646c0f6279a",
+      "name": "pesquisa_json_fields_deal",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -2660,
+        620
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_deal\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2420,
+        620
+      ],
+      "id": "78f1b2e4-03e6-4d0d-abda-b9bd3ce8d4eb",
+      "name": "formata_campos_deal"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL Base do CRM"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "193e9365-0b29-46e0-9daf-e963f38f7e68",
+      "name": "pesquisa_url_base_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -3580,
+        620
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_rotacionamento_colaboradores\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "time",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"nome\"].replace('Cadastro','SDR').replace('Aplicação','SDR').replace('Agendamento','Closer').replace('Pesquisa','SDR').replace('Checkout','Closer') }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1560,
+        620
+      ],
+      "id": "d590c73c-44fd-4fb6-9e79-b777b2e1b82a",
+      "name": "consulta_sdr"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Rotacionamento de Colaboradores"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "dd411ecd-116d-480a-9ad4-5e894fa5716c",
+      "name": "pesquisa_url_rotacionamento_colaboradores",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -2020,
+        620
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "etapas_funil",
+          "mode": "list",
+          "cachedResultName": "etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0d2b60ba-820b-411e-8e3e-7384449a005e",
+      "name": "pesquisa_etapa_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1780,
+        620
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "3177bc32-f494-412d-be7a-fbd127f877dc",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1360,
+        620
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f684eeae-7bf1-4946-86a7-d10259ff7122",
+              "leftValue": "={{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1120,
+        620
+      ],
+      "id": "a954821e-a873-4476-9f77-19c5a520e06c",
+      "name": "existe_no_crm"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE users\nSET \n    id_deal_crm = {{ $node[\"cria_deal_com_contato_linkado\"].runIndex >= 0      ? $node[\"cria_deal_com_contato_linkado\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] :  $node[\"cria_deal_com_contato_linkado1\"].runIndex >= 0      ? $node[\"cria_deal_com_contato_linkado1\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : $node[\"pesquisa_user\"].runIndex >= 0      ?  $node[\"pesquisa_user\"].json[\"id_deal_crm\"] : null }},\n      data_atualizacao = CURRENT_TIMESTAMP -- Define a data/hora atual no formato TIMESTAMP\nWHERE \n    id = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }};",
+        "options": {}
+      },
+      "id": "29ebbe78-cbfc-4595-a027-7d709c2df2f8",
+      "name": "update_id_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        840,
+        200
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "41487899-9afe-4a75-980a-e25a254ef80b",
+              "name": "id_deal_crm",
+              "value": "={{ $node[\"cria_deal_com_contato_linkado\"].runIndex >= 0      ? $node[\"cria_deal_com_contato_linkado\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] :  $node[\"cria_deal_com_contato_linkado1\"].runIndex >= 0      ? $node[\"cria_deal_com_contato_linkado1\"].json[\"_embedded\"][\"leads\"][\"0\"][\"id\"] : $node[\"pesquisa_user\"].runIndex >= 0      ?  $node[\"pesquisa_user\"].json[\"id_deal_crm\"] : null }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1060,
+        200
+      ],
+      "id": "644209f8-d047-43b0-b83d-a7581db5bdf0",
+      "name": "retorna_dados"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f684eeae-7bf1-4946-86a7-d10259ff7122",
+              "leftValue": "={{ $node[\"pesquisa_user\"].json[\"id_contact_crm\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -860,
+        680
+      ],
+      "id": "ad286ce6-347b-4f66-9d66-1729ca1620da",
+      "name": "contato_existe"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"name\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sobrenome\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"nome\"] + \" \" + $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sobrenome\"] : $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"nome\"] }}\",\n        \"status_id\": {{ $node[\"pesquisa_stage_pipeline\"].runIndex >= 0 ? $node[\"pesquisa_stage_pipeline\"].json[\"id_stage\"] \n          : $node[\"pesquisa_stage_pipeline1\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline1\"].json[\"id_stage\"] : $node[\"pesquisa_stage_pipeline2\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline2\"].json[\"id_stage\"] : null}},\n        \"pipeline_id\": {{ $node[\"pesquisa_stage_pipeline\"].runIndex >= 0 ? $node[\"pesquisa_stage_pipeline\"].json[\"id_pipeline\"] \n          : $node[\"pesquisa_stage_pipeline1\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline1\"].json[\"id_pipeline\"] : $node[\"pesquisa_stage_pipeline2\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline2\"].json[\"id_pipeline\"] : null }},\n        \"responsible_user_id\": {{ $node[\"consulta_sdr\"].json[\"id_crm\"] }},\n        \"custom_fields_values\": {{ $node[\"formata_campos_deal\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_deal\"].json[\"custom_fields_values\"]) \n    : $node[\"formata_campos_deal1\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal1\"].json[\"custom_fields_values\"]) \n      : $node[\"formata_campos_deal2\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal2\"].json[\"custom_fields_values\"]) : null }},\n        \"_embedded\": {\n          \"contacts\": [\n        {\n          \"id\": {{ $node[\"chama_fluxo_create_update_contact_crm\"].runIndex >= 0      ? $node[\"chama_fluxo_create_update_contact_crm\"].json[\"id_contact_crm\"] :  $node[\"pesquisa_user\"].runIndex >= 0      ?  $node[\"pesquisa_user\"].json[\"id_contact_crm\"] : null }},\n          \"is_main\": true\n        }\n      ]\n                     }\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "6825024b-6c1b-46d7-be52-38ab2bb1dfbd",
+      "name": "cria_deal_com_contato_linkado",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -640,
+        560
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_contact_crm"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "aa198c3d-d8cf-47e5-aea8-58d6a5314ba1",
+      "name": "pesquisa_url_create_update_contact_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -640,
+        760
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads/{{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "9fa9faca-9c2d-43dd-b643-f9fdaac96400",
+      "name": "get_deal",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -820,
+        180
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }},\n                \"pipeline_id\": {{ $node[\"pesquisa_stage_pipeline\"].runIndex >= 0 ? $node[\"pesquisa_stage_pipeline\"].json[\"id_pipeline\"] \n          : $node[\"pesquisa_stage_pipeline1\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline1\"].json[\"id_pipeline\"] : $node[\"pesquisa_stage_pipeline2\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline2\"].json[\"id_pipeline\"] : null }},\n                \"status_id\": {{ $node[\"pesquisa_stage_pipeline\"].runIndex >= 0 ? $node[\"pesquisa_stage_pipeline\"].json[\"id_stage\"] \n          : $node[\"pesquisa_stage_pipeline1\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline1\"].json[\"id_stage\"] : $node[\"pesquisa_stage_pipeline2\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline2\"].json[\"id_stage\"] : null}},\n                \"custom_fields_values\": {{ $node[\"formata_campos_deal\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_deal\"].json[\"custom_fields_values\"]) \n    : $node[\"formata_campos_deal1\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal1\"].json[\"custom_fields_values\"]) \n      : $node[\"formata_campos_deal2\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal2\"].json[\"custom_fields_values\"]) : null }}\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "fe9fe924-0349-4cef-94a2-9aab07e2983c",
+      "name": "update_deal",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        120,
+        40
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n                \"id\": {{ $node[\"pesquisa_user\"].json[\"id_deal_crm\"] }},\n                \"custom_fields_values\": {{ $node[\"formata_campos_deal\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_deal\"].json[\"custom_fields_values\"]) \n    : $node[\"formata_campos_deal1\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal1\"].json[\"custom_fields_values\"]) \n      : $node[\"formata_campos_deal2\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal2\"].json[\"custom_fields_values\"]) : null }}\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "f19fd64f-3f51-41e4-9e60-1ae77f861440",
+      "name": "update_deal1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        120,
+        200
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d6c7cf5b-2480-41df-930b-933f0e3f1207",
+              "leftValue": "={{ $node[\"update_deal1\"].json[\"error\"][\"message\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        360,
+        200
+      ],
+      "id": "36908200-cf8b-4088-9c99-76da980e2968",
+      "name": "deal_nao_existe"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"name\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sobrenome\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"nome\"] + \" \" + $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sobrenome\"] : $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"nome\"] }}\",\n        \"status_id\": {{ $node[\"pesquisa_stage_pipeline\"].runIndex >= 0 ? $node[\"pesquisa_stage_pipeline\"].json[\"id_stage\"] \n          : $node[\"pesquisa_stage_pipeline1\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline1\"].json[\"id_stage\"] : $node[\"pesquisa_stage_pipeline2\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline2\"].json[\"id_stage\"] : null}},\n        \"pipeline_id\": {{ $node[\"pesquisa_stage_pipeline\"].runIndex >= 0 ? $node[\"pesquisa_stage_pipeline\"].json[\"id_pipeline\"] \n          : $node[\"pesquisa_stage_pipeline1\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline1\"].json[\"id_pipeline\"] : $node[\"pesquisa_stage_pipeline2\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline2\"].json[\"id_pipeline\"] : null }},\n        \"responsible_user_id\": {{ $node[\"consulta_sdr\"].json[\"id_crm\"] }},\n        \"custom_fields_values\": {{ $node[\"formata_campos_deal\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_deal\"].json[\"custom_fields_values\"]) \n    : $node[\"formata_campos_deal1\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal1\"].json[\"custom_fields_values\"]) \n      : $node[\"formata_campos_deal2\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_deal2\"].json[\"custom_fields_values\"]) : null }},\n        \"_embedded\": {\n          \"contacts\": [\n        {\n          \"id\": {{ $node[\"chama_fluxo_create_update_contact_crm\"].runIndex >= 0      ? $node[\"chama_fluxo_create_update_contact_crm\"].json[\"id_contact_crm\"] :  $node[\"pesquisa_user\"].runIndex >= 0      ?  $node[\"pesquisa_user\"].json[\"id_contact_crm\"] : null }},\n          \"is_main\": true\n        }\n      ]\n                     }\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "8554ffe4-0fdd-4550-8af3-4eaa4fb0798c",
+      "name": "cria_deal_com_contato_linkado1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        600,
+        0
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pipelines_stages_crm",
+          "mode": "list",
+          "cachedResultName": "pipelines_stages_crm"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_stage_crm",
+              "value": "={{ $node[\"pesquisa_stage_pipeline\"].runIndex >= 0 ? $node[\"pesquisa_stage_pipeline\"].json[\"id_stage\"] \n          : $node[\"pesquisa_stage_pipeline1\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline1\"].json[\"id_stage\"] : $node[\"pesquisa_stage_pipeline2\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline2\"].json[\"id_stage\"] : null}}"
+            },
+            {
+              "column": "id_pipeline_crm",
+              "value": "={{ $node[\"pesquisa_stage_pipeline\"].runIndex >= 0 ? $node[\"pesquisa_stage_pipeline\"].json[\"id_pipeline\"] \n          : $node[\"pesquisa_stage_pipeline1\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline1\"].json[\"id_pipeline\"] : $node[\"pesquisa_stage_pipeline2\"].runIndex >= 0 \n            ? $node[\"pesquisa_stage_pipeline2\"].json[\"id_pipeline\"] : null }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bbc8b5e4-ad20-4bc1-82c9-ad691ee2bf26",
+      "name": "pesquisa_ordem_stage_ideal",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -600,
+        180
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "pipelines_stages_crm",
+          "mode": "list",
+          "cachedResultName": "pipelines_stages_crm"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_stage_crm",
+              "value": "={{ $node[\"get_deal\"].json[\"status_id\"] }}"
+            },
+            {
+              "column": "id_pipeline_crm",
+              "value": "={{ $node[\"get_deal\"].json[\"pipeline_id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d15b0d29-1218-44be-a845-c5980c982bc2",
+      "name": "pesquisa_ordem_stage_atual",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -360,
+        180
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3c768e80-ac21-43d5-af72-f74767931a07",
+              "leftValue": "={{ $node[\"pesquisa_ordem_stage_atual\"].json[\"ordem\"] }}",
+              "rightValue": "={{ $node[\"pesquisa_ordem_stage_ideal\"].json[\"ordem\"] }}",
+              "operator": {
+                "type": "number",
+                "operation": "lte"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -100,
+        180
+      ],
+      "id": "7458eee5-d18c-466e-b7e6-72f7a05b4895",
+      "name": "lead_antes_da_etapa_ideal"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7ac6581d-d1e7-4377-a773-08ce146eeb4e",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"tipo_forms\"] }}",
+              "rightValue": "Checkout",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -3380,
+        620
+      ],
+      "id": "39f9f929-ad8a-42be-9fc5-56be53b72328",
+      "name": "checkout"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_crm_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_crm_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_situacao_checkout",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "deal"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9dc10e1a-80f8-483a-9b90-104a2ee9843e",
+      "name": "pesquisa_json_fields_deal1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -2660,
+        440
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_deal1\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2420,
+        440
+      ],
+      "id": "89149b7a-d24a-4a6a-b827-6fa1c88a0912",
+      "name": "formata_campos_deal1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_situacao_checkout",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "669d8218-24ed-40cd-811a-ec781c1219f2",
+      "name": "pesquisa_stage_pipeline1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -2900,
+        440
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_create_update_contact_crm\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"] }}"
+            },
+            {
+              "name": "id_situacao_checkout",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"]  || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -420,
+        760
+      ],
+      "id": "d0b9ae7e-2e58-4bc6-b3e1-41ae4622d944",
+      "name": "chama_fluxo_create_update_contact_crm"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacao_pipeline_stage",
+          "mode": "list",
+          "cachedResultName": "situacao_pipeline_stage"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            },
+            {
+              "column": "situacao",
+              "condition": "IS NULL"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "86fc5563-4a55-4b3b-9770-e96b3c0cfbb7",
+      "name": "pesquisa_stage_pipeline2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -2900,
+        800
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_crm_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_crm_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "deal"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "85e7a800-8bb0-49b7-8ebc-38e509d9c292",
+      "name": "pesquisa_json_fields_deal2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -2660,
+        800
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_deal2\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nconst result = replacePlaceholders(template, payload);\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2420,
+        800
+      ],
+      "id": "507ccf5e-f076-4e5b-a106-6fed76f3c0cd",
+      "name": "formata_campos_deal2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0ebcfa2f-fa99-4a93-9f71-7f6d3505c739",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"qualificacao\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -3160,
+        720
+      ],
+      "id": "5e392b9f-bc0f-444b-9486-d698e904ba15",
+      "name": "qualificacao_preenchida"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "1342",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_etapa_funil": 2,
+            "id_funil": "12",
+            "id_user": 18,
+            "payload": {
+              "nome": "Gabriel",
+              "sobrenome": "Amaral",
+              "nome_completo": "Gabriel Amaral",
+              "email": "teste@automagicbots.com.br",
+              "telefone": "553185711260",
+              "cpf": "043.077.990-97",
+              "utm_source": "facebook",
+              "utm_campaign": "organico",
+              "utm_term": "",
+              "utm_medium": "reels",
+              "utm_content": "ia-sem-codigo",
+              "form_id": "VWG3786V07",
+              "form_name": "Planejamento estratégico 2025: Lucre sem enlouquecer com seu salão de beleza Autoadministrável - ÚNICO - Ingresso Único",
+              "value": 97.9,
+              "transaction_id": 83177165,
+              "net_value": 92.1,
+              "trans_status": "Compra Aprovada",
+              "payment_method": "PIX",
+              "refund_date": "",
+              "event_date": "2025-01-15 16:15:56",
+              "payment_date": "2025-01-15 16:16:09",
+              "product_type": "Cobrança única",
+              "product_id": 2615430,
+              "product_name": "Planejamento estratégico 2025: Lucre sem enlouquecer com seu salão de beleza Autoadministrável - ÚNICO - Ingresso Único",
+              "warranty_date": "2025-01-23",
+              "offer_code": 2615429,
+              "discount_coupon": "",
+              "street": "",
+              "address_number": "",
+              "country": "",
+              "district": "",
+              "address_complement": "",
+              "city": "",
+              "address_state": "",
+              "zipcode": "",
+              "affiliate_value": "",
+              "gateway_comission": 5.8,
+              "billet_barcode": "",
+              "currency": "BRL",
+              "bankslip": "",
+              "recurrenceExpirationDate": "",
+              "cancelledDate": "",
+              "id_funil": "12",
+              "tipo_forms": "Checkout",
+              "cnpj": "",
+              "id_forms": "4"
+            },
+            "id_situacao_checkout": 1,
+            "qualificacao": ""
+          },
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/cria-atualiza-deal-crm",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-17T12:50:11.761Z",
+  "versionId": "5fe965e6-42c8-4e4f-9a6b-9d673e397666"
+}
