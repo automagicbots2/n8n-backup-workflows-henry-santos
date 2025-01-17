@@ -420,7 +420,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_funil = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"] }}; -- Substitua \"1\" pelo ID do funil que você deseja pesquisar\n",
+        "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_etapa_funil = 1; -- Substitua \"1\" pelo ID do funil que você deseja pesquisar\n",
         "options": {}
       },
       "id": "68065d4b-28a9-4284-a5f4-3d4a15ed69cf",
@@ -706,7 +706,7 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "axios/1.7.4",
-            "content-length": "239",
+            "content-length": "375",
             "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
             "accept-encoding": "gzip, compress, deflate, br",
             "content-type": "application/json",
@@ -721,17 +721,17 @@
           "query": {},
           "body": {
             "id_funil": "10",
-            "id_user": 16,
-            "utm_source": "",
-            "utm_campaign": "",
-            "utm_term": "",
-            "utm_medium": "",
-            "utm_content": "",
-            "nome": "Mateus",
+            "id_user": 19,
+            "utm_source": "ig",
+            "utm_campaign": "[LF] [AD] [CAPTAÇÃO] [CADASTRO] [AUTO] [Q] Públicos Quentes Amplos",
+            "utm_term": "AD_AD0021",
+            "utm_medium": "Instagram_Stories",
+            "utm_content": "01 - [AUTO] [Q] Mix Enviou mensagem 90D A 365D",
+            "nome": "Bruna",
             "sobrenome": "",
-            "email": "mateusdiniz@automagicbots.com.br",
-            "telefone": "556281196678",
-            "instagram": "prmateusdiniz"
+            "email": "brunaadalgisa@hotmail.com",
+            "telefone": "5555469990432",
+            "instagram": "brunaadalgisa"
           },
           "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/cria-atualiza-crm",
           "executionMode": "production"
@@ -747,6 +747,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-16T17:49:05.214Z",
-  "versionId": "548cc48a-2573-417f-af99-6b15d6580d58"
+  "updatedAt": "2025-01-17T13:21:46.628Z",
+  "versionId": "ba8b65e2-00f3-48bc-b90f-6363558c7b29"
 }
