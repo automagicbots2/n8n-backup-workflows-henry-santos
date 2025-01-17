@@ -1,0 +1,888 @@
+{
+  "active": true,
+  "connections": {
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_users",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_variavel_n8n_fluxo_users": {
+      "main": [
+        [
+          {
+            "node": "cria_atualiza_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_atualiza_user": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_etapa_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_etapa_funil": {
+      "main": [
+        [
+          {
+            "node": "evento_checkout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "evento_checkout": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_produtos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "create_update_contact_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_variavel_n8n_fluxo_produtos": {
+      "main": [
+        [
+          {
+            "node": "busca_produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_produto": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_situacao_checkout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_situacao_checkout": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_crm": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_contact_crm",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "create_update_deal_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_contact_crm": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_contact_crm1": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_crm2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_contact_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_crm1": {
+      "main": [
+        [
+          {
+            "node": "create_update_deal_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_contact_crm2": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_deal_crm": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_contact_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-09-23T20:09:35.765Z",
+  "id": "1ivScbgYQ7pHArp4",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Henry Santos][Banco de Dados] - Fila de Ações de Funis",
+  "nodes": [
+    {
+      "parameters": {
+        "queue": "Fila de Ações de Funis",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": "={{ true }}",
+          "parallelMessages": 1
+        }
+      },
+      "id": "4e86c395-03e3-4a3b-9a82-ded1997588e1",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        260,
+        1040
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "9ZBMW8Zoa6820Xsp",
+          "name": "[RabbitMQ][2.0] - Henry Santos "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Verificação de Users"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "f67a4d8c-ce67-4ad9-8758-e9df99ba8de8",
+      "name": "pesquisa_variavel_n8n_fluxo_users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        500,
+        1040
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_users\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "instagram",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] || \"\" }}"
+            },
+            {
+              "name": "cpf",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"cpf\"] || \"\" }}"
+            },
+            {
+              "name": "cnpj",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"cnpj\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        1040
+      ],
+      "id": "a883fbdd-f625-4428-a78c-b70808718efb",
+      "name": "cria_atualiza_user"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "etapas_funil",
+          "mode": "list",
+          "cachedResultName": "etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"tipo_forms\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "86bdde17-5820-48a4-92eb-4e3d7dd742fe",
+      "name": "pesquisa_etapa_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        920,
+        1040
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e7b0e3df-3432-44b3-ad32-b20e0773aadd",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"tipo_forms\"] }}",
+              "rightValue": "Checkout",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1140,
+        1040
+      ],
+      "id": "1276e442-d3a7-424f-b58b-438e979f68e9",
+      "name": "evento_checkout"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Verificação de Produtos"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "235148a3-a2e5-4ac6-9682-f07c28742750",
+      "name": "pesquisa_variavel_n8n_fluxo_produtos",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1420,
+        800
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_produtos\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "product_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"product_id\"] }}"
+            },
+            {
+              "name": "product_name",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"product_name\"] }}"
+            },
+            {
+              "name": "value",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1640,
+        800
+      ],
+      "id": "cdc6acdd-1270-4d48-a2a9-170df25fee53",
+      "name": "busca_produto"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacoes_checkout",
+          "mode": "list",
+          "cachedResultName": "situacoes_checkout"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "column": "id_produto",
+              "value": "={{ $node[\"busca_produto\"].json[\"id\"] }}"
+            },
+            {
+              "column": "evento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "648a69eb-33aa-4924-bbe5-106cd719d7c5",
+      "name": "pesquisa_situacao_checkout",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1860,
+        800
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_contact_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2080,
+        800
+      ],
+      "id": "56ce158d-fa25-4b0c-b885-c4156b8224a1",
+      "name": "create_update_contact_crm"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_contact_crm\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "id_situacao_checkout",
+              "value": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"id\"]  || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2560,
+        640
+      ],
+      "id": "b0b9c2f7-869b-44ed-8aef-9679795a4637",
+      "name": "create_update_contact_crm1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_contact_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1420,
+        1140
+      ],
+      "id": "4c22c76d-16ed-4ca3-bb9f-32d14ba4d03b",
+      "name": "create_update_contact_crm2"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_contact_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "db8d060e-d8ff-4a7f-ac92-e26d46932055",
+      "name": "pesquisa_acao_create_update_contact_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2300,
+        640
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_contact_crm1\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1940,
+        1000
+      ],
+      "id": "087d65b0-c263-4ad0-bdeb-c4328c96cbb4",
+      "name": "create_update_contact_crm3"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_contact_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "95cf15f8-5c33-429d-8933-cbab041b563c",
+      "name": "pesquisa_acao_create_update_contact_crm1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1680,
+        1000
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_deal_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2300,
+        960
+      ],
+      "id": "c4cf3de1-196d-4f19-9437-52d609229188",
+      "name": "create_update_deal_crm"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_contact_crm2\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "id_situacao_checkout",
+              "value": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"id\"]  || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2840,
+        860
+      ],
+      "id": "e3ae383b-ca8d-4f80-a25a-ed7acdbb248a",
+      "name": "create_update_contact_crm4"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_contact_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "d3a005f1-4d44-450b-aae5-f3c4674e42dc",
+      "name": "pesquisa_acao_create_update_contact_crm2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2580,
+        860
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "chega_da_fila": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-5yQ3ZgbQS47v1mMtPPXCTQ",
+            "deliveryTag": 1,
+            "redelivered": false,
+            "exchange": "",
+            "routingKey": "Evento - Compra Aprovada"
+          },
+          "properties": {},
+          "content": {
+            "nome": "Gabriel",
+            "sobrenome": "Amaral",
+            "nome_completo": "Gabriel Amaral",
+            "email": "teste@automagicbots.com.br",
+            "telefone": "553185711260",
+            "cpf": "043.077.990-97",
+            "utm_source": "facebook",
+            "utm_campaign": "organico",
+            "utm_term": "",
+            "utm_medium": "reels",
+            "utm_content": "ia-sem-codigo",
+            "form_id": "VWG3786V07",
+            "form_name": "Planejamento estratégico 2025: Lucre sem enlouquecer com seu salão de beleza Autoadministrável - ÚNICO - Ingresso Único",
+            "value": 97.9,
+            "transaction_id": 83177165,
+            "net_value": 92.1,
+            "trans_status": "Compra Aprovada",
+            "payment_method": "PIX",
+            "refund_date": "",
+            "event_date": "2025-01-15 16:15:56",
+            "payment_date": "2025-01-15 16:16:09",
+            "product_type": "Cobrança única",
+            "product_id": 2615430,
+            "product_name": "Planejamento estratégico 2025: Lucre sem enlouquecer com seu salão de beleza Autoadministrável - ÚNICO - Ingresso Único",
+            "warranty_date": "2025-01-23",
+            "offer_code": 2615429,
+            "discount_coupon": "",
+            "street": "",
+            "address_number": "",
+            "country": "",
+            "district": "",
+            "address_complement": "",
+            "city": "",
+            "address_state": "",
+            "zipcode": "",
+            "affiliate_value": "",
+            "gateway_comission": 5.8,
+            "billet_barcode": "",
+            "currency": "BRL",
+            "bankslip": "",
+            "recurrenceExpirationDate": "",
+            "cancelledDate": "",
+            "id_funil": "12",
+            "tipo_forms": "Checkout",
+            "cnpj": "",
+            "id_forms": "4"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-17T01:18:38.063Z",
+  "versionId": "e1415b89-b2ed-4779-82fa-a50863dc1169"
+}
