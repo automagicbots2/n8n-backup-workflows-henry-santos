@@ -1,0 +1,811 @@
+{
+  "active": true,
+  "connections": {
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_base_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_contact": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_rotacionamento_colaboradores": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_etapa_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_etapa_funil": {
+      "main": [
+        [
+          {
+            "node": "consulta_sdr",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "existe_no_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "existe_no_crm": {
+      "main": [
+        [
+          {
+            "node": "atualiza_contato",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "cria_contato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "consulta_sdr": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_url_base_crm": {
+      "main": [
+        [
+          {
+            "node": "checkout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_contact": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_id_crm": {
+      "main": [
+        [
+          {
+            "node": "retorna_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_contato": {
+      "main": [
+        [
+          {
+            "node": "update_id_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "contato_nao_existe": {
+      "main": [
+        [
+          {
+            "node": "cria_contato1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "update_id_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_contato1": {
+      "main": [
+        [
+          {
+            "node": "update_id_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_contato": {
+      "main": [
+        [
+          {
+            "node": "contato_nao_existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "checkout": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_json_fields_contact1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_json_fields_contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_json_fields_contact1": {
+      "main": [
+        [
+          {
+            "node": "formata_campos_contact1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_campos_contact1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-16T23:42:24.693Z",
+  "id": "PKwkp3Ma4zlLF7R0",
+  "meta": null,
+  "name": "⌚[Henry Santos][KommoCRM] - Cria ou Atualiza Contatos",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "cria-atualiza-contact-crm",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -2580,
+        320
+      ],
+      "id": "345f583c-372f-487e-8c71-8fda5ce90a4a",
+      "name": "fluxo_chamado",
+      "webhookId": "ce9e0c49-3b01-40d1-a43e-0275d34030ce"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_crm_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_crm_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "contact"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1d980bd7-893e-4332-beff-81b94430a0c1",
+      "name": "pesquisa_json_fields_contact",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1880,
+        320
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_url_rotacionamento_colaboradores\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "time",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"nome\"].replace('Cadastro','SDR').replace('Aplicação','SDR').replace('Agendamento','Closer').replace('Pesquisa','SDR').replace('Checkout', 'Closer') }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -960,
+        320
+      ],
+      "id": "8850367a-58ca-435e-a060-7b3106c62b79",
+      "name": "consulta_sdr"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Rotacionamento de Colaboradores"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "59f93f0b-3231-45b1-8c1f-f4b9eb1e1640",
+      "name": "pesquisa_url_rotacionamento_colaboradores",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1420,
+        320
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "etapas_funil",
+          "mode": "list",
+          "cachedResultName": "etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "766f6ba1-b18f-421d-b888-baa7b831b11d",
+      "name": "pesquisa_etapa_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1180,
+        320
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "f38ed8fd-c99c-4d8a-82c9-1ac636d7f02b",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -720,
+        320
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f684eeae-7bf1-4946-86a7-d10259ff7122",
+              "leftValue": "={{ $node[\"pesquisa_user\"].json[\"id_contact_crm\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -480,
+        320
+      ],
+      "id": "7a3508ed-fb81-4516-91ed-7294eec592c4",
+      "name": "existe_no_crm"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL Base do CRM"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "ccbdc538-a9da-4224-be81-a68e87427efa",
+      "name": "pesquisa_url_base_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -2340,
+        320
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_contact\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nlet result = replacePlaceholders(template, payload);\n\n// Filtrar os objetos que têm valores inválidos no campo \"value\"\nresult = result.filter(field => {\n  // Obter o valor do campo\n  const value = field.values[0]?.value;\n\n  // Remover objetos se o campo for vazio ou contiver apenas \"+\"\n  if (value === '' || value === '+' || value === undefined || value === null) {\n    console.warn(`Removendo o campo vazio ou inválido: ${field.field_name}`);\n    return false; // Exclui o objeto do array\n  }\n  return true; // Mantém o objeto no array\n});\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1660,
+        320
+      ],
+      "id": "cd9faf45-c259-48a5-beeb-6b2a7fc6d988",
+      "name": "formata_campos_contact"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE users\nSET \n    id_contact_crm = {{ $node[\"cria_contato1\"].runIndex >= 0      ? $node[\"cria_contato1\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] :  $node[\"cria_contato\"].runIndex >= 0      ?  $node[\"cria_contato\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : $node[\"pesquisa_user\"].json[\"id_contact_crm\"] }},\n      data_atualizacao = CURRENT_TIMESTAMP -- Define a data/hora atual no formato TIMESTAMP\nWHERE \n    id = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }};",
+        "options": {}
+      },
+      "id": "61887f5a-3bc6-4e7f-a86e-933ef8aa00d3",
+      "name": "update_id_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        760,
+        260
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "41487899-9afe-4a75-980a-e25a254ef80b",
+              "name": "id_contact_crm",
+              "value": "={{ $node[\"cria_contato1\"].runIndex >= 0      ? $node[\"cria_contato1\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] :  $node[\"cria_contato\"].runIndex >= 0      ?  $node[\"cria_contato\"].json[\"_embedded\"][\"contacts\"][\"0\"][\"id\"] : $node[\"pesquisa_user\"].json[\"id_contact_crm\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        980,
+        260
+      ],
+      "id": "dcdaeb3f-2e1f-4504-abb2-b948dae3dbcd",
+      "name": "retorna_dados"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"first_name\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"nome\"] || \"\" }}\",\n        \"last_name\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sobrenome\"] || \"\" }}\",\n        \"name\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sobrenome\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"nome\"] + \" \" + $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sobrenome\"] : $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"nome\"] }}\",\n        \"responsible_user_id\": {{ $node[\"consulta_sdr\"].json[\"id_crm\"] }},\n        \"custom_fields_values\": {{ $node[\"formata_campos_contact\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_contact\"].json[\"custom_fields_values\"]) \n    : $node[\"formata_campos_contact1\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_contact1\"].json[\"custom_fields_values\"]) \n      : null }}\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "d0e0e47d-b4fb-42e4-b5a7-de8e69c66c87",
+      "name": "cria_contato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -220,
+        420
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d6c7cf5b-2480-41df-930b-933f0e3f1207",
+              "leftValue": "={{ $node[\"atualiza_contato\"].json[\"error\"][\"message\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        20,
+        -20
+      ],
+      "id": "44699547-e1ce-412f-be76-607ea5127216",
+      "name": "contato_nao_existe"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"first_name\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"nome\"] || \"\" }}\",\n        \"last_name\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sobrenome\"] || \"\" }}\",\n        \"name\": \"{{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sobrenome\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"nome\"] + \" \" + $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sobrenome\"] : $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"nome\"] }}\",\n        \"responsible_user_id\": {{ $node[\"consulta_sdr\"].json[\"id_crm\"] }},\n        \"custom_fields_values\": {{ $node[\"formata_campos_contact\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_contact\"].json[\"custom_fields_values\"]) \n    : $node[\"formata_campos_contact1\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_contact1\"].json[\"custom_fields_values\"]) \n      : null }}\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "818558c2-8f40-46d7-afb7-0da438c641f0",
+      "name": "cria_contato1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        220,
+        -160
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $node[\"pesquisa_url_base_crm\"].json[\"valor_variavel\"] }}contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n    {\n        \"id\": {{ $node[\"pesquisa_user\"].json[\"id_contact_crm\"] }},\n        \"responsible_user_id\": {{ $node[\"consulta_sdr\"].json[\"id_crm\"] }},\n        \"custom_fields_values\": {{ $node[\"formata_campos_contact\"].runIndex >= 0 \n    ? JSON.stringify($node[\"formata_campos_contact\"].json[\"custom_fields_values\"]) \n    : $node[\"formata_campos_contact1\"].runIndex >= 0 \n      ? JSON.stringify($node[\"formata_campos_contact1\"].json[\"custom_fields_values\"]) \n      : null }}\n    }\n]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "5e16a6bd-3525-4bee-98ed-c03e1eb27da6",
+      "name": "atualiza_contato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -220,
+        -20
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7ac6581d-d1e7-4377-a773-08ce146eeb4e",
+              "leftValue": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"tipo_forms\"] }}",
+              "rightValue": "Checkout",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2120,
+        320
+      ],
+      "id": "40a44249-2959-4246-b172-b6a831b45f0f",
+      "name": "checkout"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fields_crm_etapas_funil",
+          "mode": "list",
+          "cachedResultName": "fields_crm_etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_situacao_checkout",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}"
+            },
+            {
+              "column": "entidade",
+              "value": "contact"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "063d03bd-4116-45ed-adae-fe98fdb84288",
+      "name": "pesquisa_json_fields_contact1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1880,
+        120
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter o template do banco de dados\nlet template = $node[\"pesquisa_json_fields_contact1\"].json[\"payload_fields\"];\n\n// Verifique se o template é uma string JSON ou já um objeto\nif (typeof template === \"string\") {\n  template = JSON.parse(template); // Converte a string JSON em um objeto\n}\n\n// Obter os dados diretamente do \"body\" do webhook\nconst payload = $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"]; // Acessa o body diretamente\n\n// Função para substituir os placeholders no template\nconst replacePlaceholders = (template, data) => {\n  const stringified = JSON.stringify(template); // Converte o template para string\n  const replaced = stringified.replace(/{{\\s*(\\w+)\\s*}}/g, (_, key) => {\n    if (data[key] !== undefined) {\n      return data[key]; // Substitui pelo valor correspondente\n    } else {\n      console.warn(`Placeholder {{ ${key} }} não encontrado no payload.`); // Aviso se o placeholder não for encontrado\n      return ''; // Retorna vazio se o valor não existir\n    }\n  });\n  return JSON.parse(replaced); // Converte de volta para JSON\n};\n\n// Substituir os placeholders no template com os dados do webhook\nlet result = replacePlaceholders(template, payload);\n\n// Filtrar os objetos que têm valores inválidos no campo \"value\"\nresult = result.filter(field => {\n  // Obter o valor do campo\n  const value = field.values[0]?.value;\n\n  // Remover objetos se o campo for vazio ou contiver apenas \"+\"\n  if (value === '' || value === '+' || value === undefined || value === null) {\n    console.warn(`Removendo o campo vazio ou inválido: ${field.field_name}`);\n    return false; // Exclui o objeto do array\n  }\n  return true; // Mantém o objeto no array\n});\n\n// Retornar o resultado para o próximo node\nreturn {\n  custom_fields_values: result\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1660,
+        120
+      ],
+      "id": "a9f0abb9-e6c3-48f2-b874-75408812c68e",
+      "name": "formata_campos_contact1"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "359",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_etapa_funil": 1,
+            "id_funil": "12",
+            "id_user": 18,
+            "payload": {
+              "nome": "Gabriel",
+              "sobrenome": "",
+              "email": "gabriel995806@gmail.com",
+              "telefone": "553185711260",
+              "utm_source": "facebook",
+              "utm_campaign": "organico",
+              "utm_term": "ig",
+              "utm_medium": "reels",
+              "utm_content": "ia-sem-codigo",
+              "id_funil": "12",
+              "instagram": "amaraldasautomacoes",
+              "id_forms": "1",
+              "tipo_forms": "Cadastro"
+            }
+          },
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/cria-atualiza-contact-crm",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-17T00:36:08.711Z",
+  "versionId": "7caf47b3-e43c-45b2-a96b-d0986b01f379"
+}
