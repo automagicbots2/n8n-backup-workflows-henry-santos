@@ -1244,24 +1244,12 @@
     },
     "entra_na_fila11": {
       "main": [
-        [
-          {
-            "node": "notifica_SDR_Geriane1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "entra_na_fila1": {
       "main": [
-        [
-          {
-            "node": "notifica_SDR_Geriane1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "chega_da_fila": {
@@ -1269,6 +1257,28 @@
         [
           {
             "node": "cadastrar_contato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila12": {
+      "main": [
+        [
+          {
+            "node": "notifica_SDR_Geriane2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "entra_na_fila2": {
+      "main": [
+        [
+          {
+            "node": "notifica_SDR_Geriane2",
             "type": "main",
             "index": 0
           }
@@ -10268,6 +10278,34 @@
     },
     {
       "parameters": {
+        "url": "https://veronicaburgel15.kommo.com/api/v4/leads/custom_fields",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4120,
+        1460
+      ],
+      "id": "62eefbb1-0ece-403c-b1f1-e5ffbab72cc8",
+      "name": "pesquisar field_id",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "DaKU0ap36aS2tiDi",
+          "name": "[Henry Santos] - Kommo ouath 2"
+        }
+      }
+    },
+    {
+      "parameters": {
         "method": "POST",
         "url": "=https://apievolution.automagicbots.com.br/message/sendText/HenrySantos",
         "sendHeaders": true,
@@ -10317,42 +10355,14 @@
           }
         }
       },
-      "id": "c79cdffb-6d22-4c38-b406-f2b5b53cb898",
-      "name": "notifica_SDR_Geriane1",
+      "id": "a1fcb8c3-624c-4b00-a945-fd11efe2e606",
+      "name": "notifica_SDR_Geriane2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        6140,
-        3700
+        6180,
+        4340
       ],
       "typeVersion": 4
-    },
-    {
-      "parameters": {
-        "url": "https://veronicaburgel15.kommo.com/api/v4/leads/custom_fields",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "oAuth2Api",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        4120,
-        1460
-      ],
-      "id": "62eefbb1-0ece-403c-b1f1-e5ffbab72cc8",
-      "name": "pesquisar field_id",
-      "credentials": {
-        "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
-        }
-      }
     }
   ],
   "pinData": {
@@ -10537,6 +10547,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-12-10T18:55:16.827Z",
-  "versionId": "01e1f133-936e-4d24-b3b1-7b7eda97af55"
+  "updatedAt": "2025-01-17T20:46:10.279Z",
+  "versionId": "2c95b5a4-75d6-4413-aee6-ddc3ad87163d"
 }
