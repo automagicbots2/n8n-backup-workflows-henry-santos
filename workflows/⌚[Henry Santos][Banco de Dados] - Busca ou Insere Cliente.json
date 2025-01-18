@@ -1,0 +1,121 @@
+{
+  "active": true,
+  "connections": {
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "executa_procedure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "executa_procedure": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-17T22:15:04.903Z",
+  "id": "vWwdvNaphRPwZkjb",
+  "meta": null,
+  "name": "⌚[Henry Santos][Banco de Dados] - Busca ou Insere Cliente",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "add-customer-bd",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -660,
+        180
+      ],
+      "id": "6992fbf9-f05c-4aab-9b16-d0ee238cb3c8",
+      "name": "fluxo_chamado",
+      "webhookId": "4444154f-7de3-49ca-8e36-944610f0eb5b"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CALL busca_cliente('{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_conversao\"] }}');",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -440,
+        180
+      ],
+      "id": "7fc1f27b-0cf9-4f6a-8d03-dbf8b74a1474",
+      "name": "executa_procedure",
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        180
+      ],
+      "id": "8053b55f-75e7-4927-aa1f-7c0d1f0294b7",
+      "name": "Limit"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "53",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_user": 29,
+            "data_conversao": "2025-01-15 16:16:09"
+          },
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/add-customer-bd",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-18T00:05:54.603Z",
+  "versionId": "790856f2-e9e0-4714-81ed-98e30639f95b"
+}
