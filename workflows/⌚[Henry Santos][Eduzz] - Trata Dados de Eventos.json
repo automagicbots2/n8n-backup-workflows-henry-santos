@@ -252,6 +252,10 @@
             {
               "name": "id_forms",
               "value": "={{ $node[\"busca_funil\"].json[\"id_forms\"] || \"\" }}"
+            },
+            {
+              "name": "installments",
+              "value": "={{ $node[\"formata_dados\"].json[\"installments\"] || \"\" }}"
             }
           ]
         },
@@ -575,6 +579,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-17T00:27:04.677Z",
-  "versionId": "93d7cf47-a6c4-4620-a3e7-166b13c0e198"
+  "updatedAt": "2025-01-18T00:38:30.820Z",
+  "versionId": "f127c4aa-1874-4c12-a01d-25142af7048e"
 }
