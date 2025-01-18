@@ -1,0 +1,141 @@
+{
+  "active": true,
+  "connections": {
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "executa_procedure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "executa_procedure": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-17T20:37:55.159Z",
+  "id": "88JYFJPrJjwlaFJ3",
+  "meta": null,
+  "name": "⌚[Henry Santos][Banco de Dados] - Busca ou Insere Conversão",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "add-conversion-bd",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -660,
+        180
+      ],
+      "id": "042adcdc-8808-4ee2-9109-fd31b67b8ffd",
+      "name": "fluxo_chamado",
+      "webhookId": "d6fc03ca-a4ba-4e0c-90d9-a7117cad574b"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CALL busca_conversao('{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_transacao_checkout\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_funil\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_produto\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"valor\"] }}', {{ $node[\"fluxo_chamado\"].json[\"body\"][\"parcelas\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"parcelas\"] : null }}, '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"oferta\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"oferta\"] : null }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"comissao_gateway\"] }}', {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_vendedor\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_vendedor\"] : null }}, '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"moeda\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"forma_de_pagamento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"status_da_compra\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_garantia\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_conversao\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"utm_source\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"utm_campaign\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"utm_term\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"utm_medium\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"utm_content\"] }}');",
+        "options": {
+          "detailedOutput": false
+        }
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -440,
+        180
+      ],
+      "id": "85c86a1b-7665-496e-87d6-b4eea741369a",
+      "name": "executa_procedure",
+      "credentials": {
+        "mySql": {
+          "id": "gBeJmlfVOrdUXALL",
+          "name": "[MySQL][2.0] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        180
+      ],
+      "id": "bcb45710-02ac-46d2-bc13-536c8644b84f",
+      "name": "Limit"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "439",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "b71525949d32",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_transacao_checkout": 83177165,
+            "id_user": 29,
+            "id_cliente": 1,
+            "id_funil": "12",
+            "id_produto": 10,
+            "valor": 97.9,
+            "comissao_gateway": 5.8,
+            "id_vendedor": "",
+            "moeda": "BRL",
+            "forma_de_pagamento": "PIX",
+            "status_da_compra": "Compra Aprovada",
+            "data_garantia": "2025-01-24",
+            "data_conversao": "2025-01-15 16:16:09",
+            "utm_source": "facebook",
+            "utm_campaign": "organico",
+            "utm_term": "",
+            "utm_medium": "reels",
+            "utm_content": "ia-sem-codigo",
+            "parcelas": "",
+            "oferta": 2615429
+          },
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/add-conversion-bd",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "9WrqNFN2jagHPbWV"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-18T01:42:53.256Z",
+  "versionId": "915911bc-9990-409c-95a6-9e122fd8f0d4"
+}
