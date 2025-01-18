@@ -522,7 +522,18 @@
       "main": [
         [
           {
-            "node": "add_conversion_bd3",
+            "node": "add_subscription_bd1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_conversion_bd1": {
+      "main": [
+        [
+          {
+            "node": "add_subscription_bd",
             "type": "main",
             "index": 0
           }
@@ -2065,105 +2076,6 @@
     },
     {
       "parameters": {
-        "url": "={{ $node[\"pesquisa_acao_add_subscription_bd\"].json[\"endpoint_workflow\"] }}",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "id_transacao_checkout",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] || \"\" }}"
-            },
-            {
-              "name": "id_user",
-              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
-            },
-            {
-              "name": "id_cliente",
-              "value": "={{ $node[\"add_customer_bd1\"].json[\"id\"] }}"
-            },
-            {
-              "name": "id_funil",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
-            },
-            {
-              "name": "id_produto",
-              "value": "={{ $node[\"busca_produto\"].json[\"id\"] }}"
-            },
-            {
-              "name": "valor",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] || \"\" }}"
-            },
-            {
-              "name": "comissao_gateway",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] || \"\" }}"
-            },
-            {
-              "name": "id_vendedor",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_vendedor\"] || \"\" }}"
-            },
-            {
-              "name": "moeda",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"currency\"] || \"\" }}"
-            },
-            {
-              "name": "forma_de_pagamento",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_method\"] || \"\" }}"
-            },
-            {
-              "name": "status_da_compra",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
-            },
-            {
-              "name": "data_garantia",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"warranty_date\"] || \"\" }}"
-            },
-            {
-              "name": "data_conversao",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_date\"] || $node[\"chega_da_fila\"].json[\"content\"][\"event_date\"] }}"
-            },
-            {
-              "name": "utm_source",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] || \"\" }}"
-            },
-            {
-              "name": "utm_campaign",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] || \"\" }}"
-            },
-            {
-              "name": "utm_term",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] || \"\" }}"
-            },
-            {
-              "name": "utm_medium",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] || \"\" }}"
-            },
-            {
-              "name": "utm_content",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] || \"\" }}"
-            },
-            {
-              "name": "parcelas",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"installments\"] || \"\" }}"
-            },
-            {
-              "name": "oferta",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"offer_code\"] || \"\" }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        3880,
-        1740
-      ],
-      "id": "e613e797-9e9c-41f5-9e09-829b0e084221",
-      "name": "add_conversion_bd3"
-    },
-    {
-      "parameters": {
         "conditions": {
           "options": {
             "caseSensitive": true,
@@ -2233,16 +2145,38 @@
     },
     {
       "parameters": {
-        "content": "## Parei aqui"
+        "url": "={{ $node[\"pesquisa_acao_add_subscription_bd\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_conversao",
+              "value": "={{ $node[\"add_conversion_bd1\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_produto",
+              "value": "={{ $node[\"busca_produto\"].json[\"id\"] }}"
+            },
+            {
+              "name": "data_conversao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_date\"] }}"
+            },
+            {
+              "name": "data_expiracao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"recurrenceExpirationDate\"] }}"
+            }
+          ]
+        },
+        "options": {}
       },
-      "type": "n8n-nodes-base.stickyNote",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
-        3400,
-        2000
+        3880,
+        1740
       ],
-      "typeVersion": 1,
-      "id": "22d12a79-79ff-45e7-99bf-ef623aac40e9",
-      "name": "Sticky Note"
+      "id": "e613e797-9e9c-41f5-9e09-829b0e084221",
+      "name": "add_subscription_bd1"
     }
   ],
   "pinData": {
@@ -2322,6 +2256,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-18T01:49:39.577Z",
-  "versionId": "db4489bb-e432-404c-955e-a90e77eb71bf"
+  "updatedAt": "2025-01-18T14:39:57.002Z",
+  "versionId": "fe1e7c60-319c-4a20-8601-ab063806a2ec"
 }
