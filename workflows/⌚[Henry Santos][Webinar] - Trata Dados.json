@@ -56,6 +56,17 @@
         ]
       ]
     },
+    "dados1": {
+      "main": [
+        [
+          {
+            "node": "fila_acoes_funis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "formata_dados1": {
       "main": [
         [
@@ -94,17 +105,6 @@
         [
           {
             "node": "formata_dados1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "dados1": {
-      "main": [
-        [
-          {
-            "node": "fila_acoes_funis",
             "type": "main",
             "index": 0
           }
@@ -192,18 +192,24 @@
               "name": "id_forms",
               "value": "={{ $node[\"busca_funil\"].json[\"id_forms\"] }}",
               "type": "string"
+            },
+            {
+              "id": "464b468a-0f7e-4356-ac60-6e673bfcb2b5",
+              "name": "tipo_forms",
+              "value": "={{ $node[\"busca_funil\"].json[\"tipo_forms\"] }}",
+              "type": "string"
             }
           ]
         },
         "options": {}
       },
-      "id": "39cd1289-ffe8-4ff1-9614-b8484064cd83",
+      "id": "495ad5aa-ac60-4641-a8e6-26562efc64d9",
       "name": "dados",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1000,
-        -140
+        840,
+        0
       ]
     },
     {
@@ -213,15 +219,15 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        380,
-        -140
+        220,
+        0
       ],
-      "id": "e473ce03-b1bc-4992-831e-bbe77511c866",
+      "id": "efae945e-4130-4703-8255-8bf86992e45a",
       "name": "formata_dados"
     },
     {
       "parameters": {
-        "queue": "Fila de Ações - Webinar Jan 2025",
+        "queue": "Fila de Ações de Funis",
         "options": {
           "arguments": {
             "argument": [
@@ -234,13 +240,13 @@
           "durable": true
         }
       },
-      "id": "5bc57403-cbfe-4aa8-805e-3535bfaabdaa",
+      "id": "26e88a7d-cbbb-4554-90b1-d5e0c3a73593",
       "name": "fila_acoes_funis",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        1200,
-        -140
+        1040,
+        0
       ],
       "credentials": {
         "rabbitmq": {
@@ -266,10 +272,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        800,
-        -140
+        640,
+        0
       ],
-      "id": "350f5322-1334-423a-a21d-642c6e3e403c",
+      "id": "c16704f6-da9b-4763-8707-d16717ddbcca",
       "name": "busca_funil"
     },
     {
@@ -292,13 +298,13 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "3ddcdcfc-7dea-488c-a541-4aec9a3a2eb6",
+      "id": "22bcc9b6-90c7-4d52-b46b-ad0e9f832cc9",
       "name": "pesquisa_variavel_n8n_fluxo_funis",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        600,
-        -140
+        440,
+        0
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -317,10 +323,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        160,
-        -140
+        0,
+        0
       ],
-      "id": "a9de3a1f-3ae1-4eae-b899-c1a942160eb9",
+      "id": "7166d45a-4727-47ba-9e6c-de6896713de8",
       "name": "cadastro_na_lp",
       "webhookId": "98d58395-d359-46d4-ae63-3f9e9e46bea3"
     },
@@ -399,31 +405,37 @@
               "name": "id_forms",
               "value": "={{ $node[\"busca_funil1\"].json[\"id_forms\"] }}",
               "type": "string"
+            },
+            {
+              "id": "9b649a2f-41ee-422c-8b7f-683b4be2dd7f",
+              "name": "tipo_forms",
+              "value": "={{ $node[\"busca_funil1\"].json[\"tipo_forms\"] }}",
+              "type": "string"
             }
           ]
         },
         "options": {}
       },
-      "id": "da191491-a168-4362-b85d-42ecd7b068e4",
+      "id": "fe51271a-9c3c-4fb6-a623-8e2c0fc50c9f",
       "name": "dados1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1000,
-        100
+        840,
+        240
       ]
     },
     {
       "parameters": {
-        "jsCode": "const fullNameAnswer = $node[\"cadastro_no_manychat\"].json[\"body\"][\"nome\"] || \"\";\nconst emailAnswer = $node[\"cadastro_no_manychat\"].json[\"body\"][\"email\"] || \"\";\nconst telefoneClienteOriginal = $node[\"cadastro_no_manychat\"].json[\"body\"][\"telefone\"]|| \"\";\nconst instagramAnswer = $node[\"cadastro_no_manychat\"].json[\"body\"][\"Instagram\"] || \"\";\nconst cpfAnswer = $node[\"cadastro_no_manychat\"].json[\"body\"][\"CPF\"] || \"\";\nconst cnpjAnswer = $node[\"cadastro_no_manychat\"].json[\"body\"][\"CNPJ\"] || \"\";\n\nfunction capitalizeName(fullName) {\n    if (typeof fullName === 'undefined') {\n        return { fname: '', lname: '', fullname: '' };\n    }\n\n    const lowerCaseWords = ['da', 'de', 'do', 'di', 'du'];\n    let words = fullName.toLowerCase().split(' ').map((word, index) => {\n        if (lowerCaseWords.includes(word) && index !== 0) {\n            return word;\n        }\n        return word.charAt(0).toUpperCase() + word.slice(1);\n    });\n\n    let fname = words.shift();\n    let lname = words.join(' ');\n\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\nfunction formatEmail(email) {\n    return email.toLowerCase().trim();\n}\n\nfunction formatInstagram(instagram) {\n    return instagram.toLowerCase().replace(/^@/, \"\");\n}\n\nfunction formatCPF(cpf) {\n    const cpfLimpo = cpf.replace(/\\D/g, \"\");\n    if (cpfLimpo.length === 11) {\n        return `${cpfLimpo.slice(0, 3)}.${cpfLimpo.slice(3, 6)}.${cpfLimpo.slice(6, 9)}-${cpfLimpo.slice(9, 11)}`;\n    }\n    return cpf;\n}\n\nfunction formatCNPJ(cnpj) {\n    const cnpjLimpo = cnpj.replace(/\\D/g, \"\");\n    if (cnpjLimpo.length === 14) {\n        return `${cnpjLimpo.slice(0, 2)}.${cnpjLimpo.slice(2, 5)}.${cnpjLimpo.slice(5, 8)}/${cnpjLimpo.slice(8, 12)}-${cnpjLimpo.slice(12, 14)}`;\n    }\n    return cnpj;\n}\n\nlet telefoneFinal = \"\";\n\nif (telefoneClienteOriginal) {\n    const telefoneLimpo = telefoneClienteOriginal.replace(/\\D/g, \"\");\n\n    let DDI = '';\n    let DDD = '';\n    let numero = '';\n\n    if (telefoneLimpo.length > 11) {\n        DDI = telefoneLimpo.slice(0, 2);\n        DDD = telefoneLimpo.slice(2, 4);\n        numero = telefoneLimpo.slice(4);\n    } else if (telefoneLimpo.length === 11) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else if (telefoneLimpo.length === 10) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else {\n        telefoneFinal = telefoneLimpo;\n    }\n\n    if (DDD && numero) {\n        if (parseInt(DDD) > 28) {\n            if (numero.length === 9 && numero.startsWith(\"9\")) {\n                numero = numero.slice(1);\n            }\n        } else {\n            if (numero.length === 8) {\n                numero = `9${numero}`;\n            }\n        }\n    }\n\n    if (DDI && DDD && numero) {\n        telefoneFinal = `${DDI}${DDD}${numero}`;\n    }\n}\n\nconst formattedNames = capitalizeName(fullNameAnswer);\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedInstagram = formatInstagram(instagramAnswer);\nconst formattedCPF = formatCPF(cpfAnswer);\nconst formattedCNPJ = formatCNPJ(cnpjAnswer);\nconst utm_source = $node[\"cadastro_no_manychat\"].json[\"body\"][\"utm_source\"] || \"\";\nconst utm_campaign = $node[\"cadastro_no_manychat\"].json[\"body\"][\"utm_campaign\"] || \"\";\nconst utm_medium = $node[\"cadastro_no_manychat\"].json[\"body\"][\"utm_medium\"] || \"\";\nconst utm_term = $node[\"cadastro_no_manychat\"].json[\"body\"][\"utm_term\"] || \"\";\nconst utm_content = $node[\"cadastro_no_manychat\"].json[\"body\"][\"utm_content\"] || \"\";\nconst form_id = $node[\"cadastro_no_manychat\"].json[\"body\"][\"form_id\"] || \"\";\nconst form_name = $node[\"cadastro_no_manychat\"].json[\"body\"][\"form_name\"] || \"\";\n\nconst result = {\n    ...formattedNames,\n    email: formattedEmail,\n    whatsapp: telefoneFinal,\n    instagram: formattedInstagram,\n    cpf: formattedCPF,\n    cnpj: formattedCNPJ,\n    utm_source: utm_source,\n    utm_campaign: utm_campaign,\n    utm_term: utm_term,\n    utm_medium: utm_medium,\n    utm_content: utm_content,\n    form_id: \"manychat\",\n    form_name: \"[IG] - Webinário Janeiro 2025\"\n};\n\nreturn [{ json: result }];\n"
+        "jsCode": "const fullNameAnswer = $node[\"cadastro_no_manychat\"].json[\"body\"][\"nome\"] || \"\";\nconst emailAnswer = $node[\"cadastro_no_manychat\"].json[\"body\"][\"email\"] || \"\";\nconst telefoneClienteOriginal = $node[\"cadastro_no_manychat\"].json[\"body\"][\"telefone\"]|| \"\";\nconst instagramAnswer = $node[\"cadastro_no_manychat\"].json[\"body\"][\"Instagram\"] || \"\";\nconst cpfAnswer = $node[\"cadastro_no_manychat\"].json[\"body\"][\"CPF\"] || \"\";\nconst cnpjAnswer = $node[\"cadastro_no_manychat\"].json[\"body\"][\"CNPJ\"] || \"\";\n\nfunction capitalizeName(fullName) {\n    if (typeof fullName === 'undefined') {\n        return { fname: '', lname: '', fullname: '' };\n    }\n\n    const lowerCaseWords = ['da', 'de', 'do', 'di', 'du'];\n    let words = fullName.toLowerCase().split(' ').map((word, index) => {\n        if (lowerCaseWords.includes(word) && index !== 0) {\n            return word;\n        }\n        return word.charAt(0).toUpperCase() + word.slice(1);\n    });\n\n    let fname = words.shift();\n    let lname = words.join(' ');\n\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\nfunction formatEmail(email) {\n    return email.toLowerCase().trim();\n}\n\nfunction formatInstagram(instagram) {\n    return instagram.toLowerCase().replace(/^@/, \"\");\n}\n\nfunction formatCPF(cpf) {\n    const cpfLimpo = cpf.replace(/\\D/g, \"\");\n    if (cpfLimpo.length === 11) {\n        return `${cpfLimpo.slice(0, 3)}.${cpfLimpo.slice(3, 6)}.${cpfLimpo.slice(6, 9)}-${cpfLimpo.slice(9, 11)}`;\n    }\n    return cpf;\n}\n\nfunction formatCNPJ(cnpj) {\n    const cnpjLimpo = cnpj.replace(/\\D/g, \"\");\n    if (cnpjLimpo.length === 14) {\n        return `${cnpjLimpo.slice(0, 2)}.${cnpjLimpo.slice(2, 5)}.${cnpjLimpo.slice(5, 8)}/${cnpjLimpo.slice(8, 12)}-${cnpjLimpo.slice(12, 14)}`;\n    }\n    return cnpj;\n}\n\nlet telefoneFinal = \"\";\n\nif (telefoneClienteOriginal) {\n    const telefoneLimpo = telefoneClienteOriginal.replace(/\\D/g, \"\");\n\n    let DDI = '';\n    let DDD = '';\n    let numero = '';\n\n    if (telefoneLimpo.length > 11) {\n        DDI = telefoneLimpo.slice(0, 2);\n        DDD = telefoneLimpo.slice(2, 4);\n        numero = telefoneLimpo.slice(4);\n    } else if (telefoneLimpo.length === 11) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else if (telefoneLimpo.length === 10) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else {\n        telefoneFinal = telefoneLimpo;\n    }\n\n    if (DDD && numero) {\n        if (parseInt(DDD) > 28) {\n            if (numero.length === 9 && numero.startsWith(\"9\")) {\n                numero = numero.slice(1);\n            }\n        } else {\n            if (numero.length === 8) {\n                numero = `9${numero}`;\n            }\n        }\n    }\n\n    if (DDI && DDD && numero) {\n        telefoneFinal = `${DDI}${DDD}${numero}`;\n    }\n}\n\nconst formattedNames = capitalizeName(fullNameAnswer);\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedInstagram = formatInstagram(instagramAnswer);\nconst formattedCPF = formatCPF(cpfAnswer);\nconst formattedCNPJ = formatCNPJ(cnpjAnswer);\nconst utm_source = $node[\"cadastro_no_manychat\"].json[\"body\"][\"utm_source\"] || \"\";\nconst utm_campaign = $node[\"cadastro_no_manychat\"].json[\"body\"][\"utm_campaign\"] || \"\";\nconst utm_medium = $node[\"cadastro_no_manychat\"].json[\"body\"][\"utm_medium\"] || \"\";\nconst utm_term = $node[\"cadastro_no_manychat\"].json[\"body\"][\"utm_term\"] || \"\";\nconst utm_content = $node[\"cadastro_no_manychat\"].json[\"body\"][\"utm_content\"] || \"\";\nconst form_id = $node[\"cadastro_no_manychat\"].json[\"body\"][\"form_id\"] || \"\";\nconst form_name = $node[\"cadastro_no_manychat\"].json[\"body\"][\"form_name\"] || \"\";\n\nconst result = {\n    ...formattedNames,\n    email: formattedEmail,\n    whatsapp: telefoneFinal,\n    instagram: formattedInstagram,\n    cpf: formattedCPF,\n    cnpj: formattedCNPJ,\n    utm_source: \"manychat\",\n    utm_campaign: \"quente\",\n    utm_term: \"audiencia-ig\",\n    utm_medium: \"direct\",\n    utm_content: \"automacao-planejamento\",\n    form_id: \"manychat\",\n    form_name: \"[IG] - Webinário Janeiro 2025\"\n};\n\nreturn [{ json: result }];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        380,
-        100
+        220,
+        240
       ],
-      "id": "efe230b6-1da7-4de1-b092-475030fe0449",
+      "id": "b93abbc2-6cbd-4adb-beea-79d5fa6ef28c",
       "name": "formata_dados1"
     },
     {
@@ -443,10 +455,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        800,
-        100
+        640,
+        240
       ],
-      "id": "de14ba8b-e405-4ca0-b40a-d0d33d1c700d",
+      "id": "0d4079b7-c40b-4166-b92e-453e6f18571d",
       "name": "busca_funil1"
     },
     {
@@ -469,13 +481,13 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "461b9edb-742e-4688-b3c8-93976c77f294",
+      "id": "9669595b-6469-49d6-8a2d-5f53e6d2c677",
       "name": "pesquisa_variavel_n8n_fluxo_funis1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        600,
-        100
+        440,
+        240
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -494,10 +506,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        160,
-        100
+        0,
+        240
       ],
-      "id": "db90720c-0f6e-4c97-98a9-df389b6d174c",
+      "id": "a6b27663-57c0-4aa9-bd44-5a54c0ce009e",
       "name": "cadastro_no_manychat",
       "webhookId": "98d58395-d359-46d4-ae63-3f9e9e46bea3"
     }
@@ -552,7 +564,7 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "ManyChat",
-            "content-length": "96",
+            "content-length": "125",
             "content-type": "application/json; charset=utf-8",
             "x-forwarded-for": "18.197.40.138",
             "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
@@ -565,9 +577,10 @@
           "params": {},
           "query": {},
           "body": {
-            "nome": "Mateus",
-            "email": "mateusdiniz@automagicbots.com.br",
-            "telefone": "62981196678"
+            "nome": "Gabriel",
+            "email": "teste@automagicbots.com.br",
+            "telefone": "31985711260",
+            "Instagram": "amaraldasautomacoes"
           },
           "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/cadastro-webinario-manychat",
           "executionMode": "production"
@@ -583,6 +596,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-01-15T20:53:30.110Z",
-  "versionId": "d3f87880-1ddd-4112-a77d-9e8ad6d1492e"
+  "updatedAt": "2025-01-17T20:24:57.323Z",
+  "versionId": "d83277c4-9c71-419a-90a1-824be4587097"
 }
