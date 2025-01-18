@@ -290,7 +290,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_situacao_checkout = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}; -- Substitua \"1\" pelo ID do funil que você deseja pesquisar\n",
+        "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_situacao_checkout = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}\n    AND t.entidade = 'contact';",
         "options": {}
       },
       "id": "fafde930-eef2-4777-8a0f-8b672d2f0908",
@@ -353,7 +353,7 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "axios/1.7.4",
-            "content-length": "33",
+            "content-length": "58",
             "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
             "accept-encoding": "gzip, compress, deflate, br",
             "content-type": "application/json",
@@ -367,8 +367,9 @@
           "params": {},
           "query": {},
           "body": {
-            "id_etapa_funil": 1,
-            "id_user": 18
+            "id_etapa_funil": 2,
+            "id_user": 18,
+            "id_situacao_checkout": 1
           },
           "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/add-tag-contact-crm",
           "executionMode": "production"
@@ -384,6 +385,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-17T13:54:55.454Z",
-  "versionId": "8267ec53-5dca-4db9-a611-717cd3ea0621"
+  "updatedAt": "2025-01-17T18:19:32.637Z",
+  "versionId": "5dd39592-07fd-4b7b-9d33-e53eb6747ebf"
 }
