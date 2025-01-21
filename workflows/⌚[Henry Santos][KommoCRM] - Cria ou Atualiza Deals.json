@@ -14,7 +14,13 @@
     },
     "fluxo_chamado": {
       "main": [
-        []
+        [
+          {
+            "node": "pesquisa_url_base_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "pesquisa_json_fields_deal": {
@@ -1417,7 +1423,7 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "axios/1.7.4",
-            "content-length": "1342",
+            "content-length": "472",
             "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
             "accept-encoding": "gzip, compress, deflate, br",
             "content-type": "application/json",
@@ -1431,58 +1437,24 @@
           "params": {},
           "query": {},
           "body": {
-            "id_etapa_funil": 2,
+            "id_etapa_funil": 1,
             "id_funil": "12",
-            "id_user": 18,
+            "id_user": 57,
             "payload": {
-              "nome": "Gabriel",
-              "sobrenome": "Amaral",
-              "nome_completo": "Gabriel Amaral",
-              "email": "teste@automagicbots.com.br",
-              "telefone": "553185711260",
-              "cpf": "043.077.990-97",
-              "utm_source": "facebook",
-              "utm_campaign": "organico",
-              "utm_term": "",
-              "utm_medium": "reels",
-              "utm_content": "ia-sem-codigo",
-              "form_id": "VWG3786V07",
-              "form_name": "Planejamento estratégico 2025: Lucre sem enlouquecer com seu salão de beleza Autoadministrável - ÚNICO - Ingresso Único",
-              "value": 97.9,
-              "transaction_id": 83177165,
-              "net_value": 92.1,
-              "trans_status": "Compra Aprovada",
-              "payment_method": "PIX",
-              "refund_date": "",
-              "event_date": "2025-01-15 16:15:56",
-              "payment_date": "2025-01-15 16:16:09",
-              "product_type": "Cobrança única",
-              "product_id": 2615430,
-              "product_name": "Planejamento estratégico 2025: Lucre sem enlouquecer com seu salão de beleza Autoadministrável - ÚNICO - Ingresso Único",
-              "warranty_date": "2025-01-23",
-              "offer_code": 2615429,
-              "discount_coupon": "",
-              "street": "",
-              "address_number": "",
-              "country": "",
-              "district": "",
-              "address_complement": "",
-              "city": "",
-              "address_state": "",
-              "zipcode": "",
-              "affiliate_value": "",
-              "gateway_comission": 5.8,
-              "billet_barcode": "",
-              "currency": "BRL",
-              "bankslip": "",
-              "recurrenceExpirationDate": "",
-              "cancelledDate": "",
+              "nome": "Tamies",
+              "sobrenome": "",
+              "email": "tamires.ferreira.jacinto@gmail.com",
+              "telefone": "558781528104",
+              "utm_source": "ig",
+              "utm_campaign": "[LF] [WB] [WB0125] [CAPTAÇÃO] [VENDAS] [AUTO] [Q] Públicos Quentes Cluster",
+              "utm_term": "WB0125_AD008",
+              "utm_medium": "Instagram_Feed",
+              "utm_content": "01 - [AUTO] [Q] Seguidores",
               "id_funil": "12",
-              "tipo_forms": "Checkout",
-              "cnpj": "",
-              "id_forms": "4"
+              "instagram": "tamiresfj",
+              "id_forms": "1",
+              "tipo_forms": "Cadastro"
             },
-            "id_situacao_checkout": 1,
             "qualificacao": ""
           },
           "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/cria-atualiza-deal-crm",
@@ -1499,6 +1471,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-20T14:24:04.086Z",
-  "versionId": "3c1d9909-00b0-4848-af14-b7f46879af86"
+  "updatedAt": "2025-01-20T21:08:31.361Z",
+  "versionId": "cf1da28c-7d91-4410-9327-4d031ee32f67"
 }
