@@ -10894,7 +10894,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n  searchUTMs(json);\n  return utmParams;\n}\n\n// Função para formatar o telefone e extrair DDD sem duplicação de DDI\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\"); // Remove caracteres não numéricos\n  const hasDDI = telefoneLimpo.startsWith(\"55\");\n  const ddi = hasDDI ? \"\" : \"55\"; // Adiciona DDI apenas se o telefone não começar com \"55\"\n  const numeroComDDD = hasDDI ? telefoneLimpo : ddi + telefoneLimpo;\n  return numeroComDDD;\n}\n\n// Função para determinar a qualificação ajustada\nfunction determinarQualificacao(faturamento, situacaoAtual) {\n  if (!faturamento) return \"Desqualificado\";\n\n  const faturamentoAcima50k = faturamento === \"Entre R$50.001 e R$100.000\" || faturamento === \"+ de R$100.000\";\n  const faturamentoEntre25k50k = faturamento === \"Entre R$25.001 e R$50.000\";\n  const faturamentoEntre15k25k = faturamento === \"Entre R$15.001 e R$25.000\";\n  const faturamentoAte15k = faturamento === \"Até R$15.000\";\n\n  // Regras de qualificação\n  if (faturamentoAcima50k) {\n    return \"Extremamente Qualificado\";\n  }\n\n  if (faturamentoEntre25k50k || situacaoAtual.includes(\"investidor\")) {\n    return \"Qualificado\";\n  }\n\n  if (faturamentoEntre15k25k && situacaoAtual === \"Tenho planejamento e estou disposto a investir\") {\n    return \"Neutro\";\n  }\n\n  if (faturamentoAte15k || (faturamentoEntre15k25k && situacaoAtual !== \"Tenho planejamento e estou disposto a investir\")) {\n    return \"Desqualificado\";\n  }\n\n  return \"Desqualificado\";\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"08e4870b-ab4b-45be-ba1e-1448ebbaf37f\")?.phone_number || \"\";\nconst telefoneFormatado = extrairDddETelefone(telefoneAnswer);\n\n// Obter o campo de situação atual (ref d266ed65-df25-4fd6-ab22-dec519d096cd)\nconst situacaoAtual = respostas.find(answer => answer.field.ref === \"d266ed65-df25-4fd6-ab22-dec519d096cd\")?.choice.label || \"\";\n\n// Extrair a resposta do campo inicio_mentoria\nconst inicioMentoria = respostas.find(answer => answer.field.ref === \"3b4dab3c-fbf1-44dc-970a-94803a2c658b\")?.choice.label || \"\";\n\n// Obter a data atual e subtrair 15 dias para gerar `dataFormatada`\nconst dataAtual = new Date();\ndataAtual.setDate(dataAtual.getDate() - 15);\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0');\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Montar o objeto de output com os campos atualizados\nlet output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"ff8b728c-119a-4ddc-9183-0c36a3d53748\")?.text || \"\"),\n  telefone: telefoneFormatado,\n  email: respostas.find(answer => answer.field.ref === \"8fc2dc13-0b36-413f-aba7-5b08344f5097\")?.email || '',\n  momento_atual: situacaoAtual,  // Mantendo o campo de momento_atual\n  situacao_atual: situacaoAtual,  // Novo campo com o valor da situação atual\n  porque_voce: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace(/@/g, \"\") || \"\",\n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  promocao_black_friday: respostas.find(answer => answer.field.ref === \"6bb1a2d8-3e8a-4eda-91fd-2054e491e35e\")?.choice.label || \"\",\n  plano_mentoria: respostas.find(answer => answer.field.ref === \"5e78a656-8fa3-4eda-91fd-2054e491e35e\")?.text || \"\",\n  investimento_compromete_fluxo: respostas.find(answer => answer.field.ref === \"7f0aa59a-b2c4-4c61-8e0f-e620db6e010e\")?.choice.label || \"\",\n  inicio_mentoria: inicioMentoria,\n  data_ultima_quinzena: dataFormatada,  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\",\n  Ending: inputData.body.form_response.ending.ref || \"\"\n};\n\n// Adicionar a qualificação com base em `faturamento` e `situacaoAtual`\noutput.qualificacao = determinarQualificacao(output.faturamento, output.situacao_atual);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output = { ...output, Pais: \"Portugal\" };\n}\n\nreturn [output];\n"
+        "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n  searchUTMs(json);\n  return utmParams;\n}\n\n// Função para formatar o telefone e extrair DDD sem duplicação de DDI\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\"); // Remove caracteres não numéricos\n  const hasDDI = telefoneLimpo.startsWith(\"55\");\n  const ddi = hasDDI ? \"\" : \"55\"; // Adiciona DDI apenas se o telefone não começar com \"55\"\n  const numeroComDDD = hasDDI ? telefoneLimpo : ddi + telefoneLimpo;\n  return numeroComDDD;\n}\n\n// Função para determinar a qualificação ajustada\nfunction determinarQualificacao(faturamento, situacaoAtual) {\n  if (!faturamento) return \"Desqualificado\";\n\n  const faturamentoAcima50k = faturamento.includes(\"R$50.001\") || faturamento.includes(\"+ de R$100.000\");\n  const faturamentoEntre25k50k = faturamento.includes(\"R$25.001 e R$50.000\");\n  const faturamentoEntre15k25k = faturamento.includes(\"R$15.001 e R$25.000\");\n  const faturamentoAte15k = faturamento.includes(\"Até R$15.000\");\n\n  if (faturamentoAcima50k) {\n    return \"Extremamente Qualificado\";\n  }\n\n  if (faturamentoEntre25k50k || situacaoAtual.includes(\"investidor\")) {\n    return \"Qualificado\";\n  }\n\n  if (faturamentoEntre15k25k && situacaoAtual === \"Tenho planejamento e estou disposto a investir\") {\n    return \"Neutro\";\n  }\n\n  return \"Desqualificado\";\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData.body.form_response.hidden || {});\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"08e4870b-ab4b-45be-ba1e-1448ebbaf37f\")?.text || \"\";\nconst telefoneFormatado = extrairDddETelefone(telefoneAnswer);\nconst situacaoAtual = respostas.find(answer => answer.field.ref === \"d266ed65-df25-4fd6-ab22-dec519d096cd\")?.choice?.label || \"\";\n\n// Obter a data atual e subtrair 15 dias para gerar `dataFormatada`\nconst dataAtual = new Date();\ndataAtual.setDate(dataAtual.getDate() - 15);\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0');\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Capturar os campos ocultos do formulário (hidden)\nconst nomeHidden = formatarPrimeiraLetraMaiuscula(inputData.body.form_response.hidden?.name || \"\");\nconst emailHidden = inputData.body.form_response.hidden?.email || \"\";\nconst telefoneHidden = extrairDddETelefone(inputData.body.form_response.hidden?.telefone || \"\");\n\n// Capturar a informação de faturamento\nconst faturamento = respostas?.[3]?.choice?.label || \"\";\n\n// Montar o objeto de output com os campos atualizados\nlet output = {\n  nome: nomeHidden,\n  telefone: telefoneHidden,\n  email: emailHidden,\n  momento_atual: situacaoAtual,\n  porque_voce: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text?.replace(/@/g, \"\") || \"\",\n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice?.label || \"\",\n  faturamento: faturamento,\n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  inicio_mentoria: respostas.find(answer => answer.field.ref === \"3b4dab3c-fbf1-44dc-970a-94803a2c658b\")?.choice?.label || \"\",\n  data_ultima_quinzena: dataFormatada,\n  utm_content: utms.utm_content || \"\",\n  utm_source: utms.utm_source || \"\",\n  utm_campaign: utms.utm_campaign || \"\",\n  utm_medium: utms.utm_medium || \"\",\n  utm_term: utms.utm_term || \"\",\n  Ending: inputData.body.form_response.ending?.ref || \"\"\n};\n\n// Adicionar a qualificação com base em `faturamento` e `situacaoAtual`\noutput.qualificacao = determinarQualificacao(output.faturamento, situacaoAtual);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output.Pais = \"Portugal\";\n}\n\nreturn [{ json: output }];\n"
       },
       "id": "c01ead64-7450-453a-a460-aa592b32885c",
       "name": "formata_dados20",
@@ -15045,69 +15045,41 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "Typeform Webhooks",
-            "content-length": "6440",
+            "content-length": "4086",
             "accept-encoding": "gzip",
             "content-type": "application/json",
-            "traceparent": "00-70dd41e37848702e4393fe4175946b1e-550ecabfa4c99f75-01",
-            "x-forwarded-for": "18.204.78.134",
+            "traceparent": "00-1f3718ef153b1f361909b0d5be7021e9-ffb2892d055aec2e-01",
+            "x-forwarded-for": "18.210.136.162",
             "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
             "x-forwarded-server": "b71525949d32",
-            "x-real-ip": "18.204.78.134"
+            "x-real-ip": "18.210.136.162"
           },
           "params": {},
           "query": {},
           "body": {
-            "event_id": "01JFN82EM1TVZKZK29S5R2WX1F",
+            "event_id": "01JJ25XNSAGT72DE5V1AEH9GJ1",
             "event_type": "form_response",
             "form_response": {
               "form_id": "qdGq8uWE",
-              "token": "8781jhqsvpg6p5yp35o8781jhchst8kz",
-              "landed_at": "2024-12-21T18:33:00Z",
-              "submitted_at": "2024-12-21T18:35:57Z",
+              "token": "11l8wq7b2t72ep4m0n411l8wzqgntp10",
+              "landed_at": "2025-01-20T15:38:31Z",
+              "submitted_at": "2025-01-20T15:39:55Z",
               "hidden": {
-                "email": "xxxxx",
-                "name": "xxxxx",
-                "telefone": "xxxxx",
-                "utm_campaign": "xxxxx",
-                "utm_content": "xxxxx",
-                "utm_medium": "xxxxx",
-                "utm_source": "xxxxx",
-                "utm_term": "xxxxx"
+                "email": "",
+                "name": "Edna patrocínio",
+                "telefone": "",
+                "utm_campaign": "[LF] [AD] [CAPTAÇÃO] [CADASTRO] [AUTO] [Q] Públicos Quentes",
+                "utm_content": "01 - [AUTO] [Q] Envolvimento 30D",
+                "utm_medium": "Instagram_Reels",
+                "utm_source": "ig",
+                "utm_term": "AD_AD0021"
               },
               "definition": {
                 "id": "qdGq8uWE",
                 "title": "✅Aplicação Salão Autoadministrável",
                 "fields": [
-                  {
-                    "id": "PHx6rhMIzlxt",
-                    "ref": "ff8b728c-119a-4ddc-9183-0c36a3d53748",
-                    "type": "short_text",
-                    "title": "Qual o seu nome?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "tttTkjGodCBo",
-                    "ref": "69e277e4-a0f8-4865-b01d-970dee3d88eb",
-                    "type": "short_text",
-                    "title": "Qual o instagram do seu salão?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "RkvZj70OtoDC",
-                    "ref": "08e4870b-ab4b-45be-ba1e-1448ebbaf37f",
-                    "type": "phone_number",
-                    "title": "qual seu DDD + Telefone?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "mY6XPcprHGYS",
-                    "ref": "8fc2dc13-0b36-413f-aba7-5b08344f5097",
-                    "type": "email",
-                    "title": "Qual seu e-mail?",
-                    "properties": {}
-                  },
                   {
                     "id": "SYRo8wMIxGwz",
                     "ref": "5fe6dab9-dcc1-4984-9408-cc43f052fe64",
@@ -15119,27 +15091,8 @@
                     "id": "SlVEtMjObWq4",
                     "ref": "193b63eb-8173-4a1a-8fa0-c930cab89161",
                     "type": "short_text",
-                    "title": "Quais são os problemas que têm te impedido de alcançar esse objetivo?",
+                    "title": "Na sua visão, quais são os problemas que têm te impedido de alcançar esse objetivo?",
                     "properties": {}
-                  },
-                  {
-                    "id": "ugcKSMrjlhay",
-                    "ref": "9d3235d4-a79e-455d-ac75-4254b19cae96",
-                    "type": "multiple_choice",
-                    "title": "Show! Agora, gostaria saber um pouco mais do seu momento profissional. Bora nessa! 😉\nVocê tem uma recepcionista no seu salão?\n",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "vBWG0dr7ro7h",
-                        "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78",
-                        "label": "SIM"
-                      },
-                      {
-                        "id": "pAqQHlcLP1gl",
-                        "ref": "d81e4036-f5b7-4e82-922a-67a109e09967",
-                        "label": "NÃO"
-                      }
-                    ]
                   },
                   {
                     "id": "1VASTAWNAO8Q",
@@ -15151,22 +15104,22 @@
                       {
                         "id": "sTDfHG6n1exQ",
                         "ref": "76c54522-2a98-4dee-8172-d687f17d816d",
-                        "label": "ENTRE 1 E 3"
+                        "label": "- de 4"
                       },
                       {
                         "id": "fENzsixTE7AI",
                         "ref": "b8d70724-14ee-4a6d-8a85-4b23756f0c7c",
-                        "label": "ENTRE 4 E 5"
+                        "label": "ENTRE 5 E 10"
                       },
                       {
                         "id": "ZbZOkScy66l8",
                         "ref": "69bc797f-5f9c-47b8-a877-7a7faf0a5bbe",
-                        "label": "ENTRE 6 E 10"
+                        "label": "ENTRE 11 E 15"
                       },
                       {
                         "id": "NTGqfvqWaDt7",
                         "ref": "622f6743-3736-429e-bec0-ccec1fa37259",
-                        "label": "ENTRE 11 E 20"
+                        "label": "ENTRE 16 E 20"
                       },
                       {
                         "id": "il2Tclt1k7bQ",
@@ -15190,63 +15143,53 @@
                       {
                         "id": "hQeR6JomPKYP",
                         "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87",
-                        "label": "Até R$15.000"
+                        "label": "Até R$29.999 mil/mês"
                       },
                       {
                         "id": "2pKi97HytCTC",
                         "ref": "179a6666-ea5a-4879-87cc-72611886686e",
-                        "label": "Entre R$15.001 e R$25.000"
+                        "label": "Entre R$30 mil e R$50 mil/mês"
                       },
                       {
                         "id": "yTNMHsGOWUZc",
                         "ref": "cfd4bfda-0729-4f59-8d28-d762caabcc14",
-                        "label": "Entre R$25.001 e R$50.000"
+                        "label": "Entre 50 mil e R$100 mil/mês"
                       },
                       {
                         "id": "NT7wGpOFU4mD",
                         "ref": "abb7f09b-15bc-45ed-b629-69d6ab894fd1",
-                        "label": "Entre R$50.001 e R$100.000"
+                        "label": "Entre R$100 mil e R$200 mil/mês"
                       },
                       {
                         "id": "O9MXgNfnMf9M",
                         "ref": "34b28fc9-d466-4b5a-83dd-b5a30c052fb8",
-                        "label": "+ de R$100.000"
+                        "label": "+200 mil/mês"
                       }
                     ]
                   },
                   {
-                    "id": "VCEZ1aIWGQEV",
-                    "ref": "d266ed65-df25-4fd6-ab22-dec519d096cd",
+                    "id": "ntVOn4WRA4Ie",
+                    "ref": "944a9bd6-4a0d-478b-a38d-030a4f88c850",
                     "type": "multiple_choice",
-                    "title": "Você passou pela primeira etapa do nosso processo de qualificação para a sessão estratégica de diagnóstico, só para entendermos o seu momento atual e te oferecermos a melhor solução:\n\nVocê hoje já tem planejamento de investir para melhorar a gestão do seu salão?",
+                    "title": "Entendi, baseado nas suas respostas, encontrei a solução ideal para o seu salão de beleza",
                     "properties": {},
                     "choices": [
                       {
-                        "id": "h66qNY190opB",
-                        "ref": "46fa4dca-c036-4ebf-8e70-343a1b8f18a9",
-                        "label": "Não tenho planejamento e não estou disposto a investir em gestão"
-                      },
-                      {
-                        "id": "bEGCWyQRHMAD",
-                        "ref": "7091ed43-50a9-4ec5-a47c-4cad649a4b90",
-                        "label": "Não tenho um planejamento mas estou disposto a fazer o que for preciso para mudar minha situação atual"
-                      },
-                      {
-                        "id": "DNiWNPFQ4Ukl",
-                        "ref": "3dec8a23-a184-4154-8edb-31bffcf31b48",
-                        "label": "Tenho planejamento e estou disposto a investir"
+                        "id": "ifCZXvoLG6dY",
+                        "ref": "b7696804-ca1e-4192-a8fd-620d49df220a",
+                        "label": "QUERO SABER COMO"
                       }
                     ]
                   }
                 ],
                 "endings": [
                   {
-                    "id": "QU70lO7bVjbm",
-                    "ref": "135bd0d0-468b-40a7-8e46-3f510829ef46",
-                    "title": "https://calendly.com/henry-dossantos/sessao-estrategica-com-henry?name={{hidden:name}}&email={{hidden:email}}&a1={{hidden:telefone}}",
+                    "id": "DBm4Rsfz6SOT",
+                    "ref": "e362636f-dec1-4702-bdff-892b810c7da1",
+                    "title": "https://salaolucrativo.gestaodesaloes.com.br/grupo-de-wpp/",
                     "type": "url_redirect",
                     "properties": {
-                      "redirect_url": "https://calendly.com/henry-dossantos/sessao-estrategica-com-henry?name={{hidden:name}}&email={{hidden:email}}&a1={{hidden:telefone}}"
+                      "redirect_url": "https://salaolucrativo.gestaodesaloes.com.br/grupo-de-wpp/"
                     }
                   }
                 ]
@@ -15254,43 +15197,7 @@
               "answers": [
                 {
                   "type": "text",
-                  "text": "Rosa",
-                  "field": {
-                    "id": "PHx6rhMIzlxt",
-                    "type": "short_text",
-                    "ref": "ff8b728c-119a-4ddc-9183-0c36a3d53748"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "Iamsalonespa",
-                  "field": {
-                    "id": "tttTkjGodCBo",
-                    "type": "short_text",
-                    "ref": "69e277e4-a0f8-4865-b01d-970dee3d88eb"
-                  }
-                },
-                {
-                  "type": "phone_number",
-                  "phone_number": "+5521994917397",
-                  "field": {
-                    "id": "RkvZj70OtoDC",
-                    "type": "phone_number",
-                    "ref": "08e4870b-ab4b-45be-ba1e-1448ebbaf37f"
-                  }
-                },
-                {
-                  "type": "email",
-                  "email": "rosa.santos@iamsalaoespa.com",
-                  "field": {
-                    "id": "mY6XPcprHGYS",
-                    "type": "email",
-                    "ref": "8fc2dc13-0b36-413f-aba7-5b08344f5097"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "Agenda lotada",
+                  "text": "Funcionários engajados",
                   "field": {
                     "id": "SYRo8wMIxGwz",
                     "type": "long_text",
@@ -15299,7 +15206,7 @@
                 },
                 {
                   "type": "text",
-                  "text": "Falta de clientes",
+                  "text": "Profissionais comprometidos",
                   "field": {
                     "id": "SlVEtMjObWq4",
                     "type": "short_text",
@@ -15309,22 +15216,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "vBWG0dr7ro7h",
-                    "label": "SIM",
-                    "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78"
-                  },
-                  "field": {
-                    "id": "ugcKSMrjlhay",
-                    "type": "multiple_choice",
-                    "ref": "9d3235d4-a79e-455d-ac75-4254b19cae96"
-                  }
-                },
-                {
-                  "type": "choice",
-                  "choice": {
-                    "id": "il2Tclt1k7bQ",
-                    "label": "+ DE 20",
-                    "ref": "fd02c44d-8b31-4274-9a37-c06b49da9411"
+                    "id": "sTDfHG6n1exQ",
+                    "label": "- de 4",
+                    "ref": "76c54522-2a98-4dee-8172-d687f17d816d"
                   },
                   "field": {
                     "id": "1VASTAWNAO8Q",
@@ -15335,9 +15229,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "O9MXgNfnMf9M",
-                    "label": "+ de R$100.000",
-                    "ref": "34b28fc9-d466-4b5a-83dd-b5a30c052fb8"
+                    "id": "hQeR6JomPKYP",
+                    "label": "Até R$29.999 mil/mês",
+                    "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87"
                   },
                   "field": {
                     "id": "1C4NnRWOhm6d",
@@ -15348,20 +15242,20 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "bEGCWyQRHMAD",
-                    "label": "Não tenho um planejamento mas estou disposto a fazer o que for preciso para mudar minha situação atual",
-                    "ref": "7091ed43-50a9-4ec5-a47c-4cad649a4b90"
+                    "id": "ifCZXvoLG6dY",
+                    "label": "QUERO SABER COMO",
+                    "ref": "b7696804-ca1e-4192-a8fd-620d49df220a"
                   },
                   "field": {
-                    "id": "VCEZ1aIWGQEV",
+                    "id": "ntVOn4WRA4Ie",
                     "type": "multiple_choice",
-                    "ref": "d266ed65-df25-4fd6-ab22-dec519d096cd"
+                    "ref": "944a9bd6-4a0d-478b-a38d-030a4f88c850"
                   }
                 }
               ],
               "ending": {
-                "id": "QU70lO7bVjbm",
-                "ref": "135bd0d0-468b-40a7-8e46-3f510829ef46"
+                "id": "DBm4Rsfz6SOT",
+                "ref": "e362636f-dec1-4702-bdff-892b810c7da1"
               }
             }
           },
@@ -15376,10 +15270,10 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "Typeform Webhooks",
-            "content-length": "9451",
+            "content-length": "4086",
             "accept-encoding": "gzip",
             "content-type": "application/json",
-            "traceparent": "00-78d7bd18ef3c41f978d996591f386be0-69fd588ee9d179da-01",
+            "traceparent": "00-1f3718ef153b1f361909b0d5be7021e9-ffb2892d055aec2e-01",
             "x-forwarded-for": "18.210.136.162",
             "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "x-forwarded-port": "443",
@@ -15390,278 +15284,137 @@
           "params": {},
           "query": {},
           "body": {
-            "event_id": "01JEVQWDCABD3J2GVK63RFHNWC",
+            "event_id": "01JJ25XNSAGT72DE5V1AEH9GJ1",
             "event_type": "form_response",
             "form_response": {
-              "form_id": "uOMPTDwC",
-              "token": "scwotoduij0khfd566mfscwotod3s6tr",
-              "landed_at": "2024-12-11T20:50:21Z",
-              "submitted_at": "2024-12-11T20:52:01Z",
+              "form_id": "qdGq8uWE",
+              "token": "11l8wq7b2t72ep4m0n411l8wzqgntp10",
+              "landed_at": "2025-01-20T15:38:31Z",
+              "submitted_at": "2025-01-20T15:39:55Z",
               "hidden": {
                 "email": "",
-                "name": "",
+                "name": "Edna patrocínio",
                 "telefone": "",
-                "utm_campaign": "bots",
-                "utm_content": "auto",
-                "utm_medium": "automagic",
-                "utm_source": "teste",
-                "utm_term": "t001"
+                "utm_campaign": "[LF] [AD] [CAPTAÇÃO] [CADASTRO] [AUTO] [Q] Públicos Quentes",
+                "utm_content": "01 - [AUTO] [Q] Envolvimento 30D",
+                "utm_medium": "Instagram_Reels",
+                "utm_source": "ig",
+                "utm_term": "AD_AD0021"
               },
               "definition": {
-                "id": "uOMPTDwC",
-                "title": "✅Webinário",
+                "id": "qdGq8uWE",
+                "title": "✅Aplicação Salão Autoadministrável",
                 "fields": [
                   {
-                    "id": "NLPmoOsQMnlZ",
-                    "ref": "ff8b728c-119a-4ddc-9183-0c36a3d53748",
-                    "type": "short_text",
-                    "title": "Qual o seu nome?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "avYK4cTXMzQk",
-                    "ref": "69e277e4-a0f8-4865-b01d-970dee3d88eb",
-                    "type": "short_text",
-                    "title": "Qual o instagram do seu salão?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "IeqBJgTdIpzz",
-                    "ref": "08e4870b-ab4b-45be-ba1e-1448ebbaf37f",
-                    "type": "phone_number",
-                    "title": "qual seu DDD + Telefone?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "XeLAKrPThUgS",
-                    "ref": "e0bd47dc-72ed-497e-885b-3cfcdc48adaa",
-                    "type": "email",
-                    "title": "Qual seu melhor e-mail?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "ejqddKf3le8H",
+                    "id": "SYRo8wMIxGwz",
                     "ref": "5fe6dab9-dcc1-4984-9408-cc43f052fe64",
                     "type": "long_text",
                     "title": "Descreva de forma clara e objetiva o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2025?",
                     "properties": {}
                   },
                   {
-                    "id": "r6G96tSskBPH",
+                    "id": "SlVEtMjObWq4",
                     "ref": "193b63eb-8173-4a1a-8fa0-c930cab89161",
                     "type": "short_text",
-                    "title": "Quais são os problemas que têm te impedido de alcançar esse objetivo?",
+                    "title": "Na sua visão, quais são os problemas que têm te impedido de alcançar esse objetivo?",
                     "properties": {}
                   },
                   {
-                    "id": "hm9yjY2wVgIL",
-                    "ref": "9d3235d4-a79e-455d-ac75-4254b19cae96",
-                    "type": "multiple_choice",
-                    "title": "Show! Agora, gostaria saber um pouco mais do seu momento profissional. Bora nessa! 😉\nVocê tem uma recepcionista no seu salão?\n",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "R90N0vx4tTp1",
-                        "ref": "dbdbd38f-2fc3-455a-906a-7582709cce78",
-                        "label": "SIM"
-                      },
-                      {
-                        "id": "dXc8mbJZDX0X",
-                        "ref": "d81e4036-f5b7-4e82-922a-67a109e09967",
-                        "label": "NÃO"
-                      }
-                    ]
-                  },
-                  {
-                    "id": "7PeekxlQQ3mr",
+                    "id": "1VASTAWNAO8Q",
                     "ref": "f4fcda9e-a288-4558-94d9-3e2b0b4f96ad",
                     "type": "multiple_choice",
                     "title": "Quantos profissionais trabalham com você?",
                     "properties": {},
                     "choices": [
                       {
-                        "id": "Uy5zlz6lCmpj",
+                        "id": "sTDfHG6n1exQ",
                         "ref": "76c54522-2a98-4dee-8172-d687f17d816d",
-                        "label": "ENTRE 1 E 3"
+                        "label": "- de 4"
                       },
                       {
-                        "id": "hFndFlSWG0iY",
+                        "id": "fENzsixTE7AI",
                         "ref": "b8d70724-14ee-4a6d-8a85-4b23756f0c7c",
-                        "label": "ENTRE 4 E 5"
+                        "label": "ENTRE 5 E 10"
                       },
                       {
-                        "id": "oDKEtMHx8pbT",
+                        "id": "ZbZOkScy66l8",
                         "ref": "69bc797f-5f9c-47b8-a877-7a7faf0a5bbe",
-                        "label": "ENTRE 6 E 10"
+                        "label": "ENTRE 11 E 15"
                       },
                       {
-                        "id": "SODSeYlzC2Ei",
+                        "id": "NTGqfvqWaDt7",
                         "ref": "622f6743-3736-429e-bec0-ccec1fa37259",
-                        "label": "ENTRE 11 E 20"
+                        "label": "ENTRE 16 E 20"
                       },
                       {
-                        "id": "cRaG1QkKXAlS",
+                        "id": "il2Tclt1k7bQ",
                         "ref": "fd02c44d-8b31-4274-9a37-c06b49da9411",
                         "label": "+ DE 20"
                       },
                       {
-                        "id": "l14nIFg1hGdW",
+                        "id": "8Y3etzmToFjn",
                         "ref": "380e263b-e3fb-425f-be72-5ade28103a50",
-                        "label": "Sou investidor"
-                      },
-                      {
-                        "id": "QNm3FZcFESeK",
-                        "ref": "181b6314-0993-4462-812f-b128adc3d7c9",
-                        "label": "Estou saindo de um salão onde eu trabalhava e montando o meu do zero, não tenho muito para investir"
+                        "label": "Estou montando meu salão e minha equipe"
                       }
                     ]
                   },
                   {
-                    "id": "LreSRT408b8v",
+                    "id": "1C4NnRWOhm6d",
                     "ref": "2c42d709-1748-472f-8f28-ebc7677c0398",
                     "type": "multiple_choice",
                     "title": "Qual é a média do faturamento mensal do seu salão de beleza?:",
                     "properties": {},
                     "choices": [
                       {
-                        "id": "YABGrKqfkrDA",
+                        "id": "hQeR6JomPKYP",
                         "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87",
-                        "label": "Até R$15.000"
+                        "label": "Até R$29.999 mil/mês"
                       },
                       {
-                        "id": "VfssoavGT9c7",
+                        "id": "2pKi97HytCTC",
                         "ref": "179a6666-ea5a-4879-87cc-72611886686e",
-                        "label": "Entre R$15.001 e R$25.000"
+                        "label": "Entre R$30 mil e R$50 mil/mês"
                       },
                       {
-                        "id": "hJW7wCPTvlQO",
+                        "id": "yTNMHsGOWUZc",
                         "ref": "cfd4bfda-0729-4f59-8d28-d762caabcc14",
-                        "label": "Entre R$25.001 e R$50.000"
+                        "label": "Entre 50 mil e R$100 mil/mês"
                       },
                       {
-                        "id": "818CThvR48ia",
+                        "id": "NT7wGpOFU4mD",
                         "ref": "abb7f09b-15bc-45ed-b629-69d6ab894fd1",
-                        "label": "Entre R$50.001 e R$100.000"
+                        "label": "Entre R$100 mil e R$200 mil/mês"
                       },
                       {
-                        "id": "D1g8wDJqPBCq",
+                        "id": "O9MXgNfnMf9M",
                         "ref": "34b28fc9-d466-4b5a-83dd-b5a30c052fb8",
-                        "label": "+ de R$100.000"
+                        "label": "+200 mil/mês"
                       }
                     ]
                   },
                   {
-                    "id": "k03t41qx4pZG",
-                    "ref": "d266ed65-df25-4fd6-ab22-dec519d096cd",
+                    "id": "ntVOn4WRA4Ie",
+                    "ref": "944a9bd6-4a0d-478b-a38d-030a4f88c850",
                     "type": "multiple_choice",
-                    "title": "Você passou pela primeira etapa do nosso processo de qualificação para a sessão estratégica de diagnóstico, só para entendermos o seu momento atual e te oferecermos a melhor solução:\n\nVocê hoje já tem planejamento de investir para melhorar a gestão do seu salão?",
+                    "title": "Entendi, baseado nas suas respostas, encontrei a solução ideal para o seu salão de beleza",
                     "properties": {},
                     "choices": [
                       {
-                        "id": "qvAw5eHec2iP",
-                        "ref": "46fa4dca-c036-4ebf-8e70-343a1b8f18a9",
-                        "label": "Não tenho planejamento e não estou disposto a investir em gestão"
-                      },
-                      {
-                        "id": "HLvul8NRsYdN",
-                        "ref": "7091ed43-50a9-4ec5-a47c-4cad649a4b90",
-                        "label": "Não tenho um planejamento mas estou disposto a fazer o que for preciso para mudar minha situação atual"
-                      },
-                      {
-                        "id": "MnNqnOT8lpaW",
-                        "ref": "3dec8a23-a184-4154-8edb-31bffcf31b48",
-                        "label": "Tenho planejamento e estou disposto a investir"
-                      }
-                    ]
-                  },
-                  {
-                    "id": "Ur20Ag4LFvbm",
-                    "ref": "6bb1a2d8-3e8a-4a45-9962-ed5696f15a3b",
-                    "type": "multiple_choice",
-                    "title": "Qual de nossos programas de acompanhamento você gostaria de conhecer melhor?",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "xtSYjv1R2abz",
-                        "ref": "13dd2013-ba27-4bc7-96f7-0c40b679da49",
-                        "label": "Mentoria Salão Autoadministrável -> R$8.400 ANUAL"
-                      },
-                      {
-                        "id": "9gtyauf4KtvX",
-                        "ref": "69ff9e14-5fc5-4dbe-b2a8-d1f136d57b34",
-                        "label": "Mentoria ADVANCED -> R$15.000 ANUAL"
-                      },
-                      {
-                        "id": "xZUucTme9VOs",
-                        "ref": "adda6023-df59-4e79-a8a4-4ec1df834b2a",
-                        "label": "Quero conhecer o programa de acompanhamento PREMIUM do Henry -> R$36.000 +"
-                      },
-                      {
-                        "id": "p5zQgumWbY2k",
-                        "ref": "121e6eb9-ee6a-4f9d-913c-a4c7d2f000c5",
-                        "label": "Quero conhecer sobre os programas de baixo ticket -> R$4.200"
-                      }
-                    ]
-                  },
-                  {
-                    "id": "BTQINQDodq9u",
-                    "ref": "5e78a656-8fa3-4eda-91fd-2054e491e35e",
-                    "type": "long_text",
-                    "title": "O que precisa acontecer com\nvocê ou com seu negócio, ao final dos 12 meses, para você dizer que valeu participar do programa e trabalhar comigo?",
-                    "properties": {}
-                  },
-                  {
-                    "id": "YQ8R8yFacqJK",
-                    "ref": "7f0aa59a-b2c4-4c61-8e0f-e620db6e010e",
-                    "type": "multiple_choice",
-                    "title": "Qual será o seu esforço para investir na Mentoria? Será algo que pode prejudicar o fluxo de caixa do seu negócio ou economias pessoais?",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "pdjDz6Rj4Pfq",
-                        "ref": "e2f000df-df88-4f18-bbfb-12065559a15a",
-                        "label": "Sim"
-                      },
-                      {
-                        "id": "jn22ojGMPwvj",
-                        "ref": "1281ec59-31fe-4211-aa52-40e5e9f0c953",
-                        "label": "Não"
-                      }
-                    ]
-                  },
-                  {
-                    "id": "WVRbzg5RheZJ",
-                    "ref": "3b4dab3c-fbf1-44dc-970a-94803a2c658b",
-                    "type": "multiple_choice",
-                    "title": "Se você for selecionado para a mentoria, quando pretende começar?\n",
-                    "properties": {},
-                    "choices": [
-                      {
-                        "id": "GYx8fvPGgaSu",
-                        "ref": "da8d0f34-eb35-4acb-a6cb-a56b57980d44",
-                        "label": "Imediatamente para gerar resultados imediatos"
-                      },
-                      {
-                        "id": "sbRaeY0BHLb4",
-                        "ref": "4fc4f98e-0a50-4714-814d-be524e0fb522",
-                        "label": "Nas próximas semanas"
-                      },
-                      {
-                        "id": "7ncKKqIWKYbd",
-                        "ref": "0e313a3e-7bb2-4026-84eb-fcfecfbd0b92",
-                        "label": "Quero para os próximos 2 meses"
+                        "id": "ifCZXvoLG6dY",
+                        "ref": "b7696804-ca1e-4192-a8fd-620d49df220a",
+                        "label": "QUERO SABER COMO"
                       }
                     ]
                   }
                 ],
                 "endings": [
                   {
-                    "id": "fNEq1TG26HAO",
-                    "ref": "135bd0d0-468b-40a7-8e46-3f510829ef46",
-                    "title": "https://calendly.com/d/cqnf-v3w-89g/ligacao-estrategica-com-especialista-em-gestao?name={{hidden:name}}&email={{hidden:email}}&a1={{hidden:telefone}}",
+                    "id": "DBm4Rsfz6SOT",
+                    "ref": "e362636f-dec1-4702-bdff-892b810c7da1",
+                    "title": "https://salaolucrativo.gestaodesaloes.com.br/grupo-de-wpp/",
                     "type": "url_redirect",
                     "properties": {
-                      "redirect_url": "https://calendly.com/d/cqnf-v3w-89g/ligacao-estrategica-com-especialista-em-gestao?name={{hidden:name}}&email={{hidden:email}}&a1={{hidden:telefone}}"
+                      "redirect_url": "https://salaolucrativo.gestaodesaloes.com.br/grupo-de-wpp/"
                     }
                   }
                 ]
@@ -15669,54 +15422,18 @@
               "answers": [
                 {
                   "type": "text",
-                  "text": "Mateus Diniz - Automagic Bots",
+                  "text": "Funcionários engajados",
                   "field": {
-                    "id": "NLPmoOsQMnlZ",
-                    "type": "short_text",
-                    "ref": "ff8b728c-119a-4ddc-9183-0c36a3d53748"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "prmateusdiniz",
-                  "field": {
-                    "id": "avYK4cTXMzQk",
-                    "type": "short_text",
-                    "ref": "69e277e4-a0f8-4865-b01d-970dee3d88eb"
-                  }
-                },
-                {
-                  "type": "phone_number",
-                  "phone_number": "+5562981196678",
-                  "field": {
-                    "id": "IeqBJgTdIpzz",
-                    "type": "phone_number",
-                    "ref": "08e4870b-ab4b-45be-ba1e-1448ebbaf37f"
-                  }
-                },
-                {
-                  "type": "email",
-                  "email": "mateusdiniz@automagicbots.com.br",
-                  "field": {
-                    "id": "XeLAKrPThUgS",
-                    "type": "email",
-                    "ref": "e0bd47dc-72ed-497e-885b-3cfcdc48adaa"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "teste",
-                  "field": {
-                    "id": "ejqddKf3le8H",
+                    "id": "SYRo8wMIxGwz",
                     "type": "long_text",
                     "ref": "5fe6dab9-dcc1-4984-9408-cc43f052fe64"
                   }
                 },
                 {
                   "type": "text",
-                  "text": "testando 32'",
+                  "text": "Profissionais comprometidos",
                   "field": {
-                    "id": "r6G96tSskBPH",
+                    "id": "SlVEtMjObWq4",
                     "type": "short_text",
                     "ref": "193b63eb-8173-4a1a-8fa0-c930cab89161"
                   }
@@ -15724,25 +15441,12 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "dXc8mbJZDX0X",
-                    "label": "NÃO",
-                    "ref": "d81e4036-f5b7-4e82-922a-67a109e09967"
+                    "id": "sTDfHG6n1exQ",
+                    "label": "- de 4",
+                    "ref": "76c54522-2a98-4dee-8172-d687f17d816d"
                   },
                   "field": {
-                    "id": "hm9yjY2wVgIL",
-                    "type": "multiple_choice",
-                    "ref": "9d3235d4-a79e-455d-ac75-4254b19cae96"
-                  }
-                },
-                {
-                  "type": "choice",
-                  "choice": {
-                    "id": "SODSeYlzC2Ei",
-                    "label": "ENTRE 11 E 20",
-                    "ref": "622f6743-3736-429e-bec0-ccec1fa37259"
-                  },
-                  "field": {
-                    "id": "7PeekxlQQ3mr",
+                    "id": "1VASTAWNAO8Q",
                     "type": "multiple_choice",
                     "ref": "f4fcda9e-a288-4558-94d9-3e2b0b4f96ad"
                   }
@@ -15750,12 +15454,12 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "VfssoavGT9c7",
-                    "label": "Entre R$15.001 e R$25.000",
-                    "ref": "179a6666-ea5a-4879-87cc-72611886686e"
+                    "id": "hQeR6JomPKYP",
+                    "label": "Até R$29.999 mil/mês",
+                    "ref": "a3ca003a-d355-49e4-9b66-019c4288dd87"
                   },
                   "field": {
-                    "id": "LreSRT408b8v",
+                    "id": "1C4NnRWOhm6d",
                     "type": "multiple_choice",
                     "ref": "2c42d709-1748-472f-8f28-ebc7677c0398"
                   }
@@ -15763,72 +15467,24 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "HLvul8NRsYdN",
-                    "label": "Não tenho um planejamento mas estou disposto a fazer o que for preciso para mudar minha situação atual",
-                    "ref": "7091ed43-50a9-4ec5-a47c-4cad649a4b90"
+                    "id": "ifCZXvoLG6dY",
+                    "label": "QUERO SABER COMO",
+                    "ref": "b7696804-ca1e-4192-a8fd-620d49df220a"
                   },
                   "field": {
-                    "id": "k03t41qx4pZG",
+                    "id": "ntVOn4WRA4Ie",
                     "type": "multiple_choice",
-                    "ref": "d266ed65-df25-4fd6-ab22-dec519d096cd"
-                  }
-                },
-                {
-                  "type": "choice",
-                  "choice": {
-                    "id": "p5zQgumWbY2k",
-                    "label": "Quero conhecer sobre os programas de baixo ticket -> R$4.200",
-                    "ref": "121e6eb9-ee6a-4f9d-913c-a4c7d2f000c5"
-                  },
-                  "field": {
-                    "id": "Ur20Ag4LFvbm",
-                    "type": "multiple_choice",
-                    "ref": "6bb1a2d8-3e8a-4a45-9962-ed5696f15a3b"
-                  }
-                },
-                {
-                  "type": "text",
-                  "text": "automagic bots",
-                  "field": {
-                    "id": "BTQINQDodq9u",
-                    "type": "long_text",
-                    "ref": "5e78a656-8fa3-4eda-91fd-2054e491e35e"
-                  }
-                },
-                {
-                  "type": "choice",
-                  "choice": {
-                    "id": "jn22ojGMPwvj",
-                    "label": "Não",
-                    "ref": "1281ec59-31fe-4211-aa52-40e5e9f0c953"
-                  },
-                  "field": {
-                    "id": "YQ8R8yFacqJK",
-                    "type": "multiple_choice",
-                    "ref": "7f0aa59a-b2c4-4c61-8e0f-e620db6e010e"
-                  }
-                },
-                {
-                  "type": "choice",
-                  "choice": {
-                    "id": "GYx8fvPGgaSu",
-                    "label": "Imediatamente para gerar resultados imediatos",
-                    "ref": "da8d0f34-eb35-4acb-a6cb-a56b57980d44"
-                  },
-                  "field": {
-                    "id": "WVRbzg5RheZJ",
-                    "type": "multiple_choice",
-                    "ref": "3b4dab3c-fbf1-44dc-970a-94803a2c658b"
+                    "ref": "944a9bd6-4a0d-478b-a38d-030a4f88c850"
                   }
                 }
               ],
               "ending": {
-                "id": "fNEq1TG26HAO",
-                "ref": "135bd0d0-468b-40a7-8e46-3f510829ef46"
+                "id": "DBm4Rsfz6SOT",
+                "ref": "e362636f-dec1-4702-bdff-892b810c7da1"
               }
             }
           },
-          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/forms-webinario",
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/aplicacao-v7",
           "executionMode": "production"
         }
       }
@@ -16265,6 +15921,6 @@
     }
   ],
   "triggerCount": 14,
-  "updatedAt": "2024-12-23T21:08:11.891Z",
-  "versionId": "9667ca8f-daf4-46c3-ab58-9fae7b142f37"
+  "updatedAt": "2025-01-20T19:23:49.483Z",
+  "versionId": "2451c08a-6f3e-405e-b962-00dc68d785e6"
 }
