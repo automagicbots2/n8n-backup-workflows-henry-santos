@@ -362,7 +362,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        -1220,
+        -1640,
         1400
       ]
     },
@@ -375,7 +375,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        -1220,
+        -1640,
         1260
       ]
     },
@@ -388,8 +388,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        -1220,
-        1120
+        -1640,
+        1100
       ]
     },
     {
@@ -429,7 +429,7 @@
       "typeVersion": 1,
       "position": [
         -280,
-        760
+        740
       ]
     },
     {
@@ -492,8 +492,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -380,
-        420
+        -1520,
+        -40
       ]
     },
     {
@@ -529,8 +529,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -600,
-        360
+        -1740,
+        -100
       ]
     },
     {
@@ -611,8 +611,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -1260,
-        920
+        -1680,
+        900
       ]
     },
     {
@@ -624,8 +624,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -1140,
-        740
+        -1560,
+        720
       ]
     },
     {
@@ -969,7 +969,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        380,
+        400,
         480
       ]
     },
@@ -1743,8 +1743,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1140,
-        320
+        -1760,
+        300
       ]
     },
     {
@@ -1758,8 +1758,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -1200,
-        160
+        -1820,
+        140
       ]
     },
     {
@@ -1773,8 +1773,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -680,
-        240
+        -1820,
+        -220
       ]
     },
     {
@@ -1788,8 +1788,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -1420,
-        560
+        -1840,
+        540
       ]
     },
     {
@@ -1809,8 +1809,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -620,
-        760
+        -680,
+        780
       ]
     },
     {
@@ -2195,8 +2195,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -1360,
-        740
+        -1780,
+        720
       ]
     },
     {
@@ -2212,8 +2212,8 @@
       "type": "n8n-nodes-base.calendlyTrigger",
       "typeVersion": 1,
       "position": [
-        -920,
-        620
+        -980,
+        580
       ],
       "webhookId": "945ee3d2-a828-4b8f-9b49-5175de6629d8",
       "credentials": {
@@ -2252,6 +2252,16 @@
                 "operation": "equals",
                 "name": "filter.operator.equals"
               }
+            },
+            {
+              "id": "9e3fc1e6-9443-4c31-8367-7351b32f538f",
+              "leftValue": "={{ $json[\"payload\"][\"event\"][\"extended_assigned_to\"][\"0\"][\"email\"] }}",
+              "rightValue": "henry.dossantos@gmail.com",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
             }
           ],
           "combinator": "or"
@@ -2261,8 +2271,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -760,
-        620
+        -800,
+        580
       ],
       "id": "929aff1b-d9c7-4360-84c2-4c1af3ed5c7b",
       "name": "remover eventos"
@@ -3025,7 +3035,7 @@
   "staticData": {
     "node:Calendly Trigger": {},
     "node:Evento": {
-      "webhookId": 5411050
+      "webhookId": 5425118
     }
   },
   "tags": [
@@ -3037,6 +3047,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-22T18:43:57.374Z",
-  "versionId": "173c160c-b247-410c-ba3f-9b45c2c88a36"
+  "updatedAt": "2025-01-27T17:49:30.139Z",
+  "versionId": "9772be7f-8cf7-4d68-a401-3a2f8d2f4309"
 }
