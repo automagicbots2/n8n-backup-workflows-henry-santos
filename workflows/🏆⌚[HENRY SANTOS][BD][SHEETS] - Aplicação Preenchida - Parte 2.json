@@ -1257,16 +1257,6 @@
         ]
       ]
     },
-    "entra_na_fila12": {
-      "main": [
-        []
-      ]
-    },
-    "entra_na_fila2": {
-      "main": [
-        []
-      ]
-    },
     "não_é_live_semanal": {
       "main": [
         [
@@ -7713,8 +7703,8 @@
               "value2": "Extremamente Qualificado"
             },
             {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Qualificação\"] }}",
-              "value2": "Extremamente Qualificado"
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_ending_typeform\"] }}",
+              "value2": "01GEF2QQ1BV23MH18E2DAQHWDW"
             },
             {
               "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"] }}",
@@ -7739,10 +7729,10 @@
           "string": [
             {
               "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_ending_typeform\"] }}",
-              "value2": "Neutro"
+              "value2": "6cfa2db6-cccd-4344-bda8-b77c5a53ede2"
             },
             {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Qualificação\"] }}",
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_ending_typeform\"] }}",
               "value2": "Neutro"
             },
             {
@@ -10350,6 +10340,10 @@
               "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"variacao_do_funil\"] }}",
               "operation": "notEqual",
               "value2": "live-semanal"
+            },
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_ending_typeform\"] }}",
+              "value2": "029e715c-d9ea-4ebb-802f-15459fbc9604"
             }
           ]
         },
@@ -10545,6 +10539,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-21T13:45:51.204Z",
-  "versionId": "e8d17b55-de1b-4571-ae7f-b28267413a8a"
+  "updatedAt": "2025-01-30T18:30:24.359Z",
+  "versionId": "aaed0025-fa56-4f5d-b48d-f161c26d1c19"
 }
