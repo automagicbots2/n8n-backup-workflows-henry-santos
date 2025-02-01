@@ -304,8 +304,8 @@
       ]
     }
   },
-  "createdAt": "2024-10-17T17:45:32.875Z",
-  "id": "KoxbZ7GsdyHVNYHo",
+  "createdAt": "2025-02-01T19:19:58.067Z",
+  "id": "LBhuq9w7TSQc6O1v",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -316,13 +316,13 @@
         "content": "## Tipos de Mídia\n\n- Vídeo\n- Imagem\n- Áudio\n- Documento\n- Texto\n- Lista",
         "height": 243
       },
-      "id": "76586a93-3af6-449e-91e8-437d2600f06e",
+      "id": "c635f07e-c14b-4b89-82b5-e2dcc9050a0c",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -2640,
-        1400
+        240,
+        -60
       ]
     },
     {
@@ -349,26 +349,26 @@
         },
         "options": {}
       },
-      "id": "c3065913-34f1-474b-860e-351919544ea3",
+      "id": "c7bb09be-89e5-49d8-8a2a-3306333e1748",
       "name": "msg_de_grupo",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -2940,
-        2020
+        -60,
+        560
       ]
     },
     {
       "parameters": {
         "jsCode": "// Obtém os parâmetros necessários\nconst wppGrupo = $node[\"pesquisa_configs\"].json[\"wpp_grupo\"];\nconst wpp1x1Captacao = $node[\"pesquisa_configs\"].json[\"wpp_1x1_captacao\"];\nconst wpp1x1Vendas = $node[\"pesquisa_configs\"].json[\"wpp_1x1_vendas\"];\nconst instancias = $json;\n\nconsole.log(\"wppGrupo:\", wppGrupo);\nconsole.log(\"wpp1x1Captacao:\", wpp1x1Captacao);\nconsole.log(\"wpp1x1Vendas:\", wpp1x1Vendas);\nconsole.log(\"instancias:\", instancias);\n\n// Função para encontrar a instância com base no proprietário\nfunction encontrarInstanciaPorProprietario(proprietario, instancias) {\n    const instanciaKeys = Object.keys(instancias);\n    for (const key of instanciaKeys) {\n        const instancia = instancias[key].instance;\n        console.log(\"instancia:\", instancia);\n        if (instancia && instancia.owner === proprietario) {\n            return instancia;\n        }\n    }\n    return null;\n}\n\n// Encontrar instância do grupo\nconst instanciaGrupos = encontrarInstanciaPorProprietario(wppGrupo, instancias);\n\n// Encontrar instância de 1x1 para captação\nconst instancia1x1Captacao = encontrarInstanciaPorProprietario(wpp1x1Captacao, instancias);\n\n// Encontrar instância de 1x1 para vendas\nconst instancia1x1Vendas = encontrarInstanciaPorProprietario(wpp1x1Vendas, instancias);\n\n// Retornar os resultados\nreturn {\n    \"instancia_grupos\": instanciaGrupos,\n    \"instancia_1x1_captacao\": instancia1x1Captacao,\n    \"instancia_1x1_vendas\": instancia1x1Vendas\n};\n"
       },
-      "id": "48f42db7-4394-44ac-9e77-490cf2bda768",
+      "id": "faaa6812-43ca-4172-b3c9-e90b02a25bce",
       "name": "Code",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -2820,
-        1460
+        60,
+        0
       ]
     },
     {
@@ -426,12 +426,12 @@
           }
         }
       },
-      "id": "e6b6e143-7676-4574-a9e9-9c1cdaa5e408",
+      "id": "d9aea6d2-6104-41ba-b784-0b42368a7992",
       "name": "EnviaImagem5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1800,
-        1840
+        1080,
+        380
       ],
       "typeVersion": 4
     },
@@ -494,12 +494,12 @@
           }
         }
       },
-      "id": "d4ddb836-2862-4fa9-b803-7785454d3351",
+      "id": "d3dafaab-ec9a-4a8b-9018-943a6e33e038",
       "name": "EnviaDocumento5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1800,
-        2120
+        1080,
+        660
       ],
       "typeVersion": 4
     },
@@ -554,12 +554,12 @@
           }
         }
       },
-      "id": "7d4b0ca0-9fa7-48b2-832b-baaf109e3f00",
+      "id": "c51e7476-ffe2-4acb-8241-408df5df3f7b",
       "name": "EnviaAudio5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1440,
-        1980
+        1440,
+        520
       ],
       "typeVersion": 4
     },
@@ -610,12 +610,12 @@
           }
         }
       },
-      "id": "320019ec-680d-4e18-9d7e-7659bc87f530",
+      "id": "a6b15185-a21f-4e52-85c4-972918dec86f",
       "name": "EnviaMensagemTexto5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1800,
-        2260
+        1080,
+        800
       ],
       "typeVersion": 4
     },
@@ -653,13 +653,13 @@
         "include": "none",
         "options": {}
       },
-      "id": "2a41c24a-a82c-4cc2-afe2-26d793ef7f80",
+      "id": "c3b75465-9458-432e-b180-0235ca91d655",
       "name": "variaveis_grupo",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        -2440,
-        2000
+        440,
+        540
       ]
     },
     {
@@ -717,12 +717,12 @@
           }
         }
       },
-      "id": "e855e07f-64d8-4dd8-a6bc-13739cb4bc5e",
+      "id": "2cfb0aa2-2bf5-4f74-b385-603f33d3ab1e",
       "name": "EnviaImagem2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1140,
-        2800
+        1740,
+        1340
       ],
       "typeVersion": 4
     },
@@ -777,12 +777,12 @@
           }
         }
       },
-      "id": "ad5d0237-e982-4613-ad7a-399565b48a81",
+      "id": "9aa55bde-a8a9-4470-afdf-c5edeb7a757e",
       "name": "EnviaVideo2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1140,
-        2640
+        1740,
+        1180
       ],
       "typeVersion": 4
     },
@@ -841,12 +841,12 @@
           }
         }
       },
-      "id": "c3398274-843a-4515-8fd6-1e921ce0e1d5",
+      "id": "5595aada-31ab-4904-b7c1-6e008c4ebd3a",
       "name": "EnviaDocumento2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1140,
-        3120
+        1740,
+        1660
       ],
       "typeVersion": 4
     },
@@ -897,12 +897,12 @@
           }
         }
       },
-      "id": "e66c50eb-4e31-4590-99fa-ec0e1da8eae7",
+      "id": "0810c429-3114-40cf-940c-211b0ce1d88f",
       "name": "EnviaAudio2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1140,
-        2960
+        1740,
+        1500
       ],
       "typeVersion": 4
     },
@@ -953,12 +953,12 @@
           }
         }
       },
-      "id": "9bd43856-c6f8-4f9c-8398-34c814467e55",
+      "id": "ab74b1f7-14d7-4eb8-bbe7-e0acef82bbc7",
       "name": "EnviaMensagemTexto2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1140,
-        3280
+        1740,
+        1820
       ],
       "typeVersion": 4
     },
@@ -987,12 +987,12 @@
           }
         }
       },
-      "id": "b130cf76-e6bf-4740-8f1c-6f95231606e9",
+      "id": "8cdd821a-9e52-4050-8d85-e5c4838d1393",
       "name": "EnviaMensagemLista1",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1140,
-        3440
+        1740,
+        1980
       ],
       "typeVersion": 4
     },
@@ -1030,13 +1030,13 @@
         },
         "options": {}
       },
-      "id": "f68cd9a1-015f-4c5f-b870-5cd21377f793",
+      "id": "8205bc74-878c-4517-874e-de360900251c",
       "name": "entrou_no_grupo",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -1860,
-        3120
+        1020,
+        1660
       ]
     },
     {
@@ -1073,13 +1073,13 @@
         },
         "options": {}
       },
-      "id": "380cc3e4-b815-4bb0-827b-3e3d1f03900d",
+      "id": "dc5ff202-b7f1-44c7-a5cc-8e40d6bd4363",
       "name": "saiu_do_grupo",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -1660,
-        3600
+        1220,
+        2140
       ]
     },
     {
@@ -1103,19 +1103,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "8c2300eb-5c20-4d5c-9df0-653f68fa9385",
+      "id": "bbab3571-74a6-4e43-a54b-14dcd4653b6e",
       "name": "pesquisa_user",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        -2240,
-        3120
+        640,
+        1660
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1174,12 +1174,12 @@
           }
         }
       },
-      "id": "0656dc86-8389-4701-9692-4dd514933cff",
+      "id": "7af2b9bc-1f68-41c3-b76a-3f45a4791a4f",
       "name": "EnviaImagem6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -700,
-        3800
+        2180,
+        2340
       ],
       "typeVersion": 4
     },
@@ -1234,12 +1234,12 @@
           }
         }
       },
-      "id": "24319411-b14e-4746-bcb8-3945f296f66b",
+      "id": "af3ebf03-27ab-4680-a6c0-609a858376e4",
       "name": "EnviaVideo6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -700,
-        3640
+        2180,
+        2180
       ],
       "typeVersion": 4
     },
@@ -1290,12 +1290,12 @@
           }
         }
       },
-      "id": "2e85c916-d45e-44c0-b326-dba4f7cf1de4",
+      "id": "8b8725eb-f690-49f9-b1cd-5a2eaf54b924",
       "name": "EnviaAudio6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -700,
-        3960
+        2180,
+        2500
       ],
       "typeVersion": 4
     },
@@ -1346,12 +1346,12 @@
           }
         }
       },
-      "id": "f012104e-e50c-4d01-89d2-ab6865c39118",
+      "id": "c36f8f0d-6bf3-49c9-b44f-9a526624476d",
       "name": "EnviaMensagemTexto6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -700,
-        4280
+        2180,
+        2820
       ],
       "typeVersion": 4
     },
@@ -1379,13 +1379,13 @@
         },
         "options": {}
       },
-      "id": "a252404c-4e16-4ab1-800d-d8cd0a45491b",
+      "id": "357476eb-61dc-480e-975e-9319c5cc559c",
       "name": "recuperacao_de_vendas",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -1380,
-        4100
+        1500,
+        2640
       ]
     },
     {
@@ -1439,12 +1439,12 @@
           }
         }
       },
-      "id": "7ce13838-0f81-4ce9-95b3-b1a6bd73a225",
+      "id": "c6b7b2e6-1fb1-4d80-86ff-0ee65cd836cb",
       "name": "EnviaDocumento6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -700,
-        4120
+        2180,
+        2660
       ],
       "typeVersion": 4
     },
@@ -1491,13 +1491,13 @@
         "include": "none",
         "options": {}
       },
-      "id": "ae2933f6-487b-41f4-b897-9725edbb01e4",
+      "id": "fc448354-d78d-4b58-8527-b7ad4df46cac",
       "name": "variaveis",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        -2040,
-        3120
+        840,
+        1660
       ]
     },
     {
@@ -1555,12 +1555,12 @@
           }
         }
       },
-      "id": "6492ad71-b149-4c3a-8c26-9c625afb90f7",
+      "id": "472884f2-a1dc-40da-8ab5-9a0a5bc59fd4",
       "name": "EnviaImagem",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -700,
-        4600
+        2180,
+        3140
       ],
       "typeVersion": 4
     },
@@ -1615,12 +1615,12 @@
           }
         }
       },
-      "id": "56dab95a-1224-4a26-95ec-fd5858d4f8a5",
+      "id": "87e98aea-c584-4777-ba12-5d62ef17e907",
       "name": "EnviaVideo",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -700,
-        4440
+        2180,
+        2980
       ],
       "typeVersion": 4
     },
@@ -1671,12 +1671,12 @@
           }
         }
       },
-      "id": "ed699109-a369-4d94-bdc7-c8f4632a9851",
+      "id": "d8b6e101-8af5-4655-99e3-5832fd979d08",
       "name": "EnviaAudio",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -700,
-        4760
+        2180,
+        3300
       ],
       "typeVersion": 4
     },
@@ -1727,12 +1727,12 @@
           }
         }
       },
-      "id": "1ba74d96-0577-4dbe-ba2b-c7db3d26ee9f",
+      "id": "9f1d7eed-0c48-43a9-942e-e9f8c6a23435",
       "name": "EnviaMensagemTexto",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -700,
-        5080
+        2180,
+        3620
       ],
       "typeVersion": 4
     },
@@ -1787,12 +1787,12 @@
           }
         }
       },
-      "id": "e4638bef-656a-470c-a0e6-fd005014423f",
+      "id": "78cabd5f-2e2d-4c01-8bcd-8f48820deafd",
       "name": "EnviaDocumento",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -700,
-        4920
+        2180,
+        3460
       ],
       "typeVersion": 4
     },
@@ -1827,13 +1827,13 @@
         },
         "fallbackOutput": 5
       },
-      "id": "1f142a88-4e5f-40ec-8be7-8a912c786a78",
+      "id": "461d065b-d1da-4e47-a651-7c2ffee41962",
       "name": "verifica_midias6",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 2,
       "position": [
-        -980,
-        3960
+        1900,
+        2500
       ]
     },
     {
@@ -1867,13 +1867,13 @@
         },
         "fallbackOutput": 5
       },
-      "id": "dffb16c1-e937-40c8-9df7-2089b0541f19",
+      "id": "55804644-2660-40a9-8d1e-b2edfe97c131",
       "name": "verifica_midias",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 2,
       "position": [
-        -980,
-        4760
+        1900,
+        3300
       ]
     },
     {
@@ -1911,24 +1911,24 @@
         },
         "fallbackOutput": 6
       },
-      "id": "f8dac654-6c7c-4c27-8466-cf4ee52c3a94",
+      "id": "e3c65bf0-15b0-4926-ad04-d0c854617d5c",
       "name": "verifica_midias2",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 2,
       "position": [
-        -1420,
-        2960
+        1460,
+        1500
       ]
     },
     {
       "parameters": {},
-      "id": "a95b005e-e012-487e-a867-bc13bd410999",
+      "id": "f84b7767-6695-42de-8108-1a1c7a9d880a",
       "name": "Wait",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -2660,
-        2000
+        220,
+        540
       ],
       "webhookId": "a7c3e1f9-23e9-4c80-ad35-cfeaef28712e"
     },
@@ -1979,24 +1979,24 @@
           }
         }
       },
-      "id": "28f65a53-bd68-4558-a457-2f0d2aaf6613",
+      "id": "459e1321-063f-48d8-97fe-9c14b180a4e6",
       "name": "EnviaMensagemTexto7",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -1800,
-        1980
+        1080,
+        520
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "c6f6b849-476f-448d-a33b-fb6d16155c62",
+      "id": "f1b2fbaa-5c22-467e-836c-214d2a7d08b6",
       "name": "Wait1",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -1620,
-        1980
+        1260,
+        520
       ],
       "webhookId": "89e88efa-c0de-45f9-8ec2-f57844f50022"
     },
@@ -2052,13 +2052,13 @@
           }
         }
       },
-      "id": "eef5b080-879b-4f21-96a1-f96737c8c7e4",
+      "id": "7ee746fe-311b-43f0-9b9c-edc68a695989",
       "name": "enviar_video",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        -1800,
-        1700
+        1080,
+        240
       ]
     },
     {
@@ -2078,18 +2078,18 @@
           "parallelMessages": 1
         }
       },
-      "id": "b751f610-182b-406c-a085-a7cd5721fa50",
+      "id": "80bfca7d-490e-4561-bbf0-ef619a2ae655",
       "name": "chega_da_fila",
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
       "position": [
-        -3160,
-        2020
+        -280,
+        560
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -2126,13 +2126,13 @@
           ]
         }
       },
-      "id": "43d9ff7a-632e-4e52-97e6-1b5a2b80bb49",
+      "id": "57932c8d-54c5-4cc5-b340-d30d3e860fab",
       "name": "verifica_midias5",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 2,
       "position": [
-        -2220,
-        1980
+        660,
+        520
       ]
     }
   ],
@@ -2165,23 +2165,12 @@
   },
   "settings": {
     "executionOrder": "v1",
-    "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveExecutionProgress": true
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
-  "tags": [
-    {
-      "createdAt": "2024-08-15T19:23:18.899Z",
-      "updatedAt": "2024-08-15T19:23:18.899Z",
-      "id": "q5QO26imaVoOvQxo",
-      "name": "[MSG_EVOLUTION]"
-    }
-  ],
+  "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-08T19:34:01.242Z",
-  "versionId": "a52349da-cea3-4b50-9fa0-db28914ab788"
+  "updatedAt": "2025-02-01T19:20:27.156Z",
+  "versionId": "b8fc534a-36d8-4dbf-8cb0-c0d38d733ac0"
 }
