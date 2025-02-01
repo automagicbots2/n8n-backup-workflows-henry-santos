@@ -57,9 +57,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-15T17:03:08.980Z",
-  "id": "kHVpcCVFyXTdjd79",
-  "meta": null,
+  "createdAt": "2025-02-01T19:02:40.609Z",
+  "id": "O8OlD0h9qbHmvgLz",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][MSA] - Trata Dados",
   "nodes": [
     {
@@ -142,13 +144,13 @@
         },
         "options": {}
       },
-      "id": "48e22684-a733-4897-bbb8-82aea2758000",
+      "id": "b8cf4d48-9e64-417d-a381-a63a7f99ad93",
       "name": "dados",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1000,
-        -140
+        800,
+        -120
       ]
     },
     {
@@ -158,10 +160,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        380,
-        -140
+        180,
+        -120
       ],
-      "id": "2203c69f-e212-4378-a560-04ca4a41b77e",
+      "id": "9c3d337d-7ef2-43e2-b6ff-5982679905b9",
       "name": "formata_dados"
     },
     {
@@ -179,18 +181,18 @@
           "durable": true
         }
       },
-      "id": "bcd47d06-5fc1-415e-90a9-dde3babf36a9",
+      "id": "f4d0fb69-445f-4a1b-89f4-e05a51a1a8ab",
       "name": "fila_acoes_funis",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        1200,
-        -140
+        1000,
+        -120
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -211,10 +213,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        800,
-        -140
+        600,
+        -120
       ],
-      "id": "170a9121-810a-4dd2-a260-8318e5c80e90",
+      "id": "16f2dd6c-57ec-4cc1-b4f8-5fc0801f8d2d",
       "name": "busca_funil"
     },
     {
@@ -237,19 +239,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "c0d3e38d-64e7-4385-8e6e-5c29e678dafe",
+      "id": "6b912fbf-ac7d-4582-95c0-1fa615793f37",
       "name": "pesquisa_variavel_n8n_fluxo_funis",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        600,
-        -140
+        400,
+        -120
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -262,10 +264,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        160,
-        -140
+        -40,
+        -120
       ],
-      "id": "2f76f402-8fd7-4519-a1f3-44f50ba48f00",
+      "id": "6d210955-a276-437d-9163-e3ab984d7807",
       "name": "cadastro_na_lp",
       "webhookId": "198920a9-51b7-4245-8cdf-5f71e8d0f628"
     }
@@ -318,16 +320,16 @@
   },
   "settings": {
     "executionOrder": "v1",
-    "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV",
     "saveDataErrorExecution": "all",
     "saveDataSuccessExecution": "all",
     "saveExecutionProgress": true,
-    "saveManualExecutions": true
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-15T18:51:21.210Z",
-  "versionId": "d9d099db-9bd9-4339-a659-aa8560a1405f"
+  "updatedAt": "2025-02-01T19:03:00.377Z",
+  "versionId": "5cc2722b-02e0-4a24-ac7a-5e08e2de0bb5"
 }
