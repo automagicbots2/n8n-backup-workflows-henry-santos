@@ -24,9 +24,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-18T01:42:38.919Z",
-  "id": "ze45puE9myqZBq5C",
-  "meta": null,
+  "createdAt": "2025-02-01T19:15:09.802Z",
+  "id": "dd0FQgmW99skfosL",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][Banco de Dados] - Busca ou Insere Assinatura",
   "nodes": [
     {
@@ -38,10 +40,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -660,
-        180
+        140,
+        -80
       ],
-      "id": "45914516-a92e-4172-9c6f-32ac1a14fd41",
+      "id": "eeae2202-74ce-40ab-9df3-9403d61ab86b",
       "name": "fluxo_chamado",
       "webhookId": "7a046997-4089-434c-a0ae-f4da1d44546d"
     },
@@ -56,15 +58,15 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -440,
-        180
+        360,
+        -80
       ],
-      "id": "74d1ec5c-8005-4419-b06c-21d1e06fa86c",
+      "id": "0003ee07-55fe-4801-8e76-6c562fd92596",
       "name": "executa_procedure",
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -73,10 +75,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -240,
-        180
+        560,
+        -80
       ],
-      "id": "290ca1dc-d8ed-4141-92b5-fc879003866a",
+      "id": "b8a3e467-4309-41a7-8d89-1bcd9971076d",
       "name": "Limit"
     }
   ],
@@ -115,11 +117,11 @@
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-18T15:37:54.116Z",
-  "versionId": "f940face-d981-43a2-90d8-65182866c333"
+  "updatedAt": "2025-02-01T19:15:18.715Z",
+  "versionId": "a0491392-7356-4968-8c99-4662bec926dc"
 }
