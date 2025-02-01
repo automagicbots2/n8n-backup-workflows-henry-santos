@@ -24,8 +24,8 @@
       ]
     }
   },
-  "createdAt": "2024-08-08T14:42:37.682Z",
-  "id": "rYVthcVCTN4tOU6n",
+  "createdAt": "2025-02-01T19:21:16.287Z",
+  "id": "DfkphHfx7lLy7AIb",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -67,13 +67,13 @@
         },
         "options": {}
       },
-      "id": "dc0860fb-8b86-4c02-9945-d4c4e16b883a",
+      "id": "3007548c-c58e-4098-8aa9-a62196ed9c6e",
       "name": "dados_validados",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        740,
-        1020
+        240,
+        -100
       ]
     },
     {
@@ -82,13 +82,13 @@
         "path": "onboarding-msa-bc",
         "options": {}
       },
-      "id": "7a654751-b6ad-488f-9e9d-50839b3ce61f",
+      "id": "10cfe4cc-a1a8-44e5-a94a-42a2026ef269",
       "name": "Onboarding",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        540,
-        1020
+        40,
+        -100
       ],
       "webhookId": "ca0c0d67-b335-4d4a-9bb2-47844ea97d8d"
     },
@@ -143,12 +143,12 @@
           }
         }
       },
-      "id": "daf100ef-696e-4657-9ef0-28aafff784e0",
+      "id": "5a4198ce-6182-48e0-9254-b820a3340f94",
       "name": "EnviaMsg",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        940,
-        1020
+        440,
+        -100
       ],
       "typeVersion": 4
     }
@@ -462,13 +462,12 @@
   },
   "settings": {
     "executionOrder": "v1",
-    "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-08-08T15:06:37.166Z",
-  "versionId": "2dde7540-eb03-49ef-946d-eb9763443095"
+  "updatedAt": "2025-02-01T19:21:39.724Z",
+  "versionId": "c095439e-e7da-416d-aa72-0ec55bc46345"
 }
