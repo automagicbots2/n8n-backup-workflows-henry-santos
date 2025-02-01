@@ -602,11 +602,9 @@
       ]
     }
   },
-  "createdAt": "2024-03-25T19:11:10.347Z",
-  "id": "7Nc7hk3aeXWMVCP4",
-  "meta": {
-    "templateCredsSetupCompleted": true
-  },
+  "createdAt": "2025-02-01T18:26:11.346Z",
+  "id": "hnoN2SD6bLxHzhaH",
+  "meta": null,
   "name": "🏆⌚[HENRY SANTOS][BD][SHEETS] - Aplicação Preenchida - Parte 5 - Qualificado",
   "nodes": [
     {
@@ -615,13 +613,13 @@
         "height": 494.4652796495957,
         "width": 1510.0404531979405
       },
-      "id": "cf44a8ec-cc6d-49ad-927e-2f16f1489498",
+      "id": "1884f4aa-503f-40a8-b704-fd8675737221",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        920,
-        460
+        620,
+        -20
       ]
     },
     {
@@ -649,10 +647,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        1180,
-        640
+        880,
+        160
       ],
-      "id": "14097004-5593-41e4-bf3b-ce22a2c3bb1a"
+      "id": "91f2b811-e507-49fb-8281-8b00a6f8d941"
     },
     {
       "parameters": {
@@ -679,10 +677,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        1400,
-        640
+        1100,
+        160
       ],
-      "id": "ac79161c-ec7a-4abe-a3e5-ee542ede0edf"
+      "id": "582dc655-bf0a-42fe-94db-bdebee09cd34"
     },
     {
       "parameters": {
@@ -700,13 +698,13 @@
         },
         "options": {}
       },
-      "id": "3f61c1e4-5fc6-4f30-a42e-7606f5c2dd7b",
+      "id": "f9ccc179-af58-4336-850d-71893f0d682b",
       "name": "Set",
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        980,
-        640
+        680,
+        160
       ]
     },
     {
@@ -731,13 +729,13 @@
         },
         "options": {}
       },
-      "id": "2f415c8f-cb05-4084-861c-26eb08c9ab64",
+      "id": "4268857c-22a3-4c5e-9760-d816c7d0328d",
       "name": "Consulta Users da Conta",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1620,
-        640
+        1320,
+        160
       ]
     },
     {
@@ -746,13 +744,13 @@
         "height": 494.4652796495957,
         "width": 406.19790552805046
       },
-      "id": "d5282845-78fa-46ff-95c8-e92e732278bf",
+      "id": "3d9e7698-e68b-4c1b-9a8d-48e7c945d537",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        460,
-        460
+        160,
+        -20
       ]
     },
     {
@@ -780,10 +778,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        1820,
-        640
+        1520,
+        160
       ],
-      "id": "c65b5658-99a1-4da1-95c0-40c5a0ba69d4"
+      "id": "d6e040d5-0937-44d2-a67f-38cef4c2fad9"
     },
     {
       "parameters": {
@@ -810,10 +808,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        2020,
-        640
+        1720,
+        160
       ],
-      "id": "56dff967-2197-45cc-a835-5ee96888f6fb"
+      "id": "7840c60f-ea2f-417d-9e82-074ec63afc02"
     },
     {
       "parameters": {
@@ -837,13 +835,13 @@
         },
         "options": {}
       },
-      "id": "1512a0e2-7556-451f-84fb-d10152c803b3",
+      "id": "e9dd0c88-0332-4a20-bea1-fb01a9b1fd2f",
       "name": "Listar Tipos de Task da Conta",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2220,
-        640
+        1920,
+        160
       ]
     },
     {
@@ -870,13 +868,13 @@
         },
         "options": {}
       },
-      "id": "34ce8186-65d5-43f2-b798-5136fe217ecb",
+      "id": "82260648-b5f7-4932-a292-f40a9bf10566",
       "name": "envia_fluxo_de_nao_agendou_10_min",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        3080,
-        2000
+        2780,
+        1520
       ],
       "retryOnFail": true,
       "waitBetweenTries": 5000,
@@ -910,13 +908,13 @@
         },
         "options": {}
       },
-      "id": "82c6687c-6d16-4e39-ab1a-b2dcdaa40815",
+      "id": "e7d22d69-dd1e-40a5-8b17-da3a50c3f5c7",
       "name": "envia_campo_pergunta20",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2080,
-        2000
+        1780,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -951,13 +949,13 @@
         },
         "options": {}
       },
-      "id": "1d2f6610-e2f2-49e0-a219-3d32cf2f06d9",
+      "id": "4f448fc3-dc14-4087-8903-4793a68dd43a",
       "name": "envia_campo_pergunta19",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1900,
-        2000
+        1600,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -992,13 +990,13 @@
         },
         "options": {}
       },
-      "id": "dd69a9f0-4547-42bf-8b61-96a2392f3f75",
+      "id": "e7be149b-f74a-4a98-b6fc-dbeba516644b",
       "name": "envia_campo_pergunta18",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1700,
-        2000
+        1400,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1033,13 +1031,13 @@
         },
         "options": {}
       },
-      "id": "fbce672a-ab6c-4aa8-b7bc-dc31b6a18c8e",
+      "id": "8b442eff-71f7-4032-a9dc-24304f9b180a",
       "name": "envia_campo_pergunta17",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1500,
-        2000
+        1200,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1074,13 +1072,13 @@
         },
         "options": {}
       },
-      "id": "35b2cb33-61ca-4975-855e-b785192c89e5",
+      "id": "73bfd700-ebac-48b9-a211-6287801b9e52",
       "name": "envia_campo_pergunta16",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1300,
-        2000
+        1000,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1115,13 +1113,13 @@
         },
         "options": {}
       },
-      "id": "53b1adf4-efc5-4089-819f-60987b2c7ab6",
+      "id": "1dc9f594-bb18-47ea-b7f5-1b730236621f",
       "name": "envia_campo_pergunta15",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1100,
-        2000
+        800,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1156,13 +1154,13 @@
         },
         "options": {}
       },
-      "id": "2c3cc743-caa0-47c6-af7c-d98b29209547",
+      "id": "bcd83a03-89e6-430f-ae58-74f57ee132b4",
       "name": "envia_campo_pergunta14",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        860,
-        2000
+        560,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1197,13 +1195,13 @@
         },
         "options": {}
       },
-      "id": "c24ad66c-e2ab-4798-86d5-cba1f54b60b1",
+      "id": "aeef35e8-6f29-4f40-89f2-6dc49e7445b8",
       "name": "envia_campo_pergunta13",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        680,
-        2000
+        380,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1238,13 +1236,13 @@
         },
         "options": {}
       },
-      "id": "6b54b71a-15a6-463e-8970-574aac2e57ab",
+      "id": "852b1c81-1f38-40fe-bf50-2a9a4a496471",
       "name": "envia_campo_pergunta12",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        480,
-        2000
+        180,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1279,13 +1277,13 @@
         },
         "options": {}
       },
-      "id": "223a18d0-a849-4bf9-90e7-7c3dd7df19d0",
+      "id": "95aef183-6ff2-43fd-9ccb-b2d8b1f8254c",
       "name": "envia_campo_pergunta10",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2260,
-        1780
+        1960,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1320,13 +1318,13 @@
         },
         "options": {}
       },
-      "id": "4ff525c2-1be1-467e-bae2-748abfae537a",
+      "id": "96ebcff7-4f71-4aa1-a9c6-854cb1bb3195",
       "name": "envia_campo_pergunta9",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2080,
-        1780
+        1780,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1361,13 +1359,13 @@
         },
         "options": {}
       },
-      "id": "6c9c763e-23c4-4aaf-b64b-d51002b77b6c",
+      "id": "155180b4-9569-411f-98bc-6dd3116d1b77",
       "name": "envia_campo_pergunta8",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1900,
-        1780
+        1600,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1402,13 +1400,13 @@
         },
         "options": {}
       },
-      "id": "93928d7d-039d-4c3c-a14b-a92af5a0dff6",
+      "id": "87786b88-436a-4372-9d57-5a3c5c5d967d",
       "name": "envia_campo_pergunta7",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1700,
-        1780
+        1400,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1443,13 +1441,13 @@
         },
         "options": {}
       },
-      "id": "8ea08641-df13-444a-a9d0-e3314c3b3069",
+      "id": "78e64280-ae8d-4a27-b920-d048bd97dde2",
       "name": "envia_campo_pergunta6",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1500,
-        1780
+        1200,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1484,13 +1482,13 @@
         },
         "options": {}
       },
-      "id": "94c719f7-ebe2-4502-99cc-c7abd51f6588",
+      "id": "76b56107-9854-4701-ba8b-e9ab64f7cdf1",
       "name": "envia_campo_pergunta5",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1300,
-        1780
+        1000,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1525,13 +1523,13 @@
         },
         "options": {}
       },
-      "id": "ab43d957-770d-4f4f-bef0-191e5d1eb777",
+      "id": "fbb749fd-aed5-42c3-bfee-3a9b92862ed9",
       "name": "envia_campo_pergunta4",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1100,
-        1780
+        800,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1566,13 +1564,13 @@
         },
         "options": {}
       },
-      "id": "ec4225d5-d82b-4f23-b4a2-83aec9657fc7",
+      "id": "af55fc5c-0e33-4509-8dbe-a17ea55afc50",
       "name": "envia_campo_pergunta3",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        860,
-        1780
+        560,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1607,13 +1605,13 @@
         },
         "options": {}
       },
-      "id": "5025940b-80d6-4d20-b2fd-6a1ce313cb6c",
+      "id": "0199b9ac-0fde-4838-9839-daf78c36e4f3",
       "name": "envia_campo_pergunta2",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        680,
-        1780
+        380,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1648,13 +1646,13 @@
         },
         "options": {}
       },
-      "id": "0b1c2195-98be-41d6-9395-b4db6ea5b3d6",
+      "id": "c0e12a7c-6596-4eda-9ded-fb5c93082789",
       "name": "envia_campo_pergunta1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        480,
-        1780
+        180,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1689,13 +1687,13 @@
         },
         "options": {}
       },
-      "id": "7a706327-289a-4b02-87ff-d6d4e265ba2a",
+      "id": "f2e819b0-03e0-4294-8b9e-512216dda1fb",
       "name": "envia_campo_pergunta0",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        260,
-        1780
+        -40,
+        1300
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1706,13 +1704,13 @@
       "parameters": {
         "errorMessage": "An error ocurred!"
       },
-      "id": "6412094f-cf05-46e6-b8bb-950399a689d6",
+      "id": "337d60c5-140c-4eae-808b-ff55bae404f8",
       "name": "Stop and Error",
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        280,
-        1360
+        -20,
+        880
       ]
     },
     {
@@ -1726,13 +1724,13 @@
           ]
         }
       },
-      "id": "3e02a4b0-c085-4fae-ab7f-1b4f5f16c5af",
+      "id": "c6db8900-acb7-4460-bf31-273a1ef09969",
       "name": "segundo_ou_mais_erro",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        80,
-        1440
+        -220,
+        960
       ]
     },
     {
@@ -1747,13 +1745,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "f4e4ff3a-0b2a-429f-ba7a-aca6b6fae325",
+      "id": "444c5722-52e6-423d-9e64-a4fa53e66dfe",
       "name": "agendamento_nao_existe1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        3920,
-        2020
+        3620,
+        1540
       ]
     },
     {
@@ -1764,18 +1762,18 @@
           "detailedOutput": true
         }
       },
-      "id": "84b5b1ec-57b6-494a-b9c4-1e661aaf846a",
+      "id": "8a28066f-c15d-46bd-9924-206fd48a5e80",
       "name": "pesquisa_agendamento_menos_de_15d1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        3720,
-        2020
+        3420,
+        1540
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1784,13 +1782,13 @@
         "amount": 10,
         "unit": "minutes"
       },
-      "id": "49a36064-f518-47f0-8465-49ba5f220835",
+      "id": "6e7e0ec2-f8fc-461a-9410-b36e75cc39c4",
       "name": "espera_10_minutos",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        3500,
-        2100
+        3200,
+        1620
       ],
       "webhookId": "b8347fd4-a0f4-47c6-95a3-45bb9acd0ddb"
     },
@@ -1810,24 +1808,24 @@
         },
         "combineOperation": "any"
       },
-      "id": "a8653c43-77bb-4ff0-a809-4232176d949a",
+      "id": "19959d28-6741-467e-8922-5a798d0d78e4",
       "name": "numeros_de_teste",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        3280,
-        2000
+        2980,
+        1520
       ]
     },
     {
       "parameters": {},
-      "id": "fc1bfc00-7e68-417b-be7a-e7406457036c",
+      "id": "b05774de-9654-4626-91ee-49ed5fdaeda9",
       "name": "nada1",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4160,
-        2120
+        3860,
+        1640
       ]
     },
     {
@@ -1835,13 +1833,13 @@
         "amount": 5,
         "unit": "seconds"
       },
-      "id": "eaa56226-0091-4e05-9de1-9b887a33ec15",
+      "id": "2b8dbef2-7aca-4fbd-8baf-f5fe26d988ea",
       "name": "espera_5_segundos1",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        3500,
-        1900
+        3200,
+        1420
       ],
       "webhookId": "3b7b2293-187e-4093-b5c5-3293ef3a0db7"
     },
@@ -1860,13 +1858,13 @@
         },
         "options": {}
       },
-      "id": "de8a909c-99d9-4a62-992d-c818abc9015f",
+      "id": "dd95d28e-7b95-40bb-9f8e-d276e91bb576",
       "name": "envia_tag_qualificado1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2500,
-        2000
+        2200,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1901,13 +1899,13 @@
         },
         "options": {}
       },
-      "id": "4c04f525-b2f0-4117-801f-9200c0fe1de1",
+      "id": "e9e10af6-20f7-432e-b9cc-97e7a5a33762",
       "name": "envia_campo_emailse1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2440,
-        1560
+        2140,
+        1080
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1942,13 +1940,13 @@
         },
         "options": {}
       },
-      "id": "c0991426-b657-4ceb-beb4-139c9040a04a",
+      "id": "9209d87f-c388-4da4-919d-d4081237e871",
       "name": "envia_campo_utm_content1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1100,
-        1560
+        800,
+        1080
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -1983,13 +1981,13 @@
         },
         "options": {}
       },
-      "id": "7d8e9dbd-b0c9-449b-ae83-f5d9f55d0662",
+      "id": "cd25f481-c6ed-482a-92cc-74102fe4f5fb",
       "name": "envia_campo_utm_var",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2260,
-        1560
+        1960,
+        1080
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -2024,13 +2022,13 @@
         },
         "options": {}
       },
-      "id": "41a6518e-6f57-4a7f-8788-cd72e4075f9a",
+      "id": "bfde3407-cd96-41e6-9c5f-c46d7e871e9c",
       "name": "envia_campo_utm_fun",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2080,
-        1560
+        1780,
+        1080
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -2065,13 +2063,13 @@
         },
         "options": {}
       },
-      "id": "6ac68c37-9998-45d3-8525-ac1f7b61e681",
+      "id": "b24cd706-1941-47c8-af28-94ca335052f5",
       "name": "envia_campo_utm_medium1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1900,
-        1560
+        1600,
+        1080
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -2106,13 +2104,13 @@
         },
         "options": {}
       },
-      "id": "36aa120a-5b7d-47d3-94c0-4605df27d693",
+      "id": "03315028-dd18-4447-aade-4206be227efe",
       "name": "envia_campo_utm_source1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1700,
-        1560
+        1400,
+        1080
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -2147,13 +2145,13 @@
         },
         "options": {}
       },
-      "id": "dbfdf8ef-414c-4e0d-8bf1-361592624f0f",
+      "id": "82b60bd7-e6af-4720-8446-6df90066e405",
       "name": "envia_campo_utm_campaign1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1500,
-        1560
+        1200,
+        1080
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -2188,13 +2186,13 @@
         },
         "options": {}
       },
-      "id": "4418bb1b-2506-405d-9469-b5d6102170d6",
+      "id": "8e5774b4-36f2-44f4-afbd-20e80c492086",
       "name": "envia_campo_utm_term1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1300,
-        1560
+        1000,
+        1080
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -2229,13 +2227,13 @@
         },
         "options": {}
       },
-      "id": "1b78b1e3-edfe-4a6d-8b7a-9f83aa4cc216",
+      "id": "0a6ccd2b-dcf4-405f-86b9-60599b928470",
       "name": "envia_campo_id_banco_de_dados1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        260,
-        1560
+        -40,
+        1080
       ],
       "retryOnFail": true,
       "waitBetweenTries": 5000,
@@ -2269,13 +2267,13 @@
         },
         "options": {}
       },
-      "id": "15af5e62-4283-45e4-b048-bb372532152c",
+      "id": "3adc08be-7d08-40c1-90a7-0e08e62fdf73",
       "name": "envia_campo_instagram1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        880,
-        1560
+        580,
+        1080
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -2299,18 +2297,18 @@
           "parallelMessages": 3
         }
       },
-      "id": "24cba23d-c1a2-47ad-b222-f4840222d3c9",
+      "id": "784cbb87-8963-4653-b70d-3810e8e4bc57",
       "name": "chega_da_fila",
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
       "position": [
-        -120,
-        1540
+        -420,
+        1060
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -2342,13 +2340,13 @@
         },
         "options": {}
       },
-      "id": "4c256ced-ee5d-4716-91ff-ec715e224fa7",
+      "id": "2c905fff-e650-41fd-8de2-0e6d98a98828",
       "name": "envia_campo_id_lead_ac2",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        480,
-        1560
+        180,
+        1080
       ],
       "retryOnFail": true,
       "waitBetweenTries": 5000,
@@ -2382,13 +2380,13 @@
         },
         "options": {}
       },
-      "id": "75a77339-3ff7-436a-8da8-9cc941e205f1",
+      "id": "0ede8d56-0235-4aa0-a4f0-f08c52d4b347",
       "name": "envia_campo_id_deal_ac2",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        680,
-        1560
+        380,
+        1080
       ],
       "retryOnFail": true,
       "waitBetweenTries": 5000,
@@ -2422,13 +2420,13 @@
         },
         "options": {}
       },
-      "id": "c7e96fdf-9799-4daf-a165-b072afbd5303",
+      "id": "3896cc7f-58ff-4975-98ea-b0e3f814e78e",
       "name": "envia_campo_pergunta11",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        260,
-        2000
+        -40,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -2463,13 +2461,13 @@
         },
         "options": {}
       },
-      "id": "c355bf2a-daf5-4b5a-88cc-0d4ae0637b5e",
+      "id": "77280fdf-5d9b-4bb1-9632-e46529eb48bb",
       "name": "envia_campo_dia_aplicou",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2280,
-        2000
+        1980,
+        1520
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -2506,10 +2504,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        2940,
-        1520
+        2640,
+        1040
       ],
-      "id": "f6bc7189-4096-4457-956c-6d5379125266",
+      "id": "6585b6aa-b787-4721-9a9b-91ebafb3e6da",
       "continueOnFail": true
     },
     {
@@ -2535,13 +2533,13 @@
         },
         "options": {}
       },
-      "id": "73c5dc7c-cec4-403c-a7b5-8d3d66c2a43b",
+      "id": "a7aa2789-1c7a-43a4-9822-103df03f8e85",
       "name": "funil_manychat",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        2760,
-        1520
+        2460,
+        1040
       ]
     },
     {
@@ -2568,13 +2566,13 @@
         },
         "options": {}
       },
-      "id": "8bded167-f6fe-4077-b8fc-3da41db4d7c8",
+      "id": "d8f12f0f-da2d-401c-9b33-4d15fe4f87b8",
       "name": "verifica_funil_software",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        2700,
-        2000
+        2400,
+        1520
       ]
     },
     {
@@ -2592,13 +2590,13 @@
         },
         "options": {}
       },
-      "id": "96fb5912-ed2a-4183-9ae1-1f29cbbdbdc6",
+      "id": "43a619cd-854f-48cd-ab24-247e57349033",
       "name": "envia_tag_qualificado",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2920,
-        1860
+        2620,
+        1380
       ],
       "retryOnFail": true,
       "maxTries": 3,
@@ -2611,20 +2609,15 @@
         "tagId": "109",
         "contactId": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_activecampaign\"] }}"
       },
-      "id": "e3d69626-a1e3-4deb-a3a0-9b08b957b00a",
+      "id": "7cc0283f-19ae-4820-b2e2-26f4151b628d",
       "name": "add_tag_nao_agendou",
       "type": "n8n-nodes-base.activeCampaign",
       "typeVersion": 1,
       "position": [
-        4160,
-        1920
+        3860,
+        1440
       ],
-      "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        }
-      }
+      "disabled": true
     }
   ],
   "pinData": {
@@ -2718,23 +2711,12 @@
   },
   "settings": {
     "executionOrder": "v1",
-    "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveExecutionProgress": true
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
-  "tags": [
-    {
-      "createdAt": "2024-03-25T13:17:28.604Z",
-      "updatedAt": "2024-03-25T13:17:28.604Z",
-      "id": "iEWW0rAq20zciLEA",
-      "name": "[NAG]"
-    }
-  ],
+  "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-08-15T20:44:16.691Z",
-  "versionId": "e0da3889-6fc6-40b4-a41f-585805f84be8"
+  "updatedAt": "2025-02-01T18:26:32.987Z",
+  "versionId": "de32f300-d09d-4892-86f1-c1e4a742cab1"
 }
