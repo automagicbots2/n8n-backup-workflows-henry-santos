@@ -24,9 +24,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-17T20:37:55.159Z",
-  "id": "88JYFJPrJjwlaFJ3",
-  "meta": null,
+  "createdAt": "2025-02-01T19:14:23.837Z",
+  "id": "QYgvSyAgGQGd6FXu",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][Banco de Dados] - Busca ou Insere Conversão",
   "nodes": [
     {
@@ -38,10 +40,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -660,
-        180
+        -160,
+        -140
       ],
-      "id": "042adcdc-8808-4ee2-9109-fd31b67b8ffd",
+      "id": "78eedced-a391-4e81-bdf5-b0ebc7b691cf",
       "name": "fluxo_chamado",
       "webhookId": "d6fc03ca-a4ba-4e0c-90d9-a7117cad574b"
     },
@@ -56,15 +58,15 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -440,
-        180
+        60,
+        -140
       ],
-      "id": "85c86a1b-7665-496e-87d6-b4eea741369a",
+      "id": "f9537e4b-0e21-4cc7-8da4-522b30aa8b31",
       "name": "executa_procedure",
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -73,10 +75,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -240,
-        180
+        260,
+        -140
       ],
-      "id": "bcb45710-02ac-46d2-bc13-536c8644b84f",
+      "id": "345837c1-f836-441d-a203-7e80e8a76128",
       "name": "Limit"
     }
   ],
@@ -131,11 +133,11 @@
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-18T01:42:53.256Z",
-  "versionId": "915911bc-9990-409c-95a6-9e122fd8f0d4"
+  "updatedAt": "2025-02-01T19:14:32.714Z",
+  "versionId": "f8c41925-149f-4aeb-916a-b2d69de50ee2"
 }
