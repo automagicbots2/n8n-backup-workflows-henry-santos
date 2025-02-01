@@ -13,8 +13,8 @@
       ]
     }
   },
-  "createdAt": "2024-03-24T16:53:32.583Z",
-  "id": "9WrqNFN2jagHPbWV",
+  "createdAt": "2025-02-01T17:58:09.461Z",
+  "id": "YqwIRpfotJoCTvFh",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -22,13 +22,13 @@
   "nodes": [
     {
       "parameters": {},
-      "id": "ad887e3f-b23d-4d0b-a55a-d0b2c8065cab",
+      "id": "fc70b2a8-cff6-4fc0-a4e2-93e7c208c97f",
       "name": "Error Trigger",
       "type": "n8n-nodes-base.errorTrigger",
       "typeVersion": 1,
       "position": [
-        820,
-        300
+        0,
+        0
       ]
     },
     {
@@ -37,25 +37,23 @@
         "text": "=🚨 **Workflow com erro no Henry Santos - Hetzner**\n\nO Workflow **{{ $json[\"workflow\"][\"name\"] }}**, do **ID {{ $json[\"workflow\"][\"id\"] }}**, acabou de apresentar um erro.\n\nAssim que puder, dê uma conferida e ajuste o erro apresentado.",
         "options": {}
       },
-      "id": "cefa1966-d7be-4cb1-bcab-d92d4e151eb5",
+      "id": "534ec148-fe2d-4104-b96f-8260836d28fa",
       "name": "Discord",
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        1040,
-        300
+        220,
+        0
       ]
     }
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1",
-    "saveManualExecutions": true,
-    "callerPolicy": "workflowsFromSameOwner"
+    "executionOrder": "v1"
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 1,
-  "updatedAt": "2025-01-11T16:50:17.028Z",
-  "versionId": "a571557d-e693-4ee1-a0c7-a70106f47216"
+  "triggerCount": 0,
+  "updatedAt": "2025-02-01T17:58:09.461Z",
+  "versionId": "e3dda8eb-8847-479a-bda0-6efa97955fb9"
 }
