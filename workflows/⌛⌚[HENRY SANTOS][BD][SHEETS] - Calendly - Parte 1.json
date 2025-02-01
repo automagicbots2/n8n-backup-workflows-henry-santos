@@ -346,8 +346,8 @@
       ]
     }
   },
-  "createdAt": "2024-03-24T16:59:58.739Z",
-  "id": "PzffurhaX36M8pgX",
+  "createdAt": "2025-02-01T18:46:49.113Z",
+  "id": "Fb2bqSmK3Ji8Buoh",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -357,39 +357,39 @@
       "parameters": {
         "options": {}
       },
-      "id": "2a79e793-7eab-4042-bae4-7a4f13684fc1",
+      "id": "9baa4be3-5011-4e46-b510-ee18c91fcf32",
       "name": "agendamento",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        -1640,
-        1400
+        -940,
+        1660
       ]
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "ec1c6a86-23dd-41df-9cb6-97f6e2622fab",
+      "id": "490de929-4625-4b46-ba15-39764fb1a599",
       "name": "Reagendamento",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        -1640,
-        1260
+        -940,
+        1520
       ]
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "fe1c5b46-5c35-4e45-9e74-ae5e792a3956",
+      "id": "992a23c3-fe45-4d32-957a-f7aa29caea67",
       "name": "Cancelamento",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        -1640,
-        1100
+        -940,
+        1360
       ]
     },
     {
@@ -403,13 +403,13 @@
           ]
         }
       },
-      "id": "def8ad8b-07e5-4261-97a7-99990574a090",
+      "id": "f5639e4c-3d6b-4482-aaa8-3763ba199c86",
       "name": "Evento Criado",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        20,
-        1060
+        720,
+        1320
       ]
     },
     {
@@ -423,13 +423,13 @@
           ]
         }
       },
-      "id": "99fc759d-65ca-4d6f-a55d-855abfe4d77f",
+      "id": "ada530d2-f8f5-492f-9425-f452e7bbc8e8",
       "name": "É Reagendamento",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -280,
-        740
+        420,
+        1000
       ]
     },
     {
@@ -443,57 +443,57 @@
           ]
         }
       },
-      "id": "2c0c41c0-637b-4106-94fd-158c33a9d7a8",
+      "id": "d0f6ce6e-8868-4a8b-b255-ddecb616dd99",
       "name": "É Reagendamento1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        280,
-        880
+        980,
+        1140
       ]
     },
     {
       "parameters": {},
-      "id": "52e542a7-80bc-4f1f-ae8a-b1bfd488e8b4",
+      "id": "f973dd4a-cd85-403d-9b1e-46b6d92dc2bb",
       "name": "Não faça nada1",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        460,
-        700
+        1160,
+        960
       ]
     },
     {
       "parameters": {},
-      "id": "6127efc4-b10a-4976-9f57-16090a47eae6",
+      "id": "8d3d8637-6436-45da-b6e5-f1f4854e1179",
       "name": "cancelamento",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        160,
-        1200
+        860,
+        1460
       ]
     },
     {
       "parameters": {},
-      "id": "4633204f-5129-4e70-b657-008208dd995f",
+      "id": "dd3dc1e4-bbfd-44a8-bff1-f8cb215eea0b",
       "name": "reagendamento",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        20,
-        480
+        720,
+        740
       ]
     },
     {
       "parameters": {},
-      "id": "2b4520a6-cbdc-4698-bf7e-b7ff13a6ce71",
+      "id": "fcfa88e8-32dc-47d6-bb65-017b75d41541",
       "name": "nao_faça_nada",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -1520,
-        -40
+        -820,
+        220
       ]
     },
     {
@@ -524,13 +524,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "52c14e3d-9b79-418d-a719-9bc4c0e07df5",
+      "id": "eeec18be-2d1e-4eb9-b97c-4e1e9c85f4c4",
       "name": "numeros_de_teste",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1740,
-        -100
+        -1040,
+        160
       ]
     },
     {
@@ -548,18 +548,18 @@
           "durable": true
         }
       },
-      "id": "dab13cdc-d4f0-4aa9-93ca-90aab0a6e1e9",
+      "id": "f4baec5c-c2a2-4e1e-801b-6696282e96b0",
       "name": "entra_na_fila",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        820,
-        900
+        1520,
+        1160
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -567,65 +567,65 @@
       "parameters": {
         "jsCode": "const payload = items[0].json.payload;\n\n// Pegar o parâmetro \"created_at\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst createdAt = new Date(payload.event.created_at);\nconst dataAgendamento = createdAt.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Pegar o parâmetro \"start_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst startTime = new Date(payload.event.start_time);\nconst dataInicio = startTime.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Subtrair 24 horas do \"start_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst lembrete24h = new Date(startTime.getTime() - 24 * 60 * 60 * 1000);\nconst dataLembrete24h = lembrete24h.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Subtrair 2 horas do \"start_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst lembrete2h = new Date(startTime.getTime() - 2 * 60 * 60 * 1000);\nconst dataLembrete2h = lembrete2h.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Pegar o parâmetro \"end_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst endTime = new Date(payload.event.end_time);\nconst dataTermino = endTime.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Buscar o telefone nos campos do array \"questions_and_answers\" no objeto \"invitee\" e formatá-lo\nlet telefone = '';\nconst questionsAndAnswers = payload.questions_and_answers;\nfor (let i = 0; i < questionsAndAnswers.length; i++) {\n  const answer = questionsAndAnswers[i].answer;\n  if (/^[\\+\\s\\d-]+$/.test(answer)) {\n    telefone = answer.replace(/[\\+\\s-]/g, '');\n    break;\n  }\n}\n\n// Extrair o DDI a partir do telefone limpo\nconst ddi = telefone.slice(0, 2);\n\n// Verificar se o DDI é igual a 55\nif (ddi === '55') {\n  const ddd = telefone.slice(2, 4);\n  if (Number(ddd) > 28) {\n    telefone = '55' + telefone.slice(2, 4) + telefone.slice(-8).replace(/\\s/g, '');\n  } else {\n    telefone = '55' + telefone.slice(2, 4) + telefone.slice(-9).replace(/\\s/g, '');\n  }\n} else {\n  telefone = telefone.replace(/[\\+\\s-]/g, ''); // Tratar como número internacional\n}\n\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// ...\n\n// Formatar o parâmetro \"name\" do objeto \"invitee\" com a primeira letra de cada palavra em maiúsculo\nconst name = formatarPrimeiraLetraMaiuscula(payload.invitee.name);\n\n// Validar se o parâmetro \"email\" é um email válido e colocar todas as letras em minúsculo\nconst email = payload.invitee.email.toLowerCase();\nconst isEmailValid = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);\n\n// Retornar os resultados\nreturn {\n  'Data em que foi feito o Agendamento': dataAgendamento,\n  'Data de Início': dataInicio,\n  'Lembrete 24h': dataLembrete24h,\n  'Lembrete 2h': dataLembrete2h,\n  'Data de Término': dataTermino,\n  'Telefone': telefone,\n  'Nome': name,\n  'Email válido': isEmailValid,\n  'Email': email\n};\n"
       },
-      "id": "793b2b3b-630b-4435-ae91-ce6e5e0b06f8",
+      "id": "f69cfb90-4be0-4642-9096-6708a5718373",
       "name": "formata_dados",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        440,
-        900
+        1140,
+        1160
       ]
     },
     {
       "parameters": {
         "jsCode": "const payload = items[0].json.payload;\n\n// Acesse a data do JSON\nconst canceledAt = payload.event.canceled_at;\n\n// Crie um objeto de data a partir da string\nconst data = new Date(canceledAt);\n\n// Extraia o ano, mês e dia\nconst ano = data.getFullYear();\nconst mes = String(data.getMonth() + 1).padStart(2, '0'); // Adiciona zero à esquerda, se necessário\nconst dia = String(data.getDate()).padStart(2, '0');\n\n// Crie a string formatada no formato YYYY-MM-DD\nconst dataCancelamento = `${ano}-${mes}-${dia}`;\n\n// Buscar o telefone nos campos do array \"questions_and_answers\" no objeto \"invitee\" e formatá-lo\nlet telefone = '';\nconst questionsAndAnswers = payload.questions_and_answers;\nfor (let i = 0; i < questionsAndAnswers.length; i++) {\n  const answer = questionsAndAnswers[i].answer;\n  if (/^[\\+\\s\\d-]+$/.test(answer)) {\n    telefone = answer.replace(/[\\+\\s-]/g, '');\n    break;\n  }\n}\n\n// Extrair o DDI a partir do telefone limpo\nconst ddi = telefone.slice(0, 2);\n\n// Verificar se o DDI é igual a 55\nif (ddi === '55') {\n  const ddd = telefone.slice(2, 4);\n  if (Number(ddd) > 28) {\n    telefone = '55' + telefone.slice(2, 4) + telefone.slice(-8).replace(/\\s/g, '');\n  } else {\n    telefone = '55' + telefone.slice(2, 4) + telefone.slice(-9).replace(/\\s/g, '');\n  }\n} else {\n  telefone = telefone.replace(/[\\+\\s-]/g, ''); // Tratar como número internacional\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Formatar o parâmetro \"name\" do objeto \"invitee\" com a primeira letra de cada palavra em maiúsculo\nconst name = formatarPrimeiraLetraMaiuscula(payload.invitee.name);\n\n// Retornar os resultados\nreturn {\n  'Telefone': telefone,\n  'Nome': name,\n  'Data do Cancelamento': dataCancelamento\n};\n"
       },
-      "id": "b9e342e7-040f-4d26-b787-37ec83e69819",
+      "id": "d30cebd3-a84a-42e7-a8a0-4e58132a4970",
       "name": "formata_dados1",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        320,
-        1200
+        1020,
+        1460
       ]
     },
     {
       "parameters": {
         "jsCode": "const payload = items[0].json.payload;\n\n// Pegar o parâmetro \"created_at\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst createdAt = new Date(payload.new_event.created_at);\nconst dataAgendamento = createdAt.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Acesse a data do JSON\nconst canceledAt = payload.invitee.canceled_at;\n\n// Crie um objeto de data a partir da string\nconst data = new Date(canceledAt);\n\n// Extraia o ano, mês e dia\nconst ano = data.getFullYear();\nconst mes = String(data.getMonth() + 1).padStart(2, '0'); // Adiciona zero à esquerda, se necessário\nconst dia = String(data.getDate()).padStart(2, '0');\n\n// Crie a string formatada no formato YYYY-MM-DD\nconst dataReagendamento = `${ano}-${mes}-${dia}`;\n\n\n// Pegar o parâmetro \"start_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst startTime = new Date(payload.new_event.start_time);\nconst dataInicio = startTime.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Subtrair 24 horas do \"start_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst lembrete24h = new Date(startTime.getTime() - 24 * 60 * 60 * 1000);\nconst dataLembrete24h = lembrete24h.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Subtrair 2 horas do \"start_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst lembrete2h = new Date(startTime.getTime() - 2 * 60 * 60 * 1000);\nconst dataLembrete2h = lembrete2h.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Pegar o parâmetro \"end_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst endTime = new Date(payload.new_event.end_time);\nconst dataTermino = endTime.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Buscar o telefone nos campos do array \"questions_and_answers\" no objeto \"invitee\" e formatá-lo\nlet telefone = '';\nconst questionsAndAnswers = payload.questions_and_answers;\nfor (let i = 0; i < questionsAndAnswers.length; i++) {\n  const answer = questionsAndAnswers[i].answer;\n  if (/^[\\+\\s\\d-]+$/.test(answer)) {\n    telefone = answer.replace(/[\\+\\s-]/g, '');\n    break;\n  }\n}\n\n// Extrair o DDI a partir do telefone limpo\nconst ddi = telefone.slice(0, 2);\n\n// Verificar se o DDI é igual a 55\nif (ddi === '55') {\n  const ddd = telefone.slice(2, 4);\n  if (Number(ddd) > 28) {\n    telefone = '55' + telefone.slice(2, 4) + telefone.slice(-8).replace(/\\s/g, '');\n  } else {\n    telefone = '55' + telefone.slice(2, 4) + telefone.slice(-9).replace(/\\s/g, '');\n  }\n} else {\n  telefone = telefone.replace(/[\\+\\s-]/g, ''); // Tratar como número internacional\n}\n\n// Função para formatar o nome com a primeira letra de cada palavra em maiúsculo,\n// levando em consideração as letras com acentos\nfunction formatarNome(nome) {\n  return nome\n    .toLowerCase()\n    .replace(/(?:^|\\s|[-'’])(\\S)/g, (match) => match.toUpperCase());\n}\n\n// Usar a função formatarNome para formatar o nome\nconst name = formatarNome(payload.new_invitee.name);\n// Validar se o parâmetro \"email\" é um email válido e colocar todas as letras em minúsculo\nconst email = payload.new_invitee.email.toLowerCase();\nconst isEmailValid = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);\n\n\n// Pegar o parâmetro \"created_at\" e converter para o formato YYYY-MM-DD\nconst newCreatedAt = new Date(payload.new_event.created_at);\nconst newDataAgendamento = newCreatedAt.toISOString().slice(0, 10);\n\n// Pegar o parâmetro \"start_time\" e converter para o formato YYYY-MM-DD\nconst newStartTime = new Date(payload.new_event.start_time);\nconst newDataInicio = newStartTime.toISOString().split('T')[0];\n\n// Retornar os resultados\nreturn {\n  'Data em que foi feito o Reagendamento': dataReagendamento,\n  'Data de Início': dataInicio,\n  'Lembrete 24h': dataLembrete24h,\n  'Lembrete 2h': dataLembrete2h,\n  'Data de Término': dataTermino,\n  'Telefone': telefone,\n  'Nome': name,\n  'Email válido': isEmailValid,\n  'Email': email,\n  'data_inicio_evento_novo': newDataInicio,\n  'data_agendamento_evento_novo': newDataAgendamento\n};\n"
       },
-      "id": "4cd81205-2ad9-442b-b387-f34fbbe36b21",
+      "id": "3312dc9e-2988-485b-ab7a-d41e48d501cc",
       "name": "formata_dados2",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        200,
-        480
+        900,
+        740
       ]
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "a3a74877-302d-4623-882f-41cd637e6021",
+      "id": "ea432ea2-8a74-4bc4-a7ad-1f6f3a73f2f1",
       "name": "cancelamento1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -1680,
-        900
+        -980,
+        1160
       ]
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "18cdd160-ecc3-4fa0-9f52-17523720044a",
+      "id": "1d8a6149-23cc-4ac2-8dc7-c9bf48bdf487",
       "name": "reagendamento1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -1560,
-        720
+        -860,
+        980
       ]
     },
     {
@@ -964,13 +964,13 @@
         },
         "options": {}
       },
-      "id": "cbd494af-e2fb-4eae-a16e-354080452e7e",
+      "id": "01df77ed-c851-4e32-b642-418172a67ffc",
       "name": "dados_do_reagendamento",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        400,
-        480
+        1100,
+        740
       ]
     },
     {
@@ -1224,13 +1224,13 @@
           "dotNotation": false
         }
       },
-      "id": "21c13c45-7cb7-4df2-a463-ed42a4d339bf",
+      "id": "8a8ff517-ad59-4358-b0d2-da493a6e3591",
       "name": "dados_do_cancelamento",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        520,
-        1200
+        1220,
+        1460
       ]
     },
     {
@@ -1522,13 +1522,13 @@
         },
         "options": {}
       },
-      "id": "d5e316fd-be25-4930-b25a-e8712ff24cf8",
+      "id": "937caafb-7a13-4fba-b726-7fffce26d249",
       "name": "dados_do_agendamento",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        620,
-        900
+        1320,
+        1160
       ]
     },
     {
@@ -1537,13 +1537,13 @@
         "height": 494.4652796495957,
         "width": 1558.7543199104232
       },
-      "id": "a1c1c7c9-cb3f-4afb-b12e-1f28be049276",
+      "id": "8899483d-9cf1-41b4-82f1-6bf25a65b9b3",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -680,
-        -300
+        20,
+        -40
       ]
     },
     {
@@ -1571,10 +1571,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -400,
-        -120
+        300,
+        140
       ],
-      "id": "1a1e29af-2df4-438d-a036-d648c9b63189"
+      "id": "30da2415-e76d-4e27-b68e-66f59ab2e962"
     },
     {
       "parameters": {
@@ -1601,10 +1601,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        -180,
-        -120
+        520,
+        140
       ],
-      "id": "371992b4-6cb1-4392-b369-2ccee5ec01f8"
+      "id": "ccac4298-d561-4a18-bade-ca027be05ce1"
     },
     {
       "parameters": {
@@ -1622,13 +1622,13 @@
         },
         "options": {}
       },
-      "id": "0044a55d-ebb8-48ba-8772-48582b4f53f5",
+      "id": "7a7dc6f6-28b9-4b46-b92e-50b9c56092c7",
       "name": "Set",
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -600,
-        -120
+        100,
+        140
       ]
     },
     {
@@ -1653,13 +1653,13 @@
         },
         "options": {}
       },
-      "id": "bf7f1cec-f50f-42cb-9bfe-984803af2ea5",
+      "id": "a38d2af6-0393-434b-968b-8d4d08a669cd",
       "name": "Consulta Users da Conta",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        40,
-        -120
+        740,
+        140
       ]
     },
     {
@@ -1687,10 +1687,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        460,
-        -120
+        1160,
+        140
       ],
-      "id": "efafe817-78cb-4ab7-9907-07e9970d3a53"
+      "id": "4f274237-c6a6-43a9-af40-4f3fafd2649f"
     },
     {
       "parameters": {
@@ -1717,10 +1717,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        260,
-        -120
+        960,
+        140
       ],
-      "id": "6fc20d5a-d06d-455a-a606-4852e597d3dd"
+      "id": "dfa84527-0783-404f-8181-2295e928be4a"
     },
     {
       "parameters": {
@@ -1738,13 +1738,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "71461fdf-9bbe-4e6e-adbf-0cb247e0e292",
+      "id": "d86ebf6b-2c26-4c3e-be6e-ce6a0ce2e4f0",
       "name": "eventos_permitidos",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1760,
-        300
+        -1060,
+        560
       ]
     },
     {
@@ -1753,13 +1753,13 @@
         "height": 318.2284579191374,
         "width": 468.74007115902964
       },
-      "id": "810b2c8e-b4f9-45d9-a884-9e90ad0623ce",
+      "id": "63b045d2-e137-4747-b26b-08b631f85279",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -1820,
-        140
+        -1120,
+        400
       ]
     },
     {
@@ -1768,13 +1768,13 @@
         "height": 318.2284579191374,
         "width": 468.74007115902964
       },
-      "id": "a5c48f53-ea4c-42f4-83fd-9fbeeaa3cc4e",
+      "id": "0c124c31-f3c7-4337-b28d-d5800c635a7c",
       "name": "Sticky Note2",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -1820,
-        -220
+        -1120,
+        40
       ]
     },
     {
@@ -1783,13 +1783,13 @@
         "height": 545.775102619946,
         "width": 468.74007115902964
       },
-      "id": "f812659c-593a-4bb6-8feb-7657058bb0c0",
+      "id": "1b53094f-99e0-43ce-98c0-d13dfe84fabe",
       "name": "Sticky Note3",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -1840,
-        540
+        -1140,
+        800
       ]
     },
     {
@@ -1804,13 +1804,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "ba64ecd5-a8b4-4824-8f40-40d1a4e26428",
+      "id": "26f8f5dd-0d04-4671-beb9-6581a38ec6b6",
       "name": "sessao_estrategica",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -680,
-        780
+        20,
+        1040
       ]
     },
     {
@@ -1825,13 +1825,13 @@
           ]
         }
       },
-      "id": "49bf7000-c540-43b0-a6f2-4ab3d6781048",
+      "id": "bede1c8c-f721-43c5-bcc0-44bee70d3e56",
       "name": "aplicacao",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -520,
-        1000
+        180,
+        1260
       ]
     },
     {
@@ -1849,18 +1849,18 @@
           "durable": true
         }
       },
-      "id": "d34b94c6-f40f-4028-bf5f-0f0ec1d8191d",
+      "id": "27420826-c60c-4295-a98d-e0430ffc04c4",
       "name": "entra_na_fila1",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        580,
-        480
+        1280,
+        740
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -1879,18 +1879,18 @@
           "durable": true
         }
       },
-      "id": "2647efd4-da61-4afb-9290-9280a541154b",
+      "id": "6da4b1c8-9dff-4a61-9437-830024b44e68",
       "name": "entra_na_fila2",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        680,
-        1200
+        1380,
+        1460
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -1916,24 +1916,24 @@
         },
         "options": {}
       },
-      "id": "64b164d1-ddf7-4136-bd39-1a5ff67a650d",
+      "id": "754b5cb6-a1c5-4e17-aae9-4fa8b1961e22",
       "name": "Listar Tipos de Task da Conta",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        660,
-        -120
+        1360,
+        140
       ]
     },
     {
       "parameters": {},
-      "id": "cda3902f-c096-4f0c-ad8f-38be16bb1b6e",
+      "id": "da4fec72-4602-463b-8b9b-b8e4fd458262",
       "name": "nada",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -400,
-        1200
+        300,
+        1460
       ]
     },
     {
@@ -1947,13 +1947,13 @@
           ]
         }
       },
-      "id": "250ec550-7200-4ebf-a76e-6e5eb83c3fcd",
+      "id": "c7c42e93-1d3d-47a6-a52c-c0d628b6cdee",
       "name": "Evento Criado1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -160,
-        1300
+        540,
+        1560
       ]
     },
     {
@@ -1967,13 +1967,13 @@
           ]
         }
       },
-      "id": "4f34984b-fd21-48df-860e-7b85391ecb54",
+      "id": "3d0fe6b8-b14b-4909-941b-76bb74e3b9f5",
       "name": "É Reagendamento2",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -300,
-        980
+        400,
+        1240
       ]
     },
     {
@@ -1987,24 +1987,24 @@
           ]
         }
       },
-      "id": "6089a549-e533-470d-b26d-284b4f46f645",
+      "id": "519e3194-4f9e-40db-ad5e-d37d49b37e3e",
       "name": "É Reagendamento3",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        80,
-        1460
+        780,
+        1720
       ]
     },
     {
       "parameters": {},
-      "id": "0bd6959c-0b79-4215-93cf-3dad3b30c672",
+      "id": "0c292b77-ad72-45bc-ba98-1161bbb696b3",
       "name": "Não faça nada",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        320,
-        1460
+        1020,
+        1720
       ]
     },
     {
@@ -2022,18 +2022,18 @@
           "durable": true
         }
       },
-      "id": "829f1edb-13b1-4cdb-adce-1d87d5e8ba85",
+      "id": "44a7083b-d153-45b2-8bb6-c213a6ef1118",
       "name": "entra_na_fila3",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        700,
-        1640
+        1400,
+        1900
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -2041,13 +2041,13 @@
       "parameters": {
         "jsCode": "const payload = items[0].json.payload;\n\n// Pegar o parâmetro \"created_at\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst createdAt = new Date(payload.event.created_at);\nconst dataAgendamento = createdAt.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Pegar o parâmetro \"start_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst startTime = new Date(payload.event.start_time);\nconst dataInicio = startTime.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Subtrair 24 horas do \"start_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst lembrete24h = new Date(startTime.getTime() - 24 * 60 * 60 * 1000);\nconst dataLembrete24h = lembrete24h.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Subtrair 2 horas do \"start_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst lembrete2h = new Date(startTime.getTime() - 2 * 60 * 60 * 1000);\nconst dataLembrete2h = lembrete2h.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Pegar o parâmetro \"end_time\" e converter para o formato DD/MM/YYYY HH:mm no fuso horário de São Paulo\nconst endTime = new Date(payload.event.end_time);\nconst dataTermino = endTime.toLocaleString('pt-BR', {\n  timeZone: 'America/Sao_Paulo',\n  day: '2-digit',\n  month: '2-digit',\n  year: 'numeric',\n  hour: '2-digit',\n  minute: '2-digit'\n});\n\n// Buscar o telefone nos campos do array \"questions_and_answers\" no objeto \"invitee\" e formatá-lo\nlet telefone = '';\nconst questionsAndAnswers = payload.questions_and_answers;\nfor (let i = 0; i < questionsAndAnswers.length; i++) {\n  const answer = questionsAndAnswers[i].answer;\n  if (/^[\\+\\s\\d-]+$/.test(answer)) {\n    telefone = answer.replace(/[\\+\\s-]/g, '');\n    break;\n  }\n}\n\n// Extrair o DDI a partir do telefone limpo\nconst ddi = telefone.slice(0, 2);\n\n// Verificar se o DDI é igual a 55\nif (ddi === '55') {\n  const ddd = telefone.slice(2, 4);\n  if (Number(ddd) > 28) {\n    telefone = '55' + telefone.slice(2, 4) + telefone.slice(-8).replace(/\\s/g, '');\n  } else {\n    telefone = '55' + telefone.slice(2, 4) + telefone.slice(-9).replace(/\\s/g, '');\n  }\n} else {\n  telefone = telefone.replace(/[\\+\\s-]/g, ''); // Tratar como número internacional\n}\n\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// ...\n\n// Formatar o parâmetro \"name\" do objeto \"invitee\" com a primeira letra de cada palavra em maiúsculo\nconst name = formatarPrimeiraLetraMaiuscula(payload.invitee.name);\n\n// Validar se o parâmetro \"email\" é um email válido e colocar todas as letras em minúsculo\nconst email = payload.invitee.email.toLowerCase();\nconst isEmailValid = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);\n\n// Retornar os resultados\nreturn {\n  'Data em que foi feito o Agendamento': dataAgendamento,\n  'Data de Início': dataInicio,\n  'Lembrete 24h': dataLembrete24h,\n  'Lembrete 2h': dataLembrete2h,\n  'Data de Término': dataTermino,\n  'Telefone': telefone,\n  'Nome': name,\n  'Email válido': isEmailValid,\n  'Email': email\n};\n"
       },
-      "id": "3177328a-414a-4a3b-9391-7831331a5150",
+      "id": "fd8a9815-c45f-4791-a1f3-ed0e934d9ce7",
       "name": "formata_dados3",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        320,
-        1640
+        1020,
+        1900
       ]
     },
     {
@@ -2177,26 +2177,26 @@
         },
         "options": {}
       },
-      "id": "79215e05-d9a2-483e-b87f-ad12d4dfe67c",
+      "id": "ad11f672-e5c8-4fcf-9aab-69e5683f8826",
       "name": "dados_do_agendamento1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        500,
-        1640
+        1200,
+        1900
       ]
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "7c82ffa4-8361-4e31-9c01-5193b4baeb69",
+      "id": "94bfc926-078f-4daf-899d-a15ffd0c595f",
       "name": "agendamento1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        -1780,
-        720
+        -1080,
+        980
       ]
     },
     {
@@ -2207,19 +2207,19 @@
           "invitee.canceled"
         ]
       },
-      "id": "33bb5fd9-a5fa-4516-8eb0-b48a169af8d1",
+      "id": "95319f84-9b4d-46d3-8fc5-a7efdaae51bf",
       "name": "Evento",
       "type": "n8n-nodes-base.calendlyTrigger",
       "typeVersion": 1,
       "position": [
-        -980,
-        580
+        -280,
+        840
       ],
       "webhookId": "945ee3d2-a828-4b8f-9b49-5175de6629d8",
       "credentials": {
         "calendlyApi": {
-          "id": "3nKSW4fE85vkqPRg",
-          "name": "[Calendly][2.0] - Henry Santos"
+          "id": "etcJnFd5YVEkToFf",
+          "name": "[Calendly] - Henry Santos"
         }
       }
     },
@@ -2271,10 +2271,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -800,
-        580
+        -100,
+        840
       ],
-      "id": "929aff1b-d9c7-4360-84c2-4c1af3ed5c7b",
+      "id": "00d0bf16-9c18-4f31-a1fd-ef8bbc48d04a",
       "name": "remover eventos"
     }
   ],
@@ -3030,23 +3030,15 @@
     "saveExecutionProgress": true,
     "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": {
-    "node:Calendly Trigger": {},
     "node:Evento": {
       "webhookId": 5425118
     }
   },
-  "tags": [
-    {
-      "createdAt": "2024-03-25T19:32:32.637Z",
-      "updatedAt": "2024-03-25T19:32:32.637Z",
-      "id": "V7V28IgydBvyVzu9",
-      "name": "[CALENDLY]"
-    }
-  ],
+  "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-27T17:49:30.139Z",
-  "versionId": "9772be7f-8cf7-4d68-a401-3a2f8d2f4309"
+  "updatedAt": "2025-02-01T18:47:44.676Z",
+  "versionId": "c27b82a0-0ece-4227-84a6-7efa997a9960"
 }
