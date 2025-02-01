@@ -53,9 +53,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-15T12:44:35.150Z",
-  "id": "VSuS8s2mv00k3xE3",
-  "meta": null,
+  "createdAt": "2025-02-01T19:15:55.623Z",
+  "id": "hCgRo5y0Nd1HUDYD",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][Banco de Dados] - Busca Funil",
   "nodes": [
     {
@@ -70,7 +72,7 @@
         -660,
         180
       ],
-      "id": "215ee203-357e-4466-8645-38f805a597f8",
+      "id": "76aa8646-7183-40cb-865a-0bda57f8fa1e",
       "name": "fluxo_chamado",
       "webhookId": "95f7f5f1-7543-4dee-93c1-9277a2bd8f7f"
     },
@@ -105,7 +107,7 @@
         -220,
         180
       ],
-      "id": "482b8f57-147b-48a8-b69e-b666ff32b016",
+      "id": "f3d34d3e-2f11-422d-b241-a4748c86eb9a",
       "name": "nao_existe"
     },
     {
@@ -114,7 +116,7 @@
         "text": "=🚨 **Funil inexistente no N8N do Henry Santos.**\n\nFavor, cadastrar o formulário no banco de dados, na tabela “formularios”.",
         "options": {}
       },
-      "id": "f5d49f62-3def-4b8e-8eff-778a3cd3ac56",
+      "id": "4d523602-0487-4a51-8812-6a4d8839b841",
       "name": "avisa_no_discord",
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
@@ -143,7 +145,7 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "227c2de6-3372-49db-9d71-969053a934a2",
+      "id": "af602cb3-1375-407d-b522-54af494ea152",
       "name": "pesquisa_forms",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
@@ -154,8 +156,8 @@
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -191,7 +193,7 @@
         0,
         240
       ],
-      "id": "e80f835c-0d91-4cac-a439-d961e0195292",
+      "id": "d801dfdf-b5a9-4cd3-8d08-c712fa31c7d9",
       "name": "centraliza_dados"
     },
     {
@@ -202,7 +204,7 @@
         200,
         240
       ],
-      "id": "118dac5f-c6f6-4cd0-b81c-69821b16817c",
+      "id": "0daa57a8-1d7a-4e25-8e25-d83c86280fae",
       "name": "retorna_dados"
     }
   ],
@@ -238,11 +240,11 @@
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-21T12:49:59.838Z",
-  "versionId": "3501730b-f934-4d7f-8b96-2fc74518b5ad"
+  "updatedAt": "2025-02-01T19:16:05.506Z",
+  "versionId": "174d3ab5-5337-44b6-80d5-a80daf4c4fcf"
 }
