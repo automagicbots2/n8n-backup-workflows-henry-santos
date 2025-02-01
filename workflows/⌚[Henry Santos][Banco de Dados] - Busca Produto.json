@@ -24,9 +24,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-16T21:32:55.883Z",
-  "id": "xEu5sfuAFaRlpaMS",
-  "meta": null,
+  "createdAt": "2025-02-01T19:15:32.602Z",
+  "id": "Kj0KLrNsSb7LMzfh",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][Banco de Dados] - Busca Produto",
   "nodes": [
     {
@@ -38,10 +40,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -660,
-        180
+        0,
+        0
       ],
-      "id": "9ccfd93d-06fb-4aad-a482-6461ff2a867a",
+      "id": "0a37684f-32e9-4c16-abcb-e10436305809",
       "name": "fluxo_chamado",
       "webhookId": "78d28a6e-8198-4f81-9926-e2e6c6164519"
     },
@@ -54,15 +56,15 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -440,
-        180
+        220,
+        0
       ],
-      "id": "2834b7a6-a500-435b-9c85-229ec255427e",
+      "id": "5f8617af-834a-42bd-af02-8d6142f64b0a",
       "name": "executa_procedure",
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -71,10 +73,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -240,
-        180
+        420,
+        0
       ],
-      "id": "7245b444-0508-4065-abdc-4cbb920cca10",
+      "id": "17f54548-d994-4f94-ac68-d734cd9a984e",
       "name": "Limit"
     }
   ],
@@ -112,11 +114,11 @@
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-16T22:14:40.341Z",
-  "versionId": "a6385f36-24a3-4b9b-a4ea-8afb1d5df6c2"
+  "updatedAt": "2025-02-01T19:15:41.729Z",
+  "versionId": "663dfe4c-0e79-431b-835b-a0871198453b"
 }
