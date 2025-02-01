@@ -286,9 +286,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-15T14:54:50.936Z",
-  "id": "IsCXHsK84iW9x0h7",
-  "meta": null,
+  "createdAt": "2025-02-01T19:04:22.834Z",
+  "id": "PwyCzkykYLlHzSep",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][KommoCRM] - Insere Campos, Tags e Usuários no Banco de Dados",
   "nodes": [
     {
@@ -296,10 +298,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1400,
-        -60
+        -1200,
+        100
       ],
-      "id": "990cba14-785a-40d9-b531-5b53c61b5f2f",
+      "id": "63f1d040-c8fa-4417-8289-b167e3d271b7",
       "name": "When clicking ‘Test workflow’"
     },
     {
@@ -322,19 +324,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "9ff5f436-c578-4aad-867d-7f4c03d49425",
+      "id": "04af6f49-b5e2-4242-859e-427fc8a928e7",
       "name": "pesquisa_url_base_crm",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -1180,
-        -60
+        -980,
+        100
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -346,10 +348,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        -740,
-        -60
+        -540,
+        100
       ],
-      "id": "be47f50a-c2a9-40d5-b5ff-d2d71b9a0f99",
+      "id": "a9a9cfd2-320c-4fc6-a597-f19f39b5785a",
       "name": "separa_users"
     },
     {
@@ -359,10 +361,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -520,
-        -60
+        -320,
+        100
       ],
-      "id": "726c3815-a607-4c74-a4d6-f800d9e10f69",
+      "id": "cc7d6172-3d42-4c70-bf2c-40b597f0aeac",
       "name": "Loop Over Items"
     },
     {
@@ -371,10 +373,10 @@
       "name": "Replace Me",
       "typeVersion": 1,
       "position": [
-        -300,
-        -220
+        -100,
+        -60
       ],
-      "id": "b1deac0a-2ba5-4605-b629-facc67d4da89"
+      "id": "b52ecb9a-55be-45ca-99b7-2d84eaf01aab"
     },
     {
       "parameters": {
@@ -401,13 +403,13 @@
         },
         "options": {}
       },
-      "id": "220433fc-da7b-4a7d-b014-ac361e4e7bb6",
+      "id": "b9156f18-33a5-41b5-9a64-1774910c1444",
       "name": "encontrou_campo",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
       "position": [
-        -100,
-        20
+        100,
+        180
       ]
     },
     {
@@ -435,15 +437,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -960,
-        -60
+        -760,
+        100
       ],
-      "id": "e9cc8399-e8a7-4438-8131-e7800aa2ac12",
+      "id": "c55d3e98-8d2d-4e45-9920-26b45fa6dd66",
       "name": "busca_tags_crm",
       "credentials": {
         "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
         }
       }
     },
@@ -467,19 +469,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "7ccfde3a-576c-4dce-8f69-d8fdcfb6025c",
+      "id": "8a07d310-be95-4c4c-97c8-ffb68fa257b4",
       "name": "pesquisa_tag",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -300,
-        20
+        -100,
+        180
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -509,19 +511,19 @@
           "detailedOutput": true
         }
       },
-      "id": "c923590d-4993-4f69-91c7-0c5c95bdc5a7",
+      "id": "48a64f37-d0e1-48c8-8b56-14d1345b1e47",
       "name": "insert_tag",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        160,
-        100
+        360,
+        260
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -545,19 +547,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "7268300f-6db7-48a2-be7c-a29a2d305485",
+      "id": "1ae97ad6-0ae3-42c5-b4ee-1508d9af04da",
       "name": "pesquisa_url_base_crm1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -1180,
-        540
+        -980,
+        700
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -569,10 +571,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        -740,
-        540
+        -540,
+        700
       ],
-      "id": "ed9f4960-28d6-4d01-a58e-29767c4f334a",
+      "id": "c2bb1caa-fb36-4cce-8bfd-af83f2bedc71",
       "name": "separa_users1"
     },
     {
@@ -582,10 +584,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -520,
-        540
+        -320,
+        700
       ],
-      "id": "2d5bf3c9-d631-46dc-b2a0-c7548c6edb92",
+      "id": "863b5e24-8d84-48eb-bad5-a8b2b91fc489",
       "name": "Loop Over Items1"
     },
     {
@@ -594,10 +596,10 @@
       "name": "Replace Me1",
       "typeVersion": 1,
       "position": [
-        -300,
-        380
+        -100,
+        540
       ],
-      "id": "4495e05e-9182-458f-8470-41fb2ec728cb"
+      "id": "7632c856-5bd7-4698-a006-f5ebd575b2c2"
     },
     {
       "parameters": {
@@ -624,13 +626,13 @@
         },
         "options": {}
       },
-      "id": "828629d6-f464-4bb6-9840-506a83f4e408",
+      "id": "aebb3a42-82a9-4b0a-81ff-a136e00f0a10",
       "name": "encontrou_campo1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
       "position": [
-        -100,
-        620
+        100,
+        780
       ]
     },
     {
@@ -658,15 +660,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -960,
-        540
+        -760,
+        700
       ],
-      "id": "52aa64e2-b91a-4604-afd3-5c07afd5c59b",
+      "id": "225afd49-d871-47ec-9bc8-9011a778d7e9",
       "name": "busca_campos_crm1",
       "credentials": {
         "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
         }
       }
     },
@@ -690,19 +692,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "1d347f7b-1cc3-48ba-a8b9-53dac6fc4d9d",
+      "id": "ad55efea-89b8-4300-92ec-f4fa3db1b014",
       "name": "pesquisa_campos",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -300,
-        620
+        -100,
+        780
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -732,19 +734,19 @@
           "detailedOutput": true
         }
       },
-      "id": "f6720d13-291b-4dcc-8856-7f073b256282",
+      "id": "42152622-9700-4697-b4f7-845ba9715f00",
       "name": "insert_campo",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        160,
-        700
+        360,
+        840
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -768,19 +770,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "5c1da09e-dbc3-42c7-af63-91dae362c872",
+      "id": "3b5d8dbb-394a-4a36-b917-97b1794a7a5e",
       "name": "pesquisa_colaborador",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -300,
-        1140
+        -100,
+        1300
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -809,13 +811,13 @@
         },
         "options": {}
       },
-      "id": "cc9c1e29-f543-4d94-b725-385cc833cfbc",
+      "id": "d4ff7e0a-2b7b-44bb-9c27-c5b917e9ee6b",
       "name": "encontrou_colaborador",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
       "position": [
-        -100,
-        1140
+        100,
+        1300
       ]
     },
     {
@@ -856,19 +858,19 @@
           "detailedOutput": true
         }
       },
-      "id": "208c3c65-087f-4f0a-a827-d4c5226fc210",
+      "id": "bb8529a1-ae80-4b6c-859b-fedc4a215d00",
       "name": "insert_colaborador",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        160,
-        1220
+        360,
+        1380
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -888,15 +890,15 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -960,
-        1060
+        -760,
+        1220
       ],
-      "id": "92a3105a-229e-47f2-b181-c372f589c7f3",
+      "id": "68426f98-0b04-4243-9068-38a20ddf3694",
       "name": "busca_users_crm",
       "credentials": {
         "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
         }
       }
     },
@@ -920,19 +922,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "dad859b8-26af-4936-b087-92007e5da81b",
+      "id": "1f6d56dd-d445-4eba-8b89-45f41aeb3903",
       "name": "pesquisa_url_base_crm2",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -1180,
-        1060
+        -980,
+        1220
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -944,10 +946,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        -740,
-        1060
+        -540,
+        1220
       ],
-      "id": "c68f68ad-6cf5-4c54-890d-8966318057bf",
+      "id": "d1e7260c-823e-4f82-9de3-b98df0e2344c",
       "name": "separa_users2"
     },
     {
@@ -957,10 +959,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -520,
-        1060
+        -320,
+        1220
       ],
-      "id": "a7da5be1-65e8-4f42-920c-36e38f894163",
+      "id": "a078669f-7e9a-477e-9b45-d91bf5ea8cc3",
       "name": "Loop Over Items2"
     },
     {
@@ -969,21 +971,25 @@
       "name": "Replace Me2",
       "typeVersion": 1,
       "position": [
-        -300,
-        900
+        -100,
+        1060
       ],
-      "id": "da421d2e-f411-4764-a3f8-55168e06c3ae"
+      "id": "f2be3ad1-8983-4eec-bb5b-fd0e38fb238e"
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-01-15T15:06:01.381Z",
-  "versionId": "a014888b-03b5-4b5d-8d9e-0fed66418261"
+  "updatedAt": "2025-02-01T19:05:04.233Z",
+  "versionId": "aa9e892d-e730-44f8-b90b-3da83bdeee78"
 }
