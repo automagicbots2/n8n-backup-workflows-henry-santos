@@ -30,11 +30,6 @@
         ]
       ]
     },
-    "Limit": {
-      "main": [
-        []
-      ]
-    },
     "fluxo_chamado": {
       "main": [
         [
@@ -109,9 +104,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-17T12:58:38.452Z",
-  "id": "iNr99GE5GXBqkZHm",
-  "meta": null,
+  "createdAt": "2025-02-01T19:10:16.318Z",
+  "id": "ah85vZCTh7bkR2Ix",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][KommoCRM] - Adicionar Tag no Contato",
   "nodes": [
     {
@@ -120,19 +117,19 @@
         "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_etapa_funil = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}\n    AND t.entidade = 'contact';\n",
         "options": {}
       },
-      "id": "ad2ffff8-cf20-4000-9f34-6a117e0b0407",
+      "id": "6ef1d674-97b0-4677-a602-1e06692566f3",
       "name": "pesquisa_tag_funil",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        40,
-        200
+        -620,
+        180
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -143,10 +140,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        300,
-        120
+        -360,
+        100
       ],
-      "id": "fe87ef46-88f4-4063-a3c4-3dbda422f596",
+      "id": "61a0b517-8dc7-48b2-ac3b-9b1e18f1f3dd",
       "name": "Loop Over Items"
     },
     {
@@ -154,10 +151,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        500,
-        -80
+        -160,
+        -100
       ],
-      "id": "0370d70d-7d00-4ed5-b20a-5d1b83d66f1d",
+      "id": "602e73f2-c67e-4234-89aa-70c6cc800457",
       "name": "Limit"
     },
     {
@@ -169,10 +166,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -900,
-        120
+        -1560,
+        100
       ],
-      "id": "ea9d3f31-ce7d-4f49-a871-126e897de2e7",
+      "id": "4ec95036-869a-4e0a-98f4-2f08e08a76b9",
       "name": "fluxo_chamado",
       "webhookId": "ce9e0c49-3b01-40d1-a43e-0275d34030ce"
     },
@@ -202,18 +199,18 @@
           }
         }
       },
-      "id": "26f6fac0-00b8-4a61-94c6-bb86ae5576c6",
+      "id": "d9a23ff4-0ea1-4dec-81c5-6dc9b99fecda",
       "name": "add_tag_contact",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        500,
-        200
+        -160,
+        180
       ],
       "credentials": {
         "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
         }
       }
     },
@@ -237,19 +234,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "e3f6a515-36f8-45b8-a5e9-35e63851c7a1",
+      "id": "2f4bffda-7bc0-4975-9858-57d8428bf3d9",
       "name": "pesquisa_user",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -400,
-        120
+        -1060,
+        100
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -281,10 +278,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -180,
-        120
+        -840,
+        100
       ],
-      "id": "44f2cdf8-a100-4c16-8ec5-e1d6e3419e77",
+      "id": "a959261f-011b-4745-a928-3001fb95206d",
       "name": "checkout"
     },
     {
@@ -293,19 +290,19 @@
         "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_situacao_checkout = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}\n    AND t.entidade = 'contact';",
         "options": {}
       },
-      "id": "fafde930-eef2-4777-8a0f-8b672d2f0908",
+      "id": "c4d8b987-d352-474d-9cb2-b75f79243c6c",
       "name": "pesquisa_tag_funil1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        40,
-        20
+        -620,
+        0
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -329,19 +326,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "45e1f699-70f0-4e34-a7a4-e268edc5d193",
+      "id": "9c6debfa-d878-47ec-895a-37c86f798e97",
       "name": "pesquisa_url_base_crm",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -640,
-        120
+        -1300,
+        100
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     }
@@ -380,11 +377,11 @@
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-17T18:19:32.637Z",
-  "versionId": "5dd39592-07fd-4b7b-9d33-e53eb6747ebf"
+  "updatedAt": "2025-02-01T19:10:36.192Z",
+  "versionId": "983d198e-c7b8-46d6-a681-1268776dfca4"
 }
