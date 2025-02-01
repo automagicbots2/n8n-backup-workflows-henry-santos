@@ -403,8 +403,8 @@
       ]
     }
   },
-  "createdAt": "2024-03-25T19:00:41.710Z",
-  "id": "Xig33A2HPUKuPHt2",
+  "createdAt": "2025-02-01T18:22:50.364Z",
+  "id": "cgy9yjDPMogteh28",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -416,13 +416,13 @@
         "height": 494.4652796495957,
         "width": 1510.0404531979405
       },
-      "id": "0cd68cf9-4157-4f3f-b545-11805a89ef9e",
+      "id": "4ccc3b50-7a11-4baa-ab7e-84e20227aa9a",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        920,
-        460
+        440,
+        -60
       ]
     },
     {
@@ -450,10 +450,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        1180,
-        640
+        700,
+        120
       ],
-      "id": "c4a34b8d-431a-46f4-aadf-233fad80c4e1"
+      "id": "641f378f-f800-4238-83c4-dd81eb4150c1"
     },
     {
       "parameters": {
@@ -480,10 +480,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        1400,
-        640
+        920,
+        120
       ],
-      "id": "9504c8d0-78b9-434d-a408-0164042e8c84"
+      "id": "428968cc-4339-46f6-b1a7-66c17393fc42"
     },
     {
       "parameters": {
@@ -501,13 +501,13 @@
         },
         "options": {}
       },
-      "id": "68067223-8cee-4daf-975f-2a5ee2d907fe",
+      "id": "1ca2ed0d-e858-49e0-a7e3-03c8e3587047",
       "name": "Set",
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        980,
-        640
+        500,
+        120
       ]
     },
     {
@@ -532,13 +532,13 @@
         },
         "options": {}
       },
-      "id": "cab9b590-7926-4da3-92c8-3cfc52eaf28c",
+      "id": "bb4ab803-b666-443a-bc36-91d972f9c8c7",
       "name": "Consulta Users da Conta",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1620,
-        640
+        1140,
+        120
       ]
     },
     {
@@ -547,13 +547,13 @@
         "height": 494.4652796495957,
         "width": 406.19790552805046
       },
-      "id": "9d0a003e-a349-4f70-a319-9bff2cd05dcb",
+      "id": "eae67d44-7271-4fd4-8a0a-86572039e1b4",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        460,
-        460
+        -20,
+        -60
       ]
     },
     {
@@ -581,10 +581,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        1820,
-        640
+        1340,
+        120
       ],
-      "id": "5e92206c-60d0-4d43-8fa1-4c980b1acd08"
+      "id": "5b3d1f26-caf1-436f-baf2-9247cd60c939"
     },
     {
       "parameters": {
@@ -611,10 +611,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        2020,
-        640
+        1540,
+        120
       ],
-      "id": "fe3696a9-da69-44b6-9a1d-be1d13a82918"
+      "id": "93bf94d7-b56a-4b50-8a3d-f64635179089"
     },
     {
       "parameters": {
@@ -638,13 +638,13 @@
         },
         "options": {}
       },
-      "id": "d6793405-6dc5-4a67-84be-8536cd41747f",
+      "id": "1ba24a37-3d6a-4da5-89e0-35c5e48b56e1",
       "name": "Listar Tipos de Task da Conta",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2220,
-        640
+        1740,
+        120
       ]
     },
     {
@@ -662,18 +662,18 @@
           "durable": true
         }
       },
-      "id": "0498dd90-58d0-49fb-ae4a-22901f1cecc6",
+      "id": "7d0969d2-c55f-4c65-b9f5-dc95edcdb69f",
       "name": "entra_na_fila1",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        2840,
-        1860
+        2360,
+        1340
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -699,18 +699,18 @@
           "detailedOutput": false
         }
       },
-      "id": "c40af971-d52e-4613-b781-c2b4d988fe92",
+      "id": "fcd10913-3473-4c4e-bc24-aa85f2f0459c",
       "name": "pesquisa_lead5",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        60,
-        1920
+        -420,
+        1400
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -787,18 +787,18 @@
           "detailedOutput": true
         }
       },
-      "id": "cf904cf6-7270-4d1a-aee3-9d2b91508f7f",
+      "id": "8ff09756-c03c-4ced-bc49-9cd6c8a6cdd3",
       "name": "insert_data_aplicacao",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        260,
-        1920
+        -220,
+        1400
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -852,18 +852,18 @@
           "detailedOutput": true
         }
       },
-      "id": "bea90954-441c-4d0d-b617-e8783b434080",
+      "id": "ceb9bc7e-7683-494a-b70a-76578fbe63b6",
       "name": "insert_data_utm_aplicacao",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        480,
-        1920
+        0,
+        1400
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -871,13 +871,13 @@
       "parameters": {
         "errorMessage": "An error ocurred!"
       },
-      "id": "b6f8c8aa-65ec-4355-8e02-686b86b58cb9",
+      "id": "3e4e4987-2033-42fe-943f-a9fb487024e7",
       "name": "Stop and Error",
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        100,
-        1720
+        -380,
+        1200
       ]
     },
     {
@@ -891,13 +891,13 @@
           ]
         }
       },
-      "id": "95a7f673-6c5e-4ed0-9caa-5ee31581d3d2",
+      "id": "c0b00690-c249-4b22-a4a7-e23cb93ad305",
       "name": "segundo_ou_mais_erro",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -140,
-        1920
+        -620,
+        1400
       ]
     },
     {
@@ -929,18 +929,18 @@
           "detailedOutput": true
         }
       },
-      "id": "cacac9fc-bb70-47b3-8aec-e9226d1482f7",
+      "id": "d12a2f29-71f0-4b50-a3cf-5800a1efa515",
       "name": "insert_data_data_lake1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        1480,
-        1620
+        1000,
+        1100
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -956,13 +956,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "46aa3137-236c-402c-a690-0ad2da472482",
+      "id": "61147cc0-dc19-4d6c-8081-e36110a018b7",
       "name": "nao_encontrou_registro_hj_data_lake1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        900,
-        1920
+        420,
+        1400
       ]
     },
     {
@@ -993,18 +993,18 @@
           "detailedOutput": true
         }
       },
-      "id": "f8ff17cd-9349-4461-b134-ab19aa6b7bfb",
+      "id": "6737ef87-d1c8-4b20-8eeb-3ce4309d1233",
       "name": "update_data_data_lake",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        1480,
-        2000
+        1000,
+        1480
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1019,13 +1019,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "b6044b52-2046-46bf-ac0f-82e82789bcaf",
+      "id": "97f2ef12-cbb7-430c-9494-12666990f7da",
       "name": "lead_ja_existia",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1220,
-        1720
+        740,
+        1200
       ]
     },
     {
@@ -1061,18 +1061,18 @@
           "detailedOutput": true
         }
       },
-      "id": "47fbff27-010e-4819-8699-c0e4664d6e82",
+      "id": "3178c717-49bd-4830-91ea-42462538c3b2",
       "name": "insert_data_data_lake4",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        1480,
-        1800
+        1000,
+        1280
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1087,13 +1087,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "e7b9f43f-8fc0-4efb-b346-a5c0b1838e6b",
+      "id": "bf01ff89-2d51-43fa-8f8b-166045b766f9",
       "name": "lead_ja_existia4",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1220,
-        2080
+        740,
+        1560
       ]
     },
     {
@@ -1128,18 +1128,18 @@
           "detailedOutput": true
         }
       },
-      "id": "a308b249-6155-4621-98bc-7b33321d54d0",
+      "id": "83ec5b60-ca72-4cbd-9ad4-11b1c03996fe",
       "name": "update_data_data_lake4",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        1480,
-        2200
+        1000,
+        1680
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1165,18 +1165,18 @@
           "detailedOutput": false
         }
       },
-      "id": "49a98d4f-72f6-4792-8563-d7a96f7f26e4",
+      "id": "f2751247-8ca5-4171-8858-49b452428231",
       "name": "pesquisa_data_data_lake",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        680,
-        1920
+        200,
+        1400
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1208,18 +1208,18 @@
           "detailedOutput": true
         }
       },
-      "id": "9dbedbb0-589c-4da8-aab5-b1685add038d",
+      "id": "8309891b-2c4d-4370-a925-8f75b510d6e2",
       "name": "update_qualificacao_qualificado1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        1780,
-        1720
+        1300,
+        1200
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1251,18 +1251,18 @@
           "detailedOutput": true
         }
       },
-      "id": "2efecbb7-3318-4e8e-bcda-3628dec7d398",
+      "id": "b211c156-6722-4321-a1dd-725cc1926fa3",
       "name": "update_qualificacao_qualificado3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        1780,
-        2040
+        1300,
+        1520
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1603,13 +1603,13 @@
         },
         "options": {}
       },
-      "id": "384b1b56-53d9-4ad2-b77c-02f8ea11264c",
+      "id": "489eec32-7ce7-4f45-9a77-3aa8afd90266",
       "name": "dados",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2640,
-        1860
+        2160,
+        1340
       ]
     },
     {
@@ -1629,18 +1629,18 @@
           "parallelMessages": 3
         }
       },
-      "id": "b20b4865-33bf-4865-a41f-902ec464f4ee",
+      "id": "1aa99d27-4f4f-4231-a27d-65c0c430000b",
       "name": "chega_da_fila",
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
       "position": [
-        -360,
-        1920
+        -840,
+        1400
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -1668,21 +1668,21 @@
         },
         "options": {}
       },
-      "id": "0e4c4ebf-8e31-488a-99be-dc3eb5fe6690",
+      "id": "18a2b526-e9b0-4cec-b247-9f6e264791db",
       "name": "busca_telefone_na_planilha",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        1900,
-        1440
+        1420,
+        920
       ],
       "alwaysOutputData": true,
       "retryOnFail": true,
       "maxTries": 5,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
+          "id": "5RQWIQOXyaILIRPq",
+          "name": "[Google Sheets] - Automagic Bots - Auth"
         }
       },
       "continueOnFail": true
@@ -1698,13 +1698,13 @@
           ]
         }
       },
-      "id": "293b5b49-50b3-49b8-bb7f-d91e357db01b",
+      "id": "7cfee88f-1919-4ac7-87ae-8de8395cb955",
       "name": "existe_telefone_na_planilha",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2080,
-        1440
+        1600,
+        920
       ]
     },
     {
@@ -1718,13 +1718,13 @@
           ]
         }
       },
-      "id": "bd9065e2-0f8b-4296-b664-e412670a0aad",
+      "id": "3d0f906f-f3ff-40b5-b60a-1aec1d9200b8",
       "name": "existe_email_na_planilha1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1480,
-        1440
+        1000,
+        920
       ]
     },
     {
@@ -1852,21 +1852,21 @@
           "cellFormat": "USER_ENTERED"
         }
       },
-      "id": "7e353321-d04f-442d-9e26-f9e5596935f8",
+      "id": "1500fdc1-a8d6-4d10-af39-6cf771d8ddde",
       "name": "preenche_planilha_leads1",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        1900,
-        1260
+        1420,
+        740
       ],
       "alwaysOutputData": false,
       "retryOnFail": true,
       "maxTries": 5,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
+          "id": "5RQWIQOXyaILIRPq",
+          "name": "[Google Sheets] - Automagic Bots - Auth"
         }
       }
     },
@@ -1894,21 +1894,21 @@
         },
         "options": {}
       },
-      "id": "6ee2d5cd-9606-4661-822f-8dfa111a07cb",
+      "id": "edcb60d2-befc-47bf-9f00-bf46e2bf4ff8",
       "name": "busca_email_na_planilha1",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        1280,
-        1440
+        800,
+        920
       ],
       "alwaysOutputData": true,
       "retryOnFail": true,
       "maxTries": 5,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
+          "id": "5RQWIQOXyaILIRPq",
+          "name": "[Google Sheets] - Automagic Bots - Auth"
         }
       },
       "continueOnFail": true
@@ -1918,13 +1918,13 @@
         "amount": 10,
         "unit": "seconds"
       },
-      "id": "8e9e9817-f3da-499f-beec-aca98e6f04de",
+      "id": "0bc1e440-4233-4eb5-b718-f0f38a21f45d",
       "name": "espera_10s",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1080,
-        1440
+        600,
+        920
       ],
       "webhookId": "17364817-0fb8-431f-af7a-e4a3cd8c11f1"
     },
@@ -2053,21 +2053,21 @@
           "cellFormat": "USER_ENTERED"
         }
       },
-      "id": "b0743962-746a-4161-ad7b-1009ba8da681",
+      "id": "2b619bfe-3c3a-4c06-a1b8-7e194f6ff359",
       "name": "preenche_planilha_leads_telefone",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        2480,
-        1260
+        2000,
+        740
       ],
       "alwaysOutputData": false,
       "retryOnFail": true,
       "maxTries": 5,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
+          "id": "5RQWIQOXyaILIRPq",
+          "name": "[Google Sheets] - Automagic Bots - Auth"
         }
       }
     },
@@ -2076,13 +2076,13 @@
         "amount": 10,
         "unit": "seconds"
       },
-      "id": "3ec8271b-3d0b-424f-9d08-b37c48530fcb",
+      "id": "ab843ce8-0c66-41b4-a64a-cb8618c07a76",
       "name": "espera_10s1",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1700,
-        1260
+        1220,
+        740
       ],
       "webhookId": "7fdbe048-987e-4584-832f-7877fbbc7367"
     },
@@ -2091,13 +2091,13 @@
         "amount": 10,
         "unit": "seconds"
       },
-      "id": "b874166c-979e-4329-9f7e-2db8cacde477",
+      "id": "3c0b648b-f676-4bc9-80a6-6f99d2253d5d",
       "name": "espera_10s3",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2280,
-        1260
+        1800,
+        740
       ],
       "webhookId": "6441a9df-401b-4300-b256-d9f7a2a6fa18"
     },
@@ -2106,13 +2106,13 @@
         "amount": 10,
         "unit": "seconds"
       },
-      "id": "f301cf69-d16e-4510-a990-a21999f3d61d",
+      "id": "5b30b1e0-2972-4c78-9ea4-895ce8f3c36b",
       "name": "espera_10s4",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2280,
-        1440
+        1800,
+        920
       ],
       "webhookId": "80223062-429e-4089-9c09-a15f5a015dd1"
     },
@@ -2121,13 +2121,13 @@
         "amount": 10,
         "unit": "seconds"
       },
-      "id": "a4a3be94-fc15-495e-be61-bfae7a09b800",
+      "id": "e4a02390-cd69-4f25-9272-aa75e715eb75",
       "name": "espera_10s2",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1700,
-        1440
+        1220,
+        920
       ],
       "webhookId": "7fdbe048-987e-4584-832f-7877fbbc7367"
     },
@@ -2256,21 +2256,21 @@
           "cellFormat": "USER_ENTERED"
         }
       },
-      "id": "23588260-34b9-4670-bed7-012afe9ee700",
+      "id": "9e865248-a097-4e06-83d1-0d28683cb0b4",
       "name": "preenche_planilha_leads_telefone1",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        2480,
-        1440
+        2000,
+        920
       ],
       "alwaysOutputData": false,
       "retryOnFail": true,
       "maxTries": 5,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
+          "id": "5RQWIQOXyaILIRPq",
+          "name": "[Google Sheets] - Automagic Bots - Auth"
         }
       }
     },
@@ -2290,26 +2290,26 @@
           "ignoreConversionErrors": true
         }
       },
-      "id": "85d23ba7-5c74-4f80-a09d-22b47c34ebbe",
+      "id": "69e9bc08-d592-4db8-aae3-8df3bc9e0ad5",
       "name": "Edit Fields",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        3080,
-        920
+        2600,
+        400
       ]
     },
     {
       "parameters": {
         "jsCode": "const tagsData = [\n    ...$json._embedded.tags.map(tag => tag.id), {\"id\": 67752}\n];\n\nreturn tagsData.map((tag, index) => ({\n    id: 167353,\n    _embedded: {\n        tags: [tag]\n    }\n}));\n"
       },
-      "id": "05bed3c2-037b-4431-8b1b-ee464691e366",
+      "id": "3a5ffbd7-fca8-42f5-8cf0-73bac4a5ccb7",
       "name": "Code",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2820,
-        1360
+        2340,
+        840
       ],
       "disabled": true
     },
@@ -2360,12 +2360,12 @@
           }
         }
       },
-      "id": "d4bde7e6-0049-4b0d-a6c3-d0ae1210d2c3",
+      "id": "e2aa5037-cea8-4425-9133-0eb688215348",
       "name": "EnviaMensagemTexto5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2280,
-        1740
+        1800,
+        1220
       ],
       "typeVersion": 4
     },
@@ -2393,13 +2393,13 @@
         },
         "options": {}
       },
-      "id": "007ed69e-6b01-452a-b13f-6e78a7b72e76",
+      "id": "d4ddfbcc-0d47-4510-a214-0737d4c5c65a",
       "name": "manychat",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        2060,
-        1860
+        1580,
+        1340
       ]
     },
     {
@@ -2419,22 +2419,18 @@
           }
         }
       },
-      "id": "a69775aa-492b-4cf5-9121-5f6314469fe6",
+      "id": "bea06a5e-3e27-438d-baff-9216646f5c03",
       "name": "add_tag_lead_kmmo",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        560,
-        1400
+        80,
+        880
       ],
       "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
         "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
         }
       }
     }
@@ -2526,23 +2522,12 @@
   },
   "settings": {
     "executionOrder": "v1",
-    "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveExecutionProgress": true
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
-  "tags": [
-    {
-      "createdAt": "2024-03-25T13:17:28.604Z",
-      "updatedAt": "2024-03-25T13:17:28.604Z",
-      "id": "iEWW0rAq20zciLEA",
-      "name": "[NAG]"
-    }
-  ],
+  "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-09-11T15:41:16.853Z",
-  "versionId": "c9014462-77dd-4b03-b788-60c7e3431bb5"
+  "updatedAt": "2025-02-01T18:24:32.062Z",
+  "versionId": "0f4c5f58-b238-4761-9821-3ae62e44ec73"
 }
