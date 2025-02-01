@@ -184,9 +184,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-15T14:57:33.234Z",
-  "id": "ChxLKJwvAnwXQHlK",
-  "meta": null,
+  "createdAt": "2025-02-01T19:11:31.805Z",
+  "id": "kpFisEv33Tr5tQvV",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][Banco de Dados] - Rotacionamento de Colaboradores",
   "nodes": [
     {
@@ -195,13 +197,13 @@
         "responseMode": "lastNode",
         "options": {}
       },
-      "id": "964e023a-6987-479a-a949-f56d24dd29e8",
+      "id": "10807f1c-da01-4bd6-9ace-87d0b65b27cc",
       "name": "fluxo_chamado",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1.1,
       "position": [
-        -720,
-        500
+        -740,
+        420
       ],
       "webhookId": "7dff7a1f-1359-475a-8749-d16695e4bf1c"
     },
@@ -227,19 +229,19 @@
         },
         "options": {}
       },
-      "id": "a3f45499-4ac6-46af-857f-0d2855f84082",
+      "id": "58c2c4fd-814a-4523-b019-f698020d8461",
       "name": "atualiza_relacionamento1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        620,
-        120
+        600,
+        40
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -268,13 +270,13 @@
         },
         "options": {}
       },
-      "id": "3c0a6f52-dbc3-4284-8900-f019fa45f193",
+      "id": "fd99f16a-3daa-400e-82e5-a93de84e999d",
       "name": "colaborador_existe3",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        200,
-        0
+        180,
+        -80
       ]
     },
     {
@@ -315,13 +317,13 @@
         },
         "options": {}
       },
-      "id": "e15bf623-c93e-4bba-98aa-cd966a9b1694",
+      "id": "3d969f7d-08a3-48aa-b064-5486512c959a",
       "name": "dados_colaborador",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1560,
-        0
+        1540,
+        -80
       ]
     },
     {
@@ -348,19 +350,19 @@
         },
         "options": {}
       },
-      "id": "b4402d34-ffbf-4f37-a48a-51496793408c",
+      "id": "118ce7b4-5e9a-4a44-b792-4495deffb847",
       "name": "pesquisa_colaborador5",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        0,
-        0
+        -20,
+        -80
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -389,13 +391,13 @@
         },
         "options": {}
       },
-      "id": "37fbf73f-f189-42b3-9613-f7538a923e58",
+      "id": "44277951-d740-46d3-813f-4450ada73dcb",
       "name": "relacionamento_existe",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -300,
-        500
+        -320,
+        420
       ]
     },
     {
@@ -422,19 +424,19 @@
         },
         "options": {}
       },
-      "id": "8850519d-2061-41b8-bcea-3b63b9da0b6d",
+      "id": "25ec2777-d32a-4781-992c-7851eaa249b5",
       "name": "pesquisa_relacionamento",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        -500,
-        500
+        -520,
+        420
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -465,19 +467,19 @@
         },
         "options": {}
       },
-      "id": "4a8a4c23-3e9d-4adf-bafc-cce75b216a14",
+      "id": "f828cdb7-d37b-44d2-8c87-3afc2ec49cf2",
       "name": "insere_relacionamento",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        880,
-        540
+        860,
+        460
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -506,13 +508,13 @@
         },
         "options": {}
       },
-      "id": "3c7fa327-6a0e-4702-9810-16ab51cb6af0",
+      "id": "94b4a495-6b00-4f1f-aeb5-128bf9ce2715",
       "name": "email_colaborador_existe",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -40,
-        600
+        -60,
+        520
       ]
     },
     {
@@ -539,19 +541,19 @@
         },
         "options": {}
       },
-      "id": "2a53313a-e147-4717-9855-f0a423d1a97c",
+      "id": "6e95a616-a164-4ef8-b5a3-b8eddb901a10",
       "name": "pesquisa_colaborador3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        220,
-        540
+        200,
+        460
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -580,13 +582,13 @@
         },
         "options": {}
       },
-      "id": "ab073543-bbd9-4f09-bafc-69157ef1420a",
+      "id": "e27a544d-f67e-4efb-a89e-12d9a2e36e4c",
       "name": "colaborador_existe",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        420,
-        540
+        400,
+        460
       ]
     },
     {
@@ -595,19 +597,19 @@
         "query": "SELECT *\nFROM colaboradores2\nWHERE funcao = '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"time\"] }}'\n  AND status_atividade = 'Y'\nORDER BY ultima_atribuicao ASC\nLIMIT 1;\n",
         "options": {}
       },
-      "id": "2b63d971-2343-4385-9798-0ba3290e37c5",
+      "id": "1433fa84-2161-4973-bb56-ee02f3eb1a7b",
       "name": "pesquisa_colaborador",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        680,
-        740
+        660,
+        660
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -617,19 +619,19 @@
         "query": "SELECT *\nFROM colaboradores2\nWHERE funcao = '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"time\"] }}'\n  AND status_atividade = 'Y'\nORDER BY ultima_atribuicao ASC\nLIMIT 1;\n",
         "options": {}
       },
-      "id": "1490b5d5-04ab-4907-9d34-c164001e7963",
+      "id": "175ce27a-19cc-4239-b12e-19aa29cb281b",
       "name": "pesquisa_colaborador1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        400,
-        120
+        380,
+        40
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -655,19 +657,19 @@
         },
         "options": {}
       },
-      "id": "a5345c8e-591c-4ee3-8f9a-eacabf7cb348",
+      "id": "70a3d5f0-46c4-4258-bb23-bd91747166fa",
       "name": "atualize_atribuicao_colaborador",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        860,
-        120
+        840,
+        40
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -693,19 +695,19 @@
         },
         "options": {}
       },
-      "id": "e2681783-d6a6-4cd9-a9cc-d6e3ba873fc6",
+      "id": "98e55460-2ac2-4d91-a2c4-0ad2b14061a8",
       "name": "atualize_atribuicao_colaborador1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.2,
       "position": [
-        1100,
-        540
+        1080,
+        460
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     }
@@ -744,11 +746,11 @@
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-15T15:05:28.299Z",
-  "versionId": "e92906e8-a89b-49ec-b317-b1aa5a15d2bc"
+  "updatedAt": "2025-02-01T19:12:01.561Z",
+  "versionId": "94b7b95c-a619-4c2e-9968-8f8eff6e3fcb"
 }
