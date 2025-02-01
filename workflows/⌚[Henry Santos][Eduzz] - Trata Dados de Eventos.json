@@ -57,8 +57,8 @@
       ]
     }
   },
-  "createdAt": "2024-09-23T19:43:36.776Z",
-  "id": "iECylutlz3F1uMkH",
+  "createdAt": "2025-02-01T19:10:55.480Z",
+  "id": "gd7o492WfIk3cRU1",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -265,10 +265,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        4480,
-        2060
+        660,
+        -60
       ],
-      "id": "682ff89b-26b3-4769-9632-713990f0e1d0"
+      "id": "ab0d11ef-04f0-4572-bfe2-dfe95434fd15"
     },
     {
       "parameters": {
@@ -287,10 +287,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        4260,
-        2060
+        440,
+        -60
       ],
-      "id": "975b67bf-c3cc-45a5-823c-eb25dabce891",
+      "id": "b357e0fb-f2d5-4ff1-bf0b-0ed86140665e",
       "name": "busca_funil"
     },
     {
@@ -313,19 +313,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "f673c174-3c6e-4a68-9a7d-89852886d7f9",
+      "id": "714a4266-657c-4ab2-a02b-f4a6418a1a8a",
       "name": "pesquisa_variavel_n8n_fluxo_funis",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4040,
-        2060
+        220,
+        -60
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -335,13 +335,13 @@
         "path": "evento-fatura",
         "options": {}
       },
-      "id": "c1e899a9-985c-4a91-ab23-446f1e43d87b",
+      "id": "dcb619c0-2a9a-4bd7-acc6-a7b705b10c94",
       "name": "evento",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        3600,
-        2060
+        -220,
+        -60
       ],
       "webhookId": "92a7cc90-e416-491a-b8e9-97fadeb7e244"
     },
@@ -349,13 +349,13 @@
       "parameters": {
         "jsCode": "const net_value = $node[\"evento\"].json[\"body\"][\"pro_value\"] || \"\";\nconst transaction_id = $node[\"evento\"].json[\"body\"][\"trans_cod\"] || \"\";\nconst value = $node[\"evento\"].json[\"body\"][\"trans_paid\"] || \"\";\nconst transStatus = parseInt($node[\"evento\"].json[\"body\"][\"trans_status\"]); // Converter para número\nconst refundDate = $node[\"evento\"].json[\"body\"][\"refund_date\"] || \"\";\nconst eventDate = $node[\"evento\"].json[\"body\"][\"trans_createdate\"] || \"\";\nconst eventTime = $node[\"evento\"].json[\"body\"][\"trans_createtime\"] || \"\";\nconst paidDate = $node[\"evento\"].json[\"body\"][\"trans_paiddate\"] || \"\";\nconst paidTime = $node[\"evento\"].json[\"body\"][\"trans_paidtime\"] || \"\";\nconst paymentMethod = $node[\"evento\"].json[\"body\"][\"trans_paymentmethod\"] || \"\";\nconst productId = $node[\"evento\"].json[\"body\"][\"product_cod\"] || \"\";\nconst productName = $node[\"evento\"].json[\"body\"][\"product_name\"] || \"\";\nconst chargeType = $node[\"evento\"].json[\"body\"][\"product_chargetype\"] || \"\";\nconst warrantyDays = $node[\"evento\"].json[\"body\"][\"product_refund\"] || \"\";\nconst offer_code = $node[\"evento\"].json[\"body\"][\"product_parent_cod\"] || \"\";\nconst discount_coupon = $node[\"evento\"].json[\"body\"][\"discount_coupon_code\"] || \"\";\nconst street = $node[\"evento\"].json[\"body\"][\"cus_address\"] || \"\";\nconst address_number = $node[\"evento\"].json[\"body\"][\"cus_address_number\"] || \"\";\nconst address_country = $node[\"evento\"].json[\"body\"][\"cus_address_country\"] || \"\";\nconst address_district = $node[\"evento\"].json[\"body\"][\"cus_address_district\"] || \"\";\nconst address_complement = $node[\"evento\"].json[\"body\"][\"cus_address_comp\"] || \"\";\nconst address_city = $node[\"evento\"].json[\"body\"][\"cus_address_city\"] || \"\";\nconst address_state = $node[\"evento\"].json[\"body\"][\"cus_address_state\"] || \"\";\nconst address_zipCode = $node[\"evento\"].json[\"body\"][\"cus_address_zip_code\"] || \"\";\nconst recurrenceCount = $node[\"evento\"].json[\"body\"][\"recurrence_count\"] || \"\";\nconst affiliate_value = $node[\"evento\"].json[\"body\"][\"aff_value\"] || \"\";\nconst gateway_comission = $node[\"evento\"].json[\"body\"][\"eduzz_value\"] || \"\";\nconst billet_barcode = $node[\"evento\"].json[\"body\"][\"trans_barcode\"] || \"\";\nconst currency = $node[\"evento\"].json[\"body\"][\"trans_currency\"] || \"\";\nconst bankslip = $node[\"evento\"].json[\"body\"][\"trans_bankslip\"] || \"\";\nconst cancelledDate = $node[\"evento\"].json[\"body\"][\"recurrence_canceled_at\"] || \"\";\nconst fullNameAnswer = $node[\"evento\"].json[\"body\"][\"cus_name\"] || \"\";\nconst emailAnswer = $node[\"evento\"].json[\"body\"][\"cus_email\"] || \"\";\nconst telefoneClienteOriginal = $node[\"evento\"].json[\"body\"][\"cus_cel\"]|| \"\";\nconst instagramAnswer = $node[\"evento\"].json[\"body\"][\"Instagram\"] || \"\";\n\n// Função para calcular a data de expiração da recorrência\nfunction calculateRecurrenceExpiration(interval, intervalType) {\n    const now = new Date();\n    let daysToAdd = 0;\n\n    switch (intervalType) {\n        case \"day\":\n            daysToAdd = interval;\n            break;\n        case \"month\":\n            daysToAdd = interval * 30; // Aproximando um mês como 30 dias\n            break;\n        case \"Year\":\n            daysToAdd = interval * 365; // Aproximando um ano como 365 dias\n            break;\n        default:\n            throw new Error(\"Tipo de intervalo de recorrência inválido.\");\n    }\n\n    now.setDate(now.getDate() + daysToAdd);\n\n    // Retorna a data no formato YYYY-MM-DD\n    const year = now.getFullYear();\n    const month = String(now.getMonth() + 1).padStart(2, '0');\n    const day = String(now.getDate()).padStart(2, '0');\n\n    return `${year}-${month}-${day}`;\n}\n\n\n// Calculando a data de expiração da recorrência\nconst recurrenceInterval = parseInt($node[\"evento\"].json[\"body\"][\"recurrence_interval\"] || \"0\", 10);\nconst recurrenceIntervalType = $node[\"evento\"].json[\"body\"][\"recurrence_interval_type\"] || \"\";\nlet recurrenceExpirationDate = \"\";\n\nif (!isNaN(recurrenceInterval) && recurrenceInterval > 0 && recurrenceIntervalType) {\n    try {\n        recurrenceExpirationDate = calculateRecurrenceExpiration(recurrenceInterval, recurrenceIntervalType);\n    } catch (error) {\n        console.error(\"Erro ao calcular a data de expiração da recorrência:\", error.message);\n    }\n}\n\n\n// Verificar se é renovação\nlet isRenewal = false; // Padrão para false\nif (transStatus === 3) {\n    if (recurrenceCount === 1) {\n        isRenewal = false;\n    } else if (recurrenceCount > 1) {\n        isRenewal = true;\n    }\n}\n\nfunction formatCEP(cep) {\n    const cepLimpo = cep.replace(/\\D/g, \"\"); // Remove qualquer caractere não numérico\n    if (cepLimpo.length === 8) {\n        return `${cepLimpo.slice(0, 2)}.${cepLimpo.slice(2, 5)}-${cepLimpo.slice(5, 8)}`;\n    }\n    return cep; // Retorna o valor original se não tiver 8 dígitos\n}\n\n// Concatenando data e hora de pagamento\nlet formattedPaidDateTime = \"\";\nif (paidDate) {\n    try {\n        const formattedDate = formatDate(paidDate);\n        formattedPaidDateTime = `${formattedDate} ${paidTime}`;\n    } catch (error) {\n        console.error(\"Erro ao formatar paidDate:\", error.message);\n    }\n}\n\n// Função para adicionar dias à data atual para calcular warranty_date\nfunction calculateWarrantyDate(refundDays) {\n    if (isNaN(refundDays) || refundDays <= 0) {\n        throw new Error(\"Dias de reembolso inválidos.\");\n    }\n\n    const currentDate = new Date();\n    currentDate.setDate(currentDate.getDate() + refundDays);\n\n    const year = currentDate.getFullYear();\n    const month = String(currentDate.getMonth() + 1).padStart(2, '0');\n    const day = String(currentDate.getDate()).padStart(2, '0');\n\n    return `${year}-${month}-${day}`;\n}\n\nlet translatedChargeType = \"\";\nswitch (chargeType) {\n    case \"N\":\n        translatedChargeType = \"Cobrança única\";\n        break;\n    case \"A\":\n        translatedChargeType = \"Assinatura\";\n        break;\n    case \"L\":\n        translatedChargeType = \"Outros\";\n        break;\n    case \"G\":\n        translatedChargeType = \"Gratuito\";\n        break;\n    default:\n        translatedChargeType = \"Tipo desconhecido\";\n}\n\nfunction formatDate(dateString) {\n    // Certifique-se de que o input seja uma string de 8 caracteres\n    if (!/^[0-9]{8}$/.test(dateString)) {\n        throw new Error(\"Formato de data inválido. Use o formato YYYYMMDD.\");\n    }\n\n    // Extraia o ano, mês e dia da string\n    const year = dateString.slice(0, 4);\n    const month = dateString.slice(4, 6);\n    const day = dateString.slice(6, 8);\n\n    // Retorne o formato desejado\n    return `${year}-${month}-${day}`;\n}\n\n// Verificando se a data existe e formatando-a\nlet formattedRefundDate = \"\";\nif (refundDate) {\n    try {\n        formattedRefundDate = formatDate(refundDate);\n    } catch (error) {\n        console.error(\"Erro ao formatar refundDate:\", error.message);\n    }\n}\n\n// Verificando se a data existe e formatando-a\nlet formattedCancelledDate = \"\";\nif (cancelledDate) {\n    try {\n        formattedCancelledDate = formatDate(cancelledDate);\n    } catch (error) {\n        console.error(\"Erro ao formatar refundDate:\", error.message);\n    }\n}\n\n// Concatenando data e hora\nlet formattedEventDateTime = \"\";\nif (eventDate) {\n    try {\n        const formattedDate = formatDate(eventDate);\n        formattedEventDateTime = `${formattedDate} ${eventTime}`;\n    } catch (error) {\n        console.error(\"Erro ao formatar eventDate:\", error.message);\n    }\n}\n\n// Traduzir a forma de pagamento\nlet paymentMethodTranslation = \"\";\nswitch (paymentMethod) {\n  case 1:\n    paymentMethodTranslation = \"Boleto Bancário\";\n    break;\n  case 32:\n    paymentMethodTranslation = \"PIX\";\n    break;\n  case 9:\n  case 25:\n    paymentMethodTranslation = \"Paypal\";\n    break;\n  case 13:\n  case 15:\n  case 21:\n  case 24:\n  case 27:\n    paymentMethodTranslation = \"Cartão de Crédito\";\n    break;\n  default:\n    paymentMethodTranslation = \"Desconhecido\";\n}\n\n// Ajustar trans_status caso seja renovação\nlet purchaseStatusTranslation = \"\";\nif (isRenewal === true) {\n    purchaseStatusTranslation = \"Renovação\";\n} else {\n    // Traduzir o status da compra\n    switch (transStatus) {\n        case 1:\n            purchaseStatusTranslation = \"Aguardando Pagamento\";\n            break;\n        case 3:\n            purchaseStatusTranslation = \"Compra Aprovada\";\n            break;\n        case 4:\n            purchaseStatusTranslation = \"Compra Cancelada\";\n            break;\n        case 6:\n            purchaseStatusTranslation = \"Aguardando Reembolso\";\n            break;\n        case 7:\n            purchaseStatusTranslation = \"Compra Reembolsada\";\n            break;\n        case 10:\n            purchaseStatusTranslation = \"Compra Expirada\";\n            break;\n        case 15:\n            purchaseStatusTranslation = \"Compra Atrasada\";\n            break;\n        default:\n            purchaseStatusTranslation = \"Desconhecido\";\n    }\n}\n\n// Garantir que warranty_date só será calculado se o status for \"Compra Aprovada\"\nconst refundDays = parseInt($node[\"evento\"].json[\"body\"][\"product_refund\"] || \"0\", 10);\nlet warrantyDate = \"\";\nif (purchaseStatusTranslation === \"Compra Aprovada\" && !isNaN(refundDays)) {\n    try {\n        warrantyDate = calculateWarrantyDate(refundDays);\n    } catch (error) {\n        console.error(\"Erro ao calcular o warranty_date:\", error.message);\n    }\n}\n\nfunction capitalizeName(fullName) {\n    if (typeof fullName === 'undefined') {\n        return { fname: '', lname: '', fullname: '' };\n    }\n\n    const lowerCaseWords = ['da', 'de', 'do', 'di', 'du'];\n    let words = fullName.toLowerCase().split(' ').map((word, index) => {\n        if (lowerCaseWords.includes(word) && index !== 0) {\n            return word;\n        }\n        return word.charAt(0).toUpperCase() + word.slice(1);\n    });\n\n    let fname = words.shift();\n    let lname = words.join(' ');\n\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\nfunction formatEmail(email) {\n    return email.toLowerCase().trim();\n}\n\nfunction formatInstagram(instagram) {\n    return instagram.toLowerCase().replace(/^@/, \"\");\n}\n\nfunction formatCPF(cpf) {\n    const cpfLimpo = cpf.replace(/\\D/g, \"\");\n    if (cpfLimpo.length === 11) {\n        return `${cpfLimpo.slice(0, 3)}.${cpfLimpo.slice(3, 6)}.${cpfLimpo.slice(6, 9)}-${cpfLimpo.slice(9, 11)}`;\n    }\n    return cpf;\n}\n\nfunction formatCNPJ(cnpj) {\n    const cnpjLimpo = cnpj.replace(/\\D/g, \"\");\n    if (cnpjLimpo.length === 14) {\n        return `${cnpjLimpo.slice(0, 2)}.${cnpjLimpo.slice(2, 5)}.${cnpjLimpo.slice(5, 8)}/${cnpjLimpo.slice(8, 12)}-${cnpjLimpo.slice(12, 14)}`;\n    }\n    return cnpj;\n}\n\nfunction isCPFOrCNPJ(cpfCnpj) {\n    const cleaned = cpfCnpj.replace(/\\D/g, \"\"); // Remove caracteres não numéricos\n    if (cleaned.length === 11) {\n        return \"CPF\"; // É um CPF\n    } else if (cleaned.length === 14) {\n        return \"CNPJ\"; // É um CNPJ\n    }\n    return null; // Valor inválido\n}\n\n// Modifique o formato conforme o tipo\nconst cpfCnpj = $node[\"evento\"].json[\"body\"][\"cus_taxnumber\"] || \"\";\nlet cpf = \"\";\nlet cnpj = \"\";\n\nif (isCPFOrCNPJ(cpfCnpj) === \"CPF\") {\n    cpf = formatCPF(cpfCnpj);\n} else if (isCPFOrCNPJ(cpfCnpj) === \"CNPJ\") {\n    cnpj = formatCNPJ(cpfCnpj);\n}\n\nlet telefoneFinal = \"\";\n\nif (telefoneClienteOriginal) {\n    const telefoneLimpo = telefoneClienteOriginal.replace(/\\D/g, \"\");\n\n    let DDI = '';\n    let DDD = '';\n    let numero = '';\n\n    if (telefoneLimpo.length > 11) {\n        DDI = telefoneLimpo.slice(0, 2);\n        DDD = telefoneLimpo.slice(2, 4);\n        numero = telefoneLimpo.slice(4);\n    } else if (telefoneLimpo.length === 11) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else if (telefoneLimpo.length === 10) {\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else {\n        telefoneFinal = telefoneLimpo;\n    }\n\n    if (DDD && numero) {\n        if (parseInt(DDD) > 28) {\n            if (numero.length === 9 && numero.startsWith(\"9\")) {\n                numero = numero.slice(1);\n            }\n        } else {\n            if (numero.length === 8) {\n                numero = `9${numero}`;\n            }\n        }\n    }\n\n    if (DDI && DDD && numero) {\n        telefoneFinal = `${DDI}${DDD}${numero}`;\n    }\n}\n\nconst formattedNames = capitalizeName(fullNameAnswer);\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedInstagram = formatInstagram(instagramAnswer);\nconst utm_source = $node[\"evento\"].json[\"body\"][\"utm_source\"] || \"\";\nconst utm_campaign = $node[\"evento\"].json[\"body\"][\"utm_campaign\"] || \"\";\nconst utm_medium = $node[\"evento\"].json[\"body\"][\"utm_medium\"] || \"\";\nconst utm_term = $node[\"evento\"].json[\"body\"][\"utm_term\"] || \"\";\nconst utm_content = $node[\"evento\"].json[\"body\"][\"utm_content\"] || \"\";\nconst form_id = $node[\"evento\"].json[\"body\"][\"product_hash\"] || \"\";\nconst form_name = $node[\"evento\"].json[\"body\"][\"product_name\"] || \"\";\nconst formattedPostalCode = formatCEP(address_zipCode);\n\nconst result = {\n    ...formattedNames,\n    email: formattedEmail,\n    whatsapp: telefoneFinal,\n    instagram: formattedInstagram,\n    cpf: cpf,\n    cnpj: cnpj,\n    utm_source: utm_source,\n    utm_campaign: utm_campaign,\n    utm_term: utm_term,\n    utm_medium: utm_medium,\n    utm_content: utm_content,\n    form_id: form_id,\n    form_name: form_name,\n    value: value,\n    transaction_id: transaction_id,\n    net_value: net_value,\n    trans_status: purchaseStatusTranslation,\n    payment_method: paymentMethodTranslation,\n    refund_date: formattedRefundDate,\n    event_date: formattedEventDateTime,\n    payment_date: formattedPaidDateTime,\n    product_type: translatedChargeType,\n    product_id: productId,\n    product_name: productName,\n    warranty_date: warrantyDate,\n    offer_code: offer_code,\n    discount_coupon: discount_coupon,\n    street: street,\n    address_number: address_number,\n    country: address_country,\n    district: address_district,\n    address_complement: address_complement,\n    city: address_city,\n    address_state: address_state,\n    zipcode: formattedPostalCode,\n    affiliate_value: affiliate_value,\n    gateway_comission: gateway_comission,\n    billet_barcode: billet_barcode,\n    currency: currency,\n    bankslip: bankslip,\n    recurrenceExpirationDate: recurrenceExpirationDate,\n    formattedCancelledDate: formattedCancelledDate,\n        };\n\nreturn [{ json: result }];\n"
       },
-      "id": "6ac423a2-a096-4fc4-91cb-55b5af244f67",
+      "id": "adff8498-202a-45fa-baa3-2416b5e64da1",
       "name": "formata_dados",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        3820,
-        2060
+        0,
+        -60
       ]
     },
     {
@@ -373,18 +373,18 @@
           "durable": true
         }
       },
-      "id": "5909f535-7303-4448-ad2f-580d4b14c86a",
+      "id": "95084cb5-9408-4b98-9614-2c2ec7079ff1",
       "name": "fila_acoes_funis",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        4700,
-        2060
+        880,
+        -60
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     }
@@ -550,35 +550,12 @@
   },
   "settings": {
     "executionOrder": "v1",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveExecutionProgress": true,
-    "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
-  "tags": [
-    {
-      "createdAt": "2024-09-23T19:50:52.911Z",
-      "updatedAt": "2024-09-23T19:50:52.911Z",
-      "id": "cPXTCkMvAPiczvEc",
-      "name": "[COMPRA APROVADA]"
-    },
-    {
-      "createdAt": "2024-09-23T19:50:52.921Z",
-      "updatedAt": "2024-09-23T19:50:52.921Z",
-      "id": "CZq0iNhX5obpwx1h",
-      "name": "[EDUZZ]"
-    },
-    {
-      "createdAt": "2024-09-23T19:50:52.906Z",
-      "updatedAt": "2024-09-23T19:50:52.906Z",
-      "id": "mTwf5MELZxTRz0fB",
-      "name": "[EVENTOS DE CHECKOUT]"
-    }
-  ],
+  "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-18T00:38:30.820Z",
-  "versionId": "f127c4aa-1874-4c12-a01d-25142af7048e"
+  "updatedAt": "2025-02-01T19:11:14.556Z",
+  "versionId": "b3326ff6-f401-406a-8db6-4ea5f4153826"
 }
