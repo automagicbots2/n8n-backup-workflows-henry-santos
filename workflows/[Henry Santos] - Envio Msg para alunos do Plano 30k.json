@@ -219,9 +219,11 @@
       ]
     }
   },
-  "createdAt": "2024-12-10T19:31:55.024Z",
-  "id": "Vs3QXJDfgoouO5aE",
-  "meta": null,
+  "createdAt": "2025-02-01T19:29:42.403Z",
+  "id": "PwBGf7gSVhrRY2fg",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "[Henry Santos] - Envio Msg para alunos do Plano 30k",
   "nodes": [
     {
@@ -237,10 +239,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        0,
-        0
+        -440,
+        60
       ],
-      "id": "be6c88fe-76b6-4edb-8b5b-23a8c78de043",
+      "id": "28595ca7-b9f5-42e5-9ae9-5f423fcc67ab",
       "name": "Todo_dia_9hrs"
     },
     {
@@ -294,12 +296,12 @@
           }
         }
       },
-      "id": "754296b9-f479-4d86-a39d-55f7d46529c0",
+      "id": "324dd632-ffe7-4e61-b314-1d431363c49f",
       "name": "msg_onboarding_evolution",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1240,
-        -40
+        800,
+        20
       ],
       "typeVersion": 4
     },
@@ -318,15 +320,15 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        220,
-        0
+        -220,
+        60
       ],
-      "id": "fb4bc826-97ac-473e-8db6-ca2ec6b0e54e",
+      "id": "7b1d2801-d1b3-452f-ac9c-b94ab0639128",
       "name": "MySQL",
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -358,10 +360,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        440,
-        0
+        0,
+        60
       ],
-      "id": "a505e8ed-2fc3-4c89-96e8-59af4bc579b2",
+      "id": "b3a68a64-b73e-4ee6-ba1a-8e8b7bf80ecc",
       "name": "é_semana1"
     },
     {
@@ -392,10 +394,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        600,
-        240
+        160,
+        300
       ],
-      "id": "ba5187c1-c95e-411f-89d8-bb81bfefbd53",
+      "id": "c86bef18-3b6d-427e-b04a-0abf3671303f",
       "name": "é_semana2"
     },
     {
@@ -426,10 +428,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        760,
-        540
+        320,
+        600
       ],
-      "id": "0de58e4b-0bc1-4a1f-bb07-9d867ea8d86d",
+      "id": "d41b1a64-1926-42bf-ae7d-8b6991de1954",
       "name": "é_semana3"
     },
     {
@@ -460,10 +462,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        900,
-        880
+        460,
+        940
       ],
-      "id": "85aa3a09-ac5f-4d23-9f4f-c6be448c8007",
+      "id": "bc9aee60-4262-4008-b546-f7416f9073c6",
       "name": "é_semana4"
     },
     {
@@ -494,10 +496,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1060,
-        1300
+        620,
+        1360
       ],
-      "id": "ad38bc75-84f2-458a-a8e4-a3e1f90b673e",
+      "id": "64fbe371-3274-4aff-926e-e8df6b098a46",
       "name": "é_semana5"
     },
     {
@@ -528,10 +530,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1280,
-        1620
+        840,
+        1680
       ],
-      "id": "8259c37f-5e8a-474a-8d37-b1023f171315",
+      "id": "3229ee68-5620-403e-a728-d61b522f6ed9",
       "name": "é_semana6"
     },
     {
@@ -541,10 +543,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        660,
-        -100
+        220,
+        -40
       ],
-      "id": "452ee488-64af-4057-857f-8b164b8aa49a",
+      "id": "1a72ed7d-2203-4656-a9c0-d557a8a8d350",
       "name": "Loop Over Items"
     },
     {
@@ -553,10 +555,10 @@
       "name": "Replace Me",
       "typeVersion": 1,
       "position": [
-        1440,
-        -40
+        1000,
+        20
       ],
-      "id": "851c20e3-6b28-423b-89d4-d8f1d5117a35"
+      "id": "4008d907-44d8-4adc-9c80-dd0628ac8438"
     },
     {
       "parameters": {
@@ -580,15 +582,15 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        880,
-        -40
+        440,
+        20
       ],
-      "id": "861d6717-9344-424e-b10d-7a2338774ca7",
+      "id": "43e1654e-e8bc-4ad9-abc2-0d0dfe3254bb",
       "name": "MySQL1",
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -599,10 +601,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        1040,
-        -40
+        600,
+        20
       ],
-      "id": "fe27d874-9055-481d-8f92-7e2dc9c0646d",
+      "id": "f845aba0-de2a-4b52-85c9-86f822089a63",
       "name": "Limit"
     },
     {
@@ -612,10 +614,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        1560,
-        1600
+        1120,
+        1660
       ],
-      "id": "dbf333a8-d17f-4adf-ba9e-78251a4b4dd1",
+      "id": "28cda0f8-2538-4401-8862-42271c3c517f",
       "name": "Loop Over Items1"
     },
     {
@@ -624,10 +626,10 @@
       "name": "Replace Me1",
       "typeVersion": 1,
       "position": [
-        2340,
-        1660
+        1900,
+        1720
       ],
-      "id": "c1dbf44b-5f56-45ff-89eb-7b2a304035c2"
+      "id": "9c344b62-873e-4b01-8492-ab4f614e6f99"
     },
     {
       "parameters": {
@@ -651,15 +653,15 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1780,
-        1660
+        1340,
+        1720
       ],
-      "id": "80d625a3-8d6e-45b0-bb31-1074fef2d66e",
+      "id": "1af19eac-1c53-4627-bad3-4a9d2a1ca6e5",
       "name": "MySQL2",
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -670,10 +672,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        1940,
-        1660
+        1500,
+        1720
       ],
-      "id": "9b8d1b87-a57a-4be9-8a60-5f554dcad692",
+      "id": "6b3ec010-d9f9-4cd9-9d7e-f24edf34b9b8",
       "name": "Limit1"
     },
     {
@@ -727,23 +729,25 @@
           }
         }
       },
-      "id": "c66c603b-c973-4d01-9de1-8567ea168d9c",
+      "id": "4d42976b-c4ed-4d84-aa38-6026d5fd5c3b",
       "name": "msg_6semanas",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2140,
-        1660
+        1700,
+        1720
       ],
       "typeVersion": 4
     }
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-11T20:29:56.173Z",
-  "versionId": "ff30b49b-21aa-4d05-9edf-9638c037114b"
+  "updatedAt": "2025-02-01T19:31:47.094Z",
+  "versionId": "68aff3ec-674f-481f-8c48-10445fe9e010"
 }
