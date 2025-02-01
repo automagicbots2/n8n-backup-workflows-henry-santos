@@ -188,8 +188,8 @@
       ]
     }
   },
-  "createdAt": "2024-07-24T15:56:20.671Z",
-  "id": "4iCe5Ul1XQ1go5Lo",
+  "createdAt": "2025-02-01T17:47:38.568Z",
+  "id": "saOYfD2uV8lxSPjt",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -201,13 +201,13 @@
         "height": 189.04348618878646,
         "width": 1346.2235630407117
       },
-      "id": "917d2af4-906f-4ddb-b72b-b790d3349ad0",
+      "id": "f1b23a2d-be6b-4442-9962-a412e3ebbe63",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -280,
-        200
+        660,
+        -60
       ]
     },
     {
@@ -216,13 +216,13 @@
         "height": 207.79070928070064,
         "width": 417.57528252338807
       },
-      "id": "48067256-177c-49a0-ba6f-2ef973297cf7",
+      "id": "2d84b5f8-cf1f-4599-92d0-97b5a8db07dd",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -740,
-        200
+        200,
+        -60
       ]
     },
     {
@@ -251,21 +251,21 @@
           "returnAllMatches": "returnAllMatches"
         }
       },
-      "id": "930ec9ea-debf-446f-bbb7-08ca76103e00",
+      "id": "5faa2665-ff82-4bd3-b077-b068d1892f98",
       "name": "le_planilha3",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        360,
-        580
+        1300,
+        320
       ],
       "retryOnFail": true,
       "maxTries": 5,
       "waitBetweenTries": 5000,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
+          "id": "5RQWIQOXyaILIRPq",
+          "name": "[Google Sheets] - Automagic Bots - Auth"
         }
       }
     },
@@ -297,13 +297,13 @@
         },
         "options": {}
       },
-      "id": "032203c6-744e-4171-a63c-ba556a5d22ec",
+      "id": "5a1b9be6-129f-42d6-8808-05023b3b203e",
       "name": "variaveis3",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        180,
-        580
+        1120,
+        320
       ]
     },
     {
@@ -357,24 +357,24 @@
           }
         }
       },
-      "id": "64009d94-a9a2-46ca-b768-dad29239dc39",
+      "id": "a7a327ac-d73c-45b6-994d-fa71e879fc2f",
       "name": "EnviaMensagemTexto3",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        800,
-        480
+        1740,
+        220
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "bc6c7596-3521-4c7e-878d-6e854b6d94ed",
+      "id": "01b1eb40-eee0-4667-acd2-95bbef614e52",
       "name": "Não Faça Nada3",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        800,
-        660
+        1740,
+        400
       ]
     },
     {
@@ -388,13 +388,13 @@
           ]
         }
       },
-      "id": "f5ea5cdc-c745-4f45-adf4-53e842608859",
+      "id": "471d6741-2925-4913-9101-32b67aa2ca9d",
       "name": "IF",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -40,
-        600
+        900,
+        340
       ]
     },
     {
@@ -423,23 +423,17 @@
           "returnAllMatches": "returnAllMatches"
         }
       },
-      "id": "5e39a86c-3c5a-4c22-ad95-2e27987c8655",
+      "id": "38b88513-67a4-4b3d-9f15-48c2dc88379a",
       "name": "le_planilha4",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        360,
-        920
+        1300,
+        660
       ],
       "retryOnFail": true,
       "maxTries": 5,
-      "waitBetweenTries": 5000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
-        }
-      }
+      "waitBetweenTries": 5000
     },
     {
       "parameters": {
@@ -469,13 +463,13 @@
         },
         "options": {}
       },
-      "id": "9ff73bef-2a4e-4f57-aa07-b7d0545b327b",
+      "id": "1b24ff0c-f247-417f-b653-1ef5a0030b71",
       "name": "variaveis4",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        180,
-        920
+        1120,
+        660
       ]
     },
     {
@@ -529,24 +523,24 @@
           }
         }
       },
-      "id": "658914c1-0dde-483b-9732-581ebf44b4bc",
+      "id": "6bdb9e1f-9631-417d-aa0f-7f71e689a229",
       "name": "EnviaMensagemTexto4",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        800,
-        820
+        1740,
+        560
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "f5ddc5e2-7911-441a-a65b-7429380d7c04",
+      "id": "514ef29e-141d-4d7e-ad0d-bc96519106ec",
       "name": "Não Faça Nada4",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        800,
-        1000
+        1740,
+        740
       ]
     },
     {
@@ -560,13 +554,13 @@
           ]
         }
       },
-      "id": "a20160ac-6ca2-4cd3-ba4e-5d04c2316813",
+      "id": "1083437c-cbc0-4051-9d93-ae13484e4dcd",
       "name": "IF1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -40,
-        940
+        900,
+        680
       ]
     },
     {
@@ -593,13 +587,13 @@
         },
         "options": {}
       },
-      "id": "9e727f75-3da6-4873-94ff-7804ab857f32",
+      "id": "7fe2da5e-6b32-4689-9f53-6d561768ab27",
       "name": "MSG2.1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        540,
-        920
+        1480,
+        660
       ]
     },
     {
@@ -626,13 +620,13 @@
         },
         "options": {}
       },
-      "id": "516bf289-2a14-4c24-b534-76dfb5051aac",
+      "id": "006faf6b-ddcd-458a-a6bc-85b3b254bf4a",
       "name": "MSG1.1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        540,
-        580
+        1480,
+        320
       ]
     },
     {
@@ -661,23 +655,17 @@
           "returnAllMatches": "returnAllMatches"
         }
       },
-      "id": "a74604e9-52cb-48b8-ae25-4e5111b9a4fa",
+      "id": "932c93df-fa7b-46ff-a131-617253747f63",
       "name": "le_planilha5",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        360,
-        1260
+        1300,
+        1000
       ],
       "retryOnFail": true,
       "maxTries": 5,
-      "waitBetweenTries": 5000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
-        }
-      }
+      "waitBetweenTries": 5000
     },
     {
       "parameters": {
@@ -707,13 +695,13 @@
         },
         "options": {}
       },
-      "id": "51b40fb5-a4ee-4580-b4f4-934be8e7fb56",
+      "id": "c6bfb4e7-912d-4f92-9e76-9e96f7e56dda",
       "name": "variaveis5",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        180,
-        1260
+        1120,
+        1000
       ]
     },
     {
@@ -767,24 +755,24 @@
           }
         }
       },
-      "id": "3ab41146-5db4-446c-ab9d-ee0cb5c73d2a",
+      "id": "31795fdd-df28-419e-b090-6b9ee9079778",
       "name": "EnviaMensagemTexto5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        800,
-        1160
+        1740,
+        900
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "6012818a-a7b8-4a45-acb7-bba6a5241c58",
+      "id": "744d453a-8c71-4810-ba54-d9623868ea79",
       "name": "Não Faça Nada5",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        800,
-        1340
+        1740,
+        1080
       ]
     },
     {
@@ -798,13 +786,13 @@
           ]
         }
       },
-      "id": "156e2a02-0b9a-4b99-98c4-ac1fee4ff319",
+      "id": "ad829616-1493-4843-b2d2-8f29cccee84c",
       "name": "IF2",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -40,
-        1280
+        900,
+        1020
       ]
     },
     {
@@ -831,13 +819,13 @@
         },
         "options": {}
       },
-      "id": "cadd55ff-e615-441e-80f3-ad306675bdf7",
+      "id": "78557db7-0cb2-4994-ae71-67dd66a89ae9",
       "name": "MSG3.1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        540,
-        1260
+        1480,
+        1000
       ]
     },
     {
@@ -854,13 +842,13 @@
           ]
         }
       },
-      "id": "c53ba464-69d1-450a-81d5-588726d7b717",
+      "id": "a60a1494-3a99-4931-be1f-68223c8d91fc",
       "name": "dispara_18h",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
-        -200,
-        600
+        740,
+        340
       ]
     },
     {
@@ -878,13 +866,13 @@
           ]
         }
       },
-      "id": "2718e3e3-2d45-4d4a-a33a-b2b303190006",
+      "id": "4bc4aac2-9b22-435c-9572-f3d9db705cc8",
       "name": "dispara_8h5m1",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
-        -200,
-        940
+        740,
+        680
       ]
     },
     {
@@ -901,103 +889,29 @@
           ]
         }
       },
-      "id": "5b090c60-810b-47e3-9f10-a69fcd50ba9a",
+      "id": "bf66d73b-8c23-4d16-ba49-77c753098963",
       "name": "dispara_9h",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
-        -200,
-        1280
+        740,
+        1020
       ]
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
     "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
-  "staticData": {
-    "node:todo_dia_7:00": {
-      "recurrencyRules": []
-    },
-    "node:todo_dia_8:": {
-      "recurrencyRules": []
-    },
-    "node:todo_dia_8:1": {
-      "recurrencyRules": []
-    },
-    "node:todo_dia_8:05": {
-      "recurrencyRules": []
-    },
-    "node:todo_dia_8:5": {
-      "recurrencyRules": []
-    },
-    "node:todo_dia_8:00": {
-      "recurrencyRules": []
-    },
-    "node:todo_dia_19:00": {
-      "recurrencyRules": []
-    },
-    "node:dispara_as_18hs": {
-      "recurrencyRules": []
-    },
-    "node:dispara_as_18hs1": {
-      "recurrencyRules": []
-    },
-    "node:dispara_as_7_manha": {
-      "recurrencyRules": []
-    },
-    "node:dispara_as_8:05h": {
-      "recurrencyRules": []
-    },
-    "node:dispara_as_19h": {
-      "recurrencyRules": []
-    },
-    "node:dispara_as_19h1": {
-      "recurrencyRules": []
-    },
-    "node:dispara_as_8h": {
-      "recurrencyRules": []
-    },
-    "node:dispara_18h": {
-      "recurrencyRules": []
-    },
-    "node:dispara_8h": {
-      "recurrencyRules": []
-    },
-    "node:dispara_9h": {
-      "recurrencyRules": []
-    },
-    "node:dispara_19h": {
-      "recurrencyRules": []
-    },
-    "node:dispara_7h": {
-      "recurrencyRules": []
-    },
-    "node:dispara_7h1": {
-      "recurrencyRules": []
-    },
-    "node:dispara_8h1": {
-      "recurrencyRules": []
-    },
-    "node:dispara_8h5m": {
-      "recurrencyRules": []
-    },
-    "node:dispara_8h5m1": {
-      "recurrencyRules": []
-    }
-  },
-  "tags": [
-    {
-      "createdAt": "2024-03-27T14:03:25.264Z",
-      "updatedAt": "2024-03-27T14:03:25.264Z",
-      "id": "Ju8yPHXMHj0pxd19",
-      "name": "[LEMBRETE]"
-    }
-  ],
-  "triggerCount": 3,
-  "updatedAt": "2024-07-25T19:12:09.792Z",
-  "versionId": "65e15ca7-6ac7-4a42-b389-81569cd9210b"
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-02-01T17:58:24.992Z",
+  "versionId": "23436b48-c5f7-4264-bb69-7489c6c0f937"
 }
