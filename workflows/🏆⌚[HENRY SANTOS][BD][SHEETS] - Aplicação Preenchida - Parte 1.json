@@ -723,8 +723,8 @@
       ]
     }
   },
-  "createdAt": "2024-03-25T13:17:12.845Z",
-  "id": "8WI7jmeads4Oo36Q",
+  "createdAt": "2025-02-01T18:09:31.356Z",
+  "id": "HLcB2fdVOouBDVPk",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -736,13 +736,13 @@
         "height": 494.4652796495957,
         "width": 1510.0404531979405
       },
-      "id": "94a792b1-2ed9-47b6-bbff-8f8d1638c214",
+      "id": "b754f960-bf72-4215-9d5a-be9a1063d554",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1540,
-        100
+        440,
+        0
       ]
     },
     {
@@ -770,10 +770,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        1820,
-        280
+        720,
+        180
       ],
-      "id": "58b06a5f-9720-4bb2-b904-f71886f9010b"
+      "id": "6de81dd7-3b76-45c2-9b65-99011237029b"
     },
     {
       "parameters": {
@@ -800,10 +800,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        2040,
-        280
+        940,
+        180
       ],
-      "id": "89d37f72-6ceb-4c29-b32b-20e8f968563d"
+      "id": "e8680af8-f1ad-42e8-9a7e-00bd4e5b1d26"
     },
     {
       "parameters": {
@@ -821,13 +821,13 @@
         },
         "options": {}
       },
-      "id": "68dab8d4-0419-470e-811e-d54d14fdb081",
+      "id": "5dd61291-599c-49bf-a2c7-e21332b51977",
       "name": "Set",
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        1620,
-        280
+        520,
+        180
       ]
     },
     {
@@ -852,13 +852,13 @@
         },
         "options": {}
       },
-      "id": "8c619f27-a7c6-4a9c-82b1-6e03d7b2a67c",
+      "id": "a0aead19-5bf7-4f56-bba8-cb6c048493b1",
       "name": "Consulta Users da Conta",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2260,
-        280
+        1160,
+        180
       ]
     },
     {
@@ -867,13 +867,13 @@
         "height": 709.6711347112523,
         "width": 406.19790552805046
       },
-      "id": "fecc203b-4912-40d5-9186-ca7b9dfebf51",
+      "id": "2e2f8e80-b69c-40f1-9d4e-a06dae1236f0",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1100,
-        620
+        0,
+        520
       ]
     },
     {
@@ -882,13 +882,13 @@
         "path": "aplicacao-preenchida-hetzner",
         "options": {}
       },
-      "id": "0e77facb-f6e0-4659-8f07-cae6fe660ef1",
+      "id": "3e7b313a-4202-4df5-8071-c3f9e6168558",
       "name": "aplicacao_preenchida_atual",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1640,
-        680
+        540,
+        580
       ],
       "webhookId": "80364f39-fdcf-49bb-8268-0aad9dbdd379"
     },
@@ -896,13 +896,13 @@
       "parameters": {
         "options": {}
       },
-      "id": "b10f6895-d80d-4d75-a8d4-da9355f60c9e",
+      "id": "f3f616f3-abcc-4a4d-9857-2cd1e73a4b90",
       "name": "todas_as_perguntas",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1160,
-        220
+        60,
+        120
       ]
     },
     {
@@ -930,10 +930,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        2460,
-        280
+        1360,
+        180
       ],
-      "id": "80ee04dc-38da-43bb-837f-acb17ff315c0"
+      "id": "96f9d6f2-a011-4e7a-9526-3e9f8096ebbf"
     },
     {
       "parameters": {
@@ -960,10 +960,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        2660,
-        280
+        1560,
+        180
       ],
-      "id": "4bd49dfc-1a61-44d7-b9e1-5e0c5a41ed74"
+      "id": "77f70f8e-07c6-4338-84ca-5106f32f5062"
     },
     {
       "parameters": {
@@ -987,13 +987,13 @@
         },
         "options": {}
       },
-      "id": "314752ca-dd8c-466d-a25a-32b7ab30f06e",
+      "id": "df4a8463-b853-488b-b293-14995d27dcce",
       "name": "Listar Tipos de Task da Conta",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2860,
-        280
+        1760,
+        180
       ]
     },
     {
@@ -1010,13 +1010,13 @@
         },
         "options": {}
       },
-      "id": "1b59b31f-3d46-4d69-8b1b-8f5f8b0c8440",
+      "id": "b0c8239e-677a-41a4-a232-8319b5c01d26",
       "name": "todas_as_perguntas1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1160,
-        420
+        60,
+        320
       ]
     },
     {
@@ -1025,39 +1025,39 @@
         "height": 494.4652796495957,
         "width": 406.19790552805046
       },
-      "id": "380c4d63-fc7c-4e96-ad6c-fe88a45e76bd",
+      "id": "6fa1ed2d-3e6e-4454-a950-21fb8a73e4db",
       "name": "Sticky Note2",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1100,
-        100
+        0,
+        0
       ]
     },
     {
       "parameters": {
         "jsCode": "// Código padrão para typeform via ref\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(2, 4);\n  const ddi = telefoneLimpo.slice(0, 2);\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para traduzir booleanos para Português\nfunction traduzirBooleano(valor) {\n  return valor ? \"Sim\" : \"Não\";\n}\n\n// Função para converter número em reais\nfunction formatarValorEmReal(valor) {\n  if (valor === null || valor === undefined) return \"\";\n  return `R$ ${valor.toFixed(2)}`;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"6ab707e5-e979-4f2f-adde-53d80500d523\");\nconst telefoneFormatado = telefoneAnswer ? extrairDddETelefone(telefoneAnswer.phone_number) : \"\";\n\nconst Ending = $node[\"aplicacao_preenchida_com_email\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\n\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\nconsole.log(dataFormatada); // Saída no formato YYYY-MM-DD\n\n\n// Montar o objeto de output\nconst output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text) || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"39447b38-e9e1-4dbb-90a1-2c980add50a7\")?.email || \"\",\n  \n  instagram: respostas.find(answer => answer.field.ref === \"1859af56-4a91-488a-81d0-95302ecdb6e5\")?.text.replace('@','').toLowerCase() || \"\",\n\n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"d61277ba-4e98-4f14-b6e5-1e21d5170b87\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  \n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"e64c18b1-26fd-48eb-9468-f6fb5abbdee6\")?.choice.label || \"\",\n  \n objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  \n  porque_voce: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => answer.field.ref === \"3b4dab3c-fbf1-44dc-970a-94803a2c658b\")?.choice.label || \"\",\n  \n  nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  //porque_voce_2: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n\n  data_ultima_quinzena: dataFormatada,\n  ending: Ending || \"\",  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\"\n};\n\nreturn [output];"
       },
-      "id": "8253663b-22fd-4e25-ad50-79914c3c79a1",
+      "id": "ea322fea-f360-423f-8f21-30e4b8899ef6",
       "name": "formata_dados",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1360,
-        420
+        260,
+        320
       ]
     },
     {
       "parameters": {
         "jsCode": "// Código padrão para typeform via ref\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(0, 2);\n  const ddi = '55';\n\n  // Verifica se o número começa com '351' e mantém inalterado\n  if (telefoneLimpo.startsWith('351')) {\n    return telefoneLimpo;\n  }\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para traduzir booleanos para Português\nfunction traduzirBooleano(valor) {\n  return valor ? \"Sim\" : \"Não\";\n}\n\n// Função para converter número em reais\nfunction formatarValorEmReal(valor) {\n  if (valor === null || valor === undefined) return \"\";\n  return `R$ ${valor.toFixed(2)}`;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = $node[\"aplicacao_preenchida_atual\"].json[\"body\"][\"form_response\"][\"hidden\"][\"telefone\"] || \"\";\n\nconst telefoneFormatado = telefoneAnswer;\n\nconst Ending = $node[\"aplicacao_preenchida_atual\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\n\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\nconsole.log(dataFormatada); // Saída no formato YYYY-MM-DD\n\n\n// Montar o objeto de output\nlet output = {\n   nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"0f46af7d-ea52-450e-af61-e471f4965cac\")?.text) || $node[\"aplicacao_preenchida_atual\"].json[\"body\"][\"form_response\"][\"hidden\"][\"name\"] || \"\",\n  \n  telefone: extrairDddETelefone(telefoneFormatado),\n  \n  email: respostas.find(answer => answer.field.ref === \"c4b529b3-aaad-4d5a-9a90-30b140ee812d\")?.email || $node[\"aplicacao_preenchida_atual\"].json[\"body\"][\"form_response\"][\"hidden\"][\"email\"] || '',\n\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace(/@/g, \"\") || \"\",\n  \n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  \n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"14d80a71-2dd1-484b-b1a1-cbf4ef37a61d\")?.choice.label || \"\",\n  \n objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  \n  porque_voce: respostas.find(answer => answer.field.ref === \"66fec9b4-837b-4783-8ce2-a670902ab134\")?.text || \"\",\n  \n  //acompanhamento_unico: respostas.find(answer => answer.field.ref === \"d31760df-623d-435d-ac2f-092b82c7803b\")?.choice.label || \"\",\n\n  acompanhamento_unico: respostas.find(answer => {\n    const fieldRef = answer.field.ref;\n    return fieldRef === \"d31760df-623d-435d-ac2f-092b82c7803b\" || fieldRef === \"511ca207-0c32-4529-b19f-42be7508c79d\";\n})?.choice.label || \"\",\n\n\n  \n  nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n  \n  //quando_comecar: respostas.find(answer => answer.field.ref === \"27788106-35a8-4fa2-93f7-7ca0c8919c17\")?.choice.label || \"\",\n  \n  data_ultima_quinzena: dataFormatada,  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\",\n  Ending: Ending || \"\"\n};\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output = { ...output, Pais: \"Portugal\" };\n}\n\nreturn [output];\n"
       },
-      "id": "3e466aa3-43fc-48e3-a62b-0063b7bcf954",
+      "id": "16b7f926-2326-4cc0-9691-2fdc5cfae23c",
       "name": "formata_dados7",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1360,
-        220
+        260,
+        120
       ]
     },
     {
@@ -1092,13 +1092,13 @@
         },
         "options": {}
       },
-      "id": "8e497410-dfe0-4247-b101-854d05591457",
+      "id": "b521b685-7ba0-4a5f-9558-6364037f809d",
       "name": "tamanho_da_equipe",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        2100,
-        680
+        1000,
+        580
       ]
     },
     {
@@ -1124,13 +1124,13 @@
         },
         "options": {}
       },
-      "id": "2339b096-f7f9-47e3-b8ad-7060b3580b0f",
+      "id": "5ea8598f-9b9c-4d70-b96e-eeb31cd5d26c",
       "name": "faturamento",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        2260,
-        760
+        1160,
+        660
       ]
     },
     {
@@ -1148,18 +1148,18 @@
           "durable": true
         }
       },
-      "id": "6429a36f-f314-4329-a91c-b09a66859a5b",
+      "id": "02da4d45-14f4-432d-9d0c-206b7f9e2b9d",
       "name": "entra_na_fila",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        2640,
-        1200
+        1540,
+        1100
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -1749,26 +1749,26 @@
         },
         "options": {}
       },
-      "id": "acf6bce4-2329-4645-af10-7854e76b67af",
+      "id": "465b8a76-97be-458c-89e3-8b1a00e2ab3e",
       "name": "dados_desqualificados",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2440,
-        660
+        1340,
+        560
       ]
     },
     {
       "parameters": {
         "jsCode": "// Extrair informações do input\nconst inputData = $node[\"aplicacao_preenchida_atual\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrai outras informações do formulário\nconst nome = respostas[\"Nome\"] || '';\nconst telefone = respostas[\"Whatsapp\"] || '';\nconst email = respostas[\"E-mail\"] || '';\nconst instagram = (respostas[\"Instagram\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\n\n// Extrai perguntas do formulário\nconst tamanho_da_equipe = respostas[\"1. Para eu entender mais sobre teu negócio, quantos profissionais você tem?\"] || '';\n\nconst faturamento = respostas[\"2. Em qual etapa de faturamento você está atualmente. Qual seu faturamento MÉDIO MENSAL em 2024?\"] || '';\n\nconst objetivo_este_ano = respostas[\"3. Qual o objetivo ou sonho com seu salão de beleza que você ficaria muito feliz em alcançar em 2024?\"] || '';\n\nconst impede_objetivo = respostas[\"4. Quais são os problemas que têm te impedido de alcançar esse objetivo?\"] || '';\n\nconst porque_voce = respostas[\"5. Caso eu receba mais interessados na vaga na sessão, por que eu deveria escolher você?\"] || '';\n\nconst acompanhamento_unico = respostas[\"6. Se existisse um acompanhamento único que solucionasse os problemas que citou antes e te ajudasse a chegar no seu objetivo, quanto você estaria disposto a investir POR MÊS?\"] || '';\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  instagram,\n  tamanho_da_equipe,\n  faturamento,\n  objetivo_este_ano,\n  impede_objetivo,\n  porque_voce,\n  acompanhamento_unico,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;"
       },
-      "id": "d5ca4971-4288-4a5b-9838-bc12e2b2cf25",
+      "id": "2b4d5e10-46ab-4acb-be56-138a57106aab",
       "name": "formata_dados6",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1920,
-        680
+        820,
+        580
       ]
     },
     {
@@ -2357,26 +2357,26 @@
         },
         "options": {}
       },
-      "id": "d30c50c6-5413-4631-87ad-b83bc4be7e79",
+      "id": "cf7937d7-de77-49b0-b357-46dbbf99d7b6",
       "name": "dados_desqualificados1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2440,
-        820
+        1340,
+        720
       ]
     },
     {
       "parameters": {
         "keep": "lastItems"
       },
-      "id": "ec2d8b07-d079-4e43-add4-fd4b160835b0",
+      "id": "5f4f7b21-7555-4782-8d78-390ef79f9e49",
       "name": "Limit",
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        2620,
-        720
+        1520,
+        620
       ]
     },
     {
@@ -2966,13 +2966,13 @@
         },
         "options": {}
       },
-      "id": "92e1b1b3-8d31-4c33-a698-26f02897aa71",
+      "id": "1e9612b8-2f6f-443c-837a-46a7543c972e",
       "name": "dados_validados1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2360,
-        1060
+        1260,
+        960
       ]
     },
     {
@@ -3561,26 +3561,26 @@
         },
         "options": {}
       },
-      "id": "b1e83479-3139-4cea-91be-2a51951a61da",
+      "id": "a419262d-5b4a-4b96-9fef-fc08768b57b1",
       "name": "dados_validados5",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2360,
-        1240
+        1260,
+        1140
       ]
     },
     {
       "parameters": {
         "jsCode": "// Código padrão para typeform via ref\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(2, 4);\n  const ddi = telefoneLimpo.slice(0, 2);\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para determinar a qualificação baseada no faturamento e tamanho da equipe\nfunction determinarQualificacao(faturamento, tamanhoEquipe) {\n  // Verificar se o faturamento é acima de R$ 35.001\n  const faturamentoAcima30k = (\n    faturamento === \"Entre R$35.001 e R$50.000 mensal\" || \n    faturamento === \"Entre R$50.001 e R$100.000 mensal\" || \n    faturamento === \"+ de R$100.001\"\n  );\n\n  // Verificar se a equipe tem mais de 4 funcionários\n  const equipeMaiorQue4 = (\n    tamanhoEquipe === \"ENTRE 4 E 5\" || \n    tamanhoEquipe === \"ENTRE 5 E 10\" || \n    tamanhoEquipe === \"ENTRE 10 E 20\" || \n    tamanhoEquipe === \"+ DE 20\"\n  );\n\n  // Retornar qualificação com base nas condições\n  if (faturamentoAcima30k && equipeMaiorQue4) {\n    return \"Extremamente Qualificado\";\n  } else if (faturamentoAcima30k) {\n    return \"Qualificado\";\n  } else {\n    return \"Desqualificado\";\n  }\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"6ab707e5-e979-4f2f-adde-53d80500d523\");\nconst telefoneFormatado = telefoneAnswer ? extrairDddETelefone(telefoneAnswer.phone_number) : \"\";\n\nconst Ending = $node[\"aplicacao_preenchida_com_email\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\n\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\nconsole.log(dataFormatada); // Saída no formato YYYY-MM-DD\n\n// Extrair o faturamento e tamanho da equipe\nconst faturamento = respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\";\nconst tamanhoEquipe = respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\";\n\n// Montar o objeto de output\nconst output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text) || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"39447b38-e9e1-4dbb-90a1-2c980add50a7\")?.email || \"\",\n  \n  instagram: respostas.find(answer => answer.field.ref === \"1859af56-4a91-488a-81d0-95302ecdb6e5\")?.text.replace('@','').toLowerCase() || \"\",\n\n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"d61277ba-4e98-4f14-b6e5-1e21d5170b87\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: tamanhoEquipe,\n  \n  faturamento: faturamento,\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"e64c18b1-26fd-48eb-9468-f6fb5abbdee6\")?.choice.label || \"\",\n  \n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  \n  porque_voce: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => answer.field.ref === \"3b4dab3c-fbf1-44dc-970a-94803a2c658b\")?.choice.label || \"\",\n  \n  nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  data_ultima_quinzena: dataFormatada,\n  ending: Ending || \"\",  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\",\n\n  // Qualificação baseada no faturamento e tamanho da equipe\n  qualificacao: determinarQualificacao(faturamento, tamanhoEquipe)\n};\n\nreturn [output];\n"
       },
-      "id": "8f768ae6-649a-439b-9601-3e0affe60c14",
+      "id": "03213d5a-55e3-469a-979d-3ccecd4e8fad",
       "name": "formata_dados8",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2060,
-        1240
+        960,
+        1140
       ]
     },
     {
@@ -3589,13 +3589,13 @@
         "path": "aplicacao-preenchida-hetzner-nap",
         "options": {}
       },
-      "id": "93da3cb7-1a0a-44df-b569-5ee17934d57e",
+      "id": "59f09fb9-e9d0-45df-a25a-3e07caaedc5c",
       "name": "aplicacao_preenchida_com_email",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1820,
-        1240
+        720,
+        1140
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -3603,13 +3603,13 @@
       "parameters": {
         "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\";\n  return str\n    .toLowerCase()\n    .split(\" \")\n    .map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1))\n    .join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith(\"utm_\")) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === \"object\") {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n  searchUTMs(json);\n  return utmParams;\n}\n\n// Função para formatar o telefone e extrair DDD\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(0, 2);\n  const ddi = \"55\";\n  return parseInt(ddd) > 28\n    ? ddi + ddd + telefoneLimpo.slice(-8)\n    : ddi + ddd + telefoneLimpo.slice(-9);\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || \"\";\nconst utmSource = utms.utm_source || \"\";\nconst utmCampaign = utms.utm_campaign || \"\";\nconst utmMedium = utms.utm_medium || \"\";\nconst utmTerm = utms.utm_term || \"\";\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = inputData.body.form_response.hidden.telefone || \"\";\nconst telefoneFormatado = extrairDddETelefone(telefoneAnswer);\n\nconst Ending = inputData.body.form_response.ending.ref || \"\";\n\n// Obter a data atual e subtrair 15 dias\nconst dataAtual = new Date();\ndataAtual.setDate(dataAtual.getDate() - 15);\nconst dataFormatada = dataAtual.toISOString().split(\"T\")[0]; // Formato YYYY-MM-DD\n\n// Montar o objeto de output\nlet output = {\n  nome: formatarPrimeiraLetraMaiuscula(inputData.body.form_response.hidden.name || \"\"),\n  telefone: telefoneFormatado,\n  email: inputData.body.form_response.hidden.email || \"\",\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace(/@/g, \"\") || \"\",\n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"14d80a71-2dd1-484b-b1a1-cbf4ef37a61d\")?.choice.label || \"\",\n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  quantas_horas: inputData.body.form_response.answers[7]?.choice?.label || \"\",\n  porque_voce: respostas.find(answer => answer.field.ref === \"66fec9b4-837b-4783-8ce2-a670902ab134\")?.text || \"\",\n  acompanhamento_unico: respostas.find(answer => {\n    const fieldRef = answer.field.ref;\n    return fieldRef === \"d31760df-623d-435d-ac2f-092b82c7803b\" || fieldRef === \"511ca207-0c32-4529-b19f-42be7508c79d\";\n  })?.choice.label || \"\",\n  nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n  pergunta11: inputData.body.form_response.answers[8]?.text || \"\",\n  comeca_quando: respostas.find(answer => answer.field.ref === \"7d285441-c756-4a57-9768-2c7f3d8d9f85\")?.choice?.label || \"\",\n  data_ultima_quinzena: dataFormatada,  \n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  Ending: Ending\n};\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith(\"351\")) {\n  output.Pais = \"Portugal\";\n}\n\nreturn [output];\n"
       },
-      "id": "ce968332-bcbf-41cb-87bf-76330439bde2",
+      "id": "7cd465bd-991c-4a05-991d-ba8366c0e976",
       "name": "formata_dados9",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2060,
-        1060
+        960,
+        960
       ]
     },
     {
@@ -4197,26 +4197,26 @@
         },
         "options": {}
       },
-      "id": "d286760d-7b29-41f4-b1a0-748c8194aed7",
+      "id": "25ba69d3-4350-49a4-86d8-480c48c10dbe",
       "name": "dados_validados",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2540,
-        2320
+        1440,
+        2220
       ]
     },
     {
       "parameters": {
         "jsCode": "// Código padrão para typeform via ref\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(2, 4);\n  const ddi = telefoneLimpo.slice(0, 2);\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para traduzir booleanos para Português\nfunction traduzirBooleano(valor) {\n  return valor ? \"Sim\" : \"Não\";\n}\n\n// Função para converter número em reais\nfunction formatarValorEmReal(valor) {\n  if (valor === null || valor === undefined) return \"\";\n  return `R$ ${valor.toFixed(2)}`;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"6ab707e5-e979-4f2f-adde-53d80500d523\");\nconst telefoneFormatado = telefoneAnswer ? extrairDddETelefone(telefoneAnswer.phone_number) : \"\";\n\nconst Ending = $node[\"aplicacao_preenchida_ebook\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\n\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\nconsole.log(dataFormatada); // Saída no formato YYYY-MM-DD\n\n\n// Montar o objeto de output\nconst output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text) || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"39447b38-e9e1-4dbb-90a1-2c980add50a7\")?.email || \"\",\n  \n  instagram: respostas.find(answer => answer.field.ref === \"a78f3e7a-93ae-430e-a097-89dcddbf5a14\")?.text.replace('@','').toLowerCase() || \"\",\n\n  tipo_ebook: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  faturamento: respostas.find(answer => answer.field.ref === \"7c5f638b-b9eb-4754-ae87-141d990fa801\")?.choice.label || \"\",\n  \n  maior_objetivo: respostas.find(answer => answer.field.ref === \"5f121634-7864-4a57-a360-fb98f51a96db\")?.text || \"\",\n\n  acompanhamento_unico: respostas.find(answer => answer.field.ref === \"d68b6cd7-5911-4eb7-b869-2f01a405fd86\")?.choice.label || \"\",\n  \n\n  //porque_voce_2: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n\n  data_ultima_quinzena: dataFormatada,\n  ending: Ending || \"\",  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\"\n};\n\nreturn [output];"
       },
-      "id": "4ed50a89-8f8a-488e-8896-5c1734d9c361",
+      "id": "0c3f43e6-24fc-4e81-84bb-0f5521373b00",
       "name": "formata_dados10",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2020,
-        2320
+        920,
+        2220
       ]
     },
     {
@@ -4225,13 +4225,13 @@
         "path": "aplicacao-preenchida-hetzner-ebook",
         "options": {}
       },
-      "id": "f413b734-a72b-480c-aac1-cb153cc64ed8",
+      "id": "208410df-4ea1-49aa-b72a-e9cdbc3b1875",
       "name": "aplicacao_preenchida_ebook",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1860,
-        2320
+        760,
+        2220
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -4241,13 +4241,13 @@
         "path": "aplicacao-preenchida-manychat-sa",
         "options": {}
       },
-      "id": "734ace91-040c-4da8-83b1-e675c864637a",
+      "id": "039d9259-ad56-4f90-b463-121347fae924",
       "name": "aplicacao_preenchida_manychat_sa",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1760,
-        2740
+        660,
+        2640
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -4836,39 +4836,39 @@
         },
         "options": {}
       },
-      "id": "6e82b88b-fcc5-42da-a8c2-43612151fd49",
+      "id": "74591b77-3dae-4fc9-8cc1-6f919e040329",
       "name": "dados_validados2",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2440,
-        2740
+        1340,
+        2640
       ]
     },
     {
       "parameters": {
         "jsCode": "// Extrair informações do input\nconst inputData = $node[\"aplicacao_preenchida_manychat_sa\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\n//const utmSource = utms.utm_source || '';\nconst utmSource = utms.utm_source !== undefined && utms.utm_source !== null ? utms.utm_source : 'manychat';\nconst utmCampaign = utms.utm_campaign !== undefined && utms.utm_campaign !== null ? utms.utm_campaign : 'salaoautoadministravel';\n//const utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair outras informações do formulário\nconst nome = respostas[\"name\"] || '';\nconst telefone = respostas[\"phone\"] || '';\nconst email = respostas[\"email\"] || '';\nconst instagram = (respostas[\"ig_username\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\n\n// Perguntas via manychat\nconst tamanho_da_equipe = $node[\"aplicacao_preenchida_manychat_sa\"].json[\"body\"][\"custom_fields\"][\"Quantidade de Profissionais\"] || '';\nconst faturamento = $node[\"aplicacao_preenchida_manychat_sa\"].json[\"body\"][\"custom_fields\"][\"Faturamento\"] || '';\nconst objetivo_este_ano = $node[\"aplicacao_preenchida_manychat_sa\"].json[\"body\"][\"custom_fields\"][\"se sentir realizado\"] || '';\nconst impede_objetivo = $node[\"aplicacao_preenchida_manychat_sa\"].json[\"body\"][\"custom_fields\"][\"maior problema\"] || '';\nconst data_agendamento = $node[\"aplicacao_preenchida_manychat_sa\"].json[\"body\"][\"custom_fields\"][\"Data e horários para agendamento\"] || '';\nconst qualificacao = $node[\"aplicacao_preenchida_manychat_sa\"].json[\"body\"][\"custom_fields\"][\"Classificação\"]  || '';\n\n\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  instagram,\n  tamanho_da_equipe: tamanho_da_equipe,\n  faturamento:faturamento,\n  objetivo_este_ano: objetivo_este_ano,\n  impede_objetivo: impede_objetivo,\n  data_agendamento: data_agendamento,\n  qualificacao: qualificacao,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;"
       },
-      "id": "7edeac49-0073-4321-bb78-7828497e6d22",
+      "id": "af35a775-4a22-48e4-a618-67b8bf182464",
       "name": "formata_dados11",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2060,
-        2740
+        960,
+        2640
       ]
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "8b6bb8b8-d272-4e96-8f3b-092df5bf23fc",
+      "id": "b0957bf1-c4dd-4852-b83a-2656e5024b47",
       "name": "manychat_sa_qualificado",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1480,
-        2740
+        380,
+        2640
       ]
     },
     {
@@ -4886,18 +4886,18 @@
           "durable": true
         }
       },
-      "id": "e536736e-e7f8-470a-abcf-ee0334e6bc99",
+      "id": "06a5e906-a84f-43a4-919f-9e94a095e348",
       "name": "entra_na_fila1",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        2740,
-        2920
+        1640,
+        2820
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -4905,26 +4905,26 @@
       "parameters": {
         "options": {}
       },
-      "id": "070bb3b6-ed1e-466c-993a-7ed40805213f",
+      "id": "22b83c9c-4d92-4e70-8aa5-ab370865f3d4",
       "name": "manychat_sa_desqualificado",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1260,
-        2740
+        160,
+        2640
       ]
     },
     {
       "parameters": {
         "jsCode": "// Extrair informações do input\nconst inputData = $node[\"aplicacao_preenchida_manychat_pop\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\n//const utmSource = utms.utm_source || '';\nconst utmSource = utms.utm_source !== undefined && utms.utm_source !== null ? utms.utm_source : 'manychat';\nconst utmCampaign = utms.utm_campaign !== undefined && utms.utm_campaign !== null ? utms.utm_campaign : 'pop';\n//const utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair outras informações do formulário\nconst nome = respostas[\"name\"] || '';\nconst telefone = respostas[\"phone\"] || '';\nconst email = respostas[\"email\"] || '';\nconst instagram = (respostas[\"ig_username\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\n\n// Perguntas via manychat\nconst tamanho_da_equipe = $node[\"aplicacao_preenchida_manychat_pop\"].json[\"body\"][\"custom_fields\"][\"Quantidade de Profissionais\"] || '';\nconst faturamento = $node[\"aplicacao_preenchida_manychat_pop\"].json[\"body\"][\"custom_fields\"][\"Faturamento\"] || '';\nconst objetivo_este_ano = $node[\"aplicacao_preenchida_manychat_pop\"].json[\"body\"][\"custom_fields\"][\"se sentir realizado\"] || '';\nconst impede_objetivo = $node[\"aplicacao_preenchida_manychat_pop\"].json[\"body\"][\"custom_fields\"][\"maior problema\"] || '';\nconst data_agendamento = $node[\"aplicacao_preenchida_manychat_pop\"].json[\"body\"][\"custom_fields\"][\"Data e horários para agendamento\"] || '';\nconst qualificacao = $node[\"aplicacao_preenchida_manychat_pop\"].json[\"body\"][\"custom_fields\"][\"Classificação\"]  || '';\nconst momento_atual = $node[\"aplicacao_preenchida_manychat_pop\"].json[\"body\"][\"custom_fields\"][\"sobre o negócio\"]  || '';\n\n\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  instagram,\n  tamanho_da_equipe: tamanho_da_equipe,\n  faturamento:faturamento,\n  objetivo_este_ano: objetivo_este_ano,\n  impede_objetivo: impede_objetivo,\n  data_agendamento: data_agendamento,\n  momento_atual: momento_atual,\n  qualificacao: qualificacao,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;"
       },
-      "id": "134f953b-5ec6-4d97-90ae-f25c67bb975a",
+      "id": "e6affe83-f495-4ebb-9132-749675c12258",
       "name": "formata_dados12",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2060,
-        2920
+        960,
+        2820
       ]
     },
     {
@@ -5512,13 +5512,13 @@
         },
         "options": {}
       },
-      "id": "f7f8c257-62be-482e-8311-529e5b9addcc",
+      "id": "b34b47f7-b694-4de6-83b3-44d1bbb59684",
       "name": "dados_validados3",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2440,
-        2920
+        1340,
+        2820
       ]
     },
     {
@@ -5528,13 +5528,13 @@
         "responseCode": "={{ 200 }}",
         "options": {}
       },
-      "id": "8d7f816e-a48c-43d8-9c29-f2fd4b7887b9",
+      "id": "436e989a-9420-4f32-9554-943ae2fc835f",
       "name": "aplicacao_preenchida_manychat_pop",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1760,
-        2920
+        660,
+        2820
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -5542,13 +5542,13 @@
       "parameters": {
         "jsCode": "// Extrair informações do input\nconst inputData = $node[\"aplicacao_preenchida_manychat_3_alavancas\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\n//const utmSource = utms.utm_source || '';\nconst utmSource = utms.utm_source !== undefined && utms.utm_source !== null ? utms.utm_source : 'manychat';\nconst utmCampaign = utms.utm_campaign !== undefined && utms.utm_campaign !== null ? utms.utm_campaign : '3_alavancas';\n//const utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair outras informações do formulário\nconst nome = respostas[\"name\"] || '';\nconst telefone = respostas[\"phone\"] || '';\nconst email = respostas[\"email\"] || '';\nconst instagram = (respostas[\"ig_username\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\n\n// Perguntas via manychat\nconst tamanho_da_equipe = $node[\"aplicacao_preenchida_manychat_3_alavancas\"].json[\"body\"][\"custom_fields\"][\"Quantidade de Profissionais\"] || '';\nconst faturamento = $node[\"aplicacao_preenchida_manychat_3_alavancas\"].json[\"body\"][\"custom_fields\"][\"Faturamento\"] || '';\nconst objetivo_este_ano = $node[\"aplicacao_preenchida_manychat_3_alavancas\"].json[\"body\"][\"custom_fields\"][\"se sentir realizado\"] || '';\nconst impede_objetivo = $node[\"aplicacao_preenchida_manychat_3_alavancas\"].json[\"body\"][\"custom_fields\"][\"maior problema\"] || '';\nconst data_agendamento = $node[\"aplicacao_preenchida_manychat_3_alavancas\"].json[\"body\"][\"custom_fields\"][\"Data e horários para agendamento\"] || '';\nconst qualificacao = $node[\"aplicacao_preenchida_manychat_3_alavancas\"].json[\"body\"][\"custom_fields\"][\"Classificação\"]  || '';\nconst momento_atual = $node[\"aplicacao_preenchida_manychat_3_alavancas\"].json[\"body\"][\"custom_fields\"][\"Qual o seu momento atual?\"]  || '';\nconst sobre_negocio = $node[\"aplicacao_preenchida_manychat_3_alavancas\"].json[\"body\"][\"custom_fields\"][\"sobre o negócio\"]  || '';\n\n\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  instagram,\n  tamanho_da_equipe: tamanho_da_equipe,\n  faturamento:faturamento,\n  objetivo_este_ano: objetivo_este_ano,\n  impede_objetivo: impede_objetivo,\n  data_agendamento: data_agendamento,\n  momento_atual: momento_atual,\n  sobre_negocio: sobre_negocio,\n  qualificacao: qualificacao,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;"
       },
-      "id": "4469c3c5-8b04-4e1d-9971-0d05e7f61a0d",
+      "id": "bd8ffb00-c6c2-421d-8f6e-46d4c64e096b",
       "name": "formata_dados13",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2060,
-        3100
+        960,
+        3000
       ]
     },
     {
@@ -6136,13 +6136,13 @@
         },
         "options": {}
       },
-      "id": "6b2e8497-f3a4-4b12-b78f-3e11a16bc7e3",
+      "id": "09668f73-5e26-4181-a7b1-a7fe712c175f",
       "name": "dados_validados4",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2440,
-        3100
+        1340,
+        3000
       ]
     },
     {
@@ -6151,13 +6151,13 @@
         "height": 640.9024905593631,
         "width": 1199.6160431467256
       },
-      "id": "b40cd0ed-7b7a-40e4-b043-2441a31dcd68",
+      "id": "f5fa46a5-e86f-4511-bdd3-24fb91965ec7",
       "name": "Sticky Note3",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1700,
-        2660
+        600,
+        2560
       ]
     },
     {
@@ -6167,13 +6167,13 @@
         "responseCode": "={{ 200 }}",
         "options": {}
       },
-      "id": "a32e4969-9685-475c-8d55-6a10bfb77138",
+      "id": "665deeae-930d-4147-803d-506fb9a007ac",
       "name": "aplicacao_preenchida_manychat_3_alavancas",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1760,
-        3100
+        660,
+        3000
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -6762,26 +6762,26 @@
         },
         "options": {}
       },
-      "id": "5cf7e965-c225-4aea-b8c0-a872697c51be",
+      "id": "450294a0-d08e-4453-9406-6b1a72a0b304",
       "name": "dados_validados6",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2540,
-        2500
+        1440,
+        2400
       ]
     },
     {
       "parameters": {
         "jsCode": "// Código padrão para typeform via ref\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(2, 4);\n  const ddi = telefoneLimpo.slice(0, 2);\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para traduzir booleanos para Português\nfunction traduzirBooleano(valor) {\n  return valor ? \"Sim\" : \"Não\";\n}\n\n// Função para converter número em reais\nfunction formatarValorEmReal(valor) {\n  if (valor === null || valor === undefined) return \"\";\n  return `R$ ${valor.toFixed(2)}`;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"16284b5e-fa0b-4ba7-885c-2494d1c33e72\");\nconst telefoneFormatado = telefoneAnswer ? extrairDddETelefone(telefoneAnswer.phone_number) : \"\";\n\nconst Ending = $node[\"aplicacao_preenchida_com_email1\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\n\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\nconsole.log(dataFormatada); // Saída no formato YYYY-MM-DD\n\n\n// Montar o objeto de output\nconst output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"d0e88234-7413-40bf-9068-5ba28135da8c\")?.text) || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"5041c35b-4606-47f9-8146-66c11e136962\")?.email || \"\",\n  \n  instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace('@','').toLowerCase() || \"\",\n\n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  \n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"e64c18b1-26fd-48eb-9468-f6fb5abbdee6\")?.choice.label || \"\",\n  \n objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  \n // porque_voce: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => answer.field.ref === \"511ca207-0c32-4529-b19f-42be7508c79d\")?.choice.label || \"\",\n  \n  //nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  //porque_voce_2: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n\n  data_ultima_quinzena: dataFormatada,\n  ending: Ending || \"\",  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\"\n};\n\nreturn [output];"
       },
-      "id": "916eccf6-856e-4186-90c3-5fd2150e9f33",
+      "id": "9034caa3-ffd1-453b-91f1-bf88ec3782f0",
       "name": "formata_dados14",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2020,
-        2500
+        920,
+        2400
       ]
     },
     {
@@ -6790,13 +6790,13 @@
         "path": "aplicacao-preenchida-software",
         "options": {}
       },
-      "id": "f986b537-c9bb-4a16-bc91-9dd504e5e59a",
+      "id": "d86912d1-43af-48bd-be9b-0df8ef0b8fae",
       "name": "aplicacao_preenchida_com_email1",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1860,
-        2500
+        760,
+        2400
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -7397,26 +7397,26 @@
         },
         "options": {}
       },
-      "id": "2b4f0fc1-4d0e-4ac4-8a0e-f97f14ae3382",
+      "id": "f729b57a-9379-4bcb-abcb-f935b13970b7",
       "name": "dados_validados7",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        3260,
-        4380
+        2160,
+        4280
       ]
     },
     {
       "parameters": {
         "jsCode": "// Código padrão para typeform via ref\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(2, 4);\n  const ddi = telefoneLimpo.slice(0, 2);\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para traduzir booleanos para Português\nfunction traduzirBooleano(valor) {\n  return valor ? \"Sim\" : \"Não\";\n}\n\n// Função para converter número em reais\nfunction formatarValorEmReal(valor) {\n  if (valor === null || valor === undefined) return \"\";\n  return `R$ ${valor.toFixed(2)}`;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"a8fa9e16-a140-4f62-9b56-46cd94c20e79\");\nconst telefoneFormatado = telefoneAnswer ? extrairDddETelefone(telefoneAnswer.phone_number) : \"\";\n\nconst Ending = $node[\"aplicacao_preenchida_sala_secreta\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\n\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\nconsole.log(dataFormatada); // Saída no formato YYYY-MM-DD\n\n\n// Montar o objeto de output\nconst output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"d0f05b37-b405-4438-82a0-c4daf82a9841\")?.text) || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"52e1198a-83c1-4a27-875e-1c140380ebca\")?.email || \"\",\n  \n  instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace('@','').toLowerCase() || \"\",\n\n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  \n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"14d80a71-2dd1-484b-b1a1-cbf4ef37a61d\")?.choice.label || \"\",\n  \n objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  \n porque_voce: respostas.find(answer => answer.field.ref === \"66fec9b4-837b-4783-8ce2-a670902ab134\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => answer.field.ref === \"96a20d28-5273-4315-b77d-df383a1741ae\")?.choice.label || \"\",\n  \n  //nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  //porque_voce_2: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n\n  data_ultima_quinzena: dataFormatada,\n  ending: Ending || \"\",  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\"\n};\n\nreturn [output];"
       },
-      "id": "59dc67ff-1c4a-4eed-88d9-65d86b431927",
+      "id": "960c9cb6-e13a-4c31-bb0c-53a6f166c5bc",
       "name": "formata_dados15",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1600,
-        4400
+        500,
+        4300
       ]
     },
     {
@@ -7425,35 +7425,35 @@
         "height": 751.025148880906,
         "width": 2652.992768461925
       },
-      "id": "48ec030e-4cbe-4e94-bfca-576ae1ba054c",
+      "id": "9e3c5f63-be4e-4684-820f-b21b87cc9ba7",
       "name": "Sticky Note4",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        980,
-        3535.16572732881
+        -120,
+        3440
       ]
     },
     {
       "parameters": {},
-      "id": "0029e59d-879d-40df-8848-9cd4fbb357ee",
+      "id": "cefbf035-c929-4b8b-b40a-aa174b8a2d3e",
       "name": "No Operation, do nothing1",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1420,
-        4400
+        320,
+        4300
       ]
     },
     {
       "parameters": {},
-      "id": "916834e7-5386-4edd-aa0d-adfe89afb215",
+      "id": "fc7ace10-1a9d-428f-8103-caa81d08d46a",
       "name": "No Operation, do nothing2",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1760,
-        4400
+        660,
+        4300
       ]
     },
     {
@@ -7462,13 +7462,13 @@
         "path": "aplicacao-preenchida-sala-secreta",
         "options": {}
       },
-      "id": "ccf84c16-0753-428b-b3f8-f111ea1a8537",
+      "id": "45bae9cb-1ba0-4ebb-992f-85989782bb72",
       "name": "aplicacao_preenchida_sala_secreta",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1260,
-        4400
+        160,
+        4300
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -7487,18 +7487,18 @@
           "durable": true
         }
       },
-      "id": "a2292246-cfbe-4f3d-8ded-7f936bb17675",
+      "id": "756f095a-fd84-463b-9906-a9c5eb27c5d0",
       "name": "entra_na_fila2",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        3440,
-        4380
+        2340,
+        4280
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -7536,26 +7536,26 @@
         },
         "options": {}
       },
-      "id": "09d2c860-0999-4641-9659-8ab45a4eafee",
+      "id": "6c170c36-8a07-4f2e-a188-f6746fdd6835",
       "name": "desqualificado",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        2340,
-        4720
+        1240,
+        4620
       ]
     },
     {
       "parameters": {
         "options": {}
       },
-      "id": "23ee32e7-dece-4b45-8681-9cc780953bad",
+      "id": "3054655f-be30-47a6-b841-fbcf2f4ebd22",
       "name": "todos_perguntas",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1060,
-        4400
+        -40,
+        4300
       ]
     },
     {
@@ -7592,13 +7592,13 @@
         },
         "options": {}
       },
-      "id": "cdd539d6-d23f-4f5a-bcd4-647f3d5ee13c",
+      "id": "01cc0f93-e9b4-4e35-b768-b3eb33f4c99e",
       "name": "qualificado",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        2140,
-        4560
+        1040,
+        4460
       ]
     },
     {
@@ -7645,13 +7645,13 @@
         },
         "options": {}
       },
-      "id": "e386ac99-71fe-4c52-8991-5719371f2730",
+      "id": "d4e826f9-f922-43c8-8517-205a1ed998ad",
       "name": "extremamente_qualificado",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        1940,
-        4400
+        840,
+        4300
       ]
     },
     {
@@ -7668,13 +7668,13 @@
         },
         "options": {}
       },
-      "id": "8147137a-8bf1-47c4-b81d-85c010366172",
+      "id": "e56ed795-e03e-47d5-891f-90190c7a2803",
       "name": "extremamente_qualificado1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        2140,
-        4380
+        1040,
+        4280
       ]
     },
     {
@@ -7691,13 +7691,13 @@
         },
         "options": {}
       },
-      "id": "e12b417f-c5eb-40c0-87d5-500a620a881f",
+      "id": "74b62ceb-d884-48af-a8fa-dd35c021aae1",
       "name": "qualificado1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        2340,
-        4560
+        1240,
+        4460
       ]
     },
     {
@@ -7714,37 +7714,37 @@
         },
         "options": {}
       },
-      "id": "e6282a6b-6340-480e-a04a-0e2384d69121",
+      "id": "280139d5-d690-4ffb-8ff0-d2dbe4e920c6",
       "name": "desqualificado1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        2540,
-        4720
+        1440,
+        4620
       ]
     },
     {
       "parameters": {
         "keep": "lastItems"
       },
-      "id": "e2c45072-397a-4e82-a703-e9357cda7120",
+      "id": "aa75cf22-fa24-4acd-b8a1-11d43ca274c5",
       "name": "unico_item",
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        2880,
-        4380
+        1780,
+        4280
       ]
     },
     {
       "parameters": {},
-      "id": "97a981e9-5076-4efc-a006-e88ebdbd00c3",
+      "id": "4f11de6a-079a-48eb-9fd1-4dab17443e72",
       "name": "No Operation, do nothing3",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3060,
-        4380
+        1960,
+        4280
       ]
     },
     {
@@ -7760,22 +7760,18 @@
           }
         }
       },
-      "id": "4a932e27-7d0a-456d-836b-eca71b4021e3",
+      "id": "1091e4cf-91d0-407f-8483-3e3ab175ea26",
       "name": "busca_lead",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2400,
-        3760
+        1300,
+        3660
       ],
       "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
         "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
         }
       }
     },
@@ -7786,22 +7782,18 @@
         "genericAuthType": "oAuth2Api",
         "options": {}
       },
-      "id": "cb5df794-d51c-4746-a1e7-90e1eaa18916",
+      "id": "320117a1-88e1-453c-8fc8-e5398218f71f",
       "name": "update_contacts_KOMMO2",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2180,
-        3760
+        1080,
+        3660
       ],
       "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
         "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
         }
       }
     },
@@ -7818,22 +7810,18 @@
           }
         }
       },
-      "id": "01ff22fc-86f8-4181-828a-c3f8a10fa2c8",
+      "id": "1e57c5e9-2328-4d74-8756-38f32e4bb0ff",
       "name": "busca_contato",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2640,
-        3760
+        1540,
+        3660
       ],
       "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
         "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
         }
       }
     },
@@ -7854,22 +7842,18 @@
           }
         }
       },
-      "id": "622bde46-7d4c-44f2-8ad9-3463c1923184",
+      "id": "9d6f3256-a998-49c1-ba36-7743ca8aa5ba",
       "name": "add_tag_lead_kmmo1",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2720,
-        4040
+        1620,
+        3940
       ],
       "credentials": {
-        "activeCampaignApi": {
-          "id": "9rNps4gzqiBpNK6e",
-          "name": "[ActiveCampaign][2.0] - Henry Santos"
-        },
         "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
         }
       }
     },
@@ -7877,13 +7861,13 @@
       "parameters": {
         "jsCode": "// Código padrão para typeform via ref\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  const ddd = telefoneLimpo.slice(2, 4);\n  const ddi = telefoneLimpo.slice(0, 2);\n\n  let telefoneFormatado;\n  if (parseInt(ddd) > 28) {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n  } else {\n    telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para traduzir booleanos para Português\nfunction traduzirBooleano(valor) {\n  return valor ? \"Sim\" : \"Não\";\n}\n\n// Função para converter número em reais\nfunction formatarValorEmReal(valor) {\n  if (valor === null || valor === undefined) return \"\";\n  return `R$ ${valor.toFixed(2)}`;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"a8fa9e16-a140-4f62-9b56-46cd94c20e79\");\nconst telefoneFormatado = telefoneAnswer ? extrairDddETelefone(telefoneAnswer.phone_number) : \"\";\n\nconst Ending = $node[\"aplicacao_preenchida_sala_secreta\"].json.body.form_response.ending.ref || '';\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\n\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\nconsole.log(dataFormatada); // Saída no formato YYYY-MM-DD\n\n\n// Montar o objeto de output\nconst output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"d0f05b37-b405-4438-82a0-c4daf82a9841\")?.text) || \"\",\n  \n  telefone: telefoneFormatado,\n  \n  email: respostas.find(answer => answer.field.ref === \"52e1198a-83c1-4a27-875e-1c140380ebca\")?.email || \"\",\n  \n  instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace('@','').toLowerCase() || \"\",\n\n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n\n  momento_atual: respostas.find(answer => answer.field.ref === \"0a89f6b6-19ea-4d15-b412-e502943ff866\")?.choice.label || \"\",\n  \n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  \n  faturamento: respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\",\n  \n  etapa_montar_salao: respostas.find(answer => answer.field.ref === \"14d80a71-2dd1-484b-b1a1-cbf4ef37a61d\")?.choice.label || \"\",\n  \n objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  \n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  \n porque_voce: respostas.find(answer => answer.field.ref === \"66fec9b4-837b-4783-8ce2-a670902ab134\")?.text || \"\",\n  \n  acompanhamento_unico: respostas.find(answer => answer.field.ref === \"96a20d28-5273-4315-b77d-df383a1741ae\")?.choice.label || \"\",\n  \n  //nao_e_momento_ideal: respostas.find(answer => answer.field.ref === \"cb0497eb-8ca0-49f3-9d2e-bbb31201dd3e\")?.choice.label || \"\",\n\n  //porque_voce_2: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n\n  data_ultima_quinzena: dataFormatada,\n  ending: Ending || \"\",  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\"\n};\n\nreturn [output];"
       },
-      "id": "b3d5aa16-08fc-4716-b9d3-f95c792ac6d5",
+      "id": "716259c4-bd5c-4611-aff1-d0362955d62e",
       "name": "formata_dados16",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        -1200,
-        480
+        -2300,
+        380
       ]
     },
     {
@@ -8479,13 +8463,13 @@
         },
         "options": {}
       },
-      "id": "8a168c73-f3e4-425e-af26-80efde3c1f3c",
+      "id": "3da3b9f2-c024-4ddc-93fd-49e6633ad967",
       "name": "dados_validados8",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        460,
-        460
+        -640,
+        360
       ]
     },
     {
@@ -8503,18 +8487,18 @@
           "durable": true
         }
       },
-      "id": "439ffe32-d74c-41c7-99b4-a6884288e307",
+      "id": "36d169bc-b11c-4083-beb1-5cdc4e461b0f",
       "name": "entra_na_fila3",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        640,
-        460
+        -460,
+        360
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -8533,18 +8517,18 @@
           "durable": true
         }
       },
-      "id": "323fce9f-f187-416c-a8bb-9d8e60e22451",
+      "id": "b79b58c3-4e48-410f-af5e-fdda4365b3be",
       "name": "entra_na_fila4",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        2220,
-        5020
+        1120,
+        4920
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -8554,13 +8538,13 @@
         "path": "social-selling-manychat",
         "options": {}
       },
-      "id": "25b4d11e-0bcc-419d-9b4d-5ea909fd7581",
+      "id": "838027ee-0b4f-4ed0-90f6-7f763f325665",
       "name": "social_selling_manychat",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1240,
-        5020
+        140,
+        4920
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -8890,50 +8874,50 @@
         },
         "options": {}
       },
-      "id": "2ffb4ad8-584b-46b8-ac84-c0555c287aa3",
+      "id": "d49b754f-3d4a-407f-93f8-6dcf86168466",
       "name": "dados_validados9",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2020,
-        5020
+        920,
+        4920
       ]
     },
     {
       "parameters": {
         "jsCode": "const inputData = items[0].json;\nconst respostas = inputData.body;\n\nfunction formatarTelefone(telefone) {\n  const telefoneLimpo = telefone.replace(/[^\\d]/g, '');\n\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else {\n    ddi = '55';\n    ddd = telefoneLimpo.slice(0, 2);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  }\n\n  return telefoneFormatado;\n}\n//Formatar número Internacional\nfunction formatarTelefoneInternacional(telefone) {\n  const telefoneLimpo = telefone.replace(/[^\\d]/g, '');\n\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else {\n    // Se o DDI for diferente de 55, manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Função para traduzir booleanos para Português\nfunction traduzirBooleano(valor) {\n  return valor ? \"Sim\" : \"Não\";\n}\n\n// Função para converter número em reais\nfunction formatarValorEmReal(valor) {\n  if (valor === null || valor === undefined) return \"\";\n  return `R$ ${valor.toFixed(2)}`;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair o telefone e formatá-lo\nconst Telefone = formatarTelefone($node[\"social_selling_manychat\"].json[\"body\"][\"Telefone\"]) || \"\";\n\n// Obter a data atual\nconst dataAtual = new Date();\n\n// Subtrair 15 dias\ndataAtual.setDate(dataAtual.getDate() - 15);\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam em 0\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\n\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Montar o objeto de output\nconst output = {\n  nome: formatarPrimeiraLetraMaiuscula($node[\"social_selling_manychat\"].json[\"body\"][\"Nome\"]) || \"\",\n  telefone: Telefone,\n  objetivo_este_ano: $node[\"social_selling_manychat\"].json[\"body\"][\"Faturamento\"] || \"\",\n  fluxo: $node[\"social_selling_manychat\"].json[\"body\"][\"Fluxo\"] || \"\",\n  data_ultima_quinzena: dataFormatada,  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\"\n};\n\nreturn [output];"
       },
-      "id": "f41b2710-0775-4ab4-ab6b-8636292aca88",
+      "id": "72924347-2424-430e-870a-7792a281298c",
       "name": "formata_dados17",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1440,
-        5020
+        340,
+        4920
       ]
     },
     {
       "parameters": {
         "keep": "lastItems"
       },
-      "id": "0fc5bb21-ea5d-4fe9-9f9b-148145400032",
+      "id": "e89aca0e-3efe-4d94-afb3-a725a75f9575",
       "name": "unico_item1",
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        1640,
-        5020
+        540,
+        4920
       ]
     },
     {
       "parameters": {},
-      "id": "311e176e-6203-4096-b93c-5a4ba65eb09c",
+      "id": "549d10dc-2014-4a2b-8ddc-d3d54100ae42",
       "name": "No Operation, do nothing6",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1820,
-        5020
+        720,
+        4920
       ]
     },
     {
@@ -8942,13 +8926,13 @@
         "height": 1135.3812671714095,
         "width": 1199.6160431467256
       },
-      "id": "c126bb0b-28e4-4f3b-afba-4f02605c6b42",
+      "id": "4e80ce33-1f26-4393-a0b0-b38ce8dca81d",
       "name": "Sticky Note5",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1700,
-        1000
+        600,
+        900
       ]
     },
     {
@@ -9537,26 +9521,26 @@
         },
         "options": {}
       },
-      "id": "5be25c59-45f9-4688-8bfd-ba524eb317cc",
+      "id": "70211c3d-598d-4fc7-a442-fa9faff2107d",
       "name": "dados_validados10",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2420,
-        1780
+        1320,
+        1680
       ]
     },
     {
       "parameters": {
         "jsCode": "// Extrair informações do input\nconst inputData = $node[\"aplicacao_preechida_live_semanal\"].json;\nconst respostas = inputData.body;\n\n// Função para extrair o DDD e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  let telefoneLimpo = telefone.replace(/\\D/g, \"\");\n  let ddi;\n  let ddd;\n  let telefoneFormatado;\n\n  // Verificar se o telefone não começa com \"351\" e não está vazio\n  if (!telefoneLimpo.startsWith('351') && telefoneLimpo.length > 0) {\n    // Adicionar o código do Brasil (55) na frente\n    telefoneLimpo = '55' + telefoneLimpo;\n  }\n\n  // Verificar se o telefone começa com \"55\" antes de formatá-lo\n  if (telefoneLimpo.startsWith('55')) {\n    ddi = telefoneLimpo.slice(0, 2);\n    ddd = telefoneLimpo.slice(2, 4);\n    if (parseInt(ddd, 10) > 28) {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-8);\n    } else {\n      telefoneFormatado = ddi + ddd + telefoneLimpo.slice(-9);\n    }\n  } else if (telefoneLimpo.startsWith('358')) { // Adicionar verificação para números iniciados com \"358\"\n    // Remover caracteres não numéricos e espaços\n    telefoneLimpo = telefoneLimpo.replace(/\\D/g, ''); \n    telefoneFormatado = telefoneLimpo;\n  } else {\n    // Se o DDI for diferente de 55 e não iniciar com \"358\", manter o número como está\n    telefoneFormatado = telefoneLimpo;\n  }\n\n  return telefoneFormatado;\n}\n\n// Função para tratar o email (validação e transformação para minúsculo)\nfunction tratarEmail(email) {\n  // Verificar se o email é válido usando uma expressão regular simples\n  const emailValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/.test(email);\n  \n  // Se o email for válido, transformá-lo em minúsculo; caso contrário, deixá-lo vazio\n  if (emailValido) {\n    return email.toLowerCase();\n  } else {\n    return \"\";\n  }\n}\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${dia}/${mes}/${ano}`;\n}\n\n// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction capitalizeWords(str) {\n  return str.replace(/\\b\\w/g, char => char.toUpperCase());\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// Atribuir os valores das UTMs às variáveis correspondentes\nconst utmContent = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"utm_content\"] || '';\nconst utmSource = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"utm_source\"] || '';\nconst utmCampaign = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"utm_campaign\"] || '';\nconst utmMedium = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"utm_medium\"] || '';\nconst utmTerm = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"utm_term\"] || '';\n\nconst form_name = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"form_name\"] || '';\n\n// Extrair outras informações do formulário\nconst nome = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"Nome\"] || '';\nconst telefone = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"(DDD) + WhatsApp\"] || '';\nconst email = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"E-mail\"] || '';\n//const instagram = (respostas[\"Seu @ no Instagram\"] || '').replace('@', '').toLowerCase(); // Formatando para minúsculas e removendo o '@'\nconst faturamento = $node[\"aplicacao_preechida_live_semanal\"].json[\"body\"][\"Quanto fatura por mês em média?\"] || '';\n\n// Formatar telefone, email e data\nconst telefoneFormatado = extrairDddETelefone(telefone);\nconst emailFormatado = tratarEmail(email);\nconst dataFormatada = getDataMenos15Dias();\n\n// Criar objeto com os valores formatados\nconst formattedData = {\n  nome: capitalizeWords(nome),\n  telefone: telefoneFormatado,\n  email: emailFormatado,\n  //instagram,\n  utm_content: utmContent,\n  utm_source: utmSource,\n  utm_campaign: utmCampaign,\n  utm_medium: utmMedium,\n  utm_term: utmTerm,\n  formulario: form_name,\n  faturamento: faturamento,\n  dataFormatada\n};\n\n// Retorna o objeto formatado como JSON\nreturn formattedData;"
       },
-      "id": "8b81b9d1-5666-40e4-b7fa-ec3c96bba99c",
+      "id": "16997821-65d5-40c6-a576-99d226e5f8ad",
       "name": "formata_dados18",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2020,
-        1800
+        920,
+        1700
       ]
     },
     {
@@ -9565,13 +9549,13 @@
         "path": "aplicacao-preenchida-live-semanal",
         "options": {}
       },
-      "id": "b3dd401f-09ba-4025-a279-143561723afb",
+      "id": "1d82d3f7-ccb5-4fbf-9d3d-24774d745658",
       "name": "aplicacao_preechida_live_semanal",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1800,
-        1800
+        700,
+        1700
       ],
       "webhookId": "e3b1f851-279f-494a-a74d-6fa39f0131cc"
     },
@@ -9590,18 +9574,18 @@
           "durable": true
         }
       },
-      "id": "b3fb48d3-8301-4e1a-bb49-5364f5b9722a",
+      "id": "587a1a41-2624-4b4c-a359-500058b8c1cb",
       "name": "entra_na_fila5",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        2700,
-        1780
+        1600,
+        1680
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -9628,13 +9612,13 @@
         },
         "options": {}
       },
-      "id": "98dc878d-0ede-4e12-8816-0950e55d8056",
+      "id": "36e8b2fc-56d8-4316-b517-0c5b452740ae",
       "name": "é_qualificado",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        2220,
-        1800
+        1120,
+        1700
       ]
     },
     {
@@ -10228,26 +10212,26 @@
         },
         "options": {}
       },
-      "id": "b2cf21a2-9130-4ffb-89cb-684a79b8cb3d",
+      "id": "4ed11853-b19c-4aa8-bbfd-1cfaa1952cf7",
       "name": "dados_validados11",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2220,
-        1980
+        1120,
+        1880
       ]
     },
     {
       "parameters": {
         "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúsculo\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers || [];\nconst hiddenFields = inputData.body.form_response.hidden || {};\n\n// Função para extrair e formatar o telefone\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\"); // Remove todos os caracteres não numéricos\n  const ddi = '55'; // DDI padrão do Brasil\n  const ddd = telefoneLimpo.slice(0, 2); // Primeiro dois dígitos são o DDD\n  const numero = telefoneLimpo.slice(2); // O restante é o número de telefone\n\n  // Verifica se o número tem 8 ou 9 dígitos após o DDD\n  if (numero.length === 8 || numero.length === 9) {\n    return ddi + ddd + numero;\n  } else {\n    return telefoneLimpo; // Retorna o número original se não for no formato esperado\n  }\n}\n\n// Função para determinar a qualificação\nfunction determinarQualificacao(faturamento, comecaQuando) {\n  const faturamentoAcima30k = (\n    faturamento === \"Entre R$30.001 e R$50.000 mensal\" || \n    faturamento === \"Entre R$50.001 e R$100.000 mensal\" || \n    faturamento === \"+ de R$100.001\"\n  );\n\n  const urgenciaAlta = (comecaQuando === \"Imediatamente\" || comecaQuando === \"Pra ontem!\");\n\n  if (faturamentoAcima30k && urgenciaAlta) {\n    return \"Extremamente Qualificado\";\n  } else if (faturamentoAcima30k) {\n    return \"Qualificado\";\n  } else if (!faturamentoAcima30k && urgenciaAlta) {\n    return \"Neutro\";\n  } else {\n    return \"Desqualificado\";\n  }\n}\n\n// Obter a data atual\nconst dataAtual = new Date();\ndataAtual.setDate(dataAtual.getDate() - 15); // Subtrair 15 dias\n\n// Formatar a data para YYYY-MM-DD\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0');\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Extrair os dados do formulário, com fallback para campos hidden (UTM tags)\nconst nome = respostas.find(answer => answer.field.id === \"wn42EXOcUnbV\")?.text || hiddenFields.name || \"\";\nconst telefone = respostas.find(answer => answer.field.id === \"8zczsCeRgoFy\")?.phone_number || hiddenFields.telefone || \"\";\nconst Instagram = respostas.find(answer => answer.field.id === \"Nxp9kA17d1J6\")?.text || \"\";\nconst tamanho_da_equipe = respostas.find(answer => answer.field.id === \"qc1ihMaO7qDD\")?.choice.label || \"\";\nconst faturamento = respostas.find(answer => answer.field.id === \"M9AJ4r3xtkLz\")?.choice.label || \"\";\nconst objetivo_participacao = respostas.find(answer => answer.field.id === \"vd6TjUuKsy6X\")?.choice.label || \"\";\n\n// Verificar UTMs primeiro nos campos hidden, com fallback para as UTMs no formulário\nconst utm_content = hiddenFields.utm_content || inputData.body.utm_content || '';\nconst utm_source = hiddenFields.utm_source || inputData.body.utm_source || '';\nconst utm_campaign = hiddenFields.utm_campaign || inputData.body.utm_campaign || '';\nconst utm_medium = hiddenFields.utm_medium || inputData.body.utm_medium || '';\nconst utm_term = hiddenFields.utm_term || inputData.body.utm_term || '';\n\n// Formatar o telefone\nconst telefoneFormatado = extrairDddETelefone(telefone);\n\n// Montar o objeto de output\nlet output = {\n  nome: formatarPrimeiraLetraMaiuscula(nome),\n  telefone: telefoneFormatado,\n  email: hiddenFields.email || '',\n  Instagram: Instagram.replace(/@/g, \"\"),  // Remover o símbolo @ se presente\n  tamanho_da_equipe: tamanho_da_equipe,\n  faturamento: faturamento,\n  objetivo_participacao: objetivo_participacao,\n  data_ultima_quinzena: dataFormatada,\n  utm_content: utm_content,\n  utm_source: utm_source,\n  utm_campaign: utm_campaign,\n  utm_medium: utm_medium,\n  utm_term: utm_term,\n  Ending: inputData.body.form_response.ending?.ref || ''\n};\n\n// Adicionar a qualificação com base nos valores já coletados\noutput.qualificacao = determinarQualificacao(output.faturamento, output.objetivo_participacao);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output = { ...output, Pais: \"Portugal\" };\n}\n\nreturn [output];\n"
       },
-      "id": "f582c015-cf04-4e76-8ecf-645d0002113a",
+      "id": "219a76ab-483f-4570-aa46-8667357521d0",
       "name": "formata_dados19",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2020,
-        1980
+        920,
+        1880
       ]
     },
     {
@@ -10256,13 +10240,13 @@
         "path": "aplicacao-preenchida-evento-presencial",
         "options": {}
       },
-      "id": "58848f8d-9cef-4864-bcbf-32274cd434bd",
+      "id": "22ed753c-4c4c-4d21-a318-4feb0e0fbc00",
       "name": "aplicacao_preenchida_evento_presencial",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1800,
-        1980
+        700,
+        1880
       ],
       "webhookId": "80364f39-fdcf-49bb-8268-0aad9dbdd379"
     },
@@ -10281,18 +10265,18 @@
           "durable": true
         }
       },
-      "id": "6fe59486-c674-48a8-a88d-5cc69c5637b6",
+      "id": "5c8b3f9d-8212-4b86-81b8-f08843c053c0",
       "name": "entra_na_fila6",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        2460,
-        1980
+        1360,
+        1880
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -10883,26 +10867,26 @@
         },
         "options": {}
       },
-      "id": "5d274a24-0ee9-4fd4-ac1d-8073570a016e",
+      "id": "d714ecee-78c5-4c4b-b4c8-5111e9b6f8e0",
       "name": "dados_validados12",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2360,
-        1420
+        1260,
+        1320
       ]
     },
     {
       "parameters": {
         "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n  searchUTMs(json);\n  return utmParams;\n}\n\n// Função para formatar o telefone e extrair DDD sem duplicação de DDI\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\"); // Remove caracteres não numéricos\n  const hasDDI = telefoneLimpo.startsWith(\"55\");\n  const ddi = hasDDI ? \"\" : \"55\"; // Adiciona DDI apenas se o telefone não começar com \"55\"\n  const numeroComDDD = hasDDI ? telefoneLimpo : ddi + telefoneLimpo;\n  return numeroComDDD;\n}\n\n// Função para determinar a qualificação ajustada\nfunction determinarQualificacao(faturamento, situacaoAtual) {\n  if (!faturamento) return \"Desqualificado\";\n\n  const faturamentoAcima50k = faturamento.includes(\"R$50.001\") || faturamento.includes(\"+ de R$100.000\");\n  const faturamentoEntre25k50k = faturamento.includes(\"R$25.001 e R$50.000\");\n  const faturamentoEntre15k25k = faturamento.includes(\"R$15.001 e R$25.000\");\n  const faturamentoAte15k = faturamento.includes(\"Até R$15.000\");\n\n  if (faturamentoAcima50k) {\n    return \"Extremamente Qualificado\";\n  }\n\n  if (faturamentoEntre25k50k || situacaoAtual.includes(\"investidor\")) {\n    return \"Qualificado\";\n  }\n\n  if (faturamentoEntre15k25k && situacaoAtual === \"Tenho planejamento e estou disposto a investir\") {\n    return \"Neutro\";\n  }\n\n  return \"Desqualificado\";\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData.body.form_response.hidden || {});\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"08e4870b-ab4b-45be-ba1e-1448ebbaf37f\")?.text || \"\";\nconst telefoneFormatado = extrairDddETelefone(telefoneAnswer);\nconst situacaoAtual = respostas.find(answer => answer.field.ref === \"d266ed65-df25-4fd6-ab22-dec519d096cd\")?.choice?.label || \"\";\n\n// Obter a data atual e subtrair 15 dias para gerar `dataFormatada`\nconst dataAtual = new Date();\ndataAtual.setDate(dataAtual.getDate() - 15);\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0');\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Capturar os campos ocultos do formulário (hidden)\nconst nomeHidden = formatarPrimeiraLetraMaiuscula(inputData.body.form_response.hidden?.name || \"\");\nconst emailHidden = inputData.body.form_response.hidden?.email || \"\";\nconst telefoneHidden = extrairDddETelefone(inputData.body.form_response.hidden?.telefone || \"\");\n\n// Capturar a informação de faturamento\nconst faturamento = respostas?.[3]?.choice?.label || \"\";\n\n// Montar o objeto de output com os campos atualizados\nlet output = {\n  nome: nomeHidden,\n  telefone: telefoneHidden,\n  email: emailHidden,\n  momento_atual: situacaoAtual,\n  porque_voce: respostas.find(answer => answer.field.ref === \"41e94b2e-9c8e-48c2-a035-7e01764a80ed\")?.text || \"\",\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text?.replace(/@/g, \"\") || \"\",\n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice?.label || \"\",\n  faturamento: faturamento,\n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  inicio_mentoria: respostas.find(answer => answer.field.ref === \"3b4dab3c-fbf1-44dc-970a-94803a2c658b\")?.choice?.label || \"\",\n  data_ultima_quinzena: dataFormatada,\n  utm_content: utms.utm_content || \"\",\n  utm_source: utms.utm_source || \"\",\n  utm_campaign: utms.utm_campaign || \"\",\n  utm_medium: utms.utm_medium || \"\",\n  utm_term: utms.utm_term || \"\",\n  Ending: inputData.body.form_response.ending?.ref || \"\"\n};\n\n// Adicionar a qualificação com base em `faturamento` e `situacaoAtual`\noutput.qualificacao = determinarQualificacao(output.faturamento, situacaoAtual);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output.Pais = \"Portugal\";\n}\n\nreturn [{ json: output }];\n"
       },
-      "id": "c01ead64-7450-453a-a460-aa592b32885c",
+      "id": "419f76e3-3066-43cc-be51-f740bdcf85fd",
       "name": "formata_dados20",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2060,
-        1420
+        960,
+        1320
       ]
     },
     {
@@ -10911,13 +10895,13 @@
         "path": "aplicacao-v7",
         "options": {}
       },
-      "id": "9d8f1c91-895d-492a-87f6-44f018313eb8",
+      "id": "540a5d27-5896-4450-b4df-364f648c78fe",
       "name": "aplicacao-v7",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1820,
-        1420
+        720,
+        1320
       ],
       "webhookId": "80364f39-fdcf-49bb-8268-0aad9dbdd379"
     },
@@ -11508,26 +11492,26 @@
         },
         "options": {}
       },
-      "id": "f7d10bac-519e-4978-871e-7978ca66f528",
+      "id": "ab2e224c-0e24-401e-86b2-4bdf5f1d5668",
       "name": "dados_validados13",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2360,
-        1600
+        1260,
+        1500
       ]
     },
     {
       "parameters": {
         "jsCode": "// Função para formatar a primeira letra de cada palavra em maiúscula\nfunction formatarPrimeiraLetraMaiuscula(str) {\n  if (!str) return \"\"; // Verifique se a string é nula ou indefinida\n  const palavras = str.toLowerCase().split(\" \");\n  for (let i = 0; i < palavras.length; i++) {\n    palavras[i] = palavras[i].charAt(0).toUpperCase() + palavras[i].slice(1);\n  }\n  return palavras.join(\" \");\n}\n\n// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers;\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n  searchUTMs(json);\n  return utmParams;\n}\n\n// Função para formatar o telefone e extrair DDD sem duplicação de DDI\nfunction extrairDddETelefone(telefone) {\n  if (!telefone) return \"\";\n  const telefoneLimpo = telefone.replace(/\\D/g, \"\"); // Remove caracteres não numéricos\n  const hasDDI = telefoneLimpo.startsWith(\"55\");\n  const ddi = hasDDI ? \"\" : \"55\"; // Adiciona DDI apenas se o telefone não começar com \"55\"\n  const numeroComDDD = hasDDI ? telefoneLimpo : ddi + telefoneLimpo;\n  return numeroComDDD;\n}\n\n// Função para determinar a qualificação ajustada\nfunction determinarQualificacao(faturamento, ending) {\n  // Caso o `ending` não seja o esperado, lead é desqualificado\n  if (ending !== \"135bd0d0-468b-40a7-8e46-3f510829ef46\") {\n    return \"Desqualificado\";\n  }\n\n  // Qualificação baseada no faturamento\n  if (faturamento === \"Entre R$15.001 e R$25.000\") {\n    return \"Neutro\";\n  } else if (\n    faturamento === \"Entre R$25.001 e R$50.000\" || \n    faturamento === \"Entre R$50.001 e R$100.000\" || \n    faturamento === \"+ de R$100.000\"\n  ) {\n    return \"Qualificado\";\n  }\n\n  return \"Desqualificado\";\n}\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Extrair o telefone e formatá-lo\nconst telefoneAnswer = respostas.find(answer => answer.field.ref === \"08e4870b-ab4b-45be-ba1e-1448ebbaf37f\")?.phone_number || \"\";\nconst telefoneFormatado = extrairDddETelefone(telefoneAnswer);\n\n// Obter o campo de situação atual (ref d266ed65-df25-4fd6-ab22-dec519d096cd)\nconst situacaoAtual = respostas.find(answer => answer.field.ref === \"d266ed65-df25-4fd6-ab22-dec519d096cd\")?.choice.label || \"\";\n\n// Extrair a resposta do campo inicio_mentoria\nconst inicioMentoria = respostas.find(answer => answer.field.ref === \"3b4dab3c-fbf1-44dc-970a-94803a2c658b\")?.choice.label || \"\";\n\n// Extrair o campo de faturamento\nconst faturamento = respostas.find(answer => answer.field.ref === \"2c42d709-1748-472f-8f28-ebc7677c0398\")?.choice.label || \"\";\n\n// Obter o `ending` do formulário\nconst ending = inputData.body.form_response.ending.ref || \"\";\n\n// Obter a data atual e subtrair 15 dias para gerar `dataFormatada`\nconst dataAtual = new Date();\ndataAtual.setDate(dataAtual.getDate() - 15);\nconst ano = dataAtual.getFullYear();\nconst mes = String(dataAtual.getMonth() + 1).padStart(2, '0');\nconst dia = String(dataAtual.getDate()).padStart(2, '0');\nconst dataFormatada = `${ano}-${mes}-${dia}`;\n\n// Montar o objeto de output com os campos atualizados\nlet output = {\n  nome: formatarPrimeiraLetraMaiuscula(respostas.find(answer => answer.field.ref === \"ff8b728c-119a-4ddc-9183-0c36a3d53748\")?.text || \"\"),\n  telefone: telefoneFormatado,\n  email: respostas.find(answer => answer.field.ref === \"e0bd47dc-72ed-497e-885b-3cfcdc48adaa\")?.email || '',\n  momento_atual: situacaoAtual,\n  sonho2025: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  Instagram: respostas.find(answer => answer.field.ref === \"69e277e4-a0f8-4865-b01d-970dee3d88eb\")?.text.replace(/@/g, \"\") || \"\",\n  tem_recepcionista: respostas.find(answer => answer.field.ref === \"9d3235d4-a79e-455d-ac75-4254b19cae96\")?.choice.label || \"\",\n  tamanho_da_equipe: respostas.find(answer => answer.field.ref === \"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\")?.choice.label || \"\",\n  faturamento: faturamento,\n  objetivo_este_ano: respostas.find(answer => answer.field.ref === \"5fe6dab9-dcc1-4984-9408-cc43f052fe64\")?.text || \"\",\n  impede_objetivo: respostas.find(answer => answer.field.ref === \"193b63eb-8173-4a1a-8fa0-c930cab89161\")?.text || \"\",\n  promocao_black_friday: respostas.find(answer => answer.field.ref === \"6bb1a2d8-3e8a-4a45-9962-ed5696f15a3b\")?.choice.label || \"\",\n  plano_mentoria: respostas.find(answer => answer.field.ref === \"5e78a656-8fa3-4eda-91fd-2054e491e35e\")?.text || \"\",\n  investimento_compromete_fluxo: respostas.find(answer => answer.field.ref === \"7f0aa59a-b2c4-4c61-8e0f-e620db6e010e\")?.choice.label || \"\",\n  inicio_mentoria: inicioMentoria,\n  data_ultima_quinzena: dataFormatada,  \n  utm_content: utmContent || \"\",\n  utm_source: utmSource || \"\",\n  utm_campaign: utmCampaign || \"\",\n  utm_medium: utmMedium || \"\",\n  utm_term: utmTerm || \"\",\n  Ending: ending\n};\n\n// Adicionar a qualificação com base em `ending` e `faturamento`\noutput.qualificacao = determinarQualificacao(\n  output.faturamento,\n  output.Ending\n);\n\n// Adicionar a informação do país se o número de telefone começar com '351'\nif (telefoneFormatado.startsWith('351')) {\n  output = { ...output, Pais: \"Portugal\" };\n}\n\nreturn [output];\n"
       },
-      "id": "13ccda61-6003-4fd2-9ee5-66e3dee6d7d3",
+      "id": "19546560-27d3-4203-8ff0-97adf16d4079",
       "name": "formata_dados21",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2060,
-        1600
+        960,
+        1500
       ]
     },
     {
@@ -11536,13 +11520,13 @@
         "path": "forms-webinario",
         "options": {}
       },
-      "id": "597a841f-48f4-472a-92e4-a93d527575ce",
+      "id": "bfa8c8ef-864f-476b-adf7-c95b7ba00cf6",
       "name": "webinario",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1820,
-        1600
+        720,
+        1500
       ],
       "webhookId": "80364f39-fdcf-49bb-8268-0aad9dbdd379"
     },
@@ -11552,13 +11536,13 @@
         "path": "aplicacao-preenchida-hetzner-pop-up",
         "options": {}
       },
-      "id": "fe86714b-3b80-4c2a-8d60-682833ea1bd4",
+      "id": "41d91774-1ac8-49ba-8f6d-d58ed35db1dd",
       "name": "aplicacao_preenchida_pop_up",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1820,
-        1060
+        720,
+        960
       ],
       "webhookId": "80364f39-fdcf-49bb-8268-0aad9dbdd379"
     }
@@ -15904,23 +15888,16 @@
   },
   "settings": {
     "executionOrder": "v1",
-    "saveManualExecutions": true,
-    "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV",
     "saveDataErrorExecution": "all",
     "saveDataSuccessExecution": "all",
-    "saveExecutionProgress": true
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
-  "tags": [
-    {
-      "createdAt": "2024-03-25T13:17:28.604Z",
-      "updatedAt": "2024-03-25T13:17:28.604Z",
-      "id": "iEWW0rAq20zciLEA",
-      "name": "[NAG]"
-    }
-  ],
+  "tags": [],
   "triggerCount": 14,
-  "updatedAt": "2025-01-30T18:52:59.029Z",
-  "versionId": "e967d2d5-8a4b-4326-9103-598be960c548"
+  "updatedAt": "2025-02-01T18:09:52.706Z",
+  "versionId": "c1e736fe-2f32-493b-b9d9-130f01e9bc51"
 }
