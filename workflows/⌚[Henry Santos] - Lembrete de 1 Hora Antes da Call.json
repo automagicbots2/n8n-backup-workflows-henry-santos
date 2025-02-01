@@ -305,9 +305,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-20T22:02:11.170Z",
-  "id": "908jYAZTlDx3lj9a",
-  "meta": null,
+  "createdAt": "2025-02-01T19:17:57.834Z",
+  "id": "moevRhIgpZIXfro2",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos] - Lembrete de 1 Hora Antes da Call",
   "nodes": [
     {
@@ -429,13 +431,13 @@
           ]
         }
       },
-      "id": "77a9166c-c947-43b8-8036-45c2ab03b0ca",
+      "id": "fa72464a-29cf-4cab-a43f-3ac70472e1f8",
       "name": "a_cada_hora",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
-        40,
-        740
+        -60,
+        660
       ]
     },
     {
@@ -459,18 +461,18 @@
           "detailedOutput": false
         }
       },
-      "id": "aba6b098-84ca-4bab-aa29-e1984462d470",
+      "id": "00b35643-4fd0-4eac-b69f-2d94e9290186",
       "name": "pesquisa_agendamentos_do_dia",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        440,
-        740
+        340,
+        660
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -479,13 +481,13 @@
         "batchSize": 1,
         "options": {}
       },
-      "id": "e2dc1855-8500-4684-ab70-ac600ad76636",
+      "id": "7a395c8b-88e6-48f5-a100-3f7c76b41e10",
       "name": "separa_em_linhas",
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 2,
       "position": [
-        1020,
-        780
+        920,
+        700
       ]
     },
     {
@@ -510,41 +512,41 @@
           "detailedOutput": false
         }
       },
-      "id": "7645f873-66cc-42b3-a497-4ce9476ce6b5",
+      "id": "f2c24150-e9b9-4f93-a169-130d125d8ef4",
       "name": "pesquisa_lead_via_id",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        1840,
-        500
+        1740,
+        420
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
     {
       "parameters": {},
-      "id": "018b7d31-3e44-42ca-bd7e-063c5bcd4c37",
+      "id": "625c9dc0-e59d-486f-8a9d-eaaf3e0ea1a9",
       "name": "fim",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1240,
-        880
+        1140,
+        800
       ]
     },
     {
       "parameters": {},
-      "id": "b756bab5-0b85-4400-aefe-d802b5ca1717",
+      "id": "f6fde9af-46a7-4af2-9a1f-b983ea15ea7e",
       "name": "sem_acao",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1020,
-        540
+        920,
+        460
       ]
     },
     {
@@ -560,13 +562,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "731228bf-b8f0-4220-abe1-220916a6c801",
+      "id": "22301de9-3017-46db-b1fc-8e2537de16e2",
       "name": "inexistente",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        620,
-        740
+        520,
+        660
       ]
     },
     {
@@ -581,13 +583,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "2d44eb3f-9716-4c63-ac53-675c835bccdf",
+      "id": "c4228df5-e596-453d-9111-e459d76a2627",
       "name": "cancelado",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        820,
-        760
+        720,
+        680
       ]
     },
     {
@@ -601,26 +603,26 @@
           ]
         }
       },
-      "id": "bd48d273-478b-4581-9a4a-9c58e7d14149",
+      "id": "a1297074-c3d4-45e8-8102-b138786b26b2",
       "name": "esta_na_hora",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1640,
-        680
+        1540,
+        600
       ]
     },
     {
       "parameters": {
         "jsCode": "const horaInicio = $node[\"horarios_formatados\"].json[\"HORA INICIO\"];\nconst agora = $node[\"horarios_formatados\"].json[\"AGORA\"];\n\n// Divida a hora de início e a hora atual em horas e minutos\nconst [horaInicioHora, horaInicioMinuto] = horaInicio.split(':').map(Number);\nconst [agoraHora, agoraMinuto] = agora.split(':').map(Number);\n\n// Calcule a diferença em minutos\nconst diferencaMinutos = (agoraHora - horaInicioHora) * 60 + agoraMinuto - horaInicioMinuto;\n\n// Crie um objeto com os resultados\nconst resultado = {\n  \"HORA INICIO\": horaInicio,\n  \"AGORA\": agora,\n  \"Diferença em Minutos\": diferencaMinutos,\n  \"No Intervalo\": diferencaMinutos >= -70 && diferencaMinutos <= -50\n};\n\nreturn resultado;\n"
       },
-      "id": "6e9e46e8-732d-454b-8fe3-728c4f34055d",
+      "id": "ce82741c-d4e3-4975-a355-e41704bcada6",
       "name": "calculadora",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1440,
-        680
+        1340,
+        600
       ]
     },
     {
@@ -640,13 +642,13 @@
         },
         "options": {}
       },
-      "id": "01582106-d434-44f3-9d13-d4ff8ec69e58",
+      "id": "b20b65f0-897e-4171-b69f-3c4a71341cc5",
       "name": "horarios_formatados",
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        1240,
-        680
+        1140,
+        600
       ]
     },
     {
@@ -662,13 +664,13 @@
         },
         "combineOperation": "any"
       },
-      "id": "bd5b0d13-771f-4049-9084-d658c2091d1a",
+      "id": "e59918ba-daa1-4148-a9fb-31976095b493",
       "name": "inexistente1",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2020,
-        500
+        1920,
+        420
       ]
     },
     {
@@ -676,13 +678,13 @@
         "operation": "limit",
         "keep": "lastItems"
       },
-      "id": "6951df47-7638-4b80-ad6e-55303f6ac611",
+      "id": "a08d0b3b-ff7d-4118-ad37-015be7dcf287",
       "name": "item_unico",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        2320,
-        560
+        2220,
+        480
       ]
     },
     {
@@ -710,10 +712,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        500,
-        160
+        400,
+        80
       ],
-      "id": "43adf162-ea82-4515-ba9b-0ba055f5b65d"
+      "id": "0e43ddf1-ced9-4e2c-b082-a3f79de08259"
     },
     {
       "parameters": {
@@ -721,13 +723,13 @@
         "height": 407.6377565498652,
         "width": 747.0856205721786
       },
-      "id": "d1fca89a-309a-4d29-b4ba-a86f699ee92d",
+      "id": "4732ea33-010f-483d-9b54-da6e87c25765",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        0,
-        0
+        -100,
+        -80
       ]
     },
     {
@@ -755,10 +757,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        300,
-        160
+        200,
+        80
       ],
-      "id": "d5b86c04-6348-49b1-a021-12d46610fea0"
+      "id": "81f2a55b-9666-4df1-80e0-0c40bfab79e6"
     },
     {
       "parameters": {
@@ -780,13 +782,13 @@
         },
         "options": {}
       },
-      "id": "eae055d9-9148-4b79-8ddd-05567cb603c8",
+      "id": "26384759-2d63-4d91-b4d9-dd07a9158189",
       "name": "Set",
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        100,
-        160
+        0,
+        80
       ]
     },
     {
@@ -809,13 +811,13 @@
         },
         "options": {}
       },
-      "id": "7196a106-cc99-4412-afab-a37cfd40b285",
+      "id": "1b67927e-8eb9-42eb-ac24-8597ba181983",
       "name": "dados_evolution",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        240,
-        740
+        140,
+        660
       ]
     },
     {
@@ -869,12 +871,12 @@
           }
         }
       },
-      "id": "024f9984-60f3-4e78-b7cb-c5a676726e0a",
+      "id": "eda5a405-abed-4c2d-966b-5ad39e919aab",
       "name": "EnviaMensagemTexto1",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2520,
-        560
+        2420,
+        480
       ],
       "typeVersion": 4
     },
@@ -882,13 +884,13 @@
       "parameters": {
         "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
       },
-      "id": "7dbce102-fc09-4ff3-8752-321555cc2f60",
+      "id": "793b2cfa-88c4-4b9a-a3ba-b98d22afd049",
       "name": "Retorna Output Aleatorio2",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        2700,
-        560
+        2600,
+        480
       ]
     },
     {
@@ -913,13 +915,13 @@
         },
         "fallbackOutput": 3
       },
-      "id": "538de858-96d6-4154-9854-b7edb03d7360",
+      "id": "fef48948-2661-45f3-af71-fe34d6f1a6c8",
       "name": "Saida Aleatoria2",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        2880,
-        540
+        2780,
+        460
       ]
     },
     {
@@ -927,13 +929,13 @@
         "amount": 40,
         "unit": "seconds"
       },
-      "id": "3ee65855-937b-4419-a682-a11900bc4793",
+      "id": "dcdffd19-2301-429d-8a3a-90150b6653c3",
       "name": "40s2",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        3100,
-        500
+        3000,
+        420
       ],
       "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
     },
@@ -942,13 +944,13 @@
         "amount": 45,
         "unit": "seconds"
       },
-      "id": "c0cf34f3-5176-4c24-aaca-57a8863f1c10",
+      "id": "4b88867d-b77f-493a-98b7-6c63ea88fdea",
       "name": "45s2",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        3100,
-        640
+        3000,
+        560
       ],
       "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
     },
@@ -957,13 +959,13 @@
         "amount": 50,
         "unit": "seconds"
       },
-      "id": "56bd34db-0f8a-4f90-abe7-a8375345f2bf",
+      "id": "7e592d79-6a9a-4307-a62f-6cb6d1f6f9ec",
       "name": "50s2",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        3100,
-        780
+        3000,
+        700
       ],
       "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
     },
@@ -972,52 +974,41 @@
         "amount": 53,
         "unit": "seconds"
       },
-      "id": "6282b16e-9271-4e21-8845-a2ee5da0f1c3",
+      "id": "80ce8b5e-6a68-42fc-be38-7d6b642b2a0c",
       "name": "53s2",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        3100,
-        920
+        3000,
+        840
       ],
       "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
     },
     {
       "parameters": {},
-      "id": "83b09780-5a50-43c9-a050-258d7a598ebd",
+      "id": "dfb79bc4-c814-4253-a017-6aea8b987ed2",
       "name": "Não faz nada4",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3320,
-        1020
+        3220,
+        940
       ]
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveExecutionProgress": true,
-    "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": {
     "node:a_cada_hora": {
       "recurrenceRules": []
     }
   },
-  "tags": [
-    {
-      "createdAt": "2024-03-27T14:03:25.264Z",
-      "updatedAt": "2024-03-27T14:03:25.264Z",
-      "id": "Ju8yPHXMHj0pxd19",
-      "name": "[LEMBRETE]"
-    }
-  ],
+  "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-20T22:03:17.543Z",
-  "versionId": "f2c814b5-52ab-4ac7-8f42-3c9649d49813"
+  "updatedAt": "2025-02-01T19:18:16.670Z",
+  "versionId": "ca957940-05ba-4a9d-a313-7617cd27fe26"
 }
