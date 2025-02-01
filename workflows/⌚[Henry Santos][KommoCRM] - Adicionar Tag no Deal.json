@@ -104,9 +104,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-17T17:51:40.683Z",
-  "id": "Lb3LlHGpgwaZEFwq",
-  "meta": null,
+  "createdAt": "2025-02-01T19:09:31.261Z",
+  "id": "dNuIHZI8DcZNLd7Z",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][KommoCRM] - Adicionar Tag no Deal",
   "nodes": [
     {
@@ -115,19 +117,19 @@
         "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_etapa_funil = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}\n    AND t.entidade = 'deal';\n",
         "options": {}
       },
-      "id": "7adc5796-dd7a-4ec8-b250-e44976cf04d3",
+      "id": "d9cd9555-e2c9-49da-ae9a-c2192912a486",
       "name": "pesquisa_tag_funil",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -200,
-        20
+        -580,
+        200
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -138,10 +140,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        60,
-        -60
+        -320,
+        120
       ],
-      "id": "29e74765-27ff-4f90-a17b-0611e7e2efef",
+      "id": "917ad705-d2f3-4d64-874f-bb15cfb02404",
       "name": "Loop Over Items"
     },
     {
@@ -149,10 +151,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        260,
-        -260
+        -120,
+        -80
       ],
-      "id": "bf9aafb4-e89f-47b6-91e6-70f50d68eb70",
+      "id": "2741cfff-af6b-4684-9181-0e57b5736302",
       "name": "Limit"
     },
     {
@@ -164,10 +166,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -1140,
-        -60
+        -1520,
+        120
       ],
-      "id": "87348b66-560c-4eb8-bb10-a8384d776fe7",
+      "id": "7d5a0e84-302b-4a57-99a7-4f99ff767f7e",
       "name": "fluxo_chamado",
       "webhookId": "ce9e0c49-3b01-40d1-a43e-0275d34030ce"
     },
@@ -191,19 +193,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "b7b81aad-8346-453d-b0ef-a1ad6eeddbf4",
+      "id": "4cf79131-022d-4a26-b0e6-75fc250b2ef5",
       "name": "pesquisa_user",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -640,
-        -60
+        -1020,
+        120
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -235,10 +237,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -420,
-        -60
+        -800,
+        120
       ],
-      "id": "54222715-5c7d-4536-9698-9e4b71781e20",
+      "id": "734be263-087c-47c7-8189-00865124b60a",
       "name": "checkout"
     },
     {
@@ -247,19 +249,19 @@
         "query": "SELECT \n    t.*\nFROM \n    tags_crm t\nINNER JOIN \n    tag_funil_crm tfc\nON \n    t.id = tfc.id_tag\nWHERE \n    tfc.id_situacao_checkout = {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_situacao_checkout\"] }}\n    AND t.entidade = 'deal';",
         "options": {}
       },
-      "id": "613cf204-0280-46ed-b7d9-b60d1ba3055a",
+      "id": "38d20a05-9493-4524-88fc-45f1ebd6ed88",
       "name": "pesquisa_tag_funil1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -200,
-        -160
+        -580,
+        20
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -283,19 +285,19 @@
         "combineConditions": "OR",
         "options": {}
       },
-      "id": "d9f10d85-2d30-4086-bd1f-4ccfd548ad26",
+      "id": "8f4f1afa-418d-46c8-b5b5-bc3b145e19aa",
       "name": "pesquisa_url_base_crm",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -880,
-        -60
+        -1260,
+        120
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -325,18 +327,18 @@
           }
         }
       },
-      "id": "babfb8a0-22c8-4abb-a254-09ebe153c54b",
+      "id": "24c26c61-3eca-4416-b2dd-4d5d4d1fe611",
       "name": "add_tag_deal",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        260,
-        20
+        -120,
+        200
       ],
       "credentials": {
         "oAuth2Api": {
-          "id": "DaKU0ap36aS2tiDi",
-          "name": "[Henry Santos] - Kommo ouath 2"
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
         }
       }
     }
@@ -374,11 +376,11 @@
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-20T14:53:10.505Z",
-  "versionId": "b49e832d-ee60-4b5f-83de-34342faaea17"
+  "updatedAt": "2025-02-01T19:09:55.043Z",
+  "versionId": "28d40331-0ab3-4bd8-a7db-8036afcdac90"
 }
