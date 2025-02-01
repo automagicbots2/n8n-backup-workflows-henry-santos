@@ -891,8 +891,8 @@
       ]
     }
   },
-  "createdAt": "2024-03-25T18:51:23.253Z",
-  "id": "2J5877uVf8ZFeqvu",
+  "createdAt": "2025-02-01T18:18:06.045Z",
+  "id": "t32C6wjcnxYB8Ybo",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -904,13 +904,13 @@
         "height": 494.4652796495957,
         "width": 1510.0404531979405
       },
-      "id": "6251f966-c0ad-4f4e-9453-4fb9383b59ca",
+      "id": "44392c29-2300-4cbf-91af-c14880f57f81",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        460,
-        460
+        -160,
+        0
       ]
     },
     {
@@ -938,10 +938,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        720,
-        640
+        100,
+        180
       ],
-      "id": "89074acb-4b6d-4fdf-b7a8-46a5ea65be59"
+      "id": "85879842-7852-4ea4-9b02-2edbfaaedc43"
     },
     {
       "parameters": {
@@ -968,10 +968,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        940,
-        640
+        320,
+        180
       ],
-      "id": "edd89b43-8afe-4c39-9cb3-2ec4eb486b1c"
+      "id": "c5020a36-93f0-40e3-ab5e-f4dd87152eb1"
     },
     {
       "parameters": {
@@ -989,13 +989,13 @@
         },
         "options": {}
       },
-      "id": "cfc4c49e-52c9-475a-ae1a-8b6c4a9411e7",
+      "id": "cff0a767-b446-444a-8107-d683b4dcf1a4",
       "name": "Set",
       "type": "n8n-nodes-base.set",
       "typeVersion": 2,
       "position": [
-        520,
-        640
+        -100,
+        180
       ]
     },
     {
@@ -1020,13 +1020,13 @@
         },
         "options": {}
       },
-      "id": "88bd53af-a1f1-4de1-968a-a34231d3124d",
+      "id": "beeefc84-b99c-42a0-a3c2-a1d710ca6d3b",
       "name": "Consulta Users da Conta",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1160,
-        640
+        540,
+        180
       ]
     },
     {
@@ -1035,13 +1035,13 @@
         "height": 494.4652796495957,
         "width": 406.19790552805046
       },
-      "id": "f346c14c-ac4f-44ce-902b-8ba906542c2e",
+      "id": "fb8ebcff-3c9a-4f2e-a8dc-84e90fe0fbb1",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        440,
-        1040
+        -180,
+        580
       ]
     },
     {
@@ -1069,10 +1069,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        1360,
-        640
+        740,
+        180
       ],
-      "id": "b70d670d-1857-4d5d-88a7-59df977e28ce"
+      "id": "86795e8d-e787-4d07-a29f-693e27b7a556"
     },
     {
       "parameters": {
@@ -1099,10 +1099,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 2,
       "position": [
-        1560,
-        640
+        940,
+        180
       ],
-      "id": "6d938f3a-7129-4b31-9c82-14e81af162fb"
+      "id": "520b80af-09a0-4c46-91d6-ee0ccadb594b"
     },
     {
       "parameters": {
@@ -1126,13 +1126,13 @@
         },
         "options": {}
       },
-      "id": "9847e439-7580-4ad1-b732-cc08618c9bc0",
+      "id": "2e13eaa1-3e59-4192-acc5-0ad2b886a0cc",
       "name": "Listar Tipos de Task da Conta",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1760,
-        640
+        1140,
+        180
       ]
     },
     {
@@ -1146,13 +1146,13 @@
           ]
         }
       },
-      "id": "31c96b01-ffc2-41ac-a67e-36346243bda1",
+      "id": "731bde7c-63d6-455b-9491-3cac0e795c6c",
       "name": "telefone_igual2",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1520,
-        1420
+        900,
+        960
       ]
     },
     {
@@ -1166,13 +1166,13 @@
           ]
         }
       },
-      "id": "54b0864b-6d23-483b-8692-e9dac34e5542",
+      "id": "164b4315-e57c-4470-b50e-1a4ae8b95e69",
       "name": "telefone_preenchido2",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1360,
-        1500
+        740,
+        1040
       ]
     },
     {
@@ -1186,13 +1186,13 @@
           ]
         }
       },
-      "id": "2eb5480a-a851-4b2b-bcc6-6347f3704729",
+      "id": "b0a8c966-8c4f-4e5f-9e53-7c7df149a62d",
       "name": "email_igual4",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1860,
-        1200
+        1240,
+        740
       ]
     },
     {
@@ -1206,13 +1206,13 @@
           ]
         }
       },
-      "id": "e6c6b007-573e-402a-afe7-0bbc0152e71d",
+      "id": "e8a3a0d3-92c2-459f-af3e-d296aa5a153c",
       "name": "email_preenchido4",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1720,
-        3900
+        1100,
+        3440
       ]
     },
     {
@@ -1226,13 +1226,13 @@
           ]
         }
       },
-      "id": "f859f35e-2b40-4aa2-b090-8e162798588c",
+      "id": "55a55026-40fa-4027-aa1c-114ff3549b0d",
       "name": "email_igual7",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1900,
-        3800
+        1280,
+        3340
       ]
     },
     {
@@ -1283,18 +1283,18 @@
           "detailedOutput": true
         }
       },
-      "id": "c836e897-903b-4d38-94da-f0d3eee4de73",
+      "id": "bf27184c-e987-43d2-864c-b101d6ea141e",
       "name": "atualiza_dados_sem_email_e_telefone2",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2340,
-        860
+        1720,
+        400
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1350,18 +1350,18 @@
           "detailedOutput": true
         }
       },
-      "id": "029c0580-a893-4ffa-bcd0-ad2b09181089",
+      "id": "62096685-930e-45e8-a0cd-0da8c5507bbc",
       "name": "atualiza_dados_e_instagram3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2340,
-        1040
+        1720,
+        580
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1417,18 +1417,18 @@
           "detailedOutput": true
         }
       },
-      "id": "ca9644cf-35b7-48f7-a2a9-5ea0b2f96fad",
+      "id": "69a50277-b701-42bc-8b18-7f3fd5ef431a",
       "name": "atualiza_dados_email3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2260,
-        1720
+        1640,
+        1260
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1443,13 +1443,13 @@
           ]
         }
       },
-      "id": "6bc507e1-663d-42f7-bda6-b1051b008883",
+      "id": "befcd4d1-6781-4030-8d49-2151ce2ec6d4",
       "name": "email_preenchido5",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1700,
-        1320
+        1080,
+        860
       ]
     },
     {
@@ -1463,13 +1463,13 @@
           ]
         }
       },
-      "id": "c705e934-e486-44a3-a3f2-b98aafbf7052",
+      "id": "44c5f315-887d-48dc-a275-10ff72bc0a41",
       "name": "instagram_preenchido9",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2000,
-        1060
+        1380,
+        600
       ]
     },
     {
@@ -1483,13 +1483,13 @@
           ]
         }
       },
-      "id": "75204a52-090a-4eab-9aaf-0bd78b1df3df",
+      "id": "237c0e8b-bda5-41b5-a622-c166dad17806",
       "name": "instagram_igual2",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2160,
-        960
+        1540,
+        500
       ]
     },
     {
@@ -1544,18 +1544,18 @@
           "detailedOutput": true
         }
       },
-      "id": "af59f202-7038-448f-9784-a224142608c8",
+      "id": "3f2a3645-6357-49c7-a9ac-f20a564b781f",
       "name": "atualiza_dados_e_instagram1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2160,
-        1180
+        1540,
+        720
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1570,13 +1570,13 @@
           ]
         }
       },
-      "id": "ee0f56e0-afd6-4e38-a009-eb5103b9bb5b",
+      "id": "8af9c4e4-472b-4e6a-a005-28c933ecbcdb",
       "name": "instagram_preenchido10",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2000,
-        1440
+        1380,
+        980
       ]
     },
     {
@@ -1590,13 +1590,13 @@
           ]
         }
       },
-      "id": "efc42207-7634-4a25-b449-330c5a7cb602",
+      "id": "43cac17b-c2d9-493b-9700-a681327e6a24",
       "name": "instagram_igual10",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2180,
-        1320
+        1560,
+        860
       ]
     },
     {
@@ -1651,18 +1651,18 @@
           "detailedOutput": true
         }
       },
-      "id": "8178a468-7e7b-437a-b59e-3e7c8608fd13",
+      "id": "50243413-0719-4154-90e2-4382da20785e",
       "name": "atualiza_dados_email_secundario1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2360,
-        1280
+        1740,
+        820
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1722,18 +1722,18 @@
           "detailedOutput": true
         }
       },
-      "id": "fc2c9945-ab1d-4beb-9949-099e694981a0",
+      "id": "8f8c78b3-2f6a-45f7-a9f6-9342530af855",
       "name": "atualiza_dados_email_e_instagram_secundario1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2360,
-        1440
+        1740,
+        980
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1793,18 +1793,18 @@
           "detailedOutput": true
         }
       },
-      "id": "1c402a73-79b6-40e0-9b0f-04189710aa2a",
+      "id": "a8bce223-0ad6-457d-a0ee-89e6dcdbaeb0",
       "name": "atualiza_dados_email2_e_instagram2",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2180,
-        1560
+        1560,
+        1100
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -1819,12 +1819,214 @@
           ]
         }
       },
-      "id": "f4dea822-7a95-45f5-bbc2-60ada01ccc98",
+      "id": "4e6ec765-f3c9-4395-a3a2-fe8d8a15af7d",
       "name": "instagram_preenchido11",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1860,
+        1240,
+        1380
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "89852a11-1d5b-4188-90bb-dc3cd24d9e13",
+      "name": "instagram_igual11",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "id_lead_kommo",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_kommo\"] }}"
+            },
+            {
+              "column": "id_botconversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
+            },
+            {
+              "column": "id_contato_kommo",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_contato_kommo\"] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \")\n }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            },
+            {
+              "column": "instagram2",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            },
+            {
+              "column": "nivel_qualificacao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "4a45cbb0-3342-43f7-861d-38e55bd76812",
+      "name": "atualiza_dados_email4",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1640,
+        1420
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "leads",
+          "mode": "list",
+          "cachedResultName": "leads"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id_lead",
+        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
+            },
+            {
+              "column": "id_lead_kommo",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_kommo\"] }}"
+            },
+            {
+              "column": "id_botconversa",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
+            },
+            {
+              "column": "id_contato_kommo",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_contato_kommo\"] }}"
+            },
+            {
+              "column": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \") }}"
+            },
+            {
+              "column": "update_time",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
+            },
+            {
+              "column": "instagram",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            },
+            {
+              "column": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            },
+            {
+              "column": "nivel_qualificacao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"] }}"
+            }
+          ]
+        },
+        "options": {
+          "detailedOutput": true
+        }
+      },
+      "id": "7e681722-a554-4be1-9af9-e888b3a3ec59",
+      "name": "atualiza_dados_email2_e_instagram3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        1420,
+        1620
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_bd\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "44d65fc1-3f04-4347-9b49-f19e7720db86",
+      "name": "email_preenchido6",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        1960
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "4e18c139-a688-44ce-96c6-10a19e87a23a",
+      "name": "email_igual8",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1260,
         1840
       ]
     },
@@ -1834,179 +2036,117 @@
           "string": [
             {
               "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
-              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+              "operation": "isNotEmpty"
             }
           ]
         }
       },
-      "id": "22119820-2a9a-4882-907f-9097582f27ac",
-      "name": "instagram_igual11",
+      "id": "e562de87-8bc8-402a-8839-13743cfca2fb",
+      "name": "instagram_preenchido12",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2040,
-        1760
+        1460,
+        1800
       ]
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "leads",
-          "mode": "list",
-          "cachedResultName": "leads"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "id_lead",
-        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "nome",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
-            },
-            {
-              "column": "id_lead_kommo",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_kommo\"] }}"
-            },
-            {
-              "column": "id_botconversa",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
-            },
-            {
-              "column": "id_contato_kommo",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_contato_kommo\"] }}"
-            },
-            {
-              "column": "email",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
-            },
-            {
-              "column": "sobrenome",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \")\n }}"
-            },
-            {
-              "column": "update_time",
-              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
-            },
-            {
-              "column": "instagram2",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
-            },
-            {
-              "column": "nivel_qualificacao",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"] }}"
-            }
-          ]
-        },
-        "options": {
-          "detailedOutput": true
-        }
-      },
-      "id": "30e3ad4c-b76e-46b2-bc10-f5c56ab396d4",
-      "name": "atualiza_dados_email4",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.1,
-      "position": [
-        2260,
-        1880
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "leads",
-          "mode": "list",
-          "cachedResultName": "leads"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "id_lead",
-        "valueToMatchOn": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bd\"] }}",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "nome",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(' ')[0] }}"
-            },
-            {
-              "column": "id_lead_kommo",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_kommo\"] }}"
-            },
-            {
-              "column": "id_botconversa",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_lead_bc\"] }}"
-            },
-            {
-              "column": "id_contato_kommo",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_contato_kommo\"] }}"
-            },
-            {
-              "column": "sobrenome",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Nome do Cliente\"].split(\" \").slice(1).join(\" \") }}"
-            },
-            {
-              "column": "update_time",
-              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}"
-            },
-            {
-              "column": "instagram",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
-            },
-            {
-              "column": "email",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
-            },
-            {
-              "column": "nivel_qualificacao",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"] }}"
-            }
-          ]
-        },
-        "options": {
-          "detailedOutput": true
-        }
-      },
-      "id": "c3106560-5cf2-4e9a-9460-4151c2de7342",
-      "name": "atualiza_dados_email2_e_instagram3",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.1,
-      "position": [
-        2040,
-        2080
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
-        }
-      }
     },
     {
       "parameters": {
         "conditions": {
           "string": [
             {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_bd\"] }}",
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "6fabe3e1-7cbc-44f0-8f6b-2b5063c6400a",
+      "name": "instagram_igual12",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
               "operation": "isNotEmpty"
             }
           ]
         }
       },
-      "id": "74e4e721-5bfe-42b1-b152-2af756febdc2",
-      "name": "email_preenchido6",
+      "id": "8b7b5bd4-7335-4950-982e-ab8b3b7e739f",
+      "name": "instagram_preenchido13",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1700,
+        1400,
+        2140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "5f07f37b-7227-4652-b06a-5b512f0f2a59",
+      "name": "instagram_igual13",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        2080
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "2e6274cc-1947-4088-9a59-5fb37d3072d0",
+      "name": "instagram_preenchido14",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        2500
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "0c04c2ef-edd2-474c-8406-d8ba289c6e5e",
+      "name": "instagram_igual14",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1420,
         2420
       ]
     },
@@ -2015,159 +2155,19 @@
         "conditions": {
           "string": [
             {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_bd\"] }}",
-              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"E-mail do Cliente\"] }}"
-            }
-          ]
-        }
-      },
-      "id": "d3acc742-2413-4dba-98c1-85e40ce0fcec",
-      "name": "email_igual8",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        1880,
-        2300
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
               "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
               "operation": "isNotEmpty"
             }
           ]
         }
       },
-      "id": "7f5e9e2f-a547-417c-b928-121a8fb9e708",
-      "name": "instagram_preenchido12",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        2080,
-        2260
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
-              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
-            }
-          ]
-        }
-      },
-      "id": "ca73aec4-3545-404e-83fa-5aaff7bdefe0",
-      "name": "instagram_igual12",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        2260,
-        2180
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
-              "operation": "isNotEmpty"
-            }
-          ]
-        }
-      },
-      "id": "2ef4465c-24ec-453e-9565-9369b0b0b349",
-      "name": "instagram_preenchido13",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        2020,
-        2600
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
-              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
-            }
-          ]
-        }
-      },
-      "id": "d6fe23b9-05e7-4c68-a4d4-e6d3d3e872ec",
-      "name": "instagram_igual13",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        2240,
-        2540
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
-              "operation": "isNotEmpty"
-            }
-          ]
-        }
-      },
-      "id": "18e28427-a667-4d77-ac1e-9b816f8f4f6f",
-      "name": "instagram_preenchido14",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        1880,
-        2960
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
-              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
-            }
-          ]
-        }
-      },
-      "id": "39e92ab9-7e13-4684-9278-9cacd11e10f5",
-      "name": "instagram_igual14",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        2040,
-        2880
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
-              "operation": "isNotEmpty"
-            }
-          ]
-        }
-      },
-      "id": "805ed8f2-af41-44ec-849a-3795cc01e175",
+      "id": "f66623be-3b20-4ae3-ab14-cfba68e32e14",
       "name": "instagram_preenchido15",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2080,
-        3700
+        1460,
+        3240
       ]
     },
     {
@@ -2181,13 +2181,13 @@
           ]
         }
       },
-      "id": "48fa9e49-5530-4fe2-977a-da1459c2b930",
+      "id": "93ee8e7f-def0-4dbe-96c6-c371f8db97e3",
       "name": "instagram_igual15",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2240,
-        3560
+        1620,
+        3100
       ]
     },
     {
@@ -2201,77 +2201,77 @@
           ]
         }
       },
-      "id": "759b993e-b9e9-470c-a8d2-6d068a5970e0",
+      "id": "dab37db0-943c-4cd2-a059-0ecc13bba5d7",
       "name": "instagram_preenchido16",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2040,
+        1420,
+        3520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "a8b9b4f0-5c66-4c48-96ff-54383fe05736",
+      "name": "instagram_igual16",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        3480
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "57e28468-56fa-4459-89c3-5046bb555947",
+      "name": "instagram_preenchido17",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        4060
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
+              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
+            }
+          ]
+        }
+      },
+      "id": "c468bbc9-9a7f-455b-8787-bc0a1da005ee",
+      "name": "instagram_igual17",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1520,
         3980
       ]
     },
     {
       "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
-              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
-            }
-          ]
-        }
-      },
-      "id": "1c396ef7-c724-4c23-a8be-51bb27a10f3c",
-      "name": "instagram_igual16",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        2260,
-        3940
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
-              "operation": "isNotEmpty"
-            }
-          ]
-        }
-      },
-      "id": "078aa4c8-a9a1-450f-8eb2-3087ba5cfb30",
-      "name": "instagram_preenchido17",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        1960,
-        4520
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram_bd\"] }}",
-              "value2": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] }}"
-            }
-          ]
-        }
-      },
-      "id": "4af6ce8d-94fd-426f-959d-c367abde6ce3",
-      "name": "instagram_igual17",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        2140,
-        4440
-      ]
-    },
-    {
-      "parameters": {
         "operation": "update",
         "table": {
           "__rl": true,
@@ -2322,18 +2322,18 @@
           "detailedOutput": true
         }
       },
-      "id": "4e470dc5-cf2b-420a-92b6-6a59462ce9dd",
+      "id": "c142622a-ad09-4c06-9221-3e6ed6eaeb6c",
       "name": "atualiza_dados_telefone3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2440,
-        2060
+        1820,
+        1600
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -2393,18 +2393,18 @@
           "detailedOutput": true
         }
       },
-      "id": "020d1290-563d-444a-ba69-07b85f8d4789",
+      "id": "421ce3b3-11ba-41e2-b075-3f60d3839442",
       "name": "atualiza_dados_telefone_e_instagram",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2440,
-        2240
+        1820,
+        1780
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -2464,18 +2464,18 @@
           "detailedOutput": true
         }
       },
-      "id": "017d56ed-1d50-4bb1-9b7f-e6ccf435068e",
+      "id": "02e291e4-ded6-4206-8a93-9e86a0cd77b7",
       "name": "atualiza_dados_telefone2_e_instagram",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2260,
-        2340
+        1640,
+        1880
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -2535,18 +2535,18 @@
           "detailedOutput": true
         }
       },
-      "id": "d0094ffb-a17e-4d55-a59a-ab6347fd97c6",
+      "id": "e2360ff6-e5ac-43eb-b006-0bc9c1817b88",
       "name": "atualiza_dados_telefone2_e_email",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2440,
-        2460
+        1820,
+        2000
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -2610,18 +2610,18 @@
           "detailedOutput": true
         }
       },
-      "id": "f5ddf28a-5116-43cc-b7c4-64ed1787aa7c",
+      "id": "385ab474-92be-404c-9083-9739a2c71df7",
       "name": "atualiza_dados_telefone2_e_email2_e_instagram3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2440,
-        2640
+        1820,
+        2180
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -2685,18 +2685,18 @@
           "detailedOutput": true
         }
       },
-      "id": "cd2f5599-c11b-4a2f-9db6-513489c1089e",
+      "id": "d98d2b5e-40f5-441e-b12a-5196ef96a4e7",
       "name": "atualiza_dados_telefone2_e_email2_e_instagram1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2240,
-        2700
+        1620,
+        2240
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -2760,18 +2760,18 @@
           "detailedOutput": true
         }
       },
-      "id": "0de2fe32-1385-4dd9-87e4-7c1caa9f3be9",
+      "id": "0a50dbe1-4d9d-4631-a4bd-bf1a7ebcbaf8",
       "name": "atualiza_dados_telefone2_e_email1_e_instagram",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2220,
-        3060
+        1600,
+        2600
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -2831,18 +2831,18 @@
           "detailedOutput": true
         }
       },
-      "id": "ec858b06-9a4e-4fd2-b404-98fc5743ca1d",
+      "id": "b05ee9e8-4c3d-444e-ad8d-3844f5962d96",
       "name": "atualiza_dados_telefone2_e_email3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2220,
-        2880
+        1600,
+        2420
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -2906,18 +2906,18 @@
           "detailedOutput": true
         }
       },
-      "id": "83601f1a-05e9-4f01-927b-008aa56efd58",
+      "id": "26f7b697-aef2-4481-956e-0662b5b6e493",
       "name": "atualiza_dados_telefone2_e_email1_e_instagram3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2060,
-        3220
+        1440,
+        2760
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -2973,18 +2973,18 @@
           "detailedOutput": true
         }
       },
-      "id": "a899d54a-b457-46b9-bfbd-00bd6ef27197",
+      "id": "8f8438c7-78e7-4be2-8de9-aeaa50712da4",
       "name": "atualiza_dados_telefone1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2440,
-        3460
+        1820,
+        3000
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -3044,18 +3044,18 @@
           "detailedOutput": true
         }
       },
-      "id": "a2ac2732-e742-4eb8-b879-a1b0943b2119",
+      "id": "99e1f685-9b81-4c79-b028-fe138ef1103f",
       "name": "atualiza_dados_telefone1_instagram",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2440,
-        3640
+        1820,
+        3180
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -3115,18 +3115,18 @@
           "detailedOutput": true
         }
       },
-      "id": "7a254ec3-0d9b-42b3-9349-a146375234b9",
+      "id": "8c484cdb-a109-4201-8ba5-4478e917d313",
       "name": "atualiza_dados_telefone1_instagram3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2260,
-        3740
+        1640,
+        3280
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -3186,18 +3186,18 @@
           "detailedOutput": true
         }
       },
-      "id": "1142f4f9-231f-41f9-a32b-156f0c512035",
+      "id": "e35a117c-f629-4131-a96c-9b21a7529ec7",
       "name": "atualiza_dados_telefone1_email",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2460,
-        3840
+        1840,
+        3380
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -3261,18 +3261,18 @@
           "detailedOutput": true
         }
       },
-      "id": "2b475423-2ab4-4a5b-b06a-f5ae93997aa1",
+      "id": "f4c0eef7-722a-46d5-b17f-52fab2320c9f",
       "name": "atualiza_dados_telefone1_email2_instagram",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2460,
-        4040
+        1840,
+        3580
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -3336,18 +3336,18 @@
           "detailedOutput": true
         }
       },
-      "id": "6d370fc9-8b7f-45d9-aa2e-40b282717e1f",
+      "id": "8ff57460-f5e9-4959-8085-c11388821325",
       "name": "atualiza_dados_telefone1_email2_instagram3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2260,
-        4100
+        1640,
+        3640
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -3407,18 +3407,18 @@
           "detailedOutput": true
         }
       },
-      "id": "ebdb4a0a-3c83-4839-9186-7368b04ee674",
+      "id": "fada8721-b235-493c-b455-a2dc42877f1f",
       "name": "atualiza_dados_telefone1_email3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2340,
-        4320
+        1720,
+        3860
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -3482,18 +3482,18 @@
           "detailedOutput": true
         }
       },
-      "id": "c75ba05e-0ce4-4afd-841f-854e41c46ffa",
+      "id": "cc27e234-9e08-4961-abf4-c07ca180b6cc",
       "name": "atualiza_dados_telefone1_email1_instagram3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2340,
-        4520
+        1720,
+        4060
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -3557,18 +3557,18 @@
           "detailedOutput": true
         }
       },
-      "id": "da710ccb-b9f8-41b8-b646-f1ce291d033d",
+      "id": "511d7477-6e33-4085-ae5c-028eaa941671",
       "name": "atualiza_dados_telefone1_email1_instagram1",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        2140,
-        4660
+        1520,
+        4200
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -3589,18 +3589,18 @@
           "parallelMessages": 3
         }
       },
-      "id": "50f50fc6-a2a3-4cd7-a667-c7d18ea827df",
+      "id": "4f13fa50-7abc-45be-b801-01446df09679",
       "name": "chega_da_fila",
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
       "position": [
-        940,
-        1500
+        320,
+        1040
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -3608,13 +3608,13 @@
       "parameters": {
         "errorMessage": "An error ocurred!"
       },
-      "id": "7be0c6a8-ded4-450c-a272-72ff4023704a",
+      "id": "1b2a937f-ae6a-42b3-9717-16b4ca137d54",
       "name": "Stop and Error",
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        1360,
-        1240
+        740,
+        780
       ]
     },
     {
@@ -3628,13 +3628,13 @@
           ]
         }
       },
-      "id": "ab4a4381-f7e3-442e-ac0d-cfb6fad02622",
+      "id": "bb29ebd6-bcc4-40d8-9456-d8f07b925526",
       "name": "segundo_ou_mais_erro",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1140,
-        1500
+        520,
+        1040
       ]
     },
     {
@@ -3652,18 +3652,18 @@
           "durable": true
         }
       },
-      "id": "50cf138a-a73d-4a69-bca3-e108d7e5a3ff",
+      "id": "0bf2d9bf-ec41-4777-a4fd-12875c64f01c",
       "name": "entra_na_fila",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        4020,
-        2780
+        3400,
+        2320
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -3678,13 +3678,13 @@
           ]
         }
       },
-      "id": "12c831c8-111c-46ee-92bd-9ff129fe26be",
+      "id": "f3de2cdf-ed10-4551-a92d-0ecd4f2b9da2",
       "name": "desqualificado",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        3800,
-        2900
+        3180,
+        2440
       ]
     },
     {
@@ -3702,18 +3702,18 @@
           "durable": true
         }
       },
-      "id": "7c94fe22-223b-43aa-9f2a-5526b8a4331c",
+      "id": "252305fb-43e1-43b4-a785-16b230cb8380",
       "name": "entra_na_fila1",
       "type": "n8n-nodes-base.rabbitmq",
       "typeVersion": 1,
       "position": [
-        4020,
-        3000
+        3400,
+        2540
       ],
       "credentials": {
         "rabbitmq": {
-          "id": "9ZBMW8Zoa6820Xsp",
-          "name": "[RabbitMQ][2.0] - Henry Santos "
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
         }
       }
     },
@@ -4092,13 +4092,13 @@
         },
         "options": {}
       },
-      "id": "d068607c-65a6-49fc-aaf8-eef7e4f86b0f",
+      "id": "a7ba9ddb-94ae-4971-ab3c-7667617e06ed",
       "name": "dados1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        3620,
-        2900
+        3000,
+        2440
       ]
     }
   ],
@@ -4203,23 +4203,12 @@
   },
   "settings": {
     "executionOrder": "v1",
-    "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveExecutionProgress": true
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
-  "tags": [
-    {
-      "createdAt": "2024-03-25T13:17:28.604Z",
-      "updatedAt": "2024-03-25T13:17:28.604Z",
-      "id": "iEWW0rAq20zciLEA",
-      "name": "[NAG]"
-    }
-  ],
+  "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-05T20:22:13.954Z",
-  "versionId": "93afeafe-67b7-4e51-9e01-ba66e6ca8512"
+  "updatedAt": "2025-02-01T18:20:14.681Z",
+  "versionId": "5125e288-98a7-4fb3-95a3-7e62df04d127"
 }
