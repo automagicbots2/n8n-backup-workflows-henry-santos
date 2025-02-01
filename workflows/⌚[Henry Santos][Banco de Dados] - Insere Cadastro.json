@@ -13,9 +13,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-15T14:33:53.651Z",
-  "id": "6EGZUJpp5zfUIon9",
-  "meta": null,
+  "createdAt": "2025-02-01T19:12:19.326Z",
+  "id": "ANf29u9FoFwfN5RN",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][Banco de Dados] - Insere Cadastro",
   "nodes": [
     {
@@ -27,10 +29,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        0,
-        0
+        -60,
+        -80
       ],
-      "id": "7d3647d9-c8c0-4e93-86e3-99a137d09ae6",
+      "id": "530b207b-3679-427a-ab33-fb6e16efe6cc",
       "name": "fluxo_chamado",
       "webhookId": "697ca672-f32b-489c-bc69-d8ae2e5f0679"
     },
@@ -108,19 +110,19 @@
           "detailedOutput": true
         }
       },
-      "id": "f08c30e0-09dd-46a8-9d71-59b8018850c8",
+      "id": "717f08b2-4c27-4b44-867c-f865470fc42b",
       "name": "insert_cadastro",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        220,
-        0
+        160,
+        -80
       ],
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     }
@@ -170,11 +172,11 @@
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-15T14:35:07.983Z",
-  "versionId": "47aece51-e4c4-4e97-84cb-66f64ec6bb0e"
+  "updatedAt": "2025-02-01T19:12:27.581Z",
+  "versionId": "08e8a5ab-de72-4ba7-b64e-cf91b707f8f8"
 }
