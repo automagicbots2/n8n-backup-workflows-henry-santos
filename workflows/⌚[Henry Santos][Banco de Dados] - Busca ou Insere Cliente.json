@@ -24,9 +24,11 @@
       ]
     }
   },
-  "createdAt": "2025-01-17T22:15:04.903Z",
-  "id": "vWwdvNaphRPwZkjb",
-  "meta": null,
+  "createdAt": "2025-02-01T19:14:49.515Z",
+  "id": "ezBoZBrzzk3UXFdq",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "⌚[Henry Santos][Banco de Dados] - Busca ou Insere Cliente",
   "nodes": [
     {
@@ -38,10 +40,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -660,
-        180
+        0,
+        0
       ],
-      "id": "6992fbf9-f05c-4aab-9b16-d0ee238cb3c8",
+      "id": "5a56424e-3e99-41ae-9800-88560594f363",
       "name": "fluxo_chamado",
       "webhookId": "4444154f-7de3-49ca-8e36-944610f0eb5b"
     },
@@ -54,15 +56,15 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -440,
-        180
+        220,
+        0
       ],
-      "id": "7fc1f27b-0cf9-4f6a-8d03-dbf8b74a1474",
+      "id": "b28c423d-4bdc-4d82-bd89-7f4365f62f8f",
       "name": "executa_procedure",
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
@@ -71,10 +73,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -240,
-        180
+        420,
+        0
       ],
-      "id": "8053b55f-75e7-4927-aa1f-7c0d1f0294b7",
+      "id": "e3ad5da4-6838-4006-94b4-4e9df266eac6",
       "name": "Limit"
     }
   ],
@@ -111,11 +113,11 @@
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-18T00:05:54.603Z",
-  "versionId": "790856f2-e9e0-4714-81ed-98e30639f95b"
+  "updatedAt": "2025-02-01T19:14:56.076Z",
+  "versionId": "dfd336f6-120d-419f-b174-0529d2cf78e6"
 }
