@@ -1370,8 +1370,8 @@
       ]
     }
   },
-  "createdAt": "2024-12-20T18:08:06.175Z",
-  "id": "H8ShpE8m3DN9kKkE",
+  "createdAt": "2025-02-01T19:33:50.150Z",
+  "id": "NztiL2Ebsj7YflsT",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -1386,16 +1386,16 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        220,
-        0
+        -300,
+        -40
       ],
-      "id": "0df3d4f2-898e-4e52-b6e3-a3c303ad8cf2",
+      "id": "b6c2a600-71a5-483f-86dd-135ba2dc7c2e",
       "name": "puxa_agendamentos",
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       },
       "onError": "continueRegularOutput"
@@ -1407,10 +1407,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        440,
-        0
+        -80,
+        -40
       ],
-      "id": "6e3865e0-b074-4243-8925-89694fb41e56",
+      "id": "3cbf9218-b7f6-47eb-b392-8c02a07470b0",
       "name": "Loop Over Items"
     },
     {
@@ -1418,13 +1418,13 @@
         "operation": "limit",
         "keep": "lastItems"
       },
-      "id": "bb349ad3-06ff-4a57-a688-08b697baf28e",
+      "id": "903f59ee-fa58-4e99-b071-a6d536a4510f",
       "name": "pesquisa_lead1",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        880,
-        100
+        360,
+        60
       ]
     },
     {
@@ -1449,43 +1449,43 @@
           "detailedOutput": false
         }
       },
-      "id": "66aace67-2db5-497f-8c13-9cd9b5a472e5",
+      "id": "d5afed5e-fb4c-4535-a50f-080510f2e4b1",
       "name": "pesquisa_lead2",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        680,
-        100
+        160,
+        60
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
     {
       "parameters": {},
-      "id": "e5be70db-f42b-4b12-8867-e834f6710243",
+      "id": "6f8f2a2c-32ac-4857-b285-25e00b0bb353",
       "name": "Não faz nada1",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1920,
-        420
+        1400,
+        380
       ]
     },
     {
       "parameters": {
         "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
       },
-      "id": "b40c7c6e-b079-469a-b42f-ce5af55b2678",
+      "id": "33d4500f-a00b-4991-8fb7-c2a8c9e5ef6f",
       "name": "Retorna Output Aleatorio",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1320,
-        100
+        800,
+        60
       ]
     },
     {
@@ -1510,13 +1510,13 @@
         },
         "fallbackOutput": 3
       },
-      "id": "43910b5a-c3cd-4436-81a1-3e40e40bf400",
+      "id": "b5636e81-b669-44a6-a8d3-1e5135f6e06c",
       "name": "Saida Aleatoria",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        1500,
-        80
+        980,
+        40
       ]
     },
     {
@@ -1524,13 +1524,13 @@
         "amount": 40,
         "unit": "seconds"
       },
-      "id": "ca207b78-1821-4bbc-92b6-4b23684b41ea",
+      "id": "0e17e5e0-dc0b-4fe6-afbc-8b91c9cc396c",
       "name": "40s",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1720,
-        40
+        1200,
+        0
       ],
       "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
     },
@@ -1539,13 +1539,13 @@
         "amount": 45,
         "unit": "seconds"
       },
-      "id": "63fa51bf-c34d-4e65-8c6c-edb0b6fc09c8",
+      "id": "7342c3e7-3d6e-4f79-8ffc-ae281a247e2d",
       "name": "45s",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1720,
-        180
+        1200,
+        140
       ],
       "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
     },
@@ -1554,13 +1554,13 @@
         "amount": 50,
         "unit": "seconds"
       },
-      "id": "bffebe50-96c2-4a28-b887-5961603f8dce",
+      "id": "e99fefff-6996-4a26-b3a7-095703b68911",
       "name": "50s",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1720,
-        320
+        1200,
+        280
       ],
       "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
     },
@@ -1569,13 +1569,13 @@
         "amount": 53,
         "unit": "seconds"
       },
-      "id": "03717614-4b95-4a6d-a245-d665db4b7bc6",
+      "id": "49f325ff-f1dd-4d88-ae9a-dd24a6c1c2ef",
       "name": "53s",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1720,
-        460
+        1200,
+        420
       ],
       "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
     },
@@ -1630,24 +1630,24 @@
           }
         }
       },
-      "id": "895ed759-eb09-4155-af8f-773099344073",
+      "id": "d8d8b1b2-ee88-41a7-b708-15542672b380",
       "name": "EnviaMensagemTexto7",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1100,
-        100
+        580,
+        60
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "4d2ba960-0354-40fe-844d-3b21c5b1a2d3",
+      "id": "731213af-2c39-4207-a110-aa4c7d764b08",
       "name": "Não faz nada",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        680,
-        -40
+        160,
+        -80
       ]
     },
     {
@@ -1664,10 +1664,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        0,
-        0
+        -520,
+        -40
       ],
-      "id": "a1e2eb60-cd19-4725-aa5d-82b1b10700b2",
+      "id": "9c88ef4b-a0a6-41d8-bfab-407abf30a03f",
       "name": "domingo_11h"
     },
     {
@@ -1679,16 +1679,16 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        180,
-        660
+        -340,
+        620
       ],
-      "id": "cff5923d-3036-4c6e-92b0-c4d8b97ef387",
+      "id": "61996b84-bf67-4cb7-acb3-446fb11c7368",
       "name": "puxa_agendamentos1",
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       },
       "onError": "continueRegularOutput"
@@ -1700,10 +1700,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        400,
-        660
+        -120,
+        620
       ],
-      "id": "5c3169b4-8b43-4e83-ba15-887019f89c2e",
+      "id": "178766b6-81e5-4138-abad-46207e631326",
       "name": "Loop Over Items1"
     },
     {
@@ -1711,13 +1711,13 @@
         "operation": "limit",
         "keep": "lastItems"
       },
-      "id": "f50c7bf2-8043-4204-b805-e20615698a98",
+      "id": "9f686056-c67f-4499-b8a4-9f5c7e3714a4",
       "name": "pesquisa_lead",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        840,
-        760
+        320,
+        720
       ]
     },
     {
@@ -1742,43 +1742,43 @@
           "detailedOutput": false
         }
       },
-      "id": "9c50a9d5-047c-4138-acb1-208319fcf08b",
+      "id": "0d8d0a3d-26ab-4ada-b5e0-e63462686d54",
       "name": "pesquisa_lead3",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        640,
-        760
+        120,
+        720
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
     {
       "parameters": {},
-      "id": "fc97a38b-7e3f-4df1-ada8-767bca91520b",
+      "id": "6080d017-017c-4843-880a-87b444310b0d",
       "name": "Não faz nada2",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1880,
-        1080
+        1360,
+        1040
       ]
     },
     {
       "parameters": {
         "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
       },
-      "id": "417cb8db-f83e-4139-99a7-fbeca267a8aa",
+      "id": "5fe9b96c-66a5-431b-9cba-3f3b2660cefc",
       "name": "Retorna Output Aleatorio1",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1280,
-        760
+        760,
+        720
       ]
     },
     {
@@ -1803,13 +1803,13 @@
         },
         "fallbackOutput": 3
       },
-      "id": "cb123bf6-fea5-4cfe-acdf-c745a019dbce",
+      "id": "1975ae8e-a6a0-4651-a2d9-01063677ab5c",
       "name": "Saida Aleatoria1",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        1460,
-        740
+        940,
+        700
       ]
     },
     {
@@ -1817,13 +1817,13 @@
         "amount": 40,
         "unit": "seconds"
       },
-      "id": "496d0dd1-514e-49f0-9d6a-89d35386e5fe",
+      "id": "fd118b2a-2e08-4b27-8352-f032bdfda6ec",
       "name": "40s1",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1680,
-        700
+        1160,
+        660
       ],
       "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
     },
@@ -1832,13 +1832,13 @@
         "amount": 45,
         "unit": "seconds"
       },
-      "id": "0f3ac08f-a77b-40b3-9130-6f1b5d9b321b",
+      "id": "f10a3160-89ab-4c34-a4b3-d9b534466879",
       "name": "45s1",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1680,
-        840
+        1160,
+        800
       ],
       "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
     },
@@ -1847,13 +1847,13 @@
         "amount": 50,
         "unit": "seconds"
       },
-      "id": "40eca8db-13bb-4562-8975-d532d4bb0a69",
+      "id": "3daf3d9b-b198-492b-88a7-b03fb1079c26",
       "name": "50s1",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1680,
-        980
+        1160,
+        940
       ],
       "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
     },
@@ -1862,13 +1862,13 @@
         "amount": 53,
         "unit": "seconds"
       },
-      "id": "805a0fab-fb0e-44ad-88be-6f9a3ccd086f",
+      "id": "ccc74e05-bd87-4af9-b074-7c0e62d7bff9",
       "name": "53s1",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1680,
-        1120
+        1160,
+        1080
       ],
       "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
     },
@@ -1923,24 +1923,24 @@
           }
         }
       },
-      "id": "4ffb3d90-3092-48bd-98de-cba9d03b1c70",
+      "id": "53c55c0f-d953-4d85-afa7-9e1c65db34e0",
       "name": "EnviaMensagemTexto",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1060,
-        760
+        540,
+        720
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "9d5904f3-ea20-4a8a-8940-5cfab563c926",
+      "id": "1b77c8c2-95be-4479-b79d-b6c584eeffdf",
       "name": "Não faz nada3",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        640,
-        620
+        120,
+        580
       ]
     },
     {
@@ -1960,10 +1960,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -40,
-        660
+        -560,
+        620
       ],
-      "id": "f63037e5-6e03-4850-90b8-3100f86bb3ce",
+      "id": "0765321e-d6ed-45f3-92f1-6dd1457f3441",
       "name": "segunda_11h"
     },
     {
@@ -1975,16 +1975,16 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        160,
-        1340
+        -360,
+        1300
       ],
-      "id": "52f2eb1d-7691-4b34-b4fe-65dca25bc7a0",
+      "id": "16ef2c5c-9f59-490d-ba5f-c79e757ba57b",
       "name": "puxa_agendamentos2",
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       },
       "onError": "continueRegularOutput"
@@ -1996,10 +1996,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        380,
-        1340
+        -140,
+        1300
       ],
-      "id": "26651c05-7958-4e4e-952b-17d15a179856",
+      "id": "73d0fc97-dc0e-4848-9344-9557bc2107a3",
       "name": "Loop Over Items2"
     },
     {
@@ -2007,13 +2007,13 @@
         "operation": "limit",
         "keep": "lastItems"
       },
-      "id": "53685e29-1f4e-4c25-9332-909cfde3556b",
+      "id": "7e776048-d290-4f5a-9b10-7fdd1e18faee",
       "name": "pesquisa_lead4",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        820,
-        1440
+        300,
+        1400
       ]
     },
     {
@@ -2038,43 +2038,43 @@
           "detailedOutput": false
         }
       },
-      "id": "0948ce3d-4cc3-439a-b2e2-d4cfddb2bc8b",
+      "id": "b2b65486-15c4-4880-8705-9f68286ec6f0",
       "name": "pesquisa_lead5",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        620,
-        1440
+        100,
+        1400
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
     {
       "parameters": {},
-      "id": "969e7f7f-3abb-4868-83cb-f7ae36e95d23",
+      "id": "ad0e0525-e54c-4715-bcf4-7248acc5f342",
       "name": "Não faz nada4",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1860,
-        1760
+        1340,
+        1720
       ]
     },
     {
       "parameters": {
         "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
       },
-      "id": "4126fe08-8c02-425b-8295-49375190686a",
+      "id": "808e2dd7-1eb3-47b8-9db3-31c6129e8c8f",
       "name": "Retorna Output Aleatorio2",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1260,
-        1440
+        740,
+        1400
       ]
     },
     {
@@ -2099,13 +2099,13 @@
         },
         "fallbackOutput": 3
       },
-      "id": "f94cba81-afcc-4056-a01c-a55f6cfd14cb",
+      "id": "d5ea06a2-4dac-4de3-9d53-4b86e6596be5",
       "name": "Saida Aleatoria2",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        1440,
-        1420
+        920,
+        1380
       ]
     },
     {
@@ -2113,13 +2113,13 @@
         "amount": 40,
         "unit": "seconds"
       },
-      "id": "96036e23-1606-43ef-ad42-b88d65a06e27",
+      "id": "80083fdc-34ff-4d24-b97f-6988d3b19c78",
       "name": "40s2",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1660,
-        1380
+        1140,
+        1340
       ],
       "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
     },
@@ -2128,13 +2128,13 @@
         "amount": 45,
         "unit": "seconds"
       },
-      "id": "ac7ba4fa-c43b-4a56-a72c-467d3a456b7a",
+      "id": "077bac24-ec92-4e2b-b1de-afdf9d6aa5a6",
       "name": "45s2",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1660,
-        1520
+        1140,
+        1480
       ],
       "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
     },
@@ -2143,13 +2143,13 @@
         "amount": 50,
         "unit": "seconds"
       },
-      "id": "df8e6bbe-fac1-42d0-813c-68c82a45f302",
+      "id": "3c347eab-6f4f-4cf7-97b0-f2328a70886e",
       "name": "50s2",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1660,
-        1660
+        1140,
+        1620
       ],
       "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
     },
@@ -2158,13 +2158,13 @@
         "amount": 53,
         "unit": "seconds"
       },
-      "id": "d523c92d-9948-47a6-8832-1a35b5ffdc0e",
+      "id": "b2e2d9be-0463-4f02-8dea-b332818d09cf",
       "name": "53s2",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1660,
-        1800
+        1140,
+        1760
       ],
       "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
     },
@@ -2219,24 +2219,24 @@
           }
         }
       },
-      "id": "71dd65be-e380-4cc0-8d52-a74dae897631",
+      "id": "cbab0539-daba-45e6-96b8-5e2d9bafa8e0",
       "name": "EnviaMensagemTexto1",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1040,
-        1440
+        520,
+        1400
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "4befc8ba-e486-4ec5-a674-21c4d0a1f435",
+      "id": "c887148f-3869-40c6-b577-d855542803f8",
       "name": "Não faz nada5",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        620,
-        1300
+        100,
+        1260
       ]
     },
     {
@@ -2256,10 +2256,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -60,
-        1340
+        -580,
+        1300
       ],
-      "id": "4b003782-d200-40ee-9d66-dcfc5f6867e5",
+      "id": "b0b5f6d9-a297-413b-810b-432524f25a02",
       "name": "terça_11h"
     },
     {
@@ -2271,16 +2271,16 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        120,
-        2000
+        -400,
+        1960
       ],
-      "id": "5635411c-b70a-4be4-bcf5-c916944ec144",
+      "id": "e5d2c602-3896-4e5b-b14c-a26ce42e3f14",
       "name": "puxa_agendamentos3",
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       },
       "onError": "continueRegularOutput"
@@ -2292,10 +2292,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        340,
-        2000
+        -180,
+        1960
       ],
-      "id": "a98e510f-c3b6-4a87-9dac-069271382e86",
+      "id": "d1f13e28-790f-4cdf-9adb-8b84cc1da8ad",
       "name": "Loop Over Items3"
     },
     {
@@ -2303,13 +2303,13 @@
         "operation": "limit",
         "keep": "lastItems"
       },
-      "id": "f0c89066-3ea0-421f-bbd0-dbdf99945baf",
+      "id": "a20ae328-9107-4077-8b4f-4c669b3d9f74",
       "name": "pesquisa_lead6",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        780,
-        2100
+        260,
+        2060
       ]
     },
     {
@@ -2334,43 +2334,43 @@
           "detailedOutput": false
         }
       },
-      "id": "74aa1f4e-83f8-4b8c-b3b5-f9cfb82cae86",
+      "id": "646a8074-f3da-4f46-95f9-25761b4b2d4a",
       "name": "pesquisa_lead7",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        580,
-        2100
+        60,
+        2060
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
     {
       "parameters": {},
-      "id": "959a3b30-e6f6-4c8f-b0f2-abef1aaf741d",
+      "id": "ed80ed9e-103d-4399-92b3-a9255ed95871",
       "name": "Não faz nada6",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1820,
-        2420
+        1300,
+        2380
       ]
     },
     {
       "parameters": {
         "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
       },
-      "id": "a62f17cc-3896-4877-8408-ee72af21cc59",
+      "id": "34b22c42-a9bf-4719-8055-6f823225e572",
       "name": "Retorna Output Aleatorio3",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1220,
-        2100
+        700,
+        2060
       ]
     },
     {
@@ -2395,13 +2395,13 @@
         },
         "fallbackOutput": 3
       },
-      "id": "d101af2a-e829-4c2e-b345-de77568dfe3b",
+      "id": "e78eba6a-4494-4fd1-a96f-c569abffb7b3",
       "name": "Saida Aleatoria3",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        1400,
-        2080
+        880,
+        2040
       ]
     },
     {
@@ -2409,13 +2409,13 @@
         "amount": 40,
         "unit": "seconds"
       },
-      "id": "ff63e3f6-cb84-49c7-bd48-0ff3e0bffd30",
+      "id": "05a94715-4d05-4b85-90a2-c1f4ed474eac",
       "name": "40s3",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1620,
-        2040
+        1100,
+        2000
       ],
       "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
     },
@@ -2424,13 +2424,13 @@
         "amount": 45,
         "unit": "seconds"
       },
-      "id": "df7990f6-4e17-489b-8040-d244a8f6b116",
+      "id": "845f795e-4f4e-4727-bb8c-14c617ddf1c6",
       "name": "45s3",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1620,
-        2180
+        1100,
+        2140
       ],
       "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
     },
@@ -2439,13 +2439,13 @@
         "amount": 50,
         "unit": "seconds"
       },
-      "id": "b7fafbaa-845d-42d6-a9b6-37bca26d31ac",
+      "id": "32a44599-c297-4051-9fcb-f03ae9bfd149",
       "name": "50s3",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1620,
-        2320
+        1100,
+        2280
       ],
       "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
     },
@@ -2454,13 +2454,13 @@
         "amount": 53,
         "unit": "seconds"
       },
-      "id": "b3e45634-4d9e-400b-a68b-913a24e5abcd",
+      "id": "b80f0b6a-d2e7-4529-9676-0ceb6fb216d2",
       "name": "53s3",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1620,
-        2460
+        1100,
+        2420
       ],
       "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
     },
@@ -2515,24 +2515,24 @@
           }
         }
       },
-      "id": "cd303082-03df-498c-91c5-fc71f7b2189f",
+      "id": "b5ae174a-f1d5-4817-b569-95e96a71eddd",
       "name": "EnviaMensagemTexto2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1000,
-        2100
+        480,
+        2060
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "678820d1-6d9e-4bca-91fd-413dfb7e7dfb",
+      "id": "8e5597f0-1ec5-4c15-a6eb-b2b56fcee940",
       "name": "Não faz nada7",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        580,
-        1960
+        60,
+        1920
       ]
     },
     {
@@ -2552,10 +2552,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -100,
-        2000
+        -620,
+        1960
       ],
-      "id": "30c5a5a0-a955-439b-ba5c-822744e980b1",
+      "id": "a2dd068d-de5d-40f9-9edf-fde2f5351569",
       "name": "quarta_12h"
     },
     {
@@ -2567,16 +2567,16 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        80,
-        2660
+        -440,
+        2620
       ],
-      "id": "4fa8d703-f8a5-49e7-8e3b-4160cd2afabd",
+      "id": "b85b42b9-6133-42c3-aa12-fd79b94d1e78",
       "name": "puxa_agendamentos4",
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       },
       "onError": "continueRegularOutput"
@@ -2588,10 +2588,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        320,
-        2660
+        -200,
+        2620
       ],
-      "id": "ca7aeb64-6b26-440c-9189-bc8122ce7a31",
+      "id": "4f83938e-ad2c-4c54-ab49-7ad105e349da",
       "name": "Loop Over Items4"
     },
     {
@@ -2599,13 +2599,13 @@
         "operation": "limit",
         "keep": "lastItems"
       },
-      "id": "bbfd672b-3ea3-4f9d-a1fc-dda062168917",
+      "id": "13269810-91e2-4559-89a4-94f5dcd4ee05",
       "name": "pesquisa_lead8",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        760,
-        2760
+        240,
+        2720
       ]
     },
     {
@@ -2630,43 +2630,43 @@
           "detailedOutput": false
         }
       },
-      "id": "db7ebaaf-89c4-4922-9f60-9d5a2e0d43ce",
+      "id": "61e37931-e8dd-4dc6-8469-b76a70a6c28c",
       "name": "pesquisa_lead9",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        560,
-        2760
+        40,
+        2720
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
     {
       "parameters": {},
-      "id": "e24a7681-d2bd-4bab-bdec-cde01b7babd0",
+      "id": "b67d3132-efb3-4ee0-9f6d-608de45e7333",
       "name": "Não faz nada8",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1800,
-        3080
+        1280,
+        3040
       ]
     },
     {
       "parameters": {
         "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
       },
-      "id": "765d8237-4bb8-4ae1-901d-9b0b903363ff",
+      "id": "0af45d03-5614-4d01-ac1b-545d7fe22233",
       "name": "Retorna Output Aleatorio4",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1200,
-        2760
+        680,
+        2720
       ]
     },
     {
@@ -2691,13 +2691,13 @@
         },
         "fallbackOutput": 3
       },
-      "id": "0f075b62-24fd-45e8-979e-e90fe5047e12",
+      "id": "59c6ab76-571b-4834-8f0e-779fecf863d1",
       "name": "Saida Aleatoria4",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        1380,
-        2740
+        860,
+        2700
       ]
     },
     {
@@ -2705,13 +2705,13 @@
         "amount": 40,
         "unit": "seconds"
       },
-      "id": "d4660dca-01f0-4244-84a7-0cf37ada68bc",
+      "id": "a01a5e15-c66e-46d7-8c76-e1c9631c620e",
       "name": "40s4",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1600,
-        2700
+        1080,
+        2660
       ],
       "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
     },
@@ -2720,13 +2720,13 @@
         "amount": 45,
         "unit": "seconds"
       },
-      "id": "ae9590d8-d9ff-4cd7-b4f6-c97d1ce9384d",
+      "id": "3b47ce4a-7298-4dbf-bd71-045f9923528e",
       "name": "45s4",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1600,
-        2840
+        1080,
+        2800
       ],
       "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
     },
@@ -2735,13 +2735,13 @@
         "amount": 50,
         "unit": "seconds"
       },
-      "id": "be9981af-2a9f-4b91-a6df-ce659196266b",
+      "id": "f2011140-f2f1-433c-85c4-c6464fffc178",
       "name": "50s4",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1600,
-        2980
+        1080,
+        2940
       ],
       "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
     },
@@ -2750,13 +2750,13 @@
         "amount": 53,
         "unit": "seconds"
       },
-      "id": "079d5751-9d25-4721-ae9f-3b61e12c5ee2",
+      "id": "7daf4838-4d43-444f-8cde-959ac0cfb6ee",
       "name": "53s4",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1600,
-        3120
+        1080,
+        3080
       ],
       "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
     },
@@ -2811,24 +2811,24 @@
           }
         }
       },
-      "id": "45e57ca7-3fdf-4960-b636-4525beb5baf1",
+      "id": "ac060fa1-ac38-4004-adb9-f02e913e4737",
       "name": "EnviaMensagemTexto3",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        980,
-        2760
+        460,
+        2720
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "e7e8236f-76da-42a1-a3d1-ec3c1f339145",
+      "id": "827a6f13-9603-4e43-9398-c8983f3a252f",
       "name": "Não faz nada9",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        560,
-        2620
+        40,
+        2580
       ]
     },
     {
@@ -2848,10 +2848,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -120,
-        2660
+        -640,
+        2620
       ],
-      "id": "a83071d9-aee7-4a87-9b70-764eea07c06c",
+      "id": "d91c09ff-2fb3-40e8-96b3-16b25050f6e6",
       "name": "quarta_17h"
     },
     {
@@ -2863,16 +2863,16 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        60,
-        3320
+        -460,
+        3280
       ],
-      "id": "61c4f4c9-6fc9-4206-86ce-19e328056d9b",
+      "id": "95131ed9-e16d-4e97-bf79-cd774bba580f",
       "name": "puxa_agendamentos5",
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       },
       "onError": "continueRegularOutput"
@@ -2884,10 +2884,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        280,
-        3320
+        -240,
+        3280
       ],
-      "id": "3bac16d9-da3e-44b3-878a-f0ddbe217b44",
+      "id": "45f472b7-a18f-482a-a7c2-a60a98829505",
       "name": "Loop Over Items5"
     },
     {
@@ -2895,13 +2895,13 @@
         "operation": "limit",
         "keep": "lastItems"
       },
-      "id": "440435f9-7d5a-4c4f-bdb2-3f539d9d3791",
+      "id": "6efe3a07-569b-4967-82b6-e3a4de64c57c",
       "name": "pesquisa_lead10",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        760,
-        3420
+        240,
+        3380
       ]
     },
     {
@@ -2926,43 +2926,43 @@
           "detailedOutput": false
         }
       },
-      "id": "30ed141e-32bf-464f-a3be-2496b5d74b26",
+      "id": "19dbcb33-7c61-4107-9a18-ed7c41bfaf17",
       "name": "pesquisa_lead11",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        560,
-        3420
+        40,
+        3380
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
     {
       "parameters": {},
-      "id": "e19a6586-7238-408e-8f3f-a51fffef720d",
+      "id": "4a65c679-0a97-42ab-ba40-b2a17ad7471b",
       "name": "Não faz nada10",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1760,
-        3740
+        1240,
+        3700
       ]
     },
     {
       "parameters": {
         "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
       },
-      "id": "3eba93e4-919c-4e27-97e6-70348a0e8e2f",
+      "id": "ee0af36a-660d-40ff-8cb3-89a38341c282",
       "name": "Retorna Output Aleatorio5",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1160,
-        3420
+        640,
+        3380
       ]
     },
     {
@@ -2987,13 +2987,13 @@
         },
         "fallbackOutput": 3
       },
-      "id": "46fec05e-ae23-4668-89c3-c1a6034bb001",
+      "id": "cfc74b52-ead0-4f0f-84e9-1b7c725f494a",
       "name": "Saida Aleatoria5",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        1340,
-        3400
+        820,
+        3360
       ]
     },
     {
@@ -3001,13 +3001,13 @@
         "amount": 40,
         "unit": "seconds"
       },
-      "id": "a83539b5-1bdc-469c-803c-17461e53de4f",
+      "id": "b4404567-d57d-47d9-ab9d-79dff91dda70",
       "name": "40s5",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1560,
-        3360
+        1040,
+        3320
       ],
       "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
     },
@@ -3016,13 +3016,13 @@
         "amount": 45,
         "unit": "seconds"
       },
-      "id": "b59abd7f-a81c-4733-9f50-34911a6e8298",
+      "id": "15283253-bd51-4bfa-826d-4c570ee9d775",
       "name": "45s5",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1560,
-        3500
+        1040,
+        3460
       ],
       "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
     },
@@ -3031,13 +3031,13 @@
         "amount": 50,
         "unit": "seconds"
       },
-      "id": "fad29988-0339-4861-bd31-11f261c1311b",
+      "id": "de0e0d58-51ed-46a9-89c9-5d890cf6cfcd",
       "name": "50s5",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1560,
-        3640
+        1040,
+        3600
       ],
       "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
     },
@@ -3046,13 +3046,13 @@
         "amount": 53,
         "unit": "seconds"
       },
-      "id": "47983021-ea94-4a7d-9180-92bb0a3d78df",
+      "id": "506bbb27-e420-4335-82e7-79a20749afb7",
       "name": "53s5",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1560,
-        3780
+        1040,
+        3740
       ],
       "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
     },
@@ -3107,24 +3107,24 @@
           }
         }
       },
-      "id": "0bf1a52f-5694-44cb-bb9a-6bc9d03a0695",
+      "id": "ceb9ac94-0309-4551-a46a-373694263589",
       "name": "EnviaMensagemTexto4",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        940,
-        3420
+        420,
+        3380
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "1285562f-5871-432f-a4e9-d25e6d6f2bbb",
+      "id": "ea12ce46-3a3f-4bea-88f2-39de605c29a9",
       "name": "Não faz nada11",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        520,
-        3280
+        0,
+        3240
       ]
     },
     {
@@ -3144,10 +3144,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -160,
-        3320
+        -680,
+        3280
       ],
-      "id": "81420ae6-30d5-4c89-a41c-0777f501baa5",
+      "id": "a5edbdfe-1908-46da-b0b0-eb3a6cb5cb9d",
       "name": "quarta_18h"
     },
     {
@@ -3159,16 +3159,16 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        40,
-        3980
+        -480,
+        3940
       ],
-      "id": "65d70526-dedb-453f-a409-ff7c2c4d1aa6",
+      "id": "586b2242-66e8-4ef3-93e2-6c191fa17439",
       "name": "puxa_agendamentos6",
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       },
       "onError": "continueRegularOutput"
@@ -3180,10 +3180,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        260,
-        3980
+        -260,
+        3940
       ],
-      "id": "505d5d4b-f9b5-40d6-b4a4-056df905f82d",
+      "id": "6d815bad-dfd8-4c2f-9690-5f462b6128de",
       "name": "Loop Over Items6"
     },
     {
@@ -3191,13 +3191,13 @@
         "operation": "limit",
         "keep": "lastItems"
       },
-      "id": "142da31e-0a31-4fcf-9a3a-da6f271cb3a7",
+      "id": "a740a7ed-01e3-446c-a997-6b9100b8a38c",
       "name": "pesquisa_lead12",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        720,
-        4080
+        200,
+        4040
       ]
     },
     {
@@ -3222,43 +3222,43 @@
           "detailedOutput": false
         }
       },
-      "id": "d6a3ffa7-0f68-44ec-bd2e-0f8c588dc0af",
+      "id": "71c78e77-7a80-4525-8c25-f287d8a239e2",
       "name": "pesquisa_lead13",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        520,
-        4080
+        0,
+        4040
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
     {
       "parameters": {},
-      "id": "4071e5ad-67f2-4a65-9232-0189346d23f9",
+      "id": "cec44c54-d46d-4957-9dd8-6052e7bf215f",
       "name": "Não faz nada12",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1740,
-        4400
+        1220,
+        4360
       ]
     },
     {
       "parameters": {
         "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
       },
-      "id": "a677ff56-4892-4129-94e5-83f3f0fd8149",
+      "id": "e75ae52f-0139-47b3-92a5-9bc676d5ec56",
       "name": "Retorna Output Aleatorio6",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1140,
-        4080
+        620,
+        4040
       ]
     },
     {
@@ -3283,13 +3283,13 @@
         },
         "fallbackOutput": 3
       },
-      "id": "f1bc0e28-8858-4c7c-a6cf-9d1b4a42c74e",
+      "id": "6651acf0-1f40-46d8-ab6d-c23a24d151b4",
       "name": "Saida Aleatoria6",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        1320,
-        4060
+        800,
+        4020
       ]
     },
     {
@@ -3297,13 +3297,13 @@
         "amount": 40,
         "unit": "seconds"
       },
-      "id": "4cbb9375-1e3a-4015-a733-13be08eb3583",
+      "id": "bbd7b87a-089d-4a20-84e3-5895d00c4efd",
       "name": "40s6",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1540,
-        4020
+        1020,
+        3980
       ],
       "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
     },
@@ -3312,13 +3312,13 @@
         "amount": 45,
         "unit": "seconds"
       },
-      "id": "c3f41b17-5236-465a-9569-7f05430f5637",
+      "id": "ce244e7c-72dc-4834-8a1f-0923d7ece35c",
       "name": "45s6",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1540,
-        4160
+        1020,
+        4120
       ],
       "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
     },
@@ -3327,13 +3327,13 @@
         "amount": 50,
         "unit": "seconds"
       },
-      "id": "712d94c5-84ac-468a-893c-1369dc6c31da",
+      "id": "404b1a9e-0e20-4de2-8cbd-7867f420170c",
       "name": "50s6",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1540,
-        4300
+        1020,
+        4260
       ],
       "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
     },
@@ -3342,13 +3342,13 @@
         "amount": 53,
         "unit": "seconds"
       },
-      "id": "7f1b188f-3651-4d8c-b707-73d6e25d97e7",
+      "id": "2142f31c-a576-4a57-bdaa-61b022e2ef64",
       "name": "53s6",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1540,
-        4440
+        1020,
+        4400
       ],
       "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
     },
@@ -3403,24 +3403,24 @@
           }
         }
       },
-      "id": "af24afe0-38e3-428d-91ae-db583f11528d",
+      "id": "90e8c09c-367a-46b6-92b6-c0fcf17091eb",
       "name": "EnviaMensagemTexto5",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        920,
-        4080
+        400,
+        4040
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "b9125ff6-79a4-4f03-b659-1acfbd2ef466",
+      "id": "5633be76-5448-49da-87ee-d6b1653d06cb",
       "name": "Não faz nada13",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        500,
-        3940
+        -20,
+        3900
       ]
     },
     {
@@ -3440,10 +3440,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -180,
-        3980
+        -700,
+        3940
       ],
-      "id": "18a0fe9a-ae36-454d-80cc-f00ec65749eb",
+      "id": "0cf4fcbd-3901-4bdb-af90-6f55c764bcff",
       "name": "quarta_19h"
     },
     {
@@ -3455,16 +3455,16 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        0,
-        4640
+        -520,
+        4600
       ],
-      "id": "c3644a50-eecb-4520-8d06-c8c43c58b1f1",
+      "id": "dafc0d12-b155-4d74-9b51-4f74e01b332a",
       "name": "puxa_agendamentos7",
       "alwaysOutputData": true,
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       },
       "onError": "continueRegularOutput"
@@ -3476,10 +3476,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        220,
-        4640
+        -300,
+        4600
       ],
-      "id": "bc3fc8f9-c6c7-4e31-9b64-98f63a2807cb",
+      "id": "e8e560aa-edf3-4768-9e6e-e93e399ce2a1",
       "name": "Loop Over Items7"
     },
     {
@@ -3487,13 +3487,13 @@
         "operation": "limit",
         "keep": "lastItems"
       },
-      "id": "d9c005c0-f341-4aec-a9b0-a00d8b5648da",
+      "id": "b1b17db8-7c55-40cd-a7c4-efcf999e7d75",
       "name": "pesquisa_lead14",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        680,
-        4740
+        160,
+        4700
       ]
     },
     {
@@ -3518,43 +3518,43 @@
           "detailedOutput": false
         }
       },
-      "id": "2ac5990e-d704-4c83-823b-51ef8905154c",
+      "id": "60062326-2aaf-4f1a-94fc-4cc5f5c44b47",
       "name": "pesquisa_lead15",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.1,
       "position": [
-        480,
-        4740
+        -40,
+        4700
       ],
       "credentials": {
         "mySql": {
-          "id": "gBeJmlfVOrdUXALL",
-          "name": "[MySQL][2.0] - Henry Santos"
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
         }
       }
     },
     {
       "parameters": {},
-      "id": "c37e1189-a9e0-4a86-a339-5a0420aaac85",
+      "id": "8111aecd-b960-4dc7-bb9c-609aac39756d",
       "name": "Não faz nada14",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1700,
-        5060
+        1180,
+        5020
       ]
     },
     {
       "parameters": {
         "jsCode": "return {aleatorio: Math.floor(Math.random() * 4)};"
       },
-      "id": "2815a8c4-9a5f-410f-9864-4d7ca752159d",
+      "id": "6a7ec061-6fea-424f-8f36-727740e39744",
       "name": "Retorna Output Aleatorio7",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1100,
-        4740
+        580,
+        4700
       ]
     },
     {
@@ -3579,13 +3579,13 @@
         },
         "fallbackOutput": 3
       },
-      "id": "a2dd818f-0a91-4347-88ff-71c216a73e95",
+      "id": "f9a8f9b8-3262-4c8d-b5f8-6730fc2343a6",
       "name": "Saida Aleatoria7",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 1,
       "position": [
-        1280,
-        4720
+        760,
+        4680
       ]
     },
     {
@@ -3593,13 +3593,13 @@
         "amount": 40,
         "unit": "seconds"
       },
-      "id": "a12d990f-b239-4768-99e9-0c6b41f01794",
+      "id": "d07d9268-6904-4d8f-8334-3e4cf45c2d72",
       "name": "40s7",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1500,
-        4680
+        980,
+        4640
       ],
       "webhookId": "fcc6aa9e-8b55-40be-a2cd-377ffc4de6e1"
     },
@@ -3608,13 +3608,13 @@
         "amount": 45,
         "unit": "seconds"
       },
-      "id": "9174ecf2-60dd-4c40-bcab-e321e85f7fa5",
+      "id": "4e1543a5-84f3-4e06-a428-840fde92058a",
       "name": "45s7",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1500,
-        4820
+        980,
+        4780
       ],
       "webhookId": "9dfde8ed-0087-4622-a22b-ceeeb93ac4bb"
     },
@@ -3623,13 +3623,13 @@
         "amount": 50,
         "unit": "seconds"
       },
-      "id": "a8506c46-019e-43b4-b740-a9329ccdb6d5",
+      "id": "66fbf99c-289b-4022-bcdb-42129826ce29",
       "name": "50s7",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1500,
-        4960
+        980,
+        4920
       ],
       "webhookId": "6fcfeeda-0304-42a7-968d-a1bad95b1630"
     },
@@ -3638,13 +3638,13 @@
         "amount": 53,
         "unit": "seconds"
       },
-      "id": "487fc60b-20fe-4d1c-9f78-71c05bc020c3",
+      "id": "d176ee4f-49e1-4904-b329-d229d369eacd",
       "name": "53s7",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1500,
-        5100
+        980,
+        5060
       ],
       "webhookId": "351fd17e-9ed0-4c36-829e-e0919c749b69"
     },
@@ -3699,24 +3699,24 @@
           }
         }
       },
-      "id": "4b8bf3eb-2dfd-463d-b554-d33dd1de04c0",
+      "id": "0810d445-60a5-45fb-a0e5-65b2e76bb154",
       "name": "EnviaMensagemTexto6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        880,
-        4740
+        360,
+        4700
       ],
       "typeVersion": 4
     },
     {
       "parameters": {},
-      "id": "f9c2f21a-dbdf-47f2-a6c9-d391df5a6028",
+      "id": "041ba150-945a-420c-ac7b-3fd08665a5b2",
       "name": "Não faz nada15",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        460,
-        4600
+        -60,
+        4560
       ]
     },
     {
@@ -3737,21 +3737,18 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -220,
-        4640
+        -740,
+        4600
       ],
-      "id": "fbc436fa-8055-4cd2-a647-8c75410eeb63",
+      "id": "1d5d7bfa-0964-41da-928d-430fc9df0855",
       "name": "quarta_19h10m"
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": {
     "node:domingo_11h": {
@@ -3781,6 +3778,6 @@
   },
   "tags": [],
   "triggerCount": 8,
-  "updatedAt": "2025-01-15T17:28:04.718Z",
-  "versionId": "57ab8f7a-b4ab-436e-a57b-9cc01b23dfe7"
+  "updatedAt": "2025-02-01T19:35:06.675Z",
+  "versionId": "058005ef-c12d-4d76-9608-667eea0e2b5f"
 }
