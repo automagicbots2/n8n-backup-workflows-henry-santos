@@ -97,8 +97,8 @@
       ]
     }
   },
-  "createdAt": "2024-11-01T19:32:36.430Z",
-  "id": "RSqXhmxbmH2zSsr4",
+  "createdAt": "2025-02-01T19:22:09.593Z",
+  "id": "UjPTPgQjGL3nQue4",
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -109,13 +109,13 @@
         "operation": "limit",
         "keep": "lastItems"
       },
-      "id": "249433e4-9210-4277-bf35-57601ac87cbc",
+      "id": "31e96d88-c4b6-4657-9178-ac25a99c8918",
       "name": "Item Lists6",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        540,
-        -60
+        40,
+        -100
       ]
     },
     {
@@ -134,21 +134,21 @@
         },
         "options": {}
       },
-      "id": "5907c503-d26b-4f7f-a08b-511ab6483ac7",
+      "id": "e102248c-9227-4732-9cdf-281c4896da2d",
       "name": "le_planilha6",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        60,
-        120
+        -440,
+        80
       ],
       "retryOnFail": true,
       "maxTries": 5,
       "waitBetweenTries": 5000,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "kSS8cTZsJdfO7Y4i",
-          "name": "[Google Sheets][2.0] - Henry Santos"
+          "id": "5RQWIQOXyaILIRPq",
+          "name": "[Google Sheets] - Automagic Bots - Auth"
         }
       }
     },
@@ -156,37 +156,37 @@
       "parameters": {
         "options": {}
       },
-      "id": "4376618a-fd61-4aa5-81d1-7e1d5013c13c",
+      "id": "d6698fc3-2ba7-4912-ad04-23eb8b3c3145",
       "name": "separa_em_lotes6",
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        280,
-        120
+        -220,
+        80
       ]
     },
     {
       "parameters": {},
-      "id": "e09f3c15-793d-4e06-8013-f80d670cbe79",
+      "id": "f65e1098-a71d-4daa-a534-471cedf73615",
       "name": "Não faz nada6",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1120,
-        140
+        620,
+        100
       ]
     },
     {
       "parameters": {
         "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes6\"].json[\"telefone\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
       },
-      "id": "4fdd0342-2cfa-410c-b6f3-8dd27562edd7",
+      "id": "5202e52e-d53f-4517-a4a2-88c37f34ec80",
       "name": "Code6",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        520,
-        140
+        20,
+        100
       ]
     },
     {
@@ -194,13 +194,13 @@
         "amount": 2,
         "unit": "seconds"
       },
-      "id": "69958050-96cf-4802-90ae-44572eb8de65",
+      "id": "507ba965-0e55-4817-9cfd-0ebc3a890f30",
       "name": "2s6",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        920,
-        140
+        420,
+        100
       ],
       "webhookId": "c35b5f9f-ddcb-4914-a93d-9de3a2bdadbc"
     },
@@ -211,18 +211,18 @@
         "template": "software_tira_duvidas_domingo|pt_BR",
         "requestOptions": {}
       },
-      "id": "f596cef1-7740-4984-ad98-3115e16aa296",
+      "id": "3d75d0f3-190b-4cdc-92ec-727514edba52",
       "name": "WhatsApp Business Cloud15",
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        720,
-        140
+        220,
+        100
       ],
       "credentials": {
         "whatsAppApi": {
-          "id": "B2wsurT3J6v50Zh1",
-          "name": "[WhatsApp] - Henry"
+          "id": "qvTMtcy6ArFNxVDB",
+          "name": "[WhatsApp] - Henry Santos"
         }
       },
       "onError": "continueRegularOutput"
@@ -234,18 +234,18 @@
         "template": "disparo_finalizado|pt_BR",
         "requestOptions": {}
       },
-      "id": "00ed3f4c-9ddc-47de-9c4b-fd4adf50ae4b",
+      "id": "b2ed5453-c689-4d3d-a8ec-739eca93937d",
       "name": "WhatsApp Business Cloud16",
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        740,
-        -60
+        240,
+        -100
       ],
       "credentials": {
         "whatsAppApi": {
-          "id": "B2wsurT3J6v50Zh1",
-          "name": "[WhatsApp] - Henry"
+          "id": "qvTMtcy6ArFNxVDB",
+          "name": "[WhatsApp] - Henry Santos"
         }
       },
       "onError": "continueRegularOutput"
@@ -261,36 +261,29 @@
           ]
         }
       },
-      "id": "e028893d-e885-489d-991e-14daf86522f9",
+      "id": "607345c9-a4c7-45ed-86bb-9485bf054a3b",
       "name": "Todo Domingo ás 20hrs",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -140,
-        120
+        -640,
+        80
       ]
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "9WrqNFN2jagHPbWV"
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
   },
   "staticData": {
-    "node:31/10 - 8:15hrs": {
-      "recurrencyRules": []
-    },
     "node:Todo Domingo ás 20hrs": {
-      "recurrencyRules": [],
       "recurrenceRules": []
     }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-13T17:00:06.800Z",
-  "versionId": "f2138f4d-19ca-4344-a65f-f29b7c43ebe5"
+  "updatedAt": "2025-02-01T19:22:39.780Z",
+  "versionId": "b8424dd1-b863-4ed1-92dc-a9c6d54ad3f8"
 }
