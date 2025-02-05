@@ -101,7 +101,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "CALL busca_usuario('{{ $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"faturamento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"cnpj\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"cpf\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] }}');",
+        "query": "CALL busca_usuario( {{ $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"instagram\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"instagram\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"cnpj\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"cnpj\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"cpf\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"cpf\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] + `'` : 'NULL' }});",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -185,10 +185,6 @@
               "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] || NULL }}"
             },
             {
-              "column": "faturamento",
-              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"faturamento\"] || NULL }}"
-            },
-            {
               "column": "cpf",
               "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"cpf\"] || NULL }}"
             },
@@ -230,7 +226,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "CALL busca_usuario('{{ $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"faturamento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"instagram\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"cnpj\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"cpf\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] }}');",
+        "query": "CALL busca_usuario( {{ $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"email\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"instagram\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"instagram\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"telefone\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"cnpj\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"cnpj\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"cpf\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"cpf\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"nome\"] + `'` : 'NULL' }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] ? `'` + $node[\"fluxo_chamado\"].json[\"body\"][\"sobrenome\"] + `'` : 'NULL' }});",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -323,6 +319,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-05T01:30:12.749Z",
-  "versionId": "af666ba7-6a10-43ba-9d6b-c9aab3791794"
+  "updatedAt": "2025-02-05T13:57:33.612Z",
+  "versionId": "1f5410fd-36f1-4604-baef-37e3d0d27f42"
 }
