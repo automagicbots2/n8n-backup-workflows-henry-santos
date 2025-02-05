@@ -639,16 +639,8 @@
               "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
             },
             {
-              "name": "instagram",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] || \"\" }}"
-            },
-            {
-              "name": "cpf",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"cpf\"] || \"\" }}"
-            },
-            {
-              "name": "cnpj",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"cnpj\"] || \"\" }}"
+              "name": "faturamento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"faturamento\"] }}"
             }
           ]
         },
@@ -2184,27 +2176,31 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-vW5FMAP5z6LVS30riwBuAw",
-            "deliveryTag": 592,
+            "consumerTag": "amq.ctag-BVKV2xRuSE8tYbqkWVHRdg",
+            "deliveryTag": 29,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Fila de Ações de Funis"
           },
-          "properties": {},
+          "properties": {
+            "headers": {}
+          },
           "content": {
-            "nome": "Carlita",
-            "sobrenome": "",
-            "email": "carlitasalao@hotmail.com",
-            "telefone": "553399510228",
-            "utm_source": "wpp",
-            "utm_campaign": "quente",
-            "utm_term": "leads-grupos-antigos",
-            "utm_medium": "grupo",
-            "utm_content": "nao-espere-o-caos",
+            "nome": "Teste",
+            "sobrenome": "Automagic",
+            "email": "mateusteste@gmail.com",
+            "telefone": "553192796934",
+            "utm_source": "facebook",
+            "utm_campaign": "",
+            "utm_term": "ig",
+            "utm_medium": "ig",
+            "utm_content": "ia-sem-codigo",
             "id_funil": "12",
-            "instagram": "carlita salao",
+            "instagram": "",
             "id_forms": "1",
-            "tipo_forms": "Cadastro"
+            "tipo_forms": "Cadastro",
+            "faturamento": "A - Até 15 mil/mês",
+            "form_name": "Formulário Web FEV25 A"
           }
         }
       }
@@ -2218,6 +2214,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-01T19:13:37.657Z",
-  "versionId": "9576320a-6374-4f25-8258-9dbdf1dbb168"
+  "updatedAt": "2025-02-05T00:51:18.799Z",
+  "versionId": "2d0dd7ef-c388-43a0-8837-4a8b98763c8e"
 }
