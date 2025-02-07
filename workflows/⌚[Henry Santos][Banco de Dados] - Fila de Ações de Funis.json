@@ -2172,31 +2172,65 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-BVKV2xRuSE8tYbqkWVHRdg",
-            "deliveryTag": 29,
-            "redelivered": false,
+            "consumerTag": "amq.ctag-DPE1_pnXTmYlj0tLAPOUTg",
+            "deliveryTag": 45,
+            "redelivered": true,
             "exchange": "",
             "routingKey": "Fila de Ações de Funis"
           },
           "properties": {
-            "headers": {}
+            "headers": {
+              "x-delivery-count": 20
+            }
           },
           "content": {
-            "nome": "Teste",
-            "sobrenome": "Automagic",
-            "email": "mateusteste@gmail.com",
-            "telefone": "553192796934",
-            "utm_source": "facebook",
+            "nome": "Silvanize",
+            "sobrenome": "Gomes da Silva",
+            "nome_completo": "Silvanize Gomes da Silva",
+            "email": "silvanize.gomes@gmail.com",
+            "telefone": "557181462158",
+            "cpf": "",
+            "utm_source": "",
             "utm_campaign": "",
-            "utm_term": "ig",
-            "utm_medium": "ig",
-            "utm_content": "ia-sem-codigo",
-            "id_funil": "12",
-            "instagram": "",
-            "id_forms": "1",
-            "tipo_forms": "Cadastro",
-            "faturamento": "A - Até 15 mil/mês",
-            "form_name": "Formulário Web FEV25 A"
+            "utm_term": "",
+            "utm_medium": "",
+            "utm_content": "",
+            "form_id": "D0RVZXPA9Y",
+            "form_name": "Precificação Lucrativa para Salões Autoadministráveis",
+            "value": 97,
+            "transaction_id": 83853445,
+            "net_value": 91.25,
+            "trans_status": "Compra Aprovada",
+            "payment_method": "PIX",
+            "refund_date": "",
+            "event_date": "2025-02-01 08:34:14",
+            "payment_date": "2025-02-01 08:35:28",
+            "product_type": "Cobrança única",
+            "product_id": 2637056,
+            "product_name": "Precificação Lucrativa para Salões Autoadministráveis",
+            "warranty_date": "2025-02-08",
+            "offer_code": "",
+            "discount_coupon": "",
+            "street": "Rua Sauípe",
+            "address_number": "S/N",
+            "country": "BR",
+            "district": "Alphaville (Abrantes)",
+            "address_complement": "Quadra D2 Lote 23",
+            "city": "Camaçari",
+            "address_state": "BA",
+            "zipcode": "42.822-032",
+            "affiliate_value": "",
+            "gateway_comission": 5.75,
+            "billet_barcode": "",
+            "currency": "BRL",
+            "bankslip": "",
+            "recurrenceExpirationDate": "",
+            "cancelledDate": "",
+            "id_funil": "14",
+            "tipo_forms": "Checkout",
+            "cnpj": "28.061.922/0001-28",
+            "id_forms": "5",
+            "installments": ""
           }
         }
       }
@@ -2210,6 +2244,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-05T13:59:31.561Z",
-  "versionId": "2c56d3a2-20a9-4c9e-af43-b1526ec03c87"
+  "updatedAt": "2025-02-06T22:50:56.261Z",
+  "versionId": "363d00cb-bfcf-41b9-9b78-e16788ff2d55"
 }
