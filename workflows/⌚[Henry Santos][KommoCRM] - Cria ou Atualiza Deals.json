@@ -1416,44 +1416,6 @@
       ],
       "id": "aaf6e352-7bdc-4225-b1b3-c8a61ad9d24a",
       "name": "qualificacao_preenchida"
-    },
-    {
-      "parameters": {
-        "url": "=https://veronicaburgel15.kommo.com/leads/16308874",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "oAuth2Api",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "accept",
-              "value": "application/json"
-            }
-          ]
-        },
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
-      },
-      "id": "df415c1f-00e2-4801-aa6c-a039b41b7f1b",
-      "name": "get_deal1",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        -2380,
-        80
-      ],
-      "credentials": {
-        "oAuth2Api": {
-          "id": "iGd90KYctpkhwimG",
-          "name": "[KommoCRM] - Henry Santos"
-        }
-      },
-      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {
@@ -1550,6 +1512,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-07T02:17:08.918Z",
-  "versionId": "c04da4db-22d7-46bc-ac0c-d4f1bf308392"
+  "updatedAt": "2025-02-07T11:57:48.896Z",
+  "versionId": "589e472a-3254-4f28-b555-786fdf6bb730"
 }
