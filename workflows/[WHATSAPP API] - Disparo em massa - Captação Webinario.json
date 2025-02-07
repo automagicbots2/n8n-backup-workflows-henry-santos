@@ -1,0 +1,438 @@
+{
+  "active": false,
+  "connections": {
+    "Item Lists6": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_planilha6": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separa_em_lotes6": {
+      "main": [
+        [
+          {
+            "node": "Item Lists6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não faz nada6": {
+      "main": [
+        [
+          {
+            "node": "separa_em_lotes6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code6": {
+      "main": [
+        [
+          {
+            "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2s6": {
+      "main": [
+        [
+          {
+            "node": "Não faz nada6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "09/02 às 18 hrs": {
+      "main": [
+        [
+          {
+            "node": "verifica_data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "verifica_data": {
+      "main": [
+        [
+          {
+            "node": "le_planilha6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "enviar video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "enviar video": {
+      "main": [
+        [
+          {
+            "node": "2s6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-07T13:34:17.108Z",
+  "id": "rG67pjSkdYK83jQJ",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[WHATSAPP API] - Disparo em massa - Captação Webinario",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "limit",
+        "keep": "lastItems"
+      },
+      "id": "4ebff781-3bac-4bb6-9646-8bd124f0bc5b",
+      "name": "Item Lists6",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        40,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 196444184,
+          "mode": "list",
+          "cachedResultName": "teste",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LphZOAErogV5YOb7oOMwAYVuMJD1Z9rtZOoHVVxAmVQ/edit#gid=196444184"
+        },
+        "options": {}
+      },
+      "id": "96ac369f-0dd9-4d7d-85a7-df84d74d9808",
+      "name": "le_planilha6",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        -440,
+        80
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5RQWIQOXyaILIRPq",
+          "name": "[Google Sheets] - Automagic Bots - Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "91e959bc-f9be-443f-bdb7-9d7bf37abd26",
+      "name": "separa_em_lotes6",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -220,
+        80
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "c8ba5cd0-e68e-4daa-808d-516708081849",
+      "name": "Não faz nada6",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        860,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const telefoneOriginal = $node[\"separa_em_lotes6\"].json[\"telefone\"].toString();\n\n// Removendo caracteres não numéricos\nconst telefoneLimpo = telefoneOriginal.replace(/\\D/g, '');\n\n// Define o DDI padrão\nconst ddiPadrao = '55';\n\n// Extrai o DDD e o número, considerando que o telefone limpo pode já vir com o DDI\nlet ddd, numero;\nif (telefoneLimpo.startsWith(ddiPadrao)) {\n    // Se o número já começa com o DDI padrão, extrai sem o DDI\n    ddd = telefoneLimpo.slice(2, 4);\n    numero = telefoneLimpo.slice(4);\n} else {\n    // Se o número não contém o DDI, extrai o DDD e o número como estão\n    ddd = telefoneLimpo.slice(0, 2);\n    numero = telefoneLimpo.slice(2);\n}\n\n// Monta o número de telefone final, adicionando o DDI apenas se não estava presente\nconst telefoneFinal = telefoneLimpo.startsWith(ddiPadrao) ? ddiPadrao + ddd + numero : ddiPadrao + telefoneLimpo;\n\nreturn { telefonefinal: telefoneFinal };\n"
+      },
+      "id": "a74b329d-b021-484c-a9a9-d0dffac29f04",
+      "name": "Code6",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        20,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "48de2fe5-5c7a-4244-8a11-9ac704e8aae3",
+      "name": "2s6",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        620,
+        100
+      ],
+      "webhookId": "2b6118a2-47ed-4f0c-aa20-92703c489fd8"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "+5531992796934",
+        "template": "disparo_finalizado|pt_BR",
+        "requestOptions": {}
+      },
+      "id": "392bde2b-1473-493d-acae-adc5b933feb6",
+      "name": "WhatsApp Business Cloud16",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -100
+      ],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "qvTMtcy6ArFNxVDB",
+          "name": "[WhatsApp] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 18
+            }
+          ]
+        }
+      },
+      "id": "ced855f6-57e5-4904-bd17-28bf3f6b0988",
+      "name": "09/02 às 18 hrs",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -880,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "6e0dc768-c500-4f44-afeb-462ab225bf6a",
+              "leftValue": "={{ $now.toFormat('dd/MM/yyyy') }}",
+              "rightValue": "07/02/2025",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8b92a243-c3da-4792-bf2d-d4417283dc5d",
+      "name": "verifica_data",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -680,
+        80
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        260
+      ],
+      "id": "c8c8ccb6-4cb9-415a-be55-ba70a3e0cbec",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "telefone",
+              "stringValue": "+554840426391"
+            },
+            {
+              "name": "nome_template",
+              "stringValue": "09_02_18h"
+            },
+            {
+              "name": "id_telefone",
+              "stringValue": "417653434771940"
+            },
+            {
+              "name": "token",
+              "stringValue": "Bearer EAASQdr15ZA1kBOz49XNdms7kNFup0SLyBp4CPwZBEYu8ZAshLBJg3ZCdnFtIdk3B6xRj6lArpJ8kPdg2AwtLGZA1mbF8G8aqjjKM5ZAVKKyCExD4d8qJZCdNMDNfx3AZAZAKp0CAsqgZCDPXuKLVJxdnqjs86B4jQlZBTVg07Ihq1qu1KOnBjC0qmM97SsRaYzZBvCSb"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a4f6d882-968c-4af6-aa41-39fdd3c6e815",
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        220,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v19.0/{{ $node[\"variaveis\"].json[\"id_telefone\"] }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ $node[\"variaveis\"].json[\"token\"] }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "to",
+              "value": "=+{{ $node[\"Code6\"].json[\"telefonefinal\"] }}"
+            },
+            {
+              "name": "type",
+              "value": "template"
+            },
+            {
+              "name": "template.name",
+              "value": "={{ $node[\"variaveis\"].json[\"nome_template\"] }}"
+            },
+            {
+              "name": "template.language.code",
+              "value": "pt_BR"
+            },
+            {
+              "name": "template.components[0].type",
+              "value": "header"
+            },
+            {
+              "name": "template.components[0].parameters[0].type",
+              "value": "video"
+            },
+            {
+              "name": "template.components[0].parameters[0].video.link",
+              "value": "https://t3135484.p.clickup-attachments.com/t3135484/db0c8386-011d-4966-8090-99047f61e88b/VID%2018%20-%201280X720.mp4"
+            },
+            {
+              "name": "messaging_product",
+              "value": "whatsapp"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0fe8ab9a-65c3-48eb-bd49-846eb8f0745e",
+      "name": "enviar video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        420,
+        100
+      ],
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
+  },
+  "staticData": {
+    "node:Todo Domingo ás 20hrs": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-02-07T14:33:12.044Z",
+  "versionId": "637bfda4-ae68-4a2a-b851-71fd5682ad16"
+}
