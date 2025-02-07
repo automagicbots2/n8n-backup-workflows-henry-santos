@@ -1416,6 +1416,44 @@
       ],
       "id": "aaf6e352-7bdc-4225-b1b3-c8a61ad9d24a",
       "name": "qualificacao_preenchida"
+    },
+    {
+      "parameters": {
+        "url": "=https://veronicaburgel15.kommo.com/leads/16308874",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "df415c1f-00e2-4801-aa6c-a039b41b7f1b",
+      "name": "get_deal1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -2380,
+        80
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "iGd90KYctpkhwimG",
+          "name": "[KommoCRM] - Henry Santos"
+        }
+      },
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {
@@ -1425,7 +1463,7 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "axios/1.7.4",
-            "content-length": "472",
+            "content-length": "1286",
             "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
             "accept-encoding": "gzip, compress, deflate, br",
             "content-type": "application/json",
@@ -1433,30 +1471,65 @@
             "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
-            "x-forwarded-server": "b71525949d32",
+            "x-forwarded-server": "9374371a5d91",
             "x-real-ip": "172.18.0.1"
           },
           "params": {},
           "query": {},
           "body": {
-            "id_etapa_funil": 1,
-            "id_funil": "12",
-            "id_user": 57,
+            "id_etapa_funil": 3,
+            "id_funil": "14",
+            "id_user": 166,
             "payload": {
-              "nome": "Tamies",
-              "sobrenome": "",
-              "email": "tamires.ferreira.jacinto@gmail.com",
-              "telefone": "558781528104",
-              "utm_source": "ig",
-              "utm_campaign": "[LF] [WB] [WB0125] [CAPTAÇÃO] [VENDAS] [AUTO] [Q] Públicos Quentes Cluster",
-              "utm_term": "WB0125_AD008",
-              "utm_medium": "Instagram_Feed",
-              "utm_content": "01 - [AUTO] [Q] Seguidores",
-              "id_funil": "12",
-              "instagram": "tamiresfj",
-              "id_forms": "1",
-              "tipo_forms": "Cadastro"
+              "nome": "Silvanize",
+              "sobrenome": "Gomes da Silva",
+              "nome_completo": "Silvanize Gomes da Silva",
+              "email": "silvanize.gomes@gmail.com",
+              "telefone": "557181462158",
+              "cpf": "",
+              "utm_source": "",
+              "utm_campaign": "",
+              "utm_term": "",
+              "utm_medium": "",
+              "utm_content": "",
+              "form_id": "D0RVZXPA9Y",
+              "form_name": "Precificação Lucrativa para Salões Autoadministráveis",
+              "value": 97,
+              "transaction_id": 83853445,
+              "net_value": 91.25,
+              "trans_status": "Compra Aprovada",
+              "payment_method": "PIX",
+              "refund_date": "",
+              "event_date": "2025-02-01 08:34:14",
+              "payment_date": "2025-02-01 08:35:28",
+              "product_type": "Cobrança única",
+              "product_id": 2637056,
+              "product_name": "Precificação Lucrativa para Salões Autoadministráveis",
+              "warranty_date": "2025-02-08",
+              "offer_code": "",
+              "discount_coupon": "",
+              "street": "Rua Sauípe",
+              "address_number": "S/N",
+              "country": "BR",
+              "district": "Alphaville (Abrantes)",
+              "address_complement": "Quadra D2 Lote 23",
+              "city": "Camaçari",
+              "address_state": "BA",
+              "zipcode": "42.822-032",
+              "affiliate_value": "",
+              "gateway_comission": 5.75,
+              "billet_barcode": "",
+              "currency": "BRL",
+              "bankslip": "",
+              "recurrenceExpirationDate": "",
+              "cancelledDate": "",
+              "id_funil": "14",
+              "tipo_forms": "Checkout",
+              "cnpj": "28.061.922/0001-28",
+              "id_forms": "5",
+              "installments": ""
             },
+            "id_situacao_checkout": 2,
             "qualificacao": ""
           },
           "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/cria-atualiza-deal-crm",
@@ -1477,6 +1550,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-01T19:06:25.603Z",
-  "versionId": "24e63f34-15a8-4638-96d4-dd8e9efb5d26"
+  "updatedAt": "2025-02-07T02:17:08.918Z",
+  "versionId": "c04da4db-22d7-46bc-ac0c-d4f1bf308392"
 }
