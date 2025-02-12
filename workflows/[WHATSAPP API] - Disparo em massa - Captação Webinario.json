@@ -1884,7 +1884,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code6\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code6\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_11_02_2025|pt_BR",
         "requestOptions": {}
       },
@@ -2131,7 +2131,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_14_02_2025|pt_BR",
         "requestOptions": {}
       },
@@ -2154,7 +2154,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -2397,7 +2397,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code1\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code1\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_16_02_2025|pt_BR",
         "requestOptions": {}
       },
@@ -2420,7 +2420,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code1\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -2663,7 +2663,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code2\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code2\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_16_02_2025_17h|pt_BR",
         "requestOptions": {}
       },
@@ -2686,7 +2686,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code2\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -2929,7 +2929,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code3\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code3\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_17_02_2025_v2|pt_BR",
         "requestOptions": {}
       },
@@ -2952,7 +2952,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code3\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -3195,7 +3195,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code4\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code4\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_19_02_2025|pt_BR",
         "requestOptions": {}
       },
@@ -3218,7 +3218,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code4\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -3461,7 +3461,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code5\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code5\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_20_02_2025|pt_BR",
         "requestOptions": {}
       },
@@ -3484,7 +3484,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code5\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -3727,7 +3727,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code7\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code7\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_21_02_2025|pt_BR",
         "requestOptions": {}
       },
@@ -3750,7 +3750,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code7\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -3993,7 +3993,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code8\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code8\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_22_02_2025|pt_BR",
         "requestOptions": {}
       },
@@ -4016,7 +4016,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code8\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -4259,7 +4259,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code9\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code9\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_23_02_2025|pt_BR",
         "requestOptions": {}
       },
@@ -4282,7 +4282,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code9\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -4525,7 +4525,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code10\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code10\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_23_02_2025_16h|pt_BR",
         "requestOptions": {}
       },
@@ -4548,7 +4548,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code10\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -4791,7 +4791,7 @@
     {
       "parameters": {
         "phoneNumberId": "417653434771940",
-        "recipientPhoneNumber": "=+{{ $node[\"Code11\"].json[\"telefonefinal\"] }}",
+        "recipientPhoneNumber": "=+{{ $node[\"Code11\"].json[\"whatsapp\"] }}",
         "template": "webfev25_convite_23_02_2025_17h|pt_BR",
         "requestOptions": {}
       },
@@ -4814,7 +4814,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code6\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 12\n  AND data_cadastro >= '2025-02-05 00:00:00'\n  AND telefone = '{{ $node[\"Code11\"].json[\"whatsapp\"] }}'\n  LIMIT 1;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -4891,8 +4891,8 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 12,
-              "triggerAtMinute": 10
+              "triggerAtHour": 15,
+              "triggerAtMinute": 21
             }
           ]
         }
@@ -4968,6 +4968,6 @@
   },
   "tags": [],
   "triggerCount": 12,
-  "updatedAt": "2025-02-11T15:08:51.624Z",
-  "versionId": "374f1991-4c41-4018-824b-01dadfb63f5a"
+  "updatedAt": "2025-02-11T18:19:56.398Z",
+  "versionId": "6f84f6c5-48a0-4a60-b15e-243b68d9ba0e"
 }
