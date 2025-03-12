@@ -1,0 +1,282 @@
+{
+  "active": true,
+  "connections": {
+    "pesquisa_fluxo_funil": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_user": {
+      "main": [
+        [
+          {
+            "node": "trata_telefone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_fluxo_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variaveis": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "trata_telefone": {
+      "main": [
+        [
+          {
+            "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-12T14:28:08.426Z",
+  "id": "ygBV4V44lzGySuYC",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Henry Santos][APIOFICIAL] - Envia Mensagem API Oficial",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "fluxo_funil",
+          "mode": "list",
+          "cachedResultName": "fluxo_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_etapa_funil\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f70fcd2b-5ffc-4638-b5d7-f19061d42547",
+      "name": "pesquisa_fluxo_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        120,
+        -40
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0734cdf0-ff09-4b87-8477-98725adc8aa5",
+              "name": "nome",
+              "value": "={{ $node[\"pesquisa_user\"].json[\"nome\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "35f3562f-675a-4e40-ac9c-c128a7cbe248",
+              "name": "id_fluxo",
+              "value": "={{ $node[\"pesquisa_fluxo_funil\"].json[\"id_fluxo\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "18223272-e164-493b-8704-4b74a36fad6e",
+              "name": "telefone",
+              "value": "={{ $node[\"trata_telefone\"].json[\"telefone_formatado\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c84ab885-dd60-49ae-865e-34a2b43c0bf7",
+      "name": "variaveis",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        720,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "00b0cb4b-3cfe-4aa4-88ba-0e44866ab0d8",
+      "name": "pesquisa_user",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        320,
+        -40
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "send_message_api_oficial",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -120,
+        -40
+      ],
+      "id": "da93d31b-e1fe-4f39-a7f2-e146372a9396",
+      "name": "fluxo_chamado",
+      "webhookId": "94428456-3e88-45df-afac-20a232a426a0"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "417653434771940",
+        "recipientPhoneNumber": "={{ $node[\"variaveis\"].json[\"telefone\"] }}",
+        "template": "={{ $node[\"variaveis\"].json[\"id_fluxo\"] }}|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $node[\"variaveis\"].json[\"nome\"] }}"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        940,
+        -40
+      ],
+      "id": "2ae30ab1-f654-4332-b568-f01a70f07453",
+      "name": "WhatsApp Business Cloud",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "qvTMtcy6ArFNxVDB",
+          "name": "[WhatsApp] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "function formatarTelefone(telefone) {\n    // Remove caracteres não numéricos\n    let numeroLimpo = telefone.replace(/\\D/g, '');\n\n    // Verifica se o número inclui o código do país (Brasil: 55)\n    let temCodigoPais = numeroLimpo.startsWith(\"55\");\n\n    // Remove o código do país para análise\n    let numeroSemCodigo = temCodigoPais ? numeroLimpo.slice(2) : numeroLimpo;\n\n    // Se o número tem 10 dígitos (sem DDI), adiciona o nono dígito\n    if (numeroSemCodigo.length === 10) {\n        numeroSemCodigo = numeroSemCodigo.replace(/^(\\d{2})(\\d{4})(\\d{4})$/, \"$1 9$2$3\");\n    } else if (numeroSemCodigo.length === 11) {\n        // Número já está correto\n        numeroSemCodigo = numeroSemCodigo.replace(/^(\\d{2})(\\d{5})(\\d{4})$/, \"$1 $2$3\");\n    }\n\n    // Adiciona novamente o código do país, se existia antes\n    return temCodigoPais ? \"55\" + numeroSemCodigo.replace(/\\s/g, '') : numeroSemCodigo;\n}\n\n// Pega os dados do input do nó anterior no n8n\nlet inputData = $input.all();\nlet outputData = inputData.map(item => {\n    let telefone = item.json.telefone || \"\";\n    let telefoneFormatado = formatarTelefone(telefone);\n    \n    return { json: { ...item.json, telefone_formatado: telefoneFormatado } };\n});\n\n// Retorna os dados formatados\nreturn outputData;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        -40
+      ],
+      "id": "f5f3ab7e-b4f3-4264-979f-0ada506567ce",
+      "name": "trata_telefone"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "35",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "9374371a5d91",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_etapa_funil": 10,
+            "id_user": 631
+          },
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/send_message_api_oficial",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-12T14:52:45.470Z",
+  "versionId": "44302321-14a6-4a36-a374-c6af8a2d3b06"
+}
