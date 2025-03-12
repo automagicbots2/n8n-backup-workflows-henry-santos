@@ -380,6 +380,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "send_message_api_oficial",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -534,6 +541,39 @@
         [
           {
             "node": "add_subscription_bd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_message_api_oficial": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_oficial2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_deal_crm3": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_message_api_oficial2": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_oficial1",
             "type": "main",
             "index": 0
           }
@@ -2165,6 +2205,102 @@
       ],
       "id": "63e27d5b-7d95-4ffa-915d-49e8fef5aa2a",
       "name": "add_subscription_bd1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "send_message_api_oficial",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        180,
+        1400
+      ],
+      "id": "1710a7b1-7aee-4e88-add9-6c8e954ed5a1",
+      "name": "send_message_api_oficial"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"send_message_api_oficial2\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        640,
+        1280
+      ],
+      "id": "d3e69fcb-a749-461d-b78c-8c9b18865929",
+      "name": "send_message_api_oficial1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "send_message_api_oficial"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "c3d56b67-1afb-46f5-98d8-4bea614036e8",
+      "name": "send_message_api_oficial2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        380,
+        1280
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
     }
   ],
   "pinData": {
@@ -2172,38 +2308,31 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-DDLX7qxJ8FFEHkHv0JxfNA",
-            "deliveryTag": 6,
-            "redelivered": true,
+            "consumerTag": "amq.ctag-d4IirL_Qjbp3z4oaccwgow",
+            "deliveryTag": 30,
+            "redelivered": false,
             "exchange": "",
             "routingKey": "Fila de Ações de Funis"
           },
           "properties": {
-            "headers": {
-              "x-delivery-count": 4
-            }
+            "headers": {}
           },
           "content": {
             "nome": "Mateus",
-            "sobrenome": "",
-            "email": "xxxxx",
-            "telefone": "5562981196678",
-            "utm_source": "xxxxx",
-            "utm_campaign": "xxxxx",
-            "utm_term": "xxxxx",
-            "utm_medium": "xxxxx",
-            "utm_content": "xxxxx",
-            "id_funil": "16",
-            "instagram": "prmateusdiniz",
-            "id_forms": "8",
-            "tipo_forms": "Aplicação",
-            "faturamento": "Entre R$30.000 e R$50.000 mensal",
-            "form_name": "✅Funil Isca Paga",
-            "qte_equipe": "ENTRE 6 E 10",
-            "resolver": "teste",
-            "investir": "R$300 a R$700",
-            "colocar_pratica": "8",
-            "ending_typeform": "caf08015-66e0-4179-8742-756787a07223"
+            "sobrenome": "Diniz - Automagic Bots",
+            "email": "mateusdiniz@automagicbots.com.br",
+            "telefone": "556281196678",
+            "utm_source": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_medium": "",
+            "utm_content": "",
+            "id_funil": "17",
+            "instagram": "",
+            "id_forms": "9",
+            "tipo_forms": "Cadastro",
+            "faturamento": "C - Entre 31 e 50 mil/mês",
+            "form_name": "Formulário Web MAR25"
           }
         }
       }
@@ -2217,6 +2346,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-28T21:56:10.844Z",
-  "versionId": "c86c7b47-f838-42d7-9cc8-e706f138823a"
+  "updatedAt": "2025-03-12T14:35:26.448Z",
+  "versionId": "26771198-c88d-4680-9d67-d4e565b6a233"
 }
