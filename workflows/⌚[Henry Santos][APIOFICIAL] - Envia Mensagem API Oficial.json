@@ -38,7 +38,7 @@
       "main": [
         [
           {
-            "node": "WhatsApp Business Cloud",
+            "node": "telefone_vazio_ou_null",
             "type": "main",
             "index": 0
           }
@@ -50,6 +50,18 @@
         [
           {
             "node": "variaveis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "telefone_vazio_ou_null": {
+      "main": [
+        [],
+        [
+          {
+            "node": "WhatsApp Business Cloud",
             "type": "main",
             "index": 0
           }
@@ -209,8 +221,8 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        940,
-        -40
+        1180,
+        40
       ],
       "id": "2ae30ab1-f654-4332-b568-f01a70f07453",
       "name": "WhatsApp Business Cloud",
@@ -233,6 +245,49 @@
       ],
       "id": "f5f3ab7e-b4f3-4264-979f-0ada506567ce",
       "name": "trata_telefone"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0d3c2ec0-dfbc-4797-96cb-f556e63dd319",
+              "leftValue": "={{ $json[\"telefone\"] }}",
+              "rightValue": "{{ $json[\"telefone\"] }}",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "376249ed-3d53-4962-aeee-ba11d5ba2010",
+              "leftValue": "={{ $json[\"telefone\"] }}",
+              "rightValue": "null",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        940,
+        -40
+      ],
+      "id": "6469ad63-ade5-484b-b482-3dce78f94541",
+      "name": "telefone_vazio_ou_null"
     }
   ],
   "pinData": {
@@ -257,7 +312,7 @@
           "query": {},
           "body": {
             "id_etapa_funil": 10,
-            "id_user": 631
+            "id_user": 633
           },
           "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/send_message_api_oficial",
           "executionMode": "production"
@@ -277,6 +332,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-12T14:52:45.470Z",
-  "versionId": "44302321-14a6-4a36-a374-c6af8a2d3b06"
+  "updatedAt": "2025-03-12T18:33:43.636Z",
+  "versionId": "d3df91a2-273e-4878-9519-a1f89af73008"
 }
