@@ -337,7 +337,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 17\n  AND DATE(data_cadastro) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)\n  AND CURDATE() != '2025-03-23';\n",
+        "query": "SELECT * \nFROM cadastros \nWHERE id_funil = 17\n  AND DATE(data_cadastro) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)\n  AND CURDATE() <= '2025-03-23';\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -1149,6 +1149,6 @@
   },
   "tags": [],
   "triggerCount": 6,
-  "updatedAt": "2025-03-12T19:50:40.512Z",
-  "versionId": "53c3d30b-a2d2-4a37-bcef-bedba151f187"
+  "updatedAt": "2025-03-13T12:54:57.451Z",
+  "versionId": "0b8cbaf3-394c-4711-8fc2-3cf298c8d491"
 }
