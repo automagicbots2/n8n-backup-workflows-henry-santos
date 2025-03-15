@@ -16,7 +16,7 @@
       "main": [
         [
           {
-            "node": "trata_telefone",
+            "node": "variaveis",
             "type": "main",
             "index": 0
           }
@@ -39,17 +39,6 @@
         [
           {
             "node": "telefone_vazio_ou_null",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "trata_telefone": {
-      "main": [
-        [
-          {
-            "node": "variaveis",
             "type": "main",
             "index": 0
           }
@@ -130,7 +119,7 @@
             {
               "id": "18223272-e164-493b-8704-4b74a36fad6e",
               "name": "telefone",
-              "value": "={{ $node[\"trata_telefone\"].json[\"telefone_formatado\"] }}",
+              "value": "={{ $node[\"pesquisa_user\"].json[\"telefone\"] }}",
               "type": "string"
             }
           ]
@@ -142,7 +131,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        720,
+        500,
         -40
       ]
     },
@@ -221,7 +210,7 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        1180,
+        960,
         40
       ],
       "id": "2ae30ab1-f654-4332-b568-f01a70f07453",
@@ -232,19 +221,6 @@
           "name": "[WhatsApp] - Henry Santos"
         }
       }
-    },
-    {
-      "parameters": {
-        "jsCode": "function formatarTelefone(telefone) {\n    // Remove caracteres não numéricos\n    let numeroLimpo = telefone.replace(/\\D/g, '');\n\n    // Verifica se o número inclui o código do país (Brasil: 55)\n    let temCodigoPais = numeroLimpo.startsWith(\"55\");\n\n    // Remove o código do país para análise\n    let numeroSemCodigo = temCodigoPais ? numeroLimpo.slice(2) : numeroLimpo;\n\n    // Se o número tem 10 dígitos (sem DDI), adiciona o nono dígito\n    if (numeroSemCodigo.length === 10) {\n        numeroSemCodigo = numeroSemCodigo.replace(/^(\\d{2})(\\d{4})(\\d{4})$/, \"$1 9$2$3\");\n    } else if (numeroSemCodigo.length === 11) {\n        // Número já está correto\n        numeroSemCodigo = numeroSemCodigo.replace(/^(\\d{2})(\\d{5})(\\d{4})$/, \"$1 $2$3\");\n    }\n\n    // Adiciona novamente o código do país, se existia antes\n    return temCodigoPais ? \"55\" + numeroSemCodigo.replace(/\\s/g, '') : numeroSemCodigo;\n}\n\n// Pega os dados do input do nó anterior no n8n\nlet inputData = $input.all();\nlet outputData = inputData.map(item => {\n    let telefone = item.json.telefone || \"\";\n    let telefoneFormatado = formatarTelefone(telefone);\n    \n    return { json: { ...item.json, telefone_formatado: telefoneFormatado } };\n});\n\n// Retorna os dados formatados\nreturn outputData;\n"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        520,
-        -40
-      ],
-      "id": "f5f3ab7e-b4f3-4264-979f-0ada506567ce",
-      "name": "trata_telefone"
     },
     {
       "parameters": {
@@ -274,6 +250,16 @@
                 "type": "string",
                 "operation": "equals"
               }
+            },
+            {
+              "id": "d5dc9a96-4207-41f2-8036-fb25d9dba091",
+              "leftValue": "={{ $json[\"id_fluxo\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
             }
           ],
           "combinator": "or"
@@ -283,7 +269,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        940,
+        720,
         -40
       ],
       "id": "6469ad63-ade5-484b-b482-3dce78f94541",
@@ -332,6 +318,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-12T18:33:43.636Z",
-  "versionId": "d3df91a2-273e-4878-9519-a1f89af73008"
+  "updatedAt": "2025-03-15T12:43:04.792Z",
+  "versionId": "602942cb-2166-4dae-8785-761da42123a6"
 }
