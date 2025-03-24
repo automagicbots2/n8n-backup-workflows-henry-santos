@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "pesquisa_variavel_n8n_fluxo_users",
+            "node": "reprocessamento",
             "type": "main",
             "index": 0
           }
@@ -579,6 +579,24 @@
           }
         ]
       ]
+    },
+    "reprocessamento": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_users",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-02-01T19:12:44.635Z",
@@ -610,7 +628,7 @@
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
       "position": [
-        -2100,
+        -2320,
         280
       ],
       "credentials": {
@@ -645,7 +663,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -1860,
+        -1640,
         280
       ],
       "alwaysOutputData": true,
@@ -685,7 +703,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -1640,
+        -1420,
         280
       ],
       "id": "69a53230-f953-4e3d-b422-2b84ffd43b9d",
@@ -719,7 +737,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -1440,
+        -1220,
         280
       ],
       "alwaysOutputData": true,
@@ -758,7 +776,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -1220,
+        -1000,
         280
       ],
       "id": "968dca92-62f4-4b92-96db-90c0aedce29b",
@@ -789,7 +807,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -920,
+        -700,
         40
       ],
       "alwaysOutputData": true,
@@ -825,7 +843,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -700,
+        -480,
         40
       ],
       "id": "eb9c027f-8b0a-47bf-9621-6ff3daf8aa04",
@@ -863,7 +881,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -440,
+        -220,
         40
       ],
       "alwaysOutputData": true,
@@ -901,7 +919,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -180,
+        40,
         40
       ],
       "id": "a004f6c9-227c-4234-88e4-4771961e5988",
@@ -940,7 +958,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        300,
+        520,
         -120
       ],
       "id": "ec8c76e2-1585-44a2-ac40-c36e998ce414",
@@ -973,7 +991,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -660,
+        -440,
         640
       ],
       "id": "cbc17fbf-a285-4bc6-ac42-3e68eab0a7c5",
@@ -1004,7 +1022,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        40,
+        260,
         -120
       ],
       "alwaysOutputData": true,
@@ -1044,7 +1062,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -140,
+        80,
         500
       ],
       "id": "e54bf892-94ec-426d-8655-7f5b959714ad",
@@ -1075,7 +1093,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -400,
+        -180,
         500
       ],
       "alwaysOutputData": true,
@@ -1113,7 +1131,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        40,
+        260,
         200
       ],
       "id": "17786c28-2fd5-42fc-99ff-6e0b89a5bd7d",
@@ -1156,7 +1174,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        600,
+        820,
         100
       ],
       "id": "fc4034ac-4dc4-43ee-abf2-64aaf926927e",
@@ -1187,7 +1205,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        340,
+        560,
         100
       ],
       "alwaysOutputData": true,
@@ -1225,7 +1243,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -420,
+        -200,
         800
       ],
       "id": "a100d58d-c2a7-4244-b0c1-62e21f9e288a",
@@ -1256,7 +1274,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -140,
+        80,
         700
       ],
       "alwaysOutputData": true,
@@ -1294,7 +1312,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -920,
+        -700,
         440
       ],
       "id": "65aba9d5-e4c1-4611-bc1e-f3b999aa9de6",
@@ -1325,7 +1343,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -660,
+        -440,
         300
       ],
       "alwaysOutputData": true,
@@ -1401,7 +1419,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -440,
+        -220,
         300
       ],
       "id": "a60d4d9b-0ac3-47e7-be47-ac0af1897997",
@@ -1434,7 +1452,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -220,
+        0,
         980
       ],
       "id": "2f49244e-a255-4df9-930d-ebf339caa308",
@@ -1461,7 +1479,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        320,
+        540,
         880
       ],
       "id": "91ebaea7-0ae3-4af1-a287-601964c7dd08",
@@ -1492,7 +1510,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        60,
+        280,
         880
       ],
       "alwaysOutputData": true,
@@ -1530,7 +1548,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        260,
+        480,
         400
       ],
       "id": "bd9e57e3-71dc-4d3b-9ab4-6fb41ba946d1",
@@ -1561,7 +1579,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        800,
+        1020,
         300
       ],
       "id": "56a83519-bbce-4b17-afc4-4c40a462e971",
@@ -1592,7 +1610,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        540,
+        760,
         300
       ],
       "alwaysOutputData": true,
@@ -1630,7 +1648,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        460,
+        680,
         560
       ],
       "id": "a2e7895f-835f-4d2c-acca-1103b9cc2175",
@@ -1661,7 +1679,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        740,
+        960,
         460
       ],
       "alwaysOutputData": true,
@@ -1697,7 +1715,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1000,
+        1220,
         460
       ],
       "id": "5e45504b-2d29-4218-af65-4a9120805e0e",
@@ -1730,7 +1748,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -40,
+        180,
         1220
       ],
       "id": "298712c1-9e55-4f72-a72b-03374537bc42",
@@ -1761,7 +1779,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        160,
+        380,
         1080
       ],
       "alwaysOutputData": true,
@@ -1793,7 +1811,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        420,
+        640,
         1080
       ],
       "id": "cfb49d4d-53cd-4ebc-98db-bef6c609d5f7",
@@ -1832,7 +1850,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        100,
+        320,
         700
       ],
       "id": "dc80d28e-5b56-4fbc-a3c6-d2e9f15d6738",
@@ -1865,7 +1883,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        820,
+        1040,
         920
       ],
       "id": "6084af81-e0e7-4f81-aa9d-94e17e95541b",
@@ -1896,7 +1914,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1040,
+        1260,
         820
       ],
       "alwaysOutputData": true,
@@ -2000,7 +2018,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1300,
+        1520,
         820
       ],
       "id": "b249b549-7a65-4df0-8a46-3c85db610d0c",
@@ -2033,7 +2051,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        620,
+        840,
         720
       ],
       "id": "28d055ad-8048-4419-a4b8-07954b466fa6",
@@ -2064,7 +2082,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        900,
+        1120,
         620
       ],
       "alwaysOutputData": true,
@@ -2096,7 +2114,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1160,
+        1380,
         620
       ],
       "id": "2d278a91-0c11-4b7d-a115-6d7bfa367120",
@@ -2129,7 +2147,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1040,
+        1260,
         1080
       ],
       "id": "62281925-37b7-4e2b-8538-d5a1781ba588",
@@ -2160,7 +2178,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1260,
+        1480,
         980
       ],
       "alwaysOutputData": true,
@@ -2200,7 +2218,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1520,
+        1740,
         980
       ],
       "id": "63e27d5b-7d95-4ffa-915d-49e8fef5aa2a",
@@ -2233,7 +2251,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        180,
+        400,
         1400
       ],
       "id": "1710a7b1-7aee-4e88-add9-6c8e954ed5a1",
@@ -2260,7 +2278,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        640,
+        860,
         1280
       ],
       "id": "d3e69fcb-a749-461d-b78c-8c9b18865929",
@@ -2291,7 +2309,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        380,
+        600,
         1280
       ],
       "alwaysOutputData": true,
@@ -2301,6 +2319,51 @@
           "name": "[MySQL] - Henry Santos"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3f5780a9-c982-4778-a729-8c056a55e10b",
+              "leftValue": "={{ $json[\"fields\"][\"redelivered\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2100,
+        280
+      ],
+      "id": "f47831d1-5533-488a-8987-b6e75a0d1866",
+      "name": "reprocessamento"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1840,
+        100
+      ],
+      "id": "a864dd1b-2a62-479f-b60b-bf8ef4b5c4bb",
+      "name": "No Operation, do nothing"
     }
   ],
   "pinData": {
@@ -2310,7 +2373,7 @@
           "fields": {
             "consumerTag": "amq.ctag-d4IirL_Qjbp3z4oaccwgow",
             "deliveryTag": 30,
-            "redelivered": false,
+            "redelivered": true,
             "exchange": "",
             "routingKey": "Fila de Ações de Funis"
           },
@@ -2346,6 +2409,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-12T14:35:26.448Z",
-  "versionId": "26771198-c88d-4680-9d67-d4e565b6a233"
+  "updatedAt": "2025-03-23T19:24:57.240Z",
+  "versionId": "17b6a8e2-5f52-4d6e-9ad0-056cdf0e1609"
 }
