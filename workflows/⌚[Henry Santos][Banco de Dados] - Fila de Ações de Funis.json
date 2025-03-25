@@ -56,7 +56,7 @@
         ],
         [
           {
-            "node": "add_cadastro_bd",
+            "node": "evento_agendamento",
             "type": "main",
             "index": 0
           }
@@ -555,6 +555,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "insert_forms_answers",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -597,6 +604,250 @@
           }
         ]
       ]
+    },
+    "evento_agendamento": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_situacao_agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_cadastro_bd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_crm5": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_contact_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "create_update_deal_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_crm6": {
+      "main": [
+        [
+          {
+            "node": "create_update_deal_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_contact_crm2": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_deal_crm2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_deal_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "send_message_api_nao_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_deal_crm2": {
+      "main": [
+        [
+          {
+            "node": "create_update_deal_crm7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_deal_crm4": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_tag_deal_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_tag_deal_crm2": {
+      "main": [
+        [
+          {
+            "node": "add_tag_deal_crm5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_situacao_agendamento": {
+      "main": [
+        [
+          {
+            "node": "add_agendamento_bd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_agendamento_bd": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_agendamento_bd",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "create_update_contact_crm5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_agendamento_bd": {
+      "main": [
+        [
+          {
+            "node": "add_agendamento_bd1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_agendamento_bd1": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_deal_crm7": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_nao_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_message_api_nao_oficial": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_send_message_api_nao_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_tag_deal_crm4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_send_message_api_nao_oficial": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_nao_oficial1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_message_api_nao_oficial1": {
+      "main": [
+        [
+          {
+            "node": "add_tag_deal_crm4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_forms_answers": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_insert_forms_answers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_insert_forms_answers": {
+      "main": [
+        [
+          {
+            "node": "insert_forms_answers1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_message_api_oficial1": {
+      "main": [
+        [
+          {
+            "node": "insert_forms_answers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-02-01T19:12:44.635Z",
@@ -628,8 +879,8 @@
       "type": "n8n-nodes-base.rabbitmqTrigger",
       "typeVersion": 1,
       "position": [
-        -2320,
-        280
+        -2080,
+        260
       ],
       "credentials": {
         "rabbitmq": {
@@ -807,8 +1058,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -700,
-        40
+        -660,
+        -140
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -843,8 +1094,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -480,
-        40
+        -440,
+        -140
       ],
       "id": "eb9c027f-8b0a-47bf-9621-6ff3daf8aa04",
       "name": "busca_produto"
@@ -881,8 +1132,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -220,
-        40
+        -180,
+        -140
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -919,8 +1170,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        40,
-        40
+        80,
+        -140
       ],
       "id": "a004f6c9-227c-4234-88e4-4771961e5988",
       "name": "create_update_contact_crm"
@@ -958,8 +1209,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        520,
-        -120
+        560,
+        -300
       ],
       "id": "ec8c76e2-1585-44a2-ac40-c36e998ce414",
       "name": "create_update_contact_crm1"
@@ -991,8 +1242,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -440,
-        640
+        -320,
+        1860
       ],
       "id": "cbc17fbf-a285-4bc6-ac42-3e68eab0a7c5",
       "name": "create_update_contact_crm2"
@@ -1022,8 +1273,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        260,
-        -120
+        300,
+        -300
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1062,8 +1313,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        80,
-        500
+        200,
+        1720
       ],
       "id": "e54bf892-94ec-426d-8655-7f5b959714ad",
       "name": "create_update_contact_crm3"
@@ -1093,8 +1344,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -180,
-        500
+        -60,
+        1720
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1131,8 +1382,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        260,
-        200
+        300,
+        20
       ],
       "id": "17786c28-2fd5-42fc-99ff-6e0b89a5bd7d",
       "name": "create_update_deal_crm"
@@ -1174,8 +1425,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        820,
-        100
+        860,
+        -80
       ],
       "id": "fc4034ac-4dc4-43ee-abf2-64aaf926927e",
       "name": "create_update_contact_crm4"
@@ -1205,8 +1456,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        560,
-        100
+        600,
+        -80
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1243,8 +1494,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -200,
-        800
+        -80,
+        2020
       ],
       "id": "a100d58d-c2a7-4244-b0c1-62e21f9e288a",
       "name": "create_update_deal_crm1"
@@ -1274,8 +1525,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        80,
-        700
+        200,
+        1920
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1312,8 +1563,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -700,
-        440
+        -580,
+        1660
       ],
       "id": "65aba9d5-e4c1-4611-bc1e-f3b999aa9de6",
       "name": "add_cadastro_bd"
@@ -1343,8 +1594,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -440,
-        300
+        -320,
+        1520
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1419,8 +1670,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -220,
-        300
+        -100,
+        1520
       ],
       "id": "a60d4d9b-0ac3-47e7-be47-ac0af1897997",
       "name": "cria_cadastro"
@@ -1452,8 +1703,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        0,
-        980
+        100,
+        2220
       ],
       "id": "2f49244e-a255-4df9-930d-ebf339caa308",
       "name": "add_tag_contact_crm"
@@ -1479,8 +1730,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        540,
-        880
+        640,
+        2120
       ],
       "id": "91ebaea7-0ae3-4af1-a287-601964c7dd08",
       "name": "add_tag_contact_crm1"
@@ -1510,8 +1761,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        280,
-        880
+        380,
+        2120
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1548,8 +1799,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        480,
-        400
+        520,
+        220
       ],
       "id": "bd9e57e3-71dc-4d3b-9ab4-6fb41ba946d1",
       "name": "add_tag_contact_crm2"
@@ -1579,8 +1830,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1020,
-        300
+        1060,
+        120
       ],
       "id": "56a83519-bbce-4b17-afc4-4c40a462e971",
       "name": "add_tag_contact_crm3"
@@ -1610,8 +1861,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        760,
-        300
+        800,
+        120
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1648,8 +1899,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        680,
-        560
+        720,
+        380
       ],
       "id": "a2e7895f-835f-4d2c-acca-1103b9cc2175",
       "name": "add_tag_deal_crm"
@@ -1679,8 +1930,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        960,
-        460
+        1000,
+        280
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1715,8 +1966,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1220,
-        460
+        1260,
+        280
       ],
       "id": "5e45504b-2d29-4218-af65-4a9120805e0e",
       "name": "add_tag_deal_crm1"
@@ -1748,8 +1999,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        180,
-        1220
+        280,
+        2460
       ],
       "id": "298712c1-9e55-4f72-a72b-03374537bc42",
       "name": "add_tag_deal_crm2"
@@ -1779,8 +2030,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        380,
-        1080
+        480,
+        2320
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1811,8 +2062,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        640,
-        1080
+        740,
+        2320
       ],
       "id": "cfb49d4d-53cd-4ebc-98db-bef6c609d5f7",
       "name": "add_tag_deal_crm3"
@@ -1850,8 +2101,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        320,
-        700
+        440,
+        1920
       ],
       "id": "dc80d28e-5b56-4fbc-a3c6-d2e9f15d6738",
       "name": "create_update_deal_crm5"
@@ -1883,8 +2134,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1040,
-        920
+        1080,
+        740
       ],
       "id": "6084af81-e0e7-4f81-aa9d-94e17e95541b",
       "name": "add_conversion_bd"
@@ -1914,8 +2165,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1260,
-        820
+        1300,
+        640
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -2018,8 +2269,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1520,
-        820
+        1560,
+        640
       ],
       "id": "b249b549-7a65-4df0-8a46-3c85db610d0c",
       "name": "add_conversion_bd1"
@@ -2051,8 +2302,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        840,
-        720
+        880,
+        540
       ],
       "id": "28d055ad-8048-4419-a4b8-07954b466fa6",
       "name": "add_customer_bd"
@@ -2082,8 +2333,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1120,
-        620
+        1160,
+        440
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -2114,8 +2365,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1380,
-        620
+        1420,
+        440
       ],
       "id": "2d278a91-0c11-4b7d-a115-6d7bfa367120",
       "name": "add_customer_bd1"
@@ -2147,8 +2398,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1260,
-        1080
+        1300,
+        900
       ],
       "id": "62281925-37b7-4e2b-8538-d5a1781ba588",
       "name": "add_subscription_bd"
@@ -2178,8 +2429,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1480,
-        980
+        1520,
+        800
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -2218,8 +2469,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1740,
-        980
+        1780,
+        800
       ],
       "id": "63e27d5b-7d95-4ffa-915d-49e8fef5aa2a",
       "name": "add_subscription_bd1"
@@ -2251,8 +2502,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        400,
-        1400
+        480,
+        2640
       ],
       "id": "1710a7b1-7aee-4e88-add9-6c8e954ed5a1",
       "name": "send_message_api_oficial"
@@ -2278,8 +2529,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        860,
-        1280
+        960,
+        2520
       ],
       "id": "d3e69fcb-a749-461d-b78c-8c9b18865929",
       "name": "send_message_api_oficial1"
@@ -2309,8 +2560,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        600,
-        1280
+        700,
+        2520
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -2348,8 +2599,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -2100,
-        280
+        -1860,
+        260
       ],
       "id": "f47831d1-5533-488a-8987-b6e75a0d1866",
       "name": "reprocessamento"
@@ -2359,11 +2610,752 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -1840,
-        100
+        -1600,
+        80
       ],
       "id": "a864dd1b-2a62-479f-b60b-bf8ef4b5c4bb",
       "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e7b0e3df-3432-44b3-ad32-b20e0773aadd",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"tipo_forms\"] }}",
+              "rightValue": "Agendamento",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -780,
+        500
+      ],
+      "id": "954c567d-57f4-4937-91d0-a022571bd093",
+      "name": "evento_agendamento"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_contact_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -180,
+        600
+      ],
+      "id": "d9c40dc3-d08a-4fff-a9e8-3da7ee5ae4ae",
+      "name": "create_update_contact_crm5"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_contact_crm2\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "id_situacao_agendamento",
+              "value": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"id\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        440
+      ],
+      "id": "42ed3326-5aa4-4529-bca8-37b9bc4d6a2a",
+      "name": "create_update_contact_crm6"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_contact_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "865a6251-df00-4a3b-9cad-8ae42d4e7121",
+      "name": "pesquisa_acao_create_update_contact_crm2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        0,
+        440
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_deal_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -20,
+        740
+      ],
+      "id": "b460d1e8-b55f-4781-925b-c7e6debf839f",
+      "name": "create_update_deal_crm2"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_deal_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "715f2cb3-a635-4122-9509-2f50a10eef9b",
+      "name": "pesquisa_acao_create_update_deal_crm2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        160,
+        620
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"acoes\"] }}",
+              "rightValue": "add_tag_deal_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        340,
+        1140
+      ],
+      "id": "8497c7bb-7e8e-4515-bdef-acf5a6cff50c",
+      "name": "add_tag_deal_crm4"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_tag_deal_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "b1fb29a7-13c5-415a-957a-83fdb7e24e4b",
+      "name": "pesquisa_acao_add_tag_deal_crm2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        480,
+        980
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_tag_deal_crm2\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_situacao_agendamento",
+              "value": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"id\"]  || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        980
+      ],
+      "id": "c65ac56d-404e-4a94-8630-9a066e9d1c49",
+      "name": "add_tag_deal_crm5"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacoes_agendamento",
+          "mode": "list",
+          "cachedResultName": "situacoes_agendamento"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "column": "evento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"evento\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3912388e-a772-471c-beb5-015bed3bf458",
+      "name": "pesquisa_situacao_agendamento",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -560,
+        380
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"acoes\"] }}",
+              "rightValue": "add_agendamento_bd",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -360,
+        380
+      ],
+      "id": "22b75a30-ea14-4750-bdf8-95854c80a43b",
+      "name": "add_agendamento_bd"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_agendamento_bd"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "b6a0f2c5-a2db-4a70-a8a0-eaddcf296eab",
+      "name": "pesquisa_acao_add_agendamento_bd",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -120,
+        260
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_agendamento_bd\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_evento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_agendamento\"] }}"
+            },
+            {
+              "name": "id_cliente",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_cliente\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_responsavel",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email_responsavel\"] }}"
+            },
+            {
+              "name": "data_agendamento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"data_do_agendamento\"].split ('/')[2].split(',')[0] }}-{{ $node[\"chega_da_fila\"].json[\"content\"][\"data_do_agendamento\"].split ('/')[1] }}-{{ $node[\"chega_da_fila\"].json[\"content\"][\"data_do_agendamento\"].split ('/')[0] }} {{ $node[\"chega_da_fila\"].json[\"content\"][\"data_do_agendamento\"].split (', ')[1] }}:00"
+            },
+            {
+              "name": "status_evento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"evento\"].replace('Agendamento', 'Agendado').replace('Reagendamento', 'Reagendado').replace('Cancelamento', 'Cancelado') }}"
+            },
+            {
+              "name": "data_de_inicio",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"data_inicio\"].split ('/')[2].split(',')[0] }}-{{ $node[\"chega_da_fila\"].json[\"content\"][\"data_inicio\"].split ('/')[1] }}-{{ $node[\"chega_da_fila\"].json[\"content\"][\"data_inicio\"].split ('/')[0] }}"
+            },
+            {
+              "name": "hora_de_inicio",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"data_inicio\"].split(' ')[1] }}"
+            },
+            {
+              "name": "hora_de_termino",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"data_termino\"].split(' ')[1] }}"
+            },
+            {
+              "name": "link_reuniao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_da_reuniao\"] }}"
+            },
+            {
+              "name": "evento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome_do_evento\"] }}"
+            },
+            {
+              "name": "dia_da_semana_evento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"dia_call\"] }}"
+            },
+            {
+              "name": "data_cancelamento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"data_cancelamento\"] || \"\" }}"
+            },
+            {
+              "name": "motivo_cancelamento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"motivo_cancelamento\"] || \"\" }}"
+            },
+            {
+              "name": "id_agendamento_reagendado",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_agendamento_reagendado\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        100,
+        260
+      ],
+      "id": "3cf8bfc2-1ce9-43b9-a76c-b2de7c98d165",
+      "name": "add_agendamento_bd1"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_deal_crm2\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "id_situacao_agendamento",
+              "value": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"id\"]  || \"\" }}"
+            },
+            {
+              "name": "qualificacao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"]  || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        380,
+        620
+      ],
+      "id": "1b849afe-cc5c-4f52-9ed1-20b819ffbf22",
+      "name": "create_update_deal_crm7"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_situacao_agendamento\"].json[\"acoes\"] }}",
+              "rightValue": "send_message_api_nao_oficial",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        140,
+        920
+      ],
+      "id": "fde3bf81-dc9f-409a-8516-0f71fc6b9575",
+      "name": "send_message_api_nao_oficial"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "send_message_api_nao_oficial"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "017f1d6c-3138-4243-aaef-99a07fc24923",
+      "name": "pesquisa_acao_send_message_api_nao_oficial",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        320,
+        800
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_send_message_api_nao_oficial\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        580,
+        800
+      ],
+      "id": "15b372fe-2896-4c6f-b653-d3157f3abdfe",
+      "name": "send_message_api_nao_oficial1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "insert_forms_answers",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        640,
+        2820
+      ],
+      "id": "6815e9bf-c059-4343-a8cc-4605e309b999",
+      "name": "insert_forms_answers"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "insert_forms_answers"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "3e4b85ef-1e38-4cf7-a85e-3dc355f42927",
+      "name": "pesquisa_acao_insert_forms_answers",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        940,
+        2720
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_insert_forms_answers\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_forms",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_forms\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1180,
+        2720
+      ],
+      "id": "3f4a4c80-240d-4c03-acc9-e4e46619eab9",
+      "name": "insert_forms_answers1"
     }
   ],
   "pinData": {
@@ -2371,9 +3363,9 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-d4IirL_Qjbp3z4oaccwgow",
-            "deliveryTag": 30,
-            "redelivered": true,
+            "consumerTag": "amq.ctag-Fi6UFjS_UM-KPgqKYvZhew",
+            "deliveryTag": 29,
+            "redelivered": false,
             "exchange": "",
             "routingKey": "Fila de Ações de Funis"
           },
@@ -2381,21 +3373,53 @@
             "headers": {}
           },
           "content": {
-            "nome": "Mateus",
-            "sobrenome": "Diniz - Automagic Bots",
-            "email": "mateusdiniz@automagicbots.com.br",
-            "telefone": "556281196678",
+            "nome": "Natália",
+            "sobrenome": "Machado",
+            "nome_completo": "Natália Machado",
+            "email": "natalia_smachado@yahoo.com.br",
+            "telefone": "5519982992894",
+            "cpf": "330.330.198-03",
             "utm_source": "",
             "utm_campaign": "",
             "utm_term": "",
             "utm_medium": "",
             "utm_content": "",
-            "id_funil": "17",
-            "instagram": "",
-            "id_forms": "9",
-            "tipo_forms": "Cadastro",
-            "faturamento": "C - Entre 31 e 50 mil/mês",
-            "form_name": "Formulário Web MAR25"
+            "form_id": "1W3ZYX2QW2",
+            "form_name": "E-book: O Guia da Dona de Salão de Beleza para Atrair e Reter Profissionais Talentosos",
+            "value": 47.9,
+            "transaction_id": 85936666,
+            "net_value": 44.55,
+            "trans_status": "Compra Aprovada",
+            "payment_method": "PIX",
+            "refund_date": "",
+            "event_date": "2025-03-25 08:36:00",
+            "payment_date": "2025-03-25 08:36:47",
+            "product_type": "Cobrança única",
+            "product_id": 2656162,
+            "product_name": "E-book: O Guia da Dona de Salão de Beleza para Atrair e Reter Profissionais Talentosos",
+            "warranty_date": "2025-04-01",
+            "offer_code": "",
+            "discount_coupon": "",
+            "street": "",
+            "address_number": "",
+            "country": "",
+            "district": "",
+            "address_complement": "",
+            "city": "",
+            "address_state": "",
+            "zipcode": "",
+            "affiliate_value": "",
+            "gateway_comission": 3.35,
+            "billet_barcode": "",
+            "currency": "BRL",
+            "bankslip": "",
+            "recurrenceExpirationDate": "",
+            "cancelledDate": "",
+            "id_funil": "16",
+            "tipo_forms": "Checkout",
+            "cnpj": "",
+            "id_forms": "7",
+            "installments": ""
           }
         }
       }
@@ -2409,6 +3433,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-23T19:24:57.240Z",
-  "versionId": "17b6a8e2-5f52-4d6e-9ad0-056cdf0e1609"
+  "updatedAt": "2025-03-25T14:07:06.235Z",
+  "versionId": "c593d25a-879c-4a6c-9527-37b48484d39a"
 }
