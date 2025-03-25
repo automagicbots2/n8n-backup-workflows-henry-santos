@@ -1,0 +1,675 @@
+{
+  "active": false,
+  "connections": {
+    "formata_dados": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_funis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados": {
+      "main": [
+        [
+          {
+            "node": "fila_acoes_funis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_funil": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_variavel_n8n_fluxo_funis": {
+      "main": [
+        [
+          {
+            "node": "busca_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mentoria GTR_F30_Geral": {
+      "main": [
+        [
+          {
+            "node": "formata_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-25T14:25:20.584Z",
+  "id": "uK4hOa8KoaoHSZwD",
+  "meta": null,
+  "name": "⌚[Henry Santos][Typeform] - Trata Dados",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "// 📌 Capturar os dados de entrada\nconst inputData = items[0].json;\nconst formResponse = inputData.body.form_response;\nconst respostas = formResponse.answers || [];\nconst hiddenData = formResponse.hidden || {}; // Captura UTMs e origem do lead\nconst ending = formResponse.ending?.ref || \"\"; // Captura o ID da tela final\n\n// 📌 Criar função para formatar a data no formato YYYY-MM-DD HH:MM\nfunction formatDate(isoDate) {\n    if (!isoDate) return \"\";\n    const date = new Date(isoDate);\n    const year = date.getFullYear();\n    const month = String(date.getMonth() + 1).padStart(2, \"0\");\n    const day = String(date.getDate()).padStart(2, \"0\");\n    const hours = String(date.getHours()).padStart(2, \"0\");\n    const minutes = String(date.getMinutes()).padStart(2, \"0\");\n    return `${year}-${month}-${day} ${hours}:${minutes}`;\n}\n\n// 📌 Criar objeto de mapeamento das perguntas com seus respectivos IDs\nconst perguntasMap = {\n    \"2f973c4f-a057-48f0-b728-ac9504c92a94\": \"fullName\",\n    \"080df5c4-6143-49a3-a611-0d8b064d4794\": \"email\",\n    \"e39e6e26-9844-40c6-beb3-29d1ae9bc25c\": \"telefone\",\n    \"7c627923-6156-4394-a09c-3c380f73a27f\": \"instagram\",\n    \"10c1787c-9644-4ffb-a5c1-d2e99770739b\": \"faturamento\",\n    \"729c3646-d176-4576-94eb-a98fdf4705b2\": \"posicao_no_negocio\",\n    \"751e7062-4667-4c3d-b2c3-9265b5f72035\": \"dificuldade\",\n    \"5d079336-590a-4804-902a-be82596075c0\": \"contato\",\n    \"9c3d9e2b-6244-45a1-bd4f-e2b0c4880c6e\": \"desafio_negocio\",\n    \"8e2d7bfa-7a92-42e2-8d3b-1d7a98f1d0dc\": \"ajuda_desafio\",\n    \"a0b9e6a4-4d71-4a3f-8a3b-f55e2c3d86c4\": \"posicao_no_negocio_extra\"\n};\n\n// 📌 Criar um objeto para armazenar as respostas\nlet respostasMapeadas = {};\nlet respostasComIds = {}; // Objeto que conterá os IDs e respostas\n\n// 📌 Iterar sobre as respostas e mapear corretamente\nrespostas.forEach(answer => {\n    const campoId = answer.field.ref;\n    const chaveMapeada = perguntasMap[campoId] || campoId; // Se não encontrar a pergunta, mantém o ID\n    let resposta = \"\";\n\n    if (answer.type === \"choice\") {\n        resposta = answer.choice.label || \"\";\n    } else if (answer.type === \"text\" || answer.type === \"email\" || answer.type === \"phone_number\") {\n        resposta = answer[answer.type] || \"\";\n    }\n\n    respostasMapeadas[chaveMapeada] = resposta;\n    respostasComIds[campoId] = resposta; // Apenas ID e resposta, sem o nome da pergunta\n});\n\n// 📌 Formatar nome corretamente\nfunction capitalizeName(fullName) {\n    if (!fullName) return { fname: \"\", lname: \"\", fullname: \"\" };\n\n    const lowerCaseWords = [\"da\", \"de\", \"do\", \"di\", \"du\"];\n    let words = fullName.toLowerCase().split(\" \").map((word, index) =>\n        lowerCaseWords.includes(word) && index !== 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)\n    );\n\n    let fname = words.shift();\n    let lname = words.join(\" \");\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\n// 📌 Formatar telefone corretamente\nfunction formatPhone(phone) {\n    if (!phone) return \"\";\n\n    const telefoneLimpo = phone.replace(/\\D/g, \"\");\n    let DDI = \"55\";\n    let DDD = telefoneLimpo.slice(2, 4);\n    let numero = telefoneLimpo.slice(4);\n\n    if (numero.length === 8) {\n        numero = `9${numero}`;\n    }\n\n    return `${DDI}${DDD}${numero}`;\n}\n\n// 📌 Criar objeto de saída\nconst formattedNames = capitalizeName(respostasMapeadas.fullName);\nconst telefoneFormatado = formatPhone(respostasMapeadas.telefone);\nconst dataAplicacaoFormatada = formatDate(formResponse.submitted_at); // Formatar data\n\nconst result = {\n    ...formattedNames,\n    email: respostasMapeadas.email || \"\",\n    whatsapp: telefoneFormatado,\n    instagram: respostasMapeadas.instagram || \"\",\n    faturamento: respostasMapeadas.faturamento || \"\",\n    posicao_no_negocio: respostasMapeadas.posicao_no_negocio || respostasMapeadas.posicao_no_negocio_extra || \"\",\n    dificuldade: respostasMapeadas.dificuldade || \"\",\n    contato: respostasMapeadas.contato || \"\",\n    desafio_negocio: respostasMapeadas.desafio_negocio || \"\",\n    ajuda_desafio: respostasMapeadas.ajuda_desafio || \"\",\n    utm_source: hiddenData.utm_source || \"\",\n    utm_campaign: hiddenData.utm_campaign || \"\",\n    utm_term: hiddenData.utm_term || \"\",\n    utm_medium: hiddenData.utm_medium || \"\",\n    utm_content: hiddenData.utm_content || \"\",\n    origem_lead: hiddenData.origem_lead || \"\",\n    data_aplicacao: dataAplicacaoFormatada, // Agora no formato YYYY-MM-DD HH:MM\n    form_id: formResponse.form_id || \"\",\n    form_name: formResponse.definition.title || \"\",\n    ending: ending, // Adicionamos o campo ending\n    respostas_com_ids: respostasComIds // Adicionamos todas as respostas com seus IDs\n};\n\n// 📌 Retornar os resultados no formato esperado pelo n8n\nreturn [{ json: result }];\n"
+      },
+      "id": "3d3f8428-f0a0-4035-b2aa-ed51ec13aacc",
+      "name": "formata_dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        60,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "857cec21-9e14-4ec1-8846-dc73f03b18be",
+              "name": "nome",
+              "value": "={{ $node[\"formata_dados\"].json[\"fname\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "cb8cf50a-ad5f-4f6c-a108-bc8207ed39d6",
+              "name": "sobrenome",
+              "value": "={{ $node[\"formata_dados\"].json[\"lname\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "ea504228-bc53-47ab-af46-8ffc438c3647",
+              "name": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "936860ac-b806-4273-ad2a-e55dab31d731",
+              "name": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"whatsapp\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "d8adee03-c9d3-449a-a1c9-39feba83037b",
+              "name": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "dbf48f0c-ad19-46ca-ace2-dd71301de650",
+              "name": "data_aplicacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"data_aplicacao\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "24d5eecc-7a73-4814-9e87-2ab22738d2b5",
+              "name": "id_forms",
+              "value": "={{ $node[\"busca_funil\"].json[\"id_forms\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "7df91456-16d1-4aa6-8c92-bf48117dc184",
+              "name": "id_ferramenta_forms",
+              "value": "={{ $node[\"formata_dados\"].json[\"form_id\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "36697c59-df0d-4d8e-a21e-c8252542fd27",
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_source\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "24d8401c-9ad4-4813-a992-b19b4ce7db34",
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_campaign\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "8d013fe4-aba3-4448-9362-f41ae28a4160",
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_term\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "9424999b-23c6-4683-baf4-42737742acfc",
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_medium\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "52797712-1952-4f3e-b216-8214b6dc3986",
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_content\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "a14b7ec8-2541-4a70-b6ed-e62adde0fe26",
+              "name": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "23923c4a-0466-4182-ba96-22f78673beb1",
+              "name": "faturamento",
+              "value": "={{ $node[\"formata_dados\"].json[\"faturamento\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "26906a4c-ef58-4d33-80a5-ee555478dcb8",
+              "name": "posicao",
+              "value": "={{ $node[\"formata_dados\"].json[\"posicao_no_negocio\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "e8709fbc-29c3-463e-abb5-3991531a2797",
+              "name": "dificuldade",
+              "value": "={{ $node[\"formata_dados\"].json[\"dificuldade\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "b1df6562-92bf-4f75-9fd9-045e977f9b0c",
+              "name": "contato",
+              "value": "={{ $node[\"formata_dados\"].json[\"contato\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "8be23767-974b-4027-a66e-5479fae83aef",
+              "name": "desafio_negocio",
+              "value": "={{ $node[\"formata_dados\"].json[\"desafio_negocio\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "359317c7-5d26-484c-b21a-ea63c8c10332",
+              "name": "ajuda_desafio",
+              "value": "={{ $node[\"formata_dados\"].json[\"ajuda_desafio\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "571e5db2-c2eb-4a74-a4ea-6606e72987ca",
+              "name": "origem_lead",
+              "value": "={{ $node[\"formata_dados\"].json[\"origem_lead\"]  || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "f8c87689-0188-4acb-81bf-cb20813de065",
+              "name": "tipo_forms",
+              "value": "={{ $node[\"busca_funil\"].json[\"tipo_forms\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "396fb545-7ed0-4eab-9e0d-f17b90721a11",
+              "name": "qualificacao",
+              "value": "={{ $node[\"formata_dados\"].json[\"ending\"].replace ('2356f354-6265-4768-b71e-e5e1b2b48d9e','Qualificado').replace ('2bd4edee-654d-4bef-aa98-e67d97580e3e','Desqualificado') }}",
+              "type": "string"
+            },
+            {
+              "id": "f6a8c5d2-7a71-40bf-83df-d02f588d75dd",
+              "name": "id_funil",
+              "value": "={{ $node[\"busca_funil\"].json[\"id_funil\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "056eccab-4824-4a7c-905c-5a6ae210e5ca",
+              "name": "perguntas_respostas",
+              "value": "={{ $node[\"formata_dados\"].json[\"respostas_com_ids\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        660,
+        -120
+      ],
+      "id": "13c43f2b-5b26-4bb2-a61e-8fff7982bc22",
+      "name": "dados"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_funis\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_forms",
+              "value": "={{ $node[\"formata_dados\"].json[\"form_id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        -120
+      ],
+      "id": "6abe1a27-0b50-4586-99b5-21cac4601460",
+      "name": "busca_funil"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Verificação de Funis"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "85e96790-2d30-4e3d-896f-83f5db6687e8",
+      "name": "pesquisa_variavel_n8n_fluxo_funis",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        280,
+        -120
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "queue": "Fila de Ações de Funis",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "10ec4329-992b-4753-bd57-cb0d4a3c4767",
+      "name": "fila_acoes_funis",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        860,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "aplicacao-preenchida-restaurante",
+        "options": {}
+      },
+      "id": "caf8cb53-7ccc-4690-99ac-bb3366e9f1d7",
+      "name": "Mentoria GTR_F30_Geral",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -120
+      ],
+      "webhookId": "5837d2c5-dd71-42c3-a34f-ab6b2568acd0"
+    }
+  ],
+  "pinData": {
+    "Mentoria GTR_F30_Geral": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookpaulaardanza.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "6028",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-6e96606e6b84c62d12a50007b70ea746-6d02f1b94d07d5e4-01",
+            "x-forwarded-for": "18.204.78.134",
+            "x-forwarded-host": "n8nwebhookpaulaardanza.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "2c577e48e4c6",
+            "x-real-ip": "18.204.78.134"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01JPNB5EE5MB3A29TJDYMRYVM4",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "VLyzJujC",
+              "token": "ta5lhk0n4d6l8qta5ebmiva2240chrbs",
+              "landed_at": "2025-03-18T19:18:28Z",
+              "submitted_at": "2025-03-18T19:19:54Z",
+              "hidden": {
+                "origem_lead": "lp-mentoria-estrategica-generica",
+                "utm_campaign": "",
+                "utm_content": "",
+                "utm_medium": "",
+                "utm_source": "",
+                "utm_term": ""
+              },
+              "definition": {
+                "id": "VLyzJujC",
+                "title": "Mentoria GTR_F30_Geral [LPs Tráfego] [ATIVO]",
+                "fields": [
+                  {
+                    "id": "gRfVo0NnyWnP",
+                    "ref": "2f973c4f-a057-48f0-b728-ac9504c92a94",
+                    "type": "short_text",
+                    "title": "*Qual é o seu nome? *",
+                    "properties": {}
+                  },
+                  {
+                    "id": "CfQdKahWirBg",
+                    "ref": "080df5c4-6143-49a3-a611-0d8b064d4794",
+                    "type": "email",
+                    "title": "*Qual é o seu melhor e-mail?*",
+                    "properties": {}
+                  },
+                  {
+                    "id": "NP7sQP46VYnj",
+                    "ref": "e39e6e26-9844-40c6-beb3-29d1ae9bc25c",
+                    "type": "phone_number",
+                    "title": "*Qual seu número de Whatsapp?*",
+                    "properties": {}
+                  },
+                  {
+                    "id": "XsUitbXbSA8i",
+                    "ref": "7c627923-6156-4394-a09c-3c380f73a27f",
+                    "type": "short_text",
+                    "title": "*Seu negócio tem Instagram? Se sim, qual @?*",
+                    "properties": {}
+                  },
+                  {
+                    "id": "CouRejCSwknp",
+                    "ref": "10c1787c-9644-4ffb-a5c1-d2e99770739b",
+                    "type": "multiple_choice",
+                    "title": "*Qual foi a média de faturamento mensal do seu negócio este ano?*",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "jhz0Ul3lATp8",
+                        "ref": "fe1fad8f-2cad-4122-bc32-27fa7fe29b30",
+                        "label": "Ainda não abri o negócio"
+                      },
+                      {
+                        "id": "iHU2Z2Jez3sN",
+                        "ref": "a8b5996b-e1d2-44cf-82db-77d4bbda350c",
+                        "label": "Até 60 mil"
+                      },
+                      {
+                        "id": "0Yau5D8jR44s",
+                        "ref": "955f39d9-1913-46fd-a23d-e2af601ce1ac",
+                        "label": "De 70 a 100 mil"
+                      },
+                      {
+                        "id": "om10ePVXgRYk",
+                        "ref": "c71d53ea-4eda-46a4-9d46-fae33b67ddb2",
+                        "label": "De 100 a 150 mil"
+                      },
+                      {
+                        "id": "7RCLZqmvi2Ej",
+                        "ref": "cc292448-1340-4f52-a2af-91daf2628034",
+                        "label": "De 200 a 350 mil"
+                      },
+                      {
+                        "id": "OVOg5lyVdrrW",
+                        "ref": "4d9e3748-073b-4f0c-8777-4bae8c446abd",
+                        "label": "Acima de 500 mil"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "J2r2pNaxbqiw",
+                    "ref": "729c3646-d176-4576-94eb-a98fdf4705b2",
+                    "type": "multiple_choice",
+                    "title": "*Qual é a sua posição no negócio: dono, sócio ou gerente?*",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "HgUjRmcTZYTe",
+                        "ref": "0a968b64-5c44-4c56-91ac-4acf4838f1b3",
+                        "label": "Dono (único)"
+                      },
+                      {
+                        "id": "SfOILRB1khSa",
+                        "ref": "503a0605-f7d4-48a8-8ee5-90c59e0fd11c",
+                        "label": "Sócio (proprietário)"
+                      },
+                      {
+                        "id": "0h4YiG6leCYb",
+                        "ref": "f6cf733e-38c1-4a6f-9c7b-1fe5d992cc0e",
+                        "label": "Gerente"
+                      },
+                      {
+                        "id": "2Y5npG0qb25b",
+                        "ref": "6193af20-9726-4d03-88b1-c95812fa94ef",
+                        "label": "Nenhuma das opções"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "rY2l4pNAWdIA",
+                    "ref": "751e7062-4667-4c3d-b2c3-9265b5f72035",
+                    "type": "multiple_choice",
+                    "title": "*Qual é a sua maior dificuldade hoje no negócio?*",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "28T9clkmtiPB",
+                        "ref": "49169e37-cddf-49cc-b52f-03a66d36367a",
+                        "label": "Sair do operacional - gestão eficiente"
+                      },
+                      {
+                        "id": "HU1733yt3CrS",
+                        "ref": "e671c1cb-a99f-4ea6-9fb3-30ce5b216516",
+                        "label": "Controle CMV"
+                      },
+                      {
+                        "id": "hn8sKS5pZcaO",
+                        "ref": "ceb69731-11ca-4ba7-8638-732ece4bb237",
+                        "label": "Perdas"
+                      },
+                      {
+                        "id": "hT4lyPj681cn",
+                        "ref": "a409fe59-0d83-4fac-b976-0eeb940a7410",
+                        "label": "Mais lucratividade"
+                      },
+                      {
+                        "id": "N7pBrYrk8Zv2",
+                        "ref": "08fcde18-5226-433a-b46b-b2dc575636f5",
+                        "label": "Precificação"
+                      },
+                      {
+                        "id": "BEQwjblU76W4",
+                        "ref": "d1dca98a-dbac-4e2c-b41c-a5e10258798d",
+                        "label": "Pessoas"
+                      },
+                      {
+                        "id": "4ns71UB6yANy",
+                        "ref": "7f1adb96-3a24-4437-88f4-9287e584accc",
+                        "label": "Estoque"
+                      },
+                      {
+                        "id": "wwknn3Bj7KnD",
+                        "ref": "92ad4af5-6897-4d20-8765-dd721b9e71ce",
+                        "label": "Compras"
+                      },
+                      {
+                        "id": "oe1lCBpUICrt",
+                        "ref": "46ee680c-da69-49c9-94aa-ed633e112b2d",
+                        "label": "Financeiro"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "gC45kpdsmFS9",
+                    "ref": "5d079336-590a-4804-902a-be82596075c0",
+                    "type": "multiple_choice",
+                    "title": "*Como você prefere que o time entre em contato:*",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "UavMCPoI0cif",
+                        "ref": "f5b3d359-89c7-4971-99ba-8757df598223",
+                        "label": "Whatsapp"
+                      },
+                      {
+                        "id": "61Pr3oBXk9qC",
+                        "ref": "15a0b2c8-9b8c-4401-b69f-7914a0d40559",
+                        "label": "Ligação"
+                      }
+                    ]
+                  }
+                ],
+                "endings": [
+                  {
+                    "id": "cgHDoAjX356w",
+                    "ref": "2356f354-6265-4768-b71e-e5e1b2b48d9e",
+                    "title": "*Parabéns pelo primeiro passo!*\n\nAgora escolha seu horário para agendar sua \n*Consultoria de 30 minutos.*",
+                    "type": "thankyou_screen",
+                    "properties": {
+                      "button_text": "AGENDE SUA REUNIÃO",
+                      "show_button": true,
+                      "share_icons": false,
+                      "button_mode": "redirect",
+                      "redirect_url": "https://calendly.com/d/4x5-t5r-3v3/p-consultoria-de-30?name={{field:2f973c4f-a057-48f0-b728-ac9504c92a94}}&email={{field:080df5c4-6143-49a3-a611-0d8b064d4794}}&a1={{field:e39e6e26-9844-40c6-beb3-29d1ae9bc25c}}&utm_source={{hidden:utm_source}}&utm_campaign={{hidden:utm_campaign}}&utm_term={{hidden:utm_term}}&utm_medium={{hidden:utm_medium}}&utm_content={{hidden:utm_content}}"
+                    }
+                  }
+                ]
+              },
+              "answers": [
+                {
+                  "type": "text",
+                  "text": "Theresa Sampaio",
+                  "field": {
+                    "id": "gRfVo0NnyWnP",
+                    "type": "short_text",
+                    "ref": "2f973c4f-a057-48f0-b728-ac9504c92a94"
+                  }
+                },
+                {
+                  "type": "email",
+                  "email": "thereza123@hotmail.com.br",
+                  "field": {
+                    "id": "CfQdKahWirBg",
+                    "type": "email",
+                    "ref": "080df5c4-6143-49a3-a611-0d8b064d4794"
+                  }
+                },
+                {
+                  "type": "phone_number",
+                  "phone_number": "+5599981170684",
+                  "field": {
+                    "id": "NP7sQP46VYnj",
+                    "type": "phone_number",
+                    "ref": "e39e6e26-9844-40c6-beb3-29d1ae9bc25c"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Não tem! É uma conveniência",
+                  "field": {
+                    "id": "XsUitbXbSA8i",
+                    "type": "short_text",
+                    "ref": "7c627923-6156-4394-a09c-3c380f73a27f"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "om10ePVXgRYk",
+                    "label": "De 100 a 150 mil",
+                    "ref": "c71d53ea-4eda-46a4-9d46-fae33b67ddb2"
+                  },
+                  "field": {
+                    "id": "CouRejCSwknp",
+                    "type": "multiple_choice",
+                    "ref": "10c1787c-9644-4ffb-a5c1-d2e99770739b"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "SfOILRB1khSa",
+                    "label": "Sócio (proprietário)",
+                    "ref": "503a0605-f7d4-48a8-8ee5-90c59e0fd11c"
+                  },
+                  "field": {
+                    "id": "J2r2pNaxbqiw",
+                    "type": "multiple_choice",
+                    "ref": "729c3646-d176-4576-94eb-a98fdf4705b2"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "hT4lyPj681cn",
+                    "label": "Mais lucratividade",
+                    "ref": "a409fe59-0d83-4fac-b976-0eeb940a7410"
+                  },
+                  "field": {
+                    "id": "rY2l4pNAWdIA",
+                    "type": "multiple_choice",
+                    "ref": "751e7062-4667-4c3d-b2c3-9265b5f72035"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "UavMCPoI0cif",
+                    "label": "Whatsapp",
+                    "ref": "f5b3d359-89c7-4971-99ba-8757df598223"
+                  },
+                  "field": {
+                    "id": "gC45kpdsmFS9",
+                    "type": "multiple_choice",
+                    "ref": "5d079336-590a-4804-902a-be82596075c0"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "cgHDoAjX356w",
+                "ref": "2356f354-6265-4768-b71e-e5e1b2b48d9e"
+              }
+            }
+          },
+          "webhookUrl": "https://n8nwebhookpaulaardanza.automagicbots.com.br/webhook/aplicacao-preenchida-restaurante",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-25T14:25:20.584Z",
+  "versionId": "15097a77-9abe-4af2-bf24-6f5da3495a57"
+}
