@@ -1,0 +1,165 @@
+{
+  "active": true,
+  "connections": {
+    "pesquisa_colaborador": {
+      "main": [
+        [
+          {
+            "node": "executa_procedure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_colaborador",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-25T14:13:28.058Z",
+  "id": "V2PDGVm16t4JCoCY",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Henry Santos][Banco de Dados] - Busca ou Insere Agendamento",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CALL busca_agendamento('{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_evento\"] }}', {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] : null }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}, {{ $node[\"pesquisa_colaborador\"].json[\"id\"] }}, '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_agendamento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"status_evento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_de_inicio\"] }}','{{ $node[\"fluxo_chamado\"].json[\"body\"][\"hora_de_inicio\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"hora_de_termino\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"link_reuniao\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"evento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"dia_da_semana_evento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_cancelamento\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"data_cancelamento\"] : null  }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"motivo_cancelamento\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"motivo_cancelamento\"] : null }}', {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_agendamento_reagendado\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_agendamento_reagendado\"] : null }});\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        340,
+        -80
+      ],
+      "id": "edda0382-76dc-4fc6-904b-769a7a41d8cf",
+      "name": "executa_procedure",
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "colaboradores",
+          "mode": "list",
+          "cachedResultName": "colaboradores"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "email",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_responsavel\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4b0087dd-25a4-4a69-9486-f79ee990925d",
+      "name": "pesquisa_colaborador",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        100,
+        -80
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "add-agendamento-bd",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -140,
+        -80
+      ],
+      "id": "7513003b-94b2-449b-b8ae-a341fb3cdc8f",
+      "name": "fluxo_chamado",
+      "webhookId": "ce9e0c49-3b01-40d1-a43e-0275d34030ce"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookpaulaardanza.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "509",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "n8nwebhookpaulaardanza.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "2c577e48e4c6",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_evento": "6d58fd5d-4fc0-4f99-b967-9487c33bd008",
+            "id_cliente": "",
+            "id_user": 3,
+            "id_responsavel": "victor@paulaardanza.com.br",
+            "data_agendamento": "-- :00",
+            "status_evento": "Agendado",
+            "data_de_inicio": "2025-03-19",
+            "hora_de_inicio": "17:00",
+            "hora_de_termino": "17:30",
+            "link_reuniao": "https://calendly.com/events/9c1e49c2-7a72-4ff3-a348-de85e1046ea9/google_meet",
+            "evento": "[P] Consultoria de 30\" ",
+            "dia_da_semana_evento": "Quarta-feira",
+            "data_cancelamento": "",
+            "motivo_cancelamento": "",
+            "id_agendamento_reagendado": ""
+          },
+          "webhookUrl": "https://n8nwebhookpaulaardanza.automagicbots.com.br/webhook/add-agendamento-bd",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-25T14:13:46.682Z",
+  "versionId": "93812fea-defd-4bfc-933c-3eaab8a58dc5"
+}
