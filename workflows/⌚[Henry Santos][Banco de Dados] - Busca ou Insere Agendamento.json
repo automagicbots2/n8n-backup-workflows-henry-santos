@@ -34,7 +34,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "CALL busca_agendamento('{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_evento\"] }}', {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] : null }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}, {{ $node[\"pesquisa_colaborador\"].json[\"id\"] }}, '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_agendamento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"status_evento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_de_inicio\"] }}','{{ $node[\"fluxo_chamado\"].json[\"body\"][\"hora_de_inicio\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"hora_de_termino\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"link_reuniao\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"evento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"dia_da_semana_evento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_cancelamento\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"data_cancelamento\"] : null  }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"motivo_cancelamento\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"motivo_cancelamento\"] : null }}', {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_agendamento_reagendado\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_agendamento_reagendado\"] : null }});\n",
+        "query": "CALL busca_agendamento(\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_evento\"] }}',\n  {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] : null }},\n  {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }},\n  {{ $node[\"pesquisa_colaborador\"].json[\"id\"] }},\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_agendamento\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"status_evento\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_de_inicio\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"hora_de_inicio\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"hora_de_termino\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"link_reuniao\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"evento\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"dia_da_semana_evento\"] }}',\n  {{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_cancelamento\"] \n      ? \"'\" + $node[\"fluxo_chamado\"].json[\"body\"][\"data_cancelamento\"] + \"'\" \n      : \"null\" }},\n  {{ $node[\"fluxo_chamado\"].json[\"body\"][\"motivo_cancelamento\"] \n      ? \"'\" + $node[\"fluxo_chamado\"].json[\"body\"][\"motivo_cancelamento\"] + \"'\" \n      : \"null\" }},\n  {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_agendamento_reagendado\"] \n      ? \"'\" + $node[\"fluxo_chamado\"].json[\"body\"][\"id_agendamento_reagendado\"] + \"'\" \n      : \"null\" }}\n);\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -160,6 +160,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-25T14:13:46.682Z",
-  "versionId": "93812fea-defd-4bfc-933c-3eaab8a58dc5"
+  "updatedAt": "2025-03-25T19:19:13.992Z",
+  "versionId": "697a506a-be07-4a13-8f76-39cb53c74270"
 }
