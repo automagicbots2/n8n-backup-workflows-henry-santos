@@ -312,6 +312,12 @@
               "name": "nome",
               "value": "={{   $node[\"pesquisa_colaborador\"].runIndex >= 0        ? $node[\"pesquisa_colaborador\"].json[\"nome\"] : $node[\"pesquisa_colaborador1\"].runIndex >= 0      ? $node[\"pesquisa_colaborador1\"].json[\"nome\"]     : $node[\"pesquisa_colaborador3\"].runIndex >= 0        ? $node[\"pesquisa_colaborador3\"].json[\"nome\"] : $node[\"pesquisa_colaborador5\"].runIndex >= 0        ? $node[\"pesquisa_colaborador5\"].json[\"nome\"] : null }}",
               "type": "string"
+            },
+            {
+              "id": "91589945-ddea-4e1a-8519-71d43c915c05",
+              "name": "email",
+              "value": "={{   $node[\"pesquisa_colaborador\"].runIndex >= 0        ? $node[\"pesquisa_colaborador\"].json[\"email\"] : $node[\"pesquisa_colaborador1\"].runIndex >= 0      ? $node[\"pesquisa_colaborador1\"].json[\"email\"]     : $node[\"pesquisa_colaborador3\"].runIndex >= 0        ? $node[\"pesquisa_colaborador3\"].json[\"email\"] : $node[\"pesquisa_colaborador5\"].runIndex >= 0        ? $node[\"pesquisa_colaborador5\"].json[\"email\"] : null }}",
+              "type": "string"
             }
           ]
         },
@@ -717,27 +723,27 @@
       {
         "json": {
           "headers": {
-            "host": "n8n2webhookautomagicbots.automagicbots.com.br",
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "axios/1.7.4",
-            "content-length": "26",
+            "content-length": "77",
             "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
             "accept-encoding": "gzip, compress, deflate, br",
             "content-type": "application/json",
             "x-forwarded-for": "172.18.0.1",
-            "x-forwarded-host": "n8n2webhookautomagicbots.automagicbots.com.br",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
-            "x-forwarded-server": "40f84ef31161",
+            "x-forwarded-server": "9374371a5d91",
             "x-real-ip": "172.18.0.1"
           },
           "params": {},
           "query": {},
           "body": {
-            "time": "SDR",
-            "id_user": 1,
-            "email_colaborador": "nayra@grupokedma.com.br"
+            "time": "Closer",
+            "id_user": 631,
+            "email_colaborador": "jeancmello.13@gmail.com"
           },
-          "webhookUrl": "https://n8n2webhookautomagicbots.automagicbots.com.br/webhook/consulta-colaborador",
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/consulta-colaborador",
           "executionMode": "production"
         }
       }
@@ -751,6 +757,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-01T19:12:01.561Z",
-  "versionId": "94b7b95c-a619-4c2e-9968-8f8eff6e3fcb"
+  "updatedAt": "2025-03-27T19:53:43.430Z",
+  "versionId": "851aa6e7-3548-43c4-8aae-10735f8b6c90"
 }
