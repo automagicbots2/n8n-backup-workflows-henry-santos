@@ -34,7 +34,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "CALL busca_agendamento(\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_evento\"] }}',\n  {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] : null }},\n  {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }},\n  {{ $node[\"pesquisa_colaborador\"].json[\"id\"] }},\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_agendamento\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"status_evento\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_de_inicio\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"hora_de_inicio\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"hora_de_termino\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"link_reuniao\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"evento\"] }}',\n  '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"dia_da_semana_evento\"] }}',\n  {{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_cancelamento\"] \n      ? \"'\" + $node[\"fluxo_chamado\"].json[\"body\"][\"data_cancelamento\"] + \"'\" \n      : \"null\" }},\n  {{ $node[\"fluxo_chamado\"].json[\"body\"][\"motivo_cancelamento\"] \n      ? \"'\" + $node[\"fluxo_chamado\"].json[\"body\"][\"motivo_cancelamento\"] + \"'\" \n      : \"null\" }},\n  {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_agendamento_reagendado\"] \n      ? \"'\" + $node[\"fluxo_chamado\"].json[\"body\"][\"id_agendamento_reagendado\"] + \"'\" \n      : \"null\" }}\n);\n",
+        "query": "CALL busca_agendamento('{{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_evento\"] }}', {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_cliente\"] : null }}, {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}, {{ $node[\"pesquisa_colaborador\"].json[\"id\"] }}, '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_agendamento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"status_evento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_de_inicio\"] }}','{{ $node[\"fluxo_chamado\"].json[\"body\"][\"hora_de_inicio\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"hora_de_termino\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"link_reuniao\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"evento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"dia_da_semana_evento\"] }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"data_cancelamento\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"data_cancelamento\"] : null  }}', '{{ $node[\"fluxo_chamado\"].json[\"body\"][\"motivo_cancelamento\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"motivo_cancelamento\"] : null }}', {{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_agendamento_reagendado\"] ? $node[\"fluxo_chamado\"].json[\"body\"][\"id_agendamento_reagendado\"] : null }});\n",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
@@ -57,9 +57,9 @@
         "operation": "select",
         "table": {
           "__rl": true,
-          "value": "colaboradores",
+          "value": "colaboradores2",
           "mode": "list",
-          "cachedResultName": "colaboradores"
+          "cachedResultName": "colaboradores2"
         },
         "limit": 1,
         "where": {
@@ -110,39 +110,39 @@
       {
         "json": {
           "headers": {
-            "host": "n8nwebhookpaulaardanza.automagicbots.com.br",
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "axios/1.7.4",
-            "content-length": "509",
+            "content-length": "531",
             "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
             "accept-encoding": "gzip, compress, deflate, br",
             "content-type": "application/json",
             "x-forwarded-for": "172.18.0.1",
-            "x-forwarded-host": "n8nwebhookpaulaardanza.automagicbots.com.br",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
-            "x-forwarded-server": "2c577e48e4c6",
+            "x-forwarded-server": "9374371a5d91",
             "x-real-ip": "172.18.0.1"
           },
           "params": {},
           "query": {},
           "body": {
-            "id_evento": "6d58fd5d-4fc0-4f99-b967-9487c33bd008",
+            "id_evento": "c3b1a652-6213-4fbd-abe4-9431b0083854",
             "id_cliente": "",
-            "id_user": 3,
-            "id_responsavel": "victor@paulaardanza.com.br",
-            "data_agendamento": "-- :00",
+            "id_user": 631,
+            "id_responsavel": "jeancmello.13@gmail.com",
+            "data_agendamento": "2025-03-27 16:07:14",
             "status_evento": "Agendado",
-            "data_de_inicio": "2025-03-19",
-            "hora_de_inicio": "17:00",
-            "hora_de_termino": "17:30",
-            "link_reuniao": "https://calendly.com/events/9c1e49c2-7a72-4ff3-a348-de85e1046ea9/google_meet",
-            "evento": "[P] Consultoria de 30\" ",
-            "dia_da_semana_evento": "Quarta-feira",
+            "data_de_inicio": "2025-03-28 13:15:00",
+            "hora_de_inicio": "13:15:00",
+            "hora_de_termino": "14:30:00",
+            "link_reuniao": "https://calendly.com/events/c3b1a652-6213-4fbd-abe4-9431b0083854/google_meet",
+            "evento": "Sessão Estratégica",
+            "dia_da_semana_evento": "Sexta-feira",
             "data_cancelamento": "",
             "motivo_cancelamento": "",
             "id_agendamento_reagendado": ""
           },
-          "webhookUrl": "https://n8nwebhookpaulaardanza.automagicbots.com.br/webhook/add-agendamento-bd",
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/add-agendamento-bd",
           "executionMode": "production"
         }
       }
@@ -160,6 +160,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-25T19:19:13.992Z",
-  "versionId": "697a506a-be07-4a13-8f76-39cb53c74270"
+  "updatedAt": "2025-03-27T20:15:48.029Z",
+  "versionId": "33e9adf4-ce34-4c08-9490-16ad62fbf03b"
 }
