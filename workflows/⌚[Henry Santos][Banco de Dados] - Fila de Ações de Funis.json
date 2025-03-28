@@ -1242,8 +1242,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -320,
-        1860
+        -160,
+        1540
       ],
       "id": "cbc17fbf-a285-4bc6-ac42-3e68eab0a7c5",
       "name": "create_update_contact_crm2"
@@ -1313,8 +1313,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        200,
-        1720
+        360,
+        1400
       ],
       "id": "e54bf892-94ec-426d-8655-7f5b959714ad",
       "name": "create_update_contact_crm3"
@@ -1344,8 +1344,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -60,
-        1720
+        100,
+        1400
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1494,8 +1494,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -80,
-        2020
+        80,
+        1700
       ],
       "id": "a100d58d-c2a7-4244-b0c1-62e21f9e288a",
       "name": "create_update_deal_crm1"
@@ -1525,8 +1525,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        200,
-        1920
+        360,
+        1600
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1563,8 +1563,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -580,
-        1660
+        -420,
+        1340
       ],
       "id": "65aba9d5-e4c1-4611-bc1e-f3b999aa9de6",
       "name": "add_cadastro_bd"
@@ -1594,8 +1594,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -320,
-        1520
+        -160,
+        1200
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1670,8 +1670,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -100,
-        1520
+        60,
+        1200
       ],
       "id": "a60d4d9b-0ac3-47e7-be47-ac0af1897997",
       "name": "cria_cadastro"
@@ -1703,8 +1703,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        100,
-        2220
+        260,
+        1900
       ],
       "id": "2f49244e-a255-4df9-930d-ebf339caa308",
       "name": "add_tag_contact_crm"
@@ -1730,8 +1730,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        640,
-        2120
+        800,
+        1800
       ],
       "id": "91ebaea7-0ae3-4af1-a287-601964c7dd08",
       "name": "add_tag_contact_crm1"
@@ -1761,8 +1761,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        380,
-        2120
+        540,
+        1800
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -1999,8 +1999,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        280,
-        2460
+        440,
+        2140
       ],
       "id": "298712c1-9e55-4f72-a72b-03374537bc42",
       "name": "add_tag_deal_crm2"
@@ -2030,8 +2030,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        480,
-        2320
+        640,
+        2000
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -2062,8 +2062,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        740,
-        2320
+        900,
+        2000
       ],
       "id": "cfb49d4d-53cd-4ebc-98db-bef6c609d5f7",
       "name": "add_tag_deal_crm3"
@@ -2101,8 +2101,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        440,
-        1920
+        600,
+        1600
       ],
       "id": "dc80d28e-5b56-4fbc-a3c6-d2e9f15d6738",
       "name": "create_update_deal_crm5"
@@ -2502,8 +2502,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        480,
-        2640
+        640,
+        2320
       ],
       "id": "1710a7b1-7aee-4e88-add9-6c8e954ed5a1",
       "name": "send_message_api_oficial"
@@ -2529,8 +2529,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        960,
-        2520
+        1120,
+        2200
       ],
       "id": "d3e69fcb-a749-461d-b78c-8c9b18865929",
       "name": "send_message_api_oficial1"
@@ -2560,8 +2560,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        700,
-        2520
+        860,
+        2200
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -3059,7 +3059,7 @@
             },
             {
               "name": "data_agendamento",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"data_do_agendamento\"].split ('/')[2].split(',')[0] }}-{{ $node[\"chega_da_fila\"].json[\"content\"][\"data_do_agendamento\"].split ('/')[1] }}-{{ $node[\"chega_da_fila\"].json[\"content\"][\"data_do_agendamento\"].split ('/')[0] }} {{ $node[\"chega_da_fila\"].json[\"content\"][\"data_do_agendamento\"].split (', ')[1] }}:00"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"data_agendamento\"] }}"
             },
             {
               "name": "status_evento",
@@ -3067,7 +3067,7 @@
             },
             {
               "name": "data_de_inicio",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"data_inicio\"].split ('/')[2].split(',')[0] }}-{{ $node[\"chega_da_fila\"].json[\"content\"][\"data_inicio\"].split ('/')[1] }}-{{ $node[\"chega_da_fila\"].json[\"content\"][\"data_inicio\"].split ('/')[0] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"data_inicio\"] }}"
             },
             {
               "name": "hora_de_inicio",
@@ -3079,7 +3079,7 @@
             },
             {
               "name": "link_reuniao",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_da_reuniao\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_call\"] }}"
             },
             {
               "name": "evento",
@@ -3087,7 +3087,7 @@
             },
             {
               "name": "dia_da_semana_evento",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"dia_call\"] }}"
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"dia_semana\"] }}"
             },
             {
               "name": "data_cancelamento",
@@ -3280,8 +3280,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        640,
-        2820
+        800,
+        2500
       ],
       "id": "6815e9bf-c059-4343-a8cc-4605e309b999",
       "name": "insert_forms_answers"
@@ -3311,8 +3311,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        940,
-        2720
+        1100,
+        2400
       ],
       "alwaysOutputData": true,
       "credentials": {
@@ -3351,8 +3351,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1180,
-        2720
+        1340,
+        2400
       ],
       "id": "3f4a4c80-240d-4c03-acc9-e4e46619eab9",
       "name": "insert_forms_answers1"
@@ -3363,8 +3363,8 @@
       {
         "json": {
           "fields": {
-            "consumerTag": "amq.ctag-sucQJck5tyG1erBBpHLYIg",
-            "deliveryTag": 1,
+            "consumerTag": "amq.ctag-JlsYT0er9WCojxC2TNz0hQ",
+            "deliveryTag": 5,
             "redelivered": false,
             "exchange": "",
             "routingKey": "Fila de Ações de Funis"
@@ -3376,28 +3376,30 @@
             "nome": "Mateus",
             "sobrenome": "Diniz",
             "email": "mateusdiniz@automagicbots.com.br",
-            "telefone": "5562981196678",
-            "instagram": "Studio Barbara Assad",
-            "data_aplicacao": "2025-03-25 04:34",
-            "id_forms": "10",
-            "id_ferramenta_forms": "WHYDoReb",
-            "utm_source": "ig",
-            "utm_campaign": "[LF] [SE] [CAPTAÇÃO] [CADASTROS] [AUTO] [Q] Público quente",
-            "utm_term": "SE_AD121",
-            "utm_medium": "Instagram_Feed",
-            "utm_content": "01 - [AUTO] [Q] Enviou mensagem + salvou + Viu ads 15S",
-            "faturamento": "Entre R$30.000 e R$50.000 mensal",
-            "qtd_colaboradores": "- DE 4",
-            "tem_recepcionista": "Ainda não",
-            "objetivo_sessao": "Maior numero de clientes",
-            "obstaculo_atual": "Talvez o meu espaço",
-            "porque_voce": "Por busco conhecimento pra crescimento profissional e pessoal para que eu possa crescer profissionalmente",
-            "quanto_investiria": "R$300 a R$700",
-            "tipo_forms": "Aplicação",
-            "qualificacao": "Qualificado",
+            "telefone": "556281196678",
+            "utm_source": "",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_medium": "",
+            "utm_content": "",
             "id_funil": "18",
-            "perguntas_respostas": "{\"40a16c2d-6387-4fb8-9bc8-679181a870dc\":\"Mateus Diniz\",\"b74b2444-559d-47bc-ba81-7f775404dd54\":\"+5562981196678\",\"1824cb54-9456-47e1-acad-572d017d837b\":\"Studio Barbara Assad\",\"f4fcda9e-a288-4558-94d9-3e2b0b4f96ad\":\"- DE 4\",\"95d7a9a9-ef32-4a45-b950-92623e603377\":\"Ainda não\",\"2c42d709-1748-472f-8f28-ebc7677c0398\":\"Entre R$30.000 e R$50.000 mensal\",\"391e5111-8203-4704-beb1-381395942142\":\"Maior numero de clientes\",\"193b63eb-8173-4a1a-8fa0-c930cab89161\":\"Talvez o meu espaço\",\"66fec9b4-837b-4783-8ce2-a670902ab134\":\"Por busco conhecimento pra crescimento profissional e pessoal para que eu possa crescer profissionalmente\",\"511ca207-0c32-4529-b19f-42be7508c79d\":\"R$300 a R$700\",\"4e6ef379-0b1e-4759-860c-bcf229226168\":10}",
-            "nota_disposicao": "10"
+            "instagram": "",
+            "id_agendamento": "c3b1a652-6213-4fbd-abe4-9431b0083854",
+            "id_forms": "12",
+            "tipo_forms": "Agendamento",
+            "link_call": "https://calendly.com/events/c3b1a652-6213-4fbd-abe4-9431b0083854/google_meet",
+            "email_responsavel": "jeancmello.13@gmail.com",
+            "data_termino": "2025-03-28 14:30:00",
+            "data_inicio": "2025-03-28 13:15:00",
+            "data_agendamento": "2025-03-27 16:07:14",
+            "evento": "Agendamento",
+            "dia_semana": "Sexta-feira",
+            "id_agendamento_reagendado": "",
+            "nome_do_evento": "Sessão Estratégica",
+            "motivo_cancelamento": "",
+            "data_call_kommo": "28/03/2025 13:15",
+            "closer": "jeancmello.13@gmail.com",
+            "hora_reuniao": "13:15"
           }
         }
       }
@@ -3411,6 +3413,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-25T19:20:00.966Z",
-  "versionId": "8d2aa0ce-126e-45b4-bdd0-727665d212a4"
+  "updatedAt": "2025-03-27T21:09:08.412Z",
+  "versionId": "27f3ad1c-d001-4c85-9528-fdca207b916b"
 }
