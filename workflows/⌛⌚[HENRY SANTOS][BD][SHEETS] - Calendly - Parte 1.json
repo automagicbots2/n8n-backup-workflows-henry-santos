@@ -227,7 +227,7 @@
       "main": [
         [
           {
-            "node": "remover eventos",
+            "node": "reagendamento2",
             "type": "main",
             "index": 0
           }
@@ -284,17 +284,6 @@
         [
           {
             "node": "busca_funil",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "busca_funil": {
-      "main": [
-        [
-          {
-            "node": "pesquisa_url_rotacionamento_colaboradores",
             "type": "main",
             "index": 0
           }
@@ -379,6 +368,17 @@
         [
           {
             "node": "formata_dados4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_funil": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_url_rotacionamento_colaboradores",
             "type": "main",
             "index": 0
           }
@@ -2031,7 +2031,7 @@
       "typeVersion": 1,
       "position": [
         -300,
-        840
+        420
       ],
       "webhookId": "945ee3d2-a828-4b8f-9b49-5175de6629d8",
       "credentials": {
@@ -2133,29 +2133,6 @@
     },
     {
       "parameters": {
-        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_funis\"].json[\"valor_variavel\"] }}",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "id_forms",
-              "value": "={{ $node[\"formata_dados4\"].json[\"form_id\"] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        520,
-        420
-      ],
-      "id": "0bc51420-2f7e-4eb8-8e28-279b36376248",
-      "name": "busca_funil"
-    },
-    {
-      "parameters": {
         "assignments": {
           "assignments": [
             {
@@ -2215,7 +2192,7 @@
             {
               "id": "2bb4770b-d984-4366-a4c5-6e323c3889c1",
               "name": "id_funil",
-              "value": "={{ $node[\"busca_funil\"].json[\"id_funil\"] }}",
+              "value": "={{ $node[\"busca_funil\"].json[\"id\"] }}",
               "type": "string"
             },
             {
@@ -2233,13 +2210,13 @@
             {
               "id": "3119a327-9ecf-46bf-88ad-2580b947ef54",
               "name": "id_forms",
-              "value": "={{ $node[\"busca_funil\"].json[\"id_forms\"] }}",
+              "value": "={{ $node[\"formata_dados4\"].json[\"form_id\"] }}",
               "type": "string"
             },
             {
               "id": "a2bafec5-dec9-4b7a-89d2-90c739e203f5",
               "name": "tipo_forms",
-              "value": "={{ $node[\"busca_funil\"].json[\"tipo_forms\"] }}",
+              "value": "=Agendamento",
               "type": "string"
             },
             {
@@ -2371,7 +2348,7 @@
           "parameters": [
             {
               "name": "time",
-              "value": "={{ $node[\"busca_funil\"].json[\"tipo_forms\"].replace('Cadastro','SDR').replace('Aplicação','SDR').replace('Agendamento','Closer').replace('Pesquisa','SDR').replace('Checkout','Closer') }}"
+              "value": "=Closer"
             },
             {
               "name": "id_user",
@@ -2559,6 +2536,41 @@
         -100,
         420
       ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "funis",
+          "mode": "list",
+          "cachedResultName": "funis"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "nome",
+              "value": "={{ $node[\"Evento\"].json[\"payload\"][\"questions_and_answers\"][\"1\"][\"answer\"].replace('Social Selling','Sessão Estratégica') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        540,
+        420
+      ],
+      "id": "95eaef75-d501-47e9-8ffd-f88b40ad8cb4",
+      "name": "busca_funil",
+      "credentials": {
+        "mySql": {
+          "id": "rva8krZgONj5RBij",
+          "name": "[MySQL] - Henry Santos"
+        }
+      }
     }
   ],
   "pinData": {
@@ -3236,7 +3248,7 @@
               }
             },
             "event": {
-              "uuid": "c3b1a652-6213-4fbd-abe4-9431b0083854",
+              "uuid": "f66c28f8-2f2e-40b2-afe7-149e919d101e",
               "assigned_to": [
                 "Jean Carlos"
               ],
@@ -3247,30 +3259,30 @@
                   "primary": true
                 }
               ],
-              "start_time": "2025-03-28T13:15:00-03:00",
-              "start_time_pretty": "01:15pm - Friday, March 28, 2025",
-              "invitee_start_time": "2025-03-28T13:15:00-03:00",
-              "invitee_start_time_pretty": "01:15pm - Friday, March 28, 2025",
-              "end_time": "2025-03-28T14:30:00-03:00",
-              "end_time_pretty": "02:30pm - Friday, March 28, 2025",
-              "invitee_end_time": "2025-03-28T14:30:00-03:00",
-              "invitee_end_time_pretty": "02:30pm - Friday, March 28, 2025",
-              "created_at": "2025-03-27T16:07:14-03:00",
-              "location": "https://calendly.com/events/c3b1a652-6213-4fbd-abe4-9431b0083854/google_meet",
+              "start_time": "2025-03-31T09:00:00-03:00",
+              "start_time_pretty": "09:00am - Monday, March 31, 2025",
+              "invitee_start_time": "2025-03-31T09:00:00-03:00",
+              "invitee_start_time_pretty": "09:00am - Monday, March 31, 2025",
+              "end_time": "2025-03-31T10:15:00-03:00",
+              "end_time_pretty": "10:15am - Monday, March 31, 2025",
+              "invitee_end_time": "2025-03-31T10:15:00-03:00",
+              "invitee_end_time_pretty": "10:15am - Monday, March 31, 2025",
+              "created_at": "2025-03-28T09:31:11-03:00",
+              "location": "https://calendly.com/events/f66c28f8-2f2e-40b2-afe7-149e919d101e/google_meet",
               "canceled": false,
               "canceler_name": null,
               "cancel_reason": null,
               "canceled_at": null
             },
             "invitee": {
-              "uuid": "eaf7f82e-fed3-4a2f-8a29-f313da070237",
+              "uuid": "aa54572e-51c3-4456-a325-aabd749d0c35",
               "first_name": null,
               "last_name": null,
-              "name": "Mateus Diniz",
+              "name": "Mateus",
               "email": "mateusdiniz@automagicbots.com.br",
               "text_reminder_number": null,
               "timezone": "America/Sao_Paulo",
-              "created_at": "2025-03-27T16:07:14-03:00",
+              "created_at": "2025-03-28T09:31:11-03:00",
               "is_reschedule": false,
               "payments": [],
               "canceled": false,
@@ -3285,14 +3297,14 @@
               },
               {
                 "question": "Qual funil veio o lead?",
-                "answer": "Webinário"
+                "answer": "Isca Paga"
               }
             ],
             "questions_and_responses": {
               "1_question": "DDD+Whatsapp",
               "1_response": "+55 62 98119-6678",
               "2_question": "Qual funil veio o lead?",
-              "2_response": "Webinário"
+              "2_response": "Isca Paga"
             },
             "tracking": {
               "utm_campaign": null,
@@ -3307,7 +3319,7 @@
             "new_event": null,
             "new_invitee": null
           },
-          "time": "2025-03-27T19:07:14Z"
+          "time": "2025-03-28T12:31:12Z"
         }
       }
     ]
@@ -3323,11 +3335,11 @@
   },
   "staticData": {
     "node:Evento": {
-      "webhookId": 5601229
+      "webhookId": 5604050
     }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-27T20:51:49.405Z",
-  "versionId": "8210086b-33e5-4ffe-be9b-0f7a8ea1d8e7"
+  "updatedAt": "2025-03-28T19:48:52.469Z",
+  "versionId": "e08a28de-400d-4636-8f56-3704ec6ffe0f"
 }
