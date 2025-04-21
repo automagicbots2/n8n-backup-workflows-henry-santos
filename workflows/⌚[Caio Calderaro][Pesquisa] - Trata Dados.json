@@ -1,0 +1,980 @@
+{
+  "active": true,
+  "connections": {
+    "dados": {
+      "main": [
+        [
+          {
+            "node": "fila_acoes_funis",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "insere_pesquisa",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_funil": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_users1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_variavel_n8n_fluxo_funis": {
+      "main": [
+        [
+          {
+            "node": "busca_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_atualiza_user1": {
+      "main": [
+        [
+          {
+            "node": "dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_variavel_n8n_fluxo_users1": {
+      "main": [
+        [
+          {
+            "node": "cria_atualiza_user1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dados_vazios": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_funis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formata_dados": {
+      "main": [
+        [
+          {
+            "node": "dados_vazios",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "typeform": {
+      "main": [
+        [
+          {
+            "node": "formata_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-21T01:21:27.955Z",
+  "id": "trOtKVLB4AWInvt9",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Caio Calderaro][Pesquisa] - Trata Dados",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "857cec21-9e14-4ec1-8846-dc73f03b18be",
+              "name": "nome",
+              "value": "={{ $node[\"cria_atualiza_user1\"].json[\"nome\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "cb8cf50a-ad5f-4f6c-a108-bc8207ed39d6",
+              "name": "sobrenome",
+              "value": "={{ $node[\"cria_atualiza_user1\"].json[\"sobrenome\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "ea504228-bc53-47ab-af46-8ffc438c3647",
+              "name": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "936860ac-b806-4273-ad2a-e55dab31d731",
+              "name": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"whatsapp\"]  || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "d8adee03-c9d3-449a-a1c9-39feba83037b",
+              "name": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "dbf48f0c-ad19-46ca-ace2-dd71301de650",
+              "name": "data_aplicacao",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}",
+              "type": "string"
+            },
+            {
+              "id": "24d5eecc-7a73-4814-9e87-2ab22738d2b5",
+              "name": "id_forms",
+              "value": "={{ $node[\"busca_funil\"].json[\"id_forms\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "7df91456-16d1-4aa6-8c92-bf48117dc184",
+              "name": "id_ferramenta_forms",
+              "value": "={{ $node[\"formata_dados\"].json[\"form_id\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "36697c59-df0d-4d8e-a21e-c8252542fd27",
+              "name": "utm_source",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_source\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "24d8401c-9ad4-4813-a992-b19b4ce7db34",
+              "name": "utm_campaign",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_campaign\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "8d013fe4-aba3-4448-9362-f41ae28a4160",
+              "name": "utm_term",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_term\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "9424999b-23c6-4683-baf4-42737742acfc",
+              "name": "utm_medium",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_medium\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "52797712-1952-4f3e-b216-8214b6dc3986",
+              "name": "utm_content",
+              "value": "={{ $node[\"formata_dados\"].json[\"utm_content\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "23923c4a-0466-4182-ba96-22f78673beb1",
+              "name": "sexo",
+              "value": "={{ $node[\"formata_dados\"].json[\"sexo\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "26906a4c-ef58-4d33-80a5-ee555478dcb8",
+              "name": "faixa_etaria",
+              "value": "={{ $node[\"formata_dados\"].json[\"faixa_etaria\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "e8709fbc-29c3-463e-abb5-3991531a2797",
+              "name": "renda",
+              "value": "={{ $node[\"formata_dados\"].json[\"renda\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "b1df6562-92bf-4f75-9fd9-045e977f9b0c",
+              "name": "tempo_conhecendo",
+              "value": "={{ $node[\"formata_dados\"].json[\"tempo_conhecendo\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "8be23767-974b-4027-a66e-5479fae83aef",
+              "name": "tem_cartao",
+              "value": "={{ $node[\"formata_dados\"].json[\"tem_cartao\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "359317c7-5d26-484c-b21a-ea63c8c10332",
+              "name": "profissao",
+              "value": "={{ $node[\"formata_dados\"].json[\"profissao\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "f8c87689-0188-4acb-81bf-cb20813de065",
+              "name": "tipo_forms",
+              "value": "={{ $node[\"busca_funil\"].json[\"tipo_forms\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "396fb545-7ed0-4eab-9e0d-f17b90721a11",
+              "name": "score",
+              "value": "={{ $node[\"formata_dados\"].json[\"score\"] || \"\" }}",
+              "type": "string"
+            },
+            {
+              "id": "f6a8c5d2-7a71-40bf-83df-d02f588d75dd",
+              "name": "id_funil",
+              "value": "={{ $node[\"busca_funil\"].json[\"id_funil\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "cf70dcf9-e61a-4bb3-86e8-0ecf4787b0fb",
+              "name": "perguntas_respostas",
+              "value": "={{ $node[\"formata_dados\"].json[\"perguntas_respostas\"] }}",
+              "type": "object"
+            },
+            {
+              "id": "93c1c2aa-10c2-44cb-a65b-ae2996350665",
+              "name": "id_resposta_typeform",
+              "value": "={{ $node[\"typeform\"].json[\"body\"][\"form_response\"][\"token\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1540,
+        0
+      ],
+      "id": "de0e3a10-c54a-49e4-8c19-4f8cf4b400e9",
+      "name": "dados"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_funis\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_forms",
+              "value": "={{ $node[\"formata_dados\"].json[\"form_id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        0
+      ],
+      "id": "e60f0428-c4e4-48c7-912d-08fc8176e8ed",
+      "name": "busca_funil"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Verificação de Funis"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "aba55522-c39f-4e5f-9339-d61d6266ebe4",
+      "name": "pesquisa_variavel_n8n_fluxo_funis",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        660,
+        0
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "queue": "Fila de Ações de Funis - Caio Calderaro",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "6286abab-63c6-4ba5-a34f-55ba071c2fe8",
+      "name": "fila_acoes_funis",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        0
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_users1\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nome",
+              "value": "={{ ($node[\"formata_dados\"].json[\"fname\"] || \"\").replace(/[^a-zA-Z0-9\\s]/g, \"\") }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ ($node[\"formata_dados\"].json[\"lname\"] || \"\").replace(/[^a-zA-Z0-9\\s]/g, \"\") }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"formata_dados\"].json[\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"formata_dados\"].json[\"whatsapp\"] || \"\" }}"
+            },
+            {
+              "name": "instagram",
+              "value": "={{ $node[\"formata_dados\"].json[\"instagram\"] || \"\" }}"
+            },
+            {
+              "name": "cpf",
+              "value": "={{ $node[\"formata_dados\"].json[\"cpf\"] || \"\" }}"
+            },
+            {
+              "name": "cnpj",
+              "value": "={{ $node[\"formata_dados\"].json[\"cnpj\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1320,
+        0
+      ],
+      "id": "683f2098-2233-4c98-8c83-9310c42ef80d",
+      "name": "cria_atualiza_user1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Verificação de Users"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "547788cc-dc23-4742-9f46-35a612e72bd2",
+      "name": "pesquisa_variavel_n8n_fluxo_users1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1100,
+        0
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "cd460623-7c44-410e-80a3-438a5afb2975",
+              "leftValue": "={{ $node[\"formata_dados\"].json[\"whatsapp\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "157682a7-5b55-44c1-af25-a285146f57be",
+              "leftValue": "={{ $node[\"formata_dados\"].json[\"email\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "8fc70ead-2832-44bf-b5c7-66c05f60f321",
+              "leftValue": "={{ $node[\"formata_dados\"].json[\"fullname\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "a14310c1-29ff-4cb8-8b9b-9782c42d7496",
+              "leftValue": "={{ $node[\"formata_dados\"].json[\"lname\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "58b50e58-0ee3-4dfc-ab15-d7365b242d66",
+              "leftValue": "={{ $node[\"formata_dados\"].json[\"fname\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "597f7c8f-2bab-410f-a321-f457dcd6f445",
+      "name": "dados_vazios",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        420,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0f295bb4-dbf3-4b79-a798-ab76291de200",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        660,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers || [];\n\n// Criar um objeto para armazenar as perguntas e respostas usando os IDs como chaves\nconst perguntas_respostas = {};\n\n// Função para extrair múltiplas respostas e juntá-las por vírgula\nfunction extractMultipleChoices(answerId) {\n    const resposta = respostas.find(answer => answer.field.ref === answerId);\n    if (resposta && Array.isArray(resposta.choice?.label)) {\n        const respostaFormatada = resposta.choice.label.map(choice => choice.label).join(', ');\n        perguntas_respostas[answerId] = respostaFormatada;\n        return respostaFormatada;\n    }\n    return '';\n}\n\n/// Função para adicionar a resposta ao objeto perguntas_respostas\nfunction adicionarResposta(answerId, resposta) {\n    // Aqui agora vai aceitar valores vazios também, mas nunca undefined ou null\n    if (resposta !== undefined && resposta !== null) {\n        perguntas_respostas[answerId] = resposta;\n    }\n}\n\n// Mapeamento de perguntas com seus respectivos IDs\nconst perguntasMap = {\n    \"01JS6THWJVWVBE5ZTQB35CZ8WC\": \"sexo\",\n    \"2855dd0e-a084-43ab-a698-b1b0ce0268f3\": \"faixa_etaria\",\n    \"f6ac3294-c5e0-47b6-8034-ff70cba50c59\": \"renda\",\n    \"01d4ed45-37d2-45a3-9b46-6ea39c65555a\": \"tempo_conhecendo\",\n    \"6265f31a-38fd-4f75-b946-c4974d6b6435\": \"tem_cartao\",\n    \"2f475f78-417b-4d82-888e-f24e592d93dd\": \"profissao\",\n    \"utm_source\": \"utm_source\",\n    \"utm_campaign\": \"utm_campaign\",\n    \"utm_term\": \"utm_term\",\n    \"utm_medium\": \"utm_medium\",\n    \"utm_content\": \"utm_content\"\n};\n\n// Onde os UTM estão\nconst hiddenFields = inputData.body.form_response?.hidden || {};\n\n\n// Processar cada pergunta e armazenar no objeto perguntas_respostas\nfor (const [id, key] of Object.entries(perguntasMap)) {\n    if (key.startsWith(\"utm_\")) {\n        // Sempre define a UTM, mesmo que esteja vazia\n        const valorUtm = hiddenFields[key] ?? ''; // Se undefined, assume string vazia\n        adicionarResposta(id, valorUtm);\n    } else {\n        // Resposta comum, pega da lista de respostas do formulário\n        const respostaObj = respostas.find(answer => answer.field.ref === id);\n        const resposta = respostaObj?.text ||\n                         respostaObj?.email ||\n                         respostaObj?.phone_number ||\n                         respostaObj?.number ||\n                         respostaObj?.choice?.label || '';\n        adicionarResposta(id, resposta);\n    }\n}\n\nconst fullNameAnswer = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"first_name\"] || \"\";\nconst emailAnswer = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"email\"] || \"\";\nconst telefoneClienteOriginal = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"phone_number\"] || \"\";\nconst instagramAnswer = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"instagram\"] || \"\";\nconst score = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"calculated\"][\"score\"] || \"\";\nconst pergunta1 = respostas.find(answer => answer.field.ref === \"01JS6THWJVWVBE5ZTQB35CZ8WC\")?.choice.label || ''; // Qual é o seu sexo?\nconst pergunta2 = respostas.find(answer => answer.field.ref === \"2855dd0e-a084-43ab-a698-b1b0ce0268f3\")?.choice.label || ''; // Qual é a sua faixa etária?\nconst pergunta3 = respostas.find(answer => answer.field.ref === \"f6ac3294-c5e0-47b6-8034-ff70cba50c59\")?.choice.label || ''; // Qual é o seu nível de renda/salário mensal hoje?\nconst pergunta4 = respostas.find(answer => answer.field.ref === \"01d4ed45-37d2-45a3-9b46-6ea39c65555a\")?.choice.label || ''; // Há quanto tempo você me conhece?\nconst pergunta5 = respostas.find(answer => answer.field.ref === \"6265f31a-38fd-4f75-b946-c4974d6b6435\")?.choice.label || ''; // Você tem cartão de crédito?\nconst pergunta6 = respostas.find(answer => answer.field.ref === \"2f475f78-417b-4d82-888e-f24e592d93dd\")?.choice.label || ''; // Você trabalha em que?\n\n// Data de aplicação\nconst dataAplicacao = inputData.body.form_response.submitted_at || '';\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${ano}-${mes}-${dia}`;\n}\n\nfunction formatarDataISO(dataISO) {\n    const data = new Date(dataISO);\n\n    const ano = data.getFullYear();\n    const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês começa do zero\n    const dia = String(data.getDate()).padStart(2, '0');\n    const horas = String(data.getHours()).padStart(2, '0');\n    const minutos = String(data.getMinutes()).padStart(2, '0');\n    const segundos = String(data.getSeconds()).padStart(2, '0');\n\n    return `${ano}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  \n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// UTMS\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Função para remover todas as aspas e parênteses de um texto\nfunction removerAspasEParenteses(texto) {\n    // Substitui todas as ocorrências de aspas (\"\") por nada\n    let textoSemAspas = texto.replace(/\"/g, '');\n    // Substitui todas as ocorrências de parênteses () por nada\n    textoSemAspas = textoSemAspas.replace(/\\([^()]*\\)/g, '');\n    return textoSemAspas;\n}\n\nfunction capitalizeName(fullName) {\n    if (typeof fullName === 'undefined') {\n        return { fname: '', lname: '', fullname: '' };\n    }\n\n    const lowerCaseWords = ['da', 'de', 'do', 'di', 'du'];\n    let words = fullName.toLowerCase().split(' ').map((word, index) => {\n        if (lowerCaseWords.includes(word) && index !== 0) {\n            return word;\n        }\n        return word.charAt(0).toUpperCase() + word.slice(1);\n    });\n\n    let fname = words.shift();\n    let lname = words.join(' ');\n\n    // Ajuste para remover o espaço extra caso não haja sobrenome\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\nfunction formatEmail(email) {\n    return email.toLowerCase().trim();\n}\n\nfunction formatInstagram(instagram) {\n    // Remover \"@\" e transformar em letras minúsculas\n    return instagram.toLowerCase().trim().replace(/^@/, \"\");\n}\n\nlet telefoneFinal = \"\";\n\n// Verificar se o telefone foi preenchido\nif (telefoneClienteOriginal) {\n    // Limpar o número para remover caracteres não numéricos\n    const telefoneLimpo = telefoneClienteOriginal.replace(/\\D/g, \"\");\n\n    let DDI = '';\n    let DDD = '';\n    let numero = '';\n\n    // Determinar se o telefone possui DDI\n    if (telefoneLimpo.length > 11) {\n        // Extrair o DDI (primeiros dois dígitos)\n        DDI = telefoneLimpo.slice(0, 2);\n        DDD = telefoneLimpo.slice(2, 4);\n        numero = telefoneLimpo.slice(4);\n    } else if (telefoneLimpo.length === 11) {\n        // Assumir DDI padrão (55) para números com DDD + número\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else if (telefoneLimpo.length === 10) {\n        // Assumir DDI padrão (55) para números com DDD + número de 10 dígitos\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else {\n        // Caso o número não tenha tamanho esperado, considerá-lo inválido\n        telefoneFinal = telefoneLimpo; // Ou deixar vazio: telefoneFinal = \"\";\n    }\n\n    // Ajustar número com base no DDD\n    if (DDD && numero) {\n        if (parseInt(DDD) > 28) {\n            // Se o DDD for maior que 28 e o número tiver 9 dígitos, remover o nono dígito\n            if (numero.length === 9 && numero.startsWith(\"9\")) {\n                numero = numero.slice(1); // Remove o primeiro dígito\n            }\n        } else {\n            // Se o DDD for menor ou igual a 28 e o número tiver 8 dígitos, adicionar o nono dígito\n            if (numero.length === 8) {\n                numero = `9${numero}`; // Adiciona o nono dígito\n            }\n        }\n    }\n\n    // Formatar número final apenas se válido\n    if (DDI && DDD && numero) {\n        telefoneFinal = `${DDI}${DDD}${numero}`;\n    }\n}\n\nconst formattedNames = capitalizeName(fullNameAnswer);\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedInstagram = formatInstagram(instagramAnswer);\nconst form_id = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"form_id\"]  || \"\";\nconst form_name = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"definition\"][\"title\"] || \"\";\nconst endings = inputData.body.form_response.ending.ref || \"\";\nconst data_aplicacao = formatarDataISO(dataAplicacao) || \"\";\n\nconst result = {\n    ...formattedNames, // Nome formatado\n    email: formattedEmail, // Email formatado\n    whatsapp: telefoneFinal, // WhatsApp formatado ou vazio\n    instagram: formattedInstagram, // Instagram formatado\n    utm_source: utmSource,\n    utm_campaign: utmCampaign,\n    utm_term: utmTerm,\n    utm_medium: utmMedium,\n    utm_content: utmContent,\n    dataAplicacao: data_aplicacao,\n    sexo: pergunta1,\n    faixa_etaria: pergunta2,\n    renda: pergunta3,\n    tempo_conhecendo: pergunta4,\n    tem_cartao: pergunta5,\n    profissao: pergunta6,\n    score: score,\n    perguntas_respostas: perguntas_respostas,\n    form_id: form_id,\n    form_name: form_name // Inclui o form_name no resultado\n};\n\n// Aqui estamos ajustando a estrutura do retorno para se adequar ao que o n8n espera\nreturn [{ json: result }];\n"
+      },
+      "id": "6c6eaaa0-f299-41a4-bb84-c596a502ca7a",
+      "name": "formata_dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        200,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "3bf3648f-f51f-4492-9a59-3faad69fc797",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "49f6dc20-c524-454a-9121-ce467bb9b054",
+      "name": "typeform",
+      "webhookId": "3bf3648f-f51f-4492-9a59-3faad69fc797"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "pesquisa_caio_calderaro",
+          "mode": "list",
+          "cachedResultName": "pesquisa_caio_calderaro"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user1\"].json[\"id\"] }}"
+            },
+            {
+              "column": "id_typeform",
+              "value": "={{ $node[\"dados\"].json[\"id_resposta_typeform\"] }}"
+            },
+            {
+              "column": "sexo",
+              "value": "={{ $node[\"dados\"].json[\"sexo\"] }}"
+            },
+            {
+              "column": "faixa_etaria",
+              "value": "={{ $node[\"dados\"].json[\"faixa_etaria\"] }}"
+            },
+            {
+              "column": "renda_mensal",
+              "value": "={{ $node[\"dados\"].json[\"renda\"] }}"
+            },
+            {
+              "column": "tempo_conhecendo",
+              "value": "={{ $node[\"dados\"].json[\"tempo_conhecendo\"] }}"
+            },
+            {
+              "column": "tem_cartao",
+              "value": "={{ $node[\"dados\"].json[\"tem_cartao\"] }}"
+            },
+            {
+              "column": "profissao",
+              "value": "={{ $node[\"dados\"].json[\"profissao\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1760,
+        -240
+      ],
+      "id": "8beb8326-dbc1-4193-988a-af737e33627a",
+      "name": "insere_pesquisa",
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "typeform": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "user-agent": "Typeform Webhooks",
+            "content-length": "5515",
+            "accept-encoding": "gzip",
+            "content-type": "application/json",
+            "traceparent": "00-9bd09101b41cd1b66f7ca27480c5e127-3ef4cdccd82ef4df-01",
+            "x-forwarded-for": "34.230.177.131",
+            "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "9374371a5d91",
+            "x-real-ip": "34.230.177.131"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event_id": "01JSB6ETD1E2F64CY5XRCN4NJ6",
+            "event_type": "form_response",
+            "form_response": {
+              "form_id": "uAH0Nr0r",
+              "token": "glksq4wt2lmxl4fsaglksvstm6sydi2o",
+              "landed_at": "2025-04-21T03:32:09Z",
+              "submitted_at": "2025-04-21T03:32:19Z",
+              "hidden": {
+                "email": "teste@automagicbots.com.br",
+                "first_name": "Gabriel",
+                "phone_number": "31985711260",
+                "utm_campaign": "organico",
+                "utm_content": "ia-sem-codigo",
+                "utm_medium": "reels",
+                "utm_source": "facebook",
+                "utm_term": "ig"
+              },
+              "calculated": {
+                "score": 700
+              },
+              "variables": [
+                {
+                  "key": "counter_fc9cf383_75de_450a_a686_2c7b098a495e",
+                  "type": "number",
+                  "number": 0
+                },
+                {
+                  "key": "score",
+                  "type": "number",
+                  "number": 700
+                },
+                {
+                  "key": "winning_outcome_id",
+                  "type": "outcome_id",
+                  "outcome_id": "rW0XaJOiwDxb"
+                }
+              ],
+              "outcome": {
+                "id": "rW0XaJOiwDxb",
+                "title": ""
+              },
+              "definition": {
+                "id": "uAH0Nr0r",
+                "title": "Lançamento Caio Calderaro",
+                "fields": [
+                  {
+                    "id": "5tj5oYIm6AXt",
+                    "ref": "01JS6THWJVWVBE5ZTQB35CZ8WC",
+                    "type": "multiple_choice",
+                    "title": "Qual é o seu sexo?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "ouP5dwzOjxbp",
+                        "ref": "01JS6THWJVZ239Z4SRYMKCFJPJ",
+                        "label": "Masculino"
+                      },
+                      {
+                        "id": "WHPFOJWTwG1Z",
+                        "ref": "01JS6THWJVAA9PA8QQHP7QDDBX",
+                        "label": "Feminino"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "Nm8xLbePlvNw",
+                    "ref": "2855dd0e-a084-43ab-a698-b1b0ce0268f3",
+                    "type": "multiple_choice",
+                    "title": "Qual é a sua faixa etária?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "H19He1RpZY8G",
+                        "ref": "49a99b7d-6fc7-4b1f-9af0-222da82b0ffe",
+                        "label": "Menos de 25 anos"
+                      },
+                      {
+                        "id": "avenmHU3dzA0",
+                        "ref": "6a698a72-bb0f-4344-ab74-5d824dd8edec",
+                        "label": "26 a 35 anos"
+                      },
+                      {
+                        "id": "XGP7tQLw1CP7",
+                        "ref": "c9778aac-d6ef-4949-8ef9-9b46bbfabdbf",
+                        "label": "36 a 45 anos"
+                      },
+                      {
+                        "id": "q73SiYz5TosC",
+                        "ref": "7b31a206-3801-4c90-96c3-1a302eaec67f",
+                        "label": "46 a 55 anos"
+                      },
+                      {
+                        "id": "X1jl1OyIquQY",
+                        "ref": "b220a0c9-349c-4a74-9ee6-20f456af5ff9",
+                        "label": "Mais de 55 anos"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "CWNSsEKVI7QC",
+                    "ref": "f6ac3294-c5e0-47b6-8034-ff70cba50c59",
+                    "type": "multiple_choice",
+                    "title": "Qual é o seu nível de renda/salário mensal hoje?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "aXg9wtnV9rqp",
+                        "ref": "93be7d87-82e7-4911-b71f-c32b430e3553",
+                        "label": "Menos de R$2.000"
+                      },
+                      {
+                        "id": "WtXvWR2equXW",
+                        "ref": "a4c3b3fd-88dd-4253-897d-3a7a76501c09",
+                        "label": "De R$2.000 a R$5.000"
+                      },
+                      {
+                        "id": "mmrzpbGKZyfS",
+                        "ref": "647d6fd4-473c-4f1f-918c-178e908c35da",
+                        "label": "De R$5.000 a R$10.000"
+                      },
+                      {
+                        "id": "RpW4lbpYiP69",
+                        "ref": "3534624c-9048-4629-a006-81daded125d5",
+                        "label": "Acima de R$10.000"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "8e82QBzgBeLu",
+                    "ref": "01d4ed45-37d2-45a3-9b46-6ea39c65555a",
+                    "type": "multiple_choice",
+                    "title": "Há quanto tempo você me conhece?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "NomuOwaslKZP",
+                        "ref": "ecd731d0-e7a7-4d96-b1a1-d8bfe6161dc2",
+                        "label": "Menos de 1 mês"
+                      },
+                      {
+                        "id": "f3EaKYHjN5UG",
+                        "ref": "d7a7addf-6ccc-4948-a788-fa4781e4d9be",
+                        "label": "Entre 1 mês e 6 meses"
+                      },
+                      {
+                        "id": "Kb04Wy23WUHi",
+                        "ref": "103d059a-f959-4baf-a5c4-161db08e00ec",
+                        "label": "Entre 6 meses e 1 ano"
+                      },
+                      {
+                        "id": "YCAAixOPRTwo",
+                        "ref": "410253be-3584-434c-8ad6-75cb005d54d8",
+                        "label": "Acima de um ano"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "d4pCZmHETaDx",
+                    "ref": "6265f31a-38fd-4f75-b946-c4974d6b6435",
+                    "type": "multiple_choice",
+                    "title": "Você tem cartão de crédito?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "WEhnZCV2ltot",
+                        "ref": "5f7414d4-e039-4565-9174-f6ef7efdd8a1",
+                        "label": "Sim"
+                      },
+                      {
+                        "id": "cVW9wrj3xdmt",
+                        "ref": "70f84de5-d4bb-4a7e-8e01-1fd7d22333c6",
+                        "label": "Não"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "1HsRu8UIIkKD",
+                    "ref": "2f475f78-417b-4d82-888e-f24e592d93dd",
+                    "type": "multiple_choice",
+                    "title": "Você trabalha em que?",
+                    "properties": {},
+                    "choices": [
+                      {
+                        "id": "lGKMxfhcLegd",
+                        "ref": "828ec937-8463-4b5c-aa54-3a5688f592c3",
+                        "label": "CLT"
+                      },
+                      {
+                        "id": "geAuvl1otrOh",
+                        "ref": "5b9a2527-cea6-41fc-89a0-2fe7dc6419c0",
+                        "label": "Empreendedor"
+                      },
+                      {
+                        "id": "YfYJW05MxQ2N",
+                        "ref": "c46cbc39-12b5-416a-9d4e-6f0901462bf4",
+                        "label": "Desempregado"
+                      },
+                      {
+                        "id": "zbsaOhvhpj6G",
+                        "ref": "7a2b862e-7272-4ae3-8722-3e6a43be1b21",
+                        "label": "Aposentado"
+                      }
+                    ]
+                  }
+                ],
+                "outcome": {
+                  "variable": "winning_outcome_id",
+                  "choices": [
+                    {
+                      "id": "rW0XaJOiwDxb",
+                      "ref": "750fb9c5-6061-4cc2-a8ab-248ec1977aad",
+                      "title": "",
+                      "counter_variable": "counter_fc9cf383_75de_450a_a686_2c7b098a495e",
+                      "thankyou_screen_ref": "thankyou-screen"
+                    }
+                  ]
+                },
+                "endings": [
+                  {
+                    "id": "hCwx8FNR1C96",
+                    "ref": "thankyou-screen",
+                    "title": "",
+                    "type": "thankyou_screen",
+                    "properties": {
+                      "button_text": "Create a typeform",
+                      "show_button": true,
+                      "share_icons": true,
+                      "button_mode": "default_redirect"
+                    }
+                  }
+                ],
+                "settings": {
+                  "partial_responses_to_all_integrations": false
+                }
+              },
+              "answers": [
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "ouP5dwzOjxbp",
+                    "label": "Masculino",
+                    "ref": "01JS6THWJVZ239Z4SRYMKCFJPJ"
+                  },
+                  "field": {
+                    "id": "5tj5oYIm6AXt",
+                    "type": "multiple_choice",
+                    "ref": "01JS6THWJVWVBE5ZTQB35CZ8WC"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "H19He1RpZY8G",
+                    "label": "Menos de 25 anos",
+                    "ref": "49a99b7d-6fc7-4b1f-9af0-222da82b0ffe"
+                  },
+                  "field": {
+                    "id": "Nm8xLbePlvNw",
+                    "type": "multiple_choice",
+                    "ref": "2855dd0e-a084-43ab-a698-b1b0ce0268f3"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "aXg9wtnV9rqp",
+                    "label": "Menos de R$2.000",
+                    "ref": "93be7d87-82e7-4911-b71f-c32b430e3553"
+                  },
+                  "field": {
+                    "id": "CWNSsEKVI7QC",
+                    "type": "multiple_choice",
+                    "ref": "f6ac3294-c5e0-47b6-8034-ff70cba50c59"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "NomuOwaslKZP",
+                    "label": "Menos de 1 mês",
+                    "ref": "ecd731d0-e7a7-4d96-b1a1-d8bfe6161dc2"
+                  },
+                  "field": {
+                    "id": "8e82QBzgBeLu",
+                    "type": "multiple_choice",
+                    "ref": "01d4ed45-37d2-45a3-9b46-6ea39c65555a"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "WEhnZCV2ltot",
+                    "label": "Sim",
+                    "ref": "5f7414d4-e039-4565-9174-f6ef7efdd8a1"
+                  },
+                  "field": {
+                    "id": "d4pCZmHETaDx",
+                    "type": "multiple_choice",
+                    "ref": "6265f31a-38fd-4f75-b946-c4974d6b6435"
+                  }
+                },
+                {
+                  "type": "choice",
+                  "choice": {
+                    "id": "lGKMxfhcLegd",
+                    "label": "CLT",
+                    "ref": "828ec937-8463-4b5c-aa54-3a5688f592c3"
+                  },
+                  "field": {
+                    "id": "1HsRu8UIIkKD",
+                    "type": "multiple_choice",
+                    "ref": "2f475f78-417b-4d82-888e-f24e592d93dd"
+                  }
+                }
+              ],
+              "ending": {
+                "id": "hCwx8FNR1C96",
+                "ref": "thankyou-screen"
+              }
+            }
+          },
+          "webhookUrl": "https://webhookhetznerhenrysantos.automagicbots.com.br/webhook/3bf3648f-f51f-4492-9a59-3faad69fc797",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-21T03:50:48.830Z",
+  "versionId": "5bd5db32-4523-450a-9431-ca2d77007c28"
+}
