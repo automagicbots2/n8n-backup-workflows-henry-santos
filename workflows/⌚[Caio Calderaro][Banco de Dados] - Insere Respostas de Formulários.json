@@ -1,0 +1,346 @@
+{
+  "active": true,
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "insert_respostas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_pesquisa": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_respostas": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "atualiza_sexo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fluxo_chamado": {
+      "main": [
+        [
+          {
+            "node": "busca_pesquisa",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-21T03:24:39.302Z",
+  "id": "q0mcyptGmjyoGVXH",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Caio Calderaro][Banco de Dados] - Insere Respostas de Formulários",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "// Obter dados do payload\nconst inputData = $node[\"fluxo_chamado\"].json;\nconst idUser = inputData.body.id_user;\nconst idForms = inputData.body.id_forms;\nconst respostas = inputData.body.payload.perguntas_respostas || {};\n\n// Obter perguntas do banco de dados do nó SQL\nlet perguntasDoBanco = $node[\"Loop Over Items\"].json;\n\n// Garantir que perguntasDoBanco seja um array\nif (!Array.isArray(perguntasDoBanco)) {\n    perguntasDoBanco = [perguntasDoBanco]; // Transforma um objeto único em array\n}\n\n// Criar array de respostas formatadas\nconst respostasFormatadas = perguntasDoBanco.map(pergunta => ({\n    id_user: idUser,                                       // ID do usuário que respondeu\n    id_pergunta_forms: pergunta.id_pergunta_forms,        // ID da pergunta no banco\n    id: pergunta.id,                                       // ID do registro da pergunta no banco\n    resposta: respostas[pergunta.id_pergunta_forms] || null // Resposta associada à pergunta\n}));\n\n// Retornar os dados formatados para o próximo nó do n8n\nreturn respostasFormatadas.map(resposta => ({ json: resposta }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        -80
+      ],
+      "id": "21d05864-6d43-4159-af72-d48a591c3308",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "perguntas_pesquisas",
+          "mode": "list",
+          "cachedResultName": "perguntas_pesquisas"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "id_pesquisa",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_forms\"] }}"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "dc377f87-6f80-41b2-b385-bf1f5e8919dd",
+      "name": "busca_pesquisa",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -640,
+        -120
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -420,
+        -120
+      ],
+      "id": "f5ddf052-8233-4ec9-ae08-3f294a2bad21",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "respostas_pesquisas",
+          "mode": "list",
+          "cachedResultName": "respostas_pesquisas"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "id_user",
+              "value": "={{ $node[\"Code\"].json[\"id_user\"] }}"
+            },
+            {
+              "column": "id_pergunta",
+              "value": "={{ $node[\"Code\"].json[\"id\"] }}"
+            },
+            {
+              "column": "resposta",
+              "value": "={{ $node[\"Code\"].json[\"resposta\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f497f368-9a35-4958-9292-fce7a5aca0f0",
+      "name": "insert_respostas",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        40,
+        -80
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "id",
+        "valueToMatchOn": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"id_user\"] }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "sexo",
+              "value": "={{ $node[\"fluxo_chamado\"].json[\"body\"][\"payload\"][\"sexo\"] || NULL }}"
+            },
+            {
+              "column": "data_atualizacao",
+              "value": "={{ $now }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1b0e52a5-a59a-4ab7-a117-e14aed8bb840",
+      "name": "atualiza_sexo",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        40,
+        -300
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -300
+      ],
+      "id": "32e28d13-a38a-47e1-9cff-ae40fb4c1a46",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "path": "9ab86871-54bb-4a45-b5bd-c085c9d62559",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -860,
+        -120
+      ],
+      "id": "44c9c5a8-2e63-46d7-806e-f146a57d69c5",
+      "name": "fluxo_chamado",
+      "webhookId": "9ab86871-54bb-4a45-b5bd-c085c9d62559"
+    }
+  ],
+  "pinData": {
+    "fluxo_chamado": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8nwebhookgrupokedma.automagicbots.com.br",
+            "user-agent": "axios/1.7.4",
+            "content-length": "3729",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "n8nwebhookgrupokedma.automagicbots.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "63cf449bb96d",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id_etapa_funil": 6,
+            "id_user": 14256,
+            "id_forms": "10",
+            "payload": {
+              "nome": "Gabriel",
+              "sobrenome": "",
+              "email": "teste@automagicbots.com.br",
+              "telefone": "553185711260",
+              "instagram": "amaraldasautomacoes",
+              "data_aplicacao": "2025-02-11T22:05:35.488Z",
+              "id_forms": "10",
+              "id_ferramenta_forms": "66fd817e642db5bc5e149c3b",
+              "utm_source": "XXXXX",
+              "utm_campaign": "XXXXX",
+              "utm_term": "XXXXX",
+              "utm_medium": "XXXXX",
+              "utm_content": "XXXXX",
+              "sexo": "Masculino",
+              "idade": "22 a 27",
+              "momento": "Médico generalista ",
+              "tempo_contato": "Entre 1 a 3 meses",
+              "dificuldade": "Ansiedade e estresse durante a preparação, Incerteza sobre quais tópicos priorizar, Conciliar os estudos e ter uma qualidade de vida",
+              "preocupacao": "Ficar preso em uma especialidade que não me faz feliz., Desperdiçar tempo e esforço sem obter resultados concretos., Perder oportunidades de crescimento profissional por falta de preparação.",
+              "transformacao": "Terei mais segurança para avançar na minha carreira médica., Sentirei que todo o meu esforço durante a faculdade valeu a pena., Terei mais confiança para lidar com desafios práticos.",
+              "motivo_fit_mentoria": "teste",
+              "pergunta_cafezinho": "teste",
+              "graduacao": "2025",
+              "tipo_forms": "Aplicação",
+              "qualificacao": "Qualificado",
+              "id_funil": "8",
+              "respostasFormulario": "Respostas formulário:\n\nQual seu Instagram?\namaraldasautomacoes\n\nQual o seu sexo?\nMasculino\n\nQual é a sua idade?\n22 a 27\n\nQual alternativa melhor define o seu momento?\nMédico generalista \n\nHá quanto tempo conhece o Thiago Rosa?\nEntre 1 a 3 meses\n\nQual a sua maior dificuldade hoje na preparação para a prova de residência médica?\nAnsiedade e estresse durante a preparação, Incerteza sobre quais tópicos priorizar, Conciliar os estudos e ter uma qualidade de vida\n\nAtualmente, qual sua maior preocupação ao se preparar para a prova de residência médica?\nFicar preso em uma especialidade que não me faz feliz., Desperdiçar tempo e esforço sem obter resultados concretos., Perder oportunidades de crescimento profissional por falta de preparação.\n\nQuando você for aprovado(a) na residência dos sonhos, o que você acha que vai mudar na sua vida para melhor?\nTerei mais segurança para avançar na minha carreira médica., Sentirei que todo o meu esforço durante a faculdade valeu a pena., Terei mais confiança para lidar com desafios práticos.\n\nPor que você acredita que a mentoria O PLANO é a oportunidade ideal para você ser aprovado na residência médica dos seus sonhos?\nteste\n\nSe você tivesse a oportunidade de tomar um cafezinho comigo e me perguntar qualquer coisa relacionada à preparação para Residência Médica, o que você me perguntaria?\nteste",
+              "perguntas_respostas": {
+                "64b99fd0cd51bbb834034823": "Gabriel",
+                "6002fe4fae71172059d4d9d0": "teste@automagicbots.com.br",
+                "64b2b8478450603b76de7e5a": "@amaraldasautomacoes",
+                "6560a20e34c3585d3fc1086f": "Masculino",
+                "66f3715364ca99367b723651": "22 a 27",
+                "66f3711e64ca99367b7235dd": "Médico generalista ",
+                "66f3724364ca99367b7238c8": "Entre 1 a 3 meses",
+                "66f372aa64ca99367b723ad8": "Ansiedade e estresse durante a preparação, Incerteza sobre quais tópicos priorizar, Conciliar os estudos e ter uma qualidade de vida",
+                "66f3731c64ca99367b723b5d": "Ficar preso em uma especialidade que não me faz feliz., Desperdiçar tempo e esforço sem obter resultados concretos., Perder oportunidades de crescimento profissional por falta de preparação.",
+                "66f3737a64ca99367b723bcc": "Terei mais segurança para avançar na minha carreira médica., Sentirei que todo o meu esforço durante a faculdade valeu a pena., Terei mais confiança para lidar com desafios práticos.",
+                "6002fee5ae71172059d4d9f2": "teste",
+                "66f373dc64ca99367b723c5f": "teste",
+                "66f371bc64ca99367b7236f8": "2025"
+              }
+            }
+          },
+          "webhookUrl": "https://n8nwebhookgrupokedma.automagicbots.com.br/webhook/9ab86871-54bb-4a45-b5bd-c085c9d62559",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-21T03:25:37.873Z",
+  "versionId": "cdb6ecc6-a4d4-4818-89fb-b8a9bf41d813"
+}
