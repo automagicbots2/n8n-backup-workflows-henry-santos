@@ -1,0 +1,3877 @@
+{
+  "active": true,
+  "connections": {
+    "pesquisa_variavel_n8n_fluxo_users": {
+      "main": [
+        [
+          {
+            "node": "cria_atualiza_user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_cadastro": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_variavel_n8n_fluxo_cadastro": {
+      "main": [
+        [
+          {
+            "node": "cria_cadastro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_atualiza_user": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_etapa_funil",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "evento_checkout": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_produtos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_cadastro_bd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_etapa_funil": {
+      "main": [
+        [
+          {
+            "node": "evento_checkout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_variavel_n8n_fluxo_produtos": {
+      "main": [
+        [
+          {
+            "node": "busca_produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca_produto": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_situacao_checkout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_situacao_checkout": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_crm1": {
+      "main": [
+        [
+          {
+            "node": "create_update_deal_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_contact_crm": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_crm3": {
+      "main": [
+        [
+          {
+            "node": "create_update_deal_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_contact_crm1": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_crm4": {
+      "main": [
+        [
+          {
+            "node": "add_tag_contact_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_deal_crm": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_crm4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_deal_crm1": {
+      "main": [
+        [
+          {
+            "node": "create_update_deal_crm5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_contact_crm1": {
+      "main": [
+        [
+          {
+            "node": "add_tag_deal_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_tag_contact_crm": {
+      "main": [
+        [
+          {
+            "node": "add_tag_contact_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_contact_crm3": {
+      "main": [
+        [
+          {
+            "node": "add_tag_deal_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_tag_contact_crm1": {
+      "main": [
+        [
+          {
+            "node": "add_tag_contact_crm3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_tag_deal_crm": {
+      "main": [
+        [
+          {
+            "node": "add_tag_deal_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_deal_crm1": {
+      "main": [
+        [
+          {
+            "node": "add_customer_bd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_tag_deal_crm1": {
+      "main": [
+        [
+          {
+            "node": "add_tag_deal_crm3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_deal_crm5": {
+      "main": [
+        [
+          {
+            "node": "add_tag_contact_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_conversion_bd": {
+      "main": [
+        [
+          {
+            "node": "add_conversion_bd1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_conversion_bd1": {
+      "main": [
+        [
+          {
+            "node": "add_subscription_bd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_customer_bd": {
+      "main": [
+        [
+          {
+            "node": "add_customer_bd1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_customer_bd1": {
+      "main": [
+        [
+          {
+            "node": "add_conversion_bd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_subscription_bd": {
+      "main": [
+        [
+          {
+            "node": "add_subscription_bd1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_crm2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_contact_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "create_update_deal_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_deal_crm1": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_deal_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_tag_contact_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_contact_crm": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_tag_contact_crm",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_tag_deal_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_deal_crm2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_tag_deal_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "create_update_contact_email_marketing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_crm": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_contact_crm",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "create_update_deal_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_deal_crm": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_deal_crm",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_tag_contact_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_contact_crm2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_tag_contact_crm1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_tag_deal_crm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_deal_crm": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_tag_deal_crm",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_customer_bd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_customer_bd": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_customer_bd",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_conversion_bd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_conversion_bd": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_conversion_bd",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_subscription_bd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_subscription_bd": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_subscription_bd",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "create_update_contact_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_cadastro_bd": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_cadastro",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "create_update_contact_crm2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_email_marketing": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_contact_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_tag_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_contact_email_marketing": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_email_marketing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_message_api_oficial": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_send_message_api_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_send_message_api_oficial": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_oficial1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_email_marketing1": {
+      "main": [
+        [
+          {
+            "node": "add_tag_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_subscription_bd1": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_email_marketing": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_tag_email_marketing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "send_message_api_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_tag_email_marketing": {
+      "main": [
+        [
+          {
+            "node": "add_tag_email_marketing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_email_marketing1": {
+      "main": [
+        [
+          {
+            "node": "send_message_api_oficial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_email_marketing2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_contact_email_marketing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "add_tag_email_marketing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_contact_email_marketing1": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_email_marketing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_contact_email_marketing3": {
+      "main": [
+        [
+          {
+            "node": "add_tag_email_marketing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_email_marketing2": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_add_tag_email_marketing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "insert_forms_answers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_add_tag_email_marketing1": {
+      "main": [
+        [
+          {
+            "node": "add_tag_email_marketing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_deal_crm3": {
+      "main": [
+        [
+          {
+            "node": "create_update_contact_email_marketing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_tag_email_marketing3": {
+      "main": [
+        [
+          {
+            "node": "insert_forms_answers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_forms_answers": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_insert_forms_answers",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "create_update_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_insert_forms_answers": {
+      "main": [
+        [
+          {
+            "node": "insert_forms_answers1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_forms_answers1": {
+      "main": [
+        [
+          {
+            "node": "create_update_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_flow_manychat": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_send_flow_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "insert_ingresso",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_send_flow_manychat": {
+      "main": [
+        [
+          {
+            "node": "send_flow_manychat1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_manychat": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_create_update_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "send_flow_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_create_update_manychat": {
+      "main": [
+        [
+          {
+            "node": "create_update_manychat1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_update_manychat1": {
+      "main": [
+        [
+          {
+            "node": "send_flow_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "reprocessamento": {
+      "main": [
+        [],
+        [
+          {
+            "node": "pesquisa_variavel_n8n_fluxo_users",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nome_email_telefone_ig_null": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "reprocessamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_flow_manychat1": {
+      "main": [
+        [
+          {
+            "node": "insert_ingresso",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "documenta_erro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "nome_email_telefone_ig_null",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insert_ingresso": {
+      "main": [
+        [
+          {
+            "node": "pesquisa_acao_insert_ingresso",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "pesquisa_acao_insert_ingresso": {
+      "main": [
+        [
+          {
+            "node": "insert_ingresso1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-21T01:36:06.693Z",
+  "id": "ip5zVpdpHZrgZG2w",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "⌚[Caio Calderaro][Banco de Dados] - Fila de Ações de Funis",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Verificação de Users"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "0195a8a9-f6a3-40f4-92bf-d254ec7665f9",
+      "name": "pesquisa_variavel_n8n_fluxo_users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1940,
+        60
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_cadastro\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] || \"\" }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] || \"\" }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] || \"\" }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] || \"\" }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] || \"\" }}"
+            },
+            {
+              "name": "id_forms",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_forms\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ ($node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\").replace(/[^a-zA-Z0-9\\s]/g, \"\") }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ ($node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\").replace(/[^a-zA-Z0-9\\s]/g, \"\") }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "instagram",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -660,
+        200
+      ],
+      "id": "f8ca337e-8494-4e97-a962-dec0820541c1",
+      "name": "cria_cadastro"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_cadastro_bd"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "1a8894d8-af56-4e4a-808c-224cebb1080d",
+      "name": "pesquisa_variavel_n8n_fluxo_cadastro",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -860,
+        200
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_users\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nome",
+              "value": "={{ ($node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\").replace(/[^a-zA-Z0-9\\s]/g, \"\") }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ ($node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\").replace(/[^a-zA-Z0-9\\s]/g, \"\") }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "instagram",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"instagram\"] || \"\" }}"
+            },
+            {
+              "name": "cpf",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"cpf\"] || \"\" }}"
+            },
+            {
+              "name": "cnpj",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"cnpj\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1720,
+        60
+      ],
+      "id": "37ca521b-4277-4cb2-9c80-b3f75383ca47",
+      "name": "cria_atualiza_user"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"tipo_forms\"] }}",
+              "rightValue": "Checkout",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b7e1509a-f06f-48b4-828d-54114316160c",
+      "name": "evento_checkout",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -1300,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "etapas_funil",
+          "mode": "list",
+          "cachedResultName": "etapas_funil"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "column": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"tipo_forms\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7cc08e4d-b375-4bc6-93b0-f0da709b81c2",
+      "name": "pesquisa_etapa_funil",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1500,
+        60
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "variaveis_globais_n8n",
+          "mode": "list",
+          "cachedResultName": "variaveis_globais_n8n"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "nome_variavel",
+              "value": "URL do Fluxo de Verificação de Produtos"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "b446301b-2caa-41bc-b4ba-038491841154",
+      "name": "pesquisa_variavel_n8n_fluxo_produtos",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -940,
+        -120
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_variavel_n8n_fluxo_produtos\"].json[\"valor_variavel\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "product_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"product_id\"] }}"
+            },
+            {
+              "name": "product_name",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"product_name\"] }}"
+            },
+            {
+              "name": "value",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -720,
+        -120
+      ],
+      "id": "9d54bb9d-02e2-4004-8aa1-e6d956819aef",
+      "name": "busca_produto"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "situacoes_checkout",
+          "mode": "list",
+          "cachedResultName": "situacoes_checkout"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "column": "id_produto",
+              "value": "={{ $node[\"busca_produto\"].json[\"id\"] }}"
+            },
+            {
+              "column": "evento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "805f987b-67ec-4b7e-bcfe-beda5287ea3d",
+      "name": "pesquisa_situacao_checkout",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -500,
+        -120
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_contact_crm\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "id_situacao_checkout",
+              "value": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"id\"]  || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        -280
+      ],
+      "id": "a70f1779-9916-4612-9296-a94828fc0671",
+      "name": "create_update_contact_crm1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_contact_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "432e7095-d2db-49c4-8382-4c4c8cdfefd3",
+      "name": "pesquisa_acao_create_update_contact_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -20,
+        -280
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_contact_crm1\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "tipo_forms",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"tipo_forms\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -400,
+        380
+      ],
+      "id": "e28a5922-09e1-4617-8ca0-84118704c0f5",
+      "name": "create_update_contact_crm3"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_contact_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "35d7488a-d0cd-453b-a737-3963fcc44400",
+      "name": "pesquisa_acao_create_update_contact_crm1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -660,
+        380
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_deal_crm\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "id_situacao_checkout",
+              "value": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"id\"]  || \"\" }}"
+            },
+            {
+              "name": "qualificacao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"]  || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        540,
+        -60
+      ],
+      "id": "95d3ce0a-ff31-48f5-abba-5ecdcf89941d",
+      "name": "create_update_contact_crm4"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_deal_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "763cbacb-bc07-43e9-bfa6-279b0d2f3a2b",
+      "name": "pesquisa_acao_create_update_deal_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        280,
+        -60
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_deal_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "fa7a5e02-9663-4b91-8bf1-d37a121ead5a",
+      "name": "pesquisa_acao_create_update_deal_crm1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -320,
+        560
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_tag_contact_crm\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        140,
+        740
+      ],
+      "id": "eac274c8-93d1-4e08-9880-97a60b16dd19",
+      "name": "add_tag_contact_crm1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_tag_contact_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "102cc892-25ab-4d4b-94e2-7c92c3dce6fe",
+      "name": "pesquisa_acao_add_tag_contact_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -120,
+        740
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_tag_contact_crm1\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_situacao_checkout",
+              "value": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"id\"]  || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        740,
+        140
+      ],
+      "id": "28f3f0db-77cc-421d-9f92-aa86a859bac7",
+      "name": "add_tag_contact_crm3"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_tag_contact_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "8a1b6c70-1b8f-43ac-8a78-035410fff41c",
+      "name": "pesquisa_acao_add_tag_contact_crm1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        480,
+        140
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_tag_deal_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "7dc35188-4155-4586-b259-52d06fc44ad0",
+      "name": "pesquisa_acao_add_tag_deal_crm",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        680,
+        300
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_tag_deal_crm\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_situacao_checkout",
+              "value": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"id\"]  || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        940,
+        300
+      ],
+      "id": "6c3bb008-e394-4e9e-96a7-7bc7184d2ca1",
+      "name": "add_tag_deal_crm1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_tag_deal_crm"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "a66e6ce2-0cc1-465e-8c4b-a1bcf59ab36e",
+      "name": "pesquisa_acao_add_tag_deal_crm1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -20,
+        940
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_tag_deal_crm1\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        940
+      ],
+      "id": "7efd743f-cc19-4120-a4f3-96ce3df39edf",
+      "name": "add_tag_deal_crm3"
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_deal_crm1\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "qualificacao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"qualificacao\"]  || \"\" }}"
+            },
+            {
+              "name": "tipo_forms",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"tipo_forms\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -80,
+        560
+      ],
+      "id": "d2fb7a89-3ebc-45b4-8ea7-e9b3c8c3476f",
+      "name": "create_update_deal_crm5"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_conversion_bd"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "31bb4624-9378-40aa-b48f-77388419cfc7",
+      "name": "pesquisa_acao_add_conversion_bd",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        980,
+        660
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_conversion_bd\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_transacao_checkout",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"transaction_id\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_cliente",
+              "value": "={{ $node[\"add_customer_bd1\"].runIndex >= 0 ? $node[\"add_customer_bd1\"].json[\"id\"] : \"\" }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] }}"
+            },
+            {
+              "name": "id_produto",
+              "value": "={{ $node[\"busca_produto\"].json[\"id\"] }}"
+            },
+            {
+              "name": "valor",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"value\"] || \"\" }}"
+            },
+            {
+              "name": "comissao_gateway",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"gateway_comission\"] || \"\" }}"
+            },
+            {
+              "name": "id_vendedor",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_vendedor\"] || \"\" }}"
+            },
+            {
+              "name": "moeda",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"currency\"] || \"\" }}"
+            },
+            {
+              "name": "forma_de_pagamento",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_method\"] || \"\" }}"
+            },
+            {
+              "name": "status_da_compra",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
+            },
+            {
+              "name": "data_garantia",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"warranty_date\"] || \"\" }}"
+            },
+            {
+              "name": "data_conversao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_date\"] || $node[\"chega_da_fila\"].json[\"content\"][\"event_date\"] }}"
+            },
+            {
+              "name": "utm_source",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] || \"\" }}"
+            },
+            {
+              "name": "utm_campaign",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] || \"\" }}"
+            },
+            {
+              "name": "utm_term",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] || \"\" }}"
+            },
+            {
+              "name": "utm_medium",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] || \"\" }}"
+            },
+            {
+              "name": "utm_content",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] || \"\" }}"
+            },
+            {
+              "name": "parcelas",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"installments\"] || \"\" }}"
+            },
+            {
+              "name": "oferta",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"offer_code\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1240,
+        660
+      ],
+      "id": "c9940cf8-3f83-4bfe-8925-6cb8723e9347",
+      "name": "add_conversion_bd1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_customer_bd"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "50ec57a7-6b5d-442c-a13c-479908ff6c40",
+      "name": "pesquisa_acao_add_customer_bd",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        840,
+        460
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_customer_bd\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "data_conversao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_date\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1100,
+        460
+      ],
+      "id": "15380589-d0f9-4829-9c3f-b9f30daa05d1",
+      "name": "add_customer_bd1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_subscription_bd"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "1df2dcb8-a448-4cfd-94f0-4ac3cecb7f2e",
+      "name": "pesquisa_acao_add_subscription_bd",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1180,
+        860
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_subscription_bd\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_conversao",
+              "value": "={{ $node[\"add_conversion_bd1\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_produto",
+              "value": "={{ $node[\"busca_produto\"].json[\"id\"] }}"
+            },
+            {
+              "name": "data_conversao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"payment_date\"] }}"
+            },
+            {
+              "name": "data_expiracao",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"recurrenceExpirationDate\"] }}"
+            },
+            {
+              "name": "status_da_compra",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"trans_status\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1420,
+        860
+      ],
+      "id": "6575c0c8-549d-4515-ad93-3ddd798202cc",
+      "name": "add_subscription_bd1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_contact_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "3b5518a1-9522-4896-aaa2-7905b96f691f",
+      "name": "create_update_contact_crm2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -900,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_deal_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0ff66614-6952-4097-9d12-4edfbf5ecde3",
+      "name": "create_update_deal_crm1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -660,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "add_tag_contact_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b12c6136-559c-477d-85a7-cca74f08bcd7",
+      "name": "add_tag_contact_crm",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -440,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "add_tag_deal_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "1cbcae98-e71d-4cb9-a1e1-b1c63453e9a1",
+      "name": "add_tag_deal_crm2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -260,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_contact_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "11acf7c9-1265-44b6-a6e3-ff3d2442b06f",
+      "name": "create_update_contact_crm",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -280,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_deal_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "7699c71c-b1b9-4bbb-b07c-2a803e1b6c46",
+      "name": "create_update_deal_crm",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -60,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "add_tag_contact_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "777ff2fe-18c3-45b9-98a5-71f216d7d3f4",
+      "name": "add_tag_contact_crm2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        160,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "add_tag_deal_crm",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "bd55f9ec-2355-45bb-ae70-72a167902d18",
+      "name": "add_tag_deal_crm",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        340,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "add_customer_bd",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d6214abf-55d1-429a-b5b6-0ec111ffaa75",
+      "name": "add_customer_bd",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        520,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "add_conversion_bd",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "eeeb1a3f-2e31-49da-8da2-4d0d97081a2d",
+      "name": "add_conversion_bd",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        720,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "add_subscription_bd",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b7fb8d73-6bc3-4590-ab3a-8ca5a1080e19",
+      "name": "add_subscription_bd",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        920,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "add_cadastro_bd",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "2ca1178c-cb64-43bf-93c2-93a8bf8ced37",
+      "name": "add_cadastro_bd",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -1120,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_contact_email_marketing",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5cdc4b65-f63c-47d6-9adf-30995879feaa",
+      "name": "create_update_contact_email_marketing",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        1140,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_contact_email_marketing"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "64e30acc-8a5a-4093-b880-bc4fd99240df",
+      "name": "pesquisa_acao_create_update_contact_email_marketing",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1400,
+        1040
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_contact_email_marketing\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_situacao_checkout",
+              "value": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"id\"] || \"\"  }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1640,
+        1040
+      ],
+      "id": "94967710-5150-44e5-a57d-e757110b5959",
+      "name": "create_update_contact_email_marketing1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "send_message_api_oficial",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0518fe33-45d5-4ab2-9513-38c7b0be2b6d",
+      "name": "send_message_api_oficial",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        1620,
+        1540
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "send_message_api_oficial"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "ab5709f0-65f6-4a9f-a324-88b82eae76f8",
+      "name": "pesquisa_acao_send_message_api_oficial",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1880,
+        1500
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_send_message_api_oficial\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_situacao_checkout",
+              "value": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"id\"] || \"\"  }}"
+            },
+            {
+              "name": "tipo_forms",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"tipo_forms\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2120,
+        1500
+      ],
+      "id": "8fa48f8a-17c2-4376-bee3-965486b2425e",
+      "name": "send_message_api_oficial1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"acoes\"] }}",
+              "rightValue": "add_tag_email_marketing",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e96389e2-6e00-46c9-8686-074802100580",
+      "name": "add_tag_email_marketing",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        1380,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_tag_email_marketing"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "378ea314-1baa-437b-9d06-169151b1d673",
+      "name": "pesquisa_acao_add_tag_email_marketing",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1640,
+        1260
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_tag_email_marketing\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_situacao_checkout",
+              "value": "={{ $node[\"pesquisa_situacao_checkout\"].json[\"id\"] || \"\"  }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1880,
+        1260
+      ],
+      "id": "ec34c299-defb-4ac7-8128-b52c5415b3df",
+      "name": "add_tag_email_marketing1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_contact_email_marketing",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a17896e7-2a1a-4b9f-b34b-4468af2d704c",
+      "name": "create_update_contact_email_marketing2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        -100,
+        1180
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_contact_email_marketing"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "12d7021c-8b9f-400c-b3a3-2c7d5a7f5b70",
+      "name": "pesquisa_acao_create_update_contact_email_marketing1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        160,
+        1140
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_contact_email_marketing1\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        400,
+        1140
+      ],
+      "id": "c7106986-338a-4f2b-b13c-733480a128dc",
+      "name": "create_update_contact_email_marketing3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "36a6df3b-8f01-418a-ba04-ac52183f135e",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "add_tag_email_marketing",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "715289d0-b825-401f-bbb4-fc5281419191",
+      "name": "add_tag_email_marketing2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        140,
+        1400
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "add_tag_email_marketing"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "1b20438e-2770-4fe9-b5ae-ef1c2866028d",
+      "name": "pesquisa_acao_add_tag_email_marketing1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        400,
+        1360
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_add_tag_email_marketing1\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || \"\" }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] || \"\" }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        640,
+        1360
+      ],
+      "id": "afd49dfd-5c75-4d81-b867-424831dcf050",
+      "name": "add_tag_email_marketing3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "insert_forms_answers",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        400,
+        1680
+      ],
+      "id": "c1bc744f-ee62-42d1-b583-fcd0b67abfa3",
+      "name": "insert_forms_answers"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "insert_forms_answers"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "6e48e9d6-628b-4547-b996-a94e3c4efc63",
+      "name": "pesquisa_acao_insert_forms_answers",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        640,
+        1560
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_insert_forms_answers\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_forms",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_forms\"] }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        1560
+      ],
+      "id": "b5556ea8-b299-412d-bf79-94bdba5c56cc",
+      "name": "insert_forms_answers1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "send_flow_manychat",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        920,
+        2140
+      ],
+      "id": "b2eea08f-f9a5-467c-9f92-dde145272b67",
+      "name": "send_flow_manychat"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "send_flow_manychat"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "57289cab-1500-4a1f-a08a-c265d2a82e45",
+      "name": "pesquisa_acao_send_flow_manychat",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1160,
+        2020
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "create_update_manychat",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        620,
+        1900
+      ],
+      "id": "956321a1-ebc9-4a62-9429-1c55620d2613",
+      "name": "create_update_manychat"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "create_update_manychat"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "93189ac2-9062-4bf7-a99d-c1000cfafa04",
+      "name": "pesquisa_acao_create_update_manychat",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        860,
+        1780
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_create_update_manychat\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "telefone",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] || \"\" }}"
+            },
+            {
+              "name": "payload",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"] }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"email\"] || \"\" }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"nome\"] || \"\" }}"
+            },
+            {
+              "name": "sobrenome",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"sobrenome\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1100,
+        1780
+      ],
+      "id": "086bc855-eab5-4b43-865c-e657589bb2ec",
+      "name": "create_update_manychat1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "14591d0f-569e-4973-bf38-8c9e58007e0f",
+              "leftValue": "={{ $node[\"chega_da_fila\"].json[\"fields\"][\"redelivered\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e5411328-e4ed-44bb-8db9-bdc53a10fa1b",
+      "name": "reprocessamento",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2180,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "Erro"
+      },
+      "id": "a0742442-72a8-457d-8a19-3ec02271236e",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        -1920,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "14591d0f-569e-4973-bf38-8c9e58007e0f",
+              "leftValue": "={{ $json[\"content\"][\"nome\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "77ca2650-f37c-4531-b7e5-a39fad103c24",
+              "leftValue": "={{ $json[\"content\"][\"email\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "28cd6fdd-4c40-4207-9f56-c27792bc4f5e",
+              "leftValue": "={{ $json[\"content\"][\"telefone\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "7325b344-3164-486b-a61a-5fce57784cc1",
+              "leftValue": "={{ $json[\"content\"][\"instagram\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "4427767b-804e-4450-afbe-7e8047d26a75",
+      "name": "nome_email_telefone_ig_null",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2360,
+        60
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "ef9da836-1eb9-4c32-a1c9-6e75bd3b4f8c",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -2160,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_send_flow_manychat\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_manychat",
+              "value": "={{ $node[\"create_update_manychat1\"].json[\"id_manychat\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1400,
+        2020
+      ],
+      "id": "532b1621-3458-4d83-b05c-794e5abe2cee",
+      "name": "send_flow_manychat1",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "queue": "Fila de Ações de Funis - Caio Calderaro",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": "={{ true }}",
+          "parallelMessages": 80
+        }
+      },
+      "id": "f32e34b8-0298-4945-897a-ba7e32ddc94f",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2560,
+        60
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "J2XRJ2ukEbkqQASv",
+          "name": "[RabbitMQ] - Henry Santos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1xboA6flZtYoiChQHg10_jzxw9-ZceAiEjlcsYqRMj0Q",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xboA6flZtYoiChQHg10_jzxw9-ZceAiEjlcsYqRMj0Q/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Telefone": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"telefone\"] }}",
+            "Data Erro": "={{ $now }}"
+          },
+          "matchingColumns": [
+            "Telefone"
+          ],
+          "schema": [
+            {
+              "id": "Data Erro",
+              "displayName": "Data Erro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefone",
+              "displayName": "Telefone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "e06a5158-b703-4142-8385-a3cd6c26df96",
+      "name": "documenta_erro",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1620,
+        2120
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5RQWIQOXyaILIRPq",
+          "name": "[Google Sheets] - Automagic Bots - Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bac74034-ee2c-4894-9c67-bca7764d3f3a",
+              "leftValue": "={{ $node[\"pesquisa_etapa_funil\"].json[\"acoes\"] }}",
+              "rightValue": "insert_ingresso",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        2420
+      ],
+      "id": "78f4fac5-d5d0-437a-a71a-88bc9eea64ea",
+      "name": "insert_ingresso"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "acoes_workflows",
+          "mode": "list",
+          "cachedResultName": "acoes_workflows"
+        },
+        "where": {
+          "values": [
+            {
+              "column": "acao",
+              "value": "insert_ingresso"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {}
+      },
+      "id": "ca3d84d2-acc1-4bf1-a1ed-774d248aa20b",
+      "name": "pesquisa_acao_insert_ingresso",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1380,
+        2300
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "ZTWXjhU8hqKf8Ifk",
+          "name": "[MySQL] - Caio Calderaro"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"pesquisa_acao_insert_ingresso\"].json[\"endpoint_workflow\"] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id_etapa_funil",
+              "value": "={{ $node[\"pesquisa_etapa_funil\"].json[\"id\"] }}"
+            },
+            {
+              "name": "id_user",
+              "value": "={{ $node[\"cria_atualiza_user\"].json[\"id\"] }}"
+            },
+            {
+              "name": "link_imagem",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"link_imagem\"] || \"\" }}"
+            },
+            {
+              "name": "id_funil",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"id_funil\"] || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1620,
+        2300
+      ],
+      "id": "909a0276-4816-443e-ac92-3cb21972f25c",
+      "name": "insert_ingresso1",
+      "onError": "continueErrorOutput"
+    }
+  ],
+  "pinData": {
+    "chega_da_fila": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-GSwTuoIENzipjof2KH856w",
+            "deliveryTag": 4,
+            "redelivered": true,
+            "exchange": "",
+            "routingKey": "Fila de Ações de Funis"
+          },
+          "properties": {
+            "headers": {
+              "x-delivery-count": 998
+            }
+          },
+          "content": {
+            "nome": "Edmar",
+            "sobrenome": "Bizerra da Costa",
+            "nome_completo": "Edmar Bizerra da Costa",
+            "email": "bizerraedmarbizerradacosta@gmail.com",
+            "telefone": "556993782857",
+            "cpf": "188.573.024-15",
+            "utm_source": "Org-YouTube-YT-turma-extra",
+            "utm_campaign": "",
+            "utm_term": "",
+            "utm_medium": "",
+            "utm_content": "",
+            "form_id": "04h5xew9",
+            "form_name": "Desconto Renovação ",
+            "value": 2537.16,
+            "transaction_id": "HP3073358271",
+            "net_value": "",
+            "trans_status": "Compra Reembolsada",
+            "payment_method": "Cartão de Crédito",
+            "refund_date": "",
+            "event_date": "2025-03-26 00:34:33",
+            "payment_date": "2025-03-12 21:22:32",
+            "product_type": "Assinatura",
+            "product_id": 2241838,
+            "product_name": "Formação do Zero à Importador com Bônus Mercado Livre Descomplicado Grátis",
+            "warranty_date": "2025-03-18",
+            "offer_code": "04h5xew9",
+            "discount_coupon": "",
+            "street": "",
+            "address_number": "",
+            "country": "",
+            "district": "",
+            "address_complement": "",
+            "city": "",
+            "address_state": "",
+            "zipcode": "",
+            "affiliate_value": "",
+            "gateway_comission": 106.84,
+            "billet_barcode": "",
+            "currency": "BRL",
+            "bankslip": "",
+            "recurrenceExpirationDate": "2026-03-13",
+            "cancelledDate": "",
+            "cnpj": "",
+            "installments": 12,
+            "billetExpirationDate": "",
+            "recurrenceNumber": 1,
+            "src": "checkout",
+            "sck": "Org-YouTube-YT-turma-extra",
+            "refusalReason": "",
+            "subscriberCode": "WKKTAXQP",
+            "planName": "Desconto Renovação ",
+            "planId": 859685,
+            "eventId": "502a0413-ba9b-4f9d-a9fe-44b3b2e61835",
+            "tipo_forms": "Checkout",
+            "id_funil": "3",
+            "id_forms": "69"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "YqwIRpfotJoCTvFh"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-21T01:42:01.003Z",
+  "versionId": "5b31e9d3-b566-47ae-927e-3b2de0f0cc92"
+}
