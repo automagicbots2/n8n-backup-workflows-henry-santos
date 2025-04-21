@@ -100,6 +100,17 @@
           }
         ]
       ]
+    },
+    "insere_pesquisa": {
+      "main": [
+        [
+          {
+            "node": "insere_pesquisa1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-21T01:21:27.955Z",
@@ -617,6 +628,162 @@
           "name": "[MySQL] - Caio Calderaro"
         }
       }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "=1uGLtROSHXHCTG2zDjKxTJtRHJWnbRF0lQk0whLRYPKM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uGLtROSHXHCTG2zDjKxTJtRHJWnbRF0lQk0whLRYPKM/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_typeform": "={{ $node[\"dados\"].json[\"id_resposta_typeform\"] }}",
+            "nome": "={{ $node[\"dados\"].json[\"nome\"] }}",
+            "email": "={{ $node[\"dados\"].json[\"email\"] }}",
+            "telefone": "={{ $node[\"dados\"].json[\"telefone\"] }}",
+            "sexo": "={{ $node[\"dados\"].json[\"sexo\"] }}",
+            "faixa_etaria": "={{ $node[\"dados\"].json[\"faixa_etaria\"] }}",
+            "renda_mensal": "={{ $node[\"dados\"].json[\"renda\"] }}",
+            "tempo_conhecendo": "={{ $node[\"dados\"].json[\"tempo_conhecendo\"] }}",
+            "tem_cartao": "={{ $node[\"dados\"].json[\"tem_cartao\"] }}",
+            "profissao": "={{ $node[\"dados\"].json[\"profissao\"] }}",
+            "score": "={{ $node[\"dados\"].json[\"score\"] }}"
+          },
+          "matchingColumns": [
+            "id_typeform"
+          ],
+          "schema": [
+            {
+              "id": "nome",
+              "displayName": "nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "telefone",
+              "displayName": "telefone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "id_typeform",
+              "displayName": "id_typeform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "sexo",
+              "displayName": "sexo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "faixa_etaria",
+              "displayName": "faixa_etaria",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "renda_mensal",
+              "displayName": "renda_mensal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "tempo_conhecendo",
+              "displayName": "tempo_conhecendo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "tem_cartao",
+              "displayName": "tem_cartao",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "profissao",
+              "displayName": "profissao",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "score",
+              "displayName": "score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1960,
+        -240
+      ],
+      "id": "1bcce717-125d-4e32-84e4-0e10f0724cc1",
+      "name": "insere_pesquisa1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5RQWIQOXyaILIRPq",
+          "name": "[Google Sheets] - Automagic Bots - Auth"
+        }
+      }
     }
   ],
   "pinData": {
@@ -626,27 +793,27 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "Typeform Webhooks",
-            "content-length": "5515",
+            "content-length": "5555",
             "accept-encoding": "gzip",
             "content-type": "application/json",
-            "traceparent": "00-9bd09101b41cd1b66f7ca27480c5e127-3ef4cdccd82ef4df-01",
-            "x-forwarded-for": "34.230.177.131",
+            "traceparent": "00-2ed8f438443b3498d245829d54ed9579-1140a8e379df6816-01",
+            "x-forwarded-for": "18.210.136.162",
             "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
             "x-forwarded-server": "9374371a5d91",
-            "x-real-ip": "34.230.177.131"
+            "x-real-ip": "18.210.136.162"
           },
           "params": {},
           "query": {},
           "body": {
-            "event_id": "01JSB6ETD1E2F64CY5XRCN4NJ6",
+            "event_id": "01JSC5ARPJN9FT3088DC28EYTT",
             "event_type": "form_response",
             "form_response": {
               "form_id": "uAH0Nr0r",
-              "token": "glksq4wt2lmxl4fsaglksvstm6sydi2o",
-              "landed_at": "2025-04-21T03:32:09Z",
-              "submitted_at": "2025-04-21T03:32:19Z",
+              "token": "ptbbu9v6k8mvqbm1egkhhcptbbu95mdu",
+              "landed_at": "2025-04-21T12:31:43Z",
+              "submitted_at": "2025-04-21T12:31:52Z",
               "hidden": {
                 "email": "teste@automagicbots.com.br",
                 "first_name": "Gabriel",
@@ -658,7 +825,7 @@
                 "utm_term": "ig"
               },
               "calculated": {
-                "score": 700
+                "score": 635
               },
               "variables": [
                 {
@@ -669,7 +836,7 @@
                 {
                   "key": "score",
                   "type": "number",
-                  "number": 700
+                  "number": 635
                 },
                 {
                   "key": "winning_outcome_id",
@@ -679,7 +846,7 @@
               ],
               "outcome": {
                 "id": "rW0XaJOiwDxb",
-                "title": ""
+                "title": "Grupos do Lançamento"
               },
               "definition": {
                 "id": "uAH0Nr0r",
@@ -851,7 +1018,7 @@
                     {
                       "id": "rW0XaJOiwDxb",
                       "ref": "750fb9c5-6061-4cc2-a8ab-248ec1977aad",
-                      "title": "",
+                      "title": "Grupos do Lançamento",
                       "counter_variable": "counter_fc9cf383_75de_450a_a686_2c7b098a495e",
                       "thankyou_screen_ref": "thankyou-screen"
                     }
@@ -861,13 +1028,10 @@
                   {
                     "id": "hCwx8FNR1C96",
                     "ref": "thankyou-screen",
-                    "title": "",
-                    "type": "thankyou_screen",
+                    "title": "Grupos do Lançamento",
+                    "type": "url_redirect",
                     "properties": {
-                      "button_text": "Create a typeform",
-                      "show_button": true,
-                      "share_icons": true,
-                      "button_mode": "default_redirect"
+                      "redirect_url": "https://linktw.in/Profiss%C3%A3o-Afiliado-Internacional"
                     }
                   }
                 ],
@@ -892,9 +1056,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "H19He1RpZY8G",
-                    "label": "Menos de 25 anos",
-                    "ref": "49a99b7d-6fc7-4b1f-9af0-222da82b0ffe"
+                    "id": "q73SiYz5TosC",
+                    "label": "46 a 55 anos",
+                    "ref": "7b31a206-3801-4c90-96c3-1a302eaec67f"
                   },
                   "field": {
                     "id": "Nm8xLbePlvNw",
@@ -905,9 +1069,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "aXg9wtnV9rqp",
-                    "label": "Menos de R$2.000",
-                    "ref": "93be7d87-82e7-4911-b71f-c32b430e3553"
+                    "id": "RpW4lbpYiP69",
+                    "label": "Acima de R$10.000",
+                    "ref": "3534624c-9048-4629-a006-81daded125d5"
                   },
                   "field": {
                     "id": "CWNSsEKVI7QC",
@@ -918,9 +1082,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "NomuOwaslKZP",
-                    "label": "Menos de 1 mês",
-                    "ref": "ecd731d0-e7a7-4d96-b1a1-d8bfe6161dc2"
+                    "id": "Kb04Wy23WUHi",
+                    "label": "Entre 6 meses e 1 ano",
+                    "ref": "103d059a-f959-4baf-a5c4-161db08e00ec"
                   },
                   "field": {
                     "id": "8e82QBzgBeLu",
@@ -944,9 +1108,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "lGKMxfhcLegd",
-                    "label": "CLT",
-                    "ref": "828ec937-8463-4b5c-aa54-3a5688f592c3"
+                    "id": "geAuvl1otrOh",
+                    "label": "Empreendedor",
+                    "ref": "5b9a2527-cea6-41fc-89a0-2fe7dc6419c0"
                   },
                   "field": {
                     "id": "1HsRu8UIIkKD",
@@ -975,6 +1139,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-21T03:50:48.830Z",
-  "versionId": "5bd5db32-4523-450a-9431-ca2d77007c28"
+  "updatedAt": "2025-04-21T12:32:41.346Z",
+  "versionId": "e98d86c7-fe33-47d6-8709-117b14b97cc3"
 }
