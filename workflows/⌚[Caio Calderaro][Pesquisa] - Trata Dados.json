@@ -111,6 +111,17 @@
           }
         ]
       ]
+    },
+    "insere_pesquisa1": {
+      "main": [
+        [
+          {
+            "node": "envia_msg",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-21T01:21:27.955Z",
@@ -157,7 +168,7 @@
             {
               "id": "dbf48f0c-ad19-46ca-ace2-dd71301de650",
               "name": "data_aplicacao",
-              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}",
+              "value": "={{ $node[\"formata_dados\"].json[\"dataAplicacao\"] || \"\" }}",
               "type": "string"
             },
             {
@@ -266,6 +277,12 @@
               "id": "93c1c2aa-10c2-44cb-a65b-ae2996350665",
               "name": "id_resposta_typeform",
               "value": "={{ $node[\"typeform\"].json[\"body\"][\"form_response\"][\"token\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "078ad86d-8feb-4485-9717-e06970b4e413",
+              "name": "sonho",
+              "value": "={{ $node[\"formata_dados\"].json[\"sonho\"] || \"\" }}",
               "type": "string"
             }
           ]
@@ -540,7 +557,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers || [];\n\n// Criar um objeto para armazenar as perguntas e respostas usando os IDs como chaves\nconst perguntas_respostas = {};\n\n// Função para extrair múltiplas respostas e juntá-las por vírgula\nfunction extractMultipleChoices(answerId) {\n    const resposta = respostas.find(answer => answer.field.ref === answerId);\n    if (resposta && Array.isArray(resposta.choice?.label)) {\n        const respostaFormatada = resposta.choice.label.map(choice => choice.label).join(', ');\n        perguntas_respostas[answerId] = respostaFormatada;\n        return respostaFormatada;\n    }\n    return '';\n}\n\n/// Função para adicionar a resposta ao objeto perguntas_respostas\nfunction adicionarResposta(answerId, resposta) {\n    // Aqui agora vai aceitar valores vazios também, mas nunca undefined ou null\n    if (resposta !== undefined && resposta !== null) {\n        perguntas_respostas[answerId] = resposta;\n    }\n}\n\n// Mapeamento de perguntas com seus respectivos IDs\nconst perguntasMap = {\n    \"01JS6THWJVWVBE5ZTQB35CZ8WC\": \"sexo\",\n    \"2855dd0e-a084-43ab-a698-b1b0ce0268f3\": \"faixa_etaria\",\n    \"f6ac3294-c5e0-47b6-8034-ff70cba50c59\": \"renda\",\n    \"01d4ed45-37d2-45a3-9b46-6ea39c65555a\": \"tempo_conhecendo\",\n    \"6265f31a-38fd-4f75-b946-c4974d6b6435\": \"tem_cartao\",\n    \"2f475f78-417b-4d82-888e-f24e592d93dd\": \"profissao\",\n    \"utm_source\": \"utm_source\",\n    \"utm_campaign\": \"utm_campaign\",\n    \"utm_term\": \"utm_term\",\n    \"utm_medium\": \"utm_medium\",\n    \"utm_content\": \"utm_content\"\n};\n\n// Onde os UTM estão\nconst hiddenFields = inputData.body.form_response?.hidden || {};\n\n\n// Processar cada pergunta e armazenar no objeto perguntas_respostas\nfor (const [id, key] of Object.entries(perguntasMap)) {\n    if (key.startsWith(\"utm_\")) {\n        // Sempre define a UTM, mesmo que esteja vazia\n        const valorUtm = hiddenFields[key] ?? ''; // Se undefined, assume string vazia\n        adicionarResposta(id, valorUtm);\n    } else {\n        // Resposta comum, pega da lista de respostas do formulário\n        const respostaObj = respostas.find(answer => answer.field.ref === id);\n        const resposta = respostaObj?.text ||\n                         respostaObj?.email ||\n                         respostaObj?.phone_number ||\n                         respostaObj?.number ||\n                         respostaObj?.choice?.label || '';\n        adicionarResposta(id, resposta);\n    }\n}\n\nconst fullNameAnswer = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"first_name\"] || \"\";\nconst emailAnswer = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"email\"] || \"\";\nconst telefoneClienteOriginal = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"phone_number\"] || \"\";\nconst instagramAnswer = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"instagram\"] || \"\";\nconst score = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"calculated\"][\"score\"] || \"\";\nconst pergunta1 = respostas.find(answer => answer.field.ref === \"01JS6THWJVWVBE5ZTQB35CZ8WC\")?.choice.label || ''; // Qual é o seu sexo?\nconst pergunta2 = respostas.find(answer => answer.field.ref === \"2855dd0e-a084-43ab-a698-b1b0ce0268f3\")?.choice.label || ''; // Qual é a sua faixa etária?\nconst pergunta3 = respostas.find(answer => answer.field.ref === \"f6ac3294-c5e0-47b6-8034-ff70cba50c59\")?.choice.label || ''; // Qual é o seu nível de renda/salário mensal hoje?\nconst pergunta4 = respostas.find(answer => answer.field.ref === \"01d4ed45-37d2-45a3-9b46-6ea39c65555a\")?.choice.label || ''; // Há quanto tempo você me conhece?\nconst pergunta5 = respostas.find(answer => answer.field.ref === \"6265f31a-38fd-4f75-b946-c4974d6b6435\")?.choice.label || ''; // Você tem cartão de crédito?\nconst pergunta6 = respostas.find(answer => answer.field.ref === \"2f475f78-417b-4d82-888e-f24e592d93dd\")?.choice.label || ''; // Você trabalha em que?\n\n// Data de aplicação\nconst dataAplicacao = inputData.body.form_response.submitted_at || '';\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${ano}-${mes}-${dia}`;\n}\n\nfunction formatarDataISO(dataISO) {\n    const data = new Date(dataISO);\n\n    const ano = data.getFullYear();\n    const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês começa do zero\n    const dia = String(data.getDate()).padStart(2, '0');\n    const horas = String(data.getHours()).padStart(2, '0');\n    const minutos = String(data.getMinutes()).padStart(2, '0');\n    const segundos = String(data.getSeconds()).padStart(2, '0');\n\n    return `${ano}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  \n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// UTMS\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Função para remover todas as aspas e parênteses de um texto\nfunction removerAspasEParenteses(texto) {\n    // Substitui todas as ocorrências de aspas (\"\") por nada\n    let textoSemAspas = texto.replace(/\"/g, '');\n    // Substitui todas as ocorrências de parênteses () por nada\n    textoSemAspas = textoSemAspas.replace(/\\([^()]*\\)/g, '');\n    return textoSemAspas;\n}\n\nfunction capitalizeName(fullName) {\n    if (typeof fullName === 'undefined') {\n        return { fname: '', lname: '', fullname: '' };\n    }\n\n    const lowerCaseWords = ['da', 'de', 'do', 'di', 'du'];\n    let words = fullName.toLowerCase().split(' ').map((word, index) => {\n        if (lowerCaseWords.includes(word) && index !== 0) {\n            return word;\n        }\n        return word.charAt(0).toUpperCase() + word.slice(1);\n    });\n\n    let fname = words.shift();\n    let lname = words.join(' ');\n\n    // Ajuste para remover o espaço extra caso não haja sobrenome\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\nfunction formatEmail(email) {\n    return email.toLowerCase().trim();\n}\n\nfunction formatInstagram(instagram) {\n    // Remover \"@\" e transformar em letras minúsculas\n    return instagram.toLowerCase().trim().replace(/^@/, \"\");\n}\n\nlet telefoneFinal = \"\";\n\n// Verificar se o telefone foi preenchido\nif (telefoneClienteOriginal) {\n    // Limpar o número para remover caracteres não numéricos\n    const telefoneLimpo = telefoneClienteOriginal.replace(/\\D/g, \"\");\n\n    let DDI = '';\n    let DDD = '';\n    let numero = '';\n\n    // Determinar se o telefone possui DDI\n    if (telefoneLimpo.length > 11) {\n        // Extrair o DDI (primeiros dois dígitos)\n        DDI = telefoneLimpo.slice(0, 2);\n        DDD = telefoneLimpo.slice(2, 4);\n        numero = telefoneLimpo.slice(4);\n    } else if (telefoneLimpo.length === 11) {\n        // Assumir DDI padrão (55) para números com DDD + número\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else if (telefoneLimpo.length === 10) {\n        // Assumir DDI padrão (55) para números com DDD + número de 10 dígitos\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else {\n        // Caso o número não tenha tamanho esperado, considerá-lo inválido\n        telefoneFinal = telefoneLimpo; // Ou deixar vazio: telefoneFinal = \"\";\n    }\n\n    // Ajustar número com base no DDD\n    if (DDD && numero) {\n        if (parseInt(DDD) > 28) {\n            // Se o DDD for maior que 28 e o número tiver 9 dígitos, remover o nono dígito\n            if (numero.length === 9 && numero.startsWith(\"9\")) {\n                numero = numero.slice(1); // Remove o primeiro dígito\n            }\n        } else {\n            // Se o DDD for menor ou igual a 28 e o número tiver 8 dígitos, adicionar o nono dígito\n            if (numero.length === 8) {\n                numero = `9${numero}`; // Adiciona o nono dígito\n            }\n        }\n    }\n\n    // Formatar número final apenas se válido\n    if (DDI && DDD && numero) {\n        telefoneFinal = `${DDI}${DDD}${numero}`;\n    }\n}\n\nconst formattedNames = capitalizeName(fullNameAnswer);\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedInstagram = formatInstagram(instagramAnswer);\nconst form_id = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"form_id\"]  || \"\";\nconst form_name = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"definition\"][\"title\"] || \"\";\nconst endings = inputData.body.form_response.ending.ref || \"\";\nconst data_aplicacao = formatarDataISO(dataAplicacao) || \"\";\n\nconst result = {\n    ...formattedNames, // Nome formatado\n    email: formattedEmail, // Email formatado\n    whatsapp: telefoneFinal, // WhatsApp formatado ou vazio\n    instagram: formattedInstagram, // Instagram formatado\n    utm_source: utmSource,\n    utm_campaign: utmCampaign,\n    utm_term: utmTerm,\n    utm_medium: utmMedium,\n    utm_content: utmContent,\n    dataAplicacao: data_aplicacao,\n    sexo: pergunta1,\n    faixa_etaria: pergunta2,\n    renda: pergunta3,\n    tempo_conhecendo: pergunta4,\n    tem_cartao: pergunta5,\n    profissao: pergunta6,\n    score: score,\n    perguntas_respostas: perguntas_respostas,\n    form_id: form_id,\n    form_name: form_name // Inclui o form_name no resultado\n};\n\n// Aqui estamos ajustando a estrutura do retorno para se adequar ao que o n8n espera\nreturn [{ json: result }];\n"
+        "jsCode": "// Extrair informações do input\nconst inputData = items[0].json;\nconst respostas = inputData.body.form_response.answers || [];\n\n// Criar um objeto para armazenar as perguntas e respostas usando os IDs como chaves\nconst perguntas_respostas = {};\n\n// Função para extrair múltiplas respostas e juntá-las por vírgula\nfunction extractMultipleChoices(answerId) {\n    const resposta = respostas.find(answer => answer.field.ref === answerId);\n    if (resposta && Array.isArray(resposta.choice?.label)) {\n        const respostaFormatada = resposta.choice.label.map(choice => choice.label).join(', ');\n        perguntas_respostas[answerId] = respostaFormatada;\n        return respostaFormatada;\n    }\n    return '';\n}\n\n/// Função para adicionar a resposta ao objeto perguntas_respostas\nfunction adicionarResposta(answerId, resposta) {\n    // Aqui agora vai aceitar valores vazios também, mas nunca undefined ou null\n    if (resposta !== undefined && resposta !== null) {\n        perguntas_respostas[answerId] = resposta;\n    }\n}\n\n// Mapeamento de perguntas com seus respectivos IDs\nconst perguntasMap = {\n    \"01JS6THWJVWVBE5ZTQB35CZ8WC\": \"sexo\",\n    \"2855dd0e-a084-43ab-a698-b1b0ce0268f3\": \"faixa_etaria\",\n    \"f6ac3294-c5e0-47b6-8034-ff70cba50c59\": \"renda\",\n    \"01d4ed45-37d2-45a3-9b46-6ea39c65555a\": \"tempo_conhecendo\",\n    \"6265f31a-38fd-4f75-b946-c4974d6b6435\": \"tem_cartao\",\n    \"2f475f78-417b-4d82-888e-f24e592d93dd\": \"profissao\",\n    \"37f6e05d-9e18-4bd4-8695-9569ece63862\": \"sonho\",\n    \"utm_source\": \"utm_source\",\n    \"utm_campaign\": \"utm_campaign\",\n    \"utm_term\": \"utm_term\",\n    \"utm_medium\": \"utm_medium\",\n    \"utm_content\": \"utm_content\"\n};\n\n// Onde os UTM estão\nconst hiddenFields = inputData.body.form_response?.hidden || {};\n\n\n// Processar cada pergunta e armazenar no objeto perguntas_respostas\nfor (const [id, key] of Object.entries(perguntasMap)) {\n    if (key.startsWith(\"utm_\")) {\n        // Sempre define a UTM, mesmo que esteja vazia\n        const valorUtm = hiddenFields[key] ?? ''; // Se undefined, assume string vazia\n        adicionarResposta(id, valorUtm);\n    } else {\n        // Resposta comum, pega da lista de respostas do formulário\n        const respostaObj = respostas.find(answer => answer.field.ref === id);\n        const resposta = respostaObj?.text ||\n                         respostaObj?.email ||\n                         respostaObj?.phone_number ||\n                         respostaObj?.number ||\n                         respostaObj?.choice?.label || '';\n        adicionarResposta(id, resposta);\n    }\n}\n\nconst fullNameAnswer = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"first_name\"] || \"\";\nconst emailAnswer = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"email\"] || \"\";\nconst telefoneClienteOriginal = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"phone_number\"] || \"\";\nconst instagramAnswer = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"hidden\"][\"instagram\"] || \"\";\nconst score = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"calculated\"][\"score\"] || \"\";\nconst pergunta1 = respostas.find(answer => answer.field.ref === \"01JS6THWJVWVBE5ZTQB35CZ8WC\")?.choice.label || ''; // Qual é o seu sexo?\nconst pergunta2 = respostas.find(answer => answer.field.ref === \"2855dd0e-a084-43ab-a698-b1b0ce0268f3\")?.choice.label || ''; // Qual é a sua faixa etária?\nconst pergunta3 = respostas.find(answer => answer.field.ref === \"f6ac3294-c5e0-47b6-8034-ff70cba50c59\")?.choice.label || ''; // Qual é o seu nível de renda/salário mensal hoje?\nconst pergunta4 = respostas.find(answer => answer.field.ref === \"01d4ed45-37d2-45a3-9b46-6ea39c65555a\")?.choice.label || ''; // Há quanto tempo você me conhece?\nconst pergunta5 = respostas.find(answer => answer.field.ref === \"6265f31a-38fd-4f75-b946-c4974d6b6435\")?.choice.label || ''; // Você tem cartão de crédito?\nconst pergunta6 = respostas.find(answer => answer.field.ref === \"2f475f78-417b-4d82-888e-f24e592d93dd\")?.choice.label || ''; // Você trabalha em que?\nconst pergunta7 = respostas.find(answer => answer.field.ref === \"37f6e05d-9e18-4bd4-8695-9569ece63862\")?.text || ''; // Qual seu maior sonho?\n\n// Data de aplicação\nconst dataAplicacao = inputData.body.form_response.submitted_at || '';\n\n// Função para obter a data atual menos 15 dias no formato brasileiro (dia/mês/ano)\nfunction getDataMenos15Dias() {\n  const dataAtual = new Date();\n  dataAtual.setDate(dataAtual.getDate() - 15);\n  const dia = dataAtual.getDate().toString().padStart(2, '0');\n  const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque o mês começa em 0\n  const ano = dataAtual.getFullYear();\n  return `${ano}-${mes}-${dia}`;\n}\n\nfunction formatarDataISO(dataISO) {\n    const data = new Date(dataISO);\n\n    const ano = data.getFullYear();\n    const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês começa do zero\n    const dia = String(data.getDate()).padStart(2, '0');\n    const horas = String(data.getHours()).padStart(2, '0');\n    const minutos = String(data.getMinutes()).padStart(2, '0');\n    const segundos = String(data.getSeconds()).padStart(2, '0');\n\n    return `${ano}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;\n}\n\n// Função para extrair as UTMs do objeto JSON\nfunction extractUTMs(json) {\n  const utmParams = {};\n\n  function searchUTMs(obj) {\n    for (const key in obj) {\n      if (key.startsWith('utm_')) {\n        utmParams[key] = obj[key];\n      } else if (typeof obj[key] === 'object') {\n        searchUTMs(obj[key]);\n      }\n    }\n  }\n\n  \n\n  searchUTMs(json);\n\n  return utmParams;\n}\n\n\n// Extrair as UTMs do objeto JSON de entrada\nconst utms = extractUTMs(inputData);\n\n// UTMS\nconst utmContent = utms.utm_content || '';\nconst utmSource = utms.utm_source || '';\nconst utmCampaign = utms.utm_campaign || '';\nconst utmMedium = utms.utm_medium || '';\nconst utmTerm = utms.utm_term || '';\n\n// Função para remover todas as aspas e parênteses de um texto\nfunction removerAspasEParenteses(texto) {\n    // Substitui todas as ocorrências de aspas (\"\") por nada\n    let textoSemAspas = texto.replace(/\"/g, '');\n    // Substitui todas as ocorrências de parênteses () por nada\n    textoSemAspas = textoSemAspas.replace(/\\([^()]*\\)/g, '');\n    return textoSemAspas;\n}\n\nfunction capitalizeName(fullName) {\n    if (typeof fullName === 'undefined') {\n        return { fname: '', lname: '', fullname: '' };\n    }\n\n    const lowerCaseWords = ['da', 'de', 'do', 'di', 'du'];\n    let words = fullName.toLowerCase().split(' ').map((word, index) => {\n        if (lowerCaseWords.includes(word) && index !== 0) {\n            return word;\n        }\n        return word.charAt(0).toUpperCase() + word.slice(1);\n    });\n\n    let fname = words.shift();\n    let lname = words.join(' ');\n\n    // Ajuste para remover o espaço extra caso não haja sobrenome\n    let fullname = lname ? `${fname} ${lname}` : fname;\n\n    return { fname, lname, fullname };\n}\n\nfunction formatEmail(email) {\n    return email.toLowerCase().trim();\n}\n\nfunction formatInstagram(instagram) {\n    // Remover \"@\" e transformar em letras minúsculas\n    return instagram.toLowerCase().trim().replace(/^@/, \"\");\n}\n\nlet telefoneFinal = \"\";\n\n// Verificar se o telefone foi preenchido\nif (telefoneClienteOriginal) {\n    // Limpar o número para remover caracteres não numéricos\n    const telefoneLimpo = telefoneClienteOriginal.replace(/\\D/g, \"\");\n\n    let DDI = '';\n    let DDD = '';\n    let numero = '';\n\n    // Determinar se o telefone possui DDI\n    if (telefoneLimpo.length > 11) {\n        // Extrair o DDI (primeiros dois dígitos)\n        DDI = telefoneLimpo.slice(0, 2);\n        DDD = telefoneLimpo.slice(2, 4);\n        numero = telefoneLimpo.slice(4);\n    } else if (telefoneLimpo.length === 11) {\n        // Assumir DDI padrão (55) para números com DDD + número\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else if (telefoneLimpo.length === 10) {\n        // Assumir DDI padrão (55) para números com DDD + número de 10 dígitos\n        DDI = '55';\n        DDD = telefoneLimpo.slice(0, 2);\n        numero = telefoneLimpo.slice(2);\n    } else {\n        // Caso o número não tenha tamanho esperado, considerá-lo inválido\n        telefoneFinal = telefoneLimpo; // Ou deixar vazio: telefoneFinal = \"\";\n    }\n\n    // Ajustar número com base no DDD\n    if (DDD && numero) {\n        if (parseInt(DDD) > 28) {\n            // Se o DDD for maior que 28 e o número tiver 9 dígitos, remover o nono dígito\n            if (numero.length === 9 && numero.startsWith(\"9\")) {\n                numero = numero.slice(1); // Remove o primeiro dígito\n            }\n        } else {\n            // Se o DDD for menor ou igual a 28 e o número tiver 8 dígitos, adicionar o nono dígito\n            if (numero.length === 8) {\n                numero = `9${numero}`; // Adiciona o nono dígito\n            }\n        }\n    }\n\n    // Formatar número final apenas se válido\n    if (DDI && DDD && numero) {\n        telefoneFinal = `${DDI}${DDD}${numero}`;\n    }\n}\n\nconst formattedNames = capitalizeName(fullNameAnswer);\nconst formattedEmail = formatEmail(emailAnswer);\nconst formattedInstagram = formatInstagram(instagramAnswer);\nconst form_id = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"form_id\"]  || \"\";\nconst form_name = $node[\"typeform\"].json[\"body\"][\"form_response\"][\"definition\"][\"title\"] || \"\";\nconst endings = inputData.body.form_response.ending.ref || \"\";\nconst data_aplicacao = formatarDataISO(dataAplicacao) || \"\";\n\nconst result = {\n    ...formattedNames, // Nome formatado\n    email: formattedEmail, // Email formatado\n    whatsapp: telefoneFinal, // WhatsApp formatado ou vazio\n    instagram: formattedInstagram, // Instagram formatado\n    utm_source: utmSource,\n    utm_campaign: utmCampaign,\n    utm_term: utmTerm,\n    utm_medium: utmMedium,\n    utm_content: utmContent,\n    dataAplicacao: data_aplicacao,\n    sexo: pergunta1,\n    faixa_etaria: pergunta2,\n    renda: pergunta3,\n    tempo_conhecendo: pergunta4,\n    tem_cartao: pergunta5,\n    profissao: pergunta6,\n    sonho: pergunta7,\n    score: score,\n    perguntas_respostas: perguntas_respostas,\n    form_id: form_id,\n    form_name: form_name // Inclui o form_name no resultado\n};\n\n// Aqui estamos ajustando a estrutura do retorno para se adequar ao que o n8n espera\nreturn [{ json: result }];\n"
       },
       "id": "6c6eaaa0-f299-41a4-bb84-c596a502ca7a",
       "name": "formata_dados",
@@ -609,6 +626,14 @@
             {
               "column": "profissao",
               "value": "={{ $node[\"dados\"].json[\"profissao\"] }}"
+            },
+            {
+              "column": "sonho",
+              "value": "={{ $node[\"dados\"].json[\"sonho\"] }}"
+            },
+            {
+              "column": "data",
+              "value": "={{ $node[\"dados\"].json[\"data_aplicacao\"] }}"
             }
           ]
         },
@@ -657,7 +682,9 @@
             "tempo_conhecendo": "={{ $node[\"dados\"].json[\"tempo_conhecendo\"] }}",
             "tem_cartao": "={{ $node[\"dados\"].json[\"tem_cartao\"] }}",
             "profissao": "={{ $node[\"dados\"].json[\"profissao\"] }}",
-            "score": "={{ $node[\"dados\"].json[\"score\"] }}"
+            "score": "={{ $node[\"dados\"].json[\"score\"] }}",
+            "sonho": "={{ $node[\"dados\"].json[\"sonho\"] }}",
+            "data": "={{ $node[\"dados\"].json[\"data_aplicacao\"] }}"
           },
           "matchingColumns": [
             "id_typeform"
@@ -755,8 +782,28 @@
               "canBeUsedToMatch": true
             },
             {
+              "id": "sonho",
+              "displayName": "sonho",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "score",
               "displayName": "score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "data",
+              "displayName": "data",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -784,6 +831,33 @@
           "name": "[Google Sheets] - Automagic Bots - Auth"
         }
       }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://live-mt-server.wati.io/399095/api/v1/sendTemplateMessage?whatsappNumber={{ $node[\"dados\"].json[\"telefone\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0ZmMyZGI1ZS03MTgzLTQ4ZjQtYmJiMi02NDE1MTNlN2I5OTMiLCJ1bmlxdWVfbmFtZSI6ImNhaW9jYWxkZXJhcm8xOTg5QGdtYWlsLmNvbSIsIm5hbWVpZCI6ImNhaW9jYWxkZXJhcm8xOTg5QGdtYWlsLmNvbSIsImVtYWlsIjoiY2Fpb2NhbGRlcmFybzE5ODlAZ21haWwuY29tIiwiYXV0aF90aW1lIjoiMDQvMjIvMjAyNSAyMjozNjo0NCIsInRlbmFudF9pZCI6IjM5OTA5NSIsImRiX25hbWUiOiJtdC1wcm9kLVRlbmFudHMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBVE9SIiwiZXhwIjoyNTM0MDIzMDA4MDAsImlzcyI6IkNsYXJlX0FJIiwiYXVkIjoiQ2xhcmVfQUkifQ.aKlZkZOai7R6tle0tcrARM93qL372uV9seyfEFOxegc"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"template_name\": \"l052025_preencheu_pesquisa_v5\",\n  \"broadcast_name\": \"string\",\n  \"parameters\": [\n    {\n      \"name\": \"1disparomvd1103\",\n      \"value\": \"Aquele material especial 'Como escolher produtos campeões sem cometer erros que todo mundo comete' já está disponível.\"\n    },\n    {\n      \"name\": \"1disparocmm2602\",\n      \"value\": \"Aquele encontro sobre o Profissão afiliado internacional vai rolar nos dias 5, 6, 7, 8 e 11 de maio, sempre às 20h.\"\n    },\n    {\n      \"name\": \"2disparomvd1103\",\n      \"value\": \"Vão ser 5 encontros pra te mostrar, de forma direta, como começar a atuar nesse mercado e faturar em dólar mesmo começando do zero e com pouca grana pra investir.\"\n    },\n    {\n      \"name\": \"3disparomvd1103\",\n      \"value\": \"Tô na expectativa de te encontrar por lá e compartilhar o passo a passo sobre essa profissão que paga em dólar.\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2180,
+        -240
+      ],
+      "id": "d28a95f0-9874-4265-b574-12ed1719d4db",
+      "name": "envia_msg"
     }
   ],
   "pinData": {
@@ -793,39 +867,39 @@
           "headers": {
             "host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "user-agent": "Typeform Webhooks",
-            "content-length": "5555",
+            "content-length": "5817",
             "accept-encoding": "gzip",
             "content-type": "application/json",
-            "traceparent": "00-2ed8f438443b3498d245829d54ed9579-1140a8e379df6816-01",
-            "x-forwarded-for": "18.210.136.162",
+            "traceparent": "00-ca4db663aea6417d4884d596399ea979-36cae8a3f7680809-01",
+            "x-forwarded-for": "34.230.177.131",
             "x-forwarded-host": "webhookhetznerhenrysantos.automagicbots.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
             "x-forwarded-server": "9374371a5d91",
-            "x-real-ip": "18.210.136.162"
+            "x-real-ip": "34.230.177.131"
           },
           "params": {},
           "query": {},
           "body": {
-            "event_id": "01JSC5ARPJN9FT3088DC28EYTT",
+            "event_id": "01JSFS44F77009MZ5D0KMBZ0D7",
             "event_type": "form_response",
             "form_response": {
               "form_id": "uAH0Nr0r",
-              "token": "ptbbu9v6k8mvqbm1egkhhcptbbu95mdu",
-              "landed_at": "2025-04-21T12:31:43Z",
-              "submitted_at": "2025-04-21T12:31:52Z",
+              "token": "1ej6gv7vu19y95h1ej6ga9dorfehrsgv",
+              "landed_at": "2025-04-22T22:14:47Z",
+              "submitted_at": "2025-04-22T22:15:30Z",
               "hidden": {
-                "email": "teste@automagicbots.com.br",
-                "first_name": "Gabriel",
-                "phone_number": "31985711260",
-                "utm_campaign": "organico",
-                "utm_content": "ia-sem-codigo",
-                "utm_medium": "reels",
-                "utm_source": "facebook",
-                "utm_term": "ig"
+                "email": "carlos.delta@outlook.com.br",
+                "first_name": "",
+                "phone_number": "(17) 99776-8003",
+                "utm_campaign": "mvd_mai25",
+                "utm_content": "",
+                "utm_medium": "biocaio",
+                "utm_source": "organico",
+                "utm_term": "instagram"
               },
               "calculated": {
-                "score": 635
+                "score": 590
               },
               "variables": [
                 {
@@ -836,7 +910,7 @@
                 {
                   "key": "score",
                   "type": "number",
-                  "number": 635
+                  "number": 590
                 },
                 {
                   "key": "winning_outcome_id",
@@ -1010,6 +1084,13 @@
                         "label": "Aposentado"
                       }
                     ]
+                  },
+                  {
+                    "id": "KhxMUpmbJKgt",
+                    "ref": "37f6e05d-9e18-4bd4-8695-9569ece63862",
+                    "type": "long_text",
+                    "title": "Qual seu maior sonho?",
+                    "properties": {}
                   }
                 ],
                 "outcome": {
@@ -1056,9 +1137,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "q73SiYz5TosC",
-                    "label": "46 a 55 anos",
-                    "ref": "7b31a206-3801-4c90-96c3-1a302eaec67f"
+                    "id": "X1jl1OyIquQY",
+                    "label": "Mais de 55 anos",
+                    "ref": "b220a0c9-349c-4a74-9ee6-20f456af5ff9"
                   },
                   "field": {
                     "id": "Nm8xLbePlvNw",
@@ -1082,9 +1163,9 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "Kb04Wy23WUHi",
-                    "label": "Entre 6 meses e 1 ano",
-                    "ref": "103d059a-f959-4baf-a5c4-161db08e00ec"
+                    "id": "f3EaKYHjN5UG",
+                    "label": "Entre 1 mês e 6 meses",
+                    "ref": "d7a7addf-6ccc-4948-a788-fa4781e4d9be"
                   },
                   "field": {
                     "id": "8e82QBzgBeLu",
@@ -1108,14 +1189,23 @@
                 {
                   "type": "choice",
                   "choice": {
-                    "id": "geAuvl1otrOh",
-                    "label": "Empreendedor",
-                    "ref": "5b9a2527-cea6-41fc-89a0-2fe7dc6419c0"
+                    "id": "lGKMxfhcLegd",
+                    "label": "CLT",
+                    "ref": "828ec937-8463-4b5c-aa54-3a5688f592c3"
                   },
                   "field": {
                     "id": "1HsRu8UIIkKD",
                     "type": "multiple_choice",
                     "ref": "2f475f78-417b-4d82-888e-f24e592d93dd"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": "Criar meu negócio",
+                  "field": {
+                    "id": "KhxMUpmbJKgt",
+                    "type": "long_text",
+                    "ref": "37f6e05d-9e18-4bd4-8695-9569ece63862"
                   }
                 }
               ],
@@ -1139,6 +1229,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-21T12:32:41.346Z",
-  "versionId": "e98d86c7-fe33-47d6-8709-117b14b97cc3"
+  "updatedAt": "2025-04-23T00:41:07.490Z",
+  "versionId": "44e5afdc-70af-478c-995a-8da21226c69a"
 }
